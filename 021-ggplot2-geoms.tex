@@ -1,0 +1,2109 @@
+\documentclass[a4paper,titlepage]{tufte-handout}\usepackage{graphicx, color}
+%% maxwidth is the original width if it is less than linewidth
+%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\definecolor{fgcolor}{rgb}{0.2, 0.2, 0.2}
+\newcommand{\hlnumber}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlfunctioncall}[1]{\textcolor[rgb]{0.501960784313725,0,0.329411764705882}{\textbf{#1}}}%
+\newcommand{\hlstring}[1]{\textcolor[rgb]{0.6,0.6,1}{#1}}%
+\newcommand{\hlkeyword}[1]{\textcolor[rgb]{0,0,0}{\textbf{#1}}}%
+\newcommand{\hlargument}[1]{\textcolor[rgb]{0.690196078431373,0.250980392156863,0.0196078431372549}{#1}}%
+\newcommand{\hlcomment}[1]{\textcolor[rgb]{0.180392156862745,0.6,0.341176470588235}{#1}}%
+\newcommand{\hlroxygencomment}[1]{\textcolor[rgb]{0.43921568627451,0.47843137254902,0.701960784313725}{#1}}%
+\newcommand{\hlformalargs}[1]{\textcolor[rgb]{0.690196078431373,0.250980392156863,0.0196078431372549}{#1}}%
+\newcommand{\hleqformalargs}[1]{\textcolor[rgb]{0.690196078431373,0.250980392156863,0.0196078431372549}{#1}}%
+\newcommand{\hlassignement}[1]{\textcolor[rgb]{0,0,0}{\textbf{#1}}}%
+\newcommand{\hlpackage}[1]{\textcolor[rgb]{0.588235294117647,0.709803921568627,0.145098039215686}{#1}}%
+\newcommand{\hlslot}[1]{\textit{#1}}%
+\newcommand{\hlsymbol}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlprompt}[1]{\textcolor[rgb]{0.2,0.2,0.2}{#1}}%
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
+\title{ggplot2 Gallery}
+\begin{document}
+\maketitle
+\tableofcontents
+
+
+
+
+% all geoms in ggplot2
+
+
+
+\section{geom\_abline}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcomment{### Name: geom_abline}
+\hlcomment{### Title: Line specified by slope and intercept.}
+\hlcomment{### Aliases: geom_abline}
+\hlcomment{### ** Examples}
+p <- \hlfunctioncall{qplot}(wt, mpg, data = mtcars)
+\hlcomment{# Fixed slopes and intercepts}
+p + \hlfunctioncall{geom_abline}() \hlcomment{# Can't see it - outside the range of the data}
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_abline1} \begin{kframe}\begin{alltt}
+p + \hlfunctioncall{geom_abline}(intercept = 20)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_abline2} \begin{kframe}\begin{alltt}
+\hlcomment{# Calculate slope and intercept of line of best fit}
+\hlfunctioncall{coef}(\hlfunctioncall{lm}(mpg ~ wt, data = mtcars))
+\end{alltt}
+\begin{verbatim}
+## (Intercept)          wt 
+##      37.285      -5.344 
+\end{verbatim}
+\begin{alltt}
+p + \hlfunctioncall{geom_abline}(intercept = 37, slope = -5)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_abline3} \begin{kframe}\begin{alltt}
+p + \hlfunctioncall{geom_abline}(intercept = 10, colour = \hlstring{"red"}, size = 2)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_abline4} \begin{kframe}\begin{alltt}
+\hlcomment{# See ?stat_smooth for fitting smooth models to data}
+p + \hlfunctioncall{stat_smooth}(method=\hlstring{"lm"}, se=FALSE)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_abline5} \begin{kframe}\begin{alltt}
+\hlcomment{# Slopes and intercepts as data}
+p <- \hlfunctioncall{ggplot}(mtcars, \hlfunctioncall{aes}(x = wt, y=mpg), . ~ cyl) + \hlfunctioncall{geom_point}()
+df <- \hlfunctioncall{data.frame}(a=\hlfunctioncall{rnorm}(10, 25), b=\hlfunctioncall{rnorm}(10, 0))
+p + \hlfunctioncall{geom_abline}(\hlfunctioncall{aes}(intercept=a, slope=b), data=df)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_abline6} \begin{kframe}\begin{alltt}
+\hlcomment{# Slopes and intercepts from linear model}
+\hlfunctioncall{library}(plyr)
+coefs <- \hlfunctioncall{ddply}(mtcars, \hlfunctioncall{.}(cyl), \hlfunctioncall{function}(df) \{
+  m <- \hlfunctioncall{lm}(mpg ~ wt, data=df)
+  \hlfunctioncall{data.frame}(a = \hlfunctioncall{coef}(m)[1], b = \hlfunctioncall{coef}(m)[2])
+\})
+\hlfunctioncall{str}(coefs)
+\end{alltt}
+\begin{verbatim}
+## 'data.frame':	3 obs. of  3 variables:
+##  $ cyl: num  4 6 8
+##  $ a  : num  39.6 28.4 23.9
+##  $ b  : num  -5.65 -2.78 -2.19
+\end{verbatim}
+\begin{alltt}
+p + \hlfunctioncall{geom_abline}(data=coefs, \hlfunctioncall{aes}(intercept=a, slope=b))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_abline7} \begin{kframe}\begin{alltt}
+\hlcomment{# It's actually a bit easier to do this with stat_smooth}
+p + \hlfunctioncall{geom_smooth}(\hlfunctioncall{aes}(group=cyl), method=\hlstring{"lm"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_abline8} \begin{kframe}\begin{alltt}
+p + \hlfunctioncall{geom_smooth}(\hlfunctioncall{aes}(group=cyl), method=\hlstring{"lm"}, fullrange=TRUE)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_abline9} \begin{kframe}\begin{alltt}
+\hlcomment{# With coordinate transforms}
+p + \hlfunctioncall{geom_abline}(intercept = 37, slope = -5) + \hlfunctioncall{coord_flip}()
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_abline10} \begin{kframe}\begin{alltt}
+p + \hlfunctioncall{geom_abline}(intercept = 37, slope = -5) + \hlfunctioncall{coord_polar}()
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_abline11} 
+\end{knitrout}
+
+
+\section{geom\_area}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcomment{### Name: geom_area}
+\hlcomment{### Title: Area plot.}
+\hlcomment{### Aliases: geom_area}
+\hlcomment{### ** Examples}
+\hlcomment{# see geom_ribbon}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+
+\section{geom\_bar}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcomment{### Name: geom_bar}
+\hlcomment{### Title: Bars, rectangles with bases on x-axis}
+\hlcomment{### Aliases: geom_bar}
+\hlcomment{### ** Examples}
+\hlcomment{## No test: }
+\hlcomment{# Generate data}
+c <- \hlfunctioncall{ggplot}(mtcars, \hlfunctioncall{aes}(\hlfunctioncall{factor}(cyl)))
+c + \hlfunctioncall{geom_bar}()
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_bar1} \begin{kframe}\begin{alltt}
+c + \hlfunctioncall{geom_bar}(width=.5)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_bar2} \begin{kframe}\begin{alltt}
+c + \hlfunctioncall{geom_bar}() + \hlfunctioncall{coord_flip}()
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_bar3} \begin{kframe}\begin{alltt}
+c + \hlfunctioncall{geom_bar}(fill=\hlstring{"white"}, colour=\hlstring{"darkgreen"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_bar4} \begin{kframe}\begin{alltt}
+\hlcomment{# Use qplot}
+\hlfunctioncall{qplot}(\hlfunctioncall{factor}(cyl), data=mtcars, geom=\hlstring{"bar"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_bar5} \begin{kframe}\begin{alltt}
+\hlfunctioncall{qplot}(\hlfunctioncall{factor}(cyl), data=mtcars, geom=\hlstring{"bar"}, fill=\hlfunctioncall{factor}(cyl))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_bar6} \begin{kframe}\begin{alltt}
+\hlcomment{# Stacked bar charts}
+\hlfunctioncall{qplot}(\hlfunctioncall{factor}(cyl), data=mtcars, geom=\hlstring{"bar"}, fill=\hlfunctioncall{factor}(vs))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_bar7} \begin{kframe}\begin{alltt}
+\hlfunctioncall{qplot}(\hlfunctioncall{factor}(cyl), data=mtcars, geom=\hlstring{"bar"}, fill=\hlfunctioncall{factor}(gear))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_bar8} \begin{kframe}\begin{alltt}
+\hlcomment{# Stacked bar charts are easy in ggplot2, but not effective visually,}
+\hlcomment{# particularly when there are many different things being stacked}
+\hlfunctioncall{ggplot}(diamonds, \hlfunctioncall{aes}(clarity, fill=cut)) + \hlfunctioncall{geom_bar}()
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_bar9} \begin{kframe}\begin{alltt}
+\hlfunctioncall{ggplot}(diamonds, \hlfunctioncall{aes}(color, fill=cut)) + \hlfunctioncall{geom_bar}() + \hlfunctioncall{coord_flip}()
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_bar10} \begin{kframe}\begin{alltt}
+\hlcomment{# Faceting is a good alternative:}
+\hlfunctioncall{ggplot}(diamonds, \hlfunctioncall{aes}(clarity)) + \hlfunctioncall{geom_bar}() +
+  \hlfunctioncall{facet_wrap}(~ cut)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_bar11} \begin{kframe}\begin{alltt}
+\hlcomment{# If the x axis is ordered, using a line instead of bars is another}
+\hlcomment{# possibility:}
+\hlfunctioncall{ggplot}(diamonds, \hlfunctioncall{aes}(clarity)) +
+  \hlfunctioncall{geom_freqpoly}(\hlfunctioncall{aes}(group = cut, colour = cut))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_bar12} \begin{kframe}\begin{alltt}
+\hlcomment{# Dodged bar charts}
+\hlfunctioncall{ggplot}(diamonds, \hlfunctioncall{aes}(clarity, fill=cut)) + \hlfunctioncall{geom_bar}(position=\hlstring{"dodge"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_bar13} \begin{kframe}\begin{alltt}
+\hlcomment{# compare with}
+\hlfunctioncall{ggplot}(diamonds, \hlfunctioncall{aes}(cut, fill=cut)) + \hlfunctioncall{geom_bar}() +
+  \hlfunctioncall{facet_grid}(. ~ clarity)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_bar14} \begin{kframe}\begin{alltt}
+\hlcomment{# But again, probably better to use frequency polygons instead:}
+\hlfunctioncall{ggplot}(diamonds, \hlfunctioncall{aes}(clarity, colour=cut)) +
+  \hlfunctioncall{geom_freqpoly}(\hlfunctioncall{aes}(group = cut))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_bar15} \begin{kframe}\begin{alltt}
+\hlcomment{# Often we don't want the height of the bar to represent the}
+\hlcomment{# count of observations, but the sum of some other variable.}
+\hlcomment{# For example, the following plot shows the number of diamonds}
+\hlcomment{# of each colour}
+\hlfunctioncall{qplot}(color, data=diamonds, geom=\hlstring{"bar"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_bar16} \begin{kframe}\begin{alltt}
+\hlcomment{# If, however, we want to see the total number of carats in each colour}
+\hlcomment{# we need to weight by the carat variable}
+\hlfunctioncall{qplot}(color, data=diamonds, geom=\hlstring{"bar"}, weight=carat, ylab=\hlstring{"carat"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_bar17} \begin{kframe}\begin{alltt}
+\hlcomment{# A bar chart used to display means}
+meanprice <- \hlfunctioncall{tapply}(diamonds$price, diamonds$cut, mean)
+cut <- \hlfunctioncall{factor}(\hlfunctioncall{levels}(diamonds$cut), levels = \hlfunctioncall{levels}(diamonds$cut))
+\hlfunctioncall{qplot}(cut, meanprice)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_bar18} \begin{kframe}\begin{alltt}
+\hlfunctioncall{qplot}(cut, meanprice, geom=\hlstring{"bar"}, stat=\hlstring{"identity"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_bar19} \begin{kframe}\begin{alltt}
+\hlfunctioncall{qplot}(cut, meanprice, geom=\hlstring{"bar"}, stat=\hlstring{"identity"}, fill = \hlfunctioncall{I}(\hlstring{"grey50"}))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_bar20} \begin{kframe}\begin{alltt}
+\hlcomment{# Another stacked bar chart example}
+k <- \hlfunctioncall{ggplot}(mpg, \hlfunctioncall{aes}(manufacturer, fill=class))
+k + \hlfunctioncall{geom_bar}()
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_bar21} \begin{kframe}\begin{alltt}
+\hlcomment{# Use scales to change aesthetics defaults}
+k + \hlfunctioncall{geom_bar}() + \hlfunctioncall{scale_fill_brewer}()
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_bar22} \begin{kframe}\begin{alltt}
+k + \hlfunctioncall{geom_bar}() + \hlfunctioncall{scale_fill_grey}()
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_bar23} \begin{kframe}\begin{alltt}
+\hlcomment{# To change plot order of class varible}
+\hlcomment{# use \hlfunctioncall{factor}() to change order of levels}
+mpg$class <- \hlfunctioncall{factor}(mpg$class, levels = \hlfunctioncall{c}(\hlstring{"midsize"}, \hlstring{"minivan"},
+\hlstring{"suv"}, \hlstring{"compact"}, \hlstring{"2seater"}, \hlstring{"subcompact"}, \hlstring{"pickup"}))
+m <- \hlfunctioncall{ggplot}(mpg, \hlfunctioncall{aes}(manufacturer, fill=class))
+m + \hlfunctioncall{geom_bar}()
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_bar24} \begin{kframe}\begin{alltt}
+\hlcomment{## \hlfunctioncall{End}(No test)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+
+\section{geom\_bin2d}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcomment{### Name: geom_bin2d}
+\hlcomment{### Title: Add heatmap of 2d bin counts.}
+\hlcomment{### Aliases: geom_bin2d}
+\hlcomment{### ** Examples}
+d <- \hlfunctioncall{ggplot}(diamonds, \hlfunctioncall{aes}(x = x, y = y)) + \hlfunctioncall{xlim}(4,10) + \hlfunctioncall{ylim}(4,10)
+d + \hlfunctioncall{geom_bin2d}()
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_bin2d1} \begin{kframe}\begin{alltt}
+d + \hlfunctioncall{geom_bin2d}(binwidth = \hlfunctioncall{c}(0.1, 0.1))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_bin2d2} \begin{kframe}\begin{alltt}
+\hlcomment{# See ?stat_bin2d for more examples}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+
+\section{geom\_blank}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcomment{### Name: geom_blank}
+\hlcomment{### Title: Blank, draws nothing.}
+\hlcomment{### Aliases: geom_blank}
+\hlcomment{### ** Examples}
+\hlfunctioncall{qplot}(length, rating, data = movies, geom = \hlstring{"blank"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_blank1} \begin{kframe}\begin{alltt}
+\hlcomment{# Nothing to see here!}
+\hlcomment{# Take the following scatter plot}
+a <- \hlfunctioncall{ggplot}(mtcars, \hlfunctioncall{aes}(x = wt, y = mpg), . ~ cyl) + \hlfunctioncall{geom_point}()
+\hlcomment{# Add to that some lines with \hlfunctioncall{geom_abline}()}
+df <- \hlfunctioncall{data.frame}(a = \hlfunctioncall{rnorm}(10, 25), b = \hlfunctioncall{rnorm}(10, 0))
+a + \hlfunctioncall{geom_abline}(\hlfunctioncall{aes}(intercept = a, slope = b), data = df)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_blank2} \begin{kframe}\begin{alltt}
+\hlcomment{# Suppose you then wanted to remove the geom_point layer}
+\hlcomment{# If you just remove geom_point, you will get an error}
+b <- \hlfunctioncall{ggplot}(mtcars, \hlfunctioncall{aes}(x = wt, y = mpg), . ~ cyl)
+\hlcomment{## No test: }
+b + \hlfunctioncall{geom_abline}(\hlfunctioncall{aes}(intercept = a, slope = b), data = df)
+\end{alltt}
+\begin{flushleft}\ttfamily\noindent\bfseries\textcolor{errorcolor}{\#\# Error: no applicable method for 'scale\_dimension' applied to an object of \\ 
+\#\# class "NULL"}\end{flushleft}\begin{alltt}
+\hlcomment{## \hlfunctioncall{End}(No test)}
+\hlcomment{# Switching to \hlfunctioncall{geom_blank}() gets the desired plot}
+c <- \hlfunctioncall{ggplot}(mtcars, \hlfunctioncall{aes}(x = wt, y = mpg), . ~ cyl) + \hlfunctioncall{geom_blank}()
+c + \hlfunctioncall{geom_abline}(\hlfunctioncall{aes}(intercept = a, slope = b), data = df)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_blank3} 
+\end{knitrout}
+
+
+\section{geom\_boxplot}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcomment{### Name: geom_boxplot}
+\hlcomment{### Title: Box and whiskers plot.}
+\hlcomment{### Aliases: geom_boxplot}
+\hlcomment{### ** Examples}
+\hlcomment{## No test: }
+p <- \hlfunctioncall{ggplot}(mtcars, \hlfunctioncall{aes}(\hlfunctioncall{factor}(cyl), mpg))
+p + \hlfunctioncall{geom_boxplot}()
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_boxplot1} \begin{kframe}\begin{alltt}
+\hlfunctioncall{qplot}(\hlfunctioncall{factor}(cyl), mpg, data = mtcars, geom = \hlstring{"boxplot"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_boxplot2} \begin{kframe}\begin{alltt}
+p + \hlfunctioncall{geom_boxplot}() + \hlfunctioncall{geom_jitter}()
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_boxplot3} \begin{kframe}\begin{alltt}
+p + \hlfunctioncall{geom_boxplot}() + \hlfunctioncall{coord_flip}()
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_boxplot4} \begin{kframe}\begin{alltt}
+\hlfunctioncall{qplot}(\hlfunctioncall{factor}(cyl), mpg, data = mtcars, geom = \hlstring{"boxplot"}) +
+  \hlfunctioncall{coord_flip}()
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_boxplot5} \begin{kframe}\begin{alltt}
+p + \hlfunctioncall{geom_boxplot}(notch = TRUE)
+\end{alltt}
+\begin{flushleft}\ttfamily\noindent\textcolor{warningcolor}{\#\# Warning: notch went outside hinges. Try setting notch=FALSE.}\end{flushleft}\begin{flushleft}\ttfamily\noindent\textcolor{warningcolor}{\#\# Warning: notch went outside hinges. Try setting notch=FALSE.}\end{flushleft}\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_boxplot6} \begin{kframe}\begin{alltt}
+p + \hlfunctioncall{geom_boxplot}(notch = TRUE, notchwidth = .3)
+\end{alltt}
+\begin{flushleft}\ttfamily\noindent\textcolor{warningcolor}{\#\# Warning: notch went outside hinges. Try setting notch=FALSE.}\end{flushleft}\begin{flushleft}\ttfamily\noindent\textcolor{warningcolor}{\#\# Warning: notch went outside hinges. Try setting notch=FALSE.}\end{flushleft}\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_boxplot7} \begin{kframe}\begin{alltt}
+p + \hlfunctioncall{geom_boxplot}(outlier.colour = \hlstring{"green"}, outlier.size = 3)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_boxplot8} \begin{kframe}\begin{alltt}
+\hlcomment{# Add aesthetic mappings}
+\hlcomment{# Note that boxplots are automatically dodged when any aesthetic is}
+\hlcomment{# a factor}
+p + \hlfunctioncall{geom_boxplot}(\hlfunctioncall{aes}(fill = cyl))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_boxplot9} \begin{kframe}\begin{alltt}
+p + \hlfunctioncall{geom_boxplot}(\hlfunctioncall{aes}(fill = \hlfunctioncall{factor}(cyl)))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_boxplot10} \begin{kframe}\begin{alltt}
+p + \hlfunctioncall{geom_boxplot}(\hlfunctioncall{aes}(fill = \hlfunctioncall{factor}(vs)))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_boxplot11} \begin{kframe}\begin{alltt}
+p + \hlfunctioncall{geom_boxplot}(\hlfunctioncall{aes}(fill = \hlfunctioncall{factor}(am)))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_boxplot12} \begin{kframe}\begin{alltt}
+\hlcomment{# Set aesthetics to fixed value}
+p + \hlfunctioncall{geom_boxplot}(fill = \hlstring{"grey80"}, colour = \hlstring{"#3366FF"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_boxplot13} \begin{kframe}\begin{alltt}
+\hlfunctioncall{qplot}(\hlfunctioncall{factor}(cyl), mpg, data = mtcars, geom = \hlstring{"boxplot"},
+  colour = \hlfunctioncall{I}(\hlstring{"#3366FF"}))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_boxplot14} \begin{kframe}\begin{alltt}
+\hlcomment{# Scales vs. coordinate transforms -------}
+\hlcomment{# Scale transformations occur before the boxplot statistics are computed.}
+\hlcomment{# Coordinate transformations occur afterwards.  Observe the effect on the}
+\hlcomment{# number of outliers.}
+\hlfunctioncall{library}(plyr) \hlcomment{# to access round_any}
+m <- \hlfunctioncall{ggplot}(movies, \hlfunctioncall{aes}(y = votes, x = rating,
+   group = \hlfunctioncall{round_any}(rating, 0.5)))
+m + \hlfunctioncall{geom_boxplot}()
+\end{alltt}
+\begin{flushleft}\ttfamily\noindent\textcolor{warningcolor}{\#\# Warning: position\_dodge requires constant width: output may be incorrect}\end{flushleft}\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_boxplot15} \begin{kframe}\begin{alltt}
+m + \hlfunctioncall{geom_boxplot}() + \hlfunctioncall{scale_y_log10}()
+\end{alltt}
+\begin{flushleft}\ttfamily\noindent\textcolor{warningcolor}{\#\# Warning: position\_dodge requires constant width: output may be incorrect}\end{flushleft}\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_boxplot16} \begin{kframe}\begin{alltt}
+m + \hlfunctioncall{geom_boxplot}() + \hlfunctioncall{coord_trans}(y = \hlstring{"log10"})
+\end{alltt}
+\begin{flushleft}\ttfamily\noindent\textcolor{warningcolor}{\#\# Warning: position\_dodge requires constant width: output may be incorrect}\end{flushleft}\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_boxplot17} \begin{kframe}\begin{alltt}
+m + \hlfunctioncall{geom_boxplot}() + \hlfunctioncall{scale_y_log10}() + \hlfunctioncall{coord_trans}(y = \hlstring{"log10"})
+\end{alltt}
+\begin{flushleft}\ttfamily\noindent\textcolor{warningcolor}{\#\# Warning: position\_dodge requires constant width: output may be incorrect}\end{flushleft}\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_boxplot18} \begin{kframe}\begin{alltt}
+\hlcomment{# Boxplots with continuous x:}
+\hlcomment{# Use the group aesthetic to group observations in boxplots}
+\hlfunctioncall{qplot}(year, budget, data = movies, geom = \hlstring{"boxplot"})
+\end{alltt}
+\begin{flushleft}\ttfamily\noindent\textcolor{warningcolor}{\#\# Warning: Removed 53573 rows containing non-finite values (stat\_boxplot).}\end{flushleft}\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_boxplot19} \begin{kframe}\begin{alltt}
+\hlfunctioncall{qplot}(year, budget, data = movies, geom = \hlstring{"boxplot"},
+  group = \hlfunctioncall{round_any}(year, 10, floor))
+\end{alltt}
+\begin{flushleft}\ttfamily\noindent\textcolor{warningcolor}{\#\# Warning: Removed 53573 rows containing non-finite values (stat\_boxplot).}\end{flushleft}\begin{flushleft}\ttfamily\noindent\textcolor{warningcolor}{\#\# Warning: position\_dodge requires constant width: output may be incorrect}\end{flushleft}\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_boxplot20} \begin{kframe}\begin{alltt}
+\hlcomment{# Using precomputed statistics}
+\hlcomment{# generate sample data}
+abc <- \hlfunctioncall{adply}(\hlfunctioncall{matrix}(\hlfunctioncall{rnorm}(100), ncol = 5), 2, quantile, \hlfunctioncall{c}(0, .25, .5, .75, 1))
+b <- \hlfunctioncall{ggplot}(abc, \hlfunctioncall{aes}(x = X1, ymin = `0%`, lower = `25%`, middle = `50%`, upper = `75%`, ymax = `100%`))
+b + \hlfunctioncall{geom_boxplot}(stat = \hlstring{"identity"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_boxplot21} \begin{kframe}\begin{alltt}
+b + \hlfunctioncall{geom_boxplot}(stat = \hlstring{"identity"}) + \hlfunctioncall{coord_flip}()
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_boxplot22} \begin{kframe}\begin{alltt}
+b + \hlfunctioncall{geom_boxplot}(\hlfunctioncall{aes}(fill = X1), stat = \hlstring{"identity"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_boxplot23} \begin{kframe}\begin{alltt}
+\hlcomment{## \hlfunctioncall{End}(No test)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+
+\section{geom\_contour}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcomment{### Name: geom_contour}
+\hlcomment{### Title: Display contours of a 3d surface in 2d.}
+\hlcomment{### Aliases: geom_contour}
+\hlcomment{### ** Examples}
+\hlcomment{# See stat_contour for examples}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+
+\section{geom\_crossbar}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcomment{### Name: geom_crossbar}
+\hlcomment{### Title: Hollow bar with middle indicated by horizontal line.}
+\hlcomment{### Aliases: geom_crossbar}
+\hlcomment{### ** Examples}
+\hlcomment{# See geom_linerange for examples}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+
+\section{geom\_density}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcomment{### Name: geom_density}
+\hlcomment{### Title: Display a smooth density estimate.}
+\hlcomment{### Aliases: geom_density}
+\hlcomment{### ** Examples}
+\hlcomment{# See stat_density for examples}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+
+\section{geom\_density2d}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcomment{### Name: geom_density2d}
+\hlcomment{### Title: Contours from a 2d density estimate.}
+\hlcomment{### Aliases: geom_density2d}
+\hlcomment{### ** Examples}
+\hlcomment{# See stat_density2d for examples}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+
+\section{geom\_dotplot}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcomment{### Name: geom_dotplot}
+\hlcomment{### Title: Dot plot}
+\hlcomment{### Aliases: geom_dotplot}
+\hlcomment{### ** Examples}
+\hlfunctioncall{ggplot}(mtcars, \hlfunctioncall{aes}(x = mpg)) + \hlfunctioncall{geom_dotplot}()
+\end{alltt}
+\begin{flushleft}\ttfamily\noindent\itshape\textcolor{messagecolor}{\#\# stat\_bindot: binwidth defaulted to range/30. Use 'binwidth = x' to adjust \\ 
+\#\# this.}\end{flushleft}\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_dotplot1} \begin{kframe}\begin{alltt}
+\hlfunctioncall{ggplot}(mtcars, \hlfunctioncall{aes}(x = mpg)) + \hlfunctioncall{geom_dotplot}(binwidth = 1.5)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_dotplot2} \begin{kframe}\begin{alltt}
+\hlcomment{# Use fixed-width bins}
+\hlfunctioncall{ggplot}(mtcars, \hlfunctioncall{aes}(x = mpg)) +
+  \hlfunctioncall{geom_dotplot}(method=\hlstring{"histodot"}, binwidth = 1.5)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_dotplot3} \begin{kframe}\begin{alltt}
+\hlcomment{# Some other stacking methods}
+\hlfunctioncall{ggplot}(mtcars, \hlfunctioncall{aes}(x = mpg)) +
+  \hlfunctioncall{geom_dotplot}(binwidth = 1.5, stackdir = \hlstring{"center"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_dotplot4} \begin{kframe}\begin{alltt}
+\hlfunctioncall{ggplot}(mtcars, \hlfunctioncall{aes}(x = mpg)) +
+  \hlfunctioncall{geom_dotplot}(binwidth = 1.5, stackdir = \hlstring{"centerwhole"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_dotplot5} \begin{kframe}\begin{alltt}
+\hlcomment{# y axis isn't really meaningful, so hide it}
+\hlfunctioncall{ggplot}(mtcars, \hlfunctioncall{aes}(x = mpg)) + \hlfunctioncall{geom_dotplot}(binwidth = 1.5) +
+  \hlfunctioncall{scale_y_continuous}(name = \hlstring{""}, breaks = NA)
+\end{alltt}
+\begin{flushleft}\ttfamily\noindent\textcolor{warningcolor}{\#\# Warning: breaks = NA is deprecated. Please use breaks = NULL to remove \\ 
+\#\# breaks in the scale.}\end{flushleft}\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_dotplot6} \begin{kframe}\begin{alltt}
+\hlcomment{# Overlap dots vertically}
+\hlfunctioncall{ggplot}(mtcars, \hlfunctioncall{aes}(x = mpg)) + \hlfunctioncall{geom_dotplot}(binwidth = 1.5, stackratio = .7)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_dotplot7} \begin{kframe}\begin{alltt}
+\hlcomment{# Expand dot diameter}
+\hlfunctioncall{ggplot}(mtcars, \hlfunctioncall{aes}(x  =mpg)) + \hlfunctioncall{geom_dotplot}(binwidth = 1.5, dotsize = 1.25)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_dotplot8} \begin{kframe}\begin{alltt}
+\hlcomment{# Examples with stacking along y axis instead of x}
+\hlfunctioncall{ggplot}(mtcars, \hlfunctioncall{aes}(x = 1, y = mpg)) +
+  \hlfunctioncall{geom_dotplot}(binaxis = \hlstring{"y"}, stackdir = \hlstring{"center"})
+\end{alltt}
+\begin{flushleft}\ttfamily\noindent\itshape\textcolor{messagecolor}{\#\# stat\_bindot: binwidth defaulted to range/30. Use 'binwidth = x' to adjust \\ 
+\#\# this.}\end{flushleft}\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_dotplot9} \begin{kframe}\begin{alltt}
+\hlfunctioncall{ggplot}(mtcars, \hlfunctioncall{aes}(x = \hlfunctioncall{factor}(cyl), y = mpg)) +
+  \hlfunctioncall{geom_dotplot}(binaxis = \hlstring{"y"}, stackdir = \hlstring{"center"})
+\end{alltt}
+\begin{flushleft}\ttfamily\noindent\itshape\textcolor{messagecolor}{\#\# stat\_bindot: binwidth defaulted to range/30. Use 'binwidth = x' to adjust \\ 
+\#\# this.}\end{flushleft}\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_dotplot10} \begin{kframe}\begin{alltt}
+\hlfunctioncall{ggplot}(mtcars, \hlfunctioncall{aes}(x = \hlfunctioncall{factor}(cyl), y = mpg)) +
+  \hlfunctioncall{geom_dotplot}(binaxis = \hlstring{"y"}, stackdir = \hlstring{"centerwhole"})
+\end{alltt}
+\begin{flushleft}\ttfamily\noindent\itshape\textcolor{messagecolor}{\#\# stat\_bindot: binwidth defaulted to range/30. Use 'binwidth = x' to adjust \\ 
+\#\# this.}\end{flushleft}\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_dotplot11} \begin{kframe}\begin{alltt}
+\hlfunctioncall{ggplot}(mtcars, \hlfunctioncall{aes}(x = \hlfunctioncall{factor}(vs), fill = \hlfunctioncall{factor}(cyl), y = mpg)) +
+  \hlfunctioncall{geom_dotplot}(binaxis = \hlstring{"y"}, stackdir = \hlstring{"center"}, position = \hlstring{"dodge"})
+\end{alltt}
+\begin{flushleft}\ttfamily\noindent\itshape\textcolor{messagecolor}{\#\# stat\_bindot: binwidth defaulted to range/30. Use 'binwidth = x' to adjust \\ 
+\#\# this.}\end{flushleft}\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_dotplot12} \begin{kframe}\begin{alltt}
+# binpositions=\hlstring{"all"} ensures that the bins are aligned between groups
+\hlfunctioncall{ggplot}(mtcars, \hlfunctioncall{aes}(x = \hlfunctioncall{factor}(am), y = mpg)) +
+  \hlfunctioncall{geom_dotplot}(binaxis = \hlstring{"y"}, stackdir = \hlstring{"center"}, binpositions=\hlstring{"all"})
+\end{alltt}
+\begin{flushleft}\ttfamily\noindent\itshape\textcolor{messagecolor}{\#\# stat\_bindot: binwidth defaulted to range/30. Use 'binwidth = x' to adjust \\ 
+\#\# this.}\end{flushleft}\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_dotplot13} \begin{kframe}\begin{alltt}
+\hlcomment{# Stacking multiple groups, with different fill}
+\hlfunctioncall{ggplot}(mtcars, \hlfunctioncall{aes}(x = mpg, fill = \hlfunctioncall{factor}(cyl))) +
+  \hlfunctioncall{geom_dotplot}(stackgroups = TRUE, binwidth = 1, binpositions = \hlstring{"all"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_dotplot14} \begin{kframe}\begin{alltt}
+\hlfunctioncall{ggplot}(mtcars, \hlfunctioncall{aes}(x = mpg, fill = \hlfunctioncall{factor}(cyl))) +
+  \hlfunctioncall{geom_dotplot}(stackgroups = TRUE, binwidth = 1, method = \hlstring{"histodot"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_dotplot15} \begin{kframe}\begin{alltt}
+\hlfunctioncall{ggplot}(mtcars, \hlfunctioncall{aes}(x = 1, y = mpg, fill = \hlfunctioncall{factor}(cyl))) +
+  \hlfunctioncall{geom_dotplot}(binaxis = \hlstring{"y"}, stackgroups = TRUE, binwidth = 1, method = \hlstring{"histodot"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_dotplot16} 
+\end{knitrout}
+
+
+\section{geom\_errorbar}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcomment{### Name: geom_errorbar}
+\hlcomment{### Title: Error bars.}
+\hlcomment{### Aliases: geom_errorbar}
+\hlcomment{### ** Examples}
+\hlcomment{# Create a simple example dataset}
+df <- \hlfunctioncall{data.frame}(
+  trt = \hlfunctioncall{factor}(\hlfunctioncall{c}(1, 1, 2, 2)),
+  resp = \hlfunctioncall{c}(1, 5, 3, 4),
+  group = \hlfunctioncall{factor}(\hlfunctioncall{c}(1, 2, 1, 2)),
+  se = \hlfunctioncall{c}(0.1, 0.3, 0.3, 0.2)
+)
+df2 <- df[\hlfunctioncall{c}(1,3),]
+\hlcomment{# Define the top and bottom of the errorbars}
+limits <- \hlfunctioncall{aes}(ymax = resp + se, ymin=resp - se)
+p <- \hlfunctioncall{ggplot}(df, \hlfunctioncall{aes}(fill=group, y=resp, x=trt))
+p + \hlfunctioncall{geom_bar}(position=\hlstring{"dodge"}, stat=\hlstring{"identity"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_errorbar1} \begin{kframe}\begin{alltt}
+\hlcomment{# Because the bars and errorbars have different widths}
+\hlcomment{# we need to specify how wide the objects we are dodging are}
+dodge <- \hlfunctioncall{position_dodge}(width=0.9)
+p + \hlfunctioncall{geom_bar}(position=dodge) + \hlfunctioncall{geom_errorbar}(limits, position=dodge, width=0.25)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_errorbar2} \begin{kframe}\begin{alltt}
+p <- \hlfunctioncall{ggplot}(df2, \hlfunctioncall{aes}(fill=group, y=resp, x=trt))
+p + \hlfunctioncall{geom_bar}(position=dodge)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_errorbar3} \begin{kframe}\begin{alltt}
+p + \hlfunctioncall{geom_bar}(position=dodge) + \hlfunctioncall{geom_errorbar}(limits, position=dodge, width=0.25)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_errorbar4} \begin{kframe}\begin{alltt}
+p <- \hlfunctioncall{ggplot}(df, \hlfunctioncall{aes}(colour=group, y=resp, x=trt))
+p + \hlfunctioncall{geom_point}() + \hlfunctioncall{geom_errorbar}(limits, width=0.2)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_errorbar5} \begin{kframe}\begin{alltt}
+p + \hlfunctioncall{geom_pointrange}(limits)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_errorbar6} \begin{kframe}\begin{alltt}
+p + \hlfunctioncall{geom_crossbar}(limits, width=0.2)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_errorbar7} \begin{kframe}\begin{alltt}
+\hlcomment{# If we want to draw lines, we need to manually set the}
+\hlcomment{# groups which define the lines - here the groups in the}
+\hlcomment{# original dataframe}
+p + \hlfunctioncall{geom_line}(\hlfunctioncall{aes}(group=group)) + \hlfunctioncall{geom_errorbar}(limits, width=0.2)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_errorbar8} 
+\end{knitrout}
+
+
+\section{geom\_errorbarh}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcomment{### Name: geom_errorbarh}
+\hlcomment{### Title: Horizontal error bars}
+\hlcomment{### Aliases: geom_errorbarh}
+\hlcomment{### ** Examples}
+df <- \hlfunctioncall{data.frame}(
+  trt = \hlfunctioncall{factor}(\hlfunctioncall{c}(1, 1, 2, 2)),
+  resp = \hlfunctioncall{c}(1, 5, 3, 4),
+  group = \hlfunctioncall{factor}(\hlfunctioncall{c}(1, 2, 1, 2)),
+  se = \hlfunctioncall{c}(0.1, 0.3, 0.3, 0.2)
+)
+\hlcomment{# Define the top and bottom of the errorbars}
+p <- \hlfunctioncall{ggplot}(df, \hlfunctioncall{aes}(resp, trt, colour = group))
+p + \hlfunctioncall{geom_point}() +
+  \hlfunctioncall{geom_errorbarh}(\hlfunctioncall{aes}(xmax = resp + se, xmin = resp - se))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_errorbarh1} \begin{kframe}\begin{alltt}
+p + \hlfunctioncall{geom_point}() +
+  \hlfunctioncall{geom_errorbarh}(\hlfunctioncall{aes}(xmax = resp + se, xmin = resp - se, height = .2))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_errorbarh2} 
+\end{knitrout}
+
+
+\section{geom\_freqpoly}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcomment{### Name: geom_freqpoly}
+\hlcomment{### Title: Frequency polygon.}
+\hlcomment{### Aliases: geom_freqpoly}
+\hlcomment{### ** Examples}
+\hlfunctioncall{qplot}(carat, data = diamonds, geom = \hlstring{"freqpoly"})
+\end{alltt}
+\begin{flushleft}\ttfamily\noindent\itshape\textcolor{messagecolor}{\#\# stat\_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust \\ 
+\#\# this.}\end{flushleft}\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_freqpoly1} \begin{kframe}\begin{alltt}
+\hlfunctioncall{qplot}(carat, data = diamonds, geom = \hlstring{"freqpoly"}, binwidth = 0.1)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_freqpoly2} \begin{kframe}\begin{alltt}
+\hlfunctioncall{qplot}(carat, data = diamonds, geom = \hlstring{"freqpoly"}, binwidth = 0.01)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_freqpoly3} \begin{kframe}\begin{alltt}
+\hlfunctioncall{qplot}(price, data = diamonds, geom = \hlstring{"freqpoly"}, binwidth = 1000)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_freqpoly4} \begin{kframe}\begin{alltt}
+\hlfunctioncall{qplot}(price, data = diamonds, geom = \hlstring{"freqpoly"}, binwidth = 1000,
+  colour = color)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_freqpoly5} \begin{kframe}\begin{alltt}
+\hlfunctioncall{qplot}(price, ..density.., data = diamonds, geom = \hlstring{"freqpoly"},
+  binwidth = 1000, colour = color)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_freqpoly6} 
+\end{knitrout}
+
+
+\section{geom\_hex}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcomment{### Name: geom_hex}
+\hlcomment{### Title: Hexagon bining.}
+\hlcomment{### Aliases: geom_hex}
+\hlcomment{### ** Examples}
+\hlcomment{# See ?stat_binhex for examples}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+
+\section{geom\_histogram}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcomment{### Name: geom_histogram}
+\hlcomment{### Title: Histogram}
+\hlcomment{### Aliases: geom_histogram}
+\hlcomment{### ** Examples}
+\hlcomment{## No test: }
+\hlfunctioncall{set.seed}(5689)
+movies <- movies[\hlfunctioncall{sample}(\hlfunctioncall{nrow}(movies), 1000), ]
+\hlcomment{# Simple examples}
+\hlfunctioncall{qplot}(rating, data=movies, geom=\hlstring{"histogram"})
+\end{alltt}
+\begin{flushleft}\ttfamily\noindent\itshape\textcolor{messagecolor}{\#\# stat\_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust \\ 
+\#\# this.}\end{flushleft}\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_histogram1} \begin{kframe}\begin{alltt}
+\hlfunctioncall{qplot}(rating, data=movies, weight=votes, geom=\hlstring{"histogram"})
+\end{alltt}
+\begin{flushleft}\ttfamily\noindent\itshape\textcolor{messagecolor}{\#\# stat\_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust \\ 
+\#\# this.}\end{flushleft}\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_histogram2} \begin{kframe}\begin{alltt}
+\hlfunctioncall{qplot}(rating, data=movies, weight=votes, geom=\hlstring{"histogram"}, binwidth=1)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_histogram3} \begin{kframe}\begin{alltt}
+\hlfunctioncall{qplot}(rating, data=movies, weight=votes, geom=\hlstring{"histogram"}, binwidth=0.1)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_histogram4} \begin{kframe}\begin{alltt}
+\hlcomment{# More complex}
+m <- \hlfunctioncall{ggplot}(movies, \hlfunctioncall{aes}(x=rating))
+m + \hlfunctioncall{geom_histogram}()
+\end{alltt}
+\begin{flushleft}\ttfamily\noindent\itshape\textcolor{messagecolor}{\#\# stat\_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust \\ 
+\#\# this.}\end{flushleft}\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_histogram5} \begin{kframe}\begin{alltt}
+m + \hlfunctioncall{geom_histogram}(\hlfunctioncall{aes}(y = ..density..)) + \hlfunctioncall{geom_density}()
+\end{alltt}
+\begin{flushleft}\ttfamily\noindent\itshape\textcolor{messagecolor}{\#\# stat\_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust \\ 
+\#\# this.}\end{flushleft}\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_histogram6} \begin{kframe}\begin{alltt}
+m + \hlfunctioncall{geom_histogram}(binwidth = 1)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_histogram7} \begin{kframe}\begin{alltt}
+m + \hlfunctioncall{geom_histogram}(binwidth = 0.5)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_histogram8} \begin{kframe}\begin{alltt}
+m + \hlfunctioncall{geom_histogram}(binwidth = 0.1)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_histogram9} \begin{kframe}\begin{alltt}
+\hlcomment{# Add aesthetic mappings}
+m + \hlfunctioncall{geom_histogram}(\hlfunctioncall{aes}(weight = votes))
+\end{alltt}
+\begin{flushleft}\ttfamily\noindent\itshape\textcolor{messagecolor}{\#\# stat\_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust \\ 
+\#\# this.}\end{flushleft}\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_histogram10} \begin{kframe}\begin{alltt}
+m + \hlfunctioncall{geom_histogram}(\hlfunctioncall{aes}(y = ..count..))
+\end{alltt}
+\begin{flushleft}\ttfamily\noindent\itshape\textcolor{messagecolor}{\#\# stat\_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust \\ 
+\#\# this.}\end{flushleft}\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_histogram11} \begin{kframe}\begin{alltt}
+m + \hlfunctioncall{geom_histogram}(\hlfunctioncall{aes}(fill = ..count..))
+\end{alltt}
+\begin{flushleft}\ttfamily\noindent\itshape\textcolor{messagecolor}{\#\# stat\_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust \\ 
+\#\# this.}\end{flushleft}\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_histogram12} \begin{kframe}\begin{alltt}
+\hlcomment{# Change scales}
+m + \hlfunctioncall{geom_histogram}(\hlfunctioncall{aes}(fill = ..count..)) +
+  \hlfunctioncall{scale_fill_gradient}(\hlstring{"Count"}, low = \hlstring{"green"}, high = \hlstring{"red"})
+\end{alltt}
+\begin{flushleft}\ttfamily\noindent\itshape\textcolor{messagecolor}{\#\# stat\_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust \\ 
+\#\# this.}\end{flushleft}\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_histogram13} \begin{kframe}\begin{alltt}
+\hlcomment{# Often we don't want the height of the bar to represent the}
+\hlcomment{# count of observations, but the sum of some other variable.}
+\hlcomment{# For example, the following plot shows the number of movies}
+\hlcomment{# in each rating.}
+\hlfunctioncall{qplot}(rating, data=movies, geom=\hlstring{"bar"}, binwidth = 0.1)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_histogram14} \begin{kframe}\begin{alltt}
+\hlcomment{# If, however, we want to see the number of votes cast in each}
+\hlcomment{# category, we need to weight by the votes variable}
+\hlfunctioncall{qplot}(rating, data=movies, geom=\hlstring{"bar"}, binwidth = 0.1,
+  weight=votes, ylab = \hlstring{"votes"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_histogram15} \begin{kframe}\begin{alltt}
+m <- \hlfunctioncall{ggplot}(movies, \hlfunctioncall{aes}(x = votes))
+\hlcomment{# For transformed scales, binwidth applies to the transformed data.}
+\hlcomment{# The bins have constant width on the transformed scale.}
+m + \hlfunctioncall{geom_histogram}() + \hlfunctioncall{scale_x_log10}()
+\end{alltt}
+\begin{flushleft}\ttfamily\noindent\itshape\textcolor{messagecolor}{\#\# stat\_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust \\ 
+\#\# this.}\end{flushleft}\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_histogram16} \begin{kframe}\begin{alltt}
+m + \hlfunctioncall{geom_histogram}(binwidth = 1) + \hlfunctioncall{scale_x_log10}()
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_histogram17} \begin{kframe}\begin{alltt}
+m + \hlfunctioncall{geom_histogram}() + \hlfunctioncall{scale_x_sqrt}()
+\end{alltt}
+\begin{flushleft}\ttfamily\noindent\itshape\textcolor{messagecolor}{\#\# stat\_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust \\ 
+\#\# this.}\end{flushleft}\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_histogram18} \begin{kframe}\begin{alltt}
+m + \hlfunctioncall{geom_histogram}(binwidth = 10) + \hlfunctioncall{scale_x_sqrt}()
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_histogram19} \begin{kframe}\begin{alltt}
+\hlcomment{# For transformed coordinate systems, the binwidth applies to the}
+\hlcomment{# raw data.  The bins have constant width on the original scale.}
+\hlcomment{# Using log scales does not work here, because the first}
+\hlcomment{# bar is anchored at zero, and so when transformed becomes negative}
+\hlcomment{# infinity.  This is not a problem when transforming the scales, because}
+\hlcomment{# no observations have 0 ratings.}
+\hlfunctioncall{should_stop}(m + \hlfunctioncall{geom_histogram}() + \hlfunctioncall{coord_trans}(x = \hlstring{"log10"}))
+\end{alltt}
+\begin{flushleft}\ttfamily\noindent\itshape\textcolor{messagecolor}{\#\# stat\_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust \\ 
+\#\# this.}\end{flushleft}\begin{flushleft}\ttfamily\noindent\textcolor{warningcolor}{\#\# Warning: NaNs produced}\end{flushleft}\begin{flushleft}\ttfamily\noindent\textcolor{warningcolor}{\#\# Warning: NaNs produced}\end{flushleft}\begin{flushleft}\ttfamily\noindent\textcolor{warningcolor}{\#\# Warning: NaNs produced}\end{flushleft}\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_histogram20} \begin{kframe}\begin{flushleft}\ttfamily\noindent\bfseries\textcolor{errorcolor}{\#\# Error: No error!}\end{flushleft}\begin{alltt}
+m + \hlfunctioncall{geom_histogram}() + \hlfunctioncall{coord_trans}(x = \hlstring{"sqrt"})
+\end{alltt}
+\begin{flushleft}\ttfamily\noindent\itshape\textcolor{messagecolor}{\#\# stat\_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust \\ 
+\#\# this.}\end{flushleft}\begin{flushleft}\ttfamily\noindent\textcolor{warningcolor}{\#\# Warning: NaNs produced}\end{flushleft}\begin{flushleft}\ttfamily\noindent\textcolor{warningcolor}{\#\# Warning: NaNs produced}\end{flushleft}\begin{flushleft}\ttfamily\noindent\textcolor{warningcolor}{\#\# Warning: NaNs produced}\end{flushleft}\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_histogram21} \begin{kframe}\begin{alltt}
+m + \hlfunctioncall{geom_histogram}(binwidth=1000) + \hlfunctioncall{coord_trans}(x = \hlstring{"sqrt"})
+\end{alltt}
+\begin{flushleft}\ttfamily\noindent\textcolor{warningcolor}{\#\# Warning: NaNs produced}\end{flushleft}\begin{flushleft}\ttfamily\noindent\textcolor{warningcolor}{\#\# Warning: NaNs produced}\end{flushleft}\begin{flushleft}\ttfamily\noindent\textcolor{warningcolor}{\#\# Warning: NaNs produced}\end{flushleft}\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_histogram22} \begin{kframe}\begin{alltt}
+\hlcomment{# You can also transform the y axis.  Remember that the base of the bars}
+\hlcomment{# has value 0, so log transformations are not appropriate}
+m <- \hlfunctioncall{ggplot}(movies, \hlfunctioncall{aes}(x = rating))
+m + \hlfunctioncall{geom_histogram}(binwidth = 0.5) + \hlfunctioncall{scale_y_sqrt}()
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_histogram23} \begin{kframe}\begin{alltt}
+m + \hlfunctioncall{geom_histogram}(binwidth = 0.5) + \hlfunctioncall{scale_y_reverse}()
+\end{alltt}
+\begin{flushleft}\ttfamily\noindent\textcolor{warningcolor}{\#\# Warning: Stacking not well defined when ymin != 0}\end{flushleft}\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_histogram24} \begin{kframe}\begin{alltt}
+\hlcomment{# Set aesthetics to fixed value}
+m + \hlfunctioncall{geom_histogram}(colour = \hlstring{"darkgreen"}, fill = \hlstring{"white"}, binwidth = 0.5)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_histogram25} \begin{kframe}\begin{alltt}
+\hlcomment{# Use facets}
+m <- m + \hlfunctioncall{geom_histogram}(binwidth = 0.5)
+m + \hlfunctioncall{facet_grid}(Action ~ Comedy)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_histogram26} \begin{kframe}\begin{alltt}
+\hlcomment{# Often more useful to use density on the y axis when facetting}
+m <- m + \hlfunctioncall{aes}(y = ..density..)
+m + \hlfunctioncall{facet_grid}(Action ~ Comedy)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_histogram27} \begin{kframe}\begin{alltt}
+m + \hlfunctioncall{facet_wrap}(~ mpaa)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_histogram28} \begin{kframe}\begin{alltt}
+\hlcomment{# Multiple histograms on the same graph}
+\hlcomment{# see ?position, ?position_fill, etc for more details.}
+\hlfunctioncall{set.seed}(6298)
+diamonds_small <- diamonds[\hlfunctioncall{sample}(\hlfunctioncall{nrow}(diamonds), 1000), ]
+\hlfunctioncall{ggplot}(diamonds_small, \hlfunctioncall{aes}(x=price)) + \hlfunctioncall{geom_bar}()
+\end{alltt}
+\begin{flushleft}\ttfamily\noindent\itshape\textcolor{messagecolor}{\#\# stat\_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust \\ 
+\#\# this.}\end{flushleft}\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_histogram29} \begin{kframe}\begin{alltt}
+hist_cut <- \hlfunctioncall{ggplot}(diamonds_small, \hlfunctioncall{aes}(x=price, fill=cut))
+hist_cut + \hlfunctioncall{geom_bar}() \hlcomment{# defaults to stacking}
+\end{alltt}
+\begin{flushleft}\ttfamily\noindent\itshape\textcolor{messagecolor}{\#\# stat\_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust \\ 
+\#\# this.}\end{flushleft}\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_histogram30} \begin{kframe}\begin{alltt}
+hist_cut + \hlfunctioncall{geom_bar}(position=\hlstring{"fill"})
+\end{alltt}
+\begin{flushleft}\ttfamily\noindent\itshape\textcolor{messagecolor}{\#\# stat\_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust \\ 
+\#\# this.}\end{flushleft}\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_histogram31} \begin{kframe}\begin{alltt}
+hist_cut + \hlfunctioncall{geom_bar}(position=\hlstring{"dodge"})
+\end{alltt}
+\begin{flushleft}\ttfamily\noindent\itshape\textcolor{messagecolor}{\#\# stat\_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust \\ 
+\#\# this.}\end{flushleft}\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_histogram32} \begin{kframe}\begin{alltt}
+\hlcomment{# This is easy in ggplot2, but not visually effective.  It's better}
+\hlcomment{# to use a frequency polygon or density plot.  Like this:}
+\hlfunctioncall{ggplot}(diamonds_small, \hlfunctioncall{aes}(price, ..density.., colour = cut)) +
+  \hlfunctioncall{geom_freqpoly}(binwidth = 1000)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_histogram33} \begin{kframe}\begin{alltt}
+\hlcomment{# Or this:}
+\hlfunctioncall{ggplot}(diamonds_small, \hlfunctioncall{aes}(price, colour = cut)) +
+  \hlfunctioncall{geom_density}()
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_histogram34} \begin{kframe}\begin{alltt}
+\hlcomment{# Or if you want to be fancy, maybe even this:}
+\hlfunctioncall{ggplot}(diamonds_small, \hlfunctioncall{aes}(price, fill = cut)) +
+  \hlfunctioncall{geom_density}(alpha = 0.2)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_histogram35} \begin{kframe}\begin{alltt}
+\hlcomment{# Which looks better when the distributions are more distinct}
+\hlfunctioncall{ggplot}(diamonds_small, \hlfunctioncall{aes}(depth, fill = cut)) +
+  \hlfunctioncall{geom_density}(alpha = 0.2) + \hlfunctioncall{xlim}(55, 70)
+\end{alltt}
+\begin{flushleft}\ttfamily\noindent\textcolor{warningcolor}{\#\# Warning: Removed 2 rows containing non-finite values (stat\_density).}\end{flushleft}\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_histogram36} \begin{kframe}\begin{alltt}
+\hlcomment{## \hlfunctioncall{End}(No test)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+
+\section{geom\_hline}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcomment{### Name: geom_hline}
+\hlcomment{### Title: Horizontal line.}
+\hlcomment{### Aliases: geom_hline}
+\hlcomment{### ** Examples}
+p <- \hlfunctioncall{ggplot}(mtcars, \hlfunctioncall{aes}(x = wt, y=mpg)) + \hlfunctioncall{geom_point}()
+p + \hlfunctioncall{geom_hline}(\hlfunctioncall{aes}(yintercept=mpg))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_hline1} \begin{kframe}\begin{alltt}
+p + \hlfunctioncall{geom_hline}(yintercept=20)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_hline2} \begin{kframe}\begin{alltt}
+p + \hlfunctioncall{geom_hline}(yintercept=\hlfunctioncall{seq}(10, 30, by=5))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_hline3} \begin{kframe}\begin{alltt}
+\hlcomment{# With coordinate transforms}
+p + \hlfunctioncall{geom_hline}(\hlfunctioncall{aes}(yintercept=mpg)) + \hlfunctioncall{coord_equal}()
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_hline4} \begin{kframe}\begin{alltt}
+p + \hlfunctioncall{geom_hline}(\hlfunctioncall{aes}(yintercept=mpg)) + \hlfunctioncall{coord_flip}()
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_hline5} \begin{kframe}\begin{alltt}
+p + \hlfunctioncall{geom_hline}(\hlfunctioncall{aes}(yintercept=mpg)) + \hlfunctioncall{coord_polar}()
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_hline6} \begin{kframe}\begin{alltt}
+\hlcomment{# To display different lines in different facets, you need to}
+\hlcomment{# create a data frame.}
+p <- \hlfunctioncall{qplot}(mpg, wt, data=mtcars, facets = vs ~ am)
+hline.data <- \hlfunctioncall{data.frame}(z = 1:4, vs = \hlfunctioncall{c}(0,0,1,1), am = \hlfunctioncall{c}(0,1,0,1))
+p + \hlfunctioncall{geom_hline}(\hlfunctioncall{aes}(yintercept = z), hline.data)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_hline7} 
+\end{knitrout}
+
+
+\section{geom\_jitter}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcomment{### Name: geom_jitter}
+\hlcomment{### Title: Points, jittered to reduce overplotting.}
+\hlcomment{### Aliases: geom_jitter}
+\hlcomment{### ** Examples}
+p <- \hlfunctioncall{ggplot}(mpg, \hlfunctioncall{aes}(displ, hwy))
+p + \hlfunctioncall{geom_point}()
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_jitter1} \begin{kframe}\begin{alltt}
+p + \hlfunctioncall{geom_point}(position = \hlstring{"jitter"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_jitter2} \begin{kframe}\begin{alltt}
+\hlcomment{# Add aesthetic mappings}
+p + \hlfunctioncall{geom_jitter}(\hlfunctioncall{aes}(colour = cyl))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_jitter3} \begin{kframe}\begin{alltt}
+\hlcomment{# Vary parameters}
+p + \hlfunctioncall{geom_jitter}(position = \hlfunctioncall{position_jitter}(width = .5))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_jitter4} \begin{kframe}\begin{alltt}
+p + \hlfunctioncall{geom_jitter}(position = \hlfunctioncall{position_jitter}(height = .5))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_jitter5} \begin{kframe}\begin{alltt}
+\hlcomment{# Use qplot instead}
+\hlfunctioncall{qplot}(displ, hwy, data = mpg, geom = \hlstring{"jitter"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_jitter6} \begin{kframe}\begin{alltt}
+\hlfunctioncall{qplot}(class, hwy, data = mpg, geom = \hlstring{"jitter"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_jitter7} \begin{kframe}\begin{alltt}
+\hlfunctioncall{qplot}(class, hwy, data = mpg, geom = \hlfunctioncall{c}(\hlstring{"boxplot"}, \hlstring{"jitter"}))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_jitter8} \begin{kframe}\begin{alltt}
+\hlfunctioncall{qplot}(class, hwy, data = mpg, geom = \hlfunctioncall{c}(\hlstring{"jitter"}, \hlstring{"boxplot"}))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_jitter9} 
+\end{knitrout}
+
+
+\section{geom\_line}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcomment{### Name: geom_line}
+\hlcomment{### Title: Connect observations, ordered by x value.}
+\hlcomment{### Aliases: geom_line}
+\hlcomment{### ** Examples}
+\hlcomment{# Summarise number of movie ratings by year of movie}
+mry <- \hlfunctioncall{do.call}(rbind, \hlfunctioncall{by}(movies, \hlfunctioncall{round}(movies$rating), \hlfunctioncall{function}(df) \{
+  nums <- \hlfunctioncall{tapply}(df$length, df$year, length)
+  \hlfunctioncall{data.frame}(rating=\hlfunctioncall{round}(df$rating[1]), year = \hlfunctioncall{as.numeric}(\hlfunctioncall{names}(nums)), number=\hlfunctioncall{as.vector}(nums))
+\}))
+p <- \hlfunctioncall{ggplot}(mry, \hlfunctioncall{aes}(x=year, y=number, group=rating))
+p + \hlfunctioncall{geom_line}()
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_line1} \begin{kframe}\begin{alltt}
+\hlcomment{# Add aesthetic mappings}
+p + \hlfunctioncall{geom_line}(\hlfunctioncall{aes}(size = rating))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_line2} \begin{kframe}\begin{alltt}
+p + \hlfunctioncall{geom_line}(\hlfunctioncall{aes}(colour = rating))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_line3} \begin{kframe}\begin{alltt}
+\hlcomment{# Change scale}
+p + \hlfunctioncall{geom_line}(\hlfunctioncall{aes}(colour = rating)) + \hlfunctioncall{scale_colour_gradient}(low=\hlstring{"red"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_line4} \begin{kframe}\begin{alltt}
+p + \hlfunctioncall{geom_line}(\hlfunctioncall{aes}(size = rating)) + \hlfunctioncall{scale_size}(range = \hlfunctioncall{c}(0.1, 3))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_line5} \begin{kframe}\begin{alltt}
+\hlcomment{# Set aesthetics to fixed value}
+p + \hlfunctioncall{geom_line}(colour = \hlstring{"red"}, size = 1)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_line6} \begin{kframe}\begin{alltt}
+\hlcomment{# Use qplot instead}
+\hlfunctioncall{qplot}(year, number, data=mry, group=rating, geom=\hlstring{"line"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_line7} \begin{kframe}\begin{alltt}
+\hlcomment{# Using a time series}
+\hlfunctioncall{qplot}(date, pop, data=economics, geom=\hlstring{"line"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_line8} \begin{kframe}\begin{alltt}
+\hlfunctioncall{qplot}(date, pop, data=economics, geom=\hlstring{"line"}, log=\hlstring{"y"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_line9} \begin{kframe}\begin{alltt}
+\hlfunctioncall{qplot}(date, pop, data=\hlfunctioncall{subset}(economics, date > \hlfunctioncall{as.Date}(\hlstring{"2006-1-1"})), geom=\hlstring{"line"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_line10} \begin{kframe}\begin{alltt}
+\hlfunctioncall{qplot}(date, pop, data=economics, size=unemploy/pop, geom=\hlstring{"line"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_line11} \begin{kframe}\begin{alltt}
+\hlcomment{# Use the arrow parameter to add an arrow to the line}
+\hlcomment{# See ?grid::arrow for more details}
+c <- \hlfunctioncall{ggplot}(economics, \hlfunctioncall{aes}(x = date, y = pop))
+# Arrow defaults to \hlstring{"last"}
+\hlfunctioncall{library}(grid)
+c + \hlfunctioncall{geom_line}(arrow = \hlfunctioncall{arrow}())
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_line12} \begin{kframe}\begin{alltt}
+c + \hlfunctioncall{geom_line}(arrow = \hlfunctioncall{arrow}(angle = 15, ends = \hlstring{"both"}, type = \hlstring{"closed"}))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_line13} \begin{kframe}\begin{alltt}
+\hlcomment{# See scale_date for examples of plotting multiple times series on}
+\hlcomment{# a single graph}
+\hlcomment{# A simple pcp example}
+y2005 <- \hlfunctioncall{runif}(300, 20, 120)
+y2010 <- y2005 * \hlfunctioncall{runif}(300, -1.05, 1.5)
+group <- \hlfunctioncall{rep}(LETTERS[1:3], each = 100)
+df <- \hlfunctioncall{data.frame}(id = \hlfunctioncall{seq_along}(group), group, y2005, y2010)
+\hlfunctioncall{library}(reshape2) \hlcomment{# for melt}
+dfm <- \hlfunctioncall{melt}(df, id.var = \hlfunctioncall{c}(\hlstring{"id"}, \hlstring{"group"}))
+\hlfunctioncall{ggplot}(dfm, \hlfunctioncall{aes}(variable, value, group = id, colour = group)) +
+  \hlfunctioncall{geom_path}(alpha = 0.5)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_line14} 
+\end{knitrout}
+
+
+\section{geom\_linerange}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcomment{### Name: geom_linerange}
+\hlcomment{### Title: An interval represented by a vertical line.}
+\hlcomment{### Aliases: geom_linerange}
+\hlcomment{### ** Examples}
+\hlcomment{# Generate data: means and standard errors of means for prices}
+\hlcomment{# for each type of cut}
+dmod <- \hlfunctioncall{lm}(price ~ cut, data=diamonds)
+cuts <- \hlfunctioncall{data.frame}(cut=\hlfunctioncall{unique}(diamonds$cut), \hlfunctioncall{predict}(dmod, \hlfunctioncall{data.frame}(cut = \hlfunctioncall{unique}(diamonds$cut)), se=TRUE)[\hlfunctioncall{c}(\hlstring{"fit"},\hlstring{"se.fit"})])
+\hlfunctioncall{qplot}(cut, fit, data=cuts)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_linerange1} \begin{kframe}\begin{alltt}
+\hlcomment{# With a bar chart, we are comparing lengths, so the y-axis is}
+\hlcomment{# automatically extended to include 0}
+\hlfunctioncall{qplot}(cut, fit, data=cuts, geom=\hlstring{"bar"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_linerange2} \begin{kframe}\begin{alltt}
+\hlcomment{# Display estimates and standard errors in various ways}
+se <- \hlfunctioncall{ggplot}(cuts, \hlfunctioncall{aes}(cut, fit,
+  ymin = fit - se.fit, ymax=fit + se.fit, colour = cut))
+se + \hlfunctioncall{geom_linerange}()
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_linerange3} \begin{kframe}\begin{alltt}
+se + \hlfunctioncall{geom_pointrange}()
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_linerange4} \begin{kframe}\begin{alltt}
+se + \hlfunctioncall{geom_errorbar}(width = 0.5)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_linerange5} \begin{kframe}\begin{alltt}
+se + \hlfunctioncall{geom_crossbar}(width = 0.5)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_linerange6} \begin{kframe}\begin{alltt}
+\hlcomment{# Use coord_flip to flip the x and y axes}
+se + \hlfunctioncall{geom_linerange}() + \hlfunctioncall{coord_flip}()
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_linerange7} 
+\end{knitrout}
+
+
+\section{geom\_map}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcomment{### Name: geom_map}
+\hlcomment{### Title: Polygons from a reference map.}
+\hlcomment{### Aliases: geom_map}
+\hlcomment{### ** Examples}
+\hlcomment{# When using geom_polygon, you will typically need two data frames:}
+\hlcomment{# one contains the coordinates of each \hlfunctioncall{polygon} (positions),  and the}
+\hlcomment{# other the values associated with each \hlfunctioncall{polygon} (values).  An id}
+\hlcomment{# variable links the two together}
+ids <- \hlfunctioncall{factor}(\hlfunctioncall{c}(\hlstring{"1.1"}, \hlstring{"2.1"}, \hlstring{"1.2"}, \hlstring{"2.2"}, \hlstring{"1.3"}, \hlstring{"2.3"}))
+values <- \hlfunctioncall{data.frame}(
+  id = ids,
+  value = \hlfunctioncall{c}(3, 3.1, 3.1, 3.2, 3.15, 3.5)
+)
+positions <- \hlfunctioncall{data.frame}(
+  id = \hlfunctioncall{rep}(ids, each = 4),
+  x = \hlfunctioncall{c}(2, 1, 1.1, 2.2, 1, 0, 0.3, 1.1, 2.2, 1.1, 1.2, 2.5, 1.1, 0.3,
+  0.5, 1.2, 2.5, 1.2, 1.3, 2.7, 1.2, 0.5, 0.6, 1.3),
+  y = \hlfunctioncall{c}(-0.5, 0, 1, 0.5, 0, 0.5, 1.5, 1, 0.5, 1, 2.1, 1.7, 1, 1.5,
+  2.2, 2.1, 1.7, 2.1, 3.2, 2.8, 2.1, 2.2, 3.3, 3.2)
+)
+\hlfunctioncall{ggplot}(values) + \hlfunctioncall{geom_map}(\hlfunctioncall{aes}(map_id = id), map = positions) +
+  \hlfunctioncall{expand_limits}(positions)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_map1} \begin{kframe}\begin{alltt}
+\hlfunctioncall{ggplot}(values, \hlfunctioncall{aes}(fill = value)) +
+  \hlfunctioncall{geom_map}(\hlfunctioncall{aes}(map_id = id), map = positions) +
+  \hlfunctioncall{expand_limits}(positions)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_map2} \begin{kframe}\begin{alltt}
+\hlfunctioncall{ggplot}(values, \hlfunctioncall{aes}(fill = value)) +
+  \hlfunctioncall{geom_map}(\hlfunctioncall{aes}(map_id = id), map = positions) +
+  \hlfunctioncall{expand_limits}(positions) + \hlfunctioncall{ylim}(0, 3)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_map3} \begin{kframe}\begin{alltt}
+\hlcomment{# Better example}
+crimes <- \hlfunctioncall{data.frame}(state = \hlfunctioncall{tolower}(\hlfunctioncall{rownames}(USArrests)), USArrests)
+\hlfunctioncall{library}(reshape2) \hlcomment{# for melt}
+crimesm <- \hlfunctioncall{melt}(crimes, id = 1)
+\hlfunctioncall{if} (\hlfunctioncall{require}(maps)) \{
+  states_map <- \hlfunctioncall{map_data}(\hlstring{"state"})
+  \hlfunctioncall{ggplot}(crimes, \hlfunctioncall{aes}(map_id = state)) + \hlfunctioncall{geom_map}(\hlfunctioncall{aes}(fill = Murder), map = states_map) + \hlfunctioncall{expand_limits}(x = states_map$long, y = states_map$lat)
+  \hlfunctioncall{last_plot}() + \hlfunctioncall{coord_map}()
+  \hlfunctioncall{ggplot}(crimesm, \hlfunctioncall{aes}(map_id = state)) + \hlfunctioncall{geom_map}(\hlfunctioncall{aes}(fill = value), map = states_map) + \hlfunctioncall{expand_limits}(x = states_map$long, y = states_map$lat) + \hlfunctioncall{facet_wrap}( ~ variable)
+\}
+\end{alltt}
+\begin{flushleft}\ttfamily\noindent\itshape\textcolor{messagecolor}{\#\# Loading required package: maps}\end{flushleft}\begin{flushleft}\ttfamily\noindent\bfseries\textcolor{errorcolor}{\#\# Error: mapproj package required for this functionality.  Please install \\ 
+\#\# and try again.}\end{flushleft}\end{kframe}
+\end{knitrout}
+
+
+\section{geom\_path}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcomment{### Name: geom_path}
+\hlcomment{### Title: Connect observations in original order}
+\hlcomment{### Aliases: geom_path}
+\hlcomment{### ** Examples}
+\hlcomment{## No test: }
+\hlcomment{# Generate data}
+\hlfunctioncall{library}(plyr)
+myear <- \hlfunctioncall{ddply}(movies, \hlfunctioncall{.}(year), \hlfunctioncall{colwise}(mean, \hlfunctioncall{.}(length, rating)))
+p <- \hlfunctioncall{ggplot}(myear, \hlfunctioncall{aes}(length, rating))
+p + \hlfunctioncall{geom_path}()
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_path1} \begin{kframe}\begin{alltt}
+\hlcomment{# Add aesthetic mappings}
+p + \hlfunctioncall{geom_path}(\hlfunctioncall{aes}(size = year))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_path2} \begin{kframe}\begin{alltt}
+p + \hlfunctioncall{geom_path}(\hlfunctioncall{aes}(colour = year))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_path3} \begin{kframe}\begin{alltt}
+\hlcomment{# Change scale}
+p + \hlfunctioncall{geom_path}(\hlfunctioncall{aes}(size = year)) + \hlfunctioncall{scale_size}(range = \hlfunctioncall{c}(1, 3))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_path4} \begin{kframe}\begin{alltt}
+\hlcomment{# Set aesthetics to fixed value}
+p + \hlfunctioncall{geom_path}(colour = \hlstring{"green"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_path5} \begin{kframe}\begin{alltt}
+\hlcomment{# Control line join parameters}
+df <- \hlfunctioncall{data.frame}(x = 1:3, y = \hlfunctioncall{c}(4, 1, 9))
+base <- \hlfunctioncall{ggplot}(df, \hlfunctioncall{aes}(x, y))
+base + \hlfunctioncall{geom_path}(size = 10)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_path6} \begin{kframe}\begin{alltt}
+base + \hlfunctioncall{geom_path}(size = 10, lineend = \hlstring{"round"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_path7} \begin{kframe}\begin{alltt}
+base + \hlfunctioncall{geom_path}(size = 10, linejoin = \hlstring{"mitre"}, lineend = \hlstring{"butt"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_path8} \begin{kframe}\begin{alltt}
+\hlcomment{# Use qplot instead}
+\hlfunctioncall{qplot}(length, rating, data=myear, geom=\hlstring{"path"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_path9} \begin{kframe}\begin{alltt}
+\hlcomment{# Using economic data:}
+\hlcomment{# How is unemployment and personal savings rate related?}
+\hlfunctioncall{qplot}(unemploy/pop, psavert, data=economics)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_path10} \begin{kframe}\begin{alltt}
+\hlfunctioncall{qplot}(unemploy/pop, psavert, data=economics, geom=\hlstring{"path"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_path11} \begin{kframe}\begin{alltt}
+\hlfunctioncall{qplot}(unemploy/pop, psavert, data=economics, geom=\hlstring{"path"}, size=\hlfunctioncall{as.numeric}(date))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_path12} \begin{kframe}\begin{alltt}
+\hlcomment{# How is rate of unemployment and length of unemployment?}
+\hlfunctioncall{qplot}(unemploy/pop, uempmed, data=economics)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_path13} \begin{kframe}\begin{alltt}
+\hlfunctioncall{qplot}(unemploy/pop, uempmed, data=economics, geom=\hlstring{"path"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_path14} \begin{kframe}\begin{alltt}
+\hlfunctioncall{qplot}(unemploy/pop, uempmed, data=economics, geom=\hlstring{"path"}) +
+  \hlfunctioncall{geom_point}(data=\hlfunctioncall{head}(economics, 1), colour=\hlstring{"red"}) +
+  \hlfunctioncall{geom_point}(data=\hlfunctioncall{tail}(economics, 1), colour=\hlstring{"blue"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_path15} \begin{kframe}\begin{alltt}
+\hlfunctioncall{qplot}(unemploy/pop, uempmed, data=economics, geom=\hlstring{"path"}) +
+  \hlfunctioncall{geom_text}(data=\hlfunctioncall{head}(economics, 1), label=\hlstring{"1967"}, colour=\hlstring{"blue"}) +
+  \hlfunctioncall{geom_text}(data=\hlfunctioncall{tail}(economics, 1), label=\hlstring{"2007"}, colour=\hlstring{"blue"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_path16} \begin{kframe}\begin{alltt}
+\hlcomment{# geom_path removes missing values on the ends of a line.}
+\hlcomment{# use na.rm = T to suppress the warning message}
+df <- \hlfunctioncall{data.frame}(
+  x = 1:5,
+  y1 = \hlfunctioncall{c}(1, 2, 3, 4, NA),
+  y2 = \hlfunctioncall{c}(NA, 2, 3, 4, 5),
+  y3 = \hlfunctioncall{c}(1, 2, NA, 4, 5),
+  y4 = \hlfunctioncall{c}(1, 2, 3, 4, 5))
+\hlfunctioncall{qplot}(x, y1, data = df, geom = \hlfunctioncall{c}(\hlstring{"point"},\hlstring{"line"}))
+\end{alltt}
+\begin{flushleft}\ttfamily\noindent\textcolor{warningcolor}{\#\# Warning: Removed 1 rows containing missing values (geom\_point).}\end{flushleft}\begin{flushleft}\ttfamily\noindent\textcolor{warningcolor}{\#\# Warning: Removed 1 rows containing missing values (geom\_path).}\end{flushleft}\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_path17} \begin{kframe}\begin{alltt}
+\hlfunctioncall{qplot}(x, y2, data = df, geom = \hlfunctioncall{c}(\hlstring{"point"},\hlstring{"line"}))
+\end{alltt}
+\begin{flushleft}\ttfamily\noindent\textcolor{warningcolor}{\#\# Warning: Removed 1 rows containing missing values (geom\_point).}\end{flushleft}\begin{flushleft}\ttfamily\noindent\textcolor{warningcolor}{\#\# Warning: Removed 1 rows containing missing values (geom\_path).}\end{flushleft}\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_path18} \begin{kframe}\begin{alltt}
+\hlfunctioncall{qplot}(x, y3, data = df, geom = \hlfunctioncall{c}(\hlstring{"point"},\hlstring{"line"}))
+\end{alltt}
+\begin{flushleft}\ttfamily\noindent\textcolor{warningcolor}{\#\# Warning: Removed 1 rows containing missing values (geom\_point).}\end{flushleft}\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_path19} \begin{kframe}\begin{alltt}
+\hlfunctioncall{qplot}(x, y4, data = df, geom = \hlfunctioncall{c}(\hlstring{"point"},\hlstring{"line"}))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_path20} \begin{kframe}\begin{alltt}
+\hlcomment{# Setting line type vs colour/size}
+\hlcomment{# Line type needs to be applied to a line as a whole, so it can}
+\hlcomment{# not be used with colour or size that vary across a line}
+x <- \hlfunctioncall{seq}(0.01, .99, length=100)
+df <- \hlfunctioncall{data.frame}(x = \hlfunctioncall{rep}(x, 2), y = \hlfunctioncall{c}(\hlfunctioncall{qlogis}(x), 2 * \hlfunctioncall{qlogis}(x)), group = \hlfunctioncall{rep}(\hlfunctioncall{c}(\hlstring{"a"},\hlstring{"b"}), each=100))
+p <- \hlfunctioncall{ggplot}(df, \hlfunctioncall{aes}(x=x, y=y, group=group))
+\hlcomment{# Should work}
+p + \hlfunctioncall{geom_line}(linetype = 2)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_path21} \begin{kframe}\begin{alltt}
+p + \hlfunctioncall{geom_line}(\hlfunctioncall{aes}(colour = group), linetype = 2)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_path22} \begin{kframe}\begin{alltt}
+p + \hlfunctioncall{geom_line}(\hlfunctioncall{aes}(colour = x))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_path23} \begin{kframe}\begin{alltt}
+\hlcomment{# Should fail}
+\hlfunctioncall{should_stop}(p + \hlfunctioncall{geom_line}(\hlfunctioncall{aes}(colour = x), linetype=2))
+\hlcomment{# Use the arrow parameter to add an arrow to the line}
+\hlcomment{# See ?grid::arrow for more details}
+\hlfunctioncall{library}(grid)
+c <- \hlfunctioncall{ggplot}(economics, \hlfunctioncall{aes}(x = date, y = pop))
+# Arrow defaults to \hlstring{"last"}
+c + \hlfunctioncall{geom_path}(arrow = \hlfunctioncall{arrow}())
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_path24} \begin{kframe}\begin{alltt}
+c + \hlfunctioncall{geom_path}(arrow = \hlfunctioncall{arrow}(angle = 15, ends = \hlstring{"both"}, length = \hlfunctioncall{unit}(0.6, \hlstring{"inches"})))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_path25} \begin{kframe}\begin{alltt}
+\hlcomment{## \hlfunctioncall{End}(No test)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+
+\section{geom\_point}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcomment{### Name: geom_point}
+\hlcomment{### Title: Points, as for a scatterplot}
+\hlcomment{### Aliases: geom_point}
+\hlcomment{### ** Examples}
+\hlcomment{## No test: }
+p <- \hlfunctioncall{ggplot}(mtcars, \hlfunctioncall{aes}(wt, mpg))
+p + \hlfunctioncall{geom_point}()
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_point1} \begin{kframe}\begin{alltt}
+\hlcomment{# Add aesthetic mappings}
+p + \hlfunctioncall{geom_point}(\hlfunctioncall{aes}(colour = qsec))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_point2} \begin{kframe}\begin{alltt}
+p + \hlfunctioncall{geom_point}(\hlfunctioncall{aes}(alpha = qsec))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_point3} \begin{kframe}\begin{alltt}
+p + \hlfunctioncall{geom_point}(\hlfunctioncall{aes}(colour = \hlfunctioncall{factor}(cyl)))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_point4} \begin{kframe}\begin{alltt}
+p + \hlfunctioncall{geom_point}(\hlfunctioncall{aes}(shape = \hlfunctioncall{factor}(cyl)))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_point5} \begin{kframe}\begin{alltt}
+p + \hlfunctioncall{geom_point}(\hlfunctioncall{aes}(size = qsec))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_point6} \begin{kframe}\begin{alltt}
+\hlcomment{# Change scales}
+p + \hlfunctioncall{geom_point}(\hlfunctioncall{aes}(colour = cyl)) + \hlfunctioncall{scale_colour_gradient}(low = \hlstring{"blue"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_point7} \begin{kframe}\begin{alltt}
+p + \hlfunctioncall{geom_point}(\hlfunctioncall{aes}(size = qsec)) + \hlfunctioncall{scale_area}()
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_point8} \begin{kframe}\begin{alltt}
+p + \hlfunctioncall{geom_point}(\hlfunctioncall{aes}(shape = \hlfunctioncall{factor}(cyl))) + \hlfunctioncall{scale_shape}(solid = FALSE)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_point9} \begin{kframe}\begin{alltt}
+\hlcomment{# Set aesthetics to fixed value}
+p + \hlfunctioncall{geom_point}(colour = \hlstring{"red"}, size = 3)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_point10} \begin{kframe}\begin{alltt}
+\hlfunctioncall{qplot}(wt, mpg, data = mtcars, colour = \hlfunctioncall{I}(\hlstring{"red"}), size = \hlfunctioncall{I}(3))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_point11} \begin{kframe}\begin{alltt}
+\hlcomment{# Varying alpha is useful for large datasets}
+d <- \hlfunctioncall{ggplot}(diamonds, \hlfunctioncall{aes}(carat, price))
+d + \hlfunctioncall{geom_point}(alpha = 1/10)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_point12} \begin{kframe}\begin{alltt}
+d + \hlfunctioncall{geom_point}(alpha = 1/20)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_point13} \begin{kframe}\begin{alltt}
+d + \hlfunctioncall{geom_point}(alpha = 1/100)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_point14} \begin{kframe}\begin{alltt}
+\hlcomment{# You can create interesting shapes by layering multiple points of}
+\hlcomment{# different sizes}
+p <- \hlfunctioncall{ggplot}(mtcars, \hlfunctioncall{aes}(mpg, wt))
+p + \hlfunctioncall{geom_point}(colour=\hlstring{"grey50"}, size = 4) + \hlfunctioncall{geom_point}(\hlfunctioncall{aes}(colour = cyl))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_point15} \begin{kframe}\begin{alltt}
+p + \hlfunctioncall{aes}(shape = \hlfunctioncall{factor}(cyl)) +
+  \hlfunctioncall{geom_point}(\hlfunctioncall{aes}(colour = \hlfunctioncall{factor}(cyl)), size = 4) +
+  \hlfunctioncall{geom_point}(colour=\hlstring{"grey90"}, size = 1.5)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_point16} \begin{kframe}\begin{alltt}
+p + \hlfunctioncall{geom_point}(colour=\hlstring{"black"}, size = 4.5) +
+  \hlfunctioncall{geom_point}(colour=\hlstring{"pink"}, size = 4) +
+  \hlfunctioncall{geom_point}(\hlfunctioncall{aes}(shape = \hlfunctioncall{factor}(cyl)))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_point17} \begin{kframe}\begin{alltt}
+\hlcomment{# These extra layers don't usually appear in the legend, but we can}
+\hlcomment{# force their inclusion}
+p + \hlfunctioncall{geom_point}(colour=\hlstring{"black"}, size = 4.5, show_guide = TRUE) +
+  \hlfunctioncall{geom_point}(colour=\hlstring{"pink"}, size = 4, show_guide = TRUE) +
+  \hlfunctioncall{geom_point}(\hlfunctioncall{aes}(shape = \hlfunctioncall{factor}(cyl)))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_point18} \begin{kframe}\begin{alltt}
+\hlcomment{# Transparent points:}
+\hlfunctioncall{qplot}(mpg, wt, data = mtcars, size = \hlfunctioncall{I}(5), alpha = \hlfunctioncall{I}(0.2))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_point19} \begin{kframe}\begin{alltt}
+\hlcomment{# geom_point warns when missing values have been dropped from the data set}
+\hlcomment{# and not plotted, you can turn this off by setting na.rm = TRUE}
+mtcars2 <- \hlfunctioncall{transform}(mtcars, mpg = \hlfunctioncall{ifelse}(\hlfunctioncall{runif}(32) < 0.2, NA, mpg))
+\hlfunctioncall{qplot}(wt, mpg, data = mtcars2)
+\end{alltt}
+\begin{flushleft}\ttfamily\noindent\textcolor{warningcolor}{\#\# Warning: Removed 11 rows containing missing values (geom\_point).}\end{flushleft}\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_point20} \begin{kframe}\begin{alltt}
+\hlfunctioncall{qplot}(wt, mpg, data = mtcars2, na.rm = TRUE)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_point21} \begin{kframe}\begin{alltt}
+\hlcomment{# Use qplot instead}
+\hlfunctioncall{qplot}(wt, mpg, data = mtcars)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_point22} \begin{kframe}\begin{alltt}
+\hlfunctioncall{qplot}(wt, mpg, data = mtcars, colour = \hlfunctioncall{factor}(cyl))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_point23} \begin{kframe}\begin{alltt}
+\hlfunctioncall{qplot}(wt, mpg, data = mtcars, colour = \hlfunctioncall{I}(\hlstring{"red"}))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_point24} \begin{kframe}\begin{alltt}
+\hlcomment{## \hlfunctioncall{End}(No test)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+
+\section{geom\_pointrange}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcomment{### Name: geom_pointrange}
+\hlcomment{### Title: An interval represented by a vertical line, with a point in the}
+\hlcomment{###   middle.}
+\hlcomment{### Aliases: geom_pointrange}
+\hlcomment{### ** Examples}
+\hlcomment{# See geom_linerange for examples}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+
+\section{geom\_polygon}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcomment{### Name: geom_polygon}
+\hlcomment{### Title: Polygon, a filled path.}
+\hlcomment{### Aliases: geom_polygon}
+\hlcomment{### ** Examples}
+\hlcomment{# When using geom_polygon, you will typically need two data frames:}
+\hlcomment{# one contains the coordinates of each \hlfunctioncall{polygon} (positions),  and the}
+\hlcomment{# other the values associated with each \hlfunctioncall{polygon} (values).  An id}
+\hlcomment{# variable links the two together}
+ids <- \hlfunctioncall{factor}(\hlfunctioncall{c}(\hlstring{"1.1"}, \hlstring{"2.1"}, \hlstring{"1.2"}, \hlstring{"2.2"}, \hlstring{"1.3"}, \hlstring{"2.3"}))
+values <- \hlfunctioncall{data.frame}(
+  id = ids,
+  value = \hlfunctioncall{c}(3, 3.1, 3.1, 3.2, 3.15, 3.5)
+)
+positions <- \hlfunctioncall{data.frame}(
+  id = \hlfunctioncall{rep}(ids, each = 4),
+  x = \hlfunctioncall{c}(2, 1, 1.1, 2.2, 1, 0, 0.3, 1.1, 2.2, 1.1, 1.2, 2.5, 1.1, 0.3,
+  0.5, 1.2, 2.5, 1.2, 1.3, 2.7, 1.2, 0.5, 0.6, 1.3),
+  y = \hlfunctioncall{c}(-0.5, 0, 1, 0.5, 0, 0.5, 1.5, 1, 0.5, 1, 2.1, 1.7, 1, 1.5,
+  2.2, 2.1, 1.7, 2.1, 3.2, 2.8, 2.1, 2.2, 3.3, 3.2)
+)
+\hlcomment{# Currently we need to manually merge the two together}
+datapoly <- \hlfunctioncall{merge}(values, positions, by=\hlfunctioncall{c}(\hlstring{"id"}))
+(p <- \hlfunctioncall{ggplot}(datapoly, \hlfunctioncall{aes}(x=x, y=y)) + \hlfunctioncall{geom_polygon}(\hlfunctioncall{aes}(fill=value, group=id)))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_polygon1} \begin{kframe}\begin{alltt}
+\hlcomment{# Which seems like a lot of work, but then it's easy to add on}
+\hlcomment{# other features in this coordinate system, e.g.:}
+stream <- \hlfunctioncall{data.frame}(
+  x = \hlfunctioncall{cumsum}(\hlfunctioncall{runif}(50, max = 0.1)),
+  y = \hlfunctioncall{cumsum}(\hlfunctioncall{runif}(50,max = 0.1))
+)
+p + \hlfunctioncall{geom_line}(data = stream, colour=\hlstring{"grey30"}, size = 5)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_polygon2} \begin{kframe}\begin{alltt}
+\hlcomment{# And if the positions are in longitude and latitude, you can use}
+\hlcomment{# coord_map to produce different map projections.}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+
+\section{geom\_quantile}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcomment{### Name: geom_quantile}
+\hlcomment{### Title: Add quantile lines from a quantile regression.}
+\hlcomment{### Aliases: geom_quantile}
+\hlcomment{### ** Examples}
+\hlcomment{# See stat_quantile for examples}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+
+\section{geom\_raster}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcomment{### Name: geom_raster}
+\hlcomment{### Title: High-performance rectangular tiling.}
+\hlcomment{### Aliases: geom_raster}
+\hlcomment{### ** Examples}
+\hlcomment{## No test: }
+\hlcomment{# Generate data}
+pp <- \hlfunctioncall{function} (n,r=4) \{
+ x <- \hlfunctioncall{seq}(-r*pi, r*pi, len=n)
+ df <- \hlfunctioncall{expand.grid}(x=x, y=x)
+ df$r <- \hlfunctioncall{sqrt}(df$x^2 + df$y^2)
+ df$z <- \hlfunctioncall{cos}(df$r^2)*\hlfunctioncall{exp}(-df$r/6)
+ df
+\}
+\hlfunctioncall{qplot}(x, y, data = \hlfunctioncall{pp}(20), fill = z, geom = \hlstring{"raster"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_raster1} \begin{kframe}\begin{alltt}
+\hlcomment{# Interpolation worsens the apperance of this plot, but can help when}
+\hlcomment{# rendering images.}
+\hlfunctioncall{qplot}(x, y, data = \hlfunctioncall{pp}(20), fill = z, geom = \hlstring{"raster"}, interpolate = TRUE)
+\hlcomment{# For the special cases where it is applicable, geom_raster is much}
+\hlcomment{# faster than geom_tile:}
+pp200 <- \hlfunctioncall{pp}(200)
+base <- \hlfunctioncall{ggplot}(pp200, \hlfunctioncall{aes}(x, y, fill = z))
+\hlfunctioncall{benchplot}(base + \hlfunctioncall{geom_raster}())
+\end{alltt}
+\begin{verbatim}
+##        step user.self sys.self elapsed
+## 1 construct     0.004        0   0.004
+## 2     build     0.436        0   0.437
+## 3    render     0.184        0   0.185
+## 4      draw     0.060        0   0.061
+## 5     TOTAL     0.684        0   0.687
+\end{verbatim}
+\begin{alltt}
+\hlfunctioncall{benchplot}(base + \hlfunctioncall{geom_tile}())
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_raster2} \begin{kframe}\begin{verbatim}
+##        step user.self sys.self elapsed
+## 1 construct     0.004        0   0.004
+## 2     build     0.440        0   0.438
+## 3    render     0.284        0   0.283
+## 4      draw     0.124        0   0.123
+## 5     TOTAL     0.852        0   0.848
+\end{verbatim}
+\begin{alltt}
+\hlcomment{# justification}
+df <- \hlfunctioncall{expand.grid}(x = 0:5, y = 0:5)
+df$z <- \hlfunctioncall{runif}(\hlfunctioncall{nrow}(df))
+\hlcomment{# default is compatible with \hlfunctioncall{geom_tile}()}
+\hlfunctioncall{ggplot}(df, \hlfunctioncall{aes}(x, y, fill = z)) + \hlfunctioncall{geom_raster}()
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_raster3} \begin{kframe}\begin{alltt}
+\hlcomment{# zero padding}
+\hlfunctioncall{ggplot}(df, \hlfunctioncall{aes}(x, y, fill = z)) + \hlfunctioncall{geom_raster}(hjust = 0, vjust = 0)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_raster4} \begin{kframe}\begin{alltt}
+\hlcomment{## \hlfunctioncall{End}(No test)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+
+\section{geom\_rect}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcomment{### Name: geom_rect}
+\hlcomment{### Title: 2d rectangles.}
+\hlcomment{### Aliases: geom_rect}
+\hlcomment{### ** Examples}
+df <- \hlfunctioncall{data.frame}(
+  x = \hlfunctioncall{sample}(10, 20, replace = TRUE),
+  y = \hlfunctioncall{sample}(10, 20, replace = TRUE)
+)
+\hlfunctioncall{ggplot}(df, \hlfunctioncall{aes}(xmin = x, xmax = x + 1, ymin = y, ymax = y + 2)) +
+\hlfunctioncall{geom_rect}()
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_rect} 
+\end{knitrout}
+
+
+\section{geom\_ribbon}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcomment{### Name: geom_ribbon}
+\hlcomment{### Title: Ribbons, y range with continuous x values.}
+\hlcomment{### Aliases: geom_ribbon}
+\hlcomment{### ** Examples}
+\hlcomment{## No test: }
+\hlcomment{# Generate data}
+huron <- \hlfunctioncall{data.frame}(year = 1875:1972, level = \hlfunctioncall{as.vector}(LakeHuron))
+\hlfunctioncall{library}(plyr) \hlcomment{# to access round_any}
+huron$decade <- \hlfunctioncall{round_any}(huron$year, 10, floor)
+h <- \hlfunctioncall{ggplot}(huron, \hlfunctioncall{aes}(x=year))
+h + \hlfunctioncall{geom_ribbon}(\hlfunctioncall{aes}(ymin=0, ymax=level))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_ribbon1} \begin{kframe}\begin{alltt}
+h + \hlfunctioncall{geom_area}(\hlfunctioncall{aes}(y = level))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_ribbon2} \begin{kframe}\begin{alltt}
+\hlcomment{# Add aesthetic mappings}
+h + \hlfunctioncall{geom_ribbon}(\hlfunctioncall{aes}(ymin=level-1, ymax=level+1))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_ribbon3} \begin{kframe}\begin{alltt}
+h + \hlfunctioncall{geom_ribbon}(\hlfunctioncall{aes}(ymin=level-1, ymax=level+1)) + \hlfunctioncall{geom_line}(\hlfunctioncall{aes}(y=level))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_ribbon4} \begin{kframe}\begin{alltt}
+\hlcomment{# Take out some values in the middle for an example of NA handling}
+huron[huron$year > 1900 & huron$year < 1910, \hlstring{"level"}] <- NA
+h <- \hlfunctioncall{ggplot}(huron, \hlfunctioncall{aes}(x=year))
+h + \hlfunctioncall{geom_ribbon}(\hlfunctioncall{aes}(ymin=level-1, ymax=level+1)) + \hlfunctioncall{geom_line}(\hlfunctioncall{aes}(y=level))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_ribbon5} \begin{kframe}\begin{alltt}
+\hlcomment{# Another data set, with multiple y's for each x}
+m <- \hlfunctioncall{ggplot}(movies, \hlfunctioncall{aes}(y=votes, x=year))
+(m <- m + \hlfunctioncall{geom_point}())
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_ribbon6} \begin{kframe}\begin{alltt}
+\hlcomment{# The default summary isn't that useful}
+m + \hlfunctioncall{stat_summary}(geom=\hlstring{"ribbon"}, fun.ymin=\hlstring{"min"}, fun.ymax=\hlstring{"max"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_ribbon7} \begin{kframe}\begin{alltt}
+m + \hlfunctioncall{stat_summary}(geom=\hlstring{"ribbon"}, fun.data=\hlstring{"median_hilow"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_ribbon8} \begin{kframe}\begin{alltt}
+\hlcomment{# Use qplot instead}
+\hlfunctioncall{qplot}(year, level, data=huron, geom=\hlfunctioncall{c}(\hlstring{"area"}, \hlstring{"line"}))
+\end{alltt}
+\begin{flushleft}\ttfamily\noindent\textcolor{warningcolor}{\#\# Warning: Removed 9 rows containing missing values (position\_stack).}\end{flushleft}\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_ribbon9} \begin{kframe}\begin{alltt}
+\hlcomment{## \hlfunctioncall{End}(No test)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+
+\section{geom\_rug}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcomment{### Name: geom_rug}
+\hlcomment{### Title: Marginal rug plots.}
+\hlcomment{### Aliases: geom_rug}
+\hlcomment{### ** Examples}
+p <- \hlfunctioncall{ggplot}(mtcars, \hlfunctioncall{aes}(x=wt, y=mpg))
+p + \hlfunctioncall{geom_point}()
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_rug1} \begin{kframe}\begin{alltt}
+p + \hlfunctioncall{geom_point}() + \hlfunctioncall{geom_rug}()
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_rug2} \begin{kframe}\begin{alltt}
+p + \hlfunctioncall{geom_point}() + \hlfunctioncall{geom_rug}(sides=\hlstring{"b"})    # Rug on bottom only
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_rug3} \begin{kframe}\begin{alltt}
+p + \hlfunctioncall{geom_point}() + \hlfunctioncall{geom_rug}(sides=\hlstring{"trbl"}) # All four sides
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_rug4} \begin{kframe}\begin{alltt}
+p + \hlfunctioncall{geom_point}() + \hlfunctioncall{geom_rug}(position=\hlstring{'jitter'})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_rug5} 
+\end{knitrout}
+
+
+\section{geom\_segment}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcomment{### Name: geom_segment}
+\hlcomment{### Title: Single line segments.}
+\hlcomment{### Aliases: geom_segment}
+\hlcomment{### ** Examples}
+\hlfunctioncall{library}(grid) \hlcomment{# needed for arrow function}
+p <- \hlfunctioncall{ggplot}(seals, \hlfunctioncall{aes}(x = long, y = lat))
+(p <- p + \hlfunctioncall{geom_segment}(\hlfunctioncall{aes}(xend = long + delta_long, yend = lat + delta_lat), arrow = \hlfunctioncall{arrow}(length = \hlfunctioncall{unit}(0.1,\hlstring{"cm"}))))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_segment1} \begin{kframe}\begin{alltt}
+\hlfunctioncall{if} (\hlfunctioncall{require}(\hlstring{"maps"})) \{
+xlim <- \hlfunctioncall{range}(seals$long)
+ylim <- \hlfunctioncall{range}(seals$lat)
+usamap <- \hlfunctioncall{data.frame}(\hlfunctioncall{map}(\hlstring{"world"}, xlim = xlim, ylim = ylim, plot =
+FALSE)[\hlfunctioncall{c}(\hlstring{"x"},\hlstring{"y"})])
+usamap <- \hlfunctioncall{rbind}(usamap, NA, \hlfunctioncall{data.frame}(\hlfunctioncall{map}(\hlstring{'state'}, xlim = xlim, ylim
+= ylim, plot = FALSE)[\hlfunctioncall{c}(\hlstring{"x"},\hlstring{"y"})]))
+\hlfunctioncall{names}(usamap) <- \hlfunctioncall{c}(\hlstring{"long"}, \hlstring{"lat"})
+p + \hlfunctioncall{geom_path}(data = usamap) + \hlfunctioncall{scale_x_continuous}(limits = xlim)
+\}
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_segment2} \begin{kframe}\begin{alltt}
+# You can also use geom_segment to recreate \hlfunctioncall{plot}(type = \hlstring{"h"}) :
+counts <- \hlfunctioncall{as.data.frame}(\hlfunctioncall{table}(x = \hlfunctioncall{rpois}(100,5)))
+counts$x <- \hlfunctioncall{as.numeric}(\hlfunctioncall{as.character}(counts$x))
+\hlfunctioncall{with}(counts, \hlfunctioncall{plot}(x, Freq, type = \hlstring{"h"}, lwd = 10))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_segment3} \begin{kframe}\begin{alltt}
+\hlfunctioncall{qplot}(x, Freq, data = counts, geom = \hlstring{"segment"},
+  yend = 0, xend = x, size = \hlfunctioncall{I}(10))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_segment4} \begin{kframe}\begin{alltt}
+\hlcomment{# Adding line segments}
+\hlfunctioncall{library}(grid) \hlcomment{# needed for arrow function}
+b <- \hlfunctioncall{ggplot}(mtcars, \hlfunctioncall{aes}(wt, mpg)) + \hlfunctioncall{geom_point}()
+b + \hlfunctioncall{geom_segment}(\hlfunctioncall{aes}(x = 2, y = 15, xend = 2, yend = 25))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_segment5} \begin{kframe}\begin{alltt}
+b + \hlfunctioncall{geom_segment}(\hlfunctioncall{aes}(x = 2, y = 15, xend = 3, yend = 15))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_segment6} \begin{kframe}\begin{alltt}
+b + \hlfunctioncall{geom_segment}(\hlfunctioncall{aes}(x = 5, y = 30, xend = 3.5, yend = 25), arrow = \hlfunctioncall{arrow}(length = \hlfunctioncall{unit}(0.5, \hlstring{"cm"})))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_segment7} 
+\end{knitrout}
+
+
+\section{geom\_smooth}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcomment{### Name: geom_smooth}
+\hlcomment{### Title: Add a smoothed conditional mean.}
+\hlcomment{### Aliases: geom_smooth}
+\hlcomment{### ** Examples}
+\hlcomment{# See stat_smooth for examples of using built in model fitting}
+\hlcomment{# if you need some more flexible, this example shows you how to}
+\hlcomment{# plot the fits from any model of your choosing}
+\hlfunctioncall{qplot}(wt, mpg, data=mtcars, colour=\hlfunctioncall{factor}(cyl))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_smooth1} \begin{kframe}\begin{alltt}
+model <- \hlfunctioncall{lm}(mpg ~ wt + \hlfunctioncall{factor}(cyl), data=mtcars)
+grid <- \hlfunctioncall{with}(mtcars, \hlfunctioncall{expand.grid}(
+  wt = \hlfunctioncall{seq}(\hlfunctioncall{min}(wt), \hlfunctioncall{max}(wt), length = 20),
+  cyl = \hlfunctioncall{levels}(\hlfunctioncall{factor}(cyl))
+))
+grid$mpg <- stats::\hlfunctioncall{predict}(model, newdata=grid)
+\hlfunctioncall{qplot}(wt, mpg, data=mtcars, colour=\hlfunctioncall{factor}(cyl)) + \hlfunctioncall{geom_line}(data=grid)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_smooth2} \begin{kframe}\begin{alltt}
+\hlcomment{# or with standard errors}
+err <- stats::\hlfunctioncall{predict}(model, newdata=grid, se = TRUE)
+grid$ucl <- err$fit + 1.96 * err$se.fit
+grid$lcl <- err$fit - 1.96 * err$se.fit
+\hlfunctioncall{qplot}(wt, mpg, data=mtcars, colour=\hlfunctioncall{factor}(cyl)) +
+  \hlfunctioncall{geom_smooth}(\hlfunctioncall{aes}(ymin = lcl, ymax = ucl), data=grid, stat=\hlstring{"identity"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_smooth3} 
+\end{knitrout}
+
+
+\section{geom\_step}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcomment{### Name: geom_step}
+\hlcomment{### Title: Connect observations by stairs.}
+\hlcomment{### Aliases: geom_step}
+\hlcomment{### ** Examples}
+\hlcomment{# Simple quantiles/ECDF from \hlfunctioncall{examples}(plot)}
+x <- \hlfunctioncall{sort}(\hlfunctioncall{rnorm}(47))
+\hlfunctioncall{qplot}(\hlfunctioncall{seq_along}(x), x, geom=\hlstring{"step"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_step1} \begin{kframe}\begin{alltt}
+\hlcomment{# Steps go horizontally, then \hlfunctioncall{vertically} (default)}
+\hlfunctioncall{qplot}(\hlfunctioncall{seq_along}(x), x, geom=\hlstring{"step"}, direction = \hlstring{"hv"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_step2} \begin{kframe}\begin{alltt}
+\hlfunctioncall{plot}(x, type = \hlstring{"s"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_step3} \begin{kframe}\begin{alltt}
+\hlcomment{# Steps go vertically, then horizontally}
+\hlfunctioncall{qplot}(\hlfunctioncall{seq_along}(x), x, geom=\hlstring{"step"}, direction = \hlstring{"vh"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_step4} \begin{kframe}\begin{alltt}
+\hlfunctioncall{plot}(x, type = \hlstring{"S"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_step5} \begin{kframe}\begin{alltt}
+\hlcomment{# Also works with other aesthetics}
+df <- \hlfunctioncall{data.frame}(
+  x = \hlfunctioncall{sort}(\hlfunctioncall{rnorm}(50)),
+  trt = \hlfunctioncall{sample}(\hlfunctioncall{c}(\hlstring{"a"}, \hlstring{"b"}), 50, rep = TRUE)
+)
+\hlfunctioncall{qplot}(\hlfunctioncall{seq_along}(x), x, data = df, geom=\hlstring{"step"}, colour = trt)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_step6} 
+\end{knitrout}
+
+
+\section{geom\_text}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcomment{### Name: geom_text}
+\hlcomment{### Title: Textual annotations.}
+\hlcomment{### Aliases: geom_text}
+\hlcomment{### ** Examples}
+\hlcomment{## No test: }
+p <- \hlfunctioncall{ggplot}(mtcars, \hlfunctioncall{aes}(x=wt, y=mpg, label=\hlfunctioncall{rownames}(mtcars)))
+p + \hlfunctioncall{geom_text}()
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_text1} \begin{kframe}\begin{alltt}
+\hlcomment{# Change size of the label}
+p + \hlfunctioncall{geom_text}(size=10)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_text2} \begin{kframe}\begin{alltt}
+p <- p + \hlfunctioncall{geom_point}()
+\hlcomment{# Set aesthetics to fixed value}
+p + \hlfunctioncall{geom_text}()
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_text3} \begin{kframe}\begin{alltt}
+p + \hlfunctioncall{geom_point}() + \hlfunctioncall{geom_text}(hjust=0, vjust=0)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_text4} \begin{kframe}\begin{alltt}
+p + \hlfunctioncall{geom_point}() + \hlfunctioncall{geom_text}(angle = 45)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_text5} \begin{kframe}\begin{alltt}
+\hlcomment{# Add aesthetic mappings}
+p + \hlfunctioncall{geom_text}(\hlfunctioncall{aes}(colour=\hlfunctioncall{factor}(cyl)))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_text6} \begin{kframe}\begin{alltt}
+p + \hlfunctioncall{geom_text}(\hlfunctioncall{aes}(colour=\hlfunctioncall{factor}(cyl))) + \hlfunctioncall{scale_colour_discrete}(l=40)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_text7} \begin{kframe}\begin{alltt}
+p + \hlfunctioncall{geom_text}(\hlfunctioncall{aes}(size=wt))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_text8} \begin{kframe}\begin{alltt}
+p + \hlfunctioncall{geom_text}(\hlfunctioncall{aes}(size=wt)) + \hlfunctioncall{scale_size}(range=\hlfunctioncall{c}(3,6))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_text9} \begin{kframe}\begin{alltt}
+\hlcomment{# You can display expressions by setting parse = TRUE.  The}
+\hlcomment{# details of the display are described in ?plotmath, but note that}
+\hlcomment{# geom_text uses strings, not expressions.}
+p + \hlfunctioncall{geom_text}(\hlfunctioncall{aes}(label = \hlfunctioncall{paste}(wt, \hlstring{"^("}, cyl, \hlstring{")"}, sep = \hlstring{""})),
+  parse = TRUE)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_text10} \begin{kframe}\begin{alltt}
+\hlcomment{# Add an annotation not from a variable source}
+c <- \hlfunctioncall{ggplot}(mtcars, \hlfunctioncall{aes}(wt, mpg)) + \hlfunctioncall{geom_point}()
+c + \hlfunctioncall{geom_text}(data = NULL, x = 5, y = 30, label = \hlstring{"plot mpg vs. wt"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_text11} \begin{kframe}\begin{alltt}
+\hlcomment{# Or, you can use annotate}
+c + \hlfunctioncall{annotate}(\hlstring{"text"}, label = \hlstring{"plot mpg vs. wt"}, x = 2, y = 15, size = 8, colour = \hlstring{"red"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_text12} \begin{kframe}\begin{alltt}
+\hlcomment{# Use qplot instead}
+\hlfunctioncall{qplot}(wt, mpg, data = mtcars, label = \hlfunctioncall{rownames}(mtcars),
+   geom=\hlfunctioncall{c}(\hlstring{"point"}, \hlstring{"text"}))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_text13} \begin{kframe}\begin{alltt}
+\hlfunctioncall{qplot}(wt, mpg, data = mtcars, label = \hlfunctioncall{rownames}(mtcars), size = wt) +
+  \hlfunctioncall{geom_text}(colour = \hlstring{"red"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_text14} \begin{kframe}\begin{alltt}
+\hlcomment{# You can specify family, fontface and lineheight}
+p <- \hlfunctioncall{ggplot}(mtcars, \hlfunctioncall{aes}(x=wt, y=mpg, label=\hlfunctioncall{rownames}(mtcars)))
+p + \hlfunctioncall{geom_text}(fontface=3)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_text15} \begin{kframe}\begin{alltt}
+p + \hlfunctioncall{geom_text}(\hlfunctioncall{aes}(fontface=am+1))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_text16} \begin{kframe}\begin{alltt}
+p + \hlfunctioncall{geom_text}(\hlfunctioncall{aes}(family=\hlfunctioncall{c}(\hlstring{"serif"}, \hlstring{"mono"})[am+1]))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_text17} \begin{kframe}\begin{alltt}
+\hlcomment{## \hlfunctioncall{End}(No test)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+
+\section{geom\_tile}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcomment{### Name: geom_tile}
+\hlcomment{### Title: Tile plane with rectangles.}
+\hlcomment{### Aliases: geom_tile}
+\hlcomment{### ** Examples}
+\hlcomment{## No test: }
+\hlcomment{# Generate data}
+pp <- \hlfunctioncall{function} (n,r=4) \{
+ x <- \hlfunctioncall{seq}(-r*pi, r*pi, len=n)
+ df <- \hlfunctioncall{expand.grid}(x=x, y=x)
+ df$r <- \hlfunctioncall{sqrt}(df$x^2 + df$y^2)
+ df$z <- \hlfunctioncall{cos}(df$r^2)*\hlfunctioncall{exp}(-df$r/6)
+ df
+\}
+p <- \hlfunctioncall{ggplot}(\hlfunctioncall{pp}(20), \hlfunctioncall{aes}(x=x,y=y))
+p + \hlfunctioncall{geom_tile}() \hlcomment{#pretty useless!}
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_tile1} \begin{kframe}\begin{alltt}
+\hlcomment{# Add aesthetic mappings}
+p + \hlfunctioncall{geom_tile}(\hlfunctioncall{aes}(fill=z))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_tile2} \begin{kframe}\begin{alltt}
+\hlcomment{# Change scale}
+p + \hlfunctioncall{geom_tile}(\hlfunctioncall{aes}(fill=z)) + \hlfunctioncall{scale_fill_gradient}(low=\hlstring{"green"}, high=\hlstring{"red"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_tile3} \begin{kframe}\begin{alltt}
+\hlcomment{# Use qplot instead}
+\hlfunctioncall{qplot}(x, y, data=\hlfunctioncall{pp}(20), geom=\hlstring{"tile"}, fill=z)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_tile4} \begin{kframe}\begin{alltt}
+\hlfunctioncall{qplot}(x, y, data=\hlfunctioncall{pp}(100), geom=\hlstring{"tile"}, fill=z)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_tile5} \begin{kframe}\begin{alltt}
+\hlcomment{# Missing values}
+p <- \hlfunctioncall{ggplot}(\hlfunctioncall{pp}(20)[\hlfunctioncall{sample}(20*20, size=200),], \hlfunctioncall{aes}(x=x,y=y,fill=z))
+p + \hlfunctioncall{geom_tile}()
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_tile6} \begin{kframe}\begin{alltt}
+\hlcomment{# Input that works with image}
+\hlfunctioncall{image}(\hlfunctioncall{t}(volcano)[\hlfunctioncall{ncol}(volcano):1,])
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_tile7} \begin{kframe}\begin{alltt}
+\hlfunctioncall{library}(reshape2) \hlcomment{# for melt}
+\hlfunctioncall{ggplot}(\hlfunctioncall{melt}(volcano), \hlfunctioncall{aes}(x=Var1, y=Var2, fill=value)) + \hlfunctioncall{geom_tile}()
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_tile8} \begin{kframe}\begin{alltt}
+\hlcomment{# inspired by the image-density plots of Ken Knoblauch}
+cars <- \hlfunctioncall{ggplot}(mtcars, \hlfunctioncall{aes}(y=\hlfunctioncall{factor}(cyl), x=mpg))
+cars + \hlfunctioncall{geom_point}()
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_tile9} \begin{kframe}\begin{alltt}
+cars + \hlfunctioncall{stat_bin}(\hlfunctioncall{aes}(fill=..count..), geom=\hlstring{"tile"}, binwidth=3, position=\hlstring{"identity"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_tile10} \begin{kframe}\begin{alltt}
+cars + \hlfunctioncall{stat_bin}(\hlfunctioncall{aes}(fill=..density..), geom=\hlstring{"tile"}, binwidth=3, position=\hlstring{"identity"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_tile11} \begin{kframe}\begin{alltt}
+cars + \hlfunctioncall{stat_density}(\hlfunctioncall{aes}(fill=..density..), geom=\hlstring{"tile"}, position=\hlstring{"identity"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_tile12} \begin{kframe}\begin{alltt}
+cars + \hlfunctioncall{stat_density}(\hlfunctioncall{aes}(fill=..count..), geom=\hlstring{"tile"}, position=\hlstring{"identity"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_tile13} \begin{kframe}\begin{alltt}
+\hlcomment{# Another example with with unequal tile sizes}
+x.cell.boundary <- \hlfunctioncall{c}(0, 4, 6, 8, 10, 14)
+example <- \hlfunctioncall{data.frame}(
+  x = \hlfunctioncall{rep}(\hlfunctioncall{c}(2, 5, 7, 9, 12), 2),
+  y = \hlfunctioncall{factor}(\hlfunctioncall{rep}(\hlfunctioncall{c}(1,2), each=5)),
+  z = \hlfunctioncall{rep}(1:5, each=2),
+  w = \hlfunctioncall{rep}(\hlfunctioncall{diff}(x.cell.boundary), 2)
+)
+\hlfunctioncall{qplot}(x, y, fill=z, data=example, geom=\hlstring{"tile"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_tile14} \begin{kframe}\begin{alltt}
+\hlfunctioncall{qplot}(x, y, fill=z, data=example, geom=\hlstring{"tile"}, width=w)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_tile15} \begin{kframe}\begin{alltt}
+\hlfunctioncall{qplot}(x, y, fill=\hlfunctioncall{factor}(z), data=example, geom=\hlstring{"tile"}, width=w)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_tile16} \begin{kframe}\begin{alltt}
+\hlcomment{# You can manually set the colour of the tiles using}
+\hlcomment{# scale_manual}
+col <- \hlfunctioncall{c}(\hlstring{"darkblue"}, \hlstring{"blue"}, \hlstring{"green"}, \hlstring{"orange"}, \hlstring{"red"})
+\hlfunctioncall{qplot}(x, y, fill=col[z], data=example, geom=\hlstring{"tile"}, width=w, group=1) + \hlfunctioncall{scale_fill_identity}(labels=letters[1:5], breaks=col)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_tile17} \begin{kframe}\begin{alltt}
+\hlcomment{## \hlfunctioncall{End}(No test)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+
+\section{geom\_violin}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcomment{### Name: geom_violin}
+\hlcomment{### Title: Violin plot.}
+\hlcomment{### Aliases: geom_violin}
+\hlcomment{### ** Examples}
+\hlcomment{## No test: }
+p <- \hlfunctioncall{ggplot}(mtcars, \hlfunctioncall{aes}(\hlfunctioncall{factor}(cyl), mpg))
+p + \hlfunctioncall{geom_violin}()
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_violin1} \begin{kframe}\begin{alltt}
+\hlfunctioncall{qplot}(\hlfunctioncall{factor}(cyl), mpg, data = mtcars, geom = \hlstring{"violin"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_violin2} \begin{kframe}\begin{alltt}
+p + \hlfunctioncall{geom_violin}() + \hlfunctioncall{geom_jitter}(height = 0)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_violin3} \begin{kframe}\begin{alltt}
+p + \hlfunctioncall{geom_violin}() + \hlfunctioncall{coord_flip}()
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_violin4} \begin{kframe}\begin{alltt}
+\hlfunctioncall{qplot}(\hlfunctioncall{factor}(cyl), mpg, data = mtcars, geom = \hlstring{"violin"}) +
+  \hlfunctioncall{coord_flip}()
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_violin5} \begin{kframe}\begin{alltt}
+\hlcomment{# Scale maximum width proportional to sample size:}
+p + \hlfunctioncall{geom_violin}(scale = \hlstring{"count"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_violin6} \begin{kframe}\begin{alltt}
+\hlcomment{# Default is to trim violins to the range of the data. To disable:}
+p + \hlfunctioncall{geom_violin}(trim = FALSE)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_violin7} \begin{kframe}\begin{alltt}
+\hlcomment{# Use a smaller bandwidth for closer density \hlfunctioncall{fit} (default is 1).}
+p + \hlfunctioncall{geom_violin}(adjust = .5)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_violin8} \begin{kframe}\begin{alltt}
+\hlcomment{# Add aesthetic mappings}
+\hlcomment{# Note that violins are automatically dodged when any aesthetic is}
+\hlcomment{# a factor}
+p + \hlfunctioncall{geom_violin}(\hlfunctioncall{aes}(fill = cyl))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_violin9} \begin{kframe}\begin{alltt}
+p + \hlfunctioncall{geom_violin}(\hlfunctioncall{aes}(fill = \hlfunctioncall{factor}(cyl)))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_violin10} \begin{kframe}\begin{alltt}
+p + \hlfunctioncall{geom_violin}(\hlfunctioncall{aes}(fill = \hlfunctioncall{factor}(vs)))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_violin11} \begin{kframe}\begin{alltt}
+p + \hlfunctioncall{geom_violin}(\hlfunctioncall{aes}(fill = \hlfunctioncall{factor}(am)))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_violin12} \begin{kframe}\begin{alltt}
+\hlcomment{# Set aesthetics to fixed value}
+p + \hlfunctioncall{geom_violin}(fill = \hlstring{"grey80"}, colour = \hlstring{"#3366FF"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_violin13} \begin{kframe}\begin{alltt}
+\hlfunctioncall{qplot}(\hlfunctioncall{factor}(cyl), mpg, data = mtcars, geom = \hlstring{"violin"},
+  colour = \hlfunctioncall{I}(\hlstring{"#3366FF"}))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_violin14} \begin{kframe}\begin{alltt}
+\hlcomment{# Scales vs. coordinate transforms -------}
+\hlcomment{# Scale transformations occur before the density statistics are computed.}
+\hlcomment{# Coordinate transformations occur afterwards.  Observe the effect on the}
+\hlcomment{# number of outliers.}
+\hlfunctioncall{library}(plyr) \hlcomment{# to access round_any}
+m <- \hlfunctioncall{ggplot}(movies, \hlfunctioncall{aes}(y = votes, x = rating,
+   group = \hlfunctioncall{round_any}(rating, 0.5)))
+m + \hlfunctioncall{geom_violin}()
+\end{alltt}
+\begin{flushleft}\ttfamily\noindent\textcolor{warningcolor}{\#\# Warning: position\_dodge requires constant width: output may be incorrect}\end{flushleft}\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_violin15} \begin{kframe}\begin{alltt}
+m + \hlfunctioncall{geom_violin}() + \hlfunctioncall{scale_y_log10}()
+\end{alltt}
+\begin{flushleft}\ttfamily\noindent\textcolor{warningcolor}{\#\# Warning: position\_dodge requires constant width: output may be incorrect}\end{flushleft}\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_violin16} \begin{kframe}\begin{alltt}
+m + \hlfunctioncall{geom_violin}() + \hlfunctioncall{coord_trans}(y = \hlstring{"log10"})
+\end{alltt}
+\begin{flushleft}\ttfamily\noindent\textcolor{warningcolor}{\#\# Warning: position\_dodge requires constant width: output may be incorrect}\end{flushleft}\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_violin17} \begin{kframe}\begin{alltt}
+m + \hlfunctioncall{geom_violin}() + \hlfunctioncall{scale_y_log10}() + \hlfunctioncall{coord_trans}(y = \hlstring{"log10"})
+\end{alltt}
+\begin{flushleft}\ttfamily\noindent\textcolor{warningcolor}{\#\# Warning: position\_dodge requires constant width: output may be incorrect}\end{flushleft}\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_violin18} \begin{kframe}\begin{alltt}
+\hlcomment{# Violin plots with continuous x:}
+\hlcomment{# Use the group aesthetic to group observations in violins}
+\hlfunctioncall{qplot}(year, budget, data = movies, geom = \hlstring{"violin"})
+\end{alltt}
+\begin{flushleft}\ttfamily\noindent\textcolor{warningcolor}{\#\# Warning: Removed 904 rows containing non-finite values (stat\_ydensity).}\end{flushleft}\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_violin19} \begin{kframe}\begin{alltt}
+\hlfunctioncall{qplot}(year, budget, data = movies, geom = \hlstring{"violin"},
+  group = \hlfunctioncall{round_any}(year, 10, floor))
+\end{alltt}
+\begin{flushleft}\ttfamily\noindent\textcolor{warningcolor}{\#\# Warning: Removed 904 rows containing non-finite values (stat\_ydensity).}\end{flushleft}\begin{flushleft}\ttfamily\noindent\textcolor{warningcolor}{\#\# Warning: position\_dodge requires constant width: output may be incorrect}\end{flushleft}\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_violin20} \begin{kframe}\begin{alltt}
+\hlcomment{## \hlfunctioncall{End}(No test)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+
+\section{geom\_vline}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcomment{### Name: geom_vline}
+\hlcomment{### Title: Line, vertical.}
+\hlcomment{### Aliases: geom_vline}
+\hlcomment{### ** Examples}
+\hlcomment{# Fixed lines}
+p <- \hlfunctioncall{ggplot}(mtcars, \hlfunctioncall{aes}(x = wt, y = mpg)) + \hlfunctioncall{geom_point}()
+p + \hlfunctioncall{geom_vline}(xintercept = 5)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_vline1} \begin{kframe}\begin{alltt}
+p + \hlfunctioncall{geom_vline}(xintercept = 1:5)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_vline2} \begin{kframe}\begin{alltt}
+p + \hlfunctioncall{geom_vline}(xintercept = 1:5, colour=\hlstring{"green"}, linetype = \hlstring{"longdash"})
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_vline3} \begin{kframe}\begin{alltt}
+p + \hlfunctioncall{geom_vline}(\hlfunctioncall{aes}(xintercept = wt))
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_vline4} \begin{kframe}\begin{alltt}
+\hlcomment{# With coordinate transforms}
+p + \hlfunctioncall{geom_vline}(\hlfunctioncall{aes}(xintercept = wt)) + \hlfunctioncall{coord_equal}()
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_vline5} \begin{kframe}\begin{alltt}
+p + \hlfunctioncall{geom_vline}(\hlfunctioncall{aes}(xintercept = wt)) + \hlfunctioncall{coord_flip}()
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_vline6} \begin{kframe}\begin{alltt}
+p + \hlfunctioncall{geom_vline}(\hlfunctioncall{aes}(xintercept = wt)) + \hlfunctioncall{coord_polar}()
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_vline7} \begin{kframe}\begin{alltt}
+p2 <- p + \hlfunctioncall{aes}(colour = \hlfunctioncall{factor}(cyl))
+p2 + \hlfunctioncall{geom_vline}(xintercept = 15)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_vline8} \begin{kframe}\begin{alltt}
+\hlcomment{# To display different lines in different facets, you need to}
+\hlcomment{# create a data frame.}
+p <- \hlfunctioncall{qplot}(mpg, wt, data=mtcars, facets = vs ~ am)
+vline.data <- \hlfunctioncall{data.frame}(z = \hlfunctioncall{c}(15, 20, 25, 30), vs = \hlfunctioncall{c}(0, 0, 1, 1), am = \hlfunctioncall{c}(0, 1, 0, 1))
+p + \hlfunctioncall{geom_vline}(\hlfunctioncall{aes}(xintercept = z), vline.data)
+\end{alltt}
+\end{kframe}\includegraphics[width=\maxwidth]{figure/geom_vline9} 
+\end{knitrout}
+
+
+
+
+\end{document}
