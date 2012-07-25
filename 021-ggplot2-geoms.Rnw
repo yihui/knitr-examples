@@ -1,0 +1,24 @@
+\documentclass[a4paper,titlepage]{tufte-handout}
+\title{ggplot2 Gallery}
+\begin{document}
+\maketitle
+\tableofcontents
+
+<<setup, include=FALSE>>=
+opts_chunk$set(tidy = FALSE) # tidy is not useful for R gurus
+@
+
+% all geoms in ggplot2
+<<write-examples, include=FALSE>>=
+library(ggplot2)
+ex = lapply(apropos("^geom_"), function(g) {
+  p = utils:::index.search(g, find.package(), TRUE)
+  tools::Rd2ex(utils:::.getHelpFile(p), f <- tempfile())
+  c(sprintf('\\section{%s}\n\n<<%s>>=', knitr:::escape_latex(g), g),
+    readLines(f), '@\n\n')
+})
+@
+
+\Sexpr{knit(text = unlist(ex))}
+
+\end{document}
