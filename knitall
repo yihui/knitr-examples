@@ -1,0 +1,6 @@
+#!/bin/sh
+
+for i in `ls | grep -E '^[0-9].*\.R(nw|md|tex|html|rst)$'`
+  do Rscript -e "library(knitr); knit('$i')"
+done
+
