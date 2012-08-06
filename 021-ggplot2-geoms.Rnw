@@ -5,7 +5,9 @@
 \tableofcontents
 
 <<setup, include=FALSE>>=
-opts_chunk$set(tidy = FALSE) # tidy is not useful for R gurus
+# no need to tidy ggplot2 examples code; it is already tidy and clean
+opts_chunk$set(tidy = FALSE, fig.path = 'figure/ggplot2-geoms-',
+               cache=TRUE, cache.path = 'cache/ggplot2-geoms-')
 @
 
 % all geoms in ggplot2
