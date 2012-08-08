@@ -9,7 +9,7 @@ hello world
 \newpage
 \begin{landscape}
 \tiny
-<<results='asis'>>=
+<<results='asis', cache=TRUE>>=
 library(xtable)
 print(xtable(head(iris)))
 @
