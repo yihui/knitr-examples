@@ -1,6 +1,12 @@
 #!/bin/bash
 
 for i in `ls | grep -E '^[0-9].*\.R(nw|md|tex|html|rst)$'`
-  do Rscript -e "library(knitr); knit('$i')"
+do
+  Rscript -e "library(knitr); knit('$i')"
+  if [ ${i: -4} == ".Rmd" ]
+  then
+    out=${i%.Rmd}.md
+    echo -e "\nSee https://github.com/yihui/knitr-examples/$out for the output.\n" >> $out
+  fi
 done
 
