@@ -101,6 +101,3 @@ Now see how the output is changed:
     hello, python world!
     ['hello,', 'python', 'world!']
 
-
-See https://github.com/yihui/knitr-examples/023-engine-python.md for the output.
-

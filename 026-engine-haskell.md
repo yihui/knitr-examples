@@ -10,6 +10,3 @@ Does Haskell work with **knitr**?
 ```
 
 
-
-See https://github.com/yihui/knitr-examples/026-engine-haskell.md for the output.
-

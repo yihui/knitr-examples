@@ -47,19 +47,16 @@ ls | grep engine | xargs wc
 ```
 
 ```
- 106  192 1406 023-engine-python.md
+ 103  187 1323 023-engine-python.md
   59  150 1240 023-engine-python.Rmd
-  21   42  240 024-engine-awk.md
+  18   37  160 024-engine-awk.md
   12   41  237 024-engine-awk.Rmd
-  16   25  206 025-engine-ruby.md
+  13   20  125 025-engine-ruby.md
    7   17  109 025-engine-ruby.Rmd
-  15   22  184 026-engine-haskell.md
+  12   17  100 026-engine-haskell.md
    6   17  116 026-engine-haskell.Rmd
-  65  125  890 027-engine-bash.md
+  62  120  809 027-engine-bash.md
   23   58  352 027-engine-bash.Rmd
- 330  689 4980 total
+ 315  664 4571 total
 ```
-
-
-See https://github.com/yihui/knitr-examples/027-engine-bash.md for the output.
 

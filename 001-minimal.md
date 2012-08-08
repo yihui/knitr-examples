@@ -74,6 +74,3 @@ You can write code within other elements, e.g. a list
 Nothing fancy. You are ready to go. When you become picky, go to the [knitr website](http://yihui.name/knitr/).
 
 ![knitr logo](http://yihui.name/knitr/images/knit-logo.png)
-
-See https://github.com/yihui/knitr-examples/001-minimal.md for the output.
-

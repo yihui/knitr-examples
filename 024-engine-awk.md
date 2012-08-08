@@ -16,6 +16,3 @@ END { print i }
 ```
 
 
-
-See https://github.com/yihui/knitr-examples/024-engine-awk.md for the output.
-
