@@ -1,0 +1,148 @@
+\documentclass{article}\usepackage{graphicx, color}
+%% maxwidth is the original width if it is less than linewidth
+%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\definecolor{fgcolor}{rgb}{0.2, 0.2, 0.2}
+\newcommand{\hlnumber}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlfunctioncall}[1]{\textcolor[rgb]{0.501960784313725,0,0.329411764705882}{\textbf{#1}}}%
+\newcommand{\hlstring}[1]{\textcolor[rgb]{0.6,0.6,1}{#1}}%
+\newcommand{\hlkeyword}[1]{\textcolor[rgb]{0,0,0}{\textbf{#1}}}%
+\newcommand{\hlargument}[1]{\textcolor[rgb]{0.690196078431373,0.250980392156863,0.0196078431372549}{#1}}%
+\newcommand{\hlcomment}[1]{\textcolor[rgb]{0.180392156862745,0.6,0.341176470588235}{#1}}%
+\newcommand{\hlroxygencomment}[1]{\textcolor[rgb]{0.43921568627451,0.47843137254902,0.701960784313725}{#1}}%
+\newcommand{\hlformalargs}[1]{\textcolor[rgb]{0.690196078431373,0.250980392156863,0.0196078431372549}{#1}}%
+\newcommand{\hleqformalargs}[1]{\textcolor[rgb]{0.690196078431373,0.250980392156863,0.0196078431372549}{#1}}%
+\newcommand{\hlassignement}[1]{\textcolor[rgb]{0,0,0}{\textbf{#1}}}%
+\newcommand{\hlpackage}[1]{\textcolor[rgb]{0.588235294117647,0.709803921568627,0.145098039215686}{#1}}%
+\newcommand{\hlslot}[1]{\textit{#1}}%
+\newcommand{\hlsymbol}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlprompt}[1]{\textcolor[rgb]{0.2,0.2,0.2}{#1}}%
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
+\usepackage{lscape}
+\begin{document}
+
+See if the landscape environment works.
+
+hello world
+
+\newpage
+\begin{landscape}
+\tiny
+\begin{kframe}
+\begin{alltt}
+\hlfunctioncall{library}(xtable)
+\hlfunctioncall{print}(\hlfunctioncall{xtable}(\hlfunctioncall{head}(iris)))
+\end{alltt}
+\end{kframe}
+% latex table generated in R 2.15.1 by xtable 1.7-0 package
+% Wed Aug  8 11:03:48 2012
+\begin{table}[ht]
+\begin{center}
+\begin{tabular}{rrrrrl}
+  \hline
+ & Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species \\ 
+  \hline
+1 & 5.10 & 3.50 & 1.40 & 0.20 & setosa \\ 
+  2 & 4.90 & 3.00 & 1.40 & 0.20 & setosa \\ 
+  3 & 4.70 & 3.20 & 1.30 & 0.20 & setosa \\ 
+  4 & 4.60 & 3.10 & 1.50 & 0.20 & setosa \\ 
+  5 & 5.00 & 3.60 & 1.40 & 0.20 & setosa \\ 
+  6 & 5.40 & 3.90 & 1.70 & 0.40 & setosa \\ 
+   \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+
+
+\end{landscape}
+\newpage
+
+hello again
+
+\begin{kframe}
+\begin{alltt}
+\hlfunctioncall{library}(Hmisc)
+\end{alltt}
+
+
+{\ttfamily\noindent\itshape\textcolor{messagecolor}{\#\# Loading required package: methods}}
+
+{\ttfamily\noindent\itshape\textcolor{messagecolor}{\#\# Loading required package: survival}}
+
+{\ttfamily\noindent\itshape\textcolor{messagecolor}{\#\# Loading required package: splines}}
+
+{\ttfamily\noindent\itshape\textcolor{messagecolor}{\#\# Hmisc library by Frank E Harrell Jr\\\#\# \\\#\# Type library(help='Hmisc'), ?Overview, or ?Hmisc.Overview')\\\#\# to see overall documentation.\\\#\# \\\#\# NOTE:Hmisc no longer redefines [.factor to drop unused levels when\\\#\# subsetting.  To get the old behavior of Hmisc type dropUnusedLevels().}}
+
+{\ttfamily\noindent\itshape\textcolor{messagecolor}{\#\# \\\#\# Attaching package: 'Hmisc'}}
+
+{\ttfamily\noindent\itshape\textcolor{messagecolor}{\#\# The following object(s) are masked from 'package:survival':\\\#\# \\\#\#     untangle.specials}}
+
+{\ttfamily\noindent\itshape\textcolor{messagecolor}{\#\# The following object(s) are masked from 'package:xtable':\\\#\# \\\#\#     label, label<-}}
+
+{\ttfamily\noindent\itshape\textcolor{messagecolor}{\#\# The following object(s) are masked from 'package:base':\\\#\# \\\#\#     format.pval, round.POSIXt, trunc.POSIXt, units}}\begin{alltt}
+\hlfunctioncall{latex}(\hlfunctioncall{head}(iris), file = \hlstring{""}, size = \hlstring{"tiny"}, landscape = TRUE)
+\end{alltt}
+\end{kframe}
+% latex.default(head(iris), file = "", size = "tiny", landscape = TRUE) 
+%
+\begin{landscape}\begin{table}[!tbp]
+\tiny
+\begin{center}
+\begin{tabular}{lrrrrl}
+\hline\hline
+\multicolumn{1}{l}{head}&\multicolumn{1}{c}{Sepal.Length}&\multicolumn{1}{c}{Sepal.Width}&\multicolumn{1}{c}{Petal.Length}&\multicolumn{1}{c}{Petal.Width}&\multicolumn{1}{c}{Species}\tabularnewline
+\hline
+1&$5.1$&$3.5$&$1.4$&$0.2$&setosa\tabularnewline
+2&$4.9$&$3.0$&$1.4$&$0.2$&setosa\tabularnewline
+3&$4.7$&$3.2$&$1.3$&$0.2$&setosa\tabularnewline
+4&$4.6$&$3.1$&$1.5$&$0.2$&setosa\tabularnewline
+5&$5.0$&$3.6$&$1.4$&$0.2$&setosa\tabularnewline
+6&$5.4$&$3.9$&$1.7$&$0.4$&setosa\tabularnewline
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+\end{landscape}
+
+
+
+
+
+\end{document}
