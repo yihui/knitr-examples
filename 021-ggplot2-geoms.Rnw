@@ -6,8 +6,7 @@
 
 <<setup, include=FALSE>>=
 # no need to tidy ggplot2 examples code; it is already tidy and clean
-opts_chunk$set(tidy = FALSE, fig.path = 'figure/ggplot2-geoms-',
-               cache=TRUE, cache.path = 'cache/ggplot2-geoms-')
+opts_chunk$set(tidy = FALSE, cache=TRUE)
 @
 
 % all geoms in ggplot2

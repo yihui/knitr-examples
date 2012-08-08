@@ -38,7 +38,7 @@ print '**Write** _something_ in `Markdown` from `Python`!'
 
 You can also cache the computation:
 
-```{r test-cache, engine='python', cache=TRUE, cache.path='cache/023-engine-python-'}
+```{r test-cache, engine='python', cache=TRUE}
 import time
 # pretend this is a time-consuming task...
 time.sleep(10)
