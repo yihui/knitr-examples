@@ -1,0 +1,6 @@
+Does Haskell work with **knitr**?
+
+```{r test-haskell, engine='haskell', cache=TRUE}
+[x | x <- [1..10], odd x]
+```
+

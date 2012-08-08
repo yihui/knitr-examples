@@ -1,0 +1,12 @@
+Does Awk work in **knitr**?
+
+We need to pass a `file` option to Awk.
+
+```{r test-awk, engine='awk', file=system.file('examples', 'knitr-manual.Rnw', package = 'knitr')}
+# how many non-empty lines?
+NF {
+  i = i + 1
+}
+END { print i }
+```
+
