@@ -1,0 +1,23 @@
+# Run bash scripts
+
+```{r}
+# should exist
+Sys.which('bash')
+Sys.which('sh')
+```
+
+Does `bash` work?
+
+```{r test-bash, engine='bash'}
+echo hello world
+echo 'a b c' | sed 's/ /\|/g'
+# number of lines
+awk 'END{print NR;}' 027-engine-bash.Rmd
+```
+
+How about `sh`?
+
+```{r test-sh, engine='sh'}
+# run wc on all engine examples
+ls | grep engine | xargs wc
+```
