@@ -1,0 +1,96 @@
+# Testing text output
+
+See if chunk options like `tidy`, `prompt` and `echo`, etc work as expected.
+
+## A normal chunk
+
+```{r demo}
+1+1
+for (i in 1:10) {
+# nothing
+}
+# two blank lines below
+
+
+dnorm(0)
+```
+
+## Do not evaluate
+
+```{r demo, eval=FALSE}
+```
+
+## Add prompts
+
+```{r demo, prompt=TRUE}
+```
+
+## No evaluate or tidy
+
+```{r demo, prompt=TRUE, eval=FALSE}
+```
+
+## Do not tidy
+
+```{r demo, tidy=FALSE}
+```
+
+## Do not echo
+
+```{r demo, echo=FALSE}
+```
+
+## Do not comment out results
+
+```{r demo, comment=NA}
+```
+
+## Do not echo the 2nd expression
+
+```{r demo, echo=-2}
+```
+
+## Add prompts but no tidy
+
+```{r demo, tidy=FALSE, prompt=TRUE}
+```
+
+## Change prompts
+
+```{r}
+options(prompt='R> ', continue='+  ')
+```
+
+```{r demo, prompt=TRUE}
+```
+
+## Other formatR options
+
+```{r}
+options(keep.blank.line=FALSE)
+```
+
+```{r demo, eval=FALSE}
+```
+
+```{r}
+options(keep.comment=FALSE)
+```
+
+```{r demo, eval=FALSE}
+```
+
+```{r}
+options(left.brace.newline=TRUE, keep.comment=TRUE)
+```
+
+```{r demo, echo=2}
+```
+
+See <http://yihui.name/formatR> for details.
+
+## Empty chunks
+
+```{r}
+
+```
