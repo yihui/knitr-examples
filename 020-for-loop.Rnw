@@ -1,0 +1,15 @@
+\documentclass{article}
+\begin{document}
+
+Collect results from the template for each i and write them back later.
+
+<<run-all, include=FALSE>>=
+out = NULL
+for (i in 1:3) {
+  out = c(out, knit_child('020-for-template.rnw', sprintf('020-for-template-%d.txt', i)))
+}
+@
+
+\Sexpr{paste(out, collapse = '\n')}
+
+\end{document}

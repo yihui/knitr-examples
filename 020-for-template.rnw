@@ -1,0 +1,7 @@
+\section{Now i is \Sexpr{i}}
+
+<<>>=
+print(i)
+iris[i, ]
+@
+
