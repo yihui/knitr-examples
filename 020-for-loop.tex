@@ -54,43 +54,18 @@
 \newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
 
 \usepackage{alltt}
-
 \begin{document}
 
-We want the file extension when including a figure into LaTeX.
-
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-knit_hooks$\hlfunctioncall{set}(plot = \hlfunctioncall{function}(x, options) \{
-    x = \hlfunctioncall{paste}(x, collapse = \hlstring{"."})  # x is file.ext now instead of \hlfunctioncall{c}(file, ext)
-    \hlfunctioncall{paste0}(\hlstring{"\textbackslash{}\textbackslash{}end\{kframe\}"}, \hlfunctioncall{hook_plot_tex}(x, options), \hlstring{"\textbackslash{}\textbackslash{}begin\{kframe\}"})
-\})
-\end{alltt}
-\end{kframe}
-\end{knitrout}
+Collect results from the template for each i and write them back later.
 
 
-You should see \textbackslash{}includegraphics\{test.pdf\} instead of \textbackslash{}includegraphics\{test\}.
-
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlcomment{# pdf figure}
-\hlfunctioncall{plot}(1)
-\end{alltt}
-\end{kframe}\includegraphics[width=\maxwidth]{figure/033-file-extension-test-a.pdf} 
-\end{knitrout}
 
 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlcomment{# png figure}
-\hlfunctioncall{plot}(2)
-\end{alltt}
-\end{kframe}\includegraphics[width=\maxwidth]{figure/033-file-extension-test-b.png} 
-\end{knitrout}
 
+\input{020-for-template-1.txt}
+
+\input{020-for-template-2.txt}
+
+\input{020-for-template-3.txt}
 
 \end{document}

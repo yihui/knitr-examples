@@ -1,0 +1,21 @@
+\section{Now i is 3}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlfunctioncall{print}(i)
+\end{alltt}
+\begin{verbatim}
+## [1] 3
+\end{verbatim}
+\begin{alltt}
+iris[i, ]
+\end{alltt}
+\begin{verbatim}
+##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+## 3          4.7         3.2          1.3         0.2  setosa
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+
