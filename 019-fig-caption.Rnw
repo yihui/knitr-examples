@@ -1,0 +1,24 @@
+\documentclass{article}
+\begin{document}
+
+Knitr can automatically generate a figure environment if fig.cap is specified.
+
+<<test, fig.cap=paste('$2 \\times 2$ is', 2*2), fig.height=3>>=
+par(mar=c(4, 4, .1, .1)); plot(runif(4))
+@
+
+When fig.cap needs to use objects in the current chunk, we need to set the eval.after options so the objects are available when fig.cap is used.
+
+<<setup>>=
+# evaluate fig.cap after a chunk is evaluated
+opts_knit$set(eval.after = 'fig.cap')
+@
+
+Dynamically generate a figure caption:
+
+<<t-test, fig.cap=paste('The P-value is', format.pval(t.test(x)$p.value))>>=
+x = rnorm(30)
+hist(x)
+@
+
+\end{document}
