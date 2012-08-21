@@ -229,6 +229,29 @@ R> dnorm(0)
 ```
 
 
+## Backslashes
+
+
+```r
+{
+    # can you deal with \code{foo} or \n, \a?
+    gsub("\\.", "\\\\", "a.b.c")  # \link{bar}
+}
+```
+
+```
+## [1] "a\\b\\c"
+```
+
+```r
+cat("a\tb\ac")
+```
+
+```
+## a	bc
+```
+
+
 ## Other formatR options
 
 

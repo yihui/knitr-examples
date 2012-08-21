@@ -64,6 +64,16 @@ options(prompt='R> ', continue='+  ')
 ```{r demo, prompt=TRUE}
 ```
 
+## Backslashes
+
+```{r}
+{
+# can you deal with \code{foo} or \n, \a?
+gsub('\\.', '\\\\', 'a.b.c') # \link{bar}
+}
+cat('a\tb\ac')
+```
+
 ## Other formatR options
 
 ```{r}
