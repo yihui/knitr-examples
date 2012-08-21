@@ -8,5 +8,5 @@ deps:
 	Rscript -e "for (i in c('ggplot2', 'mapproj', 'Hmisc', 'xtable')) if (!require(i, character.only=TRUE)) install.packages(i)"
 
 clean:
-	$(RM) *.html *.pdf
+	$(RM) *.html *.log
 
