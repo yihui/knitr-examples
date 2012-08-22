@@ -89,7 +89,8 @@ Dynamically generate a figure caption:
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 x = \hlfunctioncall{rnorm}(30)
-\hlfunctioncall{hist}(x)
+\hlfunctioncall{par}(mar = \hlfunctioncall{c}(4, 4, 0.1, 0.1))
+\hlfunctioncall{hist}(x, main = \hlstring{""})
 \end{alltt}
 \end{kframe}\begin{figure}[]
 \includegraphics[width=\maxwidth]{figure/019-fig-caption-t-test} \caption[The P-value is 0]{The P-value is 0.93\label{fig:t-test}}
@@ -97,5 +98,55 @@ x = \hlfunctioncall{rnorm}(30)
 
 \end{knitrout}
 
+
+Change the figure environment:
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlfunctioncall{par}(mar = \hlfunctioncall{c}(4, 4, 0.1, 0.1))
+\hlfunctioncall{boxplot}(x)
+\end{alltt}
+\end{kframe}\begin{figure*}[]
+\includegraphics[width=\maxwidth]{figure/019-fig-caption-figure-asterisk} \caption[Figure * environment]{Figure * environment.\label{fig:figure-asterisk}}
+\end{figure*}
+
+\end{knitrout}
+
+
+If you have two figures, you can assign two captions to fig.cap:
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlfunctioncall{par}(mar = \hlfunctioncall{rep}(0, 4), ann = FALSE)
+\hlfunctioncall{plot}(1:10)
+\end{alltt}
+\end{kframe}\begin{figure}[]
+
+
+{\centering \includegraphics[width=\maxwidth]{figure/019-fig-caption-two-caps1} 
+
+}
+
+\caption[Hi figure one]{Hi figure one\label{fig:two-caps1}}
+\end{figure}
+\begin{kframe}\begin{alltt}
+\hlfunctioncall{plot}(\hlfunctioncall{runif}(10))
+\end{alltt}
+\end{kframe}\begin{figure}[]
+
+
+{\centering \includegraphics[width=\maxwidth]{figure/019-fig-caption-two-caps2} 
+
+}
+
+\caption[Hi figure two]{Hi figure two\label{fig:two-caps2}}
+\end{figure}
+
+\end{knitrout}
+
+
+You can use figure references too. For example, Figure \ref{fig:t-test} is a histogram, and Figure \ref{fig:figure-asterisk} is a boxplot. The reference key is ``fig: + the chunk label'' by default.
 
 \end{document}

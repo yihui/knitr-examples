@@ -3,7 +3,7 @@
 
 Knitr can automatically generate a figure environment if fig.cap is specified.
 
-<<test, fig.cap=paste('$2 \\times 2$ is', 2*2), fig.height=3>>=
+<<test, fig.cap=paste('$2 \\times 2$ is', 2*2), fig.height=2.5>>=
 par(mar=c(4, 4, .1, .1)); plot(runif(4))
 @
 
@@ -16,9 +16,25 @@ opts_knit$set(eval.after = 'fig.cap')
 
 Dynamically generate a figure caption:
 
-<<t-test, fig.cap=paste('The P-value is', format.pval(t.test(x)$p.value))>>=
+<<t-test, fig.cap=paste('The P-value is', format.pval(t.test(x)$p.value)), fig.height=2.5>>=
 x = rnorm(30)
-hist(x)
+par(mar=c(4, 4, .1, .1)); hist(x, main='')
 @
+
+Change the figure environment:
+
+<<figure-asterisk, fig.env='figure*', fig.cap='Figure * environment.', fig.width=2, fig.height=4>>=
+par(mar=c(4, 4, .1, .1)); boxplot(x)
+@
+
+If you have two figures, you can assign two captions to fig.cap:
+
+<<two-caps, fig.cap=c('Hi figure one', 'Hi figure two'), fig.width=2, fig.height=1.5, fig.align='center'>>=
+par(mar=rep(0, 4), ann=FALSE)
+plot(1:10)
+plot(runif(10))
+@
+
+You can use figure references too. For example, Figure \ref{fig:t-test} is a histogram, and Figure \ref{fig:figure-asterisk} is a boxplot. The reference key is ``fig: + the chunk label'' by default.
 
 \end{document}
