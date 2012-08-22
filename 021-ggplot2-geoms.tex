@@ -1233,9 +1233,7 @@ crimesm <- \hlfunctioncall{melt}(crimes, id = 1)
   \hlfunctioncall{ggplot}(crimesm, \hlfunctioncall{aes}(map_id = state)) + \hlfunctioncall{geom_map}(\hlfunctioncall{aes}(fill = value), map = states_map) + \hlfunctioncall{expand_limits}(x = states_map$long, y = states_map$lat) + \hlfunctioncall{facet_wrap}( ~ variable)
 \}
 \end{alltt}
-
-
-{\ttfamily\noindent\itshape\textcolor{messagecolor}{\#\# Loading required package: maps}}\end{kframe}\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_map4} 
+\end{kframe}\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_map4} 
 \end{knitrout}
 
 
@@ -1601,22 +1599,22 @@ base <- \hlfunctioncall{ggplot}(pp200, \hlfunctioncall{aes}(x, y, fill = z))
 \end{alltt}
 \begin{verbatim}
 ##        step user.self sys.self elapsed
-## 1 construct     0.008        0   0.011
-## 2     build     1.072        0   1.075
-## 3    render     0.436        0   0.437
-## 4      draw     0.160        0   0.160
-## 5     TOTAL     1.676        0   1.683
+## 1 construct     0.008        0   0.006
+## 2     build     0.568        0   0.568
+## 3    render     0.288        0   0.286
+## 4      draw     0.076        0   0.077
+## 5     TOTAL     0.940        0   0.937
 \end{verbatim}
 \begin{alltt}
 \hlfunctioncall{benchplot}(base + \hlfunctioncall{geom_tile}())
 \end{alltt}
 \end{kframe}\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_raster2} \begin{kframe}\begin{verbatim}
 ##        step user.self sys.self elapsed
-## 1 construct     0.012    0.000   0.010
-## 2     build     1.060    0.000   1.064
-## 3    render     0.752    0.000   0.752
-## 4      draw     0.280    0.004   0.285
-## 5     TOTAL     2.104    0.004   2.111
+## 1 construct     0.004        0   0.007
+## 2     build     0.580        0   0.582
+## 3    render     0.616        0   0.620
+## 4      draw     0.144        0   0.145
+## 5     TOTAL     1.344        0   1.354
 \end{verbatim}
 \begin{alltt}
 \hlcomment{# justification}
