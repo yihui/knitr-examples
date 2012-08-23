@@ -1,0 +1,17 @@
+\documentclass{article}
+
+\begin{document}
+
+We can draw a table with the gridExtra package, and one problem is to
+pre-determine the size of the table plot to remove the extra white
+margin. Below is an example that shows you how to do it (courtesy of
+baptiste auguie).
+
+<<setup>>=
+library(gridExtra)
+g = tableGrob(head(iris, 4))
+<<draw-table, dev='png', dpi=150, fig.width=convertWidth(grobWidth(g), "in", value=TRUE), fig.height=convertHeight(grobHeight(g), "in", value=TRUE)>>=
+grid.draw(g)
+@
+
+\end{document}

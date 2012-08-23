@@ -1,0 +1,17 @@
+\documentclass{article}
+\newif\ifmyboolean 
+\begin{document}
+
+<<setup>>=
+myboolean='true' # or set it to 'false'
+@
+% assign true or false to myboolean
+\myboolean\Sexpr{myboolean}
+
+\ifmyboolean
+hello, foo!
+\else
+hey, bar!
+\fi
+
+\end{document}

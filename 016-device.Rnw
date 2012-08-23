@@ -1,0 +1,13 @@
+\documentclass{article}
+
+\begin{document}
+
+This demo shows you how to use the Palatino font in the Cairo PDF device.
+
+<<dev-args, dev='cairo_pdf', dev.args=list(family='Palatino'), fig.width=4.5, fig.height=3>>=
+plot(1, main='Hello, Palatino', xlab='This is x-axis', ylab='This is y-axis')
+@
+
+You can also pass other arguments to the device.
+
+\end{document}

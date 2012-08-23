@@ -1,0 +1,35 @@
+\documentclass{article}
+<<setup, include=FALSE>>=
+options(width=60)
+# a brilliant closure by @r2d3 at https://github.com/yihui/knitr/issues/210
+hook_setwidth = local({
+  default.width = 80
+  function(before, options, envir){
+    if(before) {
+      default.width <<- getOption("width")
+      options(width = options$set.width)
+    } else{
+      options(width = default.width)
+    }
+    return(NULL)
+  }
+})
+knit_hooks$set(set.width = hook_setwidth)
+@
+\begin{document}
+
+the value of $\pi$ is \Sexpr{pi}, and the function to read a table is \Sexpr{'read.table()'}.
+
+<<test2>>=
+rnorm(10)
+@
+<<test, set.width=30>>=
+getOption('width')
+x=1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1
+@
+% when you do not set the width
+<<another-test>>=
+getOption('width')
+x=1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1+1
+@
+\end{document}

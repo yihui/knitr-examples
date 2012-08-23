@@ -1,0 +1,50 @@
+\documentclass{article}\usepackage{graphicx, color}
+%% maxwidth is the original width if it is less than linewidth
+%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\usepackage{Sweave}
+
+
+\begin{document}
+
+This is all you need to do if you want to go back to the Sweave style:
+
+
+
+
+The quick brown fox jumps over the lazy dog the quick brown fox jumps over the
+lazy dog the quick brown fox jumps over the lazy dog.
+
+\begin{Schunk}
+\begin{Sinput}
+> 1 + 1
+\end{Sinput}
+\begin{Soutput}
+[1] 2
+\end{Soutput}
+\begin{Sinput}
+> rnorm(30)
+\end{Sinput}
+\begin{Soutput}
+ [1] -0.56048 -0.23018  1.55871  0.07051  0.12929  1.71506  0.46092
+ [8] -1.26506 -0.68685 -0.44566  1.22408  0.35981  0.40077  0.11068
+[15] -0.55584  1.78691  0.49785 -1.96662  0.70136 -0.47279 -1.06782
+[22] -0.21797 -1.02600 -0.72889 -0.62504 -1.68669  0.83779  0.15337
+[29] -1.13814  1.25381
+\end{Soutput}
+\end{Schunk}
+
+
+The quick brown fox jumps over the lazy dog the quick brown fox jumps over the
+lazy dog the quick brown fox jumps over the lazy dog.
+
+\end{document}

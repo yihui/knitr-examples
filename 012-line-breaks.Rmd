@@ -1,0 +1,22 @@
+This demos shows you how to replace `\n` to a real line break in the source.
+
+This is what you normally see in the output:
+
+```{r test}
+x = 'this is a long long
+string with several
+lines'
+```
+
+Modify the `source` hook:
+
+```{r setup, include=FALSE}
+knit_hooks$set(source = function(x, options) {
+  paste0('\n\n```r\n', gsub('\\n', '\n', x, fixed=TRUE), '```\n\n')
+})
+```
+
+Now we test the `source` hook:
+
+```{r test2, ref.label='test'}
+```

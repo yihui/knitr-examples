@@ -1,0 +1,37 @@
+%% courtesy of Jonathan Kennel
+%% library(knitr); knit('links.Rnw')
+\documentclass{report}
+\usepackage{tikz,hyperref}
+
+\begin{document}
+<<setup, include=FALSE>>=
+## important to add \usepackage{hyperref} to metric packages!
+options(tikzMetricPackages = c("\\usepackage[utf8]{inputenc}",
+   "\\usepackage[T1]{fontenc}", "\\usetikzlibrary{calc}", "\\usepackage{hyperref}"))
+
+opts_chunk$set(external = FALSE, cache = TRUE, fig.width = 5)
+@
+
+Create link texts in the data:
+
+<<pltPreparation>>=
+  library(lattice)
+  data(iris)
+  iris$hyperlink    <- paste("\\hyperlink{",iris$Species,"}{",iris$Species,"}", sep = '')
+  iris$hypertarget <- paste("\\hypertarget{",iris$Species,"}{",iris$Species,"}", sep = '')
+@
+
+Draw these texts in plots (you can click on the labels):
+
+<<pltFacet, dev = 'tikz'>>=
+  xyplot(Sepal.Length~Sepal.Width|hyperlink, data = iris)
+@
+
+<<pltInd, dev = 'tikz'>>=
+  xyplot(Sepal.Length~Sepal.Width|hypertarget, data = iris, layout= c(1,1))
+@
+
+Note the option external has to be FALSE here, otherwise LaTeX will not be able 
+to find the link target in the document.
+
+\end{document}
