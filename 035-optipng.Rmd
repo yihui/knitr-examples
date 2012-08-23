@@ -1,0 +1,24 @@
+This demos shows you how to optimize PNG images with `optipng`.
+
+```{r setup}
+opts_chunk$set(cache=TRUE)
+knit_hooks$set(optipng = hook_optipng)
+```
+
+Now we set the chunk option `optipng` to a non-`NULL` value, e.g. `''`, to activate the hook.
+
+```{r use-optipng, optipng=''}
+library(ggplot2)
+set.seed(123)
+qplot(rnorm(1e3), rnorm(1e3))
+```
+
+Same plot, not optimized:
+
+```{r no-optipng, ref.label='use-optipng'}
+```
+
+Same plot, most heavily optimized (pass `-o7` to `optipng`):
+
+```{r optipng-o7, ref.label='use-optipng', optipng='-o7'}
+```
