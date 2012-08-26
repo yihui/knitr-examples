@@ -47,8 +47,8 @@ ls | grep engine | xargs wc
 ```
 
 ```
- 103  187 1323 023-engine-python.md
-  59  149 1239 023-engine-python.Rmd
+ 108  201 1402 023-engine-python.md
+  65  165 1292 023-engine-python.Rmd
   18   37  160 024-engine-awk.md
   12   41  237 024-engine-awk.Rmd
   13   20  125 025-engine-ruby.md
@@ -57,6 +57,6 @@ ls | grep engine | xargs wc
    6   17  116 026-engine-haskell.Rmd
   62  120  809 027-engine-bash.md
   23   58  352 027-engine-bash.Rmd
- 315  663 4570 total
+ 326  693 4702 total
 ```
 

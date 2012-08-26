@@ -26,6 +26,11 @@ hello, python world!
 ```
 
 
+If all the chunks below are python chunks, we can set the engine globally:
+
+
+
+
 ## Chunk Options
 
 You can use some chunk options like `eval`, `echo` and `results`. For example, `eval=FALSE` (do not evaluate code):
