@@ -1,0 +1,29 @@
+# My report
+
+```{r}
+data(mtcars)
+```
+
+This example shows how to generate chunk labels dynamically with the brew syntax. It was motivated by the SO question: http://stackoverflow.com/q/12095113/559676
+
+```{r create-iterator, include=FALSE}
+src = NULL
+pat_brew()  # use brew syntax first
+knit_hooks$set(inline = identity)
+
+for (cur.cyl in unique(mtcars$cyl)) {
+  src = c(src, knit(text = readLines('041-label-i-child.tpl')))
+}
+
+# continue with markdown syntax and hooks
+pat_md()
+render_markdown()
+# knit the generated R markdown source
+out = knit(text = src)
+```
+
+## Generate report for each level of cylinder variable
+
+```{r results='asis', echo=FALSE}
+cat(out, sep = '\n')
+```
