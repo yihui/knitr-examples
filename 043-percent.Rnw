@@ -1,0 +1,11 @@
+\documentclass{article}
+
+\begin{document}
+
+<<setup, include=FALSE>>=
+knit_hooks$set(inline = function(x) gsub('%', '\\\\%', x))
+@
+
+\Sexpr{'hello %, are you still there?'}
+
+\end{document}
