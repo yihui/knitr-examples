@@ -1,0 +1,40 @@
+\documentclass{article}
+
+\begin{document}
+
+The size option controls the font size of chunks. This is the default size:
+
+<<>>=
+head(iris)
+@
+
+This is scriptsize:
+
+<<size='scriptsize'>>=
+head(iris)
+@
+
+The size does not work when results = 'asis':
+
+<<test-asis, size='small', results='asis'>>=
+cat(letters, sep = ' ')
+@
+
+But you can use a hook to add the size environment in this case:
+
+<<setup, include=FALSE>>=
+knit_hooks$set(size = function(before, options, envir) {
+  # bring back the size environment when results='asis'
+  if (options$results != 'asis') return()
+  paste('\\end{kframe}',
+        sprintf(if (before) '\\begin{%s}' else '\\end{%s}', options$size),
+        '\\begin{kframe}', sep = '')
+})
+@
+
+<<ref.label='test-asis', size='scriptsize', results='asis'>>=
+@
+
+Move on!
+
+\end{document}
