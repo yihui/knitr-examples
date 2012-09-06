@@ -9,7 +9,7 @@ To compile me, run this in R:
     library(knitr)
     knit('001-minimal.Rmd')
 
-See [output here](https://github.com/yihui/knitr-examples/blob/master/001-minimal.Rmd).
+See [output here](https://github.com/yihui/knitr-examples/blob/master/001-minimal.md).
 
 ## code chunks
 
