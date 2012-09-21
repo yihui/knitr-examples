@@ -1,0 +1,84 @@
+# Three arguments in chunk hooks
+
+A chunk hook has three arguments: `before`, `options` and `envir`. We show how they work through some simple examples.
+
+## The `before` argument
+
+It is a logical argument: `before == TRUE` executes code before a chunk.
+
+```{r}
+knit_hooks$set(foo1 = function(before, options, envir) {
+  if (before) {
+    '_I appear before a chunk!_\n\n'
+  } else {
+    '\n\n_I am after a chunk..._'
+  }
+})
+```
+
+Test the `foo1` hook:
+
+```{r foo1='whatever'}
+1+1
+```
+
+## The `options` argument
+
+It contains all the chunk options (include global options) for the current chunk.
+
+```{r}
+knit_hooks$set(foo2 = function(before, options, envir) {
+  if (!before) {
+    z = capture.output(str(options[c('eval', 'dev', 'results', 'bar1', 'bar2', 'bar3')]))
+    z = paste('    ', z, sep = '', collapse = '\n')
+    paste('Some chunk options in the above chunk are:\n\n', z, sep = '')
+  }
+})
+```
+
+Test the `foo2` hook:
+
+```{r foo2='hi', bar1=TRUE, bar2='asdf', bar3=3.14159}
+1+1
+```
+
+## The `envir` argument
+
+It is the environment of the current chunk.
+
+```{r}
+knit_hooks$set(foo3 = function(before, options, envir) {
+  if (!before) {
+    paste('Objects available in the above chunk:',
+          paste('`', ls(envir), '`', sep = '', collapse = ', '))
+  }
+})
+```
+
+Test the `foo3` hook:
+
+```{r foo3=TRUE}
+x2=1+1; y3=rnorm(10)
+```
+
+Another example:
+
+```{r}
+knit_hooks$set(foo4 = function(before, options, envir) {
+  if (!before && exists('z5', envir = envir)) {
+    sprintf('**Ha! I see z5 = %.3f!**', envir$z5)
+  }
+})
+```
+
+Test `foo4`:
+
+```{r foo4='qwer'}
+pi
+```
+
+This above chunk is quiet because `z5` does not exist yet.
+
+```{r foo4='asdf'}
+z5=2*pi
+```
