@@ -10,10 +10,11 @@ options(width = 75)
 # do not use the sourcecode directive
 render_rst(strict=TRUE)
 
-opts_chunk$set(cache=TRUE, cache.path='cache/rst-', fig.path='figure/rst-',
-  fig.width=5, fig.height=5) # global chunk options
 # upload images to Imgur; you do not need this if you want to keep images local
 opts_knit$set(upload.fun = imgur_upload)
+
+# global chunk options
+opts_chunk$set(cache=TRUE, fig.width=5, fig.height=5)
 .. ..
 
 More examples
