@@ -46,7 +46,7 @@ hist(rnorm(1000))
 
 ## inline code
 
-Yes I know the value of pi is `3.1416`, and 2 times pi is `6.2832`.
+Yes I know the value of pi is 3.1416, and 2 times pi is 6.2832.
 
 ## math
 
