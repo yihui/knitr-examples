@@ -94,7 +94,7 @@ Here is a plot:
     ## loess. Use 'method = x' to change the smoothing method.
 
 
-.. figure:: http://i.imgur.com/R5KSF.png
+.. figure:: http://i.imgur.com/9becf.png
     :alt: A ggplot2 example
     :width: 360px
 
