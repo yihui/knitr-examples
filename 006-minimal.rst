@@ -10,10 +10,15 @@ and the output filename will be ``rst``. Here is how we write R code in
 ::
 
     options(width = 75)
-    render_rst(strict = TRUE)  # do not use the sourcecode directive
-    opts_knit$set(upload.fun = imgur_upload)  # upload images
-    opts_chunk$set(cache = TRUE, cache.path = "cache/rst-", fig.path = "figure/rst-", 
-        fig.width = 5, fig.height = 5)  # global chunk options
+    # do not use the sourcecode directive
+    render_rst(strict = TRUE)
+    
+    # upload images to Imgur; you do not need this if you want to keep images
+    # local
+    opts_knit$set(upload.fun = imgur_upload)
+    
+    # global chunk options
+    opts_chunk$set(cache = TRUE, fig.width = 5, fig.height = 5)
 
 
 
