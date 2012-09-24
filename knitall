@@ -2,7 +2,6 @@
 
 for i in `ls | grep -E '^[0-9].*\.(brew|R(nw|md|tex|html|rst))$'`
 do
-  prefix=${i%.*}-
-  Rscript -e "library(knitr); opts_chunk\$set(cache.path='cache/$prefix', fig.path='figure/$prefix'); set.seed(123); knit('$i')"
+  ./knit1 $i
 done
 
