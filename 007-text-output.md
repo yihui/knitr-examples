@@ -171,6 +171,28 @@ dnorm(0)
 ```
 
 
+## Only evaluate the first two expressions
+
+
+```r
+1 + 1
+```
+
+```
+## [1] 2
+```
+
+```r
+for (i in 1:10) {
+    # nothing
+}
+## # two blank lines below
+## 
+## 
+## dnorm(0)
+```
+
+
 ## Add prompts but no tidy
 
 

@@ -50,6 +50,11 @@ dnorm(0)
 ```{r demo, echo=-2}
 ```
 
+## Only evaluate the first two expressions
+
+```{r demo, eval=1:2}
+```
+
 ## Add prompts but no tidy
 
 ```{r demo, tidy=FALSE, prompt=TRUE}
