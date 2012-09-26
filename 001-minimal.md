@@ -66,7 +66,6 @@ You can write code within other elements, e.g. a list
     ## [1] "hello"    "indented" "world"
     ```
 
-
 2. bar is better
 
 ## conclusion
