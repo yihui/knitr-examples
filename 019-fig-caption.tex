@@ -65,8 +65,10 @@ Knitr can automatically generate a figure environment if fig.cap is specified.
 \hlfunctioncall{plot}(\hlfunctioncall{runif}(4))
 \end{alltt}
 \end{kframe}\begin{figure}[]
+
 \includegraphics[width=\maxwidth]{figure/019-fig-caption-test} \caption[$2 \times 2$ is 4]{$2 \times 2$ is 4\label{fig:test}}
 \end{figure}
+
 
 \end{knitrout}
 
@@ -93,8 +95,10 @@ x = \hlfunctioncall{rnorm}(30)
 \hlfunctioncall{hist}(x, main = \hlstring{""})
 \end{alltt}
 \end{kframe}\begin{figure}[]
+
 \includegraphics[width=\maxwidth]{figure/019-fig-caption-t-test} \caption[The P-value is 0]{The P-value is 0.93\label{fig:t-test}}
 \end{figure}
+
 
 \end{knitrout}
 
@@ -108,8 +112,10 @@ Change the figure environment:
 \hlfunctioncall{boxplot}(x)
 \end{alltt}
 \end{kframe}\begin{figure*}[]
+
 \includegraphics[width=\maxwidth]{figure/019-fig-caption-figure-asterisk} \caption[Figure * environment]{Figure * environment.\label{fig:figure-asterisk}}
 \end{figure*}
+
 
 \end{knitrout}
 
@@ -131,6 +137,7 @@ If you have two figures, you can assign two captions to fig.cap:
 
 \caption[Hi figure one]{Hi figure one\label{fig:two-caps1}}
 \end{figure}
+
 \begin{kframe}\begin{alltt}
 \hlfunctioncall{plot}(\hlfunctioncall{runif}(10))
 \end{alltt}
@@ -143,6 +150,7 @@ If you have two figures, you can assign two captions to fig.cap:
 
 \caption[Hi figure two]{Hi figure two\label{fig:two-caps2}}
 \end{figure}
+
 
 \end{knitrout}
 
