@@ -1,0 +1,653 @@
+\documentclass{article}\usepackage{graphicx, color}
+%% maxwidth is the original width if it is less than linewidth
+%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\definecolor{fgcolor}{rgb}{0.2, 0.2, 0.2}
+\newcommand{\hlnumber}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlfunctioncall}[1]{\textcolor[rgb]{0.501960784313725,0,0.329411764705882}{\textbf{#1}}}%
+\newcommand{\hlstring}[1]{\textcolor[rgb]{0.6,0.6,1}{#1}}%
+\newcommand{\hlkeyword}[1]{\textcolor[rgb]{0,0,0}{\textbf{#1}}}%
+\newcommand{\hlargument}[1]{\textcolor[rgb]{0.690196078431373,0.250980392156863,0.0196078431372549}{#1}}%
+\newcommand{\hlcomment}[1]{\textcolor[rgb]{0.180392156862745,0.6,0.341176470588235}{#1}}%
+\newcommand{\hlroxygencomment}[1]{\textcolor[rgb]{0.43921568627451,0.47843137254902,0.701960784313725}{#1}}%
+\newcommand{\hlformalargs}[1]{\textcolor[rgb]{0.690196078431373,0.250980392156863,0.0196078431372549}{#1}}%
+\newcommand{\hleqformalargs}[1]{\textcolor[rgb]{0.690196078431373,0.250980392156863,0.0196078431372549}{#1}}%
+\newcommand{\hlassignement}[1]{\textcolor[rgb]{0,0,0}{\textbf{#1}}}%
+\newcommand{\hlpackage}[1]{\textcolor[rgb]{0.588235294117647,0.709803921568627,0.145098039215686}{#1}}%
+\newcommand{\hlslot}[1]{\textit{#1}}%
+\newcommand{\hlsymbol}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlprompt}[1]{\textcolor[rgb]{0.2,0.2,0.2}{#1}}%
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
+\begin{document}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlfunctioncall{library}(diagram)
+\end{alltt}
+
+
+{\ttfamily\noindent\itshape\textcolor{messagecolor}{\#\# Loading required package: shape}}\begin{alltt}
+\hlfunctioncall{read_demo}(\hlstring{"flowchart"}, package = \hlstring{"diagram"}, labels = \hlstring{"demo-flowchart"})
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcomment{## Flowchart examples}
+\hlfunctioncall{par}(ask = TRUE)
+
+\hlcomment{## MODELLING DIAGRAM}
+mar <- \hlfunctioncall{par}(mar = \hlfunctioncall{c}(1, 1, 1, 1))
+\hlfunctioncall{openplotmat}(main = \hlstring{"from Soetaert and herman, book in prep"}, cex.main = 1)
+elpos <- \hlfunctioncall{coordinates}(\hlfunctioncall{c}(1, 1, 1, 1, 1, 1, 1, 1), mx = -0.1)
+\hlfunctioncall{segmentarrow}(elpos[7, ], elpos[2, ], arr.pos = 0.15, dd = 0.3, arr.side = 3, 
+    endhead = TRUE)
+\hlfunctioncall{segmentarrow}(elpos[7, ], elpos[3, ], arr.pos = 0.15, dd = 0.3, arr.side = 3, 
+    endhead = TRUE)
+\hlfunctioncall{segmentarrow}(elpos[7, ], elpos[4, ], arr.pos = 0.15, dd = 0.3, arr.side = 3, 
+    endhead = TRUE)
+
+pin <- \hlfunctioncall{par}(\hlstring{"pin"})  # size of plotting region, inches
+xx <- 0.2
+yy <- xx * pin[1]/pin[2] * 0.15  \hlcomment{# used to make circles round}
+
+sx <- \hlfunctioncall{rep}(xx, 8)
+sx[7] <- 0.05
+
+sy <- \hlfunctioncall{rep}(yy, 8)
+sy[6] <- yy * 1.5
+sy[7] <- sx[7] * pin[1]/pin[2]
+
+\hlfunctioncall{for} (i in \hlfunctioncall{c}(1:7)) \hlfunctioncall{straightarrow}(to = elpos[i + 1, ], from = elpos[i, ], lwd = 2, 
+    arr.pos = 0.6, endhead = TRUE)
+lab <- \hlfunctioncall{c}(\hlstring{"Problem"}, \hlstring{"Conceptual model"}, \hlstring{"Mathematical model"}, \hlstring{"Parameterisation"}, 
+    \hlstring{"Mathematical solution"}, \hlstring{""}, \hlstring{"OK?"}, \hlstring{"Prediction, Analysis"})
+
+\hlfunctioncall{for} (i in \hlfunctioncall{c}(1:5, 8)) \hlfunctioncall{textround}(elpos[i, ], sx[i], sy[i], lab = lab[i])
+
+\hlfunctioncall{textround}(elpos[6, ], xx, yy * 1.5, lab = \hlfunctioncall{c}(\hlstring{"Calibration,sensitivity"}, \hlstring{"Verification,validation"}))
+\hlfunctioncall{textdiamond}(elpos[7, ], sx[7], sy[7], lab = lab[7])
+
+\hlfunctioncall{textplain}(\hlfunctioncall{c}(0.7, elpos[2, 2]), yy * 2, lab = \hlfunctioncall{c}(\hlstring{"main components"}, \hlstring{"relationships"}), 
+    font = 3, adj = \hlfunctioncall{c}(0, 0.5))
+\hlfunctioncall{textplain}(\hlfunctioncall{c}(0.7, elpos[3, 2]), yy, \hlstring{"general theory"}, adj = \hlfunctioncall{c}(0, 0.5), font = 3)
+\hlfunctioncall{textplain}(\hlfunctioncall{c}(0.7, elpos[4, 2]), yy * 2, lab = \hlfunctioncall{c}(\hlstring{"literature"}, \hlstring{"measurements"}), 
+    font = 3, adj = \hlfunctioncall{c}(0, 0.5))
+\hlfunctioncall{textplain}(\hlfunctioncall{c}(0.7, elpos[6, 2]), yy * 2, lab = \hlfunctioncall{c}(\hlstring{"field data"}, \hlstring{"lab measurements"}), 
+    font = 3, adj = \hlfunctioncall{c}(0, 0.5))
+\end{alltt}
+\end{kframe}
+\includegraphics[width=\maxwidth]{figure/051-flowchart-demo-flowchart1} 
+\begin{kframe}\begin{alltt}
+
+\hlcomment{##### DIAGRAM}
+
+\hlfunctioncall{par}(mar = \hlfunctioncall{c}(1, 1, 1, 1))
+\hlfunctioncall{openplotmat}()
+elpos <- \hlfunctioncall{coordinates}(\hlfunctioncall{c}(1, 1, 2, 4))
+fromto <- \hlfunctioncall{matrix}(ncol = 2, byrow = TRUE, data = \hlfunctioncall{c}(1, 2, 2, 3, 2, 4, 4, 7, 4, 
+    8))
+nr <- \hlfunctioncall{nrow}(fromto)
+arrpos <- \hlfunctioncall{matrix}(ncol = 2, nrow = nr)
+\hlfunctioncall{for} (i in 1:nr) arrpos[i, ] <- \hlfunctioncall{straightarrow}(to = elpos[fromto[i, 2], ], from = elpos[fromto[i, 
+    1], ], lwd = 2, arr.pos = 0.6, arr.length = 0.5)
+\hlfunctioncall{textellipse}(elpos[1, ], 0.1, lab = \hlstring{"start"}, box.col = \hlstring{"green"}, shadow.col = \hlstring{"darkgreen"}, 
+    shadow.size = 0.005, cex = 1.5)
+\hlfunctioncall{textrect}(elpos[2, ], 0.15, 0.05, lab = \hlstring{"found term?"}, box.col = \hlstring{"blue"}, shadow.col = \hlstring{"darkblue"}, 
+    shadow.size = 0.005, cex = 1.5)
+\hlfunctioncall{textrect}(elpos[4, ], 0.15, 0.05, lab = \hlstring{"related?"}, box.col = \hlstring{"blue"}, shadow.col = \hlstring{"darkblue"}, 
+    shadow.size = 0.005, cex = 1.5)
+\hlfunctioncall{textellipse}(elpos[3, ], 0.1, 0.1, lab = \hlfunctioncall{c}(\hlstring{"other"}, \hlstring{"term"}), box.col = \hlstring{"orange"}, 
+    shadow.col = \hlstring{"red"}, shadow.size = 0.005, cex = 1.5)
+\hlfunctioncall{textellipse}(elpos[3, ], 0.1, 0.1, lab = \hlfunctioncall{c}(\hlstring{"other"}, \hlstring{"term"}), box.col = \hlstring{"orange"}, 
+    shadow.col = \hlstring{"red"}, shadow.size = 0.005, cex = 1.5)
+\hlfunctioncall{textellipse}(elpos[7, ], 0.1, 0.1, lab = \hlfunctioncall{c}(\hlstring{"make"}, \hlstring{"a link"}), box.col = \hlstring{"orange"}, 
+    shadow.col = \hlstring{"red"}, shadow.size = 0.005, cex = 1.5)
+\hlfunctioncall{textellipse}(elpos[8, ], 0.1, 0.1, lab = \hlfunctioncall{c}(\hlstring{"new"}, \hlstring{"article"}), box.col = \hlstring{"orange"}, 
+    shadow.col = \hlstring{"red"}, shadow.size = 0.005, cex = 1.5)
+
+dd <- \hlfunctioncall{c}(0, 0.025)
+\hlfunctioncall{text}(arrpos[2, 1] + 0.05, arrpos[2, 2], \hlstring{"yes"})
+\hlfunctioncall{text}(arrpos[3, 1] - 0.05, arrpos[3, 2], \hlstring{"no"})
+\hlfunctioncall{text}(arrpos[4, 1] + 0.05, arrpos[4, 2] + 0.05, \hlstring{"yes"})
+\hlfunctioncall{text}(arrpos[5, 1] - 0.05, arrpos[5, 2] + 0.05, \hlstring{"no"})
+\end{alltt}
+\end{kframe}
+\includegraphics[width=\maxwidth]{figure/051-flowchart-demo-flowchart2} 
+\begin{kframe}\begin{alltt}
+
+
+\hlcomment{#####}
+\hlfunctioncall{par}(mfrow = \hlfunctioncall{c}(2, 2))
+\hlfunctioncall{par}(mar = \hlfunctioncall{c}(0, 0, 0, 0))
+\hlfunctioncall{openplotmat}()
+elpos <- \hlfunctioncall{coordinates}(\hlfunctioncall{c}(2, 3))
+\hlfunctioncall{treearrow}(from = elpos[1:2, ], to = elpos[3:5, ], arr.side = 2, path = \hlstring{"H"})
+\hlfunctioncall{for} (i in 1:5) \hlfunctioncall{textrect}(elpos[i, ], 0.15, 0.05, lab = i, cex = 1.5)
+
+\hlfunctioncall{openplotmat}()
+elpos <- \hlfunctioncall{coordinates}(\hlfunctioncall{c}(3, 2), hor = FALSE)
+\hlfunctioncall{treearrow}(from = elpos[1:3, ], to = elpos[4:5, ], arr.side = 2, arr.pos = 0.2, 
+    path = \hlstring{"V"})
+\hlfunctioncall{for} (i in 1:5) \hlfunctioncall{textrect}(elpos[i, ], 0.15, 0.05, lab = i, cex = 1.5)
+
+\hlfunctioncall{openplotmat}()
+elpos <- \hlfunctioncall{coordinates}(\hlfunctioncall{c}(1, 4))
+\hlfunctioncall{treearrow}(from = elpos[1, ], to = elpos[2:5, ], arr.side = 2, arr.pos = 0.7, 
+    path = \hlstring{"H"})
+\hlfunctioncall{for} (i in 1:5) \hlfunctioncall{textrect}(elpos[i, ], 0.05, 0.05, lab = i, cex = 1.5)
+
+\hlfunctioncall{openplotmat}()
+elpos <- \hlfunctioncall{coordinates}(\hlfunctioncall{c}(2, 1, 2, 3))
+elpos[1, 1] <- 0.3
+elpos[2, 1] <- 0.7
+\hlfunctioncall{treearrow}(from = elpos[1:3, ], to = elpos[4:8, ], arr.side = 2, path = \hlstring{"H"})
+\hlfunctioncall{for} (i in 1:8) \hlfunctioncall{bentarrow}(from = elpos[i, ], to = elpos[i, ] + \hlfunctioncall{c}(0.1, -0.05), 
+    arr.pos = 1, arr.type = \hlstring{"circle"}, arr.col = \hlstring{"white"}, arr.length = 0.2)
+\hlfunctioncall{for} (i in 1:8) \hlfunctioncall{textrect}(elpos[i, ], 0.05, 0.05, lab = i, cex = 1.5)
+\hlfunctioncall{mtext}(side = 3, outer = TRUE, line = -2, \hlstring{"treearrow"}, cex = 1.5)
+\end{alltt}
+\end{kframe}
+\includegraphics[width=\maxwidth]{figure/051-flowchart-demo-flowchart3} 
+\begin{kframe}\begin{alltt}
+
+
+
+\hlfunctioncall{par}(mfrow = \hlfunctioncall{c}(1, 1))
+
+\hlfunctioncall{par}(mar = \hlfunctioncall{c}(0, 0, 0, 0))
+\hlfunctioncall{openplotmat}()
+elpos <- \hlfunctioncall{coordinates}(\hlfunctioncall{c}(1, 1, 2, 1))
+\hlfunctioncall{straightarrow}(to = elpos[2, ], from = elpos[1, ])
+\hlfunctioncall{treearrow}(from = elpos[2, ], to = elpos[3:4, ], arr.side = 2, path = \hlstring{"H"})
+\hlfunctioncall{treearrow}(from = elpos[3:4, ], to = elpos[5, ], arr.side = 2, path = \hlstring{"H"})
+\hlfunctioncall{segmentarrow}(from = elpos[5, ], to = elpos[2, ], dd = 0.4)
+\hlfunctioncall{curvedarrow}(from = elpos[5, ], to = elpos[2, ], curve = 0.8)
+col <- \hlfunctioncall{femmecol}(5)
+\hlfunctioncall{texthexa}(mid = elpos[1, ], radx = 0.1, angle = 20, shadow.size = 0.01, rady = 0.05, 
+    lab = 1, box.col = col[1])
+\hlfunctioncall{textrect}(mid = elpos[2, ], radx = 0.1, shadow.size = 0.01, rady = 0.05, lab = 2, 
+    box.col = col[2])
+\hlfunctioncall{textround}(mid = elpos[3, ], radx = 0.05, shadow.size = 0.01, rady = 0.05, lab = 3, 
+    box.col = col[3])
+\hlfunctioncall{textellipse}(mid = elpos[4, ], radx = 0.05, shadow.size = 0.01, rady = 0.05, 
+    lab = 4, box.col = col[4])
+\hlfunctioncall{textellipse}(mid = elpos[5, ], radx = 0.05, shadow.size = 0.01, rady = 0.08, 
+    angle = 45, lab = 5, box.col = col[5])
+\end{alltt}
+\end{kframe}
+\includegraphics[width=\maxwidth]{figure/051-flowchart-demo-flowchart4} 
+\begin{kframe}\begin{alltt}
+
+
+
+\hlfunctioncall{par}(mar = \hlfunctioncall{c}(1, 1, 1, 1))
+\hlfunctioncall{openplotmat}(main = \hlstring{"Arrowtypes"})
+elpos <- \hlfunctioncall{coordinates}(\hlfunctioncall{c}(1, 2, 1), mx = 0.1, my = -0.1)
+\hlfunctioncall{curvedarrow}(from = elpos[1, ], to = elpos[2, ], curve = -0.5, lty = 2, lcol = 2)
+\hlfunctioncall{straightarrow}(from = elpos[1, ], to = elpos[2, ], lty = 3, lcol = 3)
+\hlfunctioncall{segmentarrow}(from = elpos[1, ], to = elpos[2, ], lty = 1, lcol = 1)
+\hlfunctioncall{treearrow}(from = elpos[2:3, ], to = elpos[4, ], lty = 4, lcol = 4)
+\hlfunctioncall{bentarrow}(from = elpos[3, ], to = elpos[3, ] - \hlfunctioncall{c}(0.1, 0.1), arr.pos = 1, lty = 5, 
+    lcol = 5)
+\hlfunctioncall{bentarrow}(from = elpos[1, ], to = elpos[3, ], lty = 5, lcol = 5)
+\hlfunctioncall{selfarrow}(pos = elpos[3, ], path = \hlstring{"R"}, lty = 6, curve = 0.075, lcol = 6)
+\hlfunctioncall{splitarrow}(from = elpos[1, ], to = elpos[2:3, ], lty = 1, lwd = 1, dd = 0.7, 
+    arr.side = 1:2, lcol = 7)
+
+\hlfunctioncall{for} (i in 1:4) \hlfunctioncall{textrect}(elpos[i, ], 0.05, 0.05, lab = i, cex = 1.5)
+
+\hlfunctioncall{legend}(\hlstring{"topright"}, lty = 1:7, legend = \hlfunctioncall{c}(\hlstring{"segmentarrow"}, \hlstring{"curvedarrow"}, \hlstring{"straightarrow"}, 
+    \hlstring{"treearrow"}, \hlstring{"bentarrow"}, \hlstring{"selfarrow"}, \hlstring{"splitarrow"}), lwd = \hlfunctioncall{c}(\hlfunctioncall{rep}(2, 6), 
+    1), col = 1:7)
+\end{alltt}
+\end{kframe}
+\includegraphics[width=\maxwidth]{figure/051-flowchart-demo-flowchart5} 
+\begin{kframe}\begin{alltt}
+
+\hlfunctioncall{openplotmat}(main = \hlstring{"textbox shapes"})
+rx <- 0.1
+ry <- 0.05
+pos <- \hlfunctioncall{coordinates}(\hlfunctioncall{c}(1, 1, 1, 1, 1, 1, 1), mx = -0.2)
+\hlfunctioncall{textdiamond}(mid = pos[1, ], radx = rx, rady = ry, lab = LETTERS[1], cex = 2, 
+    shadow.col = \hlstring{"lightblue"})
+\hlfunctioncall{textellipse}(mid = pos[2, ], radx = rx, rady = ry, lab = LETTERS[2], cex = 2, 
+    shadow.col = \hlstring{"blue"})
+\hlfunctioncall{texthexa}(mid = pos[3, ], radx = rx, rady = ry, lab = LETTERS[3], cex = 2, shadow.col = \hlstring{"darkblue"})
+\hlfunctioncall{textmulti}(mid = pos[4, ], nr = 7, radx = rx, rady = ry, lab = LETTERS[4], cex = 2, 
+    shadow.col = \hlstring{"red"})
+\hlfunctioncall{textrect}(mid = pos[5, ], radx = rx, rady = ry, lab = LETTERS[5], cex = 2, shadow.col = \hlstring{"darkred"})
+\hlfunctioncall{textround}(mid = pos[6, ], radx = rx, rady = ry, lab = LETTERS[6], cex = 2, shadow.col = \hlstring{"black"})
+\hlfunctioncall{textempty}(mid = pos[7, ], lab = LETTERS[7], cex = 2, box.col = \hlstring{"yellow"})
+pos[, 1] <- pos[, 1] + 0.5
+\hlfunctioncall{text}(pos[, 1], pos[, 2], \hlfunctioncall{c}(\hlstring{"textdiamond"}, \hlstring{"textellipse"}, \hlstring{"texthexa"}, \hlstring{"textmulti"}, 
+    \hlstring{"textrect"}, \hlstring{"textround"}, \hlstring{"textempty"}))
+\end{alltt}
+\end{kframe}
+\includegraphics[width=\maxwidth]{figure/051-flowchart-demo-flowchart6} 
+\begin{kframe}\begin{alltt}
+
+
+mf <- \hlfunctioncall{par}(mfrow = \hlfunctioncall{c}(2, 2))
+\hlfunctioncall{example}(bentarrow)
+\end{alltt}
+\begin{verbatim}
+## 
+## bntrrw> openplotmat(main = "bentarrow")
+
+## 
+## bntrrw> pos <- cbind( A <- seq(0.1, 0.9, by = 0.2), rev(A))
+## 
+## bntrrw> text(pos, LETTERS[1:5], cex = 2)
+## 
+## bntrrw> for (i in 1:4) 
+## bntrrw+   bentarrow(from = pos[i,] + c(0.05, 0), to = pos[i+1,] + c(0, 0.05),
+## bntrrw+             arr.pos = 1, arr.adj = 1)
+## 
+## bntrrw> for (i in 1:2) 
+## bntrrw+   bentarrow(from = pos[i,] + c(0.05, 0), to = pos[i+1, ] + c(0, 0.05),
+## bntrrw+             arr.pos = 0.5, path = "V", lcol = "lightblue", 
+## bntrrw+             arr.type = "triangle")
+## 
+## bntrrw> bentarrow(from = pos[3, ] + c(0.05, 0), to = pos[4, ] + c(0, 0.05),
+## bntrrw+           arr.pos = 0.7, arr.side = 1, path = "V", lcol = "darkblue")
+## 
+## bntrrw> bentarrow(from = pos[4, ] + c(0.05, 0), to = pos[5, ] + c(0, 0.05),
+## bntrrw+           arr.pos = 0.7, arr.side = 1:2, path = "V", lcol = "blue")
+\end{verbatim}
+\begin{alltt}
+\hlfunctioncall{example}(coordinates)
+\end{alltt}
+\begin{verbatim}
+## 
+## crdnts> openplotmat(main = "coordinates")
+
+## 
+## crdnts> text(coordinates(N = 6), lab = LETTERS[1:6], cex = 2)
+## 
+## crdnts> text(coordinates(N = 8, relsize = 0.5), lab = letters[1:8], cex = 2)
+## 
+## crdnts> openplotmat(main = "coordinates")
+
+## 
+## crdnts> text(coordinates(pos = c(2, 4, 2)), lab = letters[1:8], cex = 2)
+## 
+## crdnts> plot(0, type = "n", xlim = c(0, 5), ylim = c(2, 8), main = "coordinates")
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{figure/051-flowchart-demo-flowchart7} 
+\begin{kframe}\begin{verbatim}
+## 
+## crdnts> text(coordinates(pos = c(2, 4, 3), hor = FALSE), lab = 1:9, cex = 2)
+\end{verbatim}
+\begin{alltt}
+\hlfunctioncall{par}(mfrow = \hlfunctioncall{c}(2, 2))
+\hlfunctioncall{example}(curvedarrow)
+\end{alltt}
+\begin{verbatim}
+## 
+## crvdrr> openplotmat(main = "curvedarrow")
+
+## 
+## crvdrr> pos <- coordinates(pos = 4, my = 0.2)
+## 
+## crvdrr> text(pos, LETTERS[1:4], cex = 2)
+## 
+## crvdrr> for (i in 1:3) 
+## crvdrr+   curvedarrow(from = pos[1, ] + c(0,-0.05), to = pos[i+1, ] + c(0,-0.05),
+## crvdrr+               curve = 0.5, arr.pos = 1)
+## 
+## crvdrr> for (i in 1:3) 
+## crvdrr+   curvedarrow(from = pos[1, ] + c(0, 0.05), to = pos[i+1, ] + c(0, 0.05),
+## crvdrr+               curve = -0.25, arr.adj = 1, arr.pos = 0.5, 
+## crvdrr+               arr.type = "triangle", arr.col = "blue")
+\end{verbatim}
+\begin{alltt}
+\hlfunctioncall{example}(segmentarrow)
+\end{alltt}
+\begin{verbatim}
+## 
+## sgmntr> openplotmat(main="segmentarrow")
+
+## 
+## sgmntr> pos <-cbind(A <- seq(0.2, 0.8, by = 0.2), rev(A))
+## 
+## sgmntr> text(pos, LETTERS[1:4], cex = 2)
+## 
+## sgmntr> segmentarrow(from = pos[1, ] + c(0, 0.05), to = pos[2, ] + c(0, 0.05),
+## sgmntr+              arr.pos = 1, arr.adj = 1, dd = 0.1, 
+## sgmntr+              path = "UHD", lcol = "darkred")
+## 
+## sgmntr> segmentarrow(from = pos[2, ] + c(-0.05, 0), to = pos[3, ] + c(-0.05, 0.01),
+## sgmntr+              arr.pos = 1, arr.adj = 1, dd = 0.1,
+## sgmntr+              lcol = "black", arr.type = "triangle")
+## 
+## sgmntr> segmentarrow(from = pos[2, ] + c(0.05, 0), to = pos[3, ] + c(0.05, 0.01),
+## sgmntr+              arr.pos = 0.5, dd = 0.3, path = "RVL", arr.side = 1,
+## sgmntr+              lcol = "lightblue", arr.type = "simple")  
+## 
+## sgmntr> segmentarrow(from = pos[3, ] + c(0.05, 0), to = pos[4, ] + c(-0.05, 0.01),
+## sgmntr+              arr.pos = 0.5, dd = 0.05, path = "RVL", lcol = "darkblue",
+## sgmntr+              arr.type = "ellipse")  
+## 
+## sgmntr> segmentarrow(from = pos[3, ] + c(0, -0.05), to = pos[4, ] + c(0, 0.05),
+## sgmntr+              arr.pos = 0.5, arr.side = 3, dd = 0.05, path = "DHU",
+## sgmntr+              lcol = "darkgreen")  
+## 
+## sgmntr> segmentarrow(from = pos[3,] + c(-0.05, -0.05), to = pos[4, ] + c(0, -0.05),
+## sgmntr+              arr.pos = 0.5, arr.side = 1:3, dd = 0.3, path = "DHU",
+## sgmntr+              lcol = "green")
+\end{verbatim}
+\begin{alltt}
+\hlfunctioncall{example}(selfarrow)
+\end{alltt}
+\begin{verbatim}
+## 
+## slfrrw> openplotmat(main = "selfarrow")
+
+## 
+## slfrrw> pos <- coordinates(3, mx = 0.05)
+## 
+## slfrrw> text(pos, LETTERS[1:3], cex = 2)
+## 
+## slfrrw> for (i in 1:3) 
+## slfrrw+   selfarrow(pos = pos[i, ], path = "R", arr.pos = 0.2,
+## slfrrw+             curve = c(0.05, 0.1), lcol = "darkred")
+## 
+## slfrrw> for (i in 1:3) 
+## slfrrw+   selfarrow(pos = pos[i, ], path = "L", arr.pos = 0.7,
+## slfrrw+             lcol = "darkblue", curve = c(0.05, 0.05))
+## 
+## slfrrw> for (i in 1:3) 
+## slfrrw+   selfarrow(pos = pos[i, ], path = "L", arr.pos = 0.5,
+## slfrrw+             lcol = "darkgreen", code = i, arr.type = "triangle")
+\end{verbatim}
+\begin{alltt}
+\hlfunctioncall{example}(straightarrow)
+\end{alltt}
+\begin{verbatim}
+## 
+## strght> openplotmat(main = "straightarrow")
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{figure/051-flowchart-demo-flowchart8} 
+\begin{kframe}\begin{verbatim}
+## 
+## strght> pos <- coordinates(c(2, 3, 1))
+## 
+## strght> for (i in 1:5) 
+## strght+   straightarrow(from = pos[i, ], to = pos[i+1, ], arr.pos = 0.5)
+## 
+## strght> straightarrow(from = pos[6, ], to = pos[6, ] + c(0.3, 0.), 
+## strght+               arr.type = "T", arr.pos = 1, arr.lwd = 3)    
+## 
+## strght> for (i in 1:6) 
+## strght+   textrect(pos[i, ], lab = LETTERS[i], radx = 0.05)
+\end{verbatim}
+\begin{alltt}
+\hlfunctioncall{par}(mfrow = \hlfunctioncall{c}(2, 2))
+\hlfunctioncall{example}(treearrow)
+\end{alltt}
+\begin{verbatim}
+## 
+## trerrw> openplotmat(main = "treearrow")
+
+## 
+## trerrw> pos <- coordinates(c(3, 2, 4, 1))
+## 
+## trerrw> treearrow(from = pos[1:5, ], to = pos[6:10, ])
+## 
+## trerrw> for (i in 1:10) 
+## trerrw+   textrect(pos[i, ], lab = i, cex = 2, radx = 0.05)
+## 
+## trerrw> openplotmat(main = "treearrow")
+
+## 
+## trerrw> pos <- coordinates(c(2, 4), hor = FALSE)
+## 
+## trerrw> treearrow(from = pos[1:2, ], to = pos[3:6, ], 
+## trerrw+           arr.side = 1:2, path = "V")
+## 
+## trerrw> for (i in 1:6) 
+## trerrw+   textrect(pos[i, ], lab = i, cex = 2, radx = 0.05)
+## 
+## trerrw> openplotmat(main = "treearrow")
+
+## 
+## trerrw> pos <- coordinates(c(3, 5, 7, 7, 5, 3))
+## 
+## trerrw> treearrow(from = pos[1:15, ], to = pos[15:30, ], arr.side = 0)
+## 
+## trerrw> for (i in 1:30) 
+## trerrw+   textrect(pos[i, ], lab = i, cex = 1.2, radx = 0.025)
+\end{verbatim}
+\begin{alltt}
+\hlfunctioncall{par}(mfrow = \hlfunctioncall{c}(2, 2))
+\end{alltt}
+\end{kframe}
+\includegraphics[width=\maxwidth]{figure/051-flowchart-demo-flowchart9} 
+\begin{kframe}\begin{alltt}
+\hlfunctioncall{example}(splitarrow)
+\end{alltt}
+\begin{verbatim}
+## 
+## spltrr> openplotmat(main = "splitarrow")
+
+## 
+## spltrr> pos <- coordinates(c(1, 2, 2, 4, 1))
+## 
+## spltrr> splitarrow(from = pos[1, ], to = pos[2:10, ], 
+## spltrr+            arr.side = 1, centre = c(0.5, 0.625))
+## 
+## spltrr> for (i in 1:10) 
+## spltrr+   textrect(pos[i, ], lab = i, cex = 2, radx = 0.05)
+## 
+## spltrr> openplotmat(main = "splitarrow")
+
+## 
+## spltrr> pos <- coordinates(c(1, 3))
+## 
+## spltrr> splitarrow(from = pos[1,], to = pos[2:4, ], arr.side = 1)
+## 
+## spltrr> splitarrow(from = pos[1,], to = pos[2:4, ], arr.side = 2)
+## 
+## spltrr> for (i in 1:4) 
+## spltrr+   textrect(pos[i, ], lab = i, cex = 2, radx = 0.05)
+## 
+## spltrr> openplotmat(main = "splitarrow")
+
+## 
+## spltrr> pos <- coordinates(N = 6)
+## 
+## spltrr> pos <- rbind(c(0.5, 0.5), pos)
+## 
+## spltrr> splitarrow(from = pos[1, ], to = pos[2:7, ], arr.side = 2)
+## 
+## spltrr> for (i in 1:7)
+## spltrr+   textrect(pos[i, ], lab = i, cex = 2, radx = 0.05)
+\end{verbatim}
+\begin{alltt}
+\hlfunctioncall{par}(mfrow = \hlfunctioncall{c}(2, 2))
+\end{alltt}
+\end{kframe}
+\includegraphics[width=\maxwidth]{figure/051-flowchart-demo-flowchart10} 
+\begin{kframe}\begin{alltt}
+\hlfunctioncall{example}(textdiamond)
+\end{alltt}
+\begin{verbatim}
+## 
+## txtdmn> openplotmat(xlim = c(-0.1, 1.1), main = "textdiamond")
+
+## 
+## txtdmn> for (i in 1:10) 
+## txtdmn+   textdiamond(mid = runif(2), col = i, radx = 0.1, rady = 0.05,
+## txtdmn+               lab = LETTERS[i], cex = 2, angle = runif(1)*360)
+\end{verbatim}
+\begin{alltt}
+\hlfunctioncall{example}(textellipse)
+\end{alltt}
+\begin{verbatim}
+## 
+## txtllp> openplotmat(xlim = c(-0.1, 1.1), main = "textellipse")
+
+## 
+## txtllp> for (i in 1:10) 
+## txtllp+   textellipse(mid = runif(2), col = i, box.col = grey(0.95),
+## txtllp+               radx = 0.1, rady = 0.05, lab = LETTERS[i],
+## txtllp+               cex = 2, angle = runif(1)*360)
+\end{verbatim}
+\begin{alltt}
+\hlfunctioncall{example}(textempty)
+\end{alltt}
+\begin{verbatim}
+## 
+## txtmpt> openplotmat(xlim = c(-0.1, 1.1), col = "lightgrey", main = "textempty")
+
+## 
+## txtmpt> for (i in 1:10) 
+## txtmpt+   textempty(mid = runif(2), box.col = i, lab = LETTERS[i], cex = 2)
+## 
+## txtmpt> textempty(mid = c(0.5, 0.5), adj = c(0, 0), 
+## txtmpt+   lab = "textempty", box.col = "white")
+\end{verbatim}
+\begin{alltt}
+\hlfunctioncall{example}(texthexa)
+\end{alltt}
+\begin{verbatim}
+## 
+## texthx>   openplotmat(xlim = c(-0.1, 1.1), main = "texthexa")
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{figure/051-flowchart-demo-flowchart11} 
+\begin{kframe}\begin{verbatim}
+## 
+## texthx>   for (i in 1:20) 
+## texthx+     texthexa(mid = runif(2), angle = runif(1)*360, col = i,
+## texthx+              box.col = grey(0.95), radx = 0.1, rady = 0.05,
+## texthx+              lab = LETTERS[i], cex = 2)
+\end{verbatim}
+\begin{alltt}
+\hlfunctioncall{example}(textmulti)
+\end{alltt}
+\begin{verbatim}
+## 
+## txtmlt>   openplotmat(xlim = c(-0.1, 1.1), main = "textmulti")
+
+## 
+## txtmlt>   for (i in 1:10) 
+## txtmlt+     textmulti(mid = runif(2), col = i, radx = 0.1, rady = 0.1,
+## txtmlt+              lab = LETTERS[i], cex = 2, nr = trunc(i/1.5)+3)
+\end{verbatim}
+\begin{alltt}
+\hlfunctioncall{example}(textplain)
+\end{alltt}
+\begin{verbatim}
+## 
+## txtpln>   openplotmat(main = "textplain")
+
+## 
+## txtpln>   textplain(mid = c(0.5, 0.5), 
+## txtpln+             lab = c("this text is", "centered", "4 strings", "on 4 lines"))
+## 
+## txtpln>   textplain(mid = c(0.5, 0.2), adj = c(0, 0.5), font = 2, height = 0.05,
+## txtpln+             lab = c("this text is","left alligned"))
+## 
+## txtpln>   textplain(mid = c(0.5, 0.8), adj = c(1, 0.5), font = 3, height = 0.05, 
+## txtpln+             lab = c("this text is","right alligned"))
+\end{verbatim}
+\begin{alltt}
+\hlfunctioncall{example}(textrect)
+\end{alltt}
+\begin{verbatim}
+## 
+## txtrct>   openplotmat(xlim = c(-0.1, 1.1), main = "textrect")
+
+## 
+## txtrct>   for (i in 1:10) 
+## txtrct+     textrect(mid = runif(2), col = i, radx = 0.1, rady = 0.1,
+## txtrct+             lab = LETTERS[i], cex = 2)
+## 
+## txtrct>   openplotmat(xlim = c(-0.1, 1.1), main = "textparallel")
+\end{verbatim}
+\end{kframe}
+\includegraphics[width=\maxwidth]{figure/051-flowchart-demo-flowchart12} 
+\begin{kframe}\begin{verbatim}
+## 
+## txtrct>   elpos <-coordinates (c(1, 1, 1, 1, 1))
+## 
+## txtrct>   textparallel(mid = elpos[1,], col = 1, radx = 0.2, rady = 0.1,
+## txtrct+             lab = "theta=20", theta = 20)
+## 
+## txtrct>   textparallel(mid = elpos[2,], col = 1, radx = 0.2, rady = 0.1,
+## txtrct+             lab = "theta=60", theta = 60)
+## 
+## txtrct>   textparallel(mid = elpos[3,], col = 1, radx = 0.2, rady = 0.1,
+## txtrct+             lab = "theta=100", theta = 100)
+## 
+## txtrct>   textparallel(mid = elpos[4,], col = 1, radx = 0.2, rady = 0.1,
+## txtrct+             lab = "theta=140", theta = 140)
+## 
+## txtrct>   textparallel(mid = elpos[5,], col = 1, radx = 0.2, rady = 0.1,
+## txtrct+             lab = "theta=170", theta = 170)
+\end{verbatim}
+\begin{alltt}
+\hlfunctioncall{example}(textround)
+\end{alltt}
+\begin{verbatim}
+## 
+## txtrnd>   openplotmat(xlim = c(-0.1, 1.1), main = "textround")
+
+## 
+## txtrnd>   for (i in 1:10) 
+## txtrnd+     textround(mid = runif(2), col = i, 
+## txtrnd+               radx = 0.03, rady = 0.075,
+## txtrnd+               lab = LETTERS[i], cex = 2)
+\end{verbatim}
+\begin{alltt}
+
+
+\hlfunctioncall{par}(mfrow = mf)
+\end{alltt}
+\end{kframe}
+\includegraphics[width=\maxwidth]{figure/051-flowchart-demo-flowchart13} 
+
+\end{knitrout}
+
+\end{document}
