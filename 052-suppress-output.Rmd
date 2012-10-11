@@ -1,0 +1,37 @@
+# Suppress super long output
+
+First we redefine the output hook:
+
+```{r setup}
+# the default output hook
+hook_output = knit_hooks$get('output')
+knit_hooks$set(output = function(x, options) {
+  if (!is.null(n <- options$out.lines)) {
+    x = unlist(stringr::str_split(x, '\n'))
+    if (length(x) > n) {
+      # truncate the output
+      x = c(head(x, n), '....\n')
+    }
+    x = paste(x, collapse = '\n') # paste first n lines together
+  }
+  hook_output(x, options)
+})
+```
+
+And we do not want the output to be more than 4 lines, so we set this option globally:
+
+```{r}
+opts_chunk$set(out.lines = 4)
+```
+
+Test the new output hook:
+
+```{r test-a}
+1+1 # this is short
+```
+
+The output of this chunk is truncated:
+
+```{r test-b}
+1:100
+```
