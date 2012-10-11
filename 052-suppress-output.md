@@ -40,6 +40,8 @@ Test the new output hook:
 ```
 
 
+The output of this chunk is truncated:
+
 
 ```r
 1:100
