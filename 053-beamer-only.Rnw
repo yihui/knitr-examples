@@ -24,7 +24,7 @@ The question came from \url{http://r.789695.n4.nabble.com/plots-for-presentation
 
 % very important to use option [fragile] for frames containing code output!
 \begin{frame}[fragile]
-We will add ``\textbackslash{}only'' to the plots so that show up one by one.
+We will add ``\textbackslash{}only'' to the plots so they show up one by one.
 
 <<boring-plots, out.width='.5\\linewidth', fig.show='hold', fig.keep='all', fig.align='center'>>=
 par(mar = c(4, 4, .1, .1))
