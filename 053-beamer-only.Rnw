@@ -1,0 +1,38 @@
+\documentclass{beamer}
+\begin{document}
+<<setup, include=FALSE>>=
+# smaller font size for chunks
+opts_chunk$set(size = 'footnotesize')
+
+hook_plot = knit_hooks$get('plot') # the default hook
+# tweak and reset the default hook
+knit_hooks$set(plot = function(x, options) {
+  txt = hook_plot(x, options)
+  if (options$fig.cur <= 0) return(txt)
+  # add \only<n> before \includegraphics
+  gsub('(\\\\includegraphics[^}]+})', sprintf('\\\\only<%d>{\\1}', options$fig.cur), txt)
+})
+@
+\title{Show Plots Step by Step with knitr in Beamer}
+\author{Yihui Xie}
+
+\maketitle
+
+\begin{frame}
+The question came from \url{http://r.789695.n4.nabble.com/plots-for-presentation-td4645869.html}
+\end{frame}
+
+% very important to use option [fragile] for frames containing code output!
+\begin{frame}[fragile]
+We will add ``\textbackslash{}only'' to the plots so that show up one by one.
+
+<<boring-plots, out.width='.5\\linewidth', fig.show='hold', fig.keep='all', fig.align='center'>>=
+par(mar = c(4, 4, .1, .1))
+x = rnorm(100)
+hist(x, main='')
+rug(x)
+abline(v = mean(x), lty = 2, lwd = 3)
+@
+\end{frame}
+
+\end{document}
