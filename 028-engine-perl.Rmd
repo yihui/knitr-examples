@@ -1,0 +1,14 @@
+# Run perl scripts
+
+```{r}
+# should exist
+Sys.which('perl')
+```
+
+Does `perl` work?
+
+```{r test-perl, engine='perl'}
+$test = "jello world";
+$test =~ s/j/h/;
+print $test
+```
