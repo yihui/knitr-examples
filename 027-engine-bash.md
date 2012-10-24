@@ -55,8 +55,10 @@ ls | grep engine | xargs wc
    7   17  109 025-engine-ruby.Rmd
   12   17  100 026-engine-haskell.md
    6   17  116 026-engine-haskell.Rmd
-  62  120  809 027-engine-bash.md
+  64  128  878 027-engine-bash.md
   23   58  352 027-engine-bash.Rmd
- 326  693 4702 total
+  27   34  219 028-engine-perl.md
+  14   26  172 028-engine-perl.Rmd
+ 369  761 5162 total
 ```
 
