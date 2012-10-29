@@ -1,0 +1,23 @@
+\documentclass{article}
+\usepackage{multicol}
+\title{Using knitr with multicols}
+\author{Yihui Xie}
+
+\begin{document}
+\maketitle
+
+Here is a paragraph outside the multicols environment. Here is a paragraph outside the multicols environment.
+
+\begin{multicols}{2}
+Here is a paragraph inside the multicols environment. Here is a paragraph inside the multicols environment.
+
+<<test>>=
+1+1
+2*pi*10
+par(mar=c(4, 4, .1, .1))
+plot(rnorm(100))
+@
+
+and follow that up with some random text.
+\end{multicols}
+\end{document}
