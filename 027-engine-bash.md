@@ -49,16 +49,18 @@ ls | grep engine | xargs wc
 ```
  108  201 1402 023-engine-python.md
   65  165 1292 023-engine-python.Rmd
-  18   37  160 024-engine-awk.md
-  12   41  237 024-engine-awk.Rmd
+  17   37  159 024-engine-awk.md
+  11   41  252 024-engine-awk.Rmd
   13   20  125 025-engine-ruby.md
    7   17  109 025-engine-ruby.Rmd
-  12   17  100 026-engine-haskell.md
-   6   17  116 026-engine-haskell.Rmd
-  64  128  878 027-engine-bash.md
+  14   36  232 026-engine-haskell.md
+   8   37  267 026-engine-haskell.Rmd
+  66  136  947 027-engine-bash.md
   23   58  352 027-engine-bash.Rmd
   27   34  219 028-engine-perl.md
   14   26  172 028-engine-perl.Rmd
- 369  761 5162 total
+  84  220 1584 029-engine-Rcpp.md
+  53  208 1618 029-engine-Rcpp.Rmd
+ 510 1236 8730 total
 ```
 
