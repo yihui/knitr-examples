@@ -4,7 +4,7 @@
 opts_chunk$set(cache = TRUE) # because the compilation takes time, let's cache it
 ```
 
-When the chunk option `engine='Rcpp'`, the code chunk will be compiled through **Rcpp** via `cppFunction()` or `sourceCpp()` (the latter is called if `[[Rcpp::` was detected in the code chunk).
+When the chunk option `engine='Rcpp'` is specified, the code chunk will be compiled through **Rcpp** via `cppFunction()` or `sourceCpp()` (the latter is called if an `Rcpp::export` attribute was detected in the code chunk).
 
 Test for `fibonacci`:
 
@@ -22,17 +22,16 @@ fibonacci(10L)
 fibonacci(20L)
 ```
 
-The above example defines a single C++ function by calling `cppFunction` (which automatically includes the `Rcpp.h` header). If you want to define multiple functions (or helper functions that are not exported) then you need to add the appropriate includes and `Rcpp::export` attributes (in this case the `sourceCpp` function will be called). For example:
+The above example defines a single C++ function by calling `cppFunction()`(which automatically includes the `<Rcpp.h>` header). If you want to define multiple functions (or helper functions that are not exported) then you need to add the appropriate includes and `Rcpp::export` attributes. For example:
 
 ```{r multipleCpp, engine='Rcpp'}
-
 #include <Rcpp.h>
 
 using namespace Rcpp;
 
 // [[Rcpp::export]]
 NumericVector convolveCpp(NumericVector a, NumericVector b) {
-    
+  
     int na = a.size(), nb = b.size();
     int nab = na + nb - 1;
     NumericVector xab(nab);
@@ -59,7 +58,6 @@ List lapplyCpp(List input, Function f) {
 If you want to link to code defined in another package (e.g **RcppArmadillo**) then you need to provide an `Rcpp::depends` attribute. For example:
 
 ```{r lmCpp, engine='Rcpp'}
-
 // [[Rcpp::depends(RcppArmadillo)]]
 
 #include <RcppArmadillo.h>
@@ -86,7 +84,6 @@ List fastLm(NumericVector yr, NumericMatrix Xr) {
                         Named("stderr")       = stderrest
     );
 }
-
 ```
 
 A test:
@@ -95,8 +92,11 @@ A test:
 fastLm(rnorm(10), matrix(1:20, ncol = 2))
 ```
 
-Finally, you can also use the abbreviated form of single function definition with an external package by using the `engine.opts` option, e.g. we use the **RcppArmadillo** package below:
+Finally, you can combine the simpler syntactic form of defining a single function with the use of an external package by specifying a plugin using `engine.opts`. For example, here we use the **RcppArmadillo** package via a plugin:
 
+<code>
+&#96;&#96;&#96;{r lmCpp2, engine.opts=list(plugin='RcppArmadillo')}
+</code>
 ```{r lmCpp2, engine='Rcpp', engine.opts=list(plugin='RcppArmadillo')}
 List fastLm2(NumericVector yr, NumericMatrix Xr) {
 
@@ -118,4 +118,4 @@ List fastLm2(NumericVector yr, NumericMatrix Xr) {
     );
 }
 ```
-
+&#96;&#96;&#96;
