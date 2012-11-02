@@ -1,0 +1,53 @@
+# Call Rcpp from knitr
+
+```{r setup, include=FALSE}
+opts_chunk$set(cache = TRUE) # because the compilation takes time, let's cache it
+```
+
+When the chunk option `engine='Rcpp'`, the code chunk will be compiled through **Rcpp** via `cppFunction()` or `sourceCpp()` (the latter is called if `[[Rcpp::` was detected in the code chunk).
+
+Test for `fibonacci`:
+
+```{r fibCpp, engine='Rcpp'}
+int fibonacci(const int x) {
+    if (x == 0 || x == 1) return(x);
+    return (fibonacci(x - 1)) + fibonacci(x - 2);
+}
+```
+
+It can be called as a normal R function now:
+
+```{r fibTest, dependson='fibCpp'}
+fibonacci(10L)
+fibonacci(20L)
+```
+
+We can specify additional arguments to be passed to **Rcpp** via the `engine.opts` option, e.g. we use the **RcppArmadillo** package below:
+
+```{r lmCpp, engine='Rcpp', engine.opts=list(plugin='RcppArmadillo')}
+List fastLm(NumericVector yr, NumericMatrix Xr) {
+
+    int n = Xr.nrow(), k = Xr.ncol();
+
+    arma::mat X(Xr.begin(), n, k, false); // reuses memory and avoids extra copy
+    arma::colvec y(yr.begin(), yr.size(), false);
+
+    arma::colvec coef = arma::solve(X, y); // fit model y ~ X
+    arma::colvec resid = y - X*coef; // residuals
+
+    double sig2 = arma::as_scalar( arma::trans(resid)*resid/(n-k) );
+                                                // std.error of estimate
+    arma::colvec stderrest = arma::sqrt(
+                    sig2 * arma::diagvec( arma::inv(arma::trans(X)*X)) );
+
+    return List::create(Named("coefficients") = coef,
+                        Named("stderr") = stderrest
+    );
+}
+```
+
+A test:
+
+```{r lmTest}
+fastLm(rnorm(10), matrix(1:20, ncol = 2))
+```
