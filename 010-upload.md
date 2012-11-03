@@ -1,6 +1,6 @@
 This is an example of using **knitr** with extended markdown (e.g. [GFM](http://github.github.com/github-flavored-markdown/)) and uploading images to imgur.com automatically. Note you should set the graphical device to create images that can be displayed in the web browser, e.g. `dev = 'png'` (it is the default for markdown output) works but `'pdf'` does not.
 
-First, the input file was named as `knitr-upload.Rmd` ([source](https://github.com/yihui/knitr-examples/blob/master/010-upload.Rmd)), and **knitr** will automatically determine the output filename to be `knitr-upload.md`. 
+First, the input file was named as `knitr-upload.Rmd` ([source](https://github.com/yihui/knitr-examples/blob/master/010-upload.Rmd)), and **knitr** will automatically determine the output filename to be `knitr-upload.md`.
 
 I used the code below to make sure **knitr** will upload images and set some global chunk options.
 
