@@ -88,7 +88,7 @@ List fastLm(NumericVector yr, NumericMatrix Xr) {
 
 A test:
 
-```{r lmTest}
+```{r lmTest, dependson='lmCpp'}
 fastLm(rnorm(10), matrix(1:20, ncol = 2))
 ```
 
