@@ -11,3 +11,5 @@ clean:
 	$(RM) *.log; \
 	ls *.Rmd | sed 's/\.Rmd$$/.html/' | xargs $(RM)
 
+strip:
+	for i in `ls | grep -E '^[0-9].*\.(brew|R(nw|md|tex|html|rst))$$'`; do sed -i "s/[[:space:]]*$$//" $$i; done
