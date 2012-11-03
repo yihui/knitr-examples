@@ -92,30 +92,4 @@ A test:
 fastLm(rnorm(10), matrix(1:20, ncol = 2))
 ```
 
-Finally, you can combine the simpler syntactic form of defining a single function with the use of an external package by specifying a plugin using `engine.opts`. For example, here we use the **RcppArmadillo** package via a plugin:
-
-<code>
-&#96;&#96;&#96;{r lmCpp2, engine.opts=list(plugin='RcppArmadillo')}
-</code>
-```{r lmCpp2, engine='Rcpp', engine.opts=list(plugin='RcppArmadillo')}
-List fastLm2(NumericVector yr, NumericMatrix Xr) {
-
-    int n = Xr.nrow(), k = Xr.ncol();
-
-    arma::mat X(Xr.begin(), n, k, false); // reuses memory and avoids extra copy
-    arma::colvec y(yr.begin(), yr.size(), false);
-
-    arma::colvec coef = arma::solve(X, y); // fit model y ~ X
-    arma::colvec resid = y - X*coef; // residuals
-
-    double sig2 = arma::as_scalar( arma::trans(resid)*resid/(n-k) );
-                                                // std.error of estimate
-    arma::colvec stderrest = arma::sqrt(
-                    sig2 * arma::diagvec( arma::inv(arma::trans(X)*X)) );
-
-    return List::create(Named("coefficients") = coef,
-                        Named("stderr") = stderrest
-    );
-}
-```
-&#96;&#96;&#96;
+Finally, you can pass additional arguments to `cppFunction()` or `sourceCpp()` via the chunk option `engine.opts`. For example, we can use the **RcppArmadillo** package via a plugin: ```` ```{r lmCpp2, engine.opts=list(plugin='RcppArmadillo')} ````, or specify `engine.opts=list(showOutput=TRUE, rebuild=FALSE)` to show the output of `R CMD SHLIB`.
