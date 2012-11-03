@@ -1,5 +1,5 @@
 \documentclass{article}
-\newif\ifmyboolean 
+\newif\ifmyboolean
 \begin{document}
 
 <<setup>>=

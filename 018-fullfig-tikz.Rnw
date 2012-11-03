@@ -25,7 +25,7 @@ mean(x);var(x)
 \begin{frame}
 <<boring-plots, echo=FALSE, dev='tikz', fig.width=4.4, fig.height=3.3, out.width='.9\\paperwidth'>>=
 par(mar = c(4.5, 4, .1, .1))
-hist(x, main='', xlab='$x$ (how the fonts look like here?)', 
+hist(x, main='', xlab='$x$ (how the fonts look like here?)',
   ylab='$\\hat{f}(x) = \\frac{1}{nh}\\sum_{i=1}^n \\cdots$')
 @
 \end{frame}
