@@ -1,37 +1,40 @@
+# TikZ graphics
 
-Description
------------
+## Description
 
-The engine inserts the code into a latex-string-template, which is then processed by `pdflatex` -- and `convert` (if `dev` is not `pdf`). 
+The engine inserts the code into a latex-string-template, which is then processed by LaTeX (and ImageMagick `convert` if `fig.ext` is not `pdf`).
 
-Sometimes you have to adjust the latex-string-template to load some required
-latex-packages. By default, `.tikz2pdf.tex.st` will be available in the current
-working directory after the first call to `knit`. 
+## Options
 
+You can pass some options to the engine by defining `engine.opts`, e.g. use your own template instead of the default one to include the tikz code: `engine.opts = list(template = "mytemplate.tex")`. The default template can be found under `system.file('misc', 'tikz2pdf.tex', package = 'knitr')`.
 
-Options
--------
-
-You can pass some options to the engine by defining `engine.opts`. By default it is defined as: 
-
-```r
-engine.opts = list(
-   ,repl.tmpl = ".tikz2pdf.tex.st" # Latex-string template file 
-       ## The code is inserted into this file; if it is not existing it will be
-       ## generated; depending on your purpose and language you have to define
-       ## some latex-packages in there. 
-    repl.st = "<>"  # String to replace in template-file
-```
-
-Example
--------
+## Example
 
 An example of the tikz-engine from <https://raw.github.com/sdiehl/cats/master/misc/example.md>
 
-![Funky tikz](figure/tikz-ex.pdf) 
+
+```tex
+\usetikzlibrary{arrows}
+\begin{tikzpicture}[node distance=2cm, auto,>=latex', thick, scale = 0.5]
+\node (P) {$P$};
+\node (B) [right of=P] {$B$};
+\node (A) [below of=P] {$A$};
+\node (C) [below of=B] {$C$};
+\node (P1) [node distance=1.4cm, left of=P, above of=P] {$\hat{P}$};
+\draw[->] (P) to node {$f$} (B);
+\draw[->] (P) to node [swap] {$g$} (A);
+\draw[->] (A) to node [swap] {$f$} (C);
+\draw[->] (B) to node {$g$} (C);
+\draw[->, bend right] (P1) to node [swap] {$\hat{g}$} (A);
+\draw[->, bend left] (P1) to node {$\hat{f}$} (B);
+\draw[->, dashed] (P1) to node {$k$} (P);
+\end{tikzpicture}
+```
 
 
-Tips
-----
+![Funky tikz](figure/058-engine-tikz-tikz-ex.png) 
+
+
+## Tips
 
 To develop the tikz-code, you could use `qtikz` or `ktikz`.
