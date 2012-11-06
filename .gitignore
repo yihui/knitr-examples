@@ -1,5 +1,6 @@
 figure/
 cache/
+r-forge/
 *.pdf
 *-tikzDictionary
 .tikz2pdf.tex.st
