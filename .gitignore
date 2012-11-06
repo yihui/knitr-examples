@@ -2,3 +2,4 @@ figure/
 cache/
 *.pdf
 *-tikzDictionary
+.tikz2pdf.tex.st
