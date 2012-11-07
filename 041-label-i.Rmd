@@ -9,7 +9,6 @@ This example shows how to generate chunk labels dynamically with the brew syntax
 ```{r create-iterator, include=FALSE}
 src = NULL
 pat_brew()  # use brew syntax first
-knit_hooks$set(inline = identity)
 
 for (cur.cyl in unique(mtcars$cyl)) {
   src = c(src, knit(text = readLines('041-label-i-child.tpl')))

@@ -6,7 +6,7 @@ I used the code below to make sure **knitr** will upload images and set some glo
 
 
 ```r
-opts_knit$set(upload.fun = imgur_upload)  # upload all images to imgur.com
+opts_knit$set(upload.fun = imgur_upload, base.url = NULL)  # upload all images to imgur.com
 opts_chunk$set(fig.width = 5, fig.height = 5, cache = TRUE)
 ```
 
@@ -42,13 +42,17 @@ library(ggplot2)
 qplot(hp, mpg, data = mtcars) + geom_smooth()
 ```
 
-![plot of chunk md-cars](http://i.imgur.com/3XYTP.png) 
+![plot of chunk md-cars](http://i.imgur.com/qjd3s.png) 
 
 ```r
 ggpcp(mtcars) + geom_line()
 ```
 
-![plot of chunk md-cars](http://i.imgur.com/4x0Lg.png) 
+```
+## Warning: 'ggpcp' is deprecated. See help("Deprecated")
+```
+
+![plot of chunk md-cars](http://i.imgur.com/9IhSQ.png) 
 
 
 So **knitr** is ready with GitHub with a single markdown file.

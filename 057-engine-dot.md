@@ -19,5 +19,5 @@ digraph test123 {
 ```
 
 
-![Funky dot](figure/057-engine-dot-dot-ex.png) 
+![Funky dot](http://animation.r-forge.r-project.org/knitr-ex/figure/057-engine-dot-dot-ex.png) 
 

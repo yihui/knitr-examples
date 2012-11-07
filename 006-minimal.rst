@@ -13,10 +13,6 @@ and the output filename will be ``rst``. Here is how we write R code in
     # do not use the sourcecode directive
     render_rst(strict = TRUE)
     
-    # upload images to Imgur; you do not need this if you want to keep images
-    # local
-    opts_knit$set(upload.fun = imgur_upload)
-    
     # global chunk options
     opts_chunk$set(cache = TRUE, fig.width = 5, fig.height = 5)
 
@@ -99,13 +95,11 @@ Here is a plot:
     ## loess. Use 'method = x' to change the smoothing method.
 
 
-.. figure:: http://i.imgur.com/9becf.png
+.. figure:: http://animation.r-forge.r-project.org/knitr-ex/figure/006-minimal-rst-plot.png
     :alt: A ggplot2 example
     :width: 360px
 
-
     A ggplot2 example
-
 
 
 Inline R code is like this: the value of pi is 3.1416.

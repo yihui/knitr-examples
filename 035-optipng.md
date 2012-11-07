@@ -23,7 +23,7 @@ set.seed(123)
 qplot(rnorm(1000), rnorm(1000))
 ```
 
-![plot of chunk use-optipng](figure/035-optipng-use-optipng.png) 
+![plot of chunk use-optipng](http://animation.r-forge.r-project.org/knitr-ex/figure/035-optipng-use-optipng.png) 
 
 
 Same plot, not optimized:
@@ -35,7 +35,7 @@ set.seed(123)
 qplot(rnorm(1000), rnorm(1000))
 ```
 
-![plot of chunk no-optipng](figure/035-optipng-no-optipng.png) 
+![plot of chunk no-optipng](http://animation.r-forge.r-project.org/knitr-ex/figure/035-optipng-no-optipng.png) 
 
 
 Same plot, most heavily optimized (pass `-o7` to `optipng`):
@@ -47,5 +47,5 @@ set.seed(123)
 qplot(rnorm(1000), rnorm(1000))
 ```
 
-![plot of chunk optipng-o7](figure/035-optipng-optipng-o7.png) 
+![plot of chunk optipng-o7](http://animation.r-forge.r-project.org/knitr-ex/figure/035-optipng-optipng-o7.png) 
 

@@ -12,21 +12,21 @@ for (i in 1:5) {
 
 this is plot  1 
 
-![](figure/054-loop-plots-loop1.png) 
+![](http://animation.r-forge.r-project.org/knitr-ex/figure/054-loop-plots-loop1.png) 
 
 this is plot  2 
 
-![](figure/054-loop-plots-loop2.png) 
+![](http://animation.r-forge.r-project.org/knitr-ex/figure/054-loop-plots-loop2.png) 
 
 this is plot  3 
 
-![](figure/054-loop-plots-loop3.png) 
+![](http://animation.r-forge.r-project.org/knitr-ex/figure/054-loop-plots-loop3.png) 
 
 this is plot  4 
 
-![](figure/054-loop-plots-loop4.png) 
+![](http://animation.r-forge.r-project.org/knitr-ex/figure/054-loop-plots-loop4.png) 
 
 this is plot  5 
 
-![](figure/054-loop-plots-loop5.png) 
+![](http://animation.r-forge.r-project.org/knitr-ex/figure/054-loop-plots-loop5.png) 
 

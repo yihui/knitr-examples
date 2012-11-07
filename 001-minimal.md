@@ -35,13 +35,20 @@ A _paragraph_ here. A code chunk below (remember the three backticks):
 
 ## graphics
 
-It is easy. I did not really show the plot here; if you want it, remove the option `eval=FALSE` from the chunk header below.
+It is easy.
 
 
 ```r
 plot(1:10)
+```
+
+![plot of chunk unnamed-chunk-2](http://animation.r-forge.r-project.org/knitr-ex/figure/001-minimal-unnamed-chunk-21.png) 
+
+```r
 hist(rnorm(1000))
 ```
+
+![plot of chunk unnamed-chunk-2](http://animation.r-forge.r-project.org/knitr-ex/figure/001-minimal-unnamed-chunk-22.png) 
 
 
 ## inline code
