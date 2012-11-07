@@ -5,8 +5,6 @@
 ```{r setup, include=FALSE}
 # set global chunk options
 opts_chunk$set(cache=TRUE)
-# upload images automatically
-opts_knit$set(upload.fun = imgur_upload)
 ```
 
 # Why

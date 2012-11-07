@@ -22,9 +22,9 @@ A _paragraph_ here. A code chunk below (remember the three backticks):
 
 ## graphics
 
-It is easy. I did not really show the plot here; if you want it, remove the option `eval=FALSE` from the chunk header below.
+It is easy.
 
-```{r eval=FALSE}
+```{r}
 plot(1:10)
 hist(rnorm(1000))
 ```
