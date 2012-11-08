@@ -59,12 +59,12 @@ ls | grep engine | xargs wc
    23    58   352 027-engine-bash.Rmd
    27    34   219 028-engine-perl.md
    14    26   172 028-engine-perl.Rmd
-  128   401  2986 029-engine-Rcpp.md
-   95   391  3022 029-engine-Rcpp.Rmd
+  128   402  2999 029-engine-Rcpp.md
+   95   392  3035 029-engine-Rcpp.Rmd
    23    56   528 057-engine-dot.md
    18    62   474 057-engine-dot.Rmd
    40   183  1371 058-engine-tikz.md
    35   193  1346 058-engine-tikz.Rmd
-  716  2110 15448 total
+  716  2112 15474 total
 ```
 

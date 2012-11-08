@@ -125,4 +125,4 @@ fastLm(rnorm(10), matrix(1:20, ncol = 2))
 ```
 
 
-Finally, you can pass additional arguments to `cppFunction()` or `sourceCpp()` via the chunk option `engine.opts`. For example, we can use the **RcppArmadillo** package via a plugin: ```` ```{r lmCpp2, engine.opts=list(plugin='RcppArmadillo')} ````, or specify `engine.opts=list(showOutput=TRUE, rebuild=FALSE)` to show the output of `R CMD SHLIB`.
+Finally, you can pass additional arguments to `cppFunction()` or `sourceCpp()` via the chunk option `engine.opts`. For example, we can use the **RcppArmadillo** package via the depends argument: ```` ```{r lmCpp2, engine.opts=list(depends='RcppArmadillo')} ````, or specify `engine.opts=list(showOutput=TRUE, rebuild=FALSE)` to show the output of `R CMD SHLIB`.
