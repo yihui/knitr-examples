@@ -1,0 +1,25 @@
+\documentclass{article}
+% \usepackage{lmodern}  % use latin modern roman
+\title{The tikz Device}
+\author{Yihui Xie}
+
+\begin{document}
+\maketitle
+<<setup, include=FALSE>>=
+options(width = 40)
+@
+
+First you need to install the tikzDevice package, e.g.
+
+<<install-tikz, eval=FALSE>>=
+install.packages("tikzDevice", repos="http://R-Forge.R-project.org")
+@
+
+Then just specify \texttt{dev='tikz'} in the chunk header, and you are done.
+
+<<tikz-ex, dev='tikz', fig.width=4, fig.height=4, cache=TRUE>>=
+plot(1, xlab = '$x_i$', ylab = '$y_i$', main = "Isn't \\LaTeX{} Awesome?")
+text(1, 1, 'The font style is consistent\n\n with your document')
+@
+
+\end{document}
