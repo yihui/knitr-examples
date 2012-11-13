@@ -1,0 +1,16 @@
+\documentclass{article}
+\begin{document}
+<<setup>>=
+knit_hooks$set(wrapper = function(before, options, envir) {
+  sprintf('\\begin{alltt}%s\n\\end{alltt}',
+          if (before) sprintf('<<%s>>=', options$params.src) else '@')
+})
+@
+
+I want to display \verb|<<>>=| in the output since I'm writing a tutorial:
+
+<<test_label, wrapper=TRUE, eval=FALSE>>=
+1+1
+plot(1)
+@
+\end{document}
