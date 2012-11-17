@@ -1,5 +1,6 @@
 \documentclass{article}
-<<adjust-preamble, echo=FALSE>>=
+<<adjust-preamble, echo=FALSE, message=FALSE>>=
+library(highlight)
 opts_knit$set(use.highlight = TRUE)
 
 knit_theme$set('acid')
