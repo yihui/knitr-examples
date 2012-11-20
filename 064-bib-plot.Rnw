@@ -1,0 +1,22 @@
+\documentclass{article}
+\usepackage{tikz}
+\begin{document}
+
+We cite \cite{lamport94} in this article.
+
+<<bib-plot, dev='tikz', external=FALSE, fig.height=3, fig.width=4>>=
+par(mar = c(4.5, 4, .1, .1))
+plot(rnorm(100), xlab = 'See \\cite{lamport94} for details')
+@
+
+\begin{thebibliography}{9}
+
+\bibitem{lamport94}
+  Leslie Lamport,
+  \emph{\LaTeX: A Document Preparation System}.
+  Addison Wesley, Massachusetts,
+  2nd Edition,
+  1994.
+
+\end{thebibliography}
+\end{document}
