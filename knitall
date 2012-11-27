@@ -1,7 +1,4 @@
 #!/bin/bash
 
-for i in `ls | grep -E '^[0-9].*\.(brew|R(nw|md|tex|html|rst))$'`
-do
-  ./knit1 $i
-done
+ls | grep -E '^[0-9].*\.(brew|R(nw|md|tex|html|rst))$' | xargs -n1 -P4 ./knit1
 
