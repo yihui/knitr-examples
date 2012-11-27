@@ -1,0 +1,49 @@
+\documentclass{article}\usepackage{graphicx, color}
+%% maxwidth is the original width if it is less than linewidth
+%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\usepackage{Sweavel}
+
+
+\lstset{breaklines=true} % break long lines
+
+
+
+
+\begin{document}
+
+We can set the \texttt{breaklines} option to \texttt{true} to wrap long lines.
+
+\begin{Schunk}
+\begin{Sinput}
+print("asdlfjk sadflkj kljsd klwjr klwjre klwjer kljwre kljwer lkjrwee lkwjre lkwjere lkwjer lkwjre lkasdfa afsd afdafsd afddadf adfsadf afdasdf")
+\end{Sinput}
+\begin{Soutput}
+[1] "asdlfjk sadflkj kljsd klwjr klwjre klwjer kljwre kljwer lkjrwee lkwjre lkwjere lkwjer lkwjre lkasdfa afsd afdafsd afddadf adfsadf afdasdf"
+\end{Soutput}
+\end{Schunk}
+
+
+By comparison, this shows \texttt{breaklines=false}:
+\lstset{breaklines=false} % break long lines
+
+\begin{Schunk}
+\begin{Sinput}
+print("asdlfjk sadflkj kljsd klwjr klwjre klwjer kljwre kljwer lkjrwee lkwjre lkwjere lkwjer lkwjre lkasdfa afsd afdafsd afddadf adfsadf afdasdf")
+\end{Sinput}
+\begin{Soutput}
+[1] "asdlfjk sadflkj kljsd klwjr klwjre klwjer kljwre kljwer lkjrwee lkwjre lkwjere lkwjer lkwjre lkasdfa afsd afdafsd afddadf adfsadf afdasdf"
+\end{Soutput}
+\end{Schunk}
+
+
+\end{document}

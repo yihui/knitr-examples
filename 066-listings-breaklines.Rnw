@@ -1,0 +1,22 @@
+\documentclass{article}
+\lstset{breaklines=true} % break long lines
+
+<<setup, include=FALSE>>=
+render_listings()
+@
+
+\begin{document}
+
+We can set the \texttt{breaklines} option to \texttt{true} to wrap long lines.
+
+<<long-print>>=
+print("asdlfjk sadflkj kljsd klwjr klwjre klwjer kljwre kljwer lkjrwee lkwjre lkwjere lkwjer lkwjre lkasdfa afsd afdafsd afddadf adfsadf afdasdf")
+@
+
+By comparison, this shows \texttt{breaklines=false}:
+\lstset{breaklines=false} % break long lines
+
+<<long-print>>=
+@
+
+\end{document}
