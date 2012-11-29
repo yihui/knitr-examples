@@ -266,11 +266,12 @@ R> dnorm(0)
 ```
 
 ```r
-cat("a\tb\ac")
+cat("a\tb\nc")
 ```
 
 ```
-## a	bc
+## a	b
+## c
 ```
 
 

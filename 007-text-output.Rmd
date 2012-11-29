@@ -76,7 +76,7 @@ options(prompt='R> ', continue='+  ')
 # can you deal with \code{foo} or \n, \a?
 gsub('\\.', '\\\\', 'a.b.c') # \link{bar}
 }
-cat('a\tb\ac')
+cat('a\tb\nc')
 ```
 
 ## Other formatR options
