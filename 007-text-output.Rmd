@@ -27,7 +27,7 @@ dnorm(0)
 
 ## No evaluate or tidy
 
-```{r demo, prompt=TRUE, eval=FALSE}
+```{r demo, eval=FALSE, tidy=FALSE}
 ```
 
 ## Do not tidy
