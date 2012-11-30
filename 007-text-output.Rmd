@@ -82,6 +82,8 @@ cat('a\tb\nc')
 
 ## Other formatR options
 
+We can set **formatR** options globally:
+
 ```{r}
 options(keep.blank.line=FALSE)
 ```
@@ -89,18 +91,19 @@ options(keep.blank.line=FALSE)
 ```{r demo, eval=FALSE}
 ```
 
-```{r}
-options(keep.comment=FALSE)
+Or locally in one chunk via `tidy.opts`. Do not keep comments:
+
+```{r demo, eval=FALSE, tidy.opts=list(keep.comment=FALSE)}
 ```
 
-```{r demo, eval=FALSE}
+Move left braces to the next line:
+
+```{r demo, eval=2, echo=2, tidy.opts=list(left.brace.newline=TRUE)}
 ```
 
-```{r}
-options(left.brace.newline=TRUE, keep.comment=TRUE)
-```
+Indent by 2 spaces:
 
-```{r demo, echo=2}
+```{r demo, eval=FALSE, tidy.opts=list(reindent.spaces=2)}
 ```
 
 See <http://yihui.name/formatR> for details.
