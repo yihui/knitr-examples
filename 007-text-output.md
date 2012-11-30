@@ -15,8 +15,17 @@ See if chunk options like `tidy`, `prompt` and `echo`, etc work as expected.
 
 ```r
 for (i in 1:10) {
-    # nothing
+    # nothing before 10
+    if (i >= 10) 
+        print(i)
 }
+```
+
+```
+## [1] 10
+```
+
+```r
 # two blank lines below
 
 
@@ -34,7 +43,9 @@ dnorm(0)
 ```r
 1 + 1
 for (i in 1:10) {
-    # nothing
+    # nothing before 10
+    if (i >= 10) 
+        print(i)
 }
 # two blank lines below
 
@@ -56,8 +67,17 @@ dnorm(0)
 
 ```r
 > for (i in 1:10) {
-+     # nothing
++     # nothing before 10
++     if (i >= 10) 
++         print(i)
 + }
+```
+
+```
+## [1] 10
+```
+
+```r
 > # two blank lines below
 > 
 > 
@@ -73,14 +93,15 @@ dnorm(0)
 
 
 ```r
-> 1 + 1
-> for (i in 1:10) {
-+     # nothing
-+ }
-> # two blank lines below
-> 
-> 
-> dnorm(0)
+1+1
+for (i in 1:10) {
+# nothing before 10
+if(i>=10)print(i)
+}
+# two blank lines below
+
+
+dnorm(0)
 ```
 
 
@@ -97,8 +118,16 @@ dnorm(0)
 
 ```r
 for (i in 1:10) {
-# nothing
+# nothing before 10
+if(i>=10)print(i)
 }
+```
+
+```
+## [1] 10
+```
+
+```r
 # two blank lines below
 
 
@@ -115,6 +144,10 @@ dnorm(0)
 
 ```
 ## [1] 2
+```
+
+```
+## [1] 10
 ```
 
 ```
@@ -135,8 +168,17 @@ dnorm(0)
 
 ```r
 for (i in 1:10) {
-    # nothing
+    # nothing before 10
+    if (i >= 10) 
+        print(i)
 }
+```
+
+```
+[1] 10
+```
+
+```r
 # two blank lines below
 
 
@@ -157,6 +199,10 @@ dnorm(0)
 
 ```
 ## [1] 2
+```
+
+```
+## [1] 10
 ```
 
 ```r
@@ -184,8 +230,17 @@ dnorm(0)
 
 ```r
 for (i in 1:10) {
-    # nothing
+    # nothing before 10
+    if (i >= 10) 
+        print(i)
 }
+```
+
+```
+## [1] 10
+```
+
+```r
 ## # two blank lines below
 ## 
 ## 
@@ -206,8 +261,16 @@ for (i in 1:10) {
 
 ```r
 > for (i in 1:10) {
-+ # nothing
++ # nothing before 10
++ if(i>=10)print(i)
 + }
+```
+
+```
+## [1] 10
+```
+
+```r
 > # two blank lines below
 > 
 > 
@@ -238,8 +301,17 @@ R> 1 + 1
 
 ```r
 R> for (i in 1:10) {
-+      # nothing
++      # nothing before 10
++      if (i >= 10) 
++          print(i)
 +  }
+```
+
+```
+## [1] 10
+```
+
+```r
 R> # two blank lines below
 R> 
 R> 
@@ -277,6 +349,8 @@ cat("a\tb\nc")
 
 ## Other formatR options
 
+We can set **formatR** options globally:
+
 
 ```r
 options(keep.blank.line = FALSE)
@@ -287,48 +361,57 @@ options(keep.blank.line = FALSE)
 ```r
 1 + 1
 for (i in 1:10) {
-    # nothing
+    # nothing before 10
+    if (i >= 10) 
+        print(i)
 }
 # two blank lines below
 dnorm(0)
 ```
 
 
-
-```r
-options(keep.comment = FALSE)
-```
-
+Or locally in one chunk via `tidy.opts`. Do not keep comments:
 
 
 ```r
 1 + 1
 for (i in 1:10) {
+    if (i >= 10) 
+        print(i)
 }
 dnorm(0)
 ```
 
 
+Move left braces to the next line:
 
-```r
-options(left.brace.newline = TRUE, keep.comment = TRUE)
-```
-
-
-
-```
-## [1] 2
-```
 
 ```r
 for (i in 1:10)
 {
-    # nothing
+    # nothing before 10
+    if (i >= 10) 
+        print(i)
 }
 ```
 
 ```
-## [1] 0.3989
+## [1] 10
+```
+
+
+Indent by 2 spaces:
+
+
+```r
+1 + 1
+for (i in 1:10) {
+  # nothing before 10
+  if (i >= 10) 
+    print(i)
+}
+# two blank lines below
+dnorm(0)
 ```
 
 
