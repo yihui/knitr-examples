@@ -20,7 +20,7 @@ x=rnorm(5)
 
 Highlight matlab chunks.
 
-<<highlight, engine='highlight', highlight.opts='-e acid -S matlab -O latex'>>=
+<<highlight, engine='highlight', engine.opts='-e acid -S matlab -O latex'>>=
 function Y = kalmanM(pos)
   dt=1;
   %% Initialize state transition matrix
