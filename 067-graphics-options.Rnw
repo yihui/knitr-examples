@@ -1,0 +1,48 @@
+\documentclass{article}
+\usepackage{float}
+\usepackage{rotfloat}
+
+\title{Graphics Options in knitr}
+\author{Yihui Xie}
+\begin{document}
+\maketitle
+
+<<setup, include=FALSE>>=
+opts_chunk$set(fig.width=4, fig.height=3, par=TRUE, out.width='2in', fig.pos='H')
+knit_hooks$set(par = function(before, options, envir) {
+  if (before) par(mar = c(4, 4, .1, .1))
+})
+set.seed(123)
+@
+
+These options are vectorized for multiple plots per chunk: 'fig.cap', 'fig.scap', 'fig.env', 'fig.pos','out.width', 'out.height', 'out.extra'. When the plot hook is called, the i-th elements of these options will be applied to the i-th plot.
+
+Figure captions.
+
+<<fig-cap, fig.cap=c('One plot.', 'Another plot.')>>=
+par(bg=rgb(runif(1), runif(1), runif(1)))
+plot(1:10)
+plot(rnorm(10), pch=19)
+@
+
+Different out.width and out.height.
+
+<<fig-out, ref.label='fig-cap', out.width=c('1in', '.4\\linewidth')>>=
+@
+
+Different out.extra (rotate by different degrees).
+
+<<fig-extra, ref.label='fig-cap', out.extra=sprintf('angle=%d', c(30,120))>>=
+@
+
+Short options will be recycled: out.width below is of length 1 but there are two plots.
+
+<<fig-width, ref.label='fig-cap', out.width='1in'>>=
+@
+
+The second figure uses sidewaysfigure.
+
+<<fig-margin, ref.label='fig-cap', fig.cap=c('ordinary figure', 'sideways figure'), fig.env=c('figure', 'sidewaysfigure')>>=
+@
+
+\end{document}

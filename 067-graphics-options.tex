@@ -1,0 +1,177 @@
+\documentclass{article}\usepackage{graphicx, color}
+%% maxwidth is the original width if it is less than linewidth
+%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\definecolor{fgcolor}{rgb}{0.2, 0.2, 0.2}
+\newcommand{\hlnumber}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlfunctioncall}[1]{\textcolor[rgb]{0.501960784313725,0,0.329411764705882}{\textbf{#1}}}%
+\newcommand{\hlstring}[1]{\textcolor[rgb]{0.6,0.6,1}{#1}}%
+\newcommand{\hlkeyword}[1]{\textcolor[rgb]{0,0,0}{\textbf{#1}}}%
+\newcommand{\hlargument}[1]{\textcolor[rgb]{0.690196078431373,0.250980392156863,0.0196078431372549}{#1}}%
+\newcommand{\hlcomment}[1]{\textcolor[rgb]{0.180392156862745,0.6,0.341176470588235}{#1}}%
+\newcommand{\hlroxygencomment}[1]{\textcolor[rgb]{0.43921568627451,0.47843137254902,0.701960784313725}{#1}}%
+\newcommand{\hlformalargs}[1]{\textcolor[rgb]{0.690196078431373,0.250980392156863,0.0196078431372549}{#1}}%
+\newcommand{\hleqformalargs}[1]{\textcolor[rgb]{0.690196078431373,0.250980392156863,0.0196078431372549}{#1}}%
+\newcommand{\hlassignement}[1]{\textcolor[rgb]{0,0,0}{\textbf{#1}}}%
+\newcommand{\hlpackage}[1]{\textcolor[rgb]{0.588235294117647,0.709803921568627,0.145098039215686}{#1}}%
+\newcommand{\hlslot}[1]{\textit{#1}}%
+\newcommand{\hlsymbol}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlprompt}[1]{\textcolor[rgb]{0.2,0.2,0.2}{#1}}%
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
+\usepackage{float}
+\usepackage{rotfloat}
+
+\title{Graphics Options in knitr}
+\author{Yihui Xie}
+\begin{document}
+\maketitle
+
+
+
+
+These options are vectorized for multiple plots per chunk: 'fig.cap', 'fig.scap', 'fig.env', 'fig.pos','out.width', 'out.height', 'out.extra'. When the plot hook is called, the i-th elements of these options will be applied to the i-th plot.
+
+Figure captions.
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlfunctioncall{par}(bg = \hlfunctioncall{rgb}(\hlfunctioncall{runif}(1), \hlfunctioncall{runif}(1), \hlfunctioncall{runif}(1)))
+\hlfunctioncall{plot}(1:10)
+\end{alltt}
+\end{kframe}\begin{figure}[H]
+
+\includegraphics[width=2in]{figure/067-graphics-options-fig-cap1} \caption[One plot]{One plot.\label{fig:fig-cap1}}
+\end{figure}
+
+\begin{kframe}\begin{alltt}
+\hlfunctioncall{plot}(\hlfunctioncall{rnorm}(10), pch = 19)
+\end{alltt}
+\end{kframe}\begin{figure}[H]
+
+\includegraphics[width=2in]{figure/067-graphics-options-fig-cap2} \caption[Another plot]{Another plot.\label{fig:fig-cap2}}
+\end{figure}
+
+
+\end{knitrout}
+
+
+Different out.width and out.height.
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlfunctioncall{par}(bg = \hlfunctioncall{rgb}(\hlfunctioncall{runif}(1), \hlfunctioncall{runif}(1), \hlfunctioncall{runif}(1)))
+\hlfunctioncall{plot}(1:10)
+\end{alltt}
+\end{kframe}
+\includegraphics[width=1in]{figure/067-graphics-options-fig-out1} 
+\begin{kframe}\begin{alltt}
+\hlfunctioncall{plot}(\hlfunctioncall{rnorm}(10), pch = 19)
+\end{alltt}
+\end{kframe}
+\includegraphics[width=.4\linewidth]{figure/067-graphics-options-fig-out2} 
+
+\end{knitrout}
+
+
+Different out.extra (rotate by different degrees).
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlfunctioncall{par}(bg = \hlfunctioncall{rgb}(\hlfunctioncall{runif}(1), \hlfunctioncall{runif}(1), \hlfunctioncall{runif}(1)))
+\hlfunctioncall{plot}(1:10)
+\end{alltt}
+\end{kframe}
+\includegraphics[width=2in,angle=30]{figure/067-graphics-options-fig-extra1} 
+\begin{kframe}\begin{alltt}
+\hlfunctioncall{plot}(\hlfunctioncall{rnorm}(10), pch = 19)
+\end{alltt}
+\end{kframe}
+\includegraphics[width=2in,angle=120]{figure/067-graphics-options-fig-extra2} 
+
+\end{knitrout}
+
+
+Short options will be recycled: out.width below is of length 1 but there are two plots.
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlfunctioncall{par}(bg = \hlfunctioncall{rgb}(\hlfunctioncall{runif}(1), \hlfunctioncall{runif}(1), \hlfunctioncall{runif}(1)))
+\hlfunctioncall{plot}(1:10)
+\end{alltt}
+\end{kframe}
+\includegraphics[width=1in]{figure/067-graphics-options-fig-width1} 
+\begin{kframe}\begin{alltt}
+\hlfunctioncall{plot}(\hlfunctioncall{rnorm}(10), pch = 19)
+\end{alltt}
+\end{kframe}
+\includegraphics[width=1in]{figure/067-graphics-options-fig-width2} 
+
+\end{knitrout}
+
+
+The second figure uses sidewaysfigure.
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlfunctioncall{par}(bg = \hlfunctioncall{rgb}(\hlfunctioncall{runif}(1), \hlfunctioncall{runif}(1), \hlfunctioncall{runif}(1)))
+\hlfunctioncall{plot}(1:10)
+\end{alltt}
+\end{kframe}\begin{figure}[H]
+
+\includegraphics[width=2in]{figure/067-graphics-options-fig-margin1} \caption[ordinary figure]{ordinary figure\label{fig:fig-margin1}}
+\end{figure}
+
+\begin{kframe}\begin{alltt}
+\hlfunctioncall{plot}(\hlfunctioncall{rnorm}(10), pch = 19)
+\end{alltt}
+\end{kframe}\begin{sidewaysfigure}[H]
+
+\includegraphics[width=2in]{figure/067-graphics-options-fig-margin2} \caption[sideways figure]{sideways figure\label{fig:fig-margin2}}
+\end{sidewaysfigure}
+
+
+\end{knitrout}
+
+
+\end{document}
