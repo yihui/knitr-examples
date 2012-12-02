@@ -1,4 +1,4 @@
 #!/bin/bash
 
-ls | grep -E '^[0-9].*\.(brew|R(nw|md|tex|html|rst))$' | xargs -n1 -P4 ./knit1
+ls | grep -E '^[0-9].*\.(brew|R(nw|md|tex|html|rst))$' | xargs -n1 -P4 ./k
 
