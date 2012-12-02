@@ -9,7 +9,8 @@ deps:
 
 clean:
 	$(RM) *.log *.aux; \
-	ls *.Rmd | sed 's/\.Rmd$$/.html/' | xargs $(RM)
+	ls *.Rmd | sed 's/\.Rmd$$/.html/' | xargs $(RM); \
+	find figure/ | grep -E 'figure/[a-zA-Z]' | xargs $(RM)
 
 strip:
 	for i in `ls | grep -E '^[0-9].*\.(brew|R(nw|md|tex|html|rst))$$'`; do sed -i "s/[[:space:]]*$$//" $$i; done
