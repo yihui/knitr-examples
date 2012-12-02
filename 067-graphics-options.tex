@@ -54,8 +54,9 @@
 \newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
 
 \usepackage{alltt}
-\usepackage{float}
-\usepackage{rotfloat}
+\usepackage{float}    % for fig.pos='H'
+\usepackage{rotfloat} % for sidewaysfigure
+\usepackage{subfig}   % for subfigure
 
 \title{Graphics Options in knitr}
 \author{Yihui Xie}
@@ -65,7 +66,7 @@
 
 
 
-These options are vectorized for multiple plots per chunk: 'fig.cap', 'fig.scap', 'fig.env', 'fig.pos','out.width', 'out.height', 'out.extra'. When the plot hook is called, the i-th elements of these options will be applied to the i-th plot.
+These options are vectorized for multiple plots per chunk: fig.cap, fig.scap, fig.env, fig.pos, fig.subcap, out.width, out.height, out.extra. When the plot hook is called, the i-th elements of these options will be applied to the i-th plot.
 
 Figure captions.
 
@@ -145,6 +146,26 @@ Short options will be recycled: out.width below is of length 1 but there are two
 \end{alltt}
 \end{kframe}
 \includegraphics[width=1in]{figure/067-graphics-options-fig-width2} 
+
+\end{knitrout}
+
+
+Use subfigures for each plot.
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlfunctioncall{par}(bg = \hlfunctioncall{rgb}(\hlfunctioncall{runif}(1), \hlfunctioncall{runif}(1), \hlfunctioncall{runif}(1)))
+\hlfunctioncall{plot}(1:10)
+\hlfunctioncall{plot}(\hlfunctioncall{rnorm}(10), pch = 19)
+\end{alltt}
+\end{kframe}\begin{figure}[H]
+\subfloat[one plot\label{fig:fig-sub1}]{
+\includegraphics[width=.49\linewidth]{figure/067-graphics-options-fig-sub1} }
+\subfloat[the other one\label{fig:fig-sub2}]{
+\includegraphics[width=.49\linewidth]{figure/067-graphics-options-fig-sub2} }\caption[two plots]{two plots\label{fig:fig-sub}}
+\end{figure}
+
 
 \end{knitrout}
 
