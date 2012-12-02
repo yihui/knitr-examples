@@ -15,7 +15,7 @@ knit_hooks$set(par = function(before, options, envir) {
 set.seed(123)
 @
 
-These options are vectorized for multiple plots per chunk: 'fig.cap', 'fig.scap', 'fig.env', 'fig.pos','out.width', 'out.height', 'out.extra'. When the plot hook is called, the i-th elements of these options will be applied to the i-th plot.
+These options are vectorized for multiple plots per chunk: \Sexpr{knitr:::.recyle.opts}. When the plot hook is called, the i-th elements of these options will be applied to the i-th plot.
 
 Figure captions.
 
