@@ -1,6 +1,7 @@
 \documentclass{article}
-\usepackage{float}
-\usepackage{rotfloat}
+\usepackage{float}    % for fig.pos='H'
+\usepackage{rotfloat} % for sidewaysfigure
+\usepackage{subfig}   % for subfigure
 
 \title{Graphics Options in knitr}
 \author{Yihui Xie}
@@ -38,6 +39,11 @@ Different out.extra (rotate by different degrees).
 Short options will be recycled: out.width below is of length 1 but there are two plots.
 
 <<fig-width, ref.label='fig-cap', out.width='1in'>>=
+@
+
+Use subfigures for each plot.
+
+<<fig-sub, ref.label='fig-cap', fig.cap='two plots', fig.subcap=c('one plot', 'the other one'), out.width='.49\\linewidth'>>=
 @
 
 The second figure uses sidewaysfigure.
