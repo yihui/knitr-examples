@@ -7,7 +7,7 @@ p x.split(' ')
 ```
 
 ```
-["hello,", "ruby", "world!"]
+## ["hello,", "ruby", "world!"]
 ```
 
 

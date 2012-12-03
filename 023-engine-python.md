@@ -21,8 +21,8 @@ print x.split(' ')
 ```
 
 ```
-hello, python world!
-['hello,', 'python', 'world!']
+## hello, python world!
+## ['hello,', 'python', 'world!']
 ```
 
 
@@ -47,8 +47,8 @@ or `echo=FALSE` (hide source code):
 
 
 ```
-hello, python world!
-['hello,', 'python', 'world!']
+## hello, python world!
+## ['hello,', 'python', 'world!']
 ```
 
 
@@ -103,6 +103,6 @@ Now see how the output is changed:
     print x
     print x.split(' ')
 
-    hello, python world!
-    ['hello,', 'python', 'world!']
+    ## hello, python world!
+    ## ['hello,', 'python', 'world!']
 
