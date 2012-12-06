@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass[preview]{standalone}
 \lstset{breaklines=true} % break long lines
 
 <<setup, include=FALSE>>=
