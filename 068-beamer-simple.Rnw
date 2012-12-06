@@ -1,0 +1,24 @@
+\documentclass{beamer}
+\begin{document}
+\title{Using knitr in Beamer}
+\author{Yihui Xie}
+
+\maketitle
+
+\begin{frame}
+\frametitle{Introduction}
+This is a normal slide.
+\end{frame}
+
+% need the option [fragile] for code output!
+\begin{frame}[fragile]
+\frametitle{Code chunks}
+<<test, out.width='.6\\linewidth', fig.align='center'>>=
+par(mar = c(4, 4, .1, .1))
+x = rnorm(100)
+hist(x, main='', col='lightblue', border='white')
+rug(x)
+@
+\end{frame}
+
+\end{document}
