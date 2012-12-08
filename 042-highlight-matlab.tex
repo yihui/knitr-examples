@@ -404,7 +404,7 @@
 
 
 \newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}
-
+\usepackage{url}
 \begin{document}
 
 Normal R chunks.
@@ -428,7 +428,10 @@ Normal R chunks.
 \end{knitrout}
 
 
-Highlight matlab chunks.
+Highlight matlab chunks. Note you need to install highlight from \url{http://www.andre-simon.de}, and you probably need to put its binary path into PATH; otherwise just use the engine.path option, e.g.
+
+\noindent\verb|<<engine='highlight', engine.path = 'full/path/to/highlight'>>=|
+
 
 \noindent
 \ttfamily

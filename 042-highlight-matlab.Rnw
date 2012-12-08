@@ -8,7 +8,7 @@ knit_theme$set('acid')
 opts_chunk$set(background='white') # R code use white background
 @
 \newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}
-
+\usepackage{url}
 \begin{document}
 
 Normal R chunks.
@@ -18,7 +18,10 @@ Normal R chunks.
 x=rnorm(5)
 @
 
-Highlight matlab chunks.
+Highlight matlab chunks. Note you need to install highlight from \url{http://www.andre-simon.de}, and you probably need to put its binary path into PATH; otherwise just use the engine.path option, e.g.
+
+\noindent\verb|<<engine='highlight', engine.path = 'full/path/to/highlight'>>=|
+
 
 <<highlight, engine='highlight', engine.opts='-e acid -S matlab -O latex'>>=
 function Y = kalmanM(pos)
