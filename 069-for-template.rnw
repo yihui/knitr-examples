@@ -1,0 +1,8 @@
+\section{Now i is \Sexpr{i}}
+
+\Sexpr{''}<<\Sexpr{paste('arbitrary-chunk-label-', i, '-here', sep = '')}>>=
+
+print (\Sexpr{i})
+iris[\Sexpr{i}, ]
+boxplot (iris[, \Sexpr{i}] ~ iris$Species)
+@
