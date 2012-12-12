@@ -1,0 +1,19 @@
+# Incremental Figure Numbers
+
+```{r setup, include=FALSE}
+fn = local({
+  i = 0
+  function(x) {
+    i <<- i + 1
+    paste('Figure ', i, ': ', x, sep = '')
+  }
+})
+```
+
+```{r test-a, fig.cap=fn('this is one plot')}
+plot(1:10)
+```
+
+```{r test-b, fig.cap=fn('another plot')}
+plot(rnorm(10))
+```
