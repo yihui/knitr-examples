@@ -1,0 +1,20 @@
+\documentclass{article}
+\usepackage{url}
+\begin{document}
+
+Restore \verb|\textbackslash{}ref\{\}| to \verb|\ref{}| in the output so we can use references in source code (see \url{http://stackoverflow.com/q/14058832/559676}).
+
+<<setup, include=FALSE>>=
+hook_source = knit_hooks$get('source')
+knit_hooks$set(source = function(x, options) {
+  txt = hook_source(x, options)
+  # extend the default source hook
+  gsub('\\\\textbackslash\\{\\}ref\\\\\\{(.+)\\\\\\}', '\\\\ref{\\1}', txt)
+})
+@
+
+<<"example", fig.cap = "some figure">>=
+# the following code generated Figure \ref{fig:example}
+plot(1:10, 1:10)
+@
+\end{document}
