@@ -5,7 +5,7 @@ pdf:
 	ls *.tex | xargs -n1 -P4 texi2pdf -c -q
 
 deps:
-	Rscript -e "for (i in c('ggplot2', 'mapproj', 'Hmisc', 'xtable', 'gridExtra', 'Rcpp', 'RcppArmadillo'))" \
+	Rscript -e "for (i in c('ggplot2', 'mapproj', 'Hmisc', 'xtable', 'gridExtra', 'Rcpp', 'RcppArmadillo', 'diagram'))" \
 	-e "if (!require(i, character.only=TRUE)) install.packages(i)"
 
 clean:
