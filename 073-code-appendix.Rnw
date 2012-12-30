@@ -1,0 +1,43 @@
+\documentclass{article}
+\begin{document}
+
+\section{Introduction}
+
+Move all code chunks into the appendix.
+
+\section{Computing}
+
+<<setup, include=FALSE>>=
+opts_chunk$set(echo=FALSE) # hide source code in the document
+@
+
+You cannot see the source code because echo = FALSE was set globally.
+
+<<a>>=
+# chunk a
+1+1
+@
+
+<<b>>=
+# chunk b
+2+2
+@
+
+<<c>>=
+# chunk c
+rnorm(10)
+@
+
+\appendix
+\section{Source code}
+Now we show all the code chunks:
+
+<<all-code, ref.label=all_labels(), echo=TRUE, eval=FALSE>>=
+@
+
+Of course, you can select labels to include here, e.g. remove the first chunk:
+
+<<some-code, ref.label=all_labels()[-1], echo=TRUE, eval=FALSE>>=
+@
+
+\end{document}
