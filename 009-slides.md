@@ -84,23 +84,22 @@ print(sessionInfo(), locale = FALSE)
 ```
 
 ```
-## R version 2.15.1 (2012-06-22)
+## R version 2.15.2 (2012-10-26)
 ## Platform: x86_64-pc-linux-gnu (64-bit)
 ## 
 ## attached base packages:
 ## [1] methods   stats     graphics  grDevices utils     datasets  base     
 ## 
 ## other attached packages:
-## [1] ggplot2_0.9.1 knitr_0.7.8  
+## [1] ggplot2_0.9.3 knitr_0.9.2  
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] colorspace_1.1-1   dichromat_1.2-4    digest_0.5.2      
-##  [4] evaluate_0.4.2     formatR_0.6.1      grid_2.15.1       
-##  [7] labeling_0.1       MASS_7.3-20        memoise_0.1       
-## [10] munsell_0.3        plyr_1.7.1         proto_0.3-9.2     
-## [13] RColorBrewer_1.0-5 RCurl_1.91-1       reshape2_1.2.1    
-## [16] scales_0.2.1       stringr_0.6.1      tools_2.15.1      
-## [19] XML_3.6-2
+##  [1] colorspace_1.2-0   dichromat_1.2-4    digest_0.6.0      
+##  [4] evaluate_0.4.3     formatR_0.7        grid_2.15.2       
+##  [7] gtable_0.1.2       labeling_0.1       MASS_7.3-22       
+## [10] munsell_0.4        plyr_1.8           proto_0.3-10      
+## [13] RColorBrewer_1.0-5 reshape2_1.2.2     scales_0.2.3      
+## [16] stringr_0.6.2      tools_2.15.2
 ```
 
 
