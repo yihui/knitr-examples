@@ -1,0 +1,42 @@
+\documentclass{article}
+\title{Using knit\_expand() for templates}
+\author{Yihui Xie}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{Write one row of data}
+Only the first two sections are evaluated.
+<<run-all, include=FALSE>>=
+src = NULL
+for (i in 1:5) src = c(src, knit_expand('075-template.rnw'))
+@
+
+\Sexpr{paste(knit(text = src), collapse = '\n')}
+
+\section{A regression model on several variables}
+
+You can expand a template file, or just provide the template as a character string.
+
+<<lm-mtcars, tidy.opts=list(width.cutoff=55)>>=
+# the template
+tpl = c("\\subsection{Regression on {{xvar}}}",
+        "<<lm-{{xvar}}>>=",
+        "lm(mpg~{{xvar}}, data=mtcars)",
+        "@")
+# expand to knitr source and pass to knit()
+src = lapply(names(mtcars)[-1], function(xvar) {knit_expand(text = tpl)})
+@
+
+\Sexpr{knit(text = unlist(src))}
+
+\section{Multiple variables}
+<<multiple-tpl>>=
+tpl = 'The value of a is {{a}} and b is {{b}}.'
+@
+
+\Sexpr{knit_expand(text = tpl, a = 1, b = 2)}
+
+\Sexpr{knit_expand(text = tpl, a = 5, b = 2013)}
+\end{document}

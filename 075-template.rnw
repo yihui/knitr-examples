@@ -1,0 +1,7 @@
+\subsection{Now i is {{i}}}
+
+This chunk is {{if (i > 2) 'not '}}evaluated.
+<<row-{{i}}, eval={{i <= 2}}>>=
+# row number {{i}}
+iris[{{i}}, ]
+@
