@@ -9,7 +9,7 @@ deps:
 	-e "if (!require(i, character.only=TRUE)) install.packages(i)"
 
 clean:
-	$(RM) *.log *.aux; \
+	$(RM) *.log *.aux *.toc; \
 	ls *.Rmd | sed 's/\.Rmd$$/.html/' | xargs $(RM); \
 	find figure/ | grep -E 'figure/[a-zA-Z]' | xargs $(RM)
 
