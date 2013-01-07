@@ -1,5 +1,6 @@
 knit:
-	./knitall
+	./knitall \
+	./k "076-chinese-gb2312.rnw', encoding='GB2312"
 
 pdf:
 	ls *.tex | xargs -n1 -P4 texi2pdf -c -q
