@@ -41,7 +41,7 @@ Short options will be recycled: out.width below is of length 1 but there are two
 <<fig-width, ref.label='fig-cap', out.width='1in'>>=
 @
 
-Use subfigures for each plot. Look at Figure \ref{fig:fig-sub1} andn \ref{fig:fig-sub2}.
+Use subfigures for each plot. Look at Figure \ref{fig:fig-sub1} and \ref{fig:fig-sub2}.
 
 <<fig-sub, ref.label='fig-cap', fig.cap='two plots', fig.subcap=c('one plot', 'the other one'), out.width='.49\\linewidth'>>=
 @
