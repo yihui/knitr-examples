@@ -18,7 +18,7 @@ set.seed(123)
 
 These options are vectorized for multiple plots per chunk: \Sexpr{knitr:::.recyle.opts}. When the plot hook is called, the i-th elements of these options will be applied to the i-th plot.
 
-Figure captions.
+Figure captions. Look at Figure \ref{fig:fig-cap1} and \ref{fig:fig-cap2}.
 
 <<fig-cap, fig.cap=c('One plot.', 'Another plot.')>>=
 par(bg=rgb(runif(1), runif(1), runif(1)))
@@ -41,12 +41,12 @@ Short options will be recycled: out.width below is of length 1 but there are two
 <<fig-width, ref.label='fig-cap', out.width='1in'>>=
 @
 
-Use subfigures for each plot.
+Use subfigures for each plot. Look at Figure \ref{fig:fig-sub1} andn \ref{fig:fig-sub2}.
 
 <<fig-sub, ref.label='fig-cap', fig.cap='two plots', fig.subcap=c('one plot', 'the other one'), out.width='.49\\linewidth'>>=
 @
 
-The second figure uses sidewaysfigure.
+The second figure uses sidewaysfigure (i.e. \ref{fig:fig-margin2}).
 
 <<fig-margin, ref.label='fig-cap', fig.cap=c('ordinary figure', 'sideways figure'), fig.env=c('figure', 'sidewaysfigure')>>=
 @
