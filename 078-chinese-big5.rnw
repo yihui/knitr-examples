@@ -1,0 +1,19 @@
+% 據說Cwtex可以編譯，但我沒有試過
+\documentclass{article}
+\begin{document}
+\title{knitr與繁體中文文檔}
+\author{謝益輝}
+
+測試，咳咳。以下代碼靠譜嗎？
+
+<<>>=
+1+1 # 太簡單了
+# 引號''能用嗎？
+rnorm(5)
+(function(){
+paste('這裡是字符串')
+})()
+@
+
+至少編碼是BIG5沒有問題。
+\end{document}
