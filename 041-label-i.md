@@ -28,7 +28,6 @@ hist(mtcars$wt[mtcars$cyl == 6], main = paste(6, "cylinders"))
 ![plot of chunk weight-histogam-6](http://animation.r-forge.r-project.org/knitr-ex/figure/041-label-i-weight-histogam-6.png) 
 
 
-
 ### 4
 
 ```r
@@ -42,7 +41,6 @@ hist(mtcars$wt[mtcars$cyl == 4], main = paste(4, "cylinders"))
 ```
 
 ![plot of chunk weight-histogam-4](http://animation.r-forge.r-project.org/knitr-ex/figure/041-label-i-weight-histogam-4.png) 
-
 
 
 ### 8
