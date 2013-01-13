@@ -5,7 +5,7 @@ Sometimes we do not want the text following a code chunk to be indented as a par
 
 <<setup>>=
 knit_hooks$set(document = function(x) {
-  gsub('(\\\\end\\{knitrout\\}[\n]+)', '\\1\\\\noindent ', x)
+  gsub('(\\\\end\\{knitrout\\}[\n]+)', '\\1\\\\noindent ', paste(x, collapse = '\n'))
 })
 @
 

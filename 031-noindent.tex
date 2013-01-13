@@ -63,7 +63,7 @@ Sometimes we do not want the text following a code chunk to be indented as a par
 \begin{alltt}
 knit_hooks$\hlfunctioncall{set}(document = \hlfunctioncall{function}(x) \{
     \hlfunctioncall{gsub}(\hlstring{"(\textbackslash{}\textbackslash{}\textbackslash{}\textbackslash{}end\textbackslash{}\textbackslash{}\{knitrout\textbackslash{}\textbackslash{}\}[\textbackslash{}n]+)"}, \hlstring{"\textbackslash{}\textbackslash{}1\textbackslash{}\textbackslash{}\textbackslash{}\textbackslash{}noindent "}, 
-        x)
+        \hlfunctioncall{paste}(x, collapse = \hlstring{"\textbackslash{}n"}))
 \})
 \end{alltt}
 \end{kframe}
