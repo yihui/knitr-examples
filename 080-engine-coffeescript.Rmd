@@ -5,7 +5,7 @@ You need to install `coffee`, the command-line version of [CoffeeScript](http://
 CoffeeScript compiles javascript:
 
 ```{r square_function, engine="coffee", comment='//'}
-    @square = (x) -> x * x
+@square = (x) -> x * x
 ```
 
 To use CoffeeScript in an HTML document, use `results="asis"`, `echo=FALSE`, and wrap the chunk in `<script>` tags.
@@ -17,13 +17,13 @@ To use CoffeeScript in an HTML document, use `results="asis"`, `echo=FALSE`, and
 
 <script type="text/javascript">
 ```{r math_functions, engine="coffee", results="asis", echo=FALSE}
-    @square = (x) -> x * x
-    @cube   = (x) -> square(x) * x
+@square = (x) -> x * x
+@cube   = (x) -> square(x) * x
 ```
 
 ```{r call_math, engine="coffee", results="asis", echo=FALSE}
-    p = document.createElement("p");
-    p.appendChild(document.createTextNode("The cube of 3 is " + cube(3)))
-    document.body.appendChild(p)
+p = document.createElement("p");
+p.appendChild(document.createTextNode("The cube of 3 is " + cube(3)))
+document.body.appendChild(p)
 ```
 </script>
