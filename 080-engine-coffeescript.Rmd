@@ -10,9 +10,9 @@ CoffeeScript compiles javascript:
 
 To use CoffeeScript in an HTML document, use `results="asis"`, `echo=FALSE`, and wrap the chunk in `<script>` tags.
 
-```{r , ref.label="math_functions", engine="coffee", eval=FALSE}
+```{r ref.label="math_functions", engine="coffee", eval=FALSE}
 ```
-```{r , ref.label="call_math", engine="coffee", eval=FALSE}
+```{r ref.label="call_math", engine="coffee", eval=FALSE}
 ```
 
 <script type="text/javascript">
