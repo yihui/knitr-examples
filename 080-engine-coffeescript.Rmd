@@ -4,7 +4,7 @@ You need to install `coffee`, the command-line version of [CoffeeScript](http://
 
 CoffeeScript compiles javascript:
 
-```{r square_function, engine="coffee"}
+```{r square_function, engine="coffee", comment='//'}
     @square = (x) -> x * x
 ```
 
