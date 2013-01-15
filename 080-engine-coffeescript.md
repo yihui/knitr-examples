@@ -6,17 +6,17 @@ CoffeeScript compiles javascript:
 
 
 ```coffee
-    @square = (x) -> x * x
+@square = (x) -> x * x
 ```
 
 ```
-## (function() {
-## 
-##   this.square = function(x) {
-##     return x * x;
-##   };
-## 
-## }).call(this);
+// (function() {
+// 
+//   this.square = function(x) {
+//     return x * x;
+//   };
+// 
+// }).call(this);
 ```
 
 
@@ -24,15 +24,15 @@ To use CoffeeScript in an HTML document, use `results="asis"`, `echo=FALSE`, and
 
 
 ```coffee
-    @square = (x) -> x * x
-    @cube   = (x) -> square(x) * x
+@square = (x) -> x * x
+@cube   = (x) -> square(x) * x
 ```
 
 
 ```coffee
-    p = document.createElement("p");
-    p.appendChild(document.createTextNode("The cube of 3 is " + cube(3)))
-    document.body.appendChild(p)
+p = document.createElement("p");
+p.appendChild(document.createTextNode("The cube of 3 is " + cube(3)))
+document.body.appendChild(p)
 ```
 
 
