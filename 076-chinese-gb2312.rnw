@@ -9,8 +9,11 @@
 '还是我'
 @
 
-\Sexpr{'仍然是'}中文
+\Sexpr{'仍然是'}中文，然后这里有\Sexpr{rep('很多',10)}中文。
 
 <<test>>=
 @
+
+本文档编码为GBK。
+
 \end{document}
