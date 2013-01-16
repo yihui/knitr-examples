@@ -1,3 +1,6 @@
+\documentclass{ctexart}
+\begin{document}
+
 中文测试。
 
 <<>>=
@@ -7,3 +10,4 @@
 @
 
 \Sexpr{'仍然是'}中文
+\end{document}
