@@ -6,14 +6,19 @@
 
 測試，咳咳。以下代碼靠譜嗎？
 
-<<>>=
+<<test>>=
 1+1 # 太簡單了
-# 引號''能用嗎？
+'引號能用嗎？'
 rnorm(5)
 (function(){
 paste('這裡是字符串')
 })()
 @
+
+<<test, tidy=FALSE>>=
+@
+
+正文中可以出現\Sexpr{if (TRUE) '中文代碼'}嗎？
 
 至少編碼是BIG5沒有問題。
 \end{document}
