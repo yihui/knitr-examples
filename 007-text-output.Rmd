@@ -51,6 +51,11 @@ dnorm(0)
 ```{r demo, echo=-2}
 ```
 
+## Do not evaluate, echo the 2nd expression
+
+```{r demo, eval=FALSE, echo=2}
+```
+
 ## Only evaluate the first two expressions
 
 ```{r demo, eval=1:2}

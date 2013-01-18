@@ -217,6 +217,18 @@ dnorm(0)
 ```
 
 
+## Do not evaluate, echo the 2nd expression
+
+
+```r
+for (i in 1:10) {
+    # nothing before 10
+    if (i >= 10) 
+        print(i)
+}
+```
+
+
 ## Only evaluate the first two expressions
 
 
