@@ -35,7 +35,7 @@ value of length 0 will be removed from the output, \rinline{x[1] =
   2011; NULL} but it was indeed evaluated, e.g. now the first element
 of x becomes \rinline{x[1]}.
 
-How about figures? Let's use the Cairo PDF device (assumes R >=
+How about figures? Let's use the Cairo PDF device (assumes R $\geq$
 2.14.0).
 
 %% begin.rcode cairo-scatter, dev='cairo_pdf', fig.width=5, fig.height=5, out.width='.8\\textwidth'
