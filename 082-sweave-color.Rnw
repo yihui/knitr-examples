@@ -1,0 +1,17 @@
+\documentclass{article}
+\usepackage[x11names]{xcolor}
+\DefineVerbatimEnvironment{Sinput}{Verbatim}{formatcom=\color{Blue3}}
+\DefineVerbatimEnvironment{Soutput}{Verbatim}{formatcom=\color{gray}}
+
+\begin{document}
+<<setup, include=FALSE>>=
+render_sweave()
+@
+
+Test. Source code is {\color{Blue3}Blue3}, and output is {\color{gray}gray}.
+<<>>=
+1+1
+rnorm(5)
+@
+
+\end{document}
