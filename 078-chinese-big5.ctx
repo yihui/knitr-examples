@@ -70,7 +70,12 @@
 ## [1] 2
 \end{verbatim}
 \begin{alltt}
-\hlcomment{# 引號''能用嗎？}
+\hlstring{"引號能用嗎？"}
+\end{alltt}
+\begin{verbatim}
+## [1] "引號能用嗎？"
+\end{verbatim}
+\begin{alltt}
 \hlfunctioncall{rnorm}(5)
 \end{alltt}
 \begin{verbatim}
@@ -87,6 +92,40 @@
 \end{kframe}
 \end{knitrout}
 
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+1+1 \hlcomment{# 太簡單了}
+\end{alltt}
+\begin{verbatim}
+## [1] 2
+\end{verbatim}
+\begin{alltt}
+\hlstring{'引號能用嗎？'}
+\end{alltt}
+\begin{verbatim}
+## [1] "引號能用嗎？"
+\end{verbatim}
+\begin{alltt}
+\hlfunctioncall{rnorm}(5)
+\end{alltt}
+\begin{verbatim}
+## [1]  1.7151  0.4609 -1.2651 -0.6869 -0.4457
+\end{verbatim}
+\begin{alltt}
+(\hlfunctioncall{function}()\{
+\hlfunctioncall{paste}(\hlstring{'這裡是字符串'})
+\})()
+\end{alltt}
+\begin{verbatim}
+## [1] "這裡是字符串"
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+
+正文中可以出現中文代碼嗎？
 
 至少編碼是BIG5沒有問題。
 \end{document}
