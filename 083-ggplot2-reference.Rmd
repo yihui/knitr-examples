@@ -1,0 +1,25 @@
+# Externalize ggplot2 code
+ 
+You may have your own layout code like [this one](http://stackoverflow.com/q/14802183/559676), and you do not want to type the code again and again. One way to avoid repeating the code explicitly is to use chunk references. Although **knitr** is based on the idea of literate programming, but we rarely need programming, and this is one case in which literate programming may be helpful.
+
+We simplify the layout code in the original post and put it in a code chunk named `my-layout`:
+
+```{r my-layout, eval=FALSE}
+theme (legend.text = element_text(size = 12, angle=45))+
+  theme (legend.position = "bottom")
+```
+
+Now we can use `<<>>` to reference it.
+
+```{r test-a}
+library(ggplot2)
+qplot(carat, price, data=diamonds, color=cut)+
+  <<my-layout>>
+```
+
+Another test:
+
+```{r test-b}
+qplot(carat, data=diamonds, fill=cut)+
+  <<my-layout>>
+```
