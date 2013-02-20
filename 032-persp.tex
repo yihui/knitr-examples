@@ -11,7 +11,6 @@
 }
 \makeatother
 
-\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \definecolor{fgcolor}{rgb}{0.2, 0.2, 0.2}
 \newcommand{\hlnumber}[1]{\textcolor[rgb]{0,0,0}{#1}}%
 \newcommand{\hlfunctioncall}[1]{\textcolor[rgb]{0.501960784313725,0,0.329411764705882}{\textbf{#1}}}%
@@ -54,6 +53,7 @@
 \newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
 
 \usepackage{alltt}
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 
 \begin{document}
 
