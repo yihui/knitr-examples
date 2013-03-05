@@ -80,7 +80,7 @@ par(mfrow = c(2, 2), pch = 20, mar = c(4, 4, 2, 0.1), bg = "white")
 plot(fit)
 ```
 
-![Regression diagnostics](figure/lm-vis.pdf) 
+![Regression diagnostics](http://animation.r-forge.r-project.org/knitr-ex/figure/084-pandoc-lm-vis.png) 
 
 
 # A little bit math
