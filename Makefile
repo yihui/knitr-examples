@@ -14,7 +14,7 @@ deps:
 	-e "if (!require(i, character.only=TRUE)) install.packages(i)"
 
 clean:
-	$(RM) *.log *.aux *.toc; \
+	$(RM) *.log *.aux *.toc *.docx *.epub *.odt 084-pandoc-slides.html; \
 	ls *.Rmd | sed 's/\.Rmd$$/.html/' | xargs $(RM); \
 	find figure/ | grep -E 'figure/[a-zA-Z]' | xargs $(RM)
 
