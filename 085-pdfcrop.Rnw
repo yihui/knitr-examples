@@ -1,0 +1,16 @@
+\documentclass{article}
+\begin{document}
+<<setup, include=FALSE>>=
+knit_hooks$set(crop = hook_pdfcrop)
+@
+
+Cropped.
+<<test-a, crop=TRUE, fig.width=3, fig.height=3>>=
+plot(1)
+@
+
+Not cropped.
+<<test-b, fig.width=3, fig.height=3>>=
+plot(1)
+@
+\end{document}
