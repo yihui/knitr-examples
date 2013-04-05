@@ -3,3 +3,4 @@ cache/
 r-forge/
 *.pdf
 *-tikzDictionary
+*.log
