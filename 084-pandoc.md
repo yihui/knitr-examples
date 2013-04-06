@@ -62,10 +62,10 @@ summary(fit)
 ## (Intercept)  -17.579      6.758   -2.60    0.012 *  
 ## speed          3.932      0.416    9.46  1.5e-12 ***
 ## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
 ## Residual standard error: 15.4 on 48 degrees of freedom
-## Multiple R-squared: 0.651,	Adjusted R-squared: 0.644 
+## Multiple R-squared:  0.651,	Adjusted R-squared:  0.644 
 ## F-statistic: 89.6 on 1 and 48 DF,  p-value: 1.49e-12
 ```
 
