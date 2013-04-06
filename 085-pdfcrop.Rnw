@@ -5,7 +5,7 @@ knit_hooks$set(crop = hook_pdfcrop)
 @
 
 Cropped.
-<<test-a, crop=TRUE, fig.width=3, fig.height=3>>=
+<<test-a, crop=TRUE, fig.width=3, fig.height=3, cache=TRUE>>=
 plot(1)
 @
 
