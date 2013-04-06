@@ -103,6 +103,10 @@ print(sessionInfo(), locale = FALSE)
 ```
 
 
+# Misc issues
+
+- the plots are too wide? use the chunk option `out.width` which will be used in `<img width=... />`, e.g. `out.width=400px`
+
 # Life is short
 
 - so keep your audience awake!
