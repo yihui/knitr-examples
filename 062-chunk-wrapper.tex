@@ -53,6 +53,7 @@
 \newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
 
 \usepackage{alltt}
+\usepackage{url}
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
 \begin{knitrout}
@@ -78,4 +79,14 @@ I want to display \verb|<<>>=| in the output since I'm writing a tutorial:
 \end{alltt}\end{kframe}
 \end{knitrout}
 
+
+Another approach was mentioned in FAQ 9 (\url{https://github.com/yihui/knitr/blob/master/FAQ.md}), i.e. destroy the chunk header. Here is an example:
+
+\begin{verbatim}
+<<test_label, echo=1:2>>=
+1 + 1
+rnorm(10)
+2 + 2
+@
+\end{verbatim}
 \end{document}

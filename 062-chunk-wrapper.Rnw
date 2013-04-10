@@ -1,4 +1,5 @@
 \documentclass{article}
+\usepackage{url}
 \begin{document}
 <<setup>>=
 knit_hooks$set(wrapper = function(before, options, envir) {
@@ -13,4 +14,14 @@ I want to display \verb|<<>>=| in the output since I'm writing a tutorial:
 1+1
 plot(1)
 @
+
+Another approach was mentioned in FAQ 9 (\url{https://github.com/yihui/knitr/blob/master/FAQ.md}), i.e. destroy the chunk header. Here is an example:
+
+\begin{verbatim}
+\Sexpr{''}<<test_label, echo=1:2>>=
+1 + 1
+rnorm(10)
+2 + 2
+@
+\end{verbatim}
 \end{document}
