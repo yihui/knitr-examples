@@ -7,7 +7,7 @@ pdf:
 	ls *.tex | xargs -n1 -P4 texi2pdf -c -q
 
 pandoc:
-	Rscript 084-pandoc.R
+	Rscript 084-pandoc.R && Rscript 088-pandoc-embedded.R
 
 deps:
 	Rscript -e "for (i in c('ggplot2', 'mapproj', 'Hmisc', 'xtable', 'gridExtra', 'Rcpp', 'RcppArmadillo', 'diagram'))" \

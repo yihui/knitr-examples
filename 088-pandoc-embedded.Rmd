@@ -1,0 +1,74 @@
+% Converting Markdown to Other Formats with knitr::pandoc()
+% [Yihui Xie](http://yihui.name)
+% March 1st, 2013
+
+<!--pandoc
+format: html
+s:
+mathjax:
+number-sections:
+
+format: latex
+number-sections:
+-->
+
+A bit _introduction_ here.
+
+# Start with a cool section
+
+You can use traditional **Markdown** syntax, such as [links](http://yihui.name/knitr) and `code`.
+
+# Followed by another section
+
+Of course you can write lists:
+
+- apple
+- pear
+- banana
+
+Or ordered lists:
+
+1. items
+1. will
+1. be
+1. ordered
+    - nested
+    - items
+
+# More sections
+
+## Hi
+
+hi hi
+
+## Hello
+
+hello hello
+
+## Howdy
+
+howdy howdy
+
+# Okay, some R code
+
+```{r linear-model}
+fit = lm(dist ~ speed, data = cars)
+b = coef(fit)  # coefficients
+summary(fit)
+```
+
+The code will be highlighted in all output formats.
+
+# And some pictures
+
+```{r lm-vis, fig.cap='Regression diagnostics'}
+par(mfrow = c(2, 2), pch = 20, mar = c(4, 4, 2, .1), bg = 'white')
+plot(fit)
+```
+
+# A little bit math
+
+Our regression equation is $Y=`r b[1]`+`r b[2]`x$, and the model is:
+
+$$ Y = \beta_0 + \beta_1 x + \epsilon$$
+
