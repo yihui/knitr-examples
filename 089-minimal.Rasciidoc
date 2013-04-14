@@ -1,0 +1,39 @@
+= The Book Title
+:author: A Knitter
+
+== The first chapter
+Nec vitae mus fringilla eu vel pede sed pellentesque. Nascetur fugiat
+nobis. Eu felis id mauris sollicitudin ut. Sem volutpat feugiat.
+Ornare convallis urna vitae.
+
+Nec mauris sed aliquam nam mauris dolor lorem imperdiet.
+
+== The second chapter
+Ut suspendisse nulla. Auctor felis facilisis. Rutrum vivamus nec
+lectus porttitor dui dapibus eu ridiculus tempor sodales et. Sit a
+cras. Id tellus cubilia erat.
+
+Quisque nullam et. Blandit dui tempor. Posuere in elit diam egestas
+sem vivamus vel ac.
+
+== Some R examples
+
+Some text-based examples.
+
+// begin.rcode test
+1+1
+rnorm(5)
+1:2+1:3 # a warning
+f=function(){message('Aloha, this is a friendly message!')}
+f()
+1+'a' # mision impossible
+// end.rcode
+
+And you know the value of pi is +r pi+. Let's try some graphics too.
+
+// begin.rcode cool-plot, fig.width=5, fig.height=4, fig.cap='A wonderful plot.'
+par(mar=c(4, 4, .1, .1))
+plot(cars, pch=19)
+// end.rcode
+
+Ready to get started?
