@@ -3,6 +3,9 @@
 \begin_document
 \begin_header
 \textclass ctex-article
+\begin_preamble
+\DeclareRobustCommand\nobreakspace{\leavevmode\nobreak\ }
+\end_preamble
 \options UTF8,adobefonts
 \use_default_options true
 \begin_modules
