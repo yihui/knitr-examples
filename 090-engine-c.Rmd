@@ -1,0 +1,21 @@
+# Compile C code
+
+```{r}
+# is gcc there?
+Sys.which('gcc')
+```
+
+Does `engine = 'c'` work?
+
+```{r test-c, engine='c', results='hide'}
+void square(double *x) {
+  *x = *x * *x;
+}
+```
+
+Test the `square()` function:
+
+```{r}
+.C('square', 9)
+.C('square', 123)
+```
