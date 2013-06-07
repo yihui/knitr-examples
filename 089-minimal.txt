@@ -45,8 +45,11 @@ rnorm(5)
 ----
 
 [WARNING]
+====
+.Warning
 longer object length is not a multiple of shorter object length
 
+====
 
 ----
 ## [1] 2 4 4
@@ -61,8 +64,11 @@ f()
 ----
 
 [NOTE]
+====
+.Message
  Aloha, this is a friendly message!
 
+====
 
 [source,r]
 ----
@@ -70,8 +76,11 @@ f()
 ----
 
 [CAUTION]
+====
+.Error
 non-numeric argument to binary operator
 
+====
 
 
 
