@@ -55,7 +55,7 @@ ls | grep engine | xargs wc
 ##     7    17   109 025-engine-ruby.Rmd
 ##    14    37   235 026-engine-haskell.md
 ##     8    37   267 026-engine-haskell.Rmd
-##    74   194  1382 027-engine-bash.md
+##    76   204  1457 027-engine-bash.md
 ##    23    58   352 027-engine-bash.Rmd
 ##    27    35   222 028-engine-perl.md
 ##    14    26   172 028-engine-perl.Rmd
@@ -69,6 +69,8 @@ ls | grep engine | xargs wc
 ##    13    72   537 060-engine-sas.Rmd
 ##    64   136  1043 080-engine-coffeescript.md
 ##    29    98   877 080-engine-coffeescript.Rmd
-##   844  2443 17927 total
+##    45    60   336 090-engine-c.md
+##    21    41   256 090-engine-c.Rmd
+##   912  2554 18594 total
 ```
 
