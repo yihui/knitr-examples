@@ -1,0 +1,65 @@
+\documentclass{article}
+\usepackage{booktabs}
+\usepackage{longtable}
+\title{Demos of tables with \texttt{kable()} in knitr}
+\author{Yihui Xie}
+\begin{document}
+\maketitle
+
+<<setup, include=FALSE>>=
+# in this document we mainly use results='asis', so set it globally
+opts_chunk$set(results='asis')
+@
+
+The function \texttt{kable()} is a simple table generator. Unlike
+sophisticated packages (e.g. \textbf{xtable}, which has more than 30
+arguments), this function only has a minimal number of arguments to generate
+simple tables.
+
+<<test-a>>=
+library(knitr)
+kable(head(iris))
+@
+
+\section{No row names}
+
+<<test-b>>=
+kable(head(iris), row.names=FALSE)
+@
+
+\section{At most 3 digits}
+
+<<test-c>>=
+kable(matrix(rnorm(20),4), digits=3)
+@
+
+\section{Alignment}
+
+By default, numeric columns are right-aligned, and other columns are
+left-aligned.
+
+<<test-d>>=
+kable(head(iris), align=c('l', 'c', 'r', 'l', 'r'))
+@
+
+\section{Default tables are ugly}
+
+Let's use the \textbf{booktabs} package. The air is suddenly fresh!
+
+<<test-e>>=
+kable(head(iris), row.names=FALSE, booktabs=TRUE)
+kable(head(mtcars[, 1:7]), booktabs=TRUE)
+@
+
+\section{Long tables}
+
+<<test-f>>=
+kable(mtcars[, 1:7], longtable=TRUE, booktabs=TRUE)
+@
+
+\section{Want more features?}
+
+No, that is all I have. You should turn to other packages for help. I'm not
+going to reinvent their wheels.
+
+\end{document}
