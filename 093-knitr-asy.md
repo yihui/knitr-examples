@@ -1,0 +1,57 @@
+# Asymptote graphics example
+
+## Description
+
+The engine runs the code using the `asy` command line program. The result can be `svg`, `png` or `pdf`. `svg` renders better within html. For latex `pdf` should be used.
+
+see [Asymptote website](http://asymptote.sourceforge.net/) for installation and documentation.
+
+On osx, one can simply run:
+
+    brew install asymptote
+    
+Please have a look at the online [gallery](http://asymptote.sourceforge.net/gallery/index.html) to see how much can be done with asymptote. 
+
+## Example
+
+An example of the asy-engine:
+
+
+
+```cpp
+real u = 40;
+// just a comment
+draw( (0,0) .. (u,u) .. (u,0) -- (0,0) );
+```
+
+
+![Asymptote Example](figure/asy-simple-ex.svg) 
+
+
+
+## 3D example
+
+
+
+```cpp
+import graph3;
+import palette;
+       
+size(200,300,keepAspect=false);
+//settings.nothin=true;
+       
+currentprojection=orthographic(10,10,30);
+currentlight=(10,10,5);
+triple f(pair t) {return (exp(t.x)*cos(t.y),exp(t.x)*sin(t.y),t.y);}
+       
+surface s=surface(f,(-4,-2pi),(0,4pi),8,16,Spline);
+s.colors(palette(s.map(zpart),Rainbow()));
+draw(s,render(merge=true));
+```
+
+
+![Asymptote 3D Example](figure/asy-3d-ex.png) 
+
+
+
+
