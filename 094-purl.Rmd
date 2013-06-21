@@ -1,0 +1,25 @@
+# An example for `purl()`
+
+The function `purl()` can be used to extract code chunks from a document.
+
+```{r test-a, eval=TRUE}
+1+1
+strsplit('hello world', ' ')
+```
+
+A second chunk.
+
+```{r test-b, fig.width=10, fig.height=7}
+if (FALSE) plot(1:10)
+```
+
+When we do not evaluate a chunk, the code from `purl()` will be commented out.
+
+```{r test-c, eval=FALSE}
+paste(letters, collapse = '|')
+if (1 == 1) {
+  'Awesome!'
+}
+```
+
+That is it.
