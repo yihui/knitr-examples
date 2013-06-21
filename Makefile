@@ -28,4 +28,4 @@ unmount:
 	fusermount -u ./r-forge
 
 sync:
-	cp -u ./figure/*.png ./r-forge/figure/
+	cp -u ./figure/*.png ./figure/*.svg ./r-forge/figure/
