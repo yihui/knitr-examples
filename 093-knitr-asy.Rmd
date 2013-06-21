@@ -1,5 +1,9 @@
 # Asymptote graphics example
 
+```{r setup, include=FALSE}
+opts_chunk$set(cache=TRUE)
+```
+
 ## Description
 
 The engine runs the code using the `asy` command line program. The result can be `svg`, `png` or `pdf`. `svg` renders better within html. For LaTeX `pdf`/`png` can be used.
