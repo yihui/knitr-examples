@@ -1,9 +1,13 @@
 We know the value of pi is 3.1416, and 2 times pi is 6.2832.
 
-The brew syntax in knitr is similar to the brew package, but all kinds of
+The brew syntax in knitr looks similar to the brew package, but all kinds of
 syntax in the brew package will be treated in the same way in knitr: they are
 nothing but inline R code.
 
 
 
 You can write a number as 1.234, or 1.234, or 1.234.
+
+The brew syntax in knitr is way less powerful than the brew package. It
+should be regarded as an experimental feature only in knitr, and not to be
+confused with the brew package.
