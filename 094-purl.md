@@ -40,4 +40,13 @@ if (1 == 1) {
 ```
 
 
+If one chunk should not be included in the results from `purl()`, just use the chunk option `purl = FALSE`:
+
+
+```r
+# we do not like significance starts!
+options(stringsAsFactors = FALSE, show.signif.stars = FALSE)
+```
+
+
 That is it.
