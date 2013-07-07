@@ -8,11 +8,12 @@ hello world
 
 \newpage
 \begin{landscape}
-\tiny
-<<results='asis', cache=TRUE>>=
-library(xtable)
-print(xtable(head(iris)))
+\begin{table}\centering
+<<results='asis'>>=
+library(knitr)
+kable(head(iris))
 @
+\end{table}
 \end{landscape}
 \newpage
 
@@ -20,7 +21,7 @@ hello again
 
 <<results='asis'>>=
 library(Hmisc)
-latex(head(iris), file='', size="tiny", landscape=TRUE)
+latex(head(iris), file='', landscape=TRUE)
 @
 
 \end{document}
