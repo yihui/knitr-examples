@@ -17,7 +17,7 @@ Highlight matlab chunks. Note you need to install highlight from \url{http://www
 \noindent\verb|<<engine='highlight', engine.path = 'full/path/to/highlight'>>=|
 
 
-<<highlight, engine='highlight', engine.opts='-e acid -S matlab -O latex'>>=
+<<highlight, engine='highlight', engine.opts='-S matlab -O latex'>>=
 function Y = kalmanM(pos)
   dt=1;
   %% Initialize state transition matrix
