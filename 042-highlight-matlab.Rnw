@@ -1,13 +1,7 @@
 \documentclass{article}
 <<adjust-preamble, include=FALSE>>=
-library(highlight)
-opts_knit$set(use.highlight = TRUE)
-
 knit_theme$set('acid')
-
-opts_chunk$set(background='white') # R code use white background
 @
-\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}
 \usepackage{url}
 \begin{document}
 
