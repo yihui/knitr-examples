@@ -2,7 +2,7 @@ knit:
 	./knitall; \
 	Rscript -e "knitr::purl('094-purl.Rmd')"; \
 	./k "078-chinese-big5.rnw', '078-chinese-big5.ctx', encoding='BIG5"; \
-	./k "076-chinese-gb2312.rnw', encoding='GB2312"
+	./k "076-chinese-gb2312.rnw', '076-chinese-gb2312.TEX', encoding='GB2312"
 
 pdf:
 	ls *.tex | xargs -n1 -P4 texi2pdf -c -q
