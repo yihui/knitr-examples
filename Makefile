@@ -17,7 +17,8 @@ deps:
 clean:
 	$(RM) *.log *.aux *.toc *.docx *.epub *.odt 084-pandoc-slides.html; \
 	ls *.Rmd | sed 's/\.Rmd$$/.html/' | xargs $(RM); \
-	find figure/ | grep -E 'figure/[a-zA-Z]' | xargs $(RM)
+	find figure/ | grep -E 'figure/[^0-9]' | xargs $(RM); \
+	find cache/ | grep -E 'cache/[^0-9]' | xargs $(RM)
 
 strip:
 	for i in `ls | grep -E '^[0-9].*\.(brew|R(nw|md|tex|html|rst))$$'`; do sed -i "s/[[:space:]]*$$//" $$i; done
