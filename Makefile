@@ -5,7 +5,7 @@ knit:
 	./k "076-chinese-gb2312.rnw', '076-chinese-gb2312.TEX', encoding='GB2312"
 
 pdf:
-	ls *.tex | xargs -n1 -P4 texi2pdf -c -q
+	for i in *.tex; do echo $$i; texi2pdf -c -q $$i; done
 
 pandoc:
 	Rscript 084-pandoc.R && Rscript 088-pandoc-embedded.R
