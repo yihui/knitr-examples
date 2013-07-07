@@ -1,5 +1,5 @@
 \documentclass{article}
-<<adjust-preamble, echo=FALSE, message=FALSE>>=
+<<adjust-preamble, include=FALSE>>=
 library(highlight)
 opts_knit$set(use.highlight = TRUE)
 
