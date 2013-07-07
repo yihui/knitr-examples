@@ -8,19 +8,19 @@
 .error {
 	font-weight: bold;
 	color: #FF0000;
-}, 
+},
 .warning {
 	font-weight: bold;
-} 
+}
 .message {
 	font-style: italic;
-} 
+}
 .source, .output, .warning, .error, .message {
 	padding: 0em 1em;
   border:solid 1px #F7F7F7;
 }
 .source {
-  background-color: #f7f7f7;
+  background-color: #f5f5f5;
 }
 .rimage.left {
   text-align: left;
@@ -31,85 +31,48 @@
 .rimage.center {
   text-align: center;
 }
-
-.source {
-  color: #333333;
+.hl.num {
+  color: #AF0F91;
 }
-.background {
-  color: #F7F7F7;
+.hl.str {
+  color: #317ECC;
 }
-
-.number {
-  color: #000000;
-}
-
-.functioncall {
-  color: #800054;
-  font-weight: bolder;
-}
-
-.string {
-  color: #9999FF;
-}
-
-.keyword {
-  font-weight: bolder;
-  color: black;
-}
-
-.argument {
-  color: #B04005;
-}
-
-.comment {
-  color: #2E9957;
-}
-
-.roxygencomment {
-  color: #707AB3;
-}
-
-.formalargs {
-  color: #B04005;
-}
-
-.eqformalargs {
-  color: #B04005;
-}
-
-.assignement {
-  font-weight: bolder;
-  color: #000000;
-}
-
-.package {
-  color: #96B525;
-}
-
-.slot {
+.hl.com {
+  color: #AD95AF;
   font-style: italic;
 }
-
-.symbol {
+.hl.opt {
   color: #000000;
 }
-
-.prompt {
-  color: #333333;
+.hl.std {
+  color: #585858;
 }
-</style>
+.hl.kwa {
+  color: #295F94;
+  font-weight: bold;
+}
+.hl.kwb {
+  color: #B05A65;
+}
+.hl.kwc {
+  color: #55aa55;
+}
+.hl.kwd {
+  color: #BC5A65;
+  font-weight: bold;
+}</style>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <title>你好，中文</title>
 </head>
 <body>
   <p>肿么就不能写中文呢？</p>
 
-<div class="chunk" id="unnamed-chunk-1"><div class="rcode"><div class="source"><pre class="knitr r">x = 1 + 1
-<span class="functioncall">pnorm</span>(x)
+<div class="chunk" id="unnamed-chunk-1"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl std">x</span> <span class="hl kwb">=</span> <span class="hl num">1</span> <span class="hl opt">+</span> <span class="hl num">1</span>
+<span class="hl kwd">pnorm</span><span class="hl std">(x)</span>
 </pre></div>
 <div class="output"><pre class="knitr r">## [1] 0.9772
 </pre></div>
-<div class="source"><pre class="knitr r"><span class="functioncall">plot</span>(mtcars[, 1:2])
+<div class="source"><pre class="knitr r"><span class="hl kwd">plot</span><span class="hl std">(mtcars[,</span> <span class="hl num">1</span><span class="hl opt">:</span><span class="hl num">2</span><span class="hl std">])</span>
 </pre></div>
 </div><div class="rimage default"><img src="http://animation.r-forge.r-project.org/knitr-ex/figure/034-chinese-unnamed-chunk-1.png" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" class="plot" /></div></div>
 

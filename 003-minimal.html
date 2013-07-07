@@ -8,19 +8,19 @@
 .error {
 	font-weight: bold;
 	color: #FF0000;
-}, 
+},
 .warning {
 	font-weight: bold;
-} 
+}
 .message {
 	font-style: italic;
-} 
+}
 .source, .output, .warning, .error, .message {
 	padding: 0em 1em;
   border:solid 1px #F7F7F7;
 }
 .source {
-  background-color: #f7f7f7;
+  background-color: #f5f5f5;
 }
 .rimage.left {
   text-align: left;
@@ -31,77 +31,40 @@
 .rimage.center {
   text-align: center;
 }
-
-.source {
-  color: #333333;
+.hl.num {
+  color: #AF0F91;
 }
-.background {
-  color: #F7F7F7;
+.hl.str {
+  color: #317ECC;
 }
-
-.number {
-  color: #000000;
-}
-
-.functioncall {
-  color: #800054;
-  font-weight: bolder;
-}
-
-.string {
-  color: #9999FF;
-}
-
-.keyword {
-  font-weight: bolder;
-  color: black;
-}
-
-.argument {
-  color: #B04005;
-}
-
-.comment {
-  color: #2E9957;
-}
-
-.roxygencomment {
-  color: #707AB3;
-}
-
-.formalargs {
-  color: #B04005;
-}
-
-.eqformalargs {
-  color: #B04005;
-}
-
-.assignement {
-  font-weight: bolder;
-  color: #000000;
-}
-
-.package {
-  color: #96B525;
-}
-
-.slot {
+.hl.com {
+  color: #AD95AF;
   font-style: italic;
 }
-
-.symbol {
+.hl.opt {
   color: #000000;
 }
-
-.prompt {
-  color: #333333;
+.hl.std {
+  color: #585858;
 }
-</style>
+.hl.kwa {
+  color: #295F94;
+  font-weight: bold;
+}
+.hl.kwb {
+  color: #B05A65;
+}
+.hl.kwc {
+  color: #55aa55;
+}
+.hl.kwd {
+  color: #BC5A65;
+  font-weight: bold;
+}</style>
   <title>A minimal knitr example in HTML</title>
 </head>
 <body>
-<div class="chunk" id="unnamed-chunk-1"><div class="rcode"><div class="source"><pre class="knitr r">opts_chunk$<span class="functioncall">set</span>(fig.width = 5, fig.height = 5)
+<div class="chunk" id="unnamed-chunk-1"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl std">opts_chunk</span><span class="hl opt">$</span><span class="hl kwd">set</span><span class="hl std">(</span><span class="hl kwc">fig.width</span> <span class="hl std">=</span> <span class="hl num">5</span><span class="hl std">,</span> <span class="hl kwc">fig.height</span> <span class="hl std">=</span> <span class="hl num">5</span><span class="hl std">)</span>
 </pre></div>
 </div></div>
 
@@ -115,14 +78,14 @@
 
   <p>Boring stuff as usual:</p>
 
-<div class="chunk" id="unnamed-chunk-2"><div class="rcode"><div class="source"><pre class="knitr r"><span class="comment">## a simple calculator</span>
-1 + 1
+<div class="chunk" id="unnamed-chunk-2"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl com">## a simple calculator</span>
+<span class="hl num">1</span> <span class="hl opt">+</span> <span class="hl num">1</span>
 </pre></div>
 <div class="output"><pre class="knitr r">## [1] 2
 </pre></div>
-<div class="source"><pre class="knitr r"><span class="comment">## boring random numbers</span>
-<span class="functioncall">set.seed</span>(123)
-<span class="functioncall">rnorm</span>(5)
+<div class="source"><pre class="knitr r"><span class="hl com">## boring random numbers</span>
+<span class="hl kwd">set.seed</span><span class="hl std">(</span><span class="hl num">123</span><span class="hl std">)</span>
+<span class="hl kwd">rnorm</span><span class="hl std">(</span><span class="hl num">5</span><span class="hl std">)</span>
 </pre></div>
 <div class="output"><pre class="knitr r">## [1] -0.56048 -0.23018  1.55871  0.07051  0.12929
 </pre></div>
@@ -132,11 +95,11 @@
   <p>We can also produce plots (centered by the
   option <code>fig.align='center'</code>):</p>
 
-<div class="chunk" id="html-cars-scatter"><div class="rcode"><div class="source"><pre class="knitr r"><span class="functioncall">library</span>(ggplot2)
-<span class="functioncall">plot</span>(mpg ~ hp, mtcars)
+<div class="chunk" id="html-cars-scatter"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl kwd">library</span><span class="hl std">(ggplot2)</span>
+<span class="hl kwd">plot</span><span class="hl std">(mpg</span> <span class="hl opt">~</span> <span class="hl std">hp, mtcars)</span>
 </pre></div>
 </div><div class="rimage center"><img src="http://animation.r-forge.r-project.org/knitr-ex/figure/003-minimal-html-cars-scatter1.png" title="plot of chunk html-cars-scatter" alt="plot of chunk html-cars-scatter" class="plot" /></div><div class="rcode">
-<div class="source"><pre class="knitr r"><span class="functioncall">qplot</span>(hp, mpg, data = mtcars) + <span class="functioncall">geom_smooth</span>()
+<div class="source"><pre class="knitr r"><span class="hl kwd">qplot</span><span class="hl std">(hp, mpg,</span> <span class="hl kwc">data</span> <span class="hl std">= mtcars)</span> <span class="hl opt">+</span> <span class="hl kwd">geom_smooth</span><span class="hl std">()</span>
 </pre></div>
 </div><div class="rimage center"><img src="http://animation.r-forge.r-project.org/knitr-ex/figure/003-minimal-html-cars-scatter2.png" title="plot of chunk html-cars-scatter" alt="plot of chunk html-cars-scatter" class="plot" /></div></div>
 
@@ -144,17 +107,17 @@
   <p>Errors, messages and warnings can be put into <code>div</code>'s
   with different <code>class</code>es:</p>
 
-<div class="chunk" id="unnamed-chunk-3"><div class="rcode"><div class="source"><pre class="knitr r"><span class="functioncall">sqrt</span>(-1)  # warning
+<div class="chunk" id="unnamed-chunk-3"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl kwd">sqrt</span><span class="hl std">(</span><span class="hl opt">-</span><span class="hl num">1</span><span class="hl std">)</span>  <span class="hl com"># warning</span>
 </pre></div>
 <div class="warning"><pre class="knitr r">## Warning: NaNs produced
 </pre></div>
 <div class="output"><pre class="knitr r">## [1] NaN
 </pre></div>
-<div class="source"><pre class="knitr r"><span class="functioncall">message</span>(<span class="string">"knitr says hello to HTML!"</span>)
+<div class="source"><pre class="knitr r"><span class="hl kwd">message</span><span class="hl std">(</span><span class="hl str">&quot;knitr says hello to HTML!&quot;</span><span class="hl std">)</span>
 </pre></div>
 <div class="message"><pre class="knitr r">## knitr says hello to HTML!
 </pre></div>
-<div class="source"><pre class="knitr r">1 + <span class="string">"a"</span>  # mission impossible
+<div class="source"><pre class="knitr r"><span class="hl num">1</span> <span class="hl opt">+</span> <span class="hl str">&quot;a&quot;</span>  <span class="hl com"># mission impossible</span>
 </pre></div>
 <div class="error"><pre class="knitr r">## Error: non-numeric argument to binary operator
 </pre></div>
@@ -164,15 +127,15 @@
   <p>In the end, let's show off a 3D plot from
   the <strong>rgl</strong> package.</p>
 
-<div class="chunk" id="unnamed-chunk-4"><div class="rcode"><div class="source"><pre class="knitr r">knit_hooks$<span class="functioncall">set</span>(rgl = hook_rgl)  # set up the hook first
+<div class="chunk" id="unnamed-chunk-4"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl std">knit_hooks</span><span class="hl opt">$</span><span class="hl kwd">set</span><span class="hl std">(</span><span class="hl kwc">rgl</span> <span class="hl std">= hook_rgl)</span>  <span class="hl com"># set up the hook first</span>
 </pre></div>
 </div></div>
 
 
-<div class="chunk" id="fancy-rgl"><div class="rcode"><div class="source"><pre class="knitr r"><span class="functioncall"><span class="keyword">if</span></span> (<span class="functioncall">require</span>(<span class="string">"rgl"</span>)) {
-    <span class="functioncall">demo</span>(<span class="string">"bivar"</span>, package = <span class="string">"rgl"</span>, echo = <span class="keyword">FALSE</span>)
-    <span class="functioncall">par3d</span>(zoom = 0.7)
-}
+<div class="chunk" id="fancy-rgl"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl kwa">if</span> <span class="hl std">(</span><span class="hl kwd">require</span><span class="hl std">(</span><span class="hl str">&quot;rgl&quot;</span><span class="hl std">)) {</span>
+    <span class="hl kwd">demo</span><span class="hl std">(</span><span class="hl str">&quot;bivar&quot;</span><span class="hl std">,</span> <span class="hl kwc">package</span> <span class="hl std">=</span> <span class="hl str">&quot;rgl&quot;</span><span class="hl std">,</span> <span class="hl kwc">echo</span> <span class="hl std">=</span> <span class="hl num">FALSE</span><span class="hl std">)</span>
+    <span class="hl kwd">par3d</span><span class="hl std">(</span><span class="hl kwc">zoom</span> <span class="hl std">=</span> <span class="hl num">0.7</span><span class="hl std">)</span>
+<span class="hl std">}</span>
 </pre></div>
 <div class="message"><pre class="knitr r">## Loading required package: MASS
 </pre></div>

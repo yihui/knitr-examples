@@ -11,21 +11,16 @@
 }
 \makeatother
 
-\definecolor{fgcolor}{rgb}{0.2, 0.2, 0.2}
-\newcommand{\hlnumber}[1]{\textcolor[rgb]{0,0,0}{#1}}%
-\newcommand{\hlfunctioncall}[1]{\textcolor[rgb]{0.501960784313725,0,0.329411764705882}{\textbf{#1}}}%
-\newcommand{\hlstring}[1]{\textcolor[rgb]{0.6,0.6,1}{#1}}%
-\newcommand{\hlkeyword}[1]{\textcolor[rgb]{0,0,0}{\textbf{#1}}}%
-\newcommand{\hlargument}[1]{\textcolor[rgb]{0.690196078431373,0.250980392156863,0.0196078431372549}{#1}}%
-\newcommand{\hlcomment}[1]{\textcolor[rgb]{0.180392156862745,0.6,0.341176470588235}{#1}}%
-\newcommand{\hlroxygencomment}[1]{\textcolor[rgb]{0.43921568627451,0.47843137254902,0.701960784313725}{#1}}%
-\newcommand{\hlformalargs}[1]{\textcolor[rgb]{0.690196078431373,0.250980392156863,0.0196078431372549}{#1}}%
-\newcommand{\hleqformalargs}[1]{\textcolor[rgb]{0.690196078431373,0.250980392156863,0.0196078431372549}{#1}}%
-\newcommand{\hlassignement}[1]{\textcolor[rgb]{0,0,0}{\textbf{#1}}}%
-\newcommand{\hlpackage}[1]{\textcolor[rgb]{0.588235294117647,0.709803921568627,0.145098039215686}{#1}}%
-\newcommand{\hlslot}[1]{\textit{#1}}%
-\newcommand{\hlsymbol}[1]{\textcolor[rgb]{0,0,0}{#1}}%
-\newcommand{\hlprompt}[1]{\textcolor[rgb]{0.2,0.2,0.2}{#1}}%
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
 
 \usepackage{framed}
 \makeatletter
@@ -59,8 +54,8 @@
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlfunctioncall{options}(width = 60)
-\hlfunctioncall{summary}(iris)
+\hlkwd{options}\hlstd{(}\hlkwc{width} \hlstd{=} \hlnum{60}\hlstd{)}
+\hlkwd{summary}\hlstd{(iris)}
 \end{alltt}
 \begin{verbatim}
 ##   Sepal.Length   Sepal.Width    Petal.Length   Petal.Width 
@@ -91,29 +86,29 @@ This chunk below is from the child document.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-1 + 1
+\hlnum{1} \hlopt{+} \hlnum{1}
 \end{alltt}
 \begin{verbatim}
 ## [1] 2
 \end{verbatim}
 \begin{alltt}
-\hlfunctioncall{rnorm}(5)
+\hlkwd{rnorm}\hlstd{(}\hlnum{5}\hlstd{)}
 \end{alltt}
 \begin{verbatim}
 ## [1] -0.56048 -0.23018  1.55871  0.07051  0.12929
 \end{verbatim}
 \begin{alltt}
-\hlfunctioncall{plot}(1)
+\hlkwd{plot}\hlstd{(}\hlnum{1}\hlstd{)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=2in]{figure/087-child-example-test-child1} 
 \begin{kframe}\begin{alltt}
-\hlfunctioncall{boxplot}(1:10)
+\hlkwd{boxplot}\hlstd{(}\hlnum{1}\hlopt{:}\hlnum{10}\hlstd{)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=2in]{figure/087-child-example-test-child2} 
 \begin{kframe}\begin{alltt}
-\hlfunctioncall{str}(mtcars)
+\hlkwd{str}\hlstd{(mtcars)}
 \end{alltt}
 \begin{verbatim}
 ## 'data.frame':	32 obs. of  11 variables:

@@ -11,21 +11,16 @@
 }
 \makeatother
 
-\definecolor{fgcolor}{rgb}{0.2, 0.2, 0.2}
-\newcommand{\hlnumber}[1]{\textcolor[rgb]{0,0,0}{#1}}%
-\newcommand{\hlfunctioncall}[1]{\textcolor[rgb]{0.501960784313725,0,0.329411764705882}{\textbf{#1}}}%
-\newcommand{\hlstring}[1]{\textcolor[rgb]{0.6,0.6,1}{#1}}%
-\newcommand{\hlkeyword}[1]{\textcolor[rgb]{0,0,0}{\textbf{#1}}}%
-\newcommand{\hlargument}[1]{\textcolor[rgb]{0.690196078431373,0.250980392156863,0.0196078431372549}{#1}}%
-\newcommand{\hlcomment}[1]{\textcolor[rgb]{0.180392156862745,0.6,0.341176470588235}{#1}}%
-\newcommand{\hlroxygencomment}[1]{\textcolor[rgb]{0.43921568627451,0.47843137254902,0.701960784313725}{#1}}%
-\newcommand{\hlformalargs}[1]{\textcolor[rgb]{0.690196078431373,0.250980392156863,0.0196078431372549}{#1}}%
-\newcommand{\hleqformalargs}[1]{\textcolor[rgb]{0.690196078431373,0.250980392156863,0.0196078431372549}{#1}}%
-\newcommand{\hlassignement}[1]{\textcolor[rgb]{0,0,0}{\textbf{#1}}}%
-\newcommand{\hlpackage}[1]{\textcolor[rgb]{0.588235294117647,0.709803921568627,0.145098039215686}{#1}}%
-\newcommand{\hlslot}[1]{\textit{#1}}%
-\newcommand{\hlsymbol}[1]{\textcolor[rgb]{0,0,0}{#1}}%
-\newcommand{\hlprompt}[1]{\textcolor[rgb]{0.2,0.2,0.2}{#1}}%
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
 
 \usepackage{framed}
 \makeatletter
@@ -63,34 +58,32 @@ hello world
 
 \newpage
 \begin{landscape}
-\tiny
+\begin{table}\centering
 \begin{kframe}
 \begin{alltt}
-\hlfunctioncall{library}(xtable)
-\hlfunctioncall{print}(\hlfunctioncall{xtable}(\hlfunctioncall{head}(iris)))
+\hlkwd{library}\hlstd{(knitr)}
+\hlkwd{kable}\hlstd{(}\hlkwd{head}\hlstd{(iris))}
 \end{alltt}
-\end{kframe}
-% latex table generated in R 2.15.1 by xtable 1.7-0 package
-% Tue Aug 21 23:12:18 2012
-\begin{table}[ht]
-\begin{center}
-\begin{tabular}{rrrrrl}
-  \hline
- & Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species \\ 
-  \hline
-1 & 5.10 & 3.50 & 1.40 & 0.20 & setosa \\ 
-  2 & 4.90 & 3.00 & 1.40 & 0.20 & setosa \\ 
-  3 & 4.70 & 3.20 & 1.30 & 0.20 & setosa \\ 
-  4 & 4.60 & 3.10 & 1.50 & 0.20 & setosa \\ 
-  5 & 5.00 & 3.60 & 1.40 & 0.20 & setosa \\ 
-  6 & 5.40 & 3.90 & 1.70 & 0.40 & setosa \\ 
-   \hline
+\end{kframe}\begin{tabular}{r|r|r|r|l}
+\hline
+Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
+\hline
+5.1 & 3.5 & 1.4 & 0.2 & setosa\\
+\hline
+4.9 & 3.0 & 1.4 & 0.2 & setosa\\
+\hline
+4.7 & 3.2 & 1.3 & 0.2 & setosa\\
+\hline
+4.6 & 3.1 & 1.5 & 0.2 & setosa\\
+\hline
+5.0 & 3.6 & 1.4 & 0.2 & setosa\\
+\hline
+5.4 & 3.9 & 1.7 & 0.4 & setosa\\
+\hline
 \end{tabular}
-\end{center}
+
+
 \end{table}
-
-
-
 \end{landscape}
 \newpage
 
@@ -98,17 +91,16 @@ hello again
 
 \begin{kframe}
 \begin{alltt}
-\hlfunctioncall{library}(Hmisc)
+\hlkwd{library}\hlstd{(Hmisc)}
 \end{alltt}
 
 
 {\ttfamily\noindent\itshape\color{messagecolor}{\#\# Loading required package: methods\\\#\# Loading required package: survival\\\#\# Loading required package: splines\\\#\# Hmisc library by Frank E Harrell Jr\\\#\# \\\#\# Type library(help='Hmisc'), ?Overview, or ?Hmisc.Overview')\\\#\# to see overall documentation.\\\#\# \\\#\# NOTE:Hmisc no longer redefines [.factor to drop unused levels when\\\#\# subsetting.\ \ To get the old behavior of Hmisc type dropUnusedLevels().\\\#\# \\\#\# \\\#\# Attaching package: 'Hmisc'\\\#\# \\\#\# The following object is masked from 'package:survival':\\\#\# \\\#\#\ \ \ \  untangle.specials\\\#\# \\\#\# The following object is masked from 'package:base':\\\#\# \\\#\#\ \ \ \  format.pval, round.POSIXt, trunc.POSIXt, units}}\begin{alltt}
-\hlfunctioncall{latex}(\hlfunctioncall{head}(iris), file = \hlstring{""}, size = \hlstring{"tiny"}, landscape = TRUE)
+\hlkwd{latex}\hlstd{(}\hlkwd{head}\hlstd{(iris),} \hlkwc{file} \hlstd{=} \hlstr{""}\hlstd{,} \hlkwc{landscape} \hlstd{=} \hlnum{TRUE}\hlstd{)}
 \end{alltt}
-\end{kframe}% latex.default(head(iris), file = "", size = "tiny", landscape = TRUE) 
+\end{kframe}% latex.default(head(iris), file = "", landscape = TRUE) 
 %
 \begin{landscape}\begin{table}[!tbp]
-\tiny
 \begin{center}
 \begin{tabular}{lrrrrl}
 \hline\hline
