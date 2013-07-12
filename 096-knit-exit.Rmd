@@ -1,0 +1,18 @@
+We can exit a document early using the `knit_exit()` function.
+
+Below is a simple chunk, and there is a time-consuming chunk after it.
+
+```{r}
+library(knitr)
+1 + 1
+knit_exit()
+```
+
+Okay, you will not see me in the output.
+
+```{r}
+Sys.sleep(100)
+```
+
+Normally you have to wait for 100 seconds, but since I have called
+`knit_exit()`, the rest of the document is actually ignored.
