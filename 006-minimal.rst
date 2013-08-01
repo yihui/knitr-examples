@@ -74,17 +74,6 @@ Here is a plot:
 ::
 
     library(ggplot2)
-
-
-
-::
-
-    ## Loading required package: methods
-
-
-
-::
-
     qplot(hp, mpg, data = mtcars) + geom_smooth()
 
 
