@@ -1,0 +1,13 @@
+\documentclass{article}
+\begin{document}
+
+Of course, you can use a scale box on a table.
+
+\scalebox{0.7}{
+<<hmisc-table, echo=FALSE, message=FALSE, results='asis'>>=
+library(Hmisc)
+latex(head(iris), file='', table.env=FALSE, center='none')
+@
+}
+
+\end{document}
