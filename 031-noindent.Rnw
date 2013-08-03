@@ -3,7 +3,7 @@
 
 Sometimes we do not want the text following a code chunk to be indented as a paragraph. We can use the \texttt{document} hook to add \texttt{\textbackslash{}noindent} after each chunk. For example:
 
-<<setup>>=
+<<setup, tidy.opts=list(width.cutoff=60)>>=
 knit_hooks$set(document = function(x) {
   gsub('(\\\\end\\{knitrout\\}[\n]+)', '\\1\\\\noindent ', paste(x, collapse = '\n'))
 })
