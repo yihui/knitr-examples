@@ -14,7 +14,7 @@ and the output filename will be ``rst``. Here is how we write R code in
     render_rst(strict = TRUE)
     
     # global chunk options
-    opts_chunk$set(cache = TRUE, fig.width = 5, fig.height = 5)
+    opts_chunk$set(fig.width = 5, fig.height = 5)
 
 
 
@@ -75,13 +75,6 @@ Here is a plot:
 
     library(ggplot2)
     qplot(hp, mpg, data = mtcars) + geom_smooth()
-
-
-
-::
-
-    ## geom_smooth: method="auto" and size of largest group is <1000, so using
-    ## loess. Use 'method = x' to change the smoothing method.
 
 
 .. figure:: http://animation.r-forge.r-project.org/knitr-ex/figure/006-minimal-rst-plot.png

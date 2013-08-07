@@ -11,7 +11,7 @@ options(width = 75)
 render_rst(strict=TRUE)
 
 # global chunk options
-opts_chunk$set(cache=TRUE, fig.width=5, fig.height=5)
+opts_chunk$set(fig.width=5, fig.height=5)
 .. ..
 
 More examples
@@ -29,7 +29,7 @@ dots, e.g.
 
 Here is a plot:
 
-.. {r rst-plot, out.width='360px', fig.cap='A ggplot2 example'}
+.. {r rst-plot, out.width='360px', fig.cap='A ggplot2 example', message=FALSE}
 library(ggplot2)
 qplot(hp, mpg, data=mtcars) + geom_smooth()
 .. ..
