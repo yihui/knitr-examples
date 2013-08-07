@@ -1,0 +1,13 @@
+\documentclass{article}
+
+\begin{document}
+
+Syntax highlighting also works for other languages in the \LaTeX{} or HTML output, if Highlight has been installed (and is in PATH).
+
+<<hi-python, engine='python'>>=
+x = 'hello, python world!'
+print x
+print x.split(' ')
+@
+
+\end{document}
