@@ -1,5 +1,5 @@
 # Evaluate and echo different lines
- 
+
 For demonstration purposes, we may want to show some source code in the output, but really evaluate different code in the background.
 
 
@@ -7,7 +7,7 @@ For demonstration purposes, we may want to show some source code in the output, 
 hook_source = knit_hooks$get("source")
 knit_hooks$set(source = function(x, options) {
     res = hook_source(x, options)
-    if (!grepl("#'#' ", x)) 
+    if (!any(grepl("#'#' ", x))) 
         return(res)
     gsub("(^|\n)#'#' ", "\\1", res)
 })
