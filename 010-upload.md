@@ -42,13 +42,13 @@ library(ggplot2)
 qplot(hp, mpg, data = mtcars) + geom_smooth()
 ```
 
-![plot of chunk md-cars](http://i.imgur.com/2OlK3jC.png) 
+![plot of chunk md-cars](http://i.imgur.com/Fbw4vCi.png) 
 
 ```r
 ggpcp(mtcars) + geom_line()
 ```
 
-![plot of chunk md-cars](http://i.imgur.com/L7YHROm.png) 
+![plot of chunk md-cars](http://i.imgur.com/xcwTAoq.png) 
 
 
 So **knitr** is ready with GitHub with a single markdown file.
