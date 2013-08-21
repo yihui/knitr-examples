@@ -10,7 +10,7 @@ opts_chunk$set(cache=TRUE)
 # Why
 
 - after you finished typing `\documentclass{beamer}` and `\title{}`, I have finished my first slide with markdown
-- much less commands to remember, e.g. to write bullet points, just begin with a dash "`-`" instead of `\begin{itemize}` and `\item`; how things can be simpler?
+- far fewer commands to remember, e.g. to write bullet points, just begin with a dash "`-`" instead of `\begin{itemize}` and `\item`; how things can be simpler?
 - I know you want math to show you are a statistician, e.g. $f(k)={n \choose k}p^{k}(1-p)^{n-k}$
 - you do not need to maintain output -- only maintain a source file
 - HTML5/CSS3 is much more fun than LaTeX
