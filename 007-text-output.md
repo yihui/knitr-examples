@@ -433,3 +433,73 @@ See <http://yihui.name/formatR> for details.
 
 
 
+
+## Messages
+
+Do not include messages:
+
+
+```r
+1 + 1
+```
+
+```
+## [1] 2
+```
+
+```r
+message("helloooo!")
+```
+
+
+No warnings:
+
+
+```r
+1:2 + 1:3
+```
+
+```
+## [1] 2 4 4
+```
+
+```r
+warning("no no no")
+```
+
+
+Select warnings using numeric indices:
+
+
+```r
+1:2 + 1:3
+```
+
+```
+## [1] 2 4 4
+```
+
+```r
+warning("no no no")
+```
+
+```
+## Warning: no no no
+```
+
+
+Invalid indices will select nothing:
+
+
+```r
+1:2 + 1:3
+```
+
+```
+## [1] 2 4 4
+```
+
+```r
+warning("no no no")
+```
+

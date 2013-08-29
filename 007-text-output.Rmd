@@ -118,3 +118,29 @@ See <http://yihui.name/formatR> for details.
 ```{r}
 
 ```
+
+## Messages
+
+Do not include messages:
+
+```{r message=FALSE}
+1+1
+message('helloooo!')
+```
+
+No warnings:
+
+```{r test-w, warning=FALSE}
+1:2+1:3
+warning('no no no')
+```
+
+Select warnings using numeric indices:
+
+```{r test-w, warning=-1}
+```
+
+Invalid indices will select nothing:
+
+```{r test-w, warning=3}
+```
