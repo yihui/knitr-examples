@@ -35,3 +35,12 @@ Below is a test case for [#588](https://github.com/yihui/knitr/issues/588):
 ```{r test-e, cache=2, fig.width=30, fig.height=30}
 pairs(matrix(rnorm(100), ncol=100), labels=1:100, pch='.')
 ```
+
+Another test case, with more plots:
+
+```{r test-f, cache=2}
+Sys.sleep(5)
+plot(1:10)
+abline(0, 1)
+plot(2:11)
+```

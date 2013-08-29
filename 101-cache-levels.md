@@ -92,3 +92,21 @@ pairs(matrix(rnorm(100), ncol = 100), labels = 1:100, pch = ".")
 
 ![plot of chunk test-e](http://animation.r-forge.r-project.org/knitr-ex/figure/101-cache-levels-test-e.png) 
 
+
+Another test case, with more plots:
+
+
+```r
+Sys.sleep(5)
+plot(1:10)
+abline(0, 1)
+```
+
+![plot of chunk test-f](http://animation.r-forge.r-project.org/knitr-ex/figure/101-cache-levels-test-f1.png) 
+
+```r
+plot(2:11)
+```
+
+![plot of chunk test-f](http://animation.r-forge.r-project.org/knitr-ex/figure/101-cache-levels-test-f2.png) 
+
