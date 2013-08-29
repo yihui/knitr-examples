@@ -503,3 +503,57 @@ Invalid indices will select nothing:
 warning("no no no")
 ```
 
+
+## The results option
+
+Do not show text results:
+
+
+```r
+1 + 1
+for (i in 1:10) {
+    # nothing before 10
+    if (i >= 10) 
+        print(i)
+}
+# two blank lines below
+dnorm(0)
+```
+
+
+Flush all results to the end of a chunk:
+
+
+```r
+1 + 1
+for (i in 1:10) {
+    # nothing before 10
+    if (i >= 10) 
+        print(i)
+}
+# two blank lines below
+dnorm(0)
+```
+
+```
+## [1] 2
+```
+
+```
+## [1] 10
+```
+
+```
+## [1] 0.3989
+```
+
+
+Output as is:
+
+
+```r
+cat("_Markdown_,", "oh yeah, **Markdown**")
+```
+
+_Markdown_, oh yeah, **Markdown**
+

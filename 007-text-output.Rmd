@@ -144,3 +144,21 @@ Invalid indices will select nothing:
 
 ```{r test-w, warning=3}
 ```
+
+## The results option
+
+Do not show text results:
+
+```{r demo, results='hide'}
+```
+
+Flush all results to the end of a chunk:
+
+```{r demo, results='hold'}
+```
+
+Output as is:
+
+```{r results='asis'}
+cat('_Markdown_,', 'oh yeah, **Markdown**')
+```
