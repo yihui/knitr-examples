@@ -69,8 +69,11 @@
 \hlcom{### Name: geom_abline}
 \hlcom{### Title: Line specified by slope and intercept.}
 \hlcom{### Aliases: geom_abline}
+
 \hlcom{### ** Examples}
+
 \hlstd{p} \hlkwb{<-} \hlkwd{qplot}\hlstd{(wt, mpg,} \hlkwc{data} \hlstd{= mtcars)}
+
 \hlcom{# Fixed slopes and intercepts}
 \hlstd{p} \hlopt{+} \hlkwd{geom_abline}\hlstd{()} \hlcom{# Can't see it - outside the range of the data}
 \end{alltt}
@@ -193,10 +196,13 @@
 \hlcom{### Name: geom_bar}
 \hlcom{### Title: Bars, rectangles with bases on x-axis}
 \hlcom{### Aliases: geom_bar}
+
 \hlcom{### ** Examples}
+
 \hlcom{## No test: }
 \hlcom{# Generate data}
 \hlstd{c} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(mtcars,} \hlkwd{aes}\hlstd{(}\hlkwd{factor}\hlstd{(cyl)))}
+
 \hlcom{# By default, uses stat="bin", which gives the count in each category}
 \hlstd{c} \hlopt{+} \hlkwd{geom_bar}\hlstd{()}
 \end{alltt}
@@ -375,7 +381,9 @@
 \hlcom{### Name: geom_bin2d}
 \hlcom{### Title: Add heatmap of 2d bin counts.}
 \hlcom{### Aliases: geom_bin2d}
+
 \hlcom{### ** Examples}
+
 \hlstd{d} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(diamonds,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= x,} \hlkwc{y} \hlstd{= y))} \hlopt{+} \hlkwd{xlim}\hlstd{(}\hlnum{4}\hlstd{,}\hlnum{10}\hlstd{)} \hlopt{+} \hlkwd{ylim}\hlstd{(}\hlnum{4}\hlstd{,}\hlnum{10}\hlstd{)}
 \hlstd{d} \hlopt{+} \hlkwd{geom_bin2d}\hlstd{()}
 \end{alltt}
@@ -405,13 +413,16 @@
 \hlcom{### Name: geom_blank}
 \hlcom{### Title: Blank, draws nothing.}
 \hlcom{### Aliases: geom_blank}
+
 \hlcom{### ** Examples}
+
 \hlkwd{qplot}\hlstd{(length, rating,} \hlkwc{data} \hlstd{= movies,} \hlkwc{geom} \hlstd{=} \hlstr{"blank"}\hlstd{)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_blank1} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Nothing to see here!}
+
 \hlcom{# Take the following scatter plot}
 \hlstd{a} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(mtcars,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= wt,} \hlkwc{y} \hlstd{= mpg), .} \hlopt{~} \hlstd{cyl)} \hlopt{+} \hlkwd{geom_point}\hlstd{()}
 \hlcom{# Add to that some lines with geom_abline()}
@@ -448,9 +459,12 @@
 \hlcom{### Name: geom_boxplot}
 \hlcom{### Title: Box and whiskers plot.}
 \hlcom{### Aliases: geom_boxplot}
+
 \hlcom{### ** Examples}
+
 \hlcom{## No test: }
 \hlstd{p} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(mtcars,} \hlkwd{aes}\hlstd{(}\hlkwd{factor}\hlstd{(cyl), mpg))}
+
 \hlstd{p} \hlopt{+} \hlkwd{geom_boxplot}\hlstd{()}
 \end{alltt}
 \end{kframe}
@@ -703,7 +717,9 @@
 \hlcom{### Name: geom_dotplot}
 \hlcom{### Title: Dot plot}
 \hlcom{### Aliases: geom_dotplot}
+
 \hlcom{### ** Examples}
+
 \hlkwd{ggplot}\hlstd{(mtcars,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= mpg))} \hlopt{+} \hlkwd{geom_dotplot}\hlstd{()}
 \end{alltt}
 
@@ -834,7 +850,9 @@
 \hlcom{### Name: geom_errorbar}
 \hlcom{### Title: Error bars.}
 \hlcom{### Aliases: geom_errorbar}
+
 \hlcom{### ** Examples}
+
 \hlcom{# Create a simple example dataset}
 \hlstd{df} \hlkwb{<-} \hlkwd{data.frame}\hlstd{(}
   \hlkwc{trt} \hlstd{=} \hlkwd{factor}\hlstd{(}\hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{1}\hlstd{,} \hlnum{2}\hlstd{,} \hlnum{2}\hlstd{)),}
@@ -843,8 +861,10 @@
   \hlkwc{se} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{0.1}\hlstd{,} \hlnum{0.3}\hlstd{,} \hlnum{0.3}\hlstd{,} \hlnum{0.2}\hlstd{)}
 \hlstd{)}
 \hlstd{df2} \hlkwb{<-} \hlstd{df[}\hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,}\hlnum{3}\hlstd{),]}
+
 \hlcom{# Define the top and bottom of the errorbars}
 \hlstd{limits} \hlkwb{<-} \hlkwd{aes}\hlstd{(}\hlkwc{ymax} \hlstd{= resp} \hlopt{+} \hlstd{se,} \hlkwc{ymin}\hlstd{=resp} \hlopt{-} \hlstd{se)}
+
 \hlstd{p} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(df,} \hlkwd{aes}\hlstd{(}\hlkwc{fill}\hlstd{=group,} \hlkwc{y}\hlstd{=resp,} \hlkwc{x}\hlstd{=trt))}
 \hlstd{p} \hlopt{+} \hlkwd{geom_bar}\hlstd{(}\hlkwc{position}\hlstd{=}\hlstr{"dodge"}\hlstd{,} \hlkwc{stat}\hlstd{=}\hlstr{"identity"}\hlstd{)}
 \end{alltt}
@@ -916,14 +936,18 @@
 \hlcom{### Name: geom_errorbarh}
 \hlcom{### Title: Horizontal error bars}
 \hlcom{### Aliases: geom_errorbarh}
+
 \hlcom{### ** Examples}
+
 \hlstd{df} \hlkwb{<-} \hlkwd{data.frame}\hlstd{(}
   \hlkwc{trt} \hlstd{=} \hlkwd{factor}\hlstd{(}\hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{1}\hlstd{,} \hlnum{2}\hlstd{,} \hlnum{2}\hlstd{)),}
   \hlkwc{resp} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{5}\hlstd{,} \hlnum{3}\hlstd{,} \hlnum{4}\hlstd{),}
   \hlkwc{group} \hlstd{=} \hlkwd{factor}\hlstd{(}\hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{2}\hlstd{,} \hlnum{1}\hlstd{,} \hlnum{2}\hlstd{)),}
   \hlkwc{se} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{0.1}\hlstd{,} \hlnum{0.3}\hlstd{,} \hlnum{0.3}\hlstd{,} \hlnum{0.2}\hlstd{)}
 \hlstd{)}
+
 \hlcom{# Define the top and bottom of the errorbars}
+
 \hlstd{p} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(df,} \hlkwd{aes}\hlstd{(resp, trt,} \hlkwc{colour} \hlstd{= group))}
 \hlstd{p} \hlopt{+} \hlkwd{geom_point}\hlstd{()} \hlopt{+}
   \hlkwd{geom_errorbarh}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{xmax} \hlstd{= resp} \hlopt{+} \hlstd{se,} \hlkwc{xmin} \hlstd{= resp} \hlopt{-} \hlstd{se))}
@@ -953,7 +977,9 @@
 \hlcom{### Name: geom_freqpoly}
 \hlcom{### Title: Frequency polygon.}
 \hlcom{### Aliases: geom_freqpoly}
+
 \hlcom{### ** Examples}
+
 \hlkwd{qplot}\hlstd{(carat,} \hlkwc{data} \hlstd{= diamonds,} \hlkwc{geom} \hlstd{=} \hlstr{"freqpoly"}\hlstd{)}
 \end{alltt}
 
@@ -1025,7 +1051,9 @@
 \hlcom{### Name: geom_histogram}
 \hlcom{### Title: Histogram}
 \hlcom{### Aliases: geom_histogram}
+
 \hlcom{### ** Examples}
+
 \hlcom{## No test: }
 \hlkwd{set.seed}\hlstd{(}\hlnum{5689}\hlstd{)}
 \hlstd{movies} \hlkwb{<-} \hlstd{movies[}\hlkwd{sample}\hlstd{(}\hlkwd{nrow}\hlstd{(movies),} \hlnum{1000}\hlstd{), ]}
@@ -1186,6 +1214,7 @@
 \begin{kframe}\begin{alltt}
 \hlcom{# For transformed coordinate systems, the binwidth applies to the}
 \hlcom{# raw data.  The bins have constant width on the original scale.}
+
 \hlcom{# Using log scales does not work here, because the first}
 \hlcom{# bar is anchored at zero, and so when transformed becomes negative}
 \hlcom{# infinity.  This is not a problem when transforming the scales, because}
@@ -1331,8 +1360,11 @@
 \hlcom{### Name: geom_hline}
 \hlcom{### Title: Horizontal line.}
 \hlcom{### Aliases: geom_hline}
+
 \hlcom{### ** Examples}
+
 \hlstd{p} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(mtcars,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= wt,} \hlkwc{y}\hlstd{=mpg))} \hlopt{+} \hlkwd{geom_point}\hlstd{()}
+
 \hlstd{p} \hlopt{+} \hlkwd{geom_hline}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{yintercept}\hlstd{=mpg))}
 \end{alltt}
 \end{kframe}
@@ -1367,6 +1399,7 @@
 \hlcom{# To display different lines in different facets, you need to}
 \hlcom{# create a data frame.}
 \hlstd{p} \hlkwb{<-} \hlkwd{qplot}\hlstd{(mpg, wt,} \hlkwc{data}\hlstd{=mtcars,} \hlkwc{facets} \hlstd{= vs} \hlopt{~} \hlstd{am)}
+
 \hlstd{hline.data} \hlkwb{<-} \hlkwd{data.frame}\hlstd{(}\hlkwc{z} \hlstd{=} \hlnum{1}\hlopt{:}\hlnum{4}\hlstd{,} \hlkwc{vs} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{0}\hlstd{,}\hlnum{0}\hlstd{,}\hlnum{1}\hlstd{,}\hlnum{1}\hlstd{),} \hlkwc{am} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{0}\hlstd{,}\hlnum{1}\hlstd{,}\hlnum{0}\hlstd{,}\hlnum{1}\hlstd{))}
 \hlstd{p} \hlopt{+} \hlkwd{geom_hline}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{yintercept} \hlstd{= z), hline.data)}
 \end{alltt}
@@ -1389,7 +1422,9 @@
 \hlcom{### Name: geom_jitter}
 \hlcom{### Title: Points, jittered to reduce overplotting.}
 \hlcom{### Aliases: geom_jitter}
+
 \hlcom{### ** Examples}
+
 \hlstd{p} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(mpg,} \hlkwd{aes}\hlstd{(displ, hwy))}
 \hlstd{p} \hlopt{+} \hlkwd{geom_point}\hlstd{()}
 \end{alltt}
@@ -1455,12 +1490,15 @@
 \hlcom{### Name: geom_line}
 \hlcom{### Title: Connect observations, ordered by x value.}
 \hlcom{### Aliases: geom_line}
+
 \hlcom{### ** Examples}
+
 \hlcom{# Summarise number of movie ratings by year of movie}
 \hlstd{mry} \hlkwb{<-} \hlkwd{do.call}\hlstd{(rbind,} \hlkwd{by}\hlstd{(movies,} \hlkwd{round}\hlstd{(movies}\hlopt{$}\hlstd{rating),} \hlkwa{function}\hlstd{(}\hlkwc{df}\hlstd{) \{}
   \hlstd{nums} \hlkwb{<-} \hlkwd{tapply}\hlstd{(df}\hlopt{$}\hlstd{length, df}\hlopt{$}\hlstd{year, length)}
   \hlkwd{data.frame}\hlstd{(}\hlkwc{rating}\hlstd{=}\hlkwd{round}\hlstd{(df}\hlopt{$}\hlstd{rating[}\hlnum{1}\hlstd{]),} \hlkwc{year} \hlstd{=} \hlkwd{as.numeric}\hlstd{(}\hlkwd{names}\hlstd{(nums)),} \hlkwc{number}\hlstd{=}\hlkwd{as.vector}\hlstd{(nums))}
 \hlstd{\}))}
+
 \hlstd{p} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(mry,} \hlkwd{aes}\hlstd{(}\hlkwc{x}\hlstd{=year,} \hlkwc{y}\hlstd{=number,} \hlkwc{group}\hlstd{=rating))}
 \hlstd{p} \hlopt{+} \hlkwd{geom_line}\hlstd{()}
 \end{alltt}
@@ -1539,10 +1577,13 @@
 \begin{kframe}\begin{alltt}
 \hlcom{# See scale_date for examples of plotting multiple times series on}
 \hlcom{# a single graph}
+
 \hlcom{# A simple pcp example}
+
 \hlstd{y2005} \hlkwb{<-} \hlkwd{runif}\hlstd{(}\hlnum{300}\hlstd{,} \hlnum{20}\hlstd{,} \hlnum{120}\hlstd{)}
 \hlstd{y2010} \hlkwb{<-} \hlstd{y2005} \hlopt{*} \hlkwd{runif}\hlstd{(}\hlnum{300}\hlstd{,} \hlopt{-}\hlnum{1.05}\hlstd{,} \hlnum{1.5}\hlstd{)}
 \hlstd{group} \hlkwb{<-} \hlkwd{rep}\hlstd{(LETTERS[}\hlnum{1}\hlopt{:}\hlnum{3}\hlstd{],} \hlkwc{each} \hlstd{=} \hlnum{100}\hlstd{)}
+
 \hlstd{df} \hlkwb{<-} \hlkwd{data.frame}\hlstd{(}\hlkwc{id} \hlstd{=} \hlkwd{seq_along}\hlstd{(group), group, y2005, y2010)}
 \hlkwd{library}\hlstd{(reshape2)} \hlcom{# for melt}
 \hlstd{dfm} \hlkwb{<-} \hlkwd{melt}\hlstd{(df,} \hlkwc{id.var} \hlstd{=} \hlkwd{c}\hlstd{(}\hlstr{"id"}\hlstd{,} \hlstr{"group"}\hlstd{))}
@@ -1568,11 +1609,14 @@
 \hlcom{### Name: geom_linerange}
 \hlcom{### Title: An interval represented by a vertical line.}
 \hlcom{### Aliases: geom_linerange}
+
 \hlcom{### ** Examples}
+
 \hlcom{# Generate data: means and standard errors of means for prices}
 \hlcom{# for each type of cut}
 \hlstd{dmod} \hlkwb{<-} \hlkwd{lm}\hlstd{(price} \hlopt{~} \hlstd{cut,} \hlkwc{data}\hlstd{=diamonds)}
 \hlstd{cuts} \hlkwb{<-} \hlkwd{data.frame}\hlstd{(}\hlkwc{cut}\hlstd{=}\hlkwd{unique}\hlstd{(diamonds}\hlopt{$}\hlstd{cut),} \hlkwd{predict}\hlstd{(dmod,} \hlkwd{data.frame}\hlstd{(}\hlkwc{cut} \hlstd{=} \hlkwd{unique}\hlstd{(diamonds}\hlopt{$}\hlstd{cut)),} \hlkwc{se}\hlstd{=}\hlnum{TRUE}\hlstd{)[}\hlkwd{c}\hlstd{(}\hlstr{"fit"}\hlstd{,}\hlstr{"se.fit"}\hlstd{)])}
+
 \hlkwd{qplot}\hlstd{(cut, fit,} \hlkwc{data}\hlstd{=cuts)}
 \end{alltt}
 \end{kframe}
@@ -1632,16 +1676,21 @@
 \hlcom{### Name: geom_map}
 \hlcom{### Title: Polygons from a reference map.}
 \hlcom{### Aliases: geom_map}
+
 \hlcom{### ** Examples}
+
 \hlcom{# When using geom_polygon, you will typically need two data frames:}
 \hlcom{# one contains the coordinates of each polygon (positions),  and the}
 \hlcom{# other the values associated with each polygon (values).  An id}
 \hlcom{# variable links the two together}
+
 \hlstd{ids} \hlkwb{<-} \hlkwd{factor}\hlstd{(}\hlkwd{c}\hlstd{(}\hlstr{"1.1"}\hlstd{,} \hlstr{"2.1"}\hlstd{,} \hlstr{"1.2"}\hlstd{,} \hlstr{"2.2"}\hlstd{,} \hlstr{"1.3"}\hlstd{,} \hlstr{"2.3"}\hlstd{))}
+
 \hlstd{values} \hlkwb{<-} \hlkwd{data.frame}\hlstd{(}
   \hlkwc{id} \hlstd{= ids,}
   \hlkwc{value} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{3}\hlstd{,} \hlnum{3.1}\hlstd{,} \hlnum{3.1}\hlstd{,} \hlnum{3.2}\hlstd{,} \hlnum{3.15}\hlstd{,} \hlnum{3.5}\hlstd{)}
 \hlstd{)}
+
 \hlstd{positions} \hlkwb{<-} \hlkwd{data.frame}\hlstd{(}
   \hlkwc{id} \hlstd{=} \hlkwd{rep}\hlstd{(ids,} \hlkwc{each} \hlstd{=} \hlnum{4}\hlstd{),}
   \hlkwc{x} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{2}\hlstd{,} \hlnum{1}\hlstd{,} \hlnum{1.1}\hlstd{,} \hlnum{2.2}\hlstd{,} \hlnum{1}\hlstd{,} \hlnum{0}\hlstd{,} \hlnum{0.3}\hlstd{,} \hlnum{1.1}\hlstd{,} \hlnum{2.2}\hlstd{,} \hlnum{1.1}\hlstd{,} \hlnum{1.2}\hlstd{,} \hlnum{2.5}\hlstd{,} \hlnum{1.1}\hlstd{,} \hlnum{0.3}\hlstd{,}
@@ -1649,6 +1698,7 @@
   \hlkwc{y} \hlstd{=} \hlkwd{c}\hlstd{(}\hlopt{-}\hlnum{0.5}\hlstd{,} \hlnum{0}\hlstd{,} \hlnum{1}\hlstd{,} \hlnum{0.5}\hlstd{,} \hlnum{0}\hlstd{,} \hlnum{0.5}\hlstd{,} \hlnum{1.5}\hlstd{,} \hlnum{1}\hlstd{,} \hlnum{0.5}\hlstd{,} \hlnum{1}\hlstd{,} \hlnum{2.1}\hlstd{,} \hlnum{1.7}\hlstd{,} \hlnum{1}\hlstd{,} \hlnum{1.5}\hlstd{,}
   \hlnum{2.2}\hlstd{,} \hlnum{2.1}\hlstd{,} \hlnum{1.7}\hlstd{,} \hlnum{2.1}\hlstd{,} \hlnum{3.2}\hlstd{,} \hlnum{2.8}\hlstd{,} \hlnum{2.1}\hlstd{,} \hlnum{2.2}\hlstd{,} \hlnum{3.3}\hlstd{,} \hlnum{3.2}\hlstd{)}
 \hlstd{)}
+
 \hlkwd{ggplot}\hlstd{(values)} \hlopt{+} \hlkwd{geom_map}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{map_id} \hlstd{= id),} \hlkwc{map} \hlstd{= positions)} \hlopt{+}
   \hlkwd{expand_limits}\hlstd{(positions)}
 \end{alltt}
@@ -1680,8 +1730,6 @@
   \hlkwd{ggplot}\hlstd{(crimesm,} \hlkwd{aes}\hlstd{(}\hlkwc{map_id} \hlstd{= state))} \hlopt{+} \hlkwd{geom_map}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{fill} \hlstd{= value),} \hlkwc{map} \hlstd{= states_map)} \hlopt{+} \hlkwd{expand_limits}\hlstd{(}\hlkwc{x} \hlstd{= states_map}\hlopt{$}\hlstd{long,} \hlkwc{y} \hlstd{= states_map}\hlopt{$}\hlstd{lat)} \hlopt{+} \hlkwd{facet_wrap}\hlstd{(} \hlopt{~} \hlstd{variable)}
 \hlstd{\}}
 \end{alltt}
-
-
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_map4} 
 \begin{kframe}\begin{alltt}
@@ -1701,7 +1749,9 @@
 \hlcom{### Name: geom_path}
 \hlcom{### Title: Connect observations in original order}
 \hlcom{### Aliases: geom_path}
+
 \hlcom{### ** Examples}
+
 \hlcom{## No test: }
 \hlcom{# Generate data}
 \hlkwd{library}\hlstd{(plyr)}
@@ -1838,9 +1888,11 @@
 \hlcom{# Setting line type vs colour/size}
 \hlcom{# Line type needs to be applied to a line as a whole, so it can}
 \hlcom{# not be used with colour or size that vary across a line}
+
 \hlstd{x} \hlkwb{<-} \hlkwd{seq}\hlstd{(}\hlnum{0.01}\hlstd{,} \hlnum{.99}\hlstd{,} \hlkwc{length}\hlstd{=}\hlnum{100}\hlstd{)}
 \hlstd{df} \hlkwb{<-} \hlkwd{data.frame}\hlstd{(}\hlkwc{x} \hlstd{=} \hlkwd{rep}\hlstd{(x,} \hlnum{2}\hlstd{),} \hlkwc{y} \hlstd{=} \hlkwd{c}\hlstd{(}\hlkwd{qlogis}\hlstd{(x),} \hlnum{2} \hlopt{*} \hlkwd{qlogis}\hlstd{(x)),} \hlkwc{group} \hlstd{=} \hlkwd{rep}\hlstd{(}\hlkwd{c}\hlstd{(}\hlstr{"a"}\hlstd{,}\hlstr{"b"}\hlstd{),} \hlkwc{each}\hlstd{=}\hlnum{100}\hlstd{))}
 \hlstd{p} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(df,} \hlkwd{aes}\hlstd{(}\hlkwc{x}\hlstd{=x,} \hlkwc{y}\hlstd{=y,} \hlkwc{group}\hlstd{=group))}
+
 \hlcom{# Should work}
 \hlstd{p} \hlopt{+} \hlkwd{geom_line}\hlstd{(}\hlkwc{linetype} \hlstd{=} \hlnum{2}\hlstd{)}
 \end{alltt}
@@ -1859,6 +1911,7 @@
 \begin{kframe}\begin{alltt}
 \hlcom{# Should fail}
 \hlkwd{should_stop}\hlstd{(p} \hlopt{+} \hlkwd{geom_line}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{colour} \hlstd{= x),} \hlkwc{linetype}\hlstd{=}\hlnum{2}\hlstd{))}
+
 \hlcom{# Use the arrow parameter to add an arrow to the line}
 \hlcom{# See ?grid::arrow for more details}
 \hlkwd{library}\hlstd{(grid)}
@@ -1891,7 +1944,9 @@
 \hlcom{### Name: geom_point}
 \hlcom{### Title: Points, as for a scatterplot}
 \hlcom{### Aliases: geom_point}
+
 \hlcom{### ** Examples}
+
 \hlcom{## No test: }
 \hlstd{p} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(mtcars,} \hlkwd{aes}\hlstd{(wt, mpg))}
 \hlstd{p} \hlopt{+} \hlkwd{geom_point}\hlstd{()}
@@ -2078,16 +2133,21 @@
 \hlcom{### Name: geom_polygon}
 \hlcom{### Title: Polygon, a filled path.}
 \hlcom{### Aliases: geom_polygon}
+
 \hlcom{### ** Examples}
+
 \hlcom{# When using geom_polygon, you will typically need two data frames:}
 \hlcom{# one contains the coordinates of each polygon (positions),  and the}
 \hlcom{# other the values associated with each polygon (values).  An id}
 \hlcom{# variable links the two together}
+
 \hlstd{ids} \hlkwb{<-} \hlkwd{factor}\hlstd{(}\hlkwd{c}\hlstd{(}\hlstr{"1.1"}\hlstd{,} \hlstr{"2.1"}\hlstd{,} \hlstr{"1.2"}\hlstd{,} \hlstr{"2.2"}\hlstd{,} \hlstr{"1.3"}\hlstd{,} \hlstr{"2.3"}\hlstd{))}
+
 \hlstd{values} \hlkwb{<-} \hlkwd{data.frame}\hlstd{(}
   \hlkwc{id} \hlstd{= ids,}
   \hlkwc{value} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{3}\hlstd{,} \hlnum{3.1}\hlstd{,} \hlnum{3.1}\hlstd{,} \hlnum{3.2}\hlstd{,} \hlnum{3.15}\hlstd{,} \hlnum{3.5}\hlstd{)}
 \hlstd{)}
+
 \hlstd{positions} \hlkwb{<-} \hlkwd{data.frame}\hlstd{(}
   \hlkwc{id} \hlstd{=} \hlkwd{rep}\hlstd{(ids,} \hlkwc{each} \hlstd{=} \hlnum{4}\hlstd{),}
   \hlkwc{x} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{2}\hlstd{,} \hlnum{1}\hlstd{,} \hlnum{1.1}\hlstd{,} \hlnum{2.2}\hlstd{,} \hlnum{1}\hlstd{,} \hlnum{0}\hlstd{,} \hlnum{0.3}\hlstd{,} \hlnum{1.1}\hlstd{,} \hlnum{2.2}\hlstd{,} \hlnum{1.1}\hlstd{,} \hlnum{1.2}\hlstd{,} \hlnum{2.5}\hlstd{,} \hlnum{1.1}\hlstd{,} \hlnum{0.3}\hlstd{,}
@@ -2095,8 +2155,10 @@
   \hlkwc{y} \hlstd{=} \hlkwd{c}\hlstd{(}\hlopt{-}\hlnum{0.5}\hlstd{,} \hlnum{0}\hlstd{,} \hlnum{1}\hlstd{,} \hlnum{0.5}\hlstd{,} \hlnum{0}\hlstd{,} \hlnum{0.5}\hlstd{,} \hlnum{1.5}\hlstd{,} \hlnum{1}\hlstd{,} \hlnum{0.5}\hlstd{,} \hlnum{1}\hlstd{,} \hlnum{2.1}\hlstd{,} \hlnum{1.7}\hlstd{,} \hlnum{1}\hlstd{,} \hlnum{1.5}\hlstd{,}
   \hlnum{2.2}\hlstd{,} \hlnum{2.1}\hlstd{,} \hlnum{1.7}\hlstd{,} \hlnum{2.1}\hlstd{,} \hlnum{3.2}\hlstd{,} \hlnum{2.8}\hlstd{,} \hlnum{2.1}\hlstd{,} \hlnum{2.2}\hlstd{,} \hlnum{3.3}\hlstd{,} \hlnum{3.2}\hlstd{)}
 \hlstd{)}
+
 \hlcom{# Currently we need to manually merge the two together}
 \hlstd{datapoly} \hlkwb{<-} \hlkwd{merge}\hlstd{(values, positions,} \hlkwc{by}\hlstd{=}\hlkwd{c}\hlstd{(}\hlstr{"id"}\hlstd{))}
+
 \hlstd{(p} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(datapoly,} \hlkwd{aes}\hlstd{(}\hlkwc{x}\hlstd{=x,} \hlkwc{y}\hlstd{=y))} \hlopt{+} \hlkwd{geom_polygon}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{fill}\hlstd{=value,} \hlkwc{group}\hlstd{=id)))}
 \end{alltt}
 \end{kframe}
@@ -2104,10 +2166,12 @@
 \begin{kframe}\begin{alltt}
 \hlcom{# Which seems like a lot of work, but then it's easy to add on}
 \hlcom{# other features in this coordinate system, e.g.:}
+
 \hlstd{stream} \hlkwb{<-} \hlkwd{data.frame}\hlstd{(}
   \hlkwc{x} \hlstd{=} \hlkwd{cumsum}\hlstd{(}\hlkwd{runif}\hlstd{(}\hlnum{50}\hlstd{,} \hlkwc{max} \hlstd{=} \hlnum{0.1}\hlstd{)),}
   \hlkwc{y} \hlstd{=} \hlkwd{cumsum}\hlstd{(}\hlkwd{runif}\hlstd{(}\hlnum{50}\hlstd{,}\hlkwc{max} \hlstd{=} \hlnum{0.1}\hlstd{))}
 \hlstd{)}
+
 \hlstd{p} \hlopt{+} \hlkwd{geom_line}\hlstd{(}\hlkwc{data} \hlstd{= stream,} \hlkwc{colour}\hlstd{=}\hlstr{"grey30"}\hlstd{,} \hlkwc{size} \hlstd{=} \hlnum{5}\hlstd{)}
 \end{alltt}
 \end{kframe}
@@ -2153,7 +2217,9 @@
 \hlcom{### Name: geom_raster}
 \hlcom{### Title: High-performance rectangular tiling.}
 \hlcom{### Aliases: geom_raster}
+
 \hlcom{### ** Examples}
+
 \hlcom{## No test: }
 \hlcom{# Generate data}
 \hlstd{pp} \hlkwb{<-} \hlkwa{function} \hlstd{(}\hlkwc{n}\hlstd{,}\hlkwc{r}\hlstd{=}\hlnum{4}\hlstd{) \{}
@@ -2171,6 +2237,7 @@
 \hlcom{# Interpolation worsens the apperance of this plot, but can help when}
 \hlcom{# rendering images.}
 \hlkwd{qplot}\hlstd{(x, y,} \hlkwc{data} \hlstd{=} \hlkwd{pp}\hlstd{(}\hlnum{20}\hlstd{),} \hlkwc{fill} \hlstd{= z,} \hlkwc{geom} \hlstd{=} \hlstr{"raster"}\hlstd{,} \hlkwc{interpolate} \hlstd{=} \hlnum{TRUE}\hlstd{)}
+
 \hlcom{# For the special cases where it is applicable, geom_raster is much}
 \hlcom{# faster than geom_tile:}
 \hlstd{pp200} \hlkwb{<-} \hlkwd{pp}\hlstd{(}\hlnum{200}\hlstd{)}
@@ -2231,7 +2298,9 @@
 \hlcom{### Name: geom_rect}
 \hlcom{### Title: 2d rectangles.}
 \hlcom{### Aliases: geom_rect}
+
 \hlcom{### ** Examples}
+
 \hlstd{df} \hlkwb{<-} \hlkwd{data.frame}\hlstd{(}
   \hlkwc{x} \hlstd{=} \hlkwd{sample}\hlstd{(}\hlnum{10}\hlstd{,} \hlnum{20}\hlstd{,} \hlkwc{replace} \hlstd{=} \hlnum{TRUE}\hlstd{),}
   \hlkwc{y} \hlstd{=} \hlkwd{sample}\hlstd{(}\hlnum{10}\hlstd{,} \hlnum{20}\hlstd{,} \hlkwc{replace} \hlstd{=} \hlnum{TRUE}\hlstd{)}
@@ -2258,13 +2327,17 @@
 \hlcom{### Name: geom_ribbon}
 \hlcom{### Title: Ribbons, y range with continuous x values.}
 \hlcom{### Aliases: geom_ribbon}
+
 \hlcom{### ** Examples}
+
 \hlcom{## No test: }
 \hlcom{# Generate data}
 \hlstd{huron} \hlkwb{<-} \hlkwd{data.frame}\hlstd{(}\hlkwc{year} \hlstd{=} \hlnum{1875}\hlopt{:}\hlnum{1972}\hlstd{,} \hlkwc{level} \hlstd{=} \hlkwd{as.vector}\hlstd{(LakeHuron))}
 \hlkwd{library}\hlstd{(plyr)} \hlcom{# to access round_any}
 \hlstd{huron}\hlopt{$}\hlstd{decade} \hlkwb{<-} \hlkwd{round_any}\hlstd{(huron}\hlopt{$}\hlstd{year,} \hlnum{10}\hlstd{, floor)}
+
 \hlstd{h} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(huron,} \hlkwd{aes}\hlstd{(}\hlkwc{x}\hlstd{=year))}
+
 \hlstd{h} \hlopt{+} \hlkwd{geom_ribbon}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{ymin}\hlstd{=}\hlnum{0}\hlstd{,} \hlkwc{ymax}\hlstd{=level))}
 \end{alltt}
 \end{kframe}
@@ -2337,7 +2410,9 @@
 \hlcom{### Name: geom_rug}
 \hlcom{### Title: Marginal rug plots.}
 \hlcom{### Aliases: geom_rug}
+
 \hlcom{### ** Examples}
+
 \hlstd{p} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(mtcars,} \hlkwd{aes}\hlstd{(}\hlkwc{x}\hlstd{=wt,} \hlkwc{y}\hlstd{=mpg))}
 \hlstd{p} \hlopt{+} \hlkwd{geom_point}\hlstd{()}
 \end{alltt}
@@ -2380,7 +2455,9 @@
 \hlcom{### Name: geom_segment}
 \hlcom{### Title: Single line segments.}
 \hlcom{### Aliases: geom_segment}
+
 \hlcom{### ** Examples}
+
 \hlkwd{library}\hlstd{(grid)} \hlcom{# needed for arrow function}
 \hlstd{p} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(seals,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= long,} \hlkwc{y} \hlstd{= lat))}
 \hlstd{(p} \hlkwb{<-} \hlstd{p} \hlopt{+} \hlkwd{geom_segment}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{xend} \hlstd{= long} \hlopt{+} \hlstd{delta_long,} \hlkwc{yend} \hlstd{= lat} \hlopt{+} \hlstd{delta_lat),} \hlkwc{arrow} \hlstd{=} \hlkwd{arrow}\hlstd{(}\hlkwc{length} \hlstd{=} \hlkwd{unit}\hlstd{(}\hlnum{0.1}\hlstd{,}\hlstr{"cm"}\hlstd{))))}
@@ -2389,6 +2466,7 @@
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_segment1} 
 \begin{kframe}\begin{alltt}
 \hlkwa{if} \hlstd{(}\hlkwd{require}\hlstd{(}\hlstr{"maps"}\hlstd{)) \{}
+
 \hlstd{xlim} \hlkwb{<-} \hlkwd{range}\hlstd{(seals}\hlopt{$}\hlstd{long)}
 \hlstd{ylim} \hlkwb{<-} \hlkwd{range}\hlstd{(seals}\hlopt{$}\hlstd{lat)}
 \hlstd{usamap} \hlkwb{<-} \hlkwd{data.frame}\hlstd{(}\hlkwd{map}\hlstd{(}\hlstr{"world"}\hlstd{,} \hlkwc{xlim} \hlstd{= xlim,} \hlkwc{ylim} \hlstd{= ylim,} \hlkwc{plot} \hlstd{=}
@@ -2396,6 +2474,7 @@
 \hlstd{usamap} \hlkwb{<-} \hlkwd{rbind}\hlstd{(usamap,} \hlnum{NA}\hlstd{,} \hlkwd{data.frame}\hlstd{(}\hlkwd{map}\hlstd{(}\hlstr{'state'}\hlstd{,} \hlkwc{xlim} \hlstd{= xlim,} \hlkwc{ylim}
 \hlstd{= ylim,} \hlkwc{plot} \hlstd{=} \hlnum{FALSE}\hlstd{)[}\hlkwd{c}\hlstd{(}\hlstr{"x"}\hlstd{,}\hlstr{"y"}\hlstd{)]))}
 \hlkwd{names}\hlstd{(usamap)} \hlkwb{<-} \hlkwd{c}\hlstd{(}\hlstr{"long"}\hlstd{,} \hlstr{"lat"}\hlstd{)}
+
 \hlstd{p} \hlopt{+} \hlkwd{geom_path}\hlstd{(}\hlkwc{data} \hlstd{= usamap)} \hlopt{+} \hlkwd{scale_x_continuous}\hlstd{(}\hlkwc{limits} \hlstd{= xlim)}
 \hlstd{\}}
 \end{alltt}
@@ -2452,7 +2531,9 @@
 \hlcom{### Name: geom_smooth}
 \hlcom{### Title: Add a smoothed conditional mean.}
 \hlcom{### Aliases: geom_smooth}
+
 \hlcom{### ** Examples}
+
 \hlcom{# See stat_smooth for examples of using built in model fitting}
 \hlcom{# if you need some more flexible, this example shows you how to}
 \hlcom{# plot the fits from any model of your choosing}
@@ -2466,16 +2547,20 @@
   \hlkwc{wt} \hlstd{=} \hlkwd{seq}\hlstd{(}\hlkwd{min}\hlstd{(wt),} \hlkwd{max}\hlstd{(wt),} \hlkwc{length} \hlstd{=} \hlnum{20}\hlstd{),}
   \hlkwc{cyl} \hlstd{=} \hlkwd{levels}\hlstd{(}\hlkwd{factor}\hlstd{(cyl))}
 \hlstd{))}
+
 \hlstd{grid}\hlopt{$}\hlstd{mpg} \hlkwb{<-} \hlstd{stats::}\hlkwd{predict}\hlstd{(model,} \hlkwc{newdata}\hlstd{=grid)}
+
 \hlkwd{qplot}\hlstd{(wt, mpg,} \hlkwc{data}\hlstd{=mtcars,} \hlkwc{colour}\hlstd{=}\hlkwd{factor}\hlstd{(cyl))} \hlopt{+} \hlkwd{geom_line}\hlstd{(}\hlkwc{data}\hlstd{=grid)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_smooth2} 
 \begin{kframe}\begin{alltt}
 \hlcom{# or with standard errors}
+
 \hlstd{err} \hlkwb{<-} \hlstd{stats::}\hlkwd{predict}\hlstd{(model,} \hlkwc{newdata}\hlstd{=grid,} \hlkwc{se} \hlstd{=} \hlnum{TRUE}\hlstd{)}
 \hlstd{grid}\hlopt{$}\hlstd{ucl} \hlkwb{<-} \hlstd{err}\hlopt{$}\hlstd{fit} \hlopt{+} \hlnum{1.96} \hlopt{*} \hlstd{err}\hlopt{$}\hlstd{se.fit}
 \hlstd{grid}\hlopt{$}\hlstd{lcl} \hlkwb{<-} \hlstd{err}\hlopt{$}\hlstd{fit} \hlopt{-} \hlnum{1.96} \hlopt{*} \hlstd{err}\hlopt{$}\hlstd{se.fit}
+
 \hlkwd{qplot}\hlstd{(wt, mpg,} \hlkwc{data}\hlstd{=mtcars,} \hlkwc{colour}\hlstd{=}\hlkwd{factor}\hlstd{(cyl))} \hlopt{+}
   \hlkwd{geom_smooth}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{ymin} \hlstd{= lcl,} \hlkwc{ymax} \hlstd{= ucl),} \hlkwc{data}\hlstd{=grid,} \hlkwc{stat}\hlstd{=}\hlstr{"identity"}\hlstd{)}
 \end{alltt}
@@ -2498,7 +2583,9 @@
 \hlcom{### Name: geom_step}
 \hlcom{### Title: Connect observations by stairs.}
 \hlcom{### Aliases: geom_step}
+
 \hlcom{### ** Examples}
+
 \hlcom{# Simple quantiles/ECDF from examples(plot)}
 \hlstd{x} \hlkwb{<-} \hlkwd{sort}\hlstd{(}\hlkwd{rnorm}\hlstd{(}\hlnum{47}\hlstd{))}
 \hlkwd{qplot}\hlstd{(}\hlkwd{seq_along}\hlstd{(x), x,} \hlkwc{geom}\hlstd{=}\hlstr{"step"}\hlstd{)}
@@ -2554,9 +2641,12 @@
 \hlcom{### Name: geom_text}
 \hlcom{### Title: Textual annotations.}
 \hlcom{### Aliases: geom_text}
+
 \hlcom{### ** Examples}
+
 \hlcom{## No test: }
 \hlstd{p} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(mtcars,} \hlkwd{aes}\hlstd{(}\hlkwc{x}\hlstd{=wt,} \hlkwc{y}\hlstd{=mpg,} \hlkwc{label}\hlstd{=}\hlkwd{rownames}\hlstd{(mtcars)))}
+
 \hlstd{p} \hlopt{+} \hlkwd{geom_text}\hlstd{()}
 \end{alltt}
 \end{kframe}
@@ -2569,6 +2659,7 @@
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_text2} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlkwb{<-} \hlstd{p} \hlopt{+} \hlkwd{geom_point}\hlstd{()}
+
 \hlcom{# Set aesthetics to fixed value}
 \hlstd{p} \hlopt{+} \hlkwd{geom_text}\hlstd{()}
 \end{alltt}
@@ -2675,7 +2766,9 @@
 \hlcom{### Name: geom_tile}
 \hlcom{### Title: Tile plane with rectangles.}
 \hlcom{### Aliases: geom_tile}
+
 \hlcom{### ** Examples}
+
 \hlcom{## No test: }
 \hlcom{# Generate data}
 \hlstd{pp} \hlkwb{<-} \hlkwa{function} \hlstd{(}\hlkwc{n}\hlstd{,}\hlkwc{r}\hlstd{=}\hlnum{4}\hlstd{) \{}
@@ -2686,6 +2779,7 @@
  \hlstd{df}
 \hlstd{\}}
 \hlstd{p} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(}\hlkwd{pp}\hlstd{(}\hlnum{20}\hlstd{),} \hlkwd{aes}\hlstd{(}\hlkwc{x}\hlstd{=x,}\hlkwc{y}\hlstd{=y))}
+
 \hlstd{p} \hlopt{+} \hlkwd{geom_tile}\hlstd{()} \hlcom{#pretty useless!}
 \end{alltt}
 \end{kframe}
@@ -2772,6 +2866,7 @@
   \hlkwc{z} \hlstd{=} \hlkwd{rep}\hlstd{(}\hlnum{1}\hlopt{:}\hlnum{5}\hlstd{,} \hlkwc{each}\hlstd{=}\hlnum{2}\hlstd{),}
   \hlkwc{w} \hlstd{=} \hlkwd{rep}\hlstd{(}\hlkwd{diff}\hlstd{(x.cell.boundary),} \hlnum{2}\hlstd{)}
 \hlstd{)}
+
 \hlkwd{qplot}\hlstd{(x, y,} \hlkwc{fill}\hlstd{=z,} \hlkwc{data}\hlstd{=example,} \hlkwc{geom}\hlstd{=}\hlstr{"tile"}\hlstd{)}
 \end{alltt}
 \end{kframe}
@@ -2812,9 +2907,12 @@
 \hlcom{### Name: geom_violin}
 \hlcom{### Title: Violin plot.}
 \hlcom{### Aliases: geom_violin}
+
 \hlcom{### ** Examples}
+
 \hlcom{## No test: }
 \hlstd{p} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(mtcars,} \hlkwd{aes}\hlstd{(}\hlkwd{factor}\hlstd{(cyl), mpg))}
+
 \hlstd{p} \hlopt{+} \hlkwd{geom_violin}\hlstd{()}
 \end{alltt}
 \end{kframe}
@@ -2969,7 +3067,9 @@
 \hlcom{### Name: geom_vline}
 \hlcom{### Title: Line, vertical.}
 \hlcom{### Aliases: geom_vline}
+
 \hlcom{### ** Examples}
+
 \hlcom{# Fixed lines}
 \hlstd{p} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(mtcars,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= wt,} \hlkwc{y} \hlstd{= mpg))} \hlopt{+} \hlkwd{geom_point}\hlstd{()}
 \hlstd{p} \hlopt{+} \hlkwd{geom_vline}\hlstd{(}\hlkwc{xintercept} \hlstd{=} \hlnum{5}\hlstd{)}

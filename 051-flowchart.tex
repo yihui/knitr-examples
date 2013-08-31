@@ -67,6 +67,7 @@
 \begin{alltt}
 \hlcom{## Flowchart examples}
 \hlkwd{par}\hlstd{(}\hlkwc{ask} \hlstd{=} \hlnum{TRUE}\hlstd{)}
+
 \hlcom{## MODELLING DIAGRAM}
 \hlstd{mar} \hlkwb{<-} \hlkwd{par}\hlstd{(}\hlkwc{mar} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{1}\hlstd{,} \hlnum{1}\hlstd{,} \hlnum{1}\hlstd{))}
 \hlkwd{openplotmat}\hlstd{(}\hlkwc{main} \hlstd{=} \hlstr{"from Soetaert and herman, book in prep"}\hlstd{,}
@@ -78,22 +79,29 @@
     \hlkwc{arr.side} \hlstd{=} \hlnum{3}\hlstd{,} \hlkwc{endhead} \hlstd{=} \hlnum{TRUE}\hlstd{)}
 \hlkwd{segmentarrow}\hlstd{(elpos[}\hlnum{7}\hlstd{, ], elpos[}\hlnum{4}\hlstd{, ],} \hlkwc{arr.pos} \hlstd{=} \hlnum{0.15}\hlstd{,} \hlkwc{dd} \hlstd{=} \hlnum{0.3}\hlstd{,}
     \hlkwc{arr.side} \hlstd{=} \hlnum{3}\hlstd{,} \hlkwc{endhead} \hlstd{=} \hlnum{TRUE}\hlstd{)}
+
 \hlstd{pin} \hlkwb{<-} \hlkwd{par}\hlstd{(}\hlstr{"pin"}\hlstd{)}  \hlcom{# size of plotting region, inches}
 \hlstd{xx} \hlkwb{<-} \hlnum{0.2}
 \hlstd{yy} \hlkwb{<-} \hlstd{xx} \hlopt{*} \hlstd{pin[}\hlnum{1}\hlstd{]}\hlopt{/}\hlstd{pin[}\hlnum{2}\hlstd{]} \hlopt{*} \hlnum{0.15}  \hlcom{# used to make circles round}
+
 \hlstd{sx} \hlkwb{<-} \hlkwd{rep}\hlstd{(xx,} \hlnum{8}\hlstd{)}
 \hlstd{sx[}\hlnum{7}\hlstd{]} \hlkwb{<-} \hlnum{0.05}
+
 \hlstd{sy} \hlkwb{<-} \hlkwd{rep}\hlstd{(yy,} \hlnum{8}\hlstd{)}
 \hlstd{sy[}\hlnum{6}\hlstd{]} \hlkwb{<-} \hlstd{yy} \hlopt{*} \hlnum{1.5}
 \hlstd{sy[}\hlnum{7}\hlstd{]} \hlkwb{<-} \hlstd{sx[}\hlnum{7}\hlstd{]} \hlopt{*} \hlstd{pin[}\hlnum{1}\hlstd{]}\hlopt{/}\hlstd{pin[}\hlnum{2}\hlstd{]}
+
 \hlkwa{for} \hlstd{(i} \hlkwa{in} \hlkwd{c}\hlstd{(}\hlnum{1}\hlopt{:}\hlnum{7}\hlstd{))} \hlkwd{straightarrow}\hlstd{(}\hlkwc{to} \hlstd{= elpos[i} \hlopt{+} \hlnum{1}\hlstd{, ],} \hlkwc{from} \hlstd{= elpos[i,}
     \hlstd{],} \hlkwc{lwd} \hlstd{=} \hlnum{2}\hlstd{,} \hlkwc{arr.pos} \hlstd{=} \hlnum{0.6}\hlstd{,} \hlkwc{endhead} \hlstd{=} \hlnum{TRUE}\hlstd{)}
 \hlstd{lab} \hlkwb{<-} \hlkwd{c}\hlstd{(}\hlstr{"Problem"}\hlstd{,} \hlstr{"Conceptual model"}\hlstd{,} \hlstr{"Mathematical model"}\hlstd{,}
     \hlstr{"Parameterisation"}\hlstd{,} \hlstr{"Mathematical solution"}\hlstd{,} \hlstr{""}\hlstd{,} \hlstr{"OK?"}\hlstd{,} \hlstr{"Prediction, Analysis"}\hlstd{)}
+
 \hlkwa{for} \hlstd{(i} \hlkwa{in} \hlkwd{c}\hlstd{(}\hlnum{1}\hlopt{:}\hlnum{5}\hlstd{,} \hlnum{8}\hlstd{))} \hlkwd{textround}\hlstd{(elpos[i, ], sx[i], sy[i],} \hlkwc{lab} \hlstd{= lab[i])}
+
 \hlkwd{textround}\hlstd{(elpos[}\hlnum{6}\hlstd{, ], xx, yy} \hlopt{*} \hlnum{1.5}\hlstd{,} \hlkwc{lab} \hlstd{=} \hlkwd{c}\hlstd{(}\hlstr{"Calibration,sensitivity"}\hlstd{,}
     \hlstr{"Verification,validation"}\hlstd{))}
 \hlkwd{textdiamond}\hlstd{(elpos[}\hlnum{7}\hlstd{, ], sx[}\hlnum{7}\hlstd{], sy[}\hlnum{7}\hlstd{],} \hlkwc{lab} \hlstd{= lab[}\hlnum{7}\hlstd{])}
+
 \hlkwd{textplain}\hlstd{(}\hlkwd{c}\hlstd{(}\hlnum{0.7}\hlstd{, elpos[}\hlnum{2}\hlstd{,} \hlnum{2}\hlstd{]), yy} \hlopt{*} \hlnum{2}\hlstd{,} \hlkwc{lab} \hlstd{=} \hlkwd{c}\hlstd{(}\hlstr{"main components"}\hlstd{,}
     \hlstr{"relationships"}\hlstd{),} \hlkwc{font} \hlstd{=} \hlnum{3}\hlstd{,} \hlkwc{adj} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{0}\hlstd{,} \hlnum{0.5}\hlstd{))}
 \hlkwd{textplain}\hlstd{(}\hlkwd{c}\hlstd{(}\hlnum{0.7}\hlstd{, elpos[}\hlnum{3}\hlstd{,} \hlnum{2}\hlstd{]), yy,} \hlstr{"general theory"}\hlstd{,} \hlkwc{adj} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{0}\hlstd{,}
@@ -107,6 +115,7 @@
 \includegraphics[width=\maxwidth]{figure/051-flowchart-demo-flowchart1} 
 \begin{kframe}\begin{alltt}
 \hlcom{##### DIAGRAM}
+
 \hlkwd{par}\hlstd{(}\hlkwc{mar} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{1}\hlstd{,} \hlnum{1}\hlstd{,} \hlnum{1}\hlstd{))}
 \hlkwd{openplotmat}\hlstd{()}
 \hlstd{elpos} \hlkwb{<-} \hlkwd{coordinates}\hlstd{(}\hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{1}\hlstd{,} \hlnum{2}\hlstd{,} \hlnum{4}\hlstd{))}
@@ -133,6 +142,7 @@
 \hlkwd{textellipse}\hlstd{(elpos[}\hlnum{8}\hlstd{, ],} \hlnum{0.1}\hlstd{,} \hlnum{0.1}\hlstd{,} \hlkwc{lab} \hlstd{=} \hlkwd{c}\hlstd{(}\hlstr{"new"}\hlstd{,} \hlstr{"article"}\hlstd{),}
     \hlkwc{box.col} \hlstd{=} \hlstr{"orange"}\hlstd{,} \hlkwc{shadow.col} \hlstd{=} \hlstr{"red"}\hlstd{,} \hlkwc{shadow.size} \hlstd{=} \hlnum{0.005}\hlstd{,}
     \hlkwc{cex} \hlstd{=} \hlnum{1.5}\hlstd{)}
+
 \hlstd{dd} \hlkwb{<-} \hlkwd{c}\hlstd{(}\hlnum{0}\hlstd{,} \hlnum{0.025}\hlstd{)}
 \hlkwd{text}\hlstd{(arrpos[}\hlnum{2}\hlstd{,} \hlnum{1}\hlstd{]} \hlopt{+} \hlnum{0.05}\hlstd{, arrpos[}\hlnum{2}\hlstd{,} \hlnum{2}\hlstd{],} \hlstr{"yes"}\hlstd{)}
 \hlkwd{text}\hlstd{(arrpos[}\hlnum{3}\hlstd{,} \hlnum{1}\hlstd{]} \hlopt{-} \hlnum{0.05}\hlstd{, arrpos[}\hlnum{3}\hlstd{,} \hlnum{2}\hlstd{],} \hlstr{"no"}\hlstd{)}
@@ -142,7 +152,7 @@
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/051-flowchart-demo-flowchart2} 
 \begin{kframe}\begin{alltt}
-\hlcom{#####}
+\hlcom{##### }
 \hlkwd{par}\hlstd{(}\hlkwc{mfrow} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{2}\hlstd{,} \hlnum{2}\hlstd{))}
 \hlkwd{par}\hlstd{(}\hlkwc{mar} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{0}\hlstd{,} \hlnum{0}\hlstd{,} \hlnum{0}\hlstd{,} \hlnum{0}\hlstd{))}
 \hlkwd{openplotmat}\hlstd{()}
@@ -150,16 +160,19 @@
 \hlkwd{treearrow}\hlstd{(}\hlkwc{from} \hlstd{= elpos[}\hlnum{1}\hlopt{:}\hlnum{2}\hlstd{, ],} \hlkwc{to} \hlstd{= elpos[}\hlnum{3}\hlopt{:}\hlnum{5}\hlstd{, ],} \hlkwc{arr.side} \hlstd{=} \hlnum{2}\hlstd{,}
     \hlkwc{path} \hlstd{=} \hlstr{"H"}\hlstd{)}
 \hlkwa{for} \hlstd{(i} \hlkwa{in} \hlnum{1}\hlopt{:}\hlnum{5}\hlstd{)} \hlkwd{textrect}\hlstd{(elpos[i, ],} \hlnum{0.15}\hlstd{,} \hlnum{0.05}\hlstd{,} \hlkwc{lab} \hlstd{= i,} \hlkwc{cex} \hlstd{=} \hlnum{1.5}\hlstd{)}
+
 \hlkwd{openplotmat}\hlstd{()}
 \hlstd{elpos} \hlkwb{<-} \hlkwd{coordinates}\hlstd{(}\hlkwd{c}\hlstd{(}\hlnum{3}\hlstd{,} \hlnum{2}\hlstd{),} \hlkwc{hor} \hlstd{=} \hlnum{FALSE}\hlstd{)}
 \hlkwd{treearrow}\hlstd{(}\hlkwc{from} \hlstd{= elpos[}\hlnum{1}\hlopt{:}\hlnum{3}\hlstd{, ],} \hlkwc{to} \hlstd{= elpos[}\hlnum{4}\hlopt{:}\hlnum{5}\hlstd{, ],} \hlkwc{arr.side} \hlstd{=} \hlnum{2}\hlstd{,}
     \hlkwc{arr.pos} \hlstd{=} \hlnum{0.2}\hlstd{,} \hlkwc{path} \hlstd{=} \hlstr{"V"}\hlstd{)}
 \hlkwa{for} \hlstd{(i} \hlkwa{in} \hlnum{1}\hlopt{:}\hlnum{5}\hlstd{)} \hlkwd{textrect}\hlstd{(elpos[i, ],} \hlnum{0.15}\hlstd{,} \hlnum{0.05}\hlstd{,} \hlkwc{lab} \hlstd{= i,} \hlkwc{cex} \hlstd{=} \hlnum{1.5}\hlstd{)}
+
 \hlkwd{openplotmat}\hlstd{()}
 \hlstd{elpos} \hlkwb{<-} \hlkwd{coordinates}\hlstd{(}\hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{4}\hlstd{))}
 \hlkwd{treearrow}\hlstd{(}\hlkwc{from} \hlstd{= elpos[}\hlnum{1}\hlstd{, ],} \hlkwc{to} \hlstd{= elpos[}\hlnum{2}\hlopt{:}\hlnum{5}\hlstd{, ],} \hlkwc{arr.side} \hlstd{=} \hlnum{2}\hlstd{,}
     \hlkwc{arr.pos} \hlstd{=} \hlnum{0.7}\hlstd{,} \hlkwc{path} \hlstd{=} \hlstr{"H"}\hlstd{)}
 \hlkwa{for} \hlstd{(i} \hlkwa{in} \hlnum{1}\hlopt{:}\hlnum{5}\hlstd{)} \hlkwd{textrect}\hlstd{(elpos[i, ],} \hlnum{0.05}\hlstd{,} \hlnum{0.05}\hlstd{,} \hlkwc{lab} \hlstd{= i,} \hlkwc{cex} \hlstd{=} \hlnum{1.5}\hlstd{)}
+
 \hlkwd{openplotmat}\hlstd{()}
 \hlstd{elpos} \hlkwb{<-} \hlkwd{coordinates}\hlstd{(}\hlkwd{c}\hlstd{(}\hlnum{2}\hlstd{,} \hlnum{1}\hlstd{,} \hlnum{2}\hlstd{,} \hlnum{3}\hlstd{))}
 \hlstd{elpos[}\hlnum{1}\hlstd{,} \hlnum{1}\hlstd{]} \hlkwb{<-} \hlnum{0.3}
@@ -176,6 +189,7 @@
 \includegraphics[width=\maxwidth]{figure/051-flowchart-demo-flowchart3} 
 \begin{kframe}\begin{alltt}
 \hlkwd{par}\hlstd{(}\hlkwc{mfrow} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{1}\hlstd{))}
+
 \hlkwd{par}\hlstd{(}\hlkwc{mar} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{0}\hlstd{,} \hlnum{0}\hlstd{,} \hlnum{0}\hlstd{,} \hlnum{0}\hlstd{))}
 \hlkwd{openplotmat}\hlstd{()}
 \hlstd{elpos} \hlkwb{<-} \hlkwd{coordinates}\hlstd{(}\hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{1}\hlstd{,} \hlnum{2}\hlstd{,} \hlnum{1}\hlstd{))}
@@ -216,7 +230,9 @@
     \hlkwc{lcol} \hlstd{=} \hlnum{6}\hlstd{)}
 \hlkwd{splitarrow}\hlstd{(}\hlkwc{from} \hlstd{= elpos[}\hlnum{1}\hlstd{, ],} \hlkwc{to} \hlstd{= elpos[}\hlnum{2}\hlopt{:}\hlnum{3}\hlstd{, ],} \hlkwc{lty} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{lwd} \hlstd{=} \hlnum{1}\hlstd{,}
     \hlkwc{dd} \hlstd{=} \hlnum{0.7}\hlstd{,} \hlkwc{arr.side} \hlstd{=} \hlnum{1}\hlopt{:}\hlnum{2}\hlstd{,} \hlkwc{lcol} \hlstd{=} \hlnum{7}\hlstd{)}
+
 \hlkwa{for} \hlstd{(i} \hlkwa{in} \hlnum{1}\hlopt{:}\hlnum{4}\hlstd{)} \hlkwd{textrect}\hlstd{(elpos[i, ],} \hlnum{0.05}\hlstd{,} \hlnum{0.05}\hlstd{,} \hlkwc{lab} \hlstd{= i,} \hlkwc{cex} \hlstd{=} \hlnum{1.5}\hlstd{)}
+
 \hlkwd{legend}\hlstd{(}\hlstr{"topright"}\hlstd{,} \hlkwc{lty} \hlstd{=} \hlnum{1}\hlopt{:}\hlnum{7}\hlstd{,} \hlkwc{legend} \hlstd{=} \hlkwd{c}\hlstd{(}\hlstr{"segmentarrow"}\hlstd{,} \hlstr{"curvedarrow"}\hlstd{,}
     \hlstr{"straightarrow"}\hlstd{,} \hlstr{"treearrow"}\hlstd{,} \hlstr{"bentarrow"}\hlstd{,} \hlstr{"selfarrow"}\hlstd{,} \hlstr{"splitarrow"}\hlstd{),}
     \hlkwc{lwd} \hlstd{=} \hlkwd{c}\hlstd{(}\hlkwd{rep}\hlstd{(}\hlnum{2}\hlstd{,} \hlnum{6}\hlstd{),} \hlnum{1}\hlstd{),} \hlkwc{col} \hlstd{=} \hlnum{1}\hlopt{:}\hlnum{7}\hlstd{)}
