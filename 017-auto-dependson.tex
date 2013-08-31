@@ -57,8 +57,6 @@
 \begin{alltt}
 \hlcom{# global chunk options}
 \hlstd{opts_chunk}\hlopt{$}\hlkwd{set}\hlstd{(}\hlkwc{cache} \hlstd{=} \hlnum{TRUE}\hlstd{,} \hlkwc{autodep} \hlstd{=} \hlnum{TRUE}\hlstd{)}
-
-\hlkwd{dep_auto}\hlstd{()}  \hlcom{# figure out dependencies automatically}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -75,8 +73,8 @@ We create a new global object \texttt{x} in the first chunk (a):
 \end{knitrout}
 
 
-Then we print it in the second chunk (b). Because we have used
-\emph{build\_dep()} in the first chunk, \textbf{knitr} should be able to
+Then we print it in the second chunk (b). Because we have set the global chunk option
+\texttt{autodep = TRUE} in the first chunk, \textbf{knitr} should be able to
 figure out that chunk b depends on chunk a.
 
 \begin{knitrout}

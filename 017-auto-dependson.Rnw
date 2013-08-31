@@ -5,8 +5,6 @@
 <<setup, cache=FALSE>>=
 # global chunk options
 opts_chunk$set(cache=TRUE, autodep=TRUE)
-
-dep_auto()  # figure out dependencies automatically
 @
 
 We create a new global object \texttt{x} in the first chunk (a):
@@ -15,8 +13,8 @@ We create a new global object \texttt{x} in the first chunk (a):
 x = 5
 @
 
-Then we print it in the second chunk (b). Because we have used
-\emph{build\_dep()} in the first chunk, \textbf{knitr} should be able to
+Then we print it in the second chunk (b). Because we have set the global chunk option
+\texttt{autodep = TRUE} in the first chunk, \textbf{knitr} should be able to
 figure out that chunk b depends on chunk a.
 
 <<b>>=
