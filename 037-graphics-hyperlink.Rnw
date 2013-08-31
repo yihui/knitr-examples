@@ -14,7 +14,7 @@ opts_chunk$set(external = FALSE, cache = TRUE, fig.width = 5)
 
 Create link texts in the data:
 
-<<pltPreparation>>=
+<<pltPreparation, tidy.opts=list(width.cutoff=50)>>=
   library(lattice)
   data(iris)
   iris$hyperlink    <- paste("\\hyperlink{",iris$Species,"}{",iris$Species,"}", sep = '')
