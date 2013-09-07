@@ -1,0 +1,181 @@
+\documentclass{article}\usepackage[]{graphicx}\usepackage[]{color}
+%% maxwidth is the original width if it is less than linewidth
+%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
+\title{Move Code out of the Figure and Table Environments}
+\author{Yihui Xie}
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\begin{document}
+\maketitle
+
+Sometimes we may not want the code to be shown inside a float, such as a
+figure or table environment. The hook function
+\texttt{knitr::hook\_movecode()} was designed for this purpose; it serves a
+document hook to post-process the LaTeX results.
+
+First we set up the document hook:
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{library}\hlstd{(knitr)}
+\hlstd{knit_hooks}\hlopt{$}\hlkwd{set}\hlstd{(}\hlkwc{document} \hlstd{= hook_movecode)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+
+Now we test a figure. You will see there is only a plot in Figure
+\ref{fig:example-a}; the code was moved out of the environment, and shown
+below right after this paragraph.
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{summary}\hlstd{(cars)}
+\end{alltt}
+\begin{verbatim}
+##      speed           dist    
+##  Min.   : 4.0   Min.   :  2  
+##  1st Qu.:12.0   1st Qu.: 26  
+##  Median :15.0   Median : 36  
+##  Mean   :15.4   Mean   : 43  
+##  3rd Qu.:19.0   3rd Qu.: 56  
+##  Max.   :25.0   Max.   :120
+\end{verbatim}
+\begin{alltt}
+\hlkwd{par}\hlstd{(}\hlkwc{mar} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{4}\hlstd{,} \hlnum{4}\hlstd{,} \hlnum{0.1}\hlstd{,} \hlnum{0.1}\hlstd{))}
+\hlkwd{plot}\hlstd{(cars)}
+\end{alltt}
+\end{kframe}
+
+\end{knitrout}
+
+
+\begin{figure}
+\includegraphics[width=\maxwidth]{figure/103-move-float-example-a} 
+\caption{A figure caption here, and you must label it!\label{fig:example-a}}
+\end{figure}
+
+Similarly, you can work with tables; see Table \ref{tab:example-b}.
+
+
+\begin{kframe}
+\begin{alltt}
+\hlkwd{library}\hlstd{(knitr)}
+\hlkwd{kable}\hlstd{(}\hlkwd{head}\hlstd{(iris))}
+\end{alltt}
+\end{kframe}
+
+
+\begin{table}
+\caption{A table caption here; again, you must label it.\label{tab:example-b}}
+\begin{tabular}{r|r|r|r|l}
+\hline
+Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
+\hline
+5.1 & 3.5 & 1.4 & 0.2 & setosa\\
+\hline
+4.9 & 3.0 & 1.4 & 0.2 & setosa\\
+\hline
+4.7 & 3.2 & 1.3 & 0.2 & setosa\\
+\hline
+4.6 & 3.1 & 1.5 & 0.2 & setosa\\
+\hline
+5.0 & 3.6 & 1.4 & 0.2 & setosa\\
+\hline
+5.4 & 3.9 & 1.7 & 0.4 & setosa\\
+\hline
+\end{tabular}
+\end{table}
+
+If you do not label the figures or tables, or they do not have captions, the
+hook function \texttt{hook\_movecode()} will not touch them. You can also
+specify a marker \texttt{\% knitr\_do\_not\_move} so that this hook function
+will leave them as is; see Table \ref{tab:example-c}.
+
+\begin{table}
+% knitr_do_not_move
+\caption{This table environment must contain code.\label{tab:example-c}}
+
+\begin{kframe}
+\begin{alltt}
+\hlkwd{library}\hlstd{(knitr)}
+\hlkwd{kable}\hlstd{(}\hlkwd{head}\hlstd{(iris))}
+\end{alltt}
+\end{kframe}
+\begin{tabular}{r|r|r|r|l}
+\hline
+Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
+\hline
+5.1 & 3.5 & 1.4 & 0.2 & setosa\\
+\hline
+4.9 & 3.0 & 1.4 & 0.2 & setosa\\
+\hline
+4.7 & 3.2 & 1.3 & 0.2 & setosa\\
+\hline
+4.6 & 3.1 & 1.5 & 0.2 & setosa\\
+\hline
+5.0 & 3.6 & 1.4 & 0.2 & setosa\\
+\hline
+5.4 & 3.9 & 1.7 & 0.4 & setosa\\
+\hline
+\end{tabular}
+
+
+\end{table}
+
+Although \textbf{knitr} supports figure captions and labels through the
+chunk options like \texttt{fig.cap}, sometimes it can be preferrable to
+explicitly write these environments. For example, you do not have to write a
+really long figure caption in the chunk header in one line.
+
+This hook function can also be particularly useful in LyX.
+
+\end{document}

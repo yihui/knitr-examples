@@ -1,0 +1,66 @@
+\documentclass{article}
+\title{Move Code out of the Figure and Table Environments}
+\author{Yihui Xie}
+\begin{document}
+\maketitle
+
+Sometimes we may not want the code to be shown inside a float, such as a
+figure or table environment. The hook function
+\texttt{knitr::hook\_movecode()} was designed for this purpose; it serves a
+document hook to post-process the LaTeX results.
+
+First we set up the document hook:
+
+<<setup>>=
+library(knitr)
+knit_hooks$set(document = hook_movecode)
+@
+
+Now we test a figure. You will see there is only a plot in Figure
+\ref{fig:example-a}; the code was moved out of the environment, and shown
+below right after this paragraph.
+
+\begin{figure}
+<<example-a, fig.height=4>>=
+summary(cars)
+par(mar=c(4,4,.1,.1))
+plot(cars)
+@
+
+\caption{A figure caption here, and you must label it!\label{fig:example-a}}
+\end{figure}
+
+Similarly, you can work with tables; see Table \ref{tab:example-b}.
+
+\begin{table}
+\caption{A table caption here; again, you must label it.\label{tab:example-b}}
+
+<<example-b, results='asis'>>=
+library(knitr)
+kable(head(iris))
+@
+\end{table}
+
+If you do not label the figures or tables, or they do not have captions, the
+hook function \texttt{hook\_movecode()} will not touch them. You can also
+specify a marker \texttt{\% knitr\_do\_not\_move} so that this hook function
+will leave them as is; see Table \ref{tab:example-c}.
+
+\begin{table}
+% knitr_do_not_move
+\caption{This table environment must contain code.\label{tab:example-c}}
+
+<<example-c, results='asis'>>=
+library(knitr)
+kable(head(iris))
+@
+\end{table}
+
+Although \textbf{knitr} supports figure captions and labels through the
+chunk options like \texttt{fig.cap}, sometimes it can be preferrable to
+explicitly write these environments. For example, you do not have to write a
+really long figure caption in the chunk header in one line.
+
+This hook function can also be particularly useful in LyX.
+
+\end{document}
