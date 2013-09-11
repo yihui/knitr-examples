@@ -1,0 +1,24 @@
+\documentclass{article}
+\usepackage{subcaption}
+\begin{document}
+
+You can include sub-figures using the \textbf{subcaption} package. For example,
+Figure \ref{fig:test} contains \ref{fig:test-a} and \ref{fig:test-b}.
+
+\begin{figure}
+  \begin{subfigure}{.5\textwidth}
+  <<test-a, echo=FALSE, results='asis', fig.width=5, fig.height=5>>=
+  plot(1:10)
+  @
+  \caption{This is Figure a. \label{fig:test-a}}
+  \end{subfigure}
+  \begin{subfigure}{.5\textwidth}
+  <<test-b, echo=FALSE, results='asis', fig.width=5, fig.height=5>>=
+  plot(rnorm(100))
+  @
+  \caption{This is Figure b. \label{fig:test-b}}
+  \end{subfigure}
+\caption{This figure contains two subfigures. \label{fig:test}}
+\end{figure}
+
+\end{document}
