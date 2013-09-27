@@ -50,7 +50,7 @@
     knit_hooks$set(rgl = hook_rgl)  # set up the hook first
     end.rcode-->
 
-<!--begin.rcode fancy-rgl, rgl=TRUE, fig.align='center', fig.width=4, fig.height=4
+<!--begin.rcode fancy-rgl, rgl=TRUE, fig.align='center', fig.width=4, fig.height=4, warning=FALSE
     if (require('rgl')) {
     demo('bivar', package='rgl', echo=FALSE)
     par3d(zoom=.7)
