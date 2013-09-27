@@ -69,7 +69,8 @@ simple tables.
 \hlkwd{library}\hlstd{(knitr)}
 \hlkwd{kable}\hlstd{(}\hlkwd{head}\hlstd{(iris))}
 \end{alltt}
-\end{kframe}\begin{tabular}{r|r|r|r|l}
+\end{kframe}
+\begin{tabular}{r|r|r|r|l}
 \hline
 Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
 \hline
@@ -95,7 +96,8 @@ Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
 \begin{alltt}
 \hlkwd{kable}\hlstd{(}\hlkwd{head}\hlstd{(iris),} \hlkwc{row.names} \hlstd{=} \hlnum{FALSE}\hlstd{)}
 \end{alltt}
-\end{kframe}\begin{tabular}{r|r|r|r|l}
+\end{kframe}
+\begin{tabular}{r|r|r|r|l}
 \hline
 Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
 \hline
@@ -121,7 +123,8 @@ Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
 \begin{alltt}
 \hlkwd{kable}\hlstd{(}\hlkwd{matrix}\hlstd{(}\hlkwd{rnorm}\hlstd{(}\hlnum{20}\hlstd{),} \hlnum{4}\hlstd{),} \hlkwc{digits} \hlstd{=} \hlnum{3}\hlstd{)}
 \end{alltt}
-\end{kframe}\begin{tabular}{r|r|r|r|r}
+\end{kframe}
+\begin{tabular}{r|r|r|r|r}
 \hline
 -0.560 &  0.129 & -0.687 &  0.401 &  0.498\\
 \hline
@@ -144,7 +147,8 @@ left-aligned.
 \begin{alltt}
 \hlkwd{kable}\hlstd{(}\hlkwd{head}\hlstd{(iris),} \hlkwc{align} \hlstd{=} \hlkwd{c}\hlstd{(}\hlstr{"l"}\hlstd{,} \hlstr{"c"}\hlstd{,} \hlstr{"r"}\hlstd{,} \hlstr{"l"}\hlstd{,} \hlstr{"r"}\hlstd{))}
 \end{alltt}
-\end{kframe}\begin{tabular}{l|c|r|l|r}
+\end{kframe}
+\begin{tabular}{l|c|r|l|r}
 \hline
 Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
 \hline
@@ -172,7 +176,8 @@ Let's use the \textbf{booktabs} package. The air is suddenly fresh!
 \begin{alltt}
 \hlkwd{kable}\hlstd{(}\hlkwd{head}\hlstd{(iris),} \hlkwc{row.names} \hlstd{=} \hlnum{FALSE}\hlstd{,} \hlkwc{booktabs} \hlstd{=} \hlnum{TRUE}\hlstd{)}
 \end{alltt}
-\end{kframe}\begin{tabular}{rrrrl}
+\end{kframe}
+\begin{tabular}{rrrrl}
 \toprule
 Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
 \midrule
@@ -192,7 +197,8 @@ Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
 \begin{kframe}\begin{alltt}
 \hlkwd{kable}\hlstd{(}\hlkwd{head}\hlstd{(mtcars[,} \hlnum{1}\hlopt{:}\hlnum{7}\hlstd{]),} \hlkwc{booktabs} \hlstd{=} \hlnum{TRUE}\hlstd{)}
 \end{alltt}
-\end{kframe}\begin{tabular}{lrrrrrrr}
+\end{kframe}
+\begin{tabular}{lrrrrrrr}
 \toprule
   & mpg & cyl & disp & hp & drat & wt & qsec\\
 \midrule
@@ -218,7 +224,8 @@ Valiant & 18.1 & 6 & 225 & 105 & 2.76 & 3.460 & 20.22\\
 \begin{alltt}
 \hlkwd{kable}\hlstd{(mtcars[,} \hlnum{1}\hlopt{:}\hlnum{7}\hlstd{],} \hlkwc{longtable} \hlstd{=} \hlnum{TRUE}\hlstd{,} \hlkwc{booktabs} \hlstd{=} \hlnum{TRUE}\hlstd{)}
 \end{alltt}
-\end{kframe}\begin{longtable}{lrrrrrrr}
+\end{kframe}
+\begin{longtable}{lrrrrrrr}
 \toprule
   & mpg & cyl & disp & hp & drat & wt & qsec\\
 \midrule
