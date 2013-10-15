@@ -1,4 +1,5 @@
 \documentclass{article}
+\usepackage[T1]{fontenc}
 \begin{document}
 \title{A Minimal Example}
 \author{Yihui Xie}
