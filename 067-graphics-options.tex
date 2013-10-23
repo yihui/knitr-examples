@@ -50,7 +50,9 @@
 \usepackage{alltt}
 \usepackage{float}    % for fig.pos='H'
 \usepackage{rotfloat} % for sidewaysfigure
-\usepackage{subfig}   % for subfigure
+%\usepackage{subfig}   % for subfigure
+\usepackage{subcaption}  % an alternative package for sub figures
+\newcommand{\subfloat}[2][need a sub-caption]{\subcaptionbox{#1}{#2}}
 
 \title{Graphics Options in knitr}
 \author{Yihui Xie}
@@ -61,7 +63,9 @@
 
 
 
-These options are vectorized for multiple plots per chunk: fig.cap, fig.scap, fig.env, fig.pos, fig.subcap, out.width, out.height, out.extra. When the plot hook is called, the i-th elements of these options will be applied to the i-th plot.
+These options are vectorized for multiple plots per chunk: fig.cap, fig.scap, fig.env, fig.pos, fig.subcap, out.width, out.height, out.extra.
+When the plot hook is called, the i-th elements of these options will be
+applied to the i-th plot.
 
 Figure captions. Look at Figure \ref{fig:fig-cap1} and \ref{fig:fig-cap2}.
 
@@ -126,7 +130,8 @@ Different out.extra (rotate by different degrees).
 \end{knitrout}
 
 
-Short options will be recycled: out.width below is of length 1 but there are two plots.
+Short options will be recycled: out.width below is of length 1 but there are
+two plots.
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
@@ -145,7 +150,12 @@ Short options will be recycled: out.width below is of length 1 but there are two
 \end{knitrout}
 
 
-Use subfigures for each plot. Look at Figure \ref{fig:fig-sub1} and \ref{fig:fig-sub2}.
+Use subfigures for each plot. Look at Figure \ref{fig:fig-sub1} and \ref
+{fig:fig-sub2}. By default, knitr uses the \textbf{subfig} package, but it
+has a few shortcomings, so some people prefer the \textbf{subcaption}
+package. In that case, we can simply redefine the \verb|\subfloat| command;
+see the preamble of this document for an example. We are actually using the
+\textbf{subcaption} package in this document.
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
