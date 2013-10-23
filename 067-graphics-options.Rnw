@@ -18,7 +18,9 @@ knit_hooks$set(par = function(before, options, envir) {
 set.seed(123)
 @
 
-These options are vectorized for multiple plots per chunk: \Sexpr{knitr:::.recyle.opts}. When the plot hook is called, the i-th elements of these options will be applied to the i-th plot.
+These options are vectorized for multiple plots per chunk: \Sexpr{knitr:::.recyle.opts}.
+When the plot hook is called, the i-th elements of these options will be
+applied to the i-th plot.
 
 Figure captions. Look at Figure \ref{fig:fig-cap1} and \ref{fig:fig-cap2}.
 
@@ -38,7 +40,8 @@ Different out.extra (rotate by different degrees).
 <<fig-extra, ref.label='fig-cap', out.extra=sprintf('angle=%d', c(30,120))>>=
 @
 
-Short options will be recycled: out.width below is of length 1 but there are two plots.
+Short options will be recycled: out.width below is of length 1 but there are
+two plots.
 
 <<fig-width, ref.label='fig-cap', out.width='1in'>>=
 @
