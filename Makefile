@@ -21,7 +21,7 @@ clean:
 	find cache/ | grep -E 'cache/[^0-9]' | xargs $(RM)
 
 strip:
-	for i in `ls | grep -E '^[0-9].*\.(brew|R(nw|md|tex|html|rst))$$'`; do sed -i "s/[[:space:]]*$$//" $$i; done
+	for i in `ls | grep -E '^[0-9].*\.(brew|R(nw|md|tex|html|rst|textile))$$'`; do sed -i "s/[[:space:]]*$$//" $$i; done
 
 mount:
 	sshfs yihui@r-forge.r-project.org:/srv/gforge/chroot/home/groups/animation/htdocs/knitr-ex ./r-forge
