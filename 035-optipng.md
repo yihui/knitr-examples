@@ -11,6 +11,7 @@ Now we set the chunk option `optipng` to a non-`NULL` value, e.g. `''`, to activ
 
 
 ```r
+library(methods)
 library(ggplot2)
 set.seed(123)
 qplot(rnorm(1000), rnorm(1000))
