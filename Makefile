@@ -14,7 +14,7 @@ deps:
 	Rscript -e "for (i in c('ggplot2', 'mapproj', 'Hmisc', 'xtable', 'gridExtra', 'Rcpp', 'RcppArmadillo', 'diagram', 'devtools'))" \
 	-e "if (!require(i, character.only=TRUE)) install.packages(i, repos='http://cran.rstudio.org')"
 	Rscript -e "library(devtools); library(methods); install_github('devtools', 'hadley')"
-	Rscript -e "options(repos='http://cran.rstudio.org'); library(devtools); library(methods); install_github('RTikZDevice', 'JanMarvin')"
+	Rscript -e "options(repos='http://cran.rstudio.org'); library(devtools); library(methods); install_github('RTikZDevice', 'JanMarvin', quick=TRUE)"
 
 sysdeps:
 	sudo apt-get install pgf gawk ruby ghc perl highlight optipng coffeescript pandoc asymptote
