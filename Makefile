@@ -13,6 +13,8 @@ pandoc:
 deps:
 	Rscript -e "for (i in c('ggplot2', 'mapproj', 'Hmisc', 'xtable', 'gridExtra', 'Rcpp', 'RcppArmadillo', 'diagram'))" \
 	-e "if (!require(i, character.only=TRUE)) install.packages(i, repos='http://cran.rstudio.org')"
+	Rscript -e "for (i in c('tikzDevice'))" \
+	-e "if (!require(i, character.only=TRUE)) install.packages(i, repos='http://r-forge.r-project.org')"
 
 sysdeps:
 	sudo apt-get install pgf gawk ruby ghc perl highlight optipng coffeescript pandoc asymptote
