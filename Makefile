@@ -17,7 +17,7 @@ deps:
 	Rscript -e "options(repos='http://cran.rstudio.org'); library(devtools); library(methods); install_github('RTikZDevice', 'JanMarvin', quick=TRUE)"
 
 sysdeps:
-	sudo apt-get install pgf gawk ruby ghc perl highlight optipng coffeescript pandoc asymptote
+	sudo apt-get install pgf latex-beamer gawk ruby ghc perl highlight optipng coffeescript pandoc asymptote graphviz
 
 diff:
 	git status
