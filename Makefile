@@ -12,7 +12,7 @@ pandoc:
 
 deps:
 	Rscript -e "for (i in c('ggplot2', 'mapproj', 'Hmisc', 'xtable', 'gridExtra', 'Rcpp', 'RcppArmadillo', 'diagram'))" \
-	-e "if (!require(i, character.only=TRUE)) install.packages(i)"
+	-e "if (!require(i, character.only=TRUE)) install.packages(i, repos='http://cran.r-project.org')"
 
 clean:
 	$(RM) *.log *.aux *.toc *.nav *.out *.snm *.vrb *.docx *.epub *.odt 084-pandoc-slides.html; \
