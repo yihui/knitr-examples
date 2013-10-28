@@ -11,10 +11,9 @@ pandoc:
 	Rscript 084-pandoc.R && Rscript 088-pandoc-embedded.R
 
 deps:
-	Rscript -e "for (i in c('ggplot2', 'mapproj', 'Hmisc', 'xtable', 'gridExtra', 'Rcpp', 'RcppArmadillo', 'diagram'))" \
+	Rscript -e "for (i in c('ggplot2', 'mapproj', 'Hmisc', 'xtable', 'gridExtra', 'Rcpp', 'RcppArmadillo', 'diagram', 'devtools'))" \
 	-e "if (!require(i, character.only=TRUE)) install.packages(i, repos='http://cran.rstudio.org')"
-	Rscript -e "for (i in c('tikzDevice'))" \
-	-e "if (!require(i, character.only=TRUE)) install.packages(i, repos='http://r-forge.r-project.org')"
+	Rscript -e "library(devtools); install_github('RTikZDevice', 'Sharpie')"
 
 sysdeps:
 	sudo apt-get install pgf gawk ruby ghc perl highlight optipng coffeescript pandoc asymptote
