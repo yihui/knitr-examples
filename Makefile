@@ -13,6 +13,7 @@ pandoc:
 deps:
 	Rscript -e "for (i in c('ggplot2', 'mapproj', 'Hmisc', 'xtable', 'gridExtra', 'Rcpp', 'RcppArmadillo', 'diagram', 'devtools'))" \
 	-e "if (!require(i, character.only=TRUE)) install.packages(i, repos='http://cran.rstudio.org')"
+	Rscript -e "library(devtools); install_github('devtools', 'hadley')"
 	Rscript -e "library(devtools); install_github('RTikZDevice', 'Sharpie')"
 
 sysdeps:
