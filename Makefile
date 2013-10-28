@@ -15,7 +15,7 @@ deps:
 	-e "if (!require(i, character.only=TRUE)) install.packages(i, repos='http://cran.rstudio.org')"
 
 sysdeps:
-	sudo apt-get install pgf awk ruby ghc perl highlight optipng coffeescript pandoc asymptote
+	sudo apt-get install pgf gawk ruby ghc perl highlight optipng coffeescript pandoc asymptote
 
 clean:
 	$(RM) *.log *.aux *.toc *.nav *.out *.snm *.vrb *.docx *.epub *.odt 084-pandoc-slides.html; \
