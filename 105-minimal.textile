@@ -7,8 +7,6 @@ The syntax for defining code blocks is similar to that of HTML or AsciiDoc.
  You just use @###.@ followed by @begin.rcode@ or @end.rcode@, and then
  additional options like a name for the chunk and figure settings.
 
-==<!-- start of chunk "test-a" -->==
-
 bc(knitr r source#test-a).. if (1 + 1 == 2) {
   'of course!'
 }
@@ -20,13 +18,9 @@ bc(knitr r output#test-a).. ## [1] "of course!"
 p(knitr_end). 
 
 
-==<!-- end of chunk "test-a" -->==
-
 
 
 Some other examples:
-
-==<!-- start of chunk "test-b" -->==
 
 bc(knitr r source#test-b).. x = cumsum(rnorm(100))
 mean(x)
@@ -65,8 +59,6 @@ bc(knitr r error#test-b).. ## Error: non-numeric argument to binary operator
 
 p(knitr_end). 
 
-
-==<!-- end of chunk "test-b" -->==
 
 
 
