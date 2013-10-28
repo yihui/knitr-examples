@@ -22,6 +22,8 @@ sysdeps:
 diff:
 	git status
 	git diff
+	git status --porcelain | wc -l
+	git diff | egrep -c '^[+-]'
 
 clean:
 	$(RM) *.log *.aux *.toc *.nav *.out *.snm *.vrb *.docx *.epub *.odt 084-pandoc-slides.html; \
