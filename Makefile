@@ -19,6 +19,10 @@ deps:
 sysdeps:
 	sudo apt-get install pgf gawk ruby ghc perl highlight optipng coffeescript pandoc asymptote
 
+diff:
+	git status
+	git diff
+
 clean:
 	$(RM) *.log *.aux *.toc *.nav *.out *.snm *.vrb *.docx *.epub *.odt 084-pandoc-slides.html; \
 	ls *.Rmd | sed 's/\.Rmd$$/.html/' | xargs $(RM); \
