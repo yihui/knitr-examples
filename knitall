@@ -4,5 +4,5 @@ ls | grep -E '^[0-9].*\.(brew|R(nw|md|tex|html|rst|asciidoc|textile))$' | grep -
 Rscript -e "knitr::purl('094-purl.Rmd')"
 ./k "076-chinese-gb2312.rnw', '076-chinese-gb2312.TEX', encoding='GB2312"
 ./k "078-chinese-big5.rnw', '078-chinese-big5.ctx', encoding='BIG5"
-./k "101-cache-levels.Rmd', '101-cache-levels.MD"
+./k "101-cache-levels.Rmd'
 
