@@ -23,7 +23,7 @@ sysdeps:
 diff:
 	git status
 	git diff
-	[ $$(echo "$$(git status --porcelain | wc -l):$$(git diff | egrep -c '^[+-]')" | tee /dev/stderr) = "3:26" ]
+	[ $$(echo "$$(git status --porcelain | wc -l):$$(git diff | egrep -c '^[+-]')" | tee /dev/stderr) = "2:28" ]
 
 clean:
 	$(RM) *.log *.aux *.toc *.nav *.out *.snm *.vrb *.docx *.epub *.odt 084-pandoc-slides.html; \
