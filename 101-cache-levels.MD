@@ -80,6 +80,8 @@ Sys.sleep(1)
 plot(cars)
 ```
 
+![plot of chunk test-d](http://animation.r-forge.r-project.org/knitr-ex/figure/101-cache-levels-test-d.png) 
+
 
 Below is a test case for [#588](https://github.com/yihui/knitr/issues/588):
 
