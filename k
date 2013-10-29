@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "$0" "$*"
+echo "$0" "$*" >> /dev/stderr
 
 prefix=${1%.*}-
 Rscript -e "library(knitr)"\
