@@ -1,4 +1,8 @@
 #!/bin/bash
 
-ls | grep -E '^[0-9].*\.(brew|R(nw|md|tex|html|rst|asciidoc|textile))$' | xargs -n1 -P4 ./k > /dev/null
+ls | grep -E '^[0-9].*\.(brew|R(nw|md|tex|html|rst|asciidoc|textile))$' | grep -E -v '^(076|078|101)-' | xargs -n1 -P4 ./k > /dev/null
+Rscript -e "knitr::purl('094-purl.Rmd')"
+./k "076-chinese-gb2312.rnw', '076-chinese-gb2312.TEX', encoding='GB2312"
+./k "078-chinese-big5.rnw', '078-chinese-big5.ctx', encoding='BIG5"
+./k "101-cache-levels.Rmd', '101-cache-levels.MD"
 
