@@ -18,12 +18,12 @@ deps:
 	Rscript -e "options(repos='http://cran.rstudio.org'); library(devtools); library(methods); install_github('RTikZDevice', 'JanMarvin', quick=TRUE)"
 
 sysdeps:
-	sudo apt-get install pgf latex-beamer gawk ruby ghc perl highlight optipng coffeescript pandoc asymptote graphviz ttf-freefont
+	sudo apt-get install pgf latex-beamer gawk ruby ghc perl highlight optipng coffeescript pandoc asymptote graphviz
 
 diff:
 	git status
 	git diff
-	[ $(echo "$(git status --porcelain | wc -l):$(git diff | egrep -c '^[+-]')" | tee /dev/stderr) = "3:26" ]
+	[ $$(echo "$$(git status --porcelain | wc -l):$$(git diff | egrep -c '^[+-]')" | tee /dev/stderr) = "3:26" ]
 
 clean:
 	$(RM) *.log *.aux *.toc *.nav *.out *.snm *.vrb *.docx *.epub *.odt 084-pandoc-slides.html; \
