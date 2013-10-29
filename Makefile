@@ -22,6 +22,9 @@ sysdeps:
 	sudo apt-get install --no-install-recommends qpdf texinfo texlive-latex-recommended texlive-latex-extra lmodern texlive-fonts-recommended texlive-fonts-extra texlive-extra-utils && \
 	if [ -z $(which dvisvgm) ]; then sudo apt-add-repository -y ppa:martin-gieseking/ppa && sudo apt-get update -o Dir::Etc::sourcelist="sources.list.d/martin-gieseking-ppa-precise.list" -o Dir::Etc::sourceparts="-" -o APT::Get::List-Cleanup="0" && sudo apt-get install dvisvgm; fi
 
+xvfb-%:
+	sh -e /etc/init.d/xvfb $*
+
 diff:
 	git status
 	git diff && echo "$$(git diff --numstat')" > expected-diff && git diff expected-diff # BEGIN_KNITR_EXAMPLES_PATCH
