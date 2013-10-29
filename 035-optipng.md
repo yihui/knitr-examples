@@ -24,6 +24,7 @@ Same plot, not optimized:
 
 
 ```r
+library(methods)
 library(ggplot2)
 set.seed(123)
 qplot(rnorm(1000), rnorm(1000))
@@ -36,6 +37,7 @@ Same plot, most heavily optimized (pass `-o7` to `optipng`):
 
 
 ```r
+library(methods)
 library(ggplot2)
 set.seed(123)
 qplot(rnorm(1000), rnorm(1000))
