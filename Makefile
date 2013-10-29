@@ -27,7 +27,7 @@ xvfb-%:
 
 diff:
 	git status
-	git diff && echo "$$(git diff --numstat')" > expected-diff && git diff expected-diff # BEGIN_KNITR_EXAMPLES_PATCH
+	git diff && echo "$$(git diff --numstat)" > expected-diff && git diff expected-diff # BEGIN_KNITR_EXAMPLES_PATCH
 	[ -z "$$(git status --porcelain expected-diff)" ] && cat expected-diff # END_KNITR_EXAMPLES_PATCH
 
 clean:
