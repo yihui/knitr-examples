@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "$0" "$*"
+
 prefix=${1%.*}-
 Rscript -e "library(knitr)"\
  -e "opts_knit\$set(base.url='http://animation.r-forge.r-project.org/knitr-ex/')"\
