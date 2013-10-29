@@ -22,8 +22,8 @@ sysdeps:
 
 diff:
 	git status
-	git diff
-	[ $$(echo "$$(git status --porcelain | wc -l):$$(git diff | egrep -c '^[+-]')" | tee /dev/stderr) = "2:28" ]
+	git diff # BEGIN_KNITR_EXAMPLES_PATCH
+	[ $$(echo "$$(git status --porcelain | wc -l):$$(git diff | egrep -c '^[+-]')" | tee /dev/stderr) = "2:28" ] # END_KNITR_EXAMPLES_PATCH
 
 clean:
 	$(RM) *.log *.aux *.toc *.nav *.out *.snm *.vrb *.docx *.epub *.odt 084-pandoc-slides.html; \
