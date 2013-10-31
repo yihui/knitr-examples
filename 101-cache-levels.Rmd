@@ -1,5 +1,8 @@
 # Different cache levels
-
+```{r init, cache=0, echo=FALSE}
+# Work around issue #645 in knitr
+library(methods)
+```
 `cache=FALSE` or `cache=0` means no cache:
 
 ```{r test-a, cache=0}
