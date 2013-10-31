@@ -2,7 +2,7 @@
 
 This is a minimal example of using "polyglot"" **knitr** to produce an _HTML_ page from _Markdown_.
 
-```{r setup}
+```{r setup, cache=TRUE}
 toTest <- c("R", "python", "scala", "bash")
 where <- Sys.which(toTest)
 exists <- nchar(where) > 0 # TODO: Only run chunk if runtime exists
