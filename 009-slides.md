@@ -84,7 +84,7 @@ print(sessionInfo(), locale = FALSE)
 ```
 
 ```
-## R version 3.0.2 (2013-09-25)
+## R version 3.0.2 (2013-09-25)       # NOCHECK
 ## Platform: x86_64-pc-linux-gnu (64-bit)
 ## 
 ## attached base packages:
