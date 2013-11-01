@@ -12,7 +12,10 @@ exists <- nchar(where) > 0 # TODO: Only run chunk if runtime exists
 
 ```{r list-engines, results='asis'}
 for(n in names(where)) {
-  path <- where[n]
+  path <- if (Sys.getenv("TRAVIS") == "")
+    where[n]
+  else
+    "<not checked when running in Travis CI>"
   if(nchar(path) <= 0) {
     path <- "<not found>"
   }
