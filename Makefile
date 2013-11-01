@@ -12,7 +12,7 @@ deps:
 	Rscript -e "for (i in c('ggplot2', 'mapproj', 'Hmisc', 'xtable', 'gridExtra', 'Rcpp', 'RcppArmadillo', 'diagram'))" \
 	-e "if (!require(i, character.only=TRUE)) install.packages(i, repos='http://cran.rstudio.org')"
 	Rscript -e "for (i in c('rgl'))" -e "install.packages(i, repos='http://cran.rstudio.org')"
-	Rscript -e "install.packages('tikzDevice', repos='http://rforge.net')"
+	Rscript -e "install.packages('tikzDevice', repos=c('http://rforge.net', 'http://cran.rstudio.org'))"
 
 sysdeps:
 	sudo apt-get install pgf latex-beamer gawk ruby ghc perl highlight optipng coffeescript pandoc asymptote graphviz scala && \
