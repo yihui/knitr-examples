@@ -17,7 +17,7 @@ deps:
 sysdeps:
 	sudo apt-get install pgf latex-beamer gawk ruby ghc perl highlight optipng coffeescript pandoc asymptote graphviz scala && \
 	sudo apt-get install --no-install-recommends qpdf texinfo texlive-latex-recommended texlive-latex-extra lmodern texlive-fonts-recommended texlive-fonts-extra texlive-extra-utils && \
-	if [ -z $(which dvisvgm) ]; then sudo apt-add-repository -y ppa:martin-gieseking/ppa && sudo apt-get update -o Dir::Etc::sourcelist="sources.list.d/martin-gieseking-ppa-precise.list" -o Dir::Etc::sourceparts="-" -o APT::Get::List-Cleanup="0" && sudo apt-get install dvisvgm; fi
+	if [ -z "$$(which dvisvgm)" ]; then sudo apt-add-repository -y ppa:martin-gieseking/ppa && sudo apt-get update -o Dir::Etc::sourcelist="sources.list.d/martin-gieseking-ppa-precise.list" -o Dir::Etc::sourceparts="-" -o APT::Get::List-Cleanup="0" && sudo apt-get install dvisvgm; fi
 
 xvfb-%:
 	sh -e /etc/init.d/xvfb $*
