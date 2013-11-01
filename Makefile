@@ -25,8 +25,8 @@ xvfb-%:
 diff:
 	git status
 	git diff # BEGIN_KNITR_EXAMPLES_PATCH
-	echo "$$(git diff --numstat)" > expected-diff && git diff expected-diff # END_KNITR_EXAMPLES_PATCH BEGIN_KNITR_EXPECTED_PATCH
-	[ -z "$$(git status --porcelain expected-diff)" ] && cat expected-diff # END_KNITR_EXPECTED_PATCH
+	git checkout -- 009-*.md 010-*.md 021-*.tex  # ignore these differences
+	[ -z "$(git diff)" ] || exit 1
 
 clean:
 	$(RM) *.log *.aux *.toc *.nav *.out *.snm *.vrb *.docx *.epub *.odt 084-pandoc-slides.html; \
