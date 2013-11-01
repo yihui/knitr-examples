@@ -2208,11 +2208,11 @@
 \end{alltt}
 \begin{verbatim}
 ##        step user.self sys.self elapsed
-## 1 construct     0.008    0.000   0.007
-## 2     build     0.588    0.004   0.592
-## 3    render     0.236    0.000   0.234
-## 4      draw     0.064    0.000   0.064
-## 5     TOTAL     0.896    0.004   0.897
+## 1 construct     0.008    0.000   0.007 # NOCHECK
+## 2     build     0.588    0.004   0.592 # NOCHECK
+## 3    render     0.236    0.000   0.234 # NOCHECK
+## 4      draw     0.064    0.000   0.064 # NOCHECK
+## 5     TOTAL     0.896    0.004   0.897 # NOCHECK
 \end{verbatim}
 \begin{alltt}
 \hlkwd{benchplot}\hlstd{(base} \hlopt{+} \hlkwd{geom_tile}\hlstd{())}
@@ -2221,11 +2221,11 @@
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_raster2} 
 \begin{kframe}\begin{verbatim}
 ##        step user.self sys.self elapsed
-## 1 construct     0.008        0   0.007
-## 2     build     0.592        0   0.597
-## 3    render     0.292        0   0.295
-## 4      draw     0.128        0   0.130
-## 5     TOTAL     1.020        0   1.029
+## 1 construct     0.008        0   0.007 # NOCHECK
+## 2     build     0.592        0   0.597 # NOCHECK
+## 3    render     0.292        0   0.295 # NOCHECK
+## 4      draw     0.128        0   0.130 # NOCHECK
+## 5     TOTAL     1.020        0   1.029 # NOCHECK
 \end{verbatim}
 \begin{alltt}
 \hlcom{# justification}
