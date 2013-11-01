@@ -15,19 +15,13 @@ exists <- nchar(where) > 0  # TODO: Only run chunk if runtime exists
 
 ```r
 for (n in names(where)) {
-    path <- if (Sys.getenv("TRAVIS") == "") 
-        where[n] else "<not checked when running in Travis CI>"
+    path <- where[n]
     if (nchar(path) <= 0) {
         path <- "<not found>"
     }
-    cat("* __", n, "__: `", path, "`\n", sep = "")
+    message("* __", n, "__: `", path, "`\n")
 }
 ```
-
-* __R__: `<not checked when running in Travis CI>`
-* __python__: `<not checked when running in Travis CI>`
-* __scala__: `<not checked when running in Travis CI>`
-* __bash__: `<not checked when running in Travis CI>`
 
 
 ## Input Data
