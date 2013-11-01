@@ -25,7 +25,7 @@ xvfb-%:
 diff:
 	git status
 	git diff # BEGIN_KNITR_EXAMPLES_PATCH
-	git checkout -- 009-*.md 010-*.md 021-*.tex  # ignore these differences
+	git checkout -- 009-*.md 010-*.md 021-*.tex  # ignore these differences # END_KNITR_EXAMPLES_PATCH
 	[ -z "$$(git diff)" ] || exit 1
 
 clean:
