@@ -9,11 +9,10 @@ pandoc:
 	Rscript 084-pandoc.R && Rscript 088-pandoc-embedded.R
 
 deps:
-	Rscript -e "for (i in c('ggplot2', 'mapproj', 'Hmisc', 'xtable', 'gridExtra', 'Rcpp', 'RcppArmadillo', 'diagram', 'devtools'))" \
+	Rscript -e "for (i in c('ggplot2', 'mapproj', 'Hmisc', 'xtable', 'gridExtra', 'Rcpp', 'RcppArmadillo', 'diagram'))" \
 	-e "if (!require(i, character.only=TRUE)) install.packages(i, repos='http://cran.rstudio.org')"
 	Rscript -e "for (i in c('rgl'))" -e "install.packages(i, repos='http://cran.rstudio.org')"
-	Rscript -e "library(devtools); library(methods); install_github('devtools', 'hadley')"
-	Rscript -e "options(repos='http://cran.rstudio.org'); library(devtools); library(methods); install_github('RTikZDevice', 'JanMarvin', quick=TRUE)"
+	Rscript -e "install.packages('tikzDevice', repos='http://rforge.net')"
 
 sysdeps:
 	sudo apt-get install pgf latex-beamer gawk ruby ghc perl highlight optipng coffeescript pandoc asymptote graphviz scala && \
