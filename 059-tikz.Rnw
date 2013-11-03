@@ -12,7 +12,7 @@ options(width = 40)
 First you need to install the tikzDevice package, e.g.
 
 <<install-tikz, eval=FALSE>>=
-install.packages("tikzDevice", repos="http://R-Forge.R-project.org")
+install.packages("tikzDevice", repos="http://rforge.net", type = "source")
 @
 
 Then just specify \texttt{dev='tikz'} in the chunk header, and you are done.
