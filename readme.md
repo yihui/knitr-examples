@@ -6,4 +6,11 @@ For each input file, there is an output file, e.g. `001-minimal.Rmd` corresponds
 
 ## Integration tests
 
-By [enabling Travis CI](https://travis-ci.org/profile) for your `knitr` fork, a series of tests is run for each pushed revision.  If you have a branch (even `master`) in your `knitr` fork and a branch with the same name in your `knitr-examples` fork, each push to `knitr` will trigger an *integration test* that checks all examples in the corresponding branch of `knitr-examples` and reports if any unexpected differences are found.  Use this for major changes to `knitr` to avoid undesired side effects.
+The examples can be checked automatically with [Travis CI](https://travis-ci.org). To enable:
+
+- Fork this repository and [`knitr`](/yihui/knitr)
+- [Enable Travis CI](https://travis-ci.org/profile) for your `knitr`fork
+- In your `knitr` fork, create a branch *with the same name* as in your `knitr-examples` fork
+    - You can also choose to work in `master` in both repositories
+
+Now, each time you push to `knitr`, the examples are compiled and checked for differences with the expected result.  Use this for major changes to `knitr` to avoid undesired side effects.
