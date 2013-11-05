@@ -1,0 +1,2 @@
+Inline expressions such as `r "the following"` are now allowed `r paste("to span",
+"over several lines")`.
