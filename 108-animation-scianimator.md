@@ -43,7 +43,7 @@ for (i in 1:20) {
       var imgs = Array(20);
       for (i=0; ; i++) {
         if (i == imgs.length) break;
-        imgs[i] = "http://animation.r-forge.r-project.org/knitr-ex/figure/107-animation-scianimator-test" + (i + 1) + ".png";
+        imgs[i] = "http://animation.r-forge.r-project.org/knitr-ex/figure/108-animation-scianimator-test" + (i + 1) + ".png";
       }
       $("#test").scianimator({
           "images": imgs,
