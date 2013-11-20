@@ -62,7 +62,7 @@ ls | grep engine | xargs wc
 ##   129   354  2645 029-engine-Rcpp.md
 ##    97   345  2685 029-engine-Rcpp.Rmd
 ##    23    56   528 057-engine-dot.md
-##    18    62   474 057-engine-dot.Rmd
+##    18    63   486 057-engine-dot.Rmd
 ##    40   183  1371 058-engine-tikz.md
 ##    35   193  1346 058-engine-tikz.Rmd
 ##    15    67   425 060-engine-sas.md
@@ -71,6 +71,6 @@ ls | grep engine | xargs wc
 ##    29    98   877 080-engine-coffeescript.Rmd
 ##    45    60   336 090-engine-c.md
 ##    21    41   256 090-engine-c.Rmd
-##   912  2554 18594 total
+##   912  2555 18606 total
 ```
 
