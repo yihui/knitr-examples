@@ -21,6 +21,6 @@ ex = lapply(apropos("^geom_"), function(g) {
 })
 @
 
-\Sexpr{knit(text = unlist(ex), quiet = TRUE)}
+\Sexpr{knit_child(text = unlist(ex), quiet = TRUE)}
 
 \end{document}
