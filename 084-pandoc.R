@@ -31,7 +31,6 @@ pandoc('084-pandoc.md', format = 'epub')
 # that is because R Markdown uses the png() device by default; we can certainly
 # use pdf()
 if (FALSE) {
-  render_markdown()
   opts_chunk$set(dev = 'pdf')
   knit('084-pandoc.Rmd')
   # now it should be better
