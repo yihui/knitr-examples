@@ -1,5 +1,7 @@
 # Using CoffeeScript with knitr
-
+```{r setup, include=FALSE}
+opts_chunk$set(cache = TRUE)
+```
 You need to install `coffee`, the command-line version of [CoffeeScript](http://coffeescript.org/#installation).
 
 CoffeeScript compiles javascript:

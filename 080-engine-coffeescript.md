@@ -1,5 +1,6 @@
 # Using CoffeeScript with knitr
 
+
 You need to install `coffee`, the command-line version of [CoffeeScript](http://coffeescript.org/#installation).
 
 CoffeeScript compiles javascript:
