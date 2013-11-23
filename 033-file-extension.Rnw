@@ -7,7 +7,7 @@ We want the file extension when including a figure into LaTeX.
 <<setup>>=
 knit_hooks$set(plot = function(x, options) {
    # if x is foo.pdf, make it foo.pdf.whatever so the plot hook removes the extension internally
-  x = paste(c(x, 'whatever'), collapse = '.')
+  x = paste(c(x, opts_chunk$get('fig.ext'))), collapse = '.')
   paste0('\\end{kframe}', hook_plot_tex(x, options), '\\begin{kframe}')
 })
 @
