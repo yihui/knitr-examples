@@ -7,7 +7,7 @@
 \verbtocs{\Ob}|{|
 \verbtocs{\Cb}|}|
 
-
+\let\oldhlstr\hlstr
 \renewcommand{\hlstr}[1]{%
 \def\text{#1}%
 \scancs{\result}{\Ob\text\Cb}%
@@ -27,28 +27,23 @@
 \href{%
 \resultRR%
 }{%
-\textcolor[rgb]{0.192,0.494,0.8}{%
-\StrLeft{\resultR}{28}\ [...] %
-\StrRight{\resultR}{28}%
+\oldhlstr{%
+\StrLeft{\resultR}{27}\ [...] %
+\StrRight{\resultR}{27}%
 }% end textcolor
 } % href
 }{% end then start else
-\textcolor[rgb]{0.192,0.494,0.8}{#1}%
+\oldhlstr{#1}%
 }% end else
 }% end renewcommand
 
-<<setup,include=FALSE>>=
-opts_chunk$set(		tidy=TRUE,
-		tidy.opts=list(keep.blank.line=FALSE, width.cutoff=60)
-)
-@
-
 \begin{document}
 
+This example shows how to shorten a long string by redefining the \verb|\hlstr|
+command. See \url{https://github.com/yihui/knitr/issues/681} for a discussion.
 
-<<stuff,echo=TRUE,eval=FALSE>>=
+<<stuff, eval=FALSE>>=
 download.file("http://AFDF43iuuinfsdasdf--AFDF43iuuinfsdasdf--AFDF43iuuinfsdasdf--AFDF43iuuinfsdasdf--AFDF43iuuinfsdasdf--AFDF43iuuinfsdasdf--AFDF43iuuinfsdasdf--AFDF43iuuinfsdasdf", "infsdasdf--#@%$AFDF43i.zip")
 @
-
 
 \end{document}
