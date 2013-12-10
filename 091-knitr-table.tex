@@ -87,6 +87,28 @@ Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
 5.4 & 3.9 & 1.7 & 0.4 & setosa\\
 \hline
 \end{tabular}
+\begin{kframe}\begin{alltt}
+\hlkwd{kable}\hlstd{(}\hlkwd{head}\hlstd{(iris,} \hlnum{0}\hlstd{))}
+\end{alltt}
+\end{kframe}
+\begin{tabular}{r|r|r|r|l}
+\hline
+Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
+
+
+\hline
+\end{tabular}
+\begin{kframe}\begin{alltt}
+\hlkwd{kable}\hlstd{(}\hlkwd{head}\hlstd{(iris,} \hlnum{1}\hlstd{))}
+\end{alltt}
+\end{kframe}
+\begin{tabular}{r|r|r|r|l}
+\hline
+Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
+\hline
+5.1 & 3.5 & 1.4 & 0.2 & setosa\\
+\hline
+\end{tabular}
 
 
 
@@ -187,6 +209,28 @@ Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
 4.6 & 3.1 & 1.5 & 0.2 & setosa\\
 5.0 & 3.6 & 1.4 & 0.2 & setosa\\
 5.4 & 3.9 & 1.7 & 0.4 & setosa\\
+\bottomrule
+\end{tabular}
+\begin{kframe}\begin{alltt}
+\hlkwd{kable}\hlstd{(}\hlkwd{head}\hlstd{(iris,} \hlnum{0}\hlstd{),} \hlkwc{row.names} \hlstd{=} \hlnum{FALSE}\hlstd{,} \hlkwc{booktabs} \hlstd{=} \hlnum{TRUE}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\begin{tabular}{rrrrl}
+\toprule
+Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
+
+
+\bottomrule
+\end{tabular}
+\begin{kframe}\begin{alltt}
+\hlkwd{kable}\hlstd{(}\hlkwd{head}\hlstd{(iris,} \hlnum{1}\hlstd{),} \hlkwc{row.names} \hlstd{=} \hlnum{FALSE}\hlstd{,} \hlkwc{booktabs} \hlstd{=} \hlnum{TRUE}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\begin{tabular}{rrrrl}
+\toprule
+Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
+\midrule
+5.1 & 3.5 & 1.4 & 0.2 & setosa\\
 \bottomrule
 \end{tabular}
 \begin{kframe}\begin{alltt}
