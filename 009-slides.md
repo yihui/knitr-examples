@@ -91,11 +91,11 @@ print(sessionInfo(), locale = FALSE)
 ## [1] methods   stats     graphics  grDevices utils     datasets  base     
 ## 
 ## other attached packages:
-## [1] ggplot2_0.9.3.1 knitr_1.5.8    
+## [1] ggplot2_0.9.3.1 knitr_1.5.13   
 ## 
 ## loaded via a namespace (and not attached):
 ##  [1] codetools_0.2-8    colorspace_1.2-4   dichromat_2.0-0   
-##  [4] digest_0.6.3       evaluate_0.5.1     formatR_0.10      
+##  [4] digest_0.6.3       evaluate_0.5.1     formatR_0.10.3    
 ##  [7] grid_3.0.2         gtable_0.1.2       labeling_0.2      
 ## [10] MASS_7.3-29        munsell_0.4.2      plyr_1.8          
 ## [13] proto_0.3-10       RColorBrewer_1.0-5 reshape2_1.2.2    

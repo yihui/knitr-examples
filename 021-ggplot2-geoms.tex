@@ -1704,9 +1704,7 @@
   \hlkwd{ggplot}\hlstd{(crimesm,} \hlkwd{aes}\hlstd{(}\hlkwc{map_id} \hlstd{= state))} \hlopt{+} \hlkwd{geom_map}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{fill} \hlstd{= value),} \hlkwc{map} \hlstd{= states_map)} \hlopt{+} \hlkwd{expand_limits}\hlstd{(}\hlkwc{x} \hlstd{= states_map}\hlopt{$}\hlstd{long,} \hlkwc{y} \hlstd{= states_map}\hlopt{$}\hlstd{lat)} \hlopt{+} \hlkwd{facet_wrap}\hlstd{(} \hlopt{~} \hlstd{variable)}
 \hlstd{\}}
 \end{alltt}
-
-
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Loading required package: maps}}\end{kframe}
+\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_map4} 
 \begin{kframe}\begin{alltt}
 
@@ -2210,10 +2208,10 @@
 \begin{verbatim}
 ##        step user.self sys.self elapsed
 ## 1 construct     0.004        0   0.003
-## 2     build     0.390        0   0.389
-## 3    render     0.157        0   0.157
-## 4      draw     0.034        0   0.035
-## 5     TOTAL     0.585        0   0.584
+## 2     build     0.386        0   0.386
+## 3    render     0.163        0   0.163
+## 4      draw     0.035        0   0.036
+## 5     TOTAL     0.588        0   0.588
 \end{verbatim}
 \begin{alltt}
 \hlkwd{benchplot}\hlstd{(base} \hlopt{+} \hlkwd{geom_tile}\hlstd{())}
@@ -2223,10 +2221,10 @@
 \begin{kframe}\begin{verbatim}
 ##        step user.self sys.self elapsed
 ## 1 construct     0.003        0   0.004
-## 2     build     0.459        0   0.459
-## 3    render     0.275        0   0.275
-## 4      draw     0.071        0   0.072
-## 5     TOTAL     0.808        0   0.810
+## 2     build     0.400        0   0.400
+## 3    render     0.343        0   0.343
+## 4      draw     0.077        0   0.077
+## 5     TOTAL     0.823        0   0.824
 \end{verbatim}
 \begin{alltt}
 \hlcom{# justification}
