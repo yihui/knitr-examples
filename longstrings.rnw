@@ -1,0 +1,54 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+
+\usepackage{xstring,etoolbox,hyperref}
+% the following, along with \def\text{#1} and scancs below
+% convert the string to verbatim-style tokens
+\verbtocs{\Ob}|{|
+\verbtocs{\Cb}|}|
+
+
+\renewcommand{\hlstr}[1]{%
+\def\text{#1}%
+\scancs{\result}{\Ob\text\Cb}%
+% remove braces
+\StrGobbleLeft{\result}{1}[\resultL]%
+\StrGobbleRight{\resultL}{1}[\resultR]%
+% and quotes
+\StrGobbleLeft{\resultR}{1}[\resultLL]%
+\StrGobbleRight{\resultLL}{1}[\resultRR]%
+\StrLen{\resultR}[\mystrlen]%
+\StrCount{\resultRR}{\space}[\mynspaces]%
+\ifboolexpr{%
+    test {\ifnumcomp{\mystrlen}{>}{60}} 
+    and
+    test{\ifnumcomp{\mynspaces}{=}{0}}
+}{%
+\href{%
+\resultRR%
+}{%
+\textcolor[rgb]{0.192,0.494,0.8}{%
+\StrLeft{\resultR}{28}\ [...] %
+\StrRight{\resultR}{28}%
+}% end textcolor
+} % href
+}{% end then start else
+\textcolor[rgb]{0.192,0.494,0.8}{#1}%
+}% end else
+}% end renewcommand
+
+<<setup,include=FALSE>>=
+opts_chunk$set(		tidy=TRUE,
+		tidy.opts=list(keep.blank.line=FALSE, width.cutoff=60)
+)
+@
+
+\begin{document}
+
+
+<<stuff,echo=TRUE,eval=FALSE>>=
+download.file("http://AFDF43iuuinfsdasdf--AFDF43iuuinfsdasdf--AFDF43iuuinfsdasdf--AFDF43iuuinfsdasdf--AFDF43iuuinfsdasdf--AFDF43iuuinfsdasdf--AFDF43iuuinfsdasdf--AFDF43iuuinfsdasdf", "infsdasdf--#@%$AFDF43i.zip")
+@
+
+
+\end{document}
