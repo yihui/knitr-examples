@@ -19,6 +19,8 @@ simple tables.
 <<test-a>>=
 library(knitr)
 kable(head(iris))
+kable(head(iris, 0))
+kable(head(iris, 1))
 @
 
 \section{No row names}
@@ -48,6 +50,8 @@ Let's use the \textbf{booktabs} package. The air is suddenly fresh!
 
 <<test-e>>=
 kable(head(iris), row.names=FALSE, booktabs=TRUE)
+kable(head(iris, 0), row.names=FALSE, booktabs=TRUE)
+kable(head(iris, 1), row.names=FALSE, booktabs=TRUE)
 kable(head(mtcars[, 1:7]), booktabs=TRUE)
 @
 
