@@ -2,9 +2,9 @@
 
 As long as SAS is not in your `PATH` variable, you need to specify its full path with the `engine.path` option, e.g.
 
-```{r hello-world, engine='sas', engine.path='C:\\Program Files\\SASHome\\x86\\SASFoundation\\9.3\\sas.exe', eval=FALSE}
+```{r hello-world, engine='sas', engine.path="C:\\Program Files\\SASHome\\x86\\SASFoundation\\9.3\\sas.exe", eval=FALSE}
 data _null_;
-put 'Hello, world!';
+%put 'Hello, world!';
 run;
 ```
 
