@@ -6,3 +6,4 @@ r-forge/
 *.log
 095-pandoc.sty
 /Sweavel.sty
+.Rproj.user
