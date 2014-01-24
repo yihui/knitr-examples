@@ -4,8 +4,8 @@ stopifnot(packageVersion('knitr') > '1.1')
 
 knit('084-pandoc.Rmd')
 
-# default is HTML output
-pandoc('084-pandoc.md')
+# HTML output
+pandoc('084-pandoc.md', format = 'html')
 
 # there are sections of arguments specified in 084-pandoc.pandoc, e.g. dzslides,
 # but note that the output name is 084-pandoc-slides.html, and the default name

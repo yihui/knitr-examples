@@ -3,21 +3,21 @@ bibliography: 084-pandoc.bib
 standalone:
 toc:
 
-format: latex
+t: latex
 latex-engine: xelatex
 number-sections:
 output: 084-pandoc-xelatex.pdf
 
-format: beamer
+t: beamer
 latex-engine: pdflatex
 incremental:
 output: 084-pandoc-beamer.pdf
 
-format: html
+t: html
 mathjax:
 number-sections:
 
-format: dzslides
+t: dzslides
 mathjax:
 number-sections:
 output: 084-pandoc-slides.html
