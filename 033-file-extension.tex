@@ -57,11 +57,12 @@ We want the file extension when including a figure into LaTeX.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
+\hlstd{hook_plot} \hlkwb{=} \hlstd{knit_hooks}\hlopt{$}\hlkwd{get}\hlstd{(}\hlstr{"plot"}\hlstd{)}
 \hlstd{knit_hooks}\hlopt{$}\hlkwd{set}\hlstd{(}\hlkwc{plot} \hlstd{=} \hlkwa{function}\hlstd{(}\hlkwc{x}\hlstd{,} \hlkwc{options}\hlstd{) \{}
     \hlcom{# if x is foo.pdf, make it foo.pdf.whatever so the plot hook removes the}
     \hlcom{# extension internally}
     \hlstd{x} \hlkwb{=} \hlkwd{paste}\hlstd{(}\hlkwd{c}\hlstd{(x,} \hlstr{"whatever"}\hlstd{),} \hlkwc{collapse} \hlstd{=} \hlstr{"."}\hlstd{)}
-    \hlkwd{paste0}\hlstd{(}\hlstr{"\textbackslash{}\textbackslash{}end\{kframe\}"}\hlstd{,} \hlkwd{hook_plot_tex}\hlstd{(x, options),} \hlstr{"\textbackslash{}\textbackslash{}begin\{kframe\}"}\hlstd{)}
+    \hlkwd{hook_plot}\hlstd{(x, options)}
 \hlstd{\})}
 \end{alltt}
 \end{kframe}
@@ -78,6 +79,7 @@ You should see \textbackslash{}includegraphics\{test.pdf\} instead of \textbacks
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/033-file-extension-test-a.pdf} 
+
 \end{knitrout}
 
 
@@ -89,6 +91,7 @@ You should see \textbackslash{}includegraphics\{test.pdf\} instead of \textbacks
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/033-file-extension-test-b.png} 
+
 \end{knitrout}
 
 
