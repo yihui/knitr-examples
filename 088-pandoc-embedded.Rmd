@@ -3,12 +3,12 @@
 % March 1st, 2013
 
 <!--pandoc
-format: html
+t: html
 s:
 mathjax:
 number-sections:
 
-format: latex
+t: latex
 number-sections:
 -->
 
