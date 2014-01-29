@@ -1,30 +1,23 @@
 This demo shows you how to merge the source and output blocks in markdown output. Note **knitr** puts R source and output in separate blocks by default.
 
 
-
 ```r
-# first ``` are the end of previous source block; second ``` are the
-# beginning of next output block
-knit_hooks$set(chunk = function(x, options) {
-    gsub("```\n+```", "", x)
-})
+render_markdown(merge = TRUE)
 ```
-
-
 
 
 See if it works:
 
 
-
 ```r
 a = 1
 a
-
 ## [1] 1
+b = 1:10
+write(b, "")
+## 1 2 3 4 5
+## 6 7 8 9 10
 ```
-
-
 
 
 Source and output lived together happily ever in **knitr**.
