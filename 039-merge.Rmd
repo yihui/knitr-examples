@@ -1,16 +1,15 @@
 This demo shows you how to merge the source and output blocks in markdown output. Note **knitr** puts R source and output in separate blocks by default.
 
-```{r setup}
-render_markdown(merge = TRUE)
-```
-
-See if it works:
-
-```{r test}
+```{r test-a}
 a = 1
 a
 b = 1:10
 write(b, '')
+```
+
+See if the chunk option `collapse` works:
+
+```{r test-b, ref.label='test-a', collapse=TRUE}
 ```
 
 Source and output lived together happily ever in **knitr**.

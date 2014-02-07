@@ -2,11 +2,26 @@ This demo shows you how to merge the source and output blocks in markdown output
 
 
 ```r
-render_markdown(merge = TRUE)
+a = 1
+a
+```
+
+```
+## [1] 1
+```
+
+```r
+b = 1:10
+write(b, "")
+```
+
+```
+## 1 2 3 4 5
+## 6 7 8 9 10
 ```
 
 
-See if it works:
+See if the chunk option `collapse` works:
 
 
 ```r
