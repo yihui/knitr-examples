@@ -22,7 +22,7 @@ You can redefine the output hook function so that you can instruct some chunks t
 hook_output = knit_hooks$get("output")
 knit_hooks$set(output = function(x, options) {
     # this hook is used only when the linewidth option is not NULL
-    if (!is.null(n <- options$linewidth)) {
+   if (!is.null(n <- getOption("width"))) {
         x = knitr:::split_lines(x)
         # any lines wider than n should be wrapped
         if (any(nchar(x) > n)) 
