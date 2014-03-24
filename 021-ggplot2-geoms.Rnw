@@ -15,7 +15,7 @@ library(ggplot2)
 ex = lapply(apropos("^geom_"), function(g) {
   p = utils:::index.search(g, find.package(), TRUE)
   tools::Rd2ex(utils:::.getHelpFile(p), f <- tempfile())
-  c(sprintf("\\section{%s}\n\n<<%s,foo=rm(list=ls())>>=",
+  c(sprintf("\\section{%s}\n\n<<%s>>=",
             knitr:::escape_latex(g), g),
     readLines(f), "@\n\n")
 })
