@@ -19,6 +19,15 @@ sysdeps:
 	sudo apt-get install --no-install-recommends pgf latex-beamer gawk ruby ghc perl highlight optipng coffeescript pandoc asymptote graphviz scala qpdf texinfo texlive-latex-recommended texlive-latex-extra lmodern texlive-fonts-recommended texlive-fonts-extra texlive-extra-utils && \
 	if [ -z "$$(which dvisvgm)" ]; then sudo apt-add-repository -y ppa:martin-gieseking/ppa && sudo apt-get update -o Dir::Etc::sourcelist="sources.list.d/martin-gieseking-ppa-precise.list" -o Dir::Etc::sourceparts="-" -o APT::Get::List-Cleanup="0" && sudo apt-get install dvisvgm; fi
 
+# a subset of dependencies that I need to temporarily install under Ubuntu
+mydeps1:
+	sudo apt-get install ghc graphviz coffeescript asymptote scala
+
+# and remove them after I compile some examples
+mydeps2:
+	sudo apt-get remove ghc graphviz coffeescript asymptote scala
+	sudo apt-get autoremove
+
 xvfb-%:
 	sh -e /etc/init.d/xvfb $*
 
