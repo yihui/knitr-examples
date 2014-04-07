@@ -22,9 +22,11 @@ rnorm(5)
 We can also produce plots which are uploaded to imgur.com:
 
 ```{r md-cars, message=FALSE}
-library(ggplot2)
-qplot(hp, mpg, data=mtcars)+geom_smooth()
-ggpcp(mtcars) + geom_line()
+par(mar = c(4, 4, .1, .1))
+plot(mpg~hp, data=mtcars, pch=19)
+par(mar = c(3, 2, .1, .1))
+matplot(t(scale(mtcars)), lty=1, type='l', xaxt='n', ylab='')
+axis(1, seq(ncol(mtcars)), colnames(mtcars))
 ```
 
 So **knitr** is ready with GitHub with a single markdown file.

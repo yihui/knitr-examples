@@ -38,17 +38,19 @@ We can also produce plots which are uploaded to imgur.com:
 
 
 ```r
-library(ggplot2)
-qplot(hp, mpg, data = mtcars) + geom_smooth()
+par(mar = c(4, 4, 0.1, 0.1))
+plot(mpg ~ hp, data = mtcars, pch = 19)
 ```
 
-![plot of chunk md-cars](http://i.imgur.com/G0kq0k7.png) 
+![plot of chunk md-cars](http://i.imgur.com/tYxxzqK.png) 
 
 ```r
-ggpcp(mtcars) + geom_line()
+par(mar = c(3, 2, 0.1, 0.1))
+matplot(t(scale(mtcars)), lty = 1, type = "l", xaxt = "n", ylab = "")
+axis(1, seq(ncol(mtcars)), colnames(mtcars))
 ```
 
-![plot of chunk md-cars](http://i.imgur.com/Y7xWKgg.png) 
+![plot of chunk md-cars](http://i.imgur.com/7TPHUbI.png) 
 
 
 So **knitr** is ready with GitHub with a single markdown file.
