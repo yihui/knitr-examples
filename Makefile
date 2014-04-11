@@ -11,7 +11,7 @@ pandoc:
 deps:
 	Rscript -e "for (i in c('ggplot2', 'mapproj', 'Hmisc', 'xtable', 'gridExtra', 'Rcpp', 'RcppArmadillo', 'diagram'))" \
 	-e "if (!require(i, character.only=TRUE)) install.packages(i, repos='http://cran.rstudio.org')"
-	Rscript -e "for (i in c('rgl', 'devtools'))" -e "install.packages(i, repos='http://cran.rstudio.org')" \
+	Rscript -e "options(repos=c(CRAN='http://cran.rstudio.org')); for (i in c('rgl', 'devtools')) install.packages(i)" \
 					-e "devtools::install_github('hadley/ggplot2', ref='f15fb6fb545e')"
 	Rscript -e "install.packages('tikzDevice', repos=c('http://rforge.net', 'http://cran.rstudio.org'))"
 
