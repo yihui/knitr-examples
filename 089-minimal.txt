@@ -83,7 +83,6 @@ non-numeric argument to binary operator
 ====
 
 
-
 And you know the value of pi is 3.1416. Let's try some graphics too.
 
 
@@ -94,6 +93,5 @@ plot(cars, pch = 19)
 ----
 .A wonderful plot.
 image::figure/089-minimal-cool-plot.png[A wonderful plot.,align=default]
-
 
 Ready to get started?

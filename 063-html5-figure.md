@@ -10,7 +10,6 @@ knit_hooks$set(plot = function(x, options) {
 })
 ```
 
-
 Test:
 
 
@@ -19,6 +18,5 @@ plot(rnorm(100))
 ```
 
 <figure><img src="http://animation.r-forge.r-project.org/knitr-ex/figure/063-html5-figure-test-plot.png"><figcaption>Some random numbers.</figcaption></figure>
-
 
 This is a very simple-minded `plot` hook; you should take a look at [knitr's default definition](https://github.com/yihui/knitr/blob/master/R/hooks-md.R) if you want to improve this hook function.

@@ -11,7 +11,6 @@ knit_hooks$set(wrapper = function(before, options, envir) {
 })
 ```
 
-
 Can I write the three backticks in the output?
 
     ```{r test_label, wrapper=TRUE, eval=FALSE}
@@ -23,7 +22,6 @@ plot(1)
 
     ```
 
-
 By default the chunk wrapper will not show up, e.g.
 
 
@@ -31,4 +29,3 @@ By default the chunk wrapper will not show up, e.g.
 rnorm(100)
 y ~ x
 ```
-

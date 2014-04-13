@@ -87,7 +87,6 @@
 \end{kframe}
 \end{knitrout}
 
-
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
@@ -118,7 +117,6 @@
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
-
 
 正文中可以出現中文代碼嗎？
 

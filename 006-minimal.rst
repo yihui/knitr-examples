@@ -18,7 +18,6 @@ and the output filename will be ``rst``. Here is how we write R code in
 
 
 
-
 More examples
 -------------
 
@@ -66,7 +65,6 @@ dots, e.g.
 
 
 
-
 Here is a plot:
 
 
@@ -82,7 +80,6 @@ Here is a plot:
     :width: 360px
 
     A ggplot2 example
-
 
 Inline R code is like this: the value of pi is 3.1416.
 

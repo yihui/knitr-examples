@@ -10,4 +10,3 @@ p x.split(' ')
 ## ["hello,", "ruby", "world!"]
 ```
 
-

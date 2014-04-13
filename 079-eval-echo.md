@@ -13,7 +13,6 @@ knit_hooks$set(source = function(x, options) {
 })
 ```
 
-
 The trick is to mask the source code in special comments (e.g. `#'#'`), and remove the comment markers later. Of course, you have to guarantee these markers are unique.
 
 
@@ -25,7 +24,6 @@ x = 2
 ```
 ## [1] 0.05399
 ```
-
 
 We used `echo=-3` to remove the 3rd expression from the source code, and `gsub()` to strip `#'#'` off.
 

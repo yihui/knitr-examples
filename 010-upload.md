@@ -10,7 +10,6 @@ opts_knit$set(upload.fun = imgur_upload, base.url = NULL)  # upload all images t
 opts_chunk$set(fig.width = 5, fig.height = 5, cache = TRUE)
 ```
 
-
 Now we write some code chunks in this markdown file:
 
 
@@ -33,7 +32,6 @@ rnorm(5)
 ## [1] -0.56048 -0.23018  1.55871  0.07051  0.12929
 ```
 
-
 We can also produce plots which are uploaded to imgur.com:
 
 
@@ -51,6 +49,5 @@ axis(1, seq(ncol(mtcars)), colnames(mtcars))
 ```
 
 ![plot of chunk md-cars](http://i.imgur.com/7TPHUbI.png) 
-
 
 So **knitr** is ready with GitHub with a single markdown file.

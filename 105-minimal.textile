@@ -19,7 +19,6 @@ p(knitr_end).
 
 
 
-
 Some other examples:
 
 bc(knitr r source#test-b).. x = cumsum(rnorm(100))
@@ -58,7 +57,6 @@ p(knitr_end).
 bc(knitr r error#test-b).. ## Error: non-numeric argument to binary operator
 
 p(knitr_end). 
-
 
 
 

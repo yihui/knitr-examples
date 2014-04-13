@@ -36,7 +36,6 @@ dnorm(0)
 ## [1] 0.3989
 ```
 
-
 ## Do not evaluate
 
 
@@ -52,7 +51,6 @@ for (i in 1:10) {
 
 dnorm(0)
 ```
-
 
 ## Add prompts
 
@@ -88,7 +86,6 @@ dnorm(0)
 ## [1] 0.3989
 ```
 
-
 ## No evaluate or tidy
 
 
@@ -103,7 +100,6 @@ if(i>=10)print(i)
 
 dnorm(0)
 ```
-
 
 ## Do not tidy
 
@@ -138,7 +134,6 @@ dnorm(0)
 ## [1] 0.3989
 ```
 
-
 ## Do not echo
 
 
@@ -153,7 +148,6 @@ dnorm(0)
 ```
 ## [1] 0.3989
 ```
-
 
 ## Do not comment out results
 
@@ -189,7 +183,6 @@ dnorm(0)
 [1] 0.3989
 ```
 
-
 ## Do not echo the 2nd expression
 
 
@@ -216,7 +209,6 @@ dnorm(0)
 ## [1] 0.3989
 ```
 
-
 ## Do not evaluate, echo the 2nd expression
 
 
@@ -227,7 +219,6 @@ for (i in 1:10) {
         print(i)
 }
 ```
-
 
 ## Only evaluate the first two expressions
 
@@ -258,7 +249,6 @@ for (i in 1:10) {
 ## 
 ## dnorm(0)
 ```
-
 
 ## Add prompts but no tidy
 
@@ -293,14 +283,12 @@ for (i in 1:10) {
 ## [1] 0.3989
 ```
 
-
 ## Change prompts
 
 
 ```r
 options(prompt = "R> ", continue = "+  ")
 ```
-
 
 
 ```r
@@ -334,7 +322,6 @@ R> dnorm(0)
 ## [1] 0.3989
 ```
 
-
 ## Backslashes
 
 
@@ -358,7 +345,6 @@ cat("a\tb\nc")
 ## c
 ```
 
-
 ## Other formatR options
 
 We can set **formatR** options globally:
@@ -367,7 +353,6 @@ We can set **formatR** options globally:
 ```r
 options(keep.blank.line = FALSE)
 ```
-
 
 
 ```r
@@ -381,7 +366,6 @@ for (i in 1:10) {
 dnorm(0)
 ```
 
-
 Or locally in one chunk via `tidy.opts`. Do not keep comments:
 
 
@@ -393,7 +377,6 @@ for (i in 1:10) {
 }
 dnorm(0)
 ```
-
 
 Move left braces to the next line:
 
@@ -411,7 +394,6 @@ for (i in 1:10)
 ## [1] 10
 ```
 
-
 Indent by 2 spaces:
 
 
@@ -426,11 +408,9 @@ for (i in 1:10) {
 dnorm(0)
 ```
 
-
 See <http://yihui.name/formatR> for details.
 
 ## Empty chunks
-
 
 
 
@@ -451,7 +431,6 @@ Do not include messages:
 message("helloooo!")
 ```
 
-
 No warnings:
 
 
@@ -466,7 +445,6 @@ No warnings:
 ```r
 warning("no no no")
 ```
-
 
 Select warnings using numeric indices:
 
@@ -487,7 +465,6 @@ warning("no no no")
 ## Warning: no no no
 ```
 
-
 Invalid indices will select nothing:
 
 
@@ -502,7 +479,6 @@ Invalid indices will select nothing:
 ```r
 warning("no no no")
 ```
-
 
 ## The results option
 
@@ -519,7 +495,6 @@ for (i in 1:10) {
 # two blank lines below
 dnorm(0)
 ```
-
 
 Flush all results to the end of a chunk:
 
@@ -547,7 +522,6 @@ dnorm(0)
 ## [1] 0.3989
 ```
 
-
 Output as is:
 
 
@@ -556,4 +530,3 @@ cat("_Markdown_,", "oh yeah, **Markdown**")
 ```
 
 _Markdown_, oh yeah, **Markdown**
-

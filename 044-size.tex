@@ -49,7 +49,6 @@
 
 \usepackage{alltt}
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
-
 \begin{document}
 
 The size option controls the font size of chunks. This is the default size:
@@ -71,7 +70,6 @@ The size option controls the font size of chunks. This is the default size:
 \end{kframe}
 \end{knitrout}
 
-
 This is scriptsize:
 
 \begin{knitrout}\scriptsize
@@ -91,7 +89,6 @@ This is scriptsize:
 \end{kframe}
 \end{knitrout}
 
-
 The size does not work when results = 'asis':
 
 \begin{kframe}
@@ -100,9 +97,7 @@ The size does not work when results = 'asis':
 \end{alltt}
 \end{kframe}a b c d e f g h i j k l m n o p q r s t u v w x y z
 
-
 But you can use a hook to add the size environment in this case:
-
 
 
 
@@ -110,7 +105,6 @@ But you can use a hook to add the size environment in this case:
 \hlkwd{cat}\hlstd{(letters,} \hlkwc{sep} \hlstd{=} \hlstr{" "}\hlstd{)}
 \end{alltt}
 \end{kframe}a b c d e f g h i j k l m n o p q r s t u v w x y z\end{scriptsize}
-
 
 Move on!
 

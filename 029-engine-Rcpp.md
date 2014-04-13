@@ -2,7 +2,6 @@
 
 
 
-
 When the chunk option `engine='Rcpp'` is specified, the code chunk will be compiled through **Rcpp** via `sourceCpp()`:
 
 Test for `fibonacci`:
@@ -17,7 +16,6 @@ int fibonacci(const int x) {
     return (fibonacci(x - 1)) + fibonacci(x - 2);
 }
 ```
-
 
 Because `fibonacci` was defined with the `Rcpp::export` attribute it can now be called as a normal R function:
 
@@ -37,7 +35,6 @@ fibonacci(20L)
 ```
 ## [1] 6765
 ```
-
 
 You can define multiple functions (or helper functions that are not exported) within Rcpp code chunks:
 
@@ -72,7 +69,6 @@ List lapplyCpp(List input, Function f) {
 }
 ```
 
-
 If you want to link to code defined in another package (e.g **RcppArmadillo**) then you need to provide an `Rcpp::depends` attribute. For example:
 
 
@@ -105,7 +101,6 @@ List fastLm(NumericVector yr, NumericMatrix Xr) {
 }
 ```
 
-
 A test:
 
 
@@ -124,6 +119,5 @@ fastLm(rnorm(10), matrix(1:20, ncol = 2))
 ## [1,] 0.16059
 ## [2,] 0.06321
 ```
-
 
 Finally, you can pass additional arguments to `sourceCpp()` via the chunk option `engine.opts`. For example, we can specify `engine.opts=list(showOutput=TRUE, rebuild=FALSE)` to show the output of `R CMD SHLIB`.

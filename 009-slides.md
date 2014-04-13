@@ -4,7 +4,6 @@
 
 
 
-
 # Why
 
 - after you finished typing `\documentclass{beamer}` and `\title{}`, I have finished my first slide with markdown
@@ -40,7 +39,6 @@ cor(cars)
 ## dist  0.8069 1.0000
 ```
 
-
 # Graphics too
 
 
@@ -50,7 +48,6 @@ qplot(speed, dist, data = cars) + geom_smooth()
 ```
 
 ![A scatterplot of `cars`](http://animation.r-forge.r-project.org/knitr-ex/figure/009-slides-graphics.png) 
-
 
 # How
 
@@ -102,7 +99,6 @@ print(sessionInfo(), locale = FALSE)
 ## [16] reshape2_1.2.2     scales_0.2.3       stringr_0.6.2     
 ## [19] tools_3.0.3
 ```
-
 
 # Misc issues
 

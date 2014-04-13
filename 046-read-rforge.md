@@ -17,14 +17,12 @@ head(demo.sub)
 ## [6] "{"
 ```
 
-
 Once we have the source code, we can insert it into **knitr** with `read_chunk()`:
 
 
 ```r
 read_chunk(lines = demo.sub, labels = "rgl-sub")
 ```
-
 
 That means we assigned the code to a chunk named `rgl-sub`, which appears below:
 
@@ -62,7 +60,6 @@ open3d()
 rgl.demo.subdivision()
 ```
 
-
 You can actually run the code and capture the rgl plot, but before that we need to load the package and set a rgl hook:
 
 
@@ -70,7 +67,6 @@ You can actually run the code and capture the rgl plot, but before that we need 
 library(rgl)
 knit_hooks$set(rgl = hook_rgl)
 ```
-
 
 Now you can see the 3D plot:
 
@@ -81,4 +77,3 @@ rgl.demo.subdivision()
 ```
 
 ![plot of chunk rgl-sub](http://animation.r-forge.r-project.org/knitr-ex/figure/046-read-rforge-rgl-sub.png) 
-

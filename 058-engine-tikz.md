@@ -34,7 +34,6 @@ An example of the tikz-engine from <https://raw.github.com/sdiehl/cats/master/mi
 
 ![Funky tikz](http://animation.r-forge.r-project.org/knitr-ex/figure/058-engine-tikz-tikz-ex.png) 
 
-
 ## Tips
 
 To develop the tikz-code, you could use `qtikz` or `ktikz`.

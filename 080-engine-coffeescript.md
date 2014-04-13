@@ -1,6 +1,5 @@
 # Using CoffeeScript with knitr
 
-
 You need to install `coffee`, the command-line version of [CoffeeScript](http://coffeescript.org/#installation).
 
 CoffeeScript compiles javascript:
@@ -20,7 +19,6 @@ CoffeeScript compiles javascript:
 // }).call(this);
 ```
 
-
 To use CoffeeScript in an HTML document, use `results="asis"`, `echo=FALSE`, and wrap the chunk in `<script>` tags.
 
 
@@ -29,13 +27,11 @@ To use CoffeeScript in an HTML document, use `results="asis"`, `echo=FALSE`, and
 @cube   = (x) -> square(x) * x
 ```
 
-
 ```coffee
 p = document.createElement("p");
 p.appendChild(document.createTextNode("The cube of 3 is " + cube(3)))
 document.body.appendChild(p)
 ```
-
 
 <script type="text/javascript">
 (function() {
@@ -50,7 +46,6 @@ document.body.appendChild(p)
 
 }).call(this);
 
-
 (function() {
   var p;
 
@@ -61,5 +56,4 @@ document.body.appendChild(p)
   document.body.appendChild(p);
 
 }).call(this);
-
 </script>

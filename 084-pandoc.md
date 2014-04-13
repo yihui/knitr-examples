@@ -69,7 +69,6 @@ summary(fit)
 ## F-statistic: 89.6 on 1 and 48 DF,  p-value: 1.49e-12
 ```
 
-
 The code will be highlighted in all output formats.
 
 # And some pictures
@@ -81,7 +80,6 @@ plot(fit)
 ```
 
 ![Regression diagnostics](http://animation.r-forge.r-project.org/knitr-ex/figure/084-pandoc-lm-vis.png) 
-
 
 # A little bit math
 

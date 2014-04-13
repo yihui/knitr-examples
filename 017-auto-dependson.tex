@@ -49,7 +49,6 @@
 
 \usepackage{alltt}
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
-
 \begin{document}
 
 \begin{knitrout}
@@ -61,7 +60,6 @@
 \end{kframe}
 \end{knitrout}
 
-
 We create a new global object \texttt{x} in the first chunk (a):
 
 \begin{knitrout}
@@ -71,7 +69,6 @@ We create a new global object \texttt{x} in the first chunk (a):
 \end{alltt}
 \end{kframe}
 \end{knitrout}
-
 
 Then we print it in the second chunk (b). Because we have set the global chunk option
 \texttt{autodep = TRUE} in the first chunk, \textbf{knitr} should be able to
@@ -87,7 +84,6 @@ figure out that chunk b depends on chunk a.
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
-
 
 You can verify it by changing chunk a to see if b also changes.
 

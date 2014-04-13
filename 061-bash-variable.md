@@ -7,7 +7,6 @@ Use `Sys.setenv()`:
 Sys.setenv(EXAMPLES = "example/path")
 ```
 
-
 Now we write a `bash` code chunk:
 
 
@@ -18,6 +17,5 @@ echo $EXAMPLES
 ```
 ## example/path
 ```
-
 
 It works.

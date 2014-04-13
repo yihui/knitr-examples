@@ -20,7 +20,6 @@ Sys.which("sh")
 ## "/bin/sh"
 ```
 
-
 Does `bash` work?
 
 
@@ -37,7 +36,6 @@ awk 'END{print NR;}' 027-engine-bash.Rmd
 ## 23
 ```
 
-
 How about `sh`?
 
 
@@ -47,30 +45,29 @@ ls | grep engine | xargs wc
 ```
 
 ```
-##   108   208  1423 023-engine-python.md
+##    98   208  1413 023-engine-python.md
 ##    65   165  1292 023-engine-python.Rmd
-##    17    38   162 024-engine-awk.md
+##    16    38   161 024-engine-awk.md
 ##    11    41   252 024-engine-awk.Rmd
-##    13    21   128 025-engine-ruby.md
+##    12    21   127 025-engine-ruby.md
 ##     7    17   109 025-engine-ruby.Rmd
-##    14    37   235 026-engine-haskell.md
+##    13    37   234 026-engine-haskell.md
 ##     8    37   267 026-engine-haskell.Rmd
-##    76   204  1457 027-engine-bash.md
+##    73   204  1454 027-engine-bash.md
 ##    23    58   352 027-engine-bash.Rmd
-##    27    35   222 028-engine-perl.md
+##    25    35   220 028-engine-perl.md
 ##    14    26   172 028-engine-perl.Rmd
-##   129   354  2645 029-engine-Rcpp.md
+##   123   354  2639 029-engine-Rcpp.md
 ##    97   345  2685 029-engine-Rcpp.Rmd
-##    23    56   528 057-engine-dot.md
+##    22    56   527 057-engine-dot.md
 ##    18    63   486 057-engine-dot.Rmd
-##    40   183  1371 058-engine-tikz.md
+##    39   183  1370 058-engine-tikz.md
 ##    35   193  1346 058-engine-tikz.Rmd
-##    15    67   426 060-engine-sas.md
+##    14    67   425 060-engine-sas.md
 ##    13    72   538 060-engine-sas.Rmd
-##    65   136  1044 080-engine-coffeescript.md
+##    59   136  1038 080-engine-coffeescript.md
 ##    31   105   937 080-engine-coffeescript.Rmd
-##    45    60   336 090-engine-c.md
+##    42    60   333 090-engine-c.md
 ##    21    41   256 090-engine-c.Rmd
-##   915  2562 18669 total
+##   879  2562 18633 total
 ```
-

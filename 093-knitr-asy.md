@@ -2,7 +2,6 @@
 
 
 
-
 ## Description
 
 The engine runs the code using the `asy` command line program. The result can be `svg`, `png` or `pdf`. `svg` renders better within html. For LaTeX `pdf`/`png` can be used.
@@ -31,7 +30,6 @@ draw( (0,0) .. (u,u) .. (u,0) -- (0,0) );
 ![Asymptote Example](http://animation.r-forge.r-project.org/knitr-ex/figure/093-knitr-asy-asy-simple-ex.svg) 
 
 
-
 ## 3D example
 
 
@@ -56,7 +54,6 @@ draw(s,render(merge=true));
 ![Asymptote 3D Example](http://animation.r-forge.r-project.org/knitr-ex/figure/093-knitr-asy-asy-3d-ex.png) 
 
 
-
 ## An example with data from R
 
 In this example, I  generate data in R and then use it for plotting in asymptote. In addition I use asymptote to find the intersection between the R path and a line. At that intersection I add a latex label.
@@ -70,7 +67,6 @@ y = sin(x)
 write.table(data.frame(x, y), file = "asy.csv", col.names = FALSE, row.names = FALSE, 
     sep = ",")
 ```
-
 
 
 ```cpp
@@ -99,7 +95,5 @@ yaxis("$y$",LeftRight,RightTicks);
 
 
 ![Asymptote Example](http://animation.r-forge.r-project.org/knitr-ex/figure/093-knitr-asy-asy-ex.svg) 
-
-
 
 

@@ -17,7 +17,6 @@ knit_hooks$set(foo1 = function(before, options, envir) {
 })
 ```
 
-
 Test the `foo1` hook:
 
 _I appear before a chunk!_
@@ -34,7 +33,6 @@ _I appear before a chunk!_
 
 _I am after a chunk..._
 
-
 ## The `options` argument
 
 It contains all the chunk options (include global options) for the current chunk.
@@ -50,7 +48,6 @@ knit_hooks$set(foo2 = function(before, options, envir) {
     }
 })
 ```
-
 
 Test the `foo2` hook:
 
@@ -73,7 +70,6 @@ Some chunk options in the above chunk are:
      $ bar2   : chr "asdf"
      $ bar3   : num 3.14
 
-
 ## The `envir` argument
 
 It is the environment of the current chunk.
@@ -88,7 +84,6 @@ knit_hooks$set(foo3 = function(before, options, envir) {
 })
 ```
 
-
 Test the `foo3` hook:
 
 
@@ -98,7 +93,6 @@ y3 = rnorm(10)
 ```
 
 Objects available in the above chunk: `x2`, `y3`
-
 
 Another example:
 
@@ -111,7 +105,6 @@ knit_hooks$set(foo4 = function(before, options, envir) {
 })
 ```
 
-
 Test `foo4`:
 
 
@@ -123,7 +116,6 @@ pi
 ## [1] 3.142
 ```
 
-
 This above chunk is quiet because `z5` does not exist yet.
 
 
@@ -132,4 +124,3 @@ z5 = 2 * pi
 ```
 
 **Ha! I see z5 = 6.283!**
-

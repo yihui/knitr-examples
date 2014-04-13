@@ -20,14 +20,12 @@ strsplit("hello world", " ")
 ## [1] "hello" "world"
 ```
 
-
 A second chunk.
 
 
 ```r
 if (FALSE) plot(1:10)
 ```
-
 
 When we do not evaluate a chunk, the code from `purl()` will be commented out.
 
@@ -39,7 +37,6 @@ if (1 == 1) {
 }
 ```
 
-
 If one chunk should not be included in the results from `purl()`, just use the chunk option `purl = FALSE`:
 
 
@@ -47,6 +44,5 @@ If one chunk should not be included in the results from `purl()`, just use the c
 # we do not like significance starts!
 options(stringsAsFactors = FALSE, show.signif.stars = FALSE)
 ```
-
 
 That is it.

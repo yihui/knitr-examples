@@ -7,9 +7,7 @@ This is what you normally see in the output:
 x = "this is a long long\nstring with several\nlines"
 ```
 
-
 Modify the `source` hook:
-
 
 
 
@@ -21,4 +19,3 @@ x = "this is a long long
 string with several
 lines"
 ```
-

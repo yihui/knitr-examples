@@ -12,7 +12,6 @@ a
 ## [1] "## \"stx2A; shiga-like toxin II A subunit encoded by bacteriophage BP-933W; K11006 shiga toxin subunit A\" "
 ```
 
-
 Perhaps you see it is wrapped in RStudio, but that is because `<pre>` has the CSS attribute `white-space: pre-wrap;`. For LaTeX output, the output is in the `verbatim` environment by default, which will not wrap long lines (everything is shown as is).
 
 You can redefine the output hook function so that you can instruct some chunks to hard-wrap their output lines, e.g.
@@ -33,7 +32,6 @@ knit_hooks$set(output = function(x, options) {
 })
 ```
 
-
 Now see the output of `a` (note `linewidth` is not a default **knitr** option):
 
 
@@ -45,4 +43,3 @@ a
 ## [1] "## \"stx2A; shiga-like toxin II A subunit encoded
 by bacteriophage BP-933W; K11006 shiga toxin subunit A\" "
 ```
-

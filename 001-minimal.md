@@ -32,7 +32,6 @@ A _paragraph_ here. A code chunk below (remember the three backticks):
 ## [1] 5.551e-17
 ```
 
-
 ## graphics
 
 It is easy.
@@ -49,7 +48,6 @@ hist(rnorm(1000))
 ```
 
 ![plot of chunk unnamed-chunk-2](http://animation.r-forge.r-project.org/knitr-ex/figure/001-minimal-unnamed-chunk-22.png) 
-
 
 ## inline code
 
@@ -72,7 +70,6 @@ You can write code within other elements, e.g. a list
     ```
     ## [1] "hello"    "indented" "world"
     ```
-
 2. bar is better
 
 ## conclusion

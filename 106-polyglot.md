@@ -9,7 +9,6 @@ where <- Sys.which(toTest)
 exists <- nchar(where) > 0  # TODO: Only run chunk if runtime exists
 ```
 
-
 ## Engine runtime paths
 
 
@@ -23,7 +22,6 @@ for (n in names(where)) {
 }
 ```
 
-
 ## Input Data
 
 Pass the string to transform to engine subprocess via environment variable.
@@ -32,7 +30,6 @@ Pass the string to transform to engine subprocess via environment variable.
 ```r
 Sys.setenv(SOMETHING = "something")
 ```
-
 
 ## Compute Something in R
 
@@ -46,7 +43,6 @@ cat(paste("'", something, "' is now '", somethingelse, "'", sep = ""))
 ```
 R> 'something' is now 'something + R'
 ```
-
 
 ## Compute Something in Scala
 
@@ -63,7 +59,6 @@ println("'" + something + "' is now '" + somethingelse + "'")
 Scala> 'something' is now 'something + Scala'
 ```
 
-
 ## Compute Something in Python
 
 
@@ -78,7 +73,6 @@ print("'" + something + "' is now '" + somethingelse + "'")
 Python> 'something' is now 'something + Python'
 ```
 
-
 ## Compute Something in Bash
 
 
@@ -91,4 +85,3 @@ echo "'$something' is now '$somethingelse'"
 ```
 Bash> 'something' is now 'something + Bash'
 ```
-

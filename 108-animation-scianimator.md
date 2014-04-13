@@ -9,7 +9,6 @@ library(knitr)
 opts_knit$set(animation.fun = hook_scianimator)
 ```
 
-
 You have to embed the jQuery and SciAnimator libraries in the HTML header
 (between `<head>` and `</head>`), even though some browsers can tolerate it
 if you insert a style sheet after `<body>`.
@@ -54,6 +53,5 @@ for (i in 1:20) {
     });
   })(jQuery);
 </script>
-
 
 There are many other examples at <http://vis.supstat.com>.

@@ -22,8 +22,6 @@ This first chunk creates the extra lines for the latex header. We use the
 
 
 
-
-
 We can then do some simple R math.
 
 
@@ -34,7 +32,6 @@ We can then do some simple R math.
 ```
 ## [1] 4
 ```
-
 
 
 # About this document
@@ -48,4 +45,3 @@ pandoc("095-pandoc-header", format = "latex")
 # or two commands in one
 pandoc(knit("095-pandoc-header.Rmd"), format = "latex")
 ```
-

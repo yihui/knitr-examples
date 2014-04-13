@@ -19,14 +19,12 @@ knit_hooks$set(output = function(x, options) {
 })
 ```
 
-
 And we do not want the output to be more than 4 lines, so we set this option globally:
 
 
 ```r
 opts_chunk$set(out.lines = 4)
 ```
-
 
 Test the new output hook:
 
@@ -38,7 +36,6 @@ Test the new output hook:
 ```
 ## [1] 2
 ```
-
 
 The output of this chunk is truncated:
 
@@ -54,4 +51,3 @@ The output of this chunk is truncated:
 ##  [52]  52  53  54  55  56  57  58  59  60  61  62  63  64  65  66  67  68
 ....
 ```
-

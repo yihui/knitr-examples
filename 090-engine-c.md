@@ -11,7 +11,6 @@ Sys.which("gcc")
 ## "/usr/bin/gcc"
 ```
 
-
 Does `engine = 'c'` work?
 
 
@@ -20,7 +19,6 @@ void square(double *x) {
   *x = *x * *x;
 }
 ```
-
 
 Test the `square()` function:
 
@@ -42,4 +40,3 @@ Test the `square()` function:
 ## [[1]]
 ## [1] 15129
 ```
-

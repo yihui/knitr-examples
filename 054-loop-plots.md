@@ -29,4 +29,3 @@ this is plot  4
 this is plot  5 
 
 ![](http://animation.r-forge.r-project.org/knitr-ex/figure/054-loop-plots-loop5.png) 
-

@@ -9,7 +9,6 @@ We simplify the layout code in the original post and put it in a code chunk name
 theme(legend.text = element_text(size = 12, angle = 45)) + theme(legend.position = "bottom")
 ```
 
-
 Now we can use `<<>>` to reference it.
 
 
@@ -28,7 +27,6 @@ qplot(carat, price, data = diamonds, color = cut) + theme(legend.text = element_
 
 ![plot of chunk test-a](http://animation.r-forge.r-project.org/knitr-ex/figure/083-ggplot2-reference-test-a.png) 
 
-
 Another test:
 
 
@@ -42,4 +40,3 @@ qplot(carat, data = diamonds, fill = cut) + theme(legend.text = element_text(siz
 ```
 
 ![plot of chunk test-b](http://animation.r-forge.r-project.org/knitr-ex/figure/083-ggplot2-reference-test-b.png) 
-
