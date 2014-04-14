@@ -27,5 +27,5 @@ knit_hooks$set(rgl = hook_rgl)
 
 Now you can see the 3D plot:
 
-```{r rgl-sub, rgl=TRUE, fig.height=4, fig.width=4, echo=-(1:4), results='hide', cache=TRUE}
+```{r rgl-sub, rgl=TRUE, fig.height=4, fig.width=4, echo=-(1:4), results='hide', cache=TRUE, warning=FALSE}
 ```
