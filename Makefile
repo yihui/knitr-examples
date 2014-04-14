@@ -13,9 +13,9 @@ deps:
 	-e "if (!require(i, character.only=TRUE)) install.packages(i, repos='http://cran.rstudio.org')"
 	Rscript -e "options(repos=c(CRAN='http://cran.rstudio.org')); for (i in c('devtools')) install.packages(i)" \
 					-e "devtools::install_github('hadley/ggplot2', ref='f15fb6fb545e')"
-	Rscript -e "install.packages('tikzDevice', repos=c('http://rforge.net', 'http://cran.rstudio.org'))"
 
 sysdeps:
+	sudo apt-get install r-cran-plyr r-cran-mapproj r-cran-hmisc r-cran-rcpparmadillo r-cran-tikzdevice
 	sudo apt-get install --no-install-recommends pgf latex-beamer gawk ruby ghc perl highlight optipng coffeescript pandoc asymptote graphviz scala qpdf texinfo texlive-latex-recommended texlive-latex-extra lmodern texlive-fonts-recommended texlive-fonts-extra texlive-extra-utils && \
 	if [ -z "$$(which dvisvgm)" ]; then sudo apt-add-repository -y ppa:martin-gieseking/ppa && sudo apt-get update -o Dir::Etc::sourcelist="sources.list.d/martin-gieseking-ppa-precise.list" -o Dir::Etc::sourceparts="-" -o APT::Get::List-Cleanup="0" && sudo apt-get install dvisvgm; fi
 
