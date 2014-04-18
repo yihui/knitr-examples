@@ -125,16 +125,16 @@
   <p>In the end, let's show off a 3D plot from
   the <strong>rgl</strong> package.</p>
 
-<div class="chunk" id="unnamed-chunk-4"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl std">knit_hooks</span><span class="hl opt">$</span><span class="hl kwd">set</span><span class="hl std">(</span><span class="hl kwc">rgl</span> <span class="hl std">= hook_rgl)</span>  <span class="hl com"># set up the hook first</span>
+<div class="chunk" id="unnamed-chunk-4"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl kwd">library</span><span class="hl std">(rgl)</span>
+<span class="hl std">knit_hooks</span><span class="hl opt">$</span><span class="hl kwd">set</span><span class="hl std">(</span><span class="hl kwc">rgl</span> <span class="hl std">= hook_rgl)</span>  <span class="hl com"># set up the hook first</span>
 </pre></div>
 </div></div>
 
-<div class="chunk" id="fancy-rgl"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl kwa">if</span> <span class="hl std">(</span><span class="hl kwd">require</span><span class="hl std">(</span><span class="hl str">&quot;rgl&quot;</span><span class="hl std">)) {</span>
-    <span class="hl kwd">demo</span><span class="hl std">(</span><span class="hl str">&quot;bivar&quot;</span><span class="hl std">,</span> <span class="hl kwc">package</span> <span class="hl std">=</span> <span class="hl str">&quot;rgl&quot;</span><span class="hl std">,</span> <span class="hl kwc">echo</span> <span class="hl std">=</span> <span class="hl num">FALSE</span><span class="hl std">)</span>
-    <span class="hl kwd">par3d</span><span class="hl std">(</span><span class="hl kwc">zoom</span> <span class="hl std">=</span> <span class="hl num">0.7</span><span class="hl std">)</span>
-<span class="hl std">}</span>
+<div class="chunk" id="fancy-rgl"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl kwd">demo</span><span class="hl std">(</span><span class="hl str">&quot;bivar&quot;</span><span class="hl std">,</span> <span class="hl kwc">package</span> <span class="hl std">=</span> <span class="hl str">&quot;rgl&quot;</span><span class="hl std">,</span> <span class="hl kwc">echo</span> <span class="hl std">=</span> <span class="hl num">FALSE</span><span class="hl std">)</span>
 </pre></div>
 <div class="message"><pre class="knitr r">## Loading required package: MASS
+</pre></div>
+<div class="source"><pre class="knitr r"><span class="hl kwd">par3d</span><span class="hl std">(</span><span class="hl kwc">zoom</span> <span class="hl std">=</span> <span class="hl num">0.7</span><span class="hl std">)</span>
 </pre></div>
 </div><div class="rimage center"><img src="http://animation.r-forge.r-project.org/knitr-ex/figure/003-minimal-fancy-rgl.png" title="plot of chunk fancy-rgl" alt="plot of chunk fancy-rgl" class="plot" /></div></div>
 

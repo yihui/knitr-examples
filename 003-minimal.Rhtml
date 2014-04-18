@@ -47,14 +47,13 @@
   the <strong>rgl</strong> package.</p>
 
 <!--begin.rcode
+    library(rgl)
     knit_hooks$set(rgl = hook_rgl)  # set up the hook first
     end.rcode-->
 
 <!--begin.rcode fancy-rgl, rgl=TRUE, fig.align='center', fig.width=4, fig.height=4, warning=FALSE
-    if (require('rgl')) {
     demo('bivar', package='rgl', echo=FALSE)
     par3d(zoom=.7)
-    }
     end.rcode-->
 
   <p>Well, everything seems to be working. Let's ask R what is the
