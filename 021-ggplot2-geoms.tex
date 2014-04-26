@@ -578,7 +578,8 @@
 \hlcom{# Using precomputed statistics}
 \hlcom{# generate sample data}
 \hlstd{abc} \hlkwb{<-} \hlkwd{adply}\hlstd{(}\hlkwd{matrix}\hlstd{(}\hlkwd{rnorm}\hlstd{(}\hlnum{100}\hlstd{),} \hlkwc{ncol} \hlstd{=} \hlnum{5}\hlstd{),} \hlnum{2}\hlstd{, quantile,} \hlkwd{c}\hlstd{(}\hlnum{0}\hlstd{,} \hlnum{.25}\hlstd{,} \hlnum{.5}\hlstd{,} \hlnum{.75}\hlstd{,} \hlnum{1}\hlstd{))}
-\hlstd{b} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(abc,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= X1,} \hlkwc{ymin} \hlstd{= `0%`,} \hlkwc{lower} \hlstd{= `25%`,} \hlkwc{middle} \hlstd{= `50%`,} \hlkwc{upper} \hlstd{= `75%`,} \hlkwc{ymax} \hlstd{= `100%`))}
+\hlstd{b} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(abc,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= X1,} \hlkwc{ymin} \hlstd{= `0%`,} \hlkwc{lower} \hlstd{= `25%`,}
+   \hlkwc{middle} \hlstd{= `50%`,} \hlkwc{upper} \hlstd{= `75%`,} \hlkwc{ymax} \hlstd{= `100%`))}
 \hlstd{b} \hlopt{+} \hlkwd{geom_boxplot}\hlstd{(}\hlkwc{stat} \hlstd{=} \hlstr{"identity"}\hlstd{)}
 \end{alltt}
 \end{kframe}
@@ -593,6 +594,35 @@
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot23} 
+\begin{kframe}\begin{alltt}
+\hlcom{# Using varwidth}
+\hlstd{p} \hlopt{+} \hlkwd{geom_boxplot}\hlstd{(}\hlkwc{varwidth} \hlstd{=} \hlnum{TRUE}\hlstd{)}
+\end{alltt}
+
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: position\_dodge requires constant width: output may be incorrect}}\end{kframe}
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot24} 
+\begin{kframe}\begin{alltt}
+\hlkwd{qplot}\hlstd{(}\hlkwd{factor}\hlstd{(cyl), mpg,} \hlkwc{data} \hlstd{= mtcars,} \hlkwc{geom} \hlstd{=} \hlstr{"boxplot"}\hlstd{,} \hlkwc{varwidth} \hlstd{=} \hlnum{TRUE}\hlstd{)}
+\end{alltt}
+
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: position\_dodge requires constant width: output may be incorrect}}\end{kframe}
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot25} 
+\begin{kframe}\begin{alltt}
+\hlcom{# Update the defaults for the outliers by changing the defaults for geom_point}
+
+\hlstd{p} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(mtcars,} \hlkwd{aes}\hlstd{(}\hlkwd{factor}\hlstd{(cyl), mpg))}
+\hlstd{p} \hlopt{+} \hlkwd{geom_boxplot}\hlstd{()}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot26} 
+\begin{kframe}\begin{alltt}
+\hlkwd{update_geom_defaults}\hlstd{(}\hlstr{"point"}\hlstd{,} \hlkwd{list}\hlstd{(}\hlkwc{shape} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{colour} \hlstd{=} \hlstr{"red"}\hlstd{,} \hlkwc{size} \hlstd{=} \hlnum{5}\hlstd{))}
+\hlstd{p} \hlopt{+} \hlkwd{geom_boxplot}\hlstd{()}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot27} 
 \begin{kframe}\begin{alltt}
 \hlcom{## End(No test)}
 \end{alltt}
@@ -713,11 +743,9 @@
 \begin{kframe}\begin{alltt}
 \hlcom{# y axis isn't really meaningful, so hide it}
 \hlkwd{ggplot}\hlstd{(mtcars,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= mpg))} \hlopt{+} \hlkwd{geom_dotplot}\hlstd{(}\hlkwc{binwidth} \hlstd{=} \hlnum{1.5}\hlstd{)} \hlopt{+}
-  \hlkwd{scale_y_continuous}\hlstd{(}\hlkwc{name} \hlstd{=} \hlstr{""}\hlstd{,} \hlkwc{breaks} \hlstd{=} \hlnum{NA}\hlstd{)}
+  \hlkwd{scale_y_continuous}\hlstd{(}\hlkwc{name} \hlstd{=} \hlstr{""}\hlstd{,} \hlkwc{breaks} \hlstd{=} \hlkwa{NULL}\hlstd{)}
 \end{alltt}
-
-
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning: breaks = NA is deprecated. Please use breaks = NULL to remove breaks in the scale. (Deprecated; last used in version 0.8.9)}}\end{kframe}
+\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_dotplot6} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Overlap dots vertically}
@@ -792,6 +820,14 @@
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_dotplot16} 
+\begin{kframe}\begin{alltt}
+\hlcom{# Use qplot instead}
+\hlkwd{qplot}\hlstd{(mpg,} \hlkwc{data} \hlstd{= mtcars,} \hlkwc{geom} \hlstd{=} \hlstr{"dotplot"}\hlstd{)}
+\end{alltt}
+
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# stat\_bindot: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.}}\end{kframe}
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_dotplot17} 
 
 \end{knitrout}
 
@@ -830,24 +866,18 @@
 \hlstd{dodge} \hlkwb{<-} \hlkwd{position_dodge}\hlstd{(}\hlkwc{width}\hlstd{=}\hlnum{0.9}\hlstd{)}
 \hlstd{p} \hlopt{+} \hlkwd{geom_bar}\hlstd{(}\hlkwc{position}\hlstd{=dodge)} \hlopt{+} \hlkwd{geom_errorbar}\hlstd{(limits,} \hlkwc{position}\hlstd{=dodge,} \hlkwc{width}\hlstd{=}\hlnum{0.25}\hlstd{)}
 \end{alltt}
-
-
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Mapping a variable to y and also using stat="{}bin"{}.\\\#\#\ \  With stat="{}bin"{}, it will attempt to set the y value to the count of cases in each group.\\\#\#\ \  This can result in unexpected behavior and will not be allowed in a future version of ggplot2.\\\#\#\ \  If you want y to represent counts of cases, use stat="{}bin"{} and don't map a variable to y.\\\#\#\ \  If you want y to represent values in the data, use stat="{}identity"{}.\\\#\#\ \  See ?geom\_bar for examples. (Deprecated; last used in version 0.9.2)}}\end{kframe}
+\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_errorbar2} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(df2,} \hlkwd{aes}\hlstd{(}\hlkwc{fill}\hlstd{=group,} \hlkwc{y}\hlstd{=resp,} \hlkwc{x}\hlstd{=trt))}
 \hlstd{p} \hlopt{+} \hlkwd{geom_bar}\hlstd{(}\hlkwc{position}\hlstd{=dodge)}
 \end{alltt}
-
-
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Mapping a variable to y and also using stat="{}bin"{}.\\\#\#\ \  With stat="{}bin"{}, it will attempt to set the y value to the count of cases in each group.\\\#\#\ \  This can result in unexpected behavior and will not be allowed in a future version of ggplot2.\\\#\#\ \  If you want y to represent counts of cases, use stat="{}bin"{} and don't map a variable to y.\\\#\#\ \  If you want y to represent values in the data, use stat="{}identity"{}.\\\#\#\ \  See ?geom\_bar for examples. (Deprecated; last used in version 0.9.2)}}\end{kframe}
+\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_errorbar3} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_bar}\hlstd{(}\hlkwc{position}\hlstd{=dodge)} \hlopt{+} \hlkwd{geom_errorbar}\hlstd{(limits,} \hlkwc{position}\hlstd{=dodge,} \hlkwc{width}\hlstd{=}\hlnum{0.25}\hlstd{)}
 \end{alltt}
-
-
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Mapping a variable to y and also using stat="{}bin"{}.\\\#\#\ \  With stat="{}bin"{}, it will attempt to set the y value to the count of cases in each group.\\\#\#\ \  This can result in unexpected behavior and will not be allowed in a future version of ggplot2.\\\#\#\ \  If you want y to represent counts of cases, use stat="{}bin"{} and don't map a variable to y.\\\#\#\ \  If you want y to represent values in the data, use stat="{}identity"{}.\\\#\#\ \  See ?geom\_bar for examples. (Deprecated; last used in version 0.9.2)}}\end{kframe}
+\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_errorbar4} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(df,} \hlkwd{aes}\hlstd{(}\hlkwc{colour}\hlstd{=group,} \hlkwc{y}\hlstd{=resp,} \hlkwc{x}\hlstd{=trt))}
@@ -1533,7 +1563,8 @@
 \hlcom{# Generate data: means and standard errors of means for prices}
 \hlcom{# for each type of cut}
 \hlstd{dmod} \hlkwb{<-} \hlkwd{lm}\hlstd{(price} \hlopt{~} \hlstd{cut,} \hlkwc{data}\hlstd{=diamonds)}
-\hlstd{cuts} \hlkwb{<-} \hlkwd{data.frame}\hlstd{(}\hlkwc{cut}\hlstd{=}\hlkwd{unique}\hlstd{(diamonds}\hlopt{$}\hlstd{cut),} \hlkwd{predict}\hlstd{(dmod,} \hlkwd{data.frame}\hlstd{(}\hlkwc{cut} \hlstd{=} \hlkwd{unique}\hlstd{(diamonds}\hlopt{$}\hlstd{cut)),} \hlkwc{se}\hlstd{=}\hlnum{TRUE}\hlstd{)[}\hlkwd{c}\hlstd{(}\hlstr{"fit"}\hlstd{,}\hlstr{"se.fit"}\hlstd{)])}
+\hlstd{cuts} \hlkwb{<-} \hlkwd{data.frame}\hlstd{(}\hlkwc{cut} \hlstd{=} \hlkwd{unique}\hlstd{(diamonds}\hlopt{$}\hlstd{cut),}
+  \hlkwd{predict}\hlstd{(dmod,} \hlkwd{data.frame}\hlstd{(}\hlkwc{cut} \hlstd{=} \hlkwd{unique}\hlstd{(diamonds}\hlopt{$}\hlstd{cut)),} \hlkwc{se}\hlstd{=}\hlnum{TRUE}\hlstd{)[}\hlkwd{c}\hlstd{(}\hlstr{"fit"}\hlstd{,}\hlstr{"se.fit"}\hlstd{)])}
 
 \hlkwd{qplot}\hlstd{(cut, fit,} \hlkwc{data}\hlstd{=cuts)}
 \end{alltt}
@@ -1544,9 +1575,7 @@
 \hlcom{# automatically extended to include 0}
 \hlkwd{qplot}\hlstd{(cut, fit,} \hlkwc{data}\hlstd{=cuts,} \hlkwc{geom}\hlstd{=}\hlstr{"bar"}\hlstd{)}
 \end{alltt}
-
-
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Mapping a variable to y and also using stat="{}bin"{}.\\\#\#\ \  With stat="{}bin"{}, it will attempt to set the y value to the count of cases in each group.\\\#\#\ \  This can result in unexpected behavior and will not be allowed in a future version of ggplot2.\\\#\#\ \  If you want y to represent counts of cases, use stat="{}bin"{} and don't map a variable to y.\\\#\#\ \  If you want y to represent values in the data, use stat="{}identity"{}.\\\#\#\ \  See ?geom\_bar for examples. (Deprecated; last used in version 0.9.2)}}\end{kframe}
+\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_linerange2} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Display estimates and standard errors in various ways}
@@ -1638,12 +1667,20 @@
 \hlstd{crimesm} \hlkwb{<-} \hlkwd{melt}\hlstd{(crimes,} \hlkwc{id} \hlstd{=} \hlnum{1}\hlstd{)}
 \hlkwa{if} \hlstd{(}\hlkwd{require}\hlstd{(maps)) \{}
   \hlstd{states_map} \hlkwb{<-} \hlkwd{map_data}\hlstd{(}\hlstr{"state"}\hlstd{)}
-  \hlkwd{ggplot}\hlstd{(crimes,} \hlkwd{aes}\hlstd{(}\hlkwc{map_id} \hlstd{= state))} \hlopt{+} \hlkwd{geom_map}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{fill} \hlstd{= Murder),} \hlkwc{map} \hlstd{= states_map)} \hlopt{+} \hlkwd{expand_limits}\hlstd{(}\hlkwc{x} \hlstd{= states_map}\hlopt{$}\hlstd{long,} \hlkwc{y} \hlstd{= states_map}\hlopt{$}\hlstd{lat)}
+  \hlkwd{ggplot}\hlstd{(crimes,} \hlkwd{aes}\hlstd{(}\hlkwc{map_id} \hlstd{= state))} \hlopt{+}
+    \hlkwd{geom_map}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{fill} \hlstd{= Murder),} \hlkwc{map} \hlstd{= states_map)} \hlopt{+}
+    \hlkwd{expand_limits}\hlstd{(}\hlkwc{x} \hlstd{= states_map}\hlopt{$}\hlstd{long,} \hlkwc{y} \hlstd{= states_map}\hlopt{$}\hlstd{lat)}
+
   \hlkwd{last_plot}\hlstd{()} \hlopt{+} \hlkwd{coord_map}\hlstd{()}
-  \hlkwd{ggplot}\hlstd{(crimesm,} \hlkwd{aes}\hlstd{(}\hlkwc{map_id} \hlstd{= state))} \hlopt{+} \hlkwd{geom_map}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{fill} \hlstd{= value),} \hlkwc{map} \hlstd{= states_map)} \hlopt{+} \hlkwd{expand_limits}\hlstd{(}\hlkwc{x} \hlstd{= states_map}\hlopt{$}\hlstd{long,} \hlkwc{y} \hlstd{= states_map}\hlopt{$}\hlstd{lat)} \hlopt{+} \hlkwd{facet_wrap}\hlstd{(} \hlopt{~} \hlstd{variable)}
+  \hlkwd{ggplot}\hlstd{(crimesm,} \hlkwd{aes}\hlstd{(}\hlkwc{map_id} \hlstd{= state))} \hlopt{+}
+    \hlkwd{geom_map}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{fill} \hlstd{= value),} \hlkwc{map} \hlstd{= states_map)} \hlopt{+}
+    \hlkwd{expand_limits}\hlstd{(}\hlkwc{x} \hlstd{= states_map}\hlopt{$}\hlstd{long,} \hlkwc{y} \hlstd{= states_map}\hlopt{$}\hlstd{lat)} \hlopt{+}
+    \hlkwd{facet_wrap}\hlstd{(} \hlopt{~} \hlstd{variable)}
 \hlstd{\}}
 \end{alltt}
-\end{kframe}
+
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Loading required package: maps}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_map4} 
 
 \end{knitrout}
@@ -1891,11 +1928,9 @@
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_point7} 
 \begin{kframe}\begin{alltt}
-\hlstd{p} \hlopt{+} \hlkwd{geom_point}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{size} \hlstd{= qsec))} \hlopt{+} \hlkwd{scale_area}\hlstd{()}
+\hlstd{p} \hlopt{+} \hlkwd{geom_point}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{size} \hlstd{= qsec))} \hlopt{+} \hlkwd{scale_size_area}\hlstd{()}
 \end{alltt}
-
-
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# scale\_area is deprecated. Use scale\_size\_area instead.\\\#\#\ \  Note that the behavior of scale\_size\_area is slightly different:\\\#\#\ \  by default it makes the area proportional to the numeric value. (Deprecated; last used in version 0.9.2)}}\end{kframe}
+\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_point8} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_point}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{shape} \hlstd{=} \hlkwd{factor}\hlstd{(cyl)))} \hlopt{+} \hlkwd{scale_shape}\hlstd{(}\hlkwc{solid} \hlstd{=} \hlnum{FALSE}\hlstd{)}
@@ -2136,11 +2171,11 @@
 \end{alltt}
 \begin{verbatim}
 ##        step user.self sys.self elapsed
-## 1 construct     0.004        0   0.004
-## 2     build     0.383        0   0.383
-## 3    render     0.152        0   0.152
-## 4      draw     0.039        0   0.039
-## 5     TOTAL     0.578        0   0.578
+## 1 construct     0.003        0   0.002
+## 2     build     0.299        0   0.300
+## 3    render     0.100        0   0.101
+## 4      draw     0.032        0   0.031
+## 5     TOTAL     0.434        0   0.434
 \end{verbatim}
 \begin{alltt}
 \hlkwd{benchplot}\hlstd{(base} \hlopt{+} \hlkwd{geom_tile}\hlstd{())}
@@ -2149,11 +2184,11 @@
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_raster2} 
 \begin{kframe}\begin{verbatim}
 ##        step user.self sys.self elapsed
-## 1 construct     0.004        0   0.005
-## 2     build     0.404        0   0.403
-## 3    render     0.208        0   0.208
-## 4      draw     0.077        0   0.076
-## 5     TOTAL     0.693        0   0.692
+## 1 construct     0.003        0   0.003
+## 2     build     0.304        0   0.304
+## 3    render     0.099        0   0.099
+## 4      draw     0.064        0   0.064
+## 5     TOTAL     0.470        0   0.470
 \end{verbatim}
 \begin{alltt}
 \hlcom{# justification}
@@ -2334,7 +2369,8 @@
 
 \hlkwd{library}\hlstd{(grid)} \hlcom{# needed for arrow function}
 \hlstd{p} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(seals,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= long,} \hlkwc{y} \hlstd{= lat))}
-\hlstd{(p} \hlkwb{<-} \hlstd{p} \hlopt{+} \hlkwd{geom_segment}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{xend} \hlstd{= long} \hlopt{+} \hlstd{delta_long,} \hlkwc{yend} \hlstd{= lat} \hlopt{+} \hlstd{delta_lat),} \hlkwc{arrow} \hlstd{=} \hlkwd{arrow}\hlstd{(}\hlkwc{length} \hlstd{=} \hlkwd{unit}\hlstd{(}\hlnum{0.1}\hlstd{,}\hlstr{"cm"}\hlstd{))))}
+\hlstd{(p} \hlkwb{<-} \hlstd{p} \hlopt{+} \hlkwd{geom_segment}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{xend} \hlstd{= long} \hlopt{+} \hlstd{delta_long,} \hlkwc{yend} \hlstd{= lat} \hlopt{+} \hlstd{delta_lat),}
+  \hlkwc{arrow} \hlstd{=} \hlkwd{arrow}\hlstd{(}\hlkwc{length} \hlstd{=} \hlkwd{unit}\hlstd{(}\hlnum{0.1}\hlstd{,}\hlstr{"cm"}\hlstd{))))}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_segment1} 
@@ -2384,7 +2420,8 @@
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_segment6} 
 \begin{kframe}\begin{alltt}
-\hlstd{b} \hlopt{+} \hlkwd{geom_segment}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{=} \hlnum{5}\hlstd{,} \hlkwc{y} \hlstd{=} \hlnum{30}\hlstd{,} \hlkwc{xend} \hlstd{=} \hlnum{3.5}\hlstd{,} \hlkwc{yend} \hlstd{=} \hlnum{25}\hlstd{),} \hlkwc{arrow} \hlstd{=} \hlkwd{arrow}\hlstd{(}\hlkwc{length} \hlstd{=} \hlkwd{unit}\hlstd{(}\hlnum{0.5}\hlstd{,} \hlstr{"cm"}\hlstd{)))}
+\hlstd{b} \hlopt{+} \hlkwd{geom_segment}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{=} \hlnum{5}\hlstd{,} \hlkwc{y} \hlstd{=} \hlnum{30}\hlstd{,} \hlkwc{xend} \hlstd{=} \hlnum{3.5}\hlstd{,} \hlkwc{yend} \hlstd{=} \hlnum{25}\hlstd{),}
+   \hlkwc{arrow} \hlstd{=} \hlkwd{arrow}\hlstd{(}\hlkwc{length} \hlstd{=} \hlkwd{unit}\hlstd{(}\hlnum{0.5}\hlstd{,} \hlstr{"cm"}\hlstd{)))}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_segment7} 
@@ -2692,16 +2729,12 @@
 \begin{kframe}\begin{alltt}
 \hlstd{cars} \hlopt{+} \hlkwd{stat_bin}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{fill}\hlstd{=..count..),} \hlkwc{geom}\hlstd{=}\hlstr{"tile"}\hlstd{,} \hlkwc{binwidth}\hlstd{=}\hlnum{3}\hlstd{,} \hlkwc{position}\hlstd{=}\hlstr{"identity"}\hlstd{)}
 \end{alltt}
-
-
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Mapping a variable to y and also using stat="{}bin"{}.\\\#\#\ \  With stat="{}bin"{}, it will attempt to set the y value to the count of cases in each group.\\\#\#\ \  This can result in unexpected behavior and will not be allowed in a future version of ggplot2.\\\#\#\ \  If you want y to represent counts of cases, use stat="{}bin"{} and don't map a variable to y.\\\#\#\ \  If you want y to represent values in the data, use stat="{}identity"{}.\\\#\#\ \  See ?geom\_bar for examples. (Deprecated; last used in version 0.9.2)}}\end{kframe}
+\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_tile10} 
 \begin{kframe}\begin{alltt}
 \hlstd{cars} \hlopt{+} \hlkwd{stat_bin}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{fill}\hlstd{=..density..),} \hlkwc{geom}\hlstd{=}\hlstr{"tile"}\hlstd{,} \hlkwc{binwidth}\hlstd{=}\hlnum{3}\hlstd{,} \hlkwc{position}\hlstd{=}\hlstr{"identity"}\hlstd{)}
 \end{alltt}
-
-
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Mapping a variable to y and also using stat="{}bin"{}.\\\#\#\ \  With stat="{}bin"{}, it will attempt to set the y value to the count of cases in each group.\\\#\#\ \  This can result in unexpected behavior and will not be allowed in a future version of ggplot2.\\\#\#\ \  If you want y to represent counts of cases, use stat="{}bin"{} and don't map a variable to y.\\\#\#\ \  If you want y to represent values in the data, use stat="{}identity"{}.\\\#\#\ \  See ?geom\_bar for examples. (Deprecated; last used in version 0.9.2)}}\end{kframe}
+\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_tile11} 
 \begin{kframe}\begin{alltt}
 \hlstd{cars} \hlopt{+} \hlkwd{stat_density}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{fill}\hlstd{=..density..),} \hlkwc{geom}\hlstd{=}\hlstr{"tile"}\hlstd{,} \hlkwc{position}\hlstd{=}\hlstr{"identity"}\hlstd{)}
@@ -2741,7 +2774,8 @@
 \hlcom{# You can manually set the colour of the tiles using}
 \hlcom{# scale_manual}
 \hlstd{col} \hlkwb{<-} \hlkwd{c}\hlstd{(}\hlstr{"darkblue"}\hlstd{,} \hlstr{"blue"}\hlstd{,} \hlstr{"green"}\hlstd{,} \hlstr{"orange"}\hlstd{,} \hlstr{"red"}\hlstd{)}
-\hlkwd{qplot}\hlstd{(x, y,} \hlkwc{fill}\hlstd{=col[z],} \hlkwc{data}\hlstd{=example,} \hlkwc{geom}\hlstd{=}\hlstr{"tile"}\hlstd{,} \hlkwc{width}\hlstd{=w,} \hlkwc{group}\hlstd{=}\hlnum{1}\hlstd{)} \hlopt{+} \hlkwd{scale_fill_identity}\hlstd{(}\hlkwc{labels}\hlstd{=letters[}\hlnum{1}\hlopt{:}\hlnum{5}\hlstd{],} \hlkwc{breaks}\hlstd{=col)}
+\hlkwd{qplot}\hlstd{(x, y,} \hlkwc{fill}\hlstd{=col[z],} \hlkwc{data}\hlstd{=example,} \hlkwc{geom}\hlstd{=}\hlstr{"tile"}\hlstd{,} \hlkwc{width}\hlstd{=w,} \hlkwc{group}\hlstd{=}\hlnum{1}\hlstd{)} \hlopt{+}
+  \hlkwd{scale_fill_identity}\hlstd{(}\hlkwc{labels}\hlstd{=letters[}\hlnum{1}\hlopt{:}\hlnum{5}\hlstd{],} \hlkwc{breaks}\hlstd{=col)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_tile17} 
