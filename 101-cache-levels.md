@@ -41,7 +41,7 @@ plot(cars)
 
 `cache=2` is similar to `cache=1`, and the only difference is that the plots
 will not be redrawn, in which case you need to make sure you did not delete
-the figure files manually;
+the figure files manually:
 
 
 ```r
