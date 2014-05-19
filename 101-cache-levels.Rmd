@@ -21,7 +21,7 @@ and will be redrawn every time the document is recompiled:
 
 `cache=2` is similar to `cache=1`, and the only difference is that the plots
 will not be redrawn, in which case you need to make sure you did not delete
-the figure files manually;
+the figure files manually:
 
 ```{r test-cache-c, cache=2, ref.label='test-cache-a'}
 ```
