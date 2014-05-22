@@ -15,8 +15,8 @@ Does **knitr** work with Python? Use the chunk option `engine='python'`:
 
 ```python
 x = 'hello, python world!'
-print x
-print x.split(' ')
+print(x)
+print(x.split(' '))
 ```
 
 ```
@@ -35,8 +35,8 @@ You can use some chunk options like `eval`, `echo` and `results`. For example, `
 
 ```python
 x = 'hello, python world!'
-print x
-print x.split(' ')
+print(x)
+print(x.split(' '))
 ```
 
 or `echo=FALSE` (hide source code):
@@ -52,8 +52,8 @@ or `results='hide'`:
 
 ```python
 x = 'hello, python world!'
-print x
-print x.split(' ')
+print(x)
+print(x.split(' '))
 ```
 
 or `results='asis'`:
@@ -73,7 +73,7 @@ You can also cache the computation:
 import time
 # pretend this is a time-consuming task...
 time.sleep(10)
-print 1+1
+print(1+1)
 ```
 
 ```
@@ -91,8 +91,8 @@ Now see how the output is changed:
 
 
     x = 'hello, python world!'
-    print x
-    print x.split(' ')
+    print(x)
+    print(x.split(' '))
 
     ## hello, python world!
     ## ['hello,', 'python', 'world!']
