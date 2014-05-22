@@ -45,8 +45,8 @@ ls | grep engine | xargs wc
 ```
 
 ```
-##    98   208  1413 023-engine-python.md
-##    65   165  1292 023-engine-python.Rmd
+##    98   199  1422 023-engine-python.md
+##    65   162  1295 023-engine-python.Rmd
 ##    16    38   161 024-engine-awk.md
 ##    11    41   252 024-engine-awk.Rmd
 ##    12    21   127 025-engine-ruby.md
@@ -69,5 +69,5 @@ ls | grep engine | xargs wc
 ##    31   105   937 080-engine-coffeescript.Rmd
 ##    42    60   333 090-engine-c.md
 ##    21    41   256 090-engine-c.Rmd
-##   879  2562 18633 total
+##   879  2550 18645 total
 ```
