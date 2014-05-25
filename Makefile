@@ -12,8 +12,6 @@ deps:
 	Rscript -e "for (i in c('ggplot2', 'mapproj', 'Hmisc', 'xtable', 'gridExtra', 'Rcpp', 'RcppArmadillo', 'diagram'))" \
 	-e "if (!require(i, character.only=TRUE)) install.packages(i, repos='http://cran.rstudio.org')" \
 	-e "update.packages(.libPaths(), instlib = .libPaths()[1], ask = FALSE, repos = 'http://cran.rstudio.org')"
-	Rscript -e "options(repos=c(CRAN='http://cran.rstudio.org')); for (i in c('devtools')) install.packages(i)" \
-					-e "devtools::install_github('hadley/ggplot2@ggplot2-1.0.0-rc')"
 
 sysdeps:
 	sudo apt-get install r-cran-plyr r-cran-mapproj r-cran-hmisc r-cran-rcpparmadillo r-cran-tikzdevice
