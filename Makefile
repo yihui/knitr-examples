@@ -26,7 +26,7 @@ mydeps1:
 
 # and remove them after I compile some examples
 mydeps2:
-	sudo apt-get remove ghc graphviz coffeescript asymptote scala
+	sudo apt-get purge ghc graphviz coffeescript asymptote scala
 	sudo apt-get autoremove
 
 xvfb-%:
