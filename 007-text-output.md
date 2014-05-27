@@ -283,6 +283,21 @@ for (i in 1:10) {
 ## [1] 0.3989
 ```
 
+## Prompts, no evaluate or tidy
+
+
+```r
+> 1+1
+> for (i in 1:10) {
++ # nothing before 10
++ if(i>=10)print(i)
++ }
+> # two blank lines below
+> 
+> 
+> dnorm(0)
+```
+
 ## Change prompts
 
 

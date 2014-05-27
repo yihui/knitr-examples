@@ -66,6 +66,11 @@ dnorm(0)
 ```{r demo, tidy=FALSE, prompt=TRUE}
 ```
 
+## Prompts, no evaluate or tidy
+
+```{r demo, eval=FALSE, tidy=FALSE, prompt=TRUE}
+```
+
 ## Change prompts
 
 ```{r}
