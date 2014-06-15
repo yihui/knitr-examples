@@ -1,5 +1,7 @@
 \documentclass{article}
 \begin{document}
+<<setup, include=FALSE>>=
+if (!require('diagram')) install.packages('diagram', repos = 'http://cran.rstudio.com')
 <<read-demo>>=
 library(diagram)
 read_demo('flowchart', package = 'diagram',
