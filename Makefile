@@ -10,12 +10,12 @@ pandoc:
 
 deps:
 	Rscript -e "for (i in c('ggplot2', 'mapproj', 'Hmisc', 'xtable', 'gridExtra', 'Rcpp', 'RcppArmadillo', 'diagram'))" \
-	-e "if (!require(i, character.only=TRUE)) install.packages(i, repos='http://cran.rstudio.org')" \
+	-e "if (!require(i, character.only=TRUE)) install.packages(i, repos='http://cran.rstudio.org', quiet=TRUE)" \
 	-e "update.packages(.libPaths(), instlib = .libPaths()[1], ask = FALSE, repos = 'http://cran.rstudio.org')"
 
 sysdeps:
-	sudo apt-get install r-cran-plyr r-cran-mapproj r-cran-hmisc r-cran-rcpparmadillo r-cran-tikzdevice
-	sudo apt-get install --no-install-recommends pgf latex-beamer gawk ruby ghc perl highlight optipng coffeescript pandoc asymptote graphviz scala qpdf texinfo texlive-latex-recommended texlive-latex-extra lmodern texlive-fonts-recommended texlive-fonts-extra texlive-extra-utils && \
+	sudo apt-get install -qq r-cran-plyr r-cran-mapproj r-cran-hmisc r-cran-rcpparmadillo r-cran-tikzdevice
+	sudo apt-get install -qq --no-install-recommends pgf latex-beamer gawk ruby ghc perl highlight optipng coffeescript pandoc asymptote graphviz scala qpdf texinfo texlive-latex-recommended texlive-latex-extra lmodern texlive-fonts-recommended texlive-fonts-extra texlive-extra-utils && \
 	if [ -z "$$(which dvisvgm)" ]; then sudo apt-add-repository -y ppa:martin-gieseking/ppa && sudo apt-get update -o Dir::Etc::sourcelist="sources.list.d/martin-gieseking-ppa-precise.list" -o Dir::Etc::sourceparts="-" -o APT::Get::List-Cleanup="0" && sudo apt-get install dvisvgm; fi
 
 # a subset of dependencies that I need to temporarily install under Ubuntu
