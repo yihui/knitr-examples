@@ -1,0 +1,16 @@
+---
+title: "Landscape PDF from rmarkdown"
+author: "Yihui Xie"
+date: "06/23/2014"
+output: pdf_document
+classoption: landscape
+---
+
+When converting R Markdown to PDF, we can use [a lot of variables](http://johnmacfarlane.net/pandoc/README.html) for the LaTeX template. This short example shows the `classoption` variable that takes the value `landscape` to produce PDF in the landscape orientation.
+
+```{r}
+str(cars)
+summary(lm(dist~speed, cars))
+```
+
+Please read the documentation of Pandoc for other possible variables.
