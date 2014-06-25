@@ -9,12 +9,12 @@ head(demo.sub)
 ```
 
 ```
-## [1] "# RGL-demo: subdivision surfaces"  
-## [2] "# author: Daniel Adler"            
-## [3] "# $Id$"                            
-## [4] ""                                  
-## [5] "rgl.demo.subdivision <- function()"
-## [6] "{"
+## [1] ""                                  
+## [2] "# RGL-demo: subdivision surfaces"  
+## [3] "# author: Daniel Adler"            
+## [4] "# $Id$"                            
+## [5] ""                                  
+## [6] "rgl.demo.subdivision <- function()"
 ```
 
 Once we have the source code, we can insert it into **knitr** with `read_chunk()`:
