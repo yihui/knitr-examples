@@ -26,6 +26,6 @@ C  input value
 Now try running it.
 
 ```{r testfort, collapse=TRUE}
-system.time(res <- .Fortran("fexp", n=100000L, x=0))
+res = .Fortran("fexp", n=100000L, x=0)
 str(res)
 ```

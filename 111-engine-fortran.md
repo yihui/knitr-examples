@@ -28,9 +28,7 @@ Now try running it.
 
 
 ```r
-system.time(res <- .Fortran("fexp", n = 100000L, x = 0))
-##    user  system elapsed 
-##   0.008   0.000   0.009
+res = .Fortran("fexp", n = 100000L, x = 0)
 str(res)
 ## List of 2
 ##  $ n: int 100000
