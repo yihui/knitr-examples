@@ -65,11 +65,11 @@ ls | grep engine | xargs wc
 ##    35   193  1346 058-engine-tikz.Rmd
 ##    14    67   425 060-engine-sas.md
 ##    13    72   538 060-engine-sas.Rmd
-##    59   136  1038 080-engine-coffeescript.md
-##    31   105   937 080-engine-coffeescript.Rmd
+##    71   216  1481 080-engine-coffeescript.md
+##    42   191  1447 080-engine-coffeescript.Rmd
 ##    42    60   333 090-engine-c.md
 ##    21    41   256 090-engine-c.Rmd
 ##    36    78   499 111-engine-fortran.md
 ##    31    65   507 111-engine-fortran.Rmd
-##   948  2703 19738 total
+##   971  2869 20691 total
 ```
