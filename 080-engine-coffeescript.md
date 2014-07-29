@@ -1,5 +1,9 @@
 # Using CoffeeScript with knitr
 
+First we set a flag `-p` for the `coffee` engine to print the JavaScript output instead of evaluating the code (`engine.opts = '-p'`):
+
+
+
 You need to install `coffee`, the command-line version of [CoffeeScript](http://coffeescript.org/#installation).
 
 CoffeeScript compiles javascript:
@@ -57,3 +61,11 @@ document.body.appendChild(p)
 
 }).call(this);
 </script>
+
+Of course you can also run the code, if you remove the `-p` flag from the chunk option `engine.opts` (I'm not evaluating this code chunk here because I do not have a proper version of `coffee` on Debian yet; if you do, you can remove `eval=FALSE`):
+
+
+```coffee
+x = 42
+console.log "The answer is ", x
+```
