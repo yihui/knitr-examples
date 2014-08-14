@@ -4,6 +4,7 @@ By defautl `![...](...)` is translated to `<img src='...' alt='...'>` in Markdow
 
 
 ```r
+library(knitr)
 knit_hooks$set(plot = function(x, options) {
     paste("<figure><img src=\"", opts_knit$get("base.url"), paste(x, collapse = "."), 
         "\"><figcaption>", options$fig.cap, "</figcaption></figure>", sep = "")

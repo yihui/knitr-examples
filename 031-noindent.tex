@@ -56,6 +56,7 @@ Sometimes we do not want the text following a code chunk to be indented as a par
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
+\hlkwd{library}\hlstd{(knitr)}
 \hlstd{knit_hooks}\hlopt{$}\hlkwd{set}\hlstd{(}\hlkwc{document} \hlstd{=} \hlkwa{function}\hlstd{(}\hlkwc{x}\hlstd{) \{}
     \hlkwd{gsub}\hlstd{(}\hlstr{"(\textbackslash{}\textbackslash{}\textbackslash{}\textbackslash{}end\textbackslash{}\textbackslash{}\{knitrout\textbackslash{}\textbackslash{}\}[\textbackslash{}n]+)"}\hlstd{,} \hlstr{"\textbackslash{}\textbackslash{}1\textbackslash{}\textbackslash{}\textbackslash{}\textbackslash{}noindent "}\hlstd{,}
         \hlkwd{paste}\hlstd{(x,} \hlkwc{collapse} \hlstd{=} \hlstr{"\textbackslash{}n"}\hlstd{))}

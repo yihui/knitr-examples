@@ -72,6 +72,7 @@ When fig.cap needs to use objects in the current chunk, we need to set the eval.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
+\hlkwd{library}\hlstd{(knitr)}
 \hlcom{# evaluate fig.cap after a chunk is evaluated}
 \hlstd{opts_knit}\hlopt{$}\hlkwd{set}\hlstd{(}\hlkwc{eval.after} \hlstd{=} \hlstr{"fig.cap"}\hlstd{)}
 \end{alltt}

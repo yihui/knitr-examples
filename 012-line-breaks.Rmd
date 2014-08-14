@@ -11,6 +11,7 @@ lines'
 Modify the `source` hook:
 
 ```{r setup, include=FALSE}
+library(knitr)
 knit_hooks$set(source = function(x, options) {
   paste0('\n\n```r\n', gsub('\\n', '\n', x, fixed=TRUE), '\n```\n\n')
 })

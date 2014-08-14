@@ -12,6 +12,7 @@ Perhaps you see it is wrapped in RStudio, but that is because `<pre>` has the CS
 You can redefine the output hook function so that you can instruct some chunks to hard-wrap their output lines, e.g.
 
 ```{r wrap-hook}
+library(knitr)
 hook_output = knit_hooks$get('output')
 knit_hooks$set(output = function(x, options) {
   # this hook is used only when the linewidth option is not NULL

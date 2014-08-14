@@ -11,6 +11,7 @@
 \maketitle
 
 <<setup, include=FALSE>>=
+library(knitr)
 knit_hooks$set(rexample = function(before, options, envir) {
   if (before) sprintf('\\begin{rexample}\\label{%s}\\hfill{}', options$label) else '\\end{rexample}'
 })

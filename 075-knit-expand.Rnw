@@ -9,6 +9,7 @@
 \section{Write one row of data}
 Only the first two sections are evaluated.
 <<run-all, include=FALSE>>=
+library(knitr)
 src = NULL
 for (i in 1:5) src = c(src, knit_expand('075-template.rnw'))
 @

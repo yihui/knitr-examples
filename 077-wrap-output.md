@@ -18,6 +18,7 @@ You can redefine the output hook function so that you can instruct some chunks t
 
 
 ```r
+library(knitr)
 hook_output = knit_hooks$get("output")
 knit_hooks$set(output = function(x, options) {
     # this hook is used only when the linewidth option is not NULL

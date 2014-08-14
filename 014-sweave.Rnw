@@ -4,6 +4,7 @@
 This is all you need to do if you want to go back to the Sweave style:
 
 <<setup, include=FALSE>>=
+library(knitr)
 render_sweave()
 @
 

@@ -2,6 +2,7 @@
 \lstset{breaklines=true} % break long lines
 
 <<setup, include=FALSE>>=
+library(knitr)
 render_listings()
 @
 

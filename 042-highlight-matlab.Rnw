@@ -1,5 +1,6 @@
 \documentclass{article}
 <<adjust-preamble, include=FALSE>>=
+library(knitr)
 knit_theme$set('solarized-dark')
 @
 \usepackage{url}

@@ -23,6 +23,7 @@ cat(letters, sep = ' ')
 But you can use a hook to add the size environment in this case:
 
 <<setup, include=FALSE>>=
+library(knitr)
 knit_hooks$set(size = function(before, options, envir) {
   # bring back the size environment when results='asis'
   if (options$results != 'asis') return()

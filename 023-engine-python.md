@@ -2,6 +2,7 @@ R works, of course.
 
 
 ```r
+library(knitr)
 set.seed(123)
 rnorm(5)
 ```

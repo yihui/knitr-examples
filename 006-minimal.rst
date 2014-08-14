@@ -10,6 +10,7 @@ and the output filename will be ``rst``. Here is how we write R code in
 ::
 
     options(width = 75)
+    library(knitr)
     # do not use the sourcecode directive
     render_rst(strict = TRUE)
     

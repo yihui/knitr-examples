@@ -3,6 +3,7 @@
 <<setup, include=FALSE>>=
 if (!require('diagram')) install.packages('diagram', repos = 'http://cran.rstudio.com')
 <<read-demo>>=
+library(knitr)
 library(diagram)
 read_demo('flowchart', package = 'diagram',
           labels = 'demo-flowchart')

@@ -3,6 +3,7 @@
 All chunk options are stored in `options$params.src`.
 
 ```{r setup}
+library(knitr)
 knit_hooks$set(wrapper = function(before, options, envir) {
   if (before) {
     sprintf('    ```{r %s}\n', options$params.src)

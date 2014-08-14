@@ -2,6 +2,7 @@
 \usepackage{url}
 \begin{document}
 <<setup>>=
+library(knitr)
 knit_hooks$set(wrapper = function(before, options, envir) {
   sprintf('\\begin{alltt}%s\n\\end{alltt}',
           if (before) sprintf('<<%s>>=', options$params.src) else '@')

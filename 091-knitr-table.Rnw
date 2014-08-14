@@ -7,6 +7,7 @@
 \maketitle
 
 <<setup, include=FALSE>>=
+library(knitr)
 # in this document we mainly use results='asis', so set it globally
 opts_chunk$set(results='asis')
 @

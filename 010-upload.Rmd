@@ -5,6 +5,7 @@ First, the input file was named as `knitr-upload.Rmd` ([source](https://github.c
 I used the code below to make sure **knitr** will upload images and set some global chunk options.
 
 ```{r setup}
+library(knitr)
 opts_knit$set(upload.fun = imgur_upload, base.url = NULL) # upload all images to imgur.com
 opts_chunk$set(fig.width=5, fig.height=5, cache=TRUE)
 ````

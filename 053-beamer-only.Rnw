@@ -1,6 +1,7 @@
 \documentclass{beamer}
 \begin{document}
 <<setup, include=FALSE>>=
+library(knitr)
 # smaller font size for chunks
 opts_chunk$set(size = 'footnotesize')
 

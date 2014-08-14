@@ -4,6 +4,7 @@
 Collect results from the template for each i and write them back later.
 
 <<run-all, include=FALSE>>=
+library(knitr)
 src <- NULL
 for (i in 1:3) {
   src <- c(src, knit(text = readLines("069-for-template.rnw")))

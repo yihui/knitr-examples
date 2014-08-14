@@ -54,6 +54,7 @@
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
+\hlkwd{library}\hlstd{(knitr)}
 \hlstd{knit_hooks}\hlopt{$}\hlkwd{set}\hlstd{(}\hlkwc{wrapper} \hlstd{=} \hlkwa{function}\hlstd{(}\hlkwc{before}\hlstd{,} \hlkwc{options}\hlstd{,} \hlkwc{envir}\hlstd{) \{}
     \hlkwd{sprintf}\hlstd{(}\hlstr{"\textbackslash{}\textbackslash{}begin\{alltt\}%s\textbackslash{}n\textbackslash{}\textbackslash{}end\{alltt\}"}\hlstd{,} \hlkwa{if} \hlstd{(before)}
         \hlkwd{sprintf}\hlstd{(}\hlstr{"<<%s>>="}\hlstd{, options}\hlopt{$}\hlstd{params.src)} \hlkwa{else} \hlstr{"@"}\hlstd{)}

@@ -58,6 +58,7 @@ the \texttt{kframe} environments between them.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
+\hlkwd{library}\hlstd{(knitr)}
 \hlcom{# modify the default chunk hook}
 \hlstd{hook_chunk} \hlkwb{=} \hlstd{knit_hooks}\hlopt{$}\hlkwd{get}\hlstd{(}\hlstr{'chunk'}\hlstd{)}
 \hlstd{knit_hooks}\hlopt{$}\hlkwd{set}\hlstd{(}\hlkwc{chunk} \hlstd{=} \hlkwa{function}\hlstd{(}\hlkwc{x}\hlstd{,} \hlkwc{options}\hlstd{) \{}

@@ -1,6 +1,7 @@
 \documentclass{article}
 \begin{document}
 <<setup, include=FALSE>>=
+library(knitr)
 knit_hooks$set(crop = hook_pdfcrop)
 @
 

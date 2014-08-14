@@ -1,6 +1,7 @@
 R works, of course.
 
 ```{r test-r, engine='R'}
+library(knitr)
 set.seed(123)
 rnorm(5)
 ```

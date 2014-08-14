@@ -2,6 +2,9 @@ This demo shows you how to reference code in a URL. We use R-Forge as an example
 
 We cache this chunk so that the next time we compile this document, the code does not need to be read from the web again.
 
+```r
+library(knitr)
+```
 
 ```r
 demo.sub = read_rforge("rgl/demo/subdivision.r", project = "rgl")

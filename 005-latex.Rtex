@@ -3,6 +3,7 @@
 %% for inline R code: if the inline code is not correctly parsed, you will see a message
 \newcommand{\rinline}[1]{SOMETHING WRONG WITH knitr}
 %% begin.rcode setup, include=FALSE
+% library(knitr)
 % opts_chunk$set(fig.path='figure/latex-', cache.path='cache/latex-')
 %% end.rcode
 \begin{document}

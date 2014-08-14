@@ -1,7 +1,8 @@
 This demo shows you how to reference code in a URL. We use R-Forge as an example, but you can really read code from anywhere.
 
 We cache this chunk so that the next time we compile this document, the code does not need to be read from the web again.
-
+```{r setup}
+library(knitr)
 ```{r read-code, cache=TRUE}
 demo.sub = read_rforge('rgl/demo/subdivision.r', project = 'rgl')
 head(demo.sub)

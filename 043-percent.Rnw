@@ -3,6 +3,7 @@
 \begin{document}
 
 <<setup, include=FALSE>>=
+library(knitr)
 knit_hooks$set(inline = function(x) gsub('%', '\\\\%', x))
 @
 

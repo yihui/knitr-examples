@@ -7,6 +7,7 @@ data(mtcars)
 This example shows how to generate chunk labels dynamically with the brew syntax. It was motivated by the SO question: http://stackoverflow.com/q/12095113/559676
 
 ```{r create-iterator, include=FALSE}
+library(knitr)
 src = NULL
 pat_brew()  # use brew syntax first
 

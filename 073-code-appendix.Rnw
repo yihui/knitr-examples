@@ -8,6 +8,7 @@ Move all code chunks into the appendix.
 \section{Computing}
 
 <<setup, include=FALSE>>=
+library(knitr)
 opts_chunk$set(echo=FALSE) # hide source code in the document
 @
 

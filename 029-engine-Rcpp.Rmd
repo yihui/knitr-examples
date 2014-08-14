@@ -1,6 +1,7 @@
 # Call Rcpp from knitr
 
 ```{r setup, include=FALSE}
+library(knitr)
 opts_chunk$set(cache = TRUE) # because the compilation takes time, let's cache it
 ```
 

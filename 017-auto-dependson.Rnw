@@ -3,6 +3,7 @@
 \begin{document}
 
 <<setup, cache=FALSE>>=
+library(knitr)
 # global chunk options
 opts_chunk$set(cache=TRUE, autodep=TRUE)
 @

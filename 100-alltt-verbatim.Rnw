@@ -7,6 +7,7 @@ This example shows you how to separate the source and output boxes by injecting
 the \texttt{kframe} environments between them.
 
 <<setup, tidy=FALSE>>=
+library(knitr)
 # modify the default chunk hook
 hook_chunk = knit_hooks$get('chunk')
 knit_hooks$set(chunk = function(x, options) {

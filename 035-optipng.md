@@ -2,6 +2,7 @@ This demos shows you how to optimize PNG images with `optipng`.
 
 
 ```r
+library(knitr)
 opts_chunk$set(cache = TRUE)
 knit_hooks$set(optipng = hook_optipng)
 ```

@@ -3,6 +3,7 @@
 First we redefine the output hook:
 
 ```{r setup}
+library(knitr)
 # the default output hook
 hook_output = knit_hooks$get('output')
 knit_hooks$set(output = function(x, options) {

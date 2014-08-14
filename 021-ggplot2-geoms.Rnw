@@ -5,6 +5,7 @@
 \tableofcontents
 
 <<setup, include=FALSE>>=
+library(knitr)
 # cache chunks and do not tidy ggplot2 examples code
 opts_chunk$set(tidy = FALSE, cache = TRUE)
 @

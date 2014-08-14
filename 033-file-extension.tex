@@ -56,6 +56,7 @@ We want the file extension when including a figure into LaTeX.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
+\hlkwd{library}\hlstd{(knitr)}
 \hlstd{hook_plot} \hlkwb{=} \hlstd{knit_hooks}\hlopt{$}\hlkwd{get}\hlstd{(}\hlstr{"plot"}\hlstd{)}
 \hlstd{knit_hooks}\hlopt{$}\hlkwd{set}\hlstd{(}\hlkwc{plot} \hlstd{=} \hlkwa{function}\hlstd{(}\hlkwc{x}\hlstd{,} \hlkwc{options}\hlstd{) \{}
     \hlcom{# if x is foo.pdf, make it foo.pdf.whatever so the plot hook removes the}

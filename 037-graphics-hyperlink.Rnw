@@ -9,6 +9,7 @@
 options(tikzMetricPackages = c("\\usepackage[utf8]{inputenc}",
    "\\usepackage[T1]{fontenc}", "\\usetikzlibrary{calc}", "\\usepackage{hyperref}"))
 
+library(knitr)
 opts_chunk$set(external = FALSE, cache = TRUE, fig.width = 5)
 @
 

@@ -4,6 +4,7 @@ For demonstration purposes, we may want to show some source code in the output, 
 
 
 ```r
+library(knitr)
 hook_source = knit_hooks$get("source")
 knit_hooks$set(source = function(x, options) {
     res = hook_source(x, options)

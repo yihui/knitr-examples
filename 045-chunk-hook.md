@@ -8,6 +8,7 @@ It is a logical argument: `before == TRUE` executes code before a chunk.
 
 
 ```r
+library(knitr)
 knit_hooks$set(foo1 = function(before, options, envir) {
     if (before) {
         "_I appear before a chunk!_\n\n"

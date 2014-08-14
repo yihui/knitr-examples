@@ -4,6 +4,7 @@
 This is all you need to do if you want to use the listings package:
 
 <<setup, include=FALSE>>=
+library(knitr)
 render_listings()
 @
 

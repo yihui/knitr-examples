@@ -1,6 +1,7 @@
 # Asymptote graphics example
 
 ```{r setup, include=FALSE}
+library(knitr)
 opts_chunk$set(cache=TRUE)
 ```
 

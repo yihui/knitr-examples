@@ -5,6 +5,7 @@
 A bug reported at \url{http://cos.name/cn/topic/110742}.
 
 <<rgl-demo>>=
+library(knitr)
 knit_hooks$set(rgl = hook_rgl)
 head(hook_rgl)  # the hook function is defined as this
 @

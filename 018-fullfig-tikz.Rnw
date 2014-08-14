@@ -9,6 +9,7 @@
 
 <<setup, include=FALSE>>=
 options(width = 65)
+library(knitr)
 # smaller font size for chunks
 opts_chunk$set(size = 'footnotesize', background='white', cache=TRUE)
 @

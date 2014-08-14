@@ -2,6 +2,7 @@
 \begin{document}
 
 <<setup>>=
+library(knitr)
 knit_hooks$set(pars = function(before, options, envir) {
   if (before) do.call(graphics::par, options$pars)
 })
