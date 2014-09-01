@@ -62,13 +62,13 @@ A bug reported at \url{http://cos.name/cn/topic/110742}.
 \hlkwd{head}\hlstd{(hook_rgl)}  \hlcom{# the hook function is defined as this}
 \end{alltt}
 \begin{verbatim}
-##                                     
-## 1 function (before, options, envir) 
-## 2 {                                 
-## 3     library(rgl)                  
-## 4     if (before || rgl.cur() == 0) 
-## 5         return()                  
-## 6     name = fig_path("", options)
+##                                                                              
+## 1 function (before, options, envir)                                          
+## 2 {                                                                          
+## 3     if (before || rgl::rgl.cur() == 0)                                     
+## 4         return()                                                           
+## 5     name = fig_path("", options)                                           
+## 6     rgl::par3d(windowRect = 100 + options$dpi * c(0, 0, options$fig.width,
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
