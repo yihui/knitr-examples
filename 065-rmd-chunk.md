@@ -26,3 +26,12 @@ rnorm(n)
 ##  [1] -0.56048 -0.23018  1.55871  0.07051  0.12929  1.71506  0.46092
 ##  [8] -1.26506 -0.68685 -0.44566
 ```
+
+Another way (discovered by Hadley Wickham) is to add a [zero-width space](http://en.wikipedia.org/wiki/Zero-width_space) in the chunk header, e.g.
+
+    `​``{r eval=TRUE}
+    n = 10
+    rnorm(n)
+    ```
+
+Note the zero-width space is normally invisible in the web browser, and may also be invisible in your text editor. Trust me, there is a zero-width space after the first backtick in the above code chunk even if you cannot see it (the Emperor does have clothes). The RStudio IDE can show it as a red dot.
