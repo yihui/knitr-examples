@@ -1,7 +1,5 @@
 #!/bin/bash
 
-echo "$0" "$*" >> /dev/stderr
-
 prefix=${1%.*}-
 time Rscript -e "options(digits=4)"\
  -e "knitr::opts_knit\$set(base.url='http://animation.r-forge.r-project.org/knitr-ex/')"\
