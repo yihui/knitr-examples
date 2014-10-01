@@ -47,7 +47,8 @@ rnorm(5)
 [WARNING]
 ====
 .Warning
-longer object length is not a multiple of shorter object length
+## Warning in 1:2 + 1:3: longer object length is not a multiple of shorter
+## object length
 
 ====
 
@@ -78,7 +79,7 @@ f()
 [CAUTION]
 ====
 .Error
-non-numeric argument to binary operator
+## Error in 1 + "a": non-numeric argument to binary operator
 
 ====
 
