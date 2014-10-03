@@ -76,7 +76,7 @@ Here is a plot:
     qplot(hp, mpg, data = mtcars) + geom_smooth()
 
 
-.. figure:: http://animation.r-forge.r-project.org/knitr-ex/figure/006-minimal-rst-plot.png
+.. figure:: http://db.yihui.name/knitr-examples/figure/006-minimal-rst-plot-1.png
     :alt: A ggplot2 example
     :width: 360px
 

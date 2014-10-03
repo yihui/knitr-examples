@@ -34,7 +34,7 @@ bc(knitr r source#test-b).. plot(x, pch = 20, type = "o", col = "red")
 
 p(knitr_end). 
 
-!http://animation.r-forge.r-project.org/knitr-ex/figure/105-minimal-test-b.png(A random walk.)!
+!http://db.yihui.name/knitr-examples/figure/105-minimal-test-b-1.png(A random walk.)!
 
 p(knitr plot caption#test-b). A random walk.
 
