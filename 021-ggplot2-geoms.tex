@@ -77,12 +77,12 @@
 \hlstd{p} \hlopt{+} \hlkwd{geom_abline}\hlstd{()} \hlcom{# Can't see it - outside the range of the data}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_abline1} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_abline-1} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_abline}\hlstd{(}\hlkwc{intercept} \hlstd{=} \hlnum{20}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_abline2} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_abline-2} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Calculate slope and intercept of line of best fit}
 \hlkwd{coef}\hlstd{(}\hlkwd{lm}\hlstd{(mpg} \hlopt{~} \hlstd{wt,} \hlkwc{data} \hlstd{= mtcars))}
@@ -95,18 +95,18 @@
 \hlstd{p} \hlopt{+} \hlkwd{geom_abline}\hlstd{(}\hlkwc{intercept} \hlstd{=} \hlnum{37}\hlstd{,} \hlkwc{slope} \hlstd{=} \hlopt{-}\hlnum{5}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_abline3} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_abline-3} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_abline}\hlstd{(}\hlkwc{intercept} \hlstd{=} \hlnum{10}\hlstd{,} \hlkwc{colour} \hlstd{=} \hlstr{"red"}\hlstd{,} \hlkwc{size} \hlstd{=} \hlnum{2}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_abline4} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_abline-4} 
 \begin{kframe}\begin{alltt}
 \hlcom{# See ?stat_smooth for fitting smooth models to data}
 \hlstd{p} \hlopt{+} \hlkwd{stat_smooth}\hlstd{(}\hlkwc{method}\hlstd{=}\hlstr{"lm"}\hlstd{,} \hlkwc{se}\hlstd{=}\hlnum{FALSE}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_abline5} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_abline-5} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Slopes and intercepts as data}
 \hlstd{p} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(mtcars,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= wt,} \hlkwc{y}\hlstd{=mpg), .} \hlopt{~} \hlstd{cyl)} \hlopt{+} \hlkwd{geom_point}\hlstd{()}
@@ -114,7 +114,7 @@
 \hlstd{p} \hlopt{+} \hlkwd{geom_abline}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{intercept}\hlstd{=a,} \hlkwc{slope}\hlstd{=b),} \hlkwc{data}\hlstd{=df)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_abline6} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_abline-6} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Slopes and intercepts from linear model}
 \hlkwd{library}\hlstd{(plyr)}
@@ -134,29 +134,29 @@
 \hlstd{p} \hlopt{+} \hlkwd{geom_abline}\hlstd{(}\hlkwc{data}\hlstd{=coefs,} \hlkwd{aes}\hlstd{(}\hlkwc{intercept}\hlstd{=a,} \hlkwc{slope}\hlstd{=b))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_abline7} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_abline-7} 
 \begin{kframe}\begin{alltt}
 \hlcom{# It's actually a bit easier to do this with stat_smooth}
 \hlstd{p} \hlopt{+} \hlkwd{geom_smooth}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{group}\hlstd{=cyl),} \hlkwc{method}\hlstd{=}\hlstr{"lm"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_abline8} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_abline-8} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_smooth}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{group}\hlstd{=cyl),} \hlkwc{method}\hlstd{=}\hlstr{"lm"}\hlstd{,} \hlkwc{fullrange}\hlstd{=}\hlnum{TRUE}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_abline9} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_abline-9} 
 \begin{kframe}\begin{alltt}
 \hlcom{# With coordinate transforms}
 \hlstd{p} \hlopt{+} \hlkwd{geom_abline}\hlstd{(}\hlkwc{intercept} \hlstd{=} \hlnum{37}\hlstd{,} \hlkwc{slope} \hlstd{=} \hlopt{-}\hlnum{5}\hlstd{)} \hlopt{+} \hlkwd{coord_flip}\hlstd{()}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_abline10} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_abline-10} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_abline}\hlstd{(}\hlkwc{intercept} \hlstd{=} \hlnum{37}\hlstd{,} \hlkwc{slope} \hlstd{=} \hlopt{-}\hlnum{5}\hlstd{)} \hlopt{+} \hlkwd{coord_polar}\hlstd{()}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_abline11} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_abline-11} 
 
 \end{knitrout}
 
@@ -197,33 +197,33 @@
 \hlstd{c} \hlopt{+} \hlkwd{geom_bar}\hlstd{()}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar1} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar-1} 
 \begin{kframe}\begin{alltt}
 \hlstd{c} \hlopt{+} \hlkwd{geom_bar}\hlstd{(}\hlkwc{width}\hlstd{=}\hlnum{.5}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar2} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar-2} 
 \begin{kframe}\begin{alltt}
 \hlstd{c} \hlopt{+} \hlkwd{geom_bar}\hlstd{()} \hlopt{+} \hlkwd{coord_flip}\hlstd{()}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar3} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar-3} 
 \begin{kframe}\begin{alltt}
 \hlstd{c} \hlopt{+} \hlkwd{geom_bar}\hlstd{(}\hlkwc{fill}\hlstd{=}\hlstr{"white"}\hlstd{,} \hlkwc{colour}\hlstd{=}\hlstr{"darkgreen"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar4} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar-4} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Use qplot}
 \hlkwd{qplot}\hlstd{(}\hlkwd{factor}\hlstd{(cyl),} \hlkwc{data}\hlstd{=mtcars,} \hlkwc{geom}\hlstd{=}\hlstr{"bar"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar5} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar-5} 
 \begin{kframe}\begin{alltt}
 \hlkwd{qplot}\hlstd{(}\hlkwd{factor}\hlstd{(cyl),} \hlkwc{data}\hlstd{=mtcars,} \hlkwc{geom}\hlstd{=}\hlstr{"bar"}\hlstd{,} \hlkwc{fill}\hlstd{=}\hlkwd{factor}\hlstd{(cyl))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar6} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar-6} 
 \begin{kframe}\begin{alltt}
 \hlcom{# When the data contains y values in a column, use stat="identity"}
 \hlkwd{library}\hlstd{(plyr)}
@@ -232,37 +232,37 @@
 \hlkwd{ggplot}\hlstd{(mm,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{=} \hlkwd{factor}\hlstd{(cyl),} \hlkwc{y} \hlstd{= mmpg))} \hlopt{+} \hlkwd{geom_bar}\hlstd{(}\hlkwc{stat} \hlstd{=} \hlstr{"identity"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar7} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar-7} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Stacked bar charts}
 \hlkwd{qplot}\hlstd{(}\hlkwd{factor}\hlstd{(cyl),} \hlkwc{data}\hlstd{=mtcars,} \hlkwc{geom}\hlstd{=}\hlstr{"bar"}\hlstd{,} \hlkwc{fill}\hlstd{=}\hlkwd{factor}\hlstd{(vs))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar8} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar-8} 
 \begin{kframe}\begin{alltt}
 \hlkwd{qplot}\hlstd{(}\hlkwd{factor}\hlstd{(cyl),} \hlkwc{data}\hlstd{=mtcars,} \hlkwc{geom}\hlstd{=}\hlstr{"bar"}\hlstd{,} \hlkwc{fill}\hlstd{=}\hlkwd{factor}\hlstd{(gear))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar9} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar-9} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Stacked bar charts are easy in ggplot2, but not effective visually,}
 \hlcom{# particularly when there are many different things being stacked}
 \hlkwd{ggplot}\hlstd{(diamonds,} \hlkwd{aes}\hlstd{(clarity,} \hlkwc{fill}\hlstd{=cut))} \hlopt{+} \hlkwd{geom_bar}\hlstd{()}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar10} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar-10} 
 \begin{kframe}\begin{alltt}
 \hlkwd{ggplot}\hlstd{(diamonds,} \hlkwd{aes}\hlstd{(color,} \hlkwc{fill}\hlstd{=cut))} \hlopt{+} \hlkwd{geom_bar}\hlstd{()} \hlopt{+} \hlkwd{coord_flip}\hlstd{()}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar11} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar-11} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Faceting is a good alternative:}
 \hlkwd{ggplot}\hlstd{(diamonds,} \hlkwd{aes}\hlstd{(clarity))} \hlopt{+} \hlkwd{geom_bar}\hlstd{()} \hlopt{+}
   \hlkwd{facet_wrap}\hlstd{(}\hlopt{~} \hlstd{cut)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar12} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar-12} 
 \begin{kframe}\begin{alltt}
 \hlcom{# If the x axis is ordered, using a line instead of bars is another}
 \hlcom{# possibility:}
@@ -270,27 +270,27 @@
   \hlkwd{geom_freqpoly}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{group} \hlstd{= cut,} \hlkwc{colour} \hlstd{= cut))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar13} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar-13} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Dodged bar charts}
 \hlkwd{ggplot}\hlstd{(diamonds,} \hlkwd{aes}\hlstd{(clarity,} \hlkwc{fill}\hlstd{=cut))} \hlopt{+} \hlkwd{geom_bar}\hlstd{(}\hlkwc{position}\hlstd{=}\hlstr{"dodge"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar14} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar-14} 
 \begin{kframe}\begin{alltt}
 \hlcom{# compare with}
 \hlkwd{ggplot}\hlstd{(diamonds,} \hlkwd{aes}\hlstd{(cut,} \hlkwc{fill}\hlstd{=cut))} \hlopt{+} \hlkwd{geom_bar}\hlstd{()} \hlopt{+}
   \hlkwd{facet_grid}\hlstd{(.} \hlopt{~} \hlstd{clarity)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar15} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar-15} 
 \begin{kframe}\begin{alltt}
 \hlcom{# But again, probably better to use frequency polygons instead:}
 \hlkwd{ggplot}\hlstd{(diamonds,} \hlkwd{aes}\hlstd{(clarity,} \hlkwc{colour}\hlstd{=cut))} \hlopt{+}
   \hlkwd{geom_freqpoly}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{group} \hlstd{= cut))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar16} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar-16} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Often we don't want the height of the bar to represent the}
 \hlcom{# count of observations, but the sum of some other variable.}
@@ -299,14 +299,14 @@
 \hlkwd{qplot}\hlstd{(color,} \hlkwc{data}\hlstd{=diamonds,} \hlkwc{geom}\hlstd{=}\hlstr{"bar"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar17} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar-17} 
 \begin{kframe}\begin{alltt}
 \hlcom{# If, however, we want to see the total number of carats in each colour}
 \hlcom{# we need to weight by the carat variable}
 \hlkwd{qplot}\hlstd{(color,} \hlkwc{data}\hlstd{=diamonds,} \hlkwc{geom}\hlstd{=}\hlstr{"bar"}\hlstd{,} \hlkwc{weight}\hlstd{=carat,} \hlkwc{ylab}\hlstd{=}\hlstr{"carat"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar18} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar-18} 
 \begin{kframe}\begin{alltt}
 \hlcom{# A bar chart used to display means}
 \hlstd{meanprice} \hlkwb{<-} \hlkwd{tapply}\hlstd{(diamonds}\hlopt{$}\hlstd{price, diamonds}\hlopt{$}\hlstd{cut, mean)}
@@ -314,35 +314,35 @@
 \hlkwd{qplot}\hlstd{(cut, meanprice)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar19} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar-19} 
 \begin{kframe}\begin{alltt}
 \hlkwd{qplot}\hlstd{(cut, meanprice,} \hlkwc{geom}\hlstd{=}\hlstr{"bar"}\hlstd{,} \hlkwc{stat}\hlstd{=}\hlstr{"identity"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar20} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar-20} 
 \begin{kframe}\begin{alltt}
 \hlkwd{qplot}\hlstd{(cut, meanprice,} \hlkwc{geom}\hlstd{=}\hlstr{"bar"}\hlstd{,} \hlkwc{stat}\hlstd{=}\hlstr{"identity"}\hlstd{,} \hlkwc{fill} \hlstd{=} \hlkwd{I}\hlstd{(}\hlstr{"grey50"}\hlstd{))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar21} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar-21} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Another stacked bar chart example}
 \hlstd{k} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(mpg,} \hlkwd{aes}\hlstd{(manufacturer,} \hlkwc{fill}\hlstd{=class))}
 \hlstd{k} \hlopt{+} \hlkwd{geom_bar}\hlstd{()}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar22} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar-22} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Use scales to change aesthetics defaults}
 \hlstd{k} \hlopt{+} \hlkwd{geom_bar}\hlstd{()} \hlopt{+} \hlkwd{scale_fill_brewer}\hlstd{()}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar23} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar-23} 
 \begin{kframe}\begin{alltt}
 \hlstd{k} \hlopt{+} \hlkwd{geom_bar}\hlstd{()} \hlopt{+} \hlkwd{scale_fill_grey}\hlstd{()}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar24} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar-24} 
 \begin{kframe}\begin{alltt}
 \hlcom{# To change plot order of class varible}
 \hlcom{# use factor() to change order of levels}
@@ -352,7 +352,7 @@
 \hlstd{m} \hlopt{+} \hlkwd{geom_bar}\hlstd{()}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar25} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar-25} 
 \begin{kframe}\begin{alltt}
 \hlcom{## End(No test)}
 \end{alltt}
@@ -375,12 +375,12 @@
 \hlstd{d} \hlopt{+} \hlkwd{geom_bin2d}\hlstd{()}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bin2d1} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bin2d-1} 
 \begin{kframe}\begin{alltt}
 \hlstd{d} \hlopt{+} \hlkwd{geom_bin2d}\hlstd{(}\hlkwc{binwidth} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{0.1}\hlstd{,} \hlnum{0.1}\hlstd{))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bin2d2} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bin2d-2} 
 \begin{kframe}\begin{alltt}
 \hlcom{# See ?stat_bin2d for more examples}
 \end{alltt}
@@ -402,7 +402,7 @@
 \hlkwd{qplot}\hlstd{(length, rating,} \hlkwc{data} \hlstd{= movies,} \hlkwc{geom} \hlstd{=} \hlstr{"blank"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_blank1} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_blank-1} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Nothing to see here!}
 
@@ -413,7 +413,7 @@
 \hlstd{a} \hlopt{+} \hlkwd{geom_abline}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{intercept} \hlstd{= a,} \hlkwc{slope} \hlstd{= b),} \hlkwc{data} \hlstd{= df)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_blank2} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_blank-2} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Suppose you then wanted to remove the geom_point layer}
 \hlcom{# If you just remove geom_point, you will get an error}
@@ -424,7 +424,7 @@
 \hlstd{c} \hlopt{+} \hlkwd{geom_abline}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{intercept} \hlstd{= a,} \hlkwc{slope} \hlstd{= b),} \hlkwc{data} \hlstd{= df)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_blank3} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_blank-3} 
 
 \end{knitrout}
 
@@ -446,47 +446,47 @@
 \hlstd{p} \hlopt{+} \hlkwd{geom_boxplot}\hlstd{()}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot1} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot-1} 
 \begin{kframe}\begin{alltt}
 \hlkwd{qplot}\hlstd{(}\hlkwd{factor}\hlstd{(cyl), mpg,} \hlkwc{data} \hlstd{= mtcars,} \hlkwc{geom} \hlstd{=} \hlstr{"boxplot"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot2} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot-2} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_boxplot}\hlstd{()} \hlopt{+} \hlkwd{geom_jitter}\hlstd{()}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot3} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot-3} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_boxplot}\hlstd{()} \hlopt{+} \hlkwd{coord_flip}\hlstd{()}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot4} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot-4} 
 \begin{kframe}\begin{alltt}
 \hlkwd{qplot}\hlstd{(}\hlkwd{factor}\hlstd{(cyl), mpg,} \hlkwc{data} \hlstd{= mtcars,} \hlkwc{geom} \hlstd{=} \hlstr{"boxplot"}\hlstd{)} \hlopt{+}
   \hlkwd{coord_flip}\hlstd{()}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot5} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot-5} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_boxplot}\hlstd{(}\hlkwc{notch} \hlstd{=} \hlnum{TRUE}\hlstd{)}
 \end{alltt}
 
 
 {\ttfamily\noindent\itshape\color{messagecolor}{\#\# notch went outside hinges. Try setting notch=FALSE.\\\#\# notch went outside hinges. Try setting notch=FALSE.}}\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot6} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot-6} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_boxplot}\hlstd{(}\hlkwc{notch} \hlstd{=} \hlnum{TRUE}\hlstd{,} \hlkwc{notchwidth} \hlstd{=} \hlnum{.3}\hlstd{)}
 \end{alltt}
 
 
 {\ttfamily\noindent\itshape\color{messagecolor}{\#\# notch went outside hinges. Try setting notch=FALSE.\\\#\# notch went outside hinges. Try setting notch=FALSE.}}\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot7} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot-7} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_boxplot}\hlstd{(}\hlkwc{outlier.colour} \hlstd{=} \hlstr{"green"}\hlstd{,} \hlkwc{outlier.size} \hlstd{=} \hlnum{3}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot8} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot-8} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Add aesthetic mappings}
 \hlcom{# Note that boxplots are automatically dodged when any aesthetic is}
@@ -494,34 +494,34 @@
 \hlstd{p} \hlopt{+} \hlkwd{geom_boxplot}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{fill} \hlstd{= cyl))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot9} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot-9} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_boxplot}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{fill} \hlstd{=} \hlkwd{factor}\hlstd{(cyl)))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot10} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot-10} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_boxplot}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{fill} \hlstd{=} \hlkwd{factor}\hlstd{(vs)))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot11} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot-11} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_boxplot}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{fill} \hlstd{=} \hlkwd{factor}\hlstd{(am)))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot12} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot-12} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Set aesthetics to fixed value}
 \hlstd{p} \hlopt{+} \hlkwd{geom_boxplot}\hlstd{(}\hlkwc{fill} \hlstd{=} \hlstr{"grey80"}\hlstd{,} \hlkwc{colour} \hlstd{=} \hlstr{"#3366FF"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot13} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot-13} 
 \begin{kframe}\begin{alltt}
 \hlkwd{qplot}\hlstd{(}\hlkwd{factor}\hlstd{(cyl), mpg,} \hlkwc{data} \hlstd{= mtcars,} \hlkwc{geom} \hlstd{=} \hlstr{"boxplot"}\hlstd{,}
   \hlkwc{colour} \hlstd{=} \hlkwd{I}\hlstd{(}\hlstr{"#3366FF"}\hlstd{))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot14} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot-14} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Scales vs. coordinate transforms -------}
 \hlcom{# Scale transformations occur before the boxplot statistics are computed.}
@@ -535,28 +535,28 @@
 
 
 {\ttfamily\noindent\color{warningcolor}{\#\# Warning: position\_dodge requires constant width: output may be incorrect}}\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot15} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot-15} 
 \begin{kframe}\begin{alltt}
 \hlstd{m} \hlopt{+} \hlkwd{geom_boxplot}\hlstd{()} \hlopt{+} \hlkwd{scale_y_log10}\hlstd{()}
 \end{alltt}
 
 
 {\ttfamily\noindent\color{warningcolor}{\#\# Warning: position\_dodge requires constant width: output may be incorrect}}\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot16} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot-16} 
 \begin{kframe}\begin{alltt}
 \hlstd{m} \hlopt{+} \hlkwd{geom_boxplot}\hlstd{()} \hlopt{+} \hlkwd{coord_trans}\hlstd{(}\hlkwc{y} \hlstd{=} \hlstr{"log10"}\hlstd{)}
 \end{alltt}
 
 
 {\ttfamily\noindent\color{warningcolor}{\#\# Warning: position\_dodge requires constant width: output may be incorrect}}\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot17} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot-17} 
 \begin{kframe}\begin{alltt}
 \hlstd{m} \hlopt{+} \hlkwd{geom_boxplot}\hlstd{()} \hlopt{+} \hlkwd{scale_y_log10}\hlstd{()} \hlopt{+} \hlkwd{coord_trans}\hlstd{(}\hlkwc{y} \hlstd{=} \hlstr{"log10"}\hlstd{)}
 \end{alltt}
 
 
 {\ttfamily\noindent\color{warningcolor}{\#\# Warning: position\_dodge requires constant width: output may be incorrect}}\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot18} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot-18} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Boxplots with continuous x:}
 \hlcom{# Use the group aesthetic to group observations in boxplots}
@@ -565,15 +565,17 @@
 
 
 {\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 53573 rows containing non-finite values (stat\_boxplot).}}\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot19} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot-19} 
 \begin{kframe}\begin{alltt}
 \hlkwd{qplot}\hlstd{(year, budget,} \hlkwc{data} \hlstd{= movies,} \hlkwc{geom} \hlstd{=} \hlstr{"boxplot"}\hlstd{,}
   \hlkwc{group} \hlstd{=} \hlkwd{round_any}\hlstd{(year,} \hlnum{10}\hlstd{, floor))}
 \end{alltt}
 
 
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 53573 rows containing non-finite values (stat\_boxplot).\\\#\# Warning: position\_dodge requires constant width: output may be incorrect}}\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot20} 
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 53573 rows containing non-finite values (stat\_boxplot).}}
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: position\_dodge requires constant width: output may be incorrect}}\end{kframe}
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot-20} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Using precomputed statistics}
 \hlcom{# generate sample data}
@@ -583,17 +585,17 @@
 \hlstd{b} \hlopt{+} \hlkwd{geom_boxplot}\hlstd{(}\hlkwc{stat} \hlstd{=} \hlstr{"identity"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot21} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot-21} 
 \begin{kframe}\begin{alltt}
 \hlstd{b} \hlopt{+} \hlkwd{geom_boxplot}\hlstd{(}\hlkwc{stat} \hlstd{=} \hlstr{"identity"}\hlstd{)} \hlopt{+} \hlkwd{coord_flip}\hlstd{()}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot22} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot-22} 
 \begin{kframe}\begin{alltt}
 \hlstd{b} \hlopt{+} \hlkwd{geom_boxplot}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{fill} \hlstd{= X1),} \hlkwc{stat} \hlstd{=} \hlstr{"identity"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot23} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot-23} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Using varwidth}
 \hlstd{p} \hlopt{+} \hlkwd{geom_boxplot}\hlstd{(}\hlkwc{varwidth} \hlstd{=} \hlnum{TRUE}\hlstd{)}
@@ -601,14 +603,14 @@
 
 
 {\ttfamily\noindent\color{warningcolor}{\#\# Warning: position\_dodge requires constant width: output may be incorrect}}\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot24} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot-24} 
 \begin{kframe}\begin{alltt}
 \hlkwd{qplot}\hlstd{(}\hlkwd{factor}\hlstd{(cyl), mpg,} \hlkwc{data} \hlstd{= mtcars,} \hlkwc{geom} \hlstd{=} \hlstr{"boxplot"}\hlstd{,} \hlkwc{varwidth} \hlstd{=} \hlnum{TRUE}\hlstd{)}
 \end{alltt}
 
 
 {\ttfamily\noindent\color{warningcolor}{\#\# Warning: position\_dodge requires constant width: output may be incorrect}}\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot25} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot-25} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Update the defaults for the outliers by changing the defaults for geom_point}
 
@@ -616,13 +618,13 @@
 \hlstd{p} \hlopt{+} \hlkwd{geom_boxplot}\hlstd{()}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot26} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot-26} 
 \begin{kframe}\begin{alltt}
 \hlkwd{update_geom_defaults}\hlstd{(}\hlstr{"point"}\hlstd{,} \hlkwd{list}\hlstd{(}\hlkwc{shape} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{colour} \hlstd{=} \hlstr{"red"}\hlstd{,} \hlkwc{size} \hlstd{=} \hlnum{5}\hlstd{))}
 \hlstd{p} \hlopt{+} \hlkwd{geom_boxplot}\hlstd{()}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot27} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot-27} 
 \begin{kframe}\begin{alltt}
 \hlcom{## End(No test)}
 \end{alltt}
@@ -714,51 +716,51 @@
 
 
 {\ttfamily\noindent\itshape\color{messagecolor}{\#\# stat\_bindot: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.}}\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_dotplot1} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_dotplot-1} 
 \begin{kframe}\begin{alltt}
 \hlkwd{ggplot}\hlstd{(mtcars,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= mpg))} \hlopt{+} \hlkwd{geom_dotplot}\hlstd{(}\hlkwc{binwidth} \hlstd{=} \hlnum{1.5}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_dotplot2} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_dotplot-2} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Use fixed-width bins}
 \hlkwd{ggplot}\hlstd{(mtcars,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= mpg))} \hlopt{+}
   \hlkwd{geom_dotplot}\hlstd{(}\hlkwc{method}\hlstd{=}\hlstr{"histodot"}\hlstd{,} \hlkwc{binwidth} \hlstd{=} \hlnum{1.5}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_dotplot3} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_dotplot-3} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Some other stacking methods}
 \hlkwd{ggplot}\hlstd{(mtcars,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= mpg))} \hlopt{+}
   \hlkwd{geom_dotplot}\hlstd{(}\hlkwc{binwidth} \hlstd{=} \hlnum{1.5}\hlstd{,} \hlkwc{stackdir} \hlstd{=} \hlstr{"center"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_dotplot4} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_dotplot-4} 
 \begin{kframe}\begin{alltt}
 \hlkwd{ggplot}\hlstd{(mtcars,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= mpg))} \hlopt{+}
   \hlkwd{geom_dotplot}\hlstd{(}\hlkwc{binwidth} \hlstd{=} \hlnum{1.5}\hlstd{,} \hlkwc{stackdir} \hlstd{=} \hlstr{"centerwhole"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_dotplot5} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_dotplot-5} 
 \begin{kframe}\begin{alltt}
 \hlcom{# y axis isn't really meaningful, so hide it}
 \hlkwd{ggplot}\hlstd{(mtcars,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= mpg))} \hlopt{+} \hlkwd{geom_dotplot}\hlstd{(}\hlkwc{binwidth} \hlstd{=} \hlnum{1.5}\hlstd{)} \hlopt{+}
   \hlkwd{scale_y_continuous}\hlstd{(}\hlkwc{name} \hlstd{=} \hlstr{""}\hlstd{,} \hlkwc{breaks} \hlstd{=} \hlkwa{NULL}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_dotplot6} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_dotplot-6} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Overlap dots vertically}
 \hlkwd{ggplot}\hlstd{(mtcars,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= mpg))} \hlopt{+} \hlkwd{geom_dotplot}\hlstd{(}\hlkwc{binwidth} \hlstd{=} \hlnum{1.5}\hlstd{,} \hlkwc{stackratio} \hlstd{=} \hlnum{.7}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_dotplot7} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_dotplot-7} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Expand dot diameter}
 \hlkwd{ggplot}\hlstd{(mtcars,} \hlkwd{aes}\hlstd{(}\hlkwc{x}  \hlstd{=mpg))} \hlopt{+} \hlkwd{geom_dotplot}\hlstd{(}\hlkwc{binwidth} \hlstd{=} \hlnum{1.5}\hlstd{,} \hlkwc{dotsize} \hlstd{=} \hlnum{1.25}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_dotplot8} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_dotplot-8} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Examples with stacking along y axis instead of x}
 \hlkwd{ggplot}\hlstd{(mtcars,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{y} \hlstd{= mpg))} \hlopt{+}
@@ -767,7 +769,7 @@
 
 
 {\ttfamily\noindent\itshape\color{messagecolor}{\#\# stat\_bindot: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.}}\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_dotplot9} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_dotplot-9} 
 \begin{kframe}\begin{alltt}
 \hlkwd{ggplot}\hlstd{(mtcars,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{=} \hlkwd{factor}\hlstd{(cyl),} \hlkwc{y} \hlstd{= mpg))} \hlopt{+}
   \hlkwd{geom_dotplot}\hlstd{(}\hlkwc{binaxis} \hlstd{=} \hlstr{"y"}\hlstd{,} \hlkwc{stackdir} \hlstd{=} \hlstr{"center"}\hlstd{)}
@@ -775,7 +777,7 @@
 
 
 {\ttfamily\noindent\itshape\color{messagecolor}{\#\# stat\_bindot: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.}}\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_dotplot10} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_dotplot-10} 
 \begin{kframe}\begin{alltt}
 \hlkwd{ggplot}\hlstd{(mtcars,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{=} \hlkwd{factor}\hlstd{(cyl),} \hlkwc{y} \hlstd{= mpg))} \hlopt{+}
   \hlkwd{geom_dotplot}\hlstd{(}\hlkwc{binaxis} \hlstd{=} \hlstr{"y"}\hlstd{,} \hlkwc{stackdir} \hlstd{=} \hlstr{"centerwhole"}\hlstd{)}
@@ -783,7 +785,7 @@
 
 
 {\ttfamily\noindent\itshape\color{messagecolor}{\#\# stat\_bindot: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.}}\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_dotplot11} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_dotplot-11} 
 \begin{kframe}\begin{alltt}
 \hlkwd{ggplot}\hlstd{(mtcars,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{=} \hlkwd{factor}\hlstd{(vs),} \hlkwc{fill} \hlstd{=} \hlkwd{factor}\hlstd{(cyl),} \hlkwc{y} \hlstd{= mpg))} \hlopt{+}
   \hlkwd{geom_dotplot}\hlstd{(}\hlkwc{binaxis} \hlstd{=} \hlstr{"y"}\hlstd{,} \hlkwc{stackdir} \hlstd{=} \hlstr{"center"}\hlstd{,} \hlkwc{position} \hlstd{=} \hlstr{"dodge"}\hlstd{)}
@@ -791,7 +793,7 @@
 
 
 {\ttfamily\noindent\itshape\color{messagecolor}{\#\# stat\_bindot: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.}}\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_dotplot12} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_dotplot-12} 
 \begin{kframe}\begin{alltt}
 \hlcom{# binpositions="all" ensures that the bins are aligned between groups}
 \hlkwd{ggplot}\hlstd{(mtcars,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{=} \hlkwd{factor}\hlstd{(am),} \hlkwc{y} \hlstd{= mpg))} \hlopt{+}
@@ -800,26 +802,26 @@
 
 
 {\ttfamily\noindent\itshape\color{messagecolor}{\#\# stat\_bindot: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.}}\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_dotplot13} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_dotplot-13} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Stacking multiple groups, with different fill}
 \hlkwd{ggplot}\hlstd{(mtcars,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= mpg,} \hlkwc{fill} \hlstd{=} \hlkwd{factor}\hlstd{(cyl)))} \hlopt{+}
   \hlkwd{geom_dotplot}\hlstd{(}\hlkwc{stackgroups} \hlstd{=} \hlnum{TRUE}\hlstd{,} \hlkwc{binwidth} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{binpositions} \hlstd{=} \hlstr{"all"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_dotplot14} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_dotplot-14} 
 \begin{kframe}\begin{alltt}
 \hlkwd{ggplot}\hlstd{(mtcars,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= mpg,} \hlkwc{fill} \hlstd{=} \hlkwd{factor}\hlstd{(cyl)))} \hlopt{+}
   \hlkwd{geom_dotplot}\hlstd{(}\hlkwc{stackgroups} \hlstd{=} \hlnum{TRUE}\hlstd{,} \hlkwc{binwidth} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{method} \hlstd{=} \hlstr{"histodot"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_dotplot15} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_dotplot-15} 
 \begin{kframe}\begin{alltt}
 \hlkwd{ggplot}\hlstd{(mtcars,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{y} \hlstd{= mpg,} \hlkwc{fill} \hlstd{=} \hlkwd{factor}\hlstd{(cyl)))} \hlopt{+}
   \hlkwd{geom_dotplot}\hlstd{(}\hlkwc{binaxis} \hlstd{=} \hlstr{"y"}\hlstd{,} \hlkwc{stackgroups} \hlstd{=} \hlnum{TRUE}\hlstd{,} \hlkwc{binwidth} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{method} \hlstd{=} \hlstr{"histodot"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_dotplot16} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_dotplot-16} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Use qplot instead}
 \hlkwd{qplot}\hlstd{(mpg,} \hlkwc{data} \hlstd{= mtcars,} \hlkwc{geom} \hlstd{=} \hlstr{"dotplot"}\hlstd{)}
@@ -827,7 +829,7 @@
 
 
 {\ttfamily\noindent\itshape\color{messagecolor}{\#\# stat\_bindot: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.}}\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_dotplot17} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_dotplot-17} 
 
 \end{knitrout}
 
@@ -859,7 +861,7 @@
 \hlstd{p} \hlopt{+} \hlkwd{geom_bar}\hlstd{(}\hlkwc{position}\hlstd{=}\hlstr{"dodge"}\hlstd{,} \hlkwc{stat}\hlstd{=}\hlstr{"identity"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_errorbar1} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_errorbar-1} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Because the bars and errorbars have different widths}
 \hlcom{# we need to specify how wide the objects we are dodging are}
@@ -867,34 +869,34 @@
 \hlstd{p} \hlopt{+} \hlkwd{geom_bar}\hlstd{(}\hlkwc{position}\hlstd{=dodge)} \hlopt{+} \hlkwd{geom_errorbar}\hlstd{(limits,} \hlkwc{position}\hlstd{=dodge,} \hlkwc{width}\hlstd{=}\hlnum{0.25}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_errorbar2} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_errorbar-2} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(df2,} \hlkwd{aes}\hlstd{(}\hlkwc{fill}\hlstd{=group,} \hlkwc{y}\hlstd{=resp,} \hlkwc{x}\hlstd{=trt))}
 \hlstd{p} \hlopt{+} \hlkwd{geom_bar}\hlstd{(}\hlkwc{position}\hlstd{=dodge)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_errorbar3} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_errorbar-3} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_bar}\hlstd{(}\hlkwc{position}\hlstd{=dodge)} \hlopt{+} \hlkwd{geom_errorbar}\hlstd{(limits,} \hlkwc{position}\hlstd{=dodge,} \hlkwc{width}\hlstd{=}\hlnum{0.25}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_errorbar4} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_errorbar-4} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(df,} \hlkwd{aes}\hlstd{(}\hlkwc{colour}\hlstd{=group,} \hlkwc{y}\hlstd{=resp,} \hlkwc{x}\hlstd{=trt))}
 \hlstd{p} \hlopt{+} \hlkwd{geom_point}\hlstd{()} \hlopt{+} \hlkwd{geom_errorbar}\hlstd{(limits,} \hlkwc{width}\hlstd{=}\hlnum{0.2}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_errorbar5} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_errorbar-5} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_pointrange}\hlstd{(limits)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_errorbar6} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_errorbar-6} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_crossbar}\hlstd{(limits,} \hlkwc{width}\hlstd{=}\hlnum{0.2}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_errorbar7} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_errorbar-7} 
 \begin{kframe}\begin{alltt}
 \hlcom{# If we want to draw lines, we need to manually set the}
 \hlcom{# groups which define the lines - here the groups in the}
@@ -902,7 +904,7 @@
 \hlstd{p} \hlopt{+} \hlkwd{geom_line}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{group}\hlstd{=group))} \hlopt{+} \hlkwd{geom_errorbar}\hlstd{(limits,} \hlkwc{width}\hlstd{=}\hlnum{0.2}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_errorbar8} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_errorbar-8} 
 
 \end{knitrout}
 
@@ -932,13 +934,13 @@
   \hlkwd{geom_errorbarh}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{xmax} \hlstd{= resp} \hlopt{+} \hlstd{se,} \hlkwc{xmin} \hlstd{= resp} \hlopt{-} \hlstd{se))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_errorbarh1} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_errorbarh-1} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_point}\hlstd{()} \hlopt{+}
   \hlkwd{geom_errorbarh}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{xmax} \hlstd{= resp} \hlopt{+} \hlstd{se,} \hlkwc{xmin} \hlstd{= resp} \hlopt{-} \hlstd{se,} \hlkwc{height} \hlstd{=} \hlnum{.2}\hlstd{))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_errorbarh2} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_errorbarh-2} 
 
 \end{knitrout}
 
@@ -959,34 +961,34 @@
 
 
 {\ttfamily\noindent\itshape\color{messagecolor}{\#\# stat\_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.}}\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_freqpoly1} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_freqpoly-1} 
 \begin{kframe}\begin{alltt}
 \hlkwd{qplot}\hlstd{(carat,} \hlkwc{data} \hlstd{= diamonds,} \hlkwc{geom} \hlstd{=} \hlstr{"freqpoly"}\hlstd{,} \hlkwc{binwidth} \hlstd{=} \hlnum{0.1}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_freqpoly2} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_freqpoly-2} 
 \begin{kframe}\begin{alltt}
 \hlkwd{qplot}\hlstd{(carat,} \hlkwc{data} \hlstd{= diamonds,} \hlkwc{geom} \hlstd{=} \hlstr{"freqpoly"}\hlstd{,} \hlkwc{binwidth} \hlstd{=} \hlnum{0.01}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_freqpoly3} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_freqpoly-3} 
 \begin{kframe}\begin{alltt}
 \hlkwd{qplot}\hlstd{(price,} \hlkwc{data} \hlstd{= diamonds,} \hlkwc{geom} \hlstd{=} \hlstr{"freqpoly"}\hlstd{,} \hlkwc{binwidth} \hlstd{=} \hlnum{1000}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_freqpoly4} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_freqpoly-4} 
 \begin{kframe}\begin{alltt}
 \hlkwd{qplot}\hlstd{(price,} \hlkwc{data} \hlstd{= diamonds,} \hlkwc{geom} \hlstd{=} \hlstr{"freqpoly"}\hlstd{,} \hlkwc{binwidth} \hlstd{=} \hlnum{1000}\hlstd{,}
   \hlkwc{colour} \hlstd{= color)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_freqpoly5} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_freqpoly-5} 
 \begin{kframe}\begin{alltt}
 \hlkwd{qplot}\hlstd{(price, ..density..,} \hlkwc{data} \hlstd{= diamonds,} \hlkwc{geom} \hlstd{=} \hlstr{"freqpoly"}\hlstd{,}
   \hlkwc{binwidth} \hlstd{=} \hlnum{1000}\hlstd{,} \hlkwc{colour} \hlstd{= color)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_freqpoly6} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_freqpoly-6} 
 
 \end{knitrout}
 
@@ -1030,7 +1032,7 @@
 {\ttfamily\noindent\itshape\color{messagecolor}{\#\# stat\_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.}}
 
 {\ttfamily\noindent\color{warningcolor}{\#\# Warning: position\_stack requires constant width: output may be incorrect}}\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram1} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-1} 
 \begin{kframe}\begin{alltt}
 \hlkwd{qplot}\hlstd{(rating,} \hlkwc{data}\hlstd{=movies,} \hlkwc{weight}\hlstd{=votes,} \hlkwc{geom}\hlstd{=}\hlstr{"histogram"}\hlstd{)}
 \end{alltt}
@@ -1039,19 +1041,19 @@
 {\ttfamily\noindent\itshape\color{messagecolor}{\#\# stat\_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.}}
 
 {\ttfamily\noindent\color{warningcolor}{\#\# Warning: position\_stack requires constant width: output may be incorrect}}\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram2} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-2} 
 \begin{kframe}\begin{alltt}
 \hlkwd{qplot}\hlstd{(rating,} \hlkwc{data}\hlstd{=movies,} \hlkwc{weight}\hlstd{=votes,} \hlkwc{geom}\hlstd{=}\hlstr{"histogram"}\hlstd{,} \hlkwc{binwidth}\hlstd{=}\hlnum{1}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram3} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-3} 
 \begin{kframe}\begin{alltt}
 \hlkwd{qplot}\hlstd{(rating,} \hlkwc{data}\hlstd{=movies,} \hlkwc{weight}\hlstd{=votes,} \hlkwc{geom}\hlstd{=}\hlstr{"histogram"}\hlstd{,} \hlkwc{binwidth}\hlstd{=}\hlnum{0.1}\hlstd{)}
 \end{alltt}
 
 
 {\ttfamily\noindent\color{warningcolor}{\#\# Warning: position\_stack requires constant width: output may be incorrect}}\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram4} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-4} 
 \begin{kframe}\begin{alltt}
 \hlcom{# More complex}
 \hlstd{m} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(movies,} \hlkwd{aes}\hlstd{(}\hlkwc{x}\hlstd{=rating))}
@@ -1062,7 +1064,7 @@
 {\ttfamily\noindent\itshape\color{messagecolor}{\#\# stat\_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.}}
 
 {\ttfamily\noindent\color{warningcolor}{\#\# Warning: position\_stack requires constant width: output may be incorrect}}\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram5} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-5} 
 \begin{kframe}\begin{alltt}
 \hlstd{m} \hlopt{+} \hlkwd{geom_histogram}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{y} \hlstd{= ..density..))} \hlopt{+} \hlkwd{geom_density}\hlstd{()}
 \end{alltt}
@@ -1071,24 +1073,24 @@
 {\ttfamily\noindent\itshape\color{messagecolor}{\#\# stat\_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.}}
 
 {\ttfamily\noindent\color{warningcolor}{\#\# Warning: position\_stack requires constant width: output may be incorrect}}\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram6} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-6} 
 \begin{kframe}\begin{alltt}
 \hlstd{m} \hlopt{+} \hlkwd{geom_histogram}\hlstd{(}\hlkwc{binwidth} \hlstd{=} \hlnum{1}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram7} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-7} 
 \begin{kframe}\begin{alltt}
 \hlstd{m} \hlopt{+} \hlkwd{geom_histogram}\hlstd{(}\hlkwc{binwidth} \hlstd{=} \hlnum{0.5}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram8} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-8} 
 \begin{kframe}\begin{alltt}
 \hlstd{m} \hlopt{+} \hlkwd{geom_histogram}\hlstd{(}\hlkwc{binwidth} \hlstd{=} \hlnum{0.1}\hlstd{)}
 \end{alltt}
 
 
 {\ttfamily\noindent\color{warningcolor}{\#\# Warning: position\_stack requires constant width: output may be incorrect}}\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram9} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-9} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Add aesthetic mappings}
 \hlstd{m} \hlopt{+} \hlkwd{geom_histogram}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{weight} \hlstd{= votes))}
@@ -1098,7 +1100,7 @@
 {\ttfamily\noindent\itshape\color{messagecolor}{\#\# stat\_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.}}
 
 {\ttfamily\noindent\color{warningcolor}{\#\# Warning: position\_stack requires constant width: output may be incorrect}}\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram10} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-10} 
 \begin{kframe}\begin{alltt}
 \hlstd{m} \hlopt{+} \hlkwd{geom_histogram}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{y} \hlstd{= ..count..))}
 \end{alltt}
@@ -1107,7 +1109,7 @@
 {\ttfamily\noindent\itshape\color{messagecolor}{\#\# stat\_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.}}
 
 {\ttfamily\noindent\color{warningcolor}{\#\# Warning: position\_stack requires constant width: output may be incorrect}}\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram11} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-11} 
 \begin{kframe}\begin{alltt}
 \hlstd{m} \hlopt{+} \hlkwd{geom_histogram}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{fill} \hlstd{= ..count..))}
 \end{alltt}
@@ -1116,7 +1118,7 @@
 {\ttfamily\noindent\itshape\color{messagecolor}{\#\# stat\_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.}}
 
 {\ttfamily\noindent\color{warningcolor}{\#\# Warning: position\_stack requires constant width: output may be incorrect}}\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram12} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-12} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Change scales}
 \hlstd{m} \hlopt{+} \hlkwd{geom_histogram}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{fill} \hlstd{= ..count..))} \hlopt{+}
@@ -1127,7 +1129,7 @@
 {\ttfamily\noindent\itshape\color{messagecolor}{\#\# stat\_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.}}
 
 {\ttfamily\noindent\color{warningcolor}{\#\# Warning: position\_stack requires constant width: output may be incorrect}}\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram13} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-13} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Often we don't want the height of the bar to represent the}
 \hlcom{# count of observations, but the sum of some other variable.}
@@ -1138,7 +1140,7 @@
 
 
 {\ttfamily\noindent\color{warningcolor}{\#\# Warning: position\_stack requires constant width: output may be incorrect}}\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram14} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-14} 
 \begin{kframe}\begin{alltt}
 \hlcom{# If, however, we want to see the number of votes cast in each}
 \hlcom{# category, we need to weight by the votes variable}
@@ -1148,7 +1150,7 @@
 
 
 {\ttfamily\noindent\color{warningcolor}{\#\# Warning: position\_stack requires constant width: output may be incorrect}}\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram15} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-15} 
 \begin{kframe}\begin{alltt}
 \hlstd{m} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(movies,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= votes))}
 \hlcom{# For transformed scales, binwidth applies to the transformed data.}
@@ -1158,24 +1160,24 @@
 
 
 {\ttfamily\noindent\itshape\color{messagecolor}{\#\# stat\_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.}}\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram16} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-16} 
 \begin{kframe}\begin{alltt}
 \hlstd{m} \hlopt{+} \hlkwd{geom_histogram}\hlstd{(}\hlkwc{binwidth} \hlstd{=} \hlnum{1}\hlstd{)} \hlopt{+} \hlkwd{scale_x_log10}\hlstd{()}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram17} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-17} 
 \begin{kframe}\begin{alltt}
 \hlstd{m} \hlopt{+} \hlkwd{geom_histogram}\hlstd{()} \hlopt{+} \hlkwd{scale_x_sqrt}\hlstd{()}
 \end{alltt}
 
 
 {\ttfamily\noindent\itshape\color{messagecolor}{\#\# stat\_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.}}\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram18} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-18} 
 \begin{kframe}\begin{alltt}
 \hlstd{m} \hlopt{+} \hlkwd{geom_histogram}\hlstd{(}\hlkwc{binwidth} \hlstd{=} \hlnum{10}\hlstd{)} \hlopt{+} \hlkwd{scale_x_sqrt}\hlstd{()}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram19} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-19} 
 \begin{kframe}\begin{alltt}
 \hlcom{# For transformed coordinate systems, the binwidth applies to the}
 \hlcom{# raw data.  The bins have constant width on the original scale.}
@@ -1189,7 +1191,7 @@
 
 
 {\ttfamily\noindent\itshape\color{messagecolor}{\#\# stat\_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.}}\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram20} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-20} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Use origin = 0, to make sure we don't take sqrt of negative values}
 \hlstd{m} \hlopt{+} \hlkwd{geom_histogram}\hlstd{(}\hlkwc{origin} \hlstd{=} \hlnum{0}\hlstd{)} \hlopt{+} \hlkwd{coord_trans}\hlstd{(}\hlkwc{x} \hlstd{=} \hlstr{"sqrt"}\hlstd{)}
@@ -1197,12 +1199,12 @@
 
 
 {\ttfamily\noindent\itshape\color{messagecolor}{\#\# stat\_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.}}\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram21} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-21} 
 \begin{kframe}\begin{alltt}
 \hlstd{m} \hlopt{+} \hlkwd{geom_histogram}\hlstd{(}\hlkwc{origin} \hlstd{=} \hlnum{0}\hlstd{,} \hlkwc{binwidth} \hlstd{=} \hlnum{1000}\hlstd{)} \hlopt{+} \hlkwd{coord_trans}\hlstd{(}\hlkwc{x} \hlstd{=} \hlstr{"sqrt"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram22} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-22} 
 \begin{kframe}\begin{alltt}
 \hlcom{# You can also transform the y axis.  Remember that the base of the bars}
 \hlcom{# has value 0, so log transformations are not appropriate}
@@ -1210,39 +1212,39 @@
 \hlstd{m} \hlopt{+} \hlkwd{geom_histogram}\hlstd{(}\hlkwc{binwidth} \hlstd{=} \hlnum{0.5}\hlstd{)} \hlopt{+} \hlkwd{scale_y_sqrt}\hlstd{()}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram23} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-23} 
 \begin{kframe}\begin{alltt}
 \hlstd{m} \hlopt{+} \hlkwd{geom_histogram}\hlstd{(}\hlkwc{binwidth} \hlstd{=} \hlnum{0.5}\hlstd{)} \hlopt{+} \hlkwd{scale_y_reverse}\hlstd{()}
 \end{alltt}
 
 
 {\ttfamily\noindent\color{warningcolor}{\#\# Warning: Stacking not well defined when ymin != 0}}\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram24} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-24} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Set aesthetics to fixed value}
 \hlstd{m} \hlopt{+} \hlkwd{geom_histogram}\hlstd{(}\hlkwc{colour} \hlstd{=} \hlstr{"darkgreen"}\hlstd{,} \hlkwc{fill} \hlstd{=} \hlstr{"white"}\hlstd{,} \hlkwc{binwidth} \hlstd{=} \hlnum{0.5}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram25} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-25} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Use facets}
 \hlstd{m} \hlkwb{<-} \hlstd{m} \hlopt{+} \hlkwd{geom_histogram}\hlstd{(}\hlkwc{binwidth} \hlstd{=} \hlnum{0.5}\hlstd{)}
 \hlstd{m} \hlopt{+} \hlkwd{facet_grid}\hlstd{(Action} \hlopt{~} \hlstd{Comedy)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram26} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-26} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Often more useful to use density on the y axis when facetting}
 \hlstd{m} \hlkwb{<-} \hlstd{m} \hlopt{+} \hlkwd{aes}\hlstd{(}\hlkwc{y} \hlstd{= ..density..)}
 \hlstd{m} \hlopt{+} \hlkwd{facet_grid}\hlstd{(Action} \hlopt{~} \hlstd{Comedy)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram27} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-27} 
 \begin{kframe}\begin{alltt}
 \hlstd{m} \hlopt{+} \hlkwd{facet_wrap}\hlstd{(}\hlopt{~} \hlstd{mpaa)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram28} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-28} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Multiple histograms on the same graph}
 \hlcom{# see ?position, ?position_fill, etc for more details.}
@@ -1253,7 +1255,7 @@
 
 
 {\ttfamily\noindent\itshape\color{messagecolor}{\#\# stat\_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.}}\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram29} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-29} 
 \begin{kframe}\begin{alltt}
 \hlstd{hist_cut} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(diamonds_small,} \hlkwd{aes}\hlstd{(}\hlkwc{x}\hlstd{=price,} \hlkwc{fill}\hlstd{=cut))}
 \hlstd{hist_cut} \hlopt{+} \hlkwd{geom_bar}\hlstd{()} \hlcom{# defaults to stacking}
@@ -1261,21 +1263,21 @@
 
 
 {\ttfamily\noindent\itshape\color{messagecolor}{\#\# stat\_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.}}\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram30} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-30} 
 \begin{kframe}\begin{alltt}
 \hlstd{hist_cut} \hlopt{+} \hlkwd{geom_bar}\hlstd{(}\hlkwc{position}\hlstd{=}\hlstr{"fill"}\hlstd{)}
 \end{alltt}
 
 
 {\ttfamily\noindent\itshape\color{messagecolor}{\#\# stat\_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.}}\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram31} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-31} 
 \begin{kframe}\begin{alltt}
 \hlstd{hist_cut} \hlopt{+} \hlkwd{geom_bar}\hlstd{(}\hlkwc{position}\hlstd{=}\hlstr{"dodge"}\hlstd{)}
 \end{alltt}
 
 
 {\ttfamily\noindent\itshape\color{messagecolor}{\#\# stat\_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.}}\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram32} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-32} 
 \begin{kframe}\begin{alltt}
 \hlcom{# This is easy in ggplot2, but not visually effective.  It's better}
 \hlcom{# to use a frequency polygon or density plot.  Like this:}
@@ -1283,21 +1285,21 @@
   \hlkwd{geom_freqpoly}\hlstd{(}\hlkwc{binwidth} \hlstd{=} \hlnum{1000}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram33} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-33} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Or this:}
 \hlkwd{ggplot}\hlstd{(diamonds_small,} \hlkwd{aes}\hlstd{(price,} \hlkwc{colour} \hlstd{= cut))} \hlopt{+}
   \hlkwd{geom_density}\hlstd{()}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram34} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-34} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Or if you want to be fancy, maybe even this:}
 \hlkwd{ggplot}\hlstd{(diamonds_small,} \hlkwd{aes}\hlstd{(price,} \hlkwc{fill} \hlstd{= cut))} \hlopt{+}
   \hlkwd{geom_density}\hlstd{(}\hlkwc{alpha} \hlstd{=} \hlnum{0.2}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram35} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-35} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Which looks better when the distributions are more distinct}
 \hlkwd{ggplot}\hlstd{(diamonds_small,} \hlkwd{aes}\hlstd{(depth,} \hlkwc{fill} \hlstd{= cut))} \hlopt{+}
@@ -1306,7 +1308,7 @@
 
 
 {\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 2 rows containing non-finite values (stat\_density).}}\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram36} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-36} 
 \begin{kframe}\begin{alltt}
 \hlcom{## End(No test)}
 \hlkwd{rm}\hlstd{(movies)}
@@ -1331,33 +1333,33 @@
 \hlstd{p} \hlopt{+} \hlkwd{geom_hline}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{yintercept}\hlstd{=mpg))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_hline1} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_hline-1} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_hline}\hlstd{(}\hlkwc{yintercept}\hlstd{=}\hlnum{20}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_hline2} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_hline-2} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_hline}\hlstd{(}\hlkwc{yintercept}\hlstd{=}\hlkwd{seq}\hlstd{(}\hlnum{10}\hlstd{,} \hlnum{30}\hlstd{,} \hlkwc{by}\hlstd{=}\hlnum{5}\hlstd{))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_hline3} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_hline-3} 
 \begin{kframe}\begin{alltt}
 \hlcom{# With coordinate transforms}
 \hlstd{p} \hlopt{+} \hlkwd{geom_hline}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{yintercept}\hlstd{=mpg))} \hlopt{+} \hlkwd{coord_equal}\hlstd{()}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_hline4} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_hline-4} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_hline}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{yintercept}\hlstd{=mpg))} \hlopt{+} \hlkwd{coord_flip}\hlstd{()}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_hline5} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_hline-5} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_hline}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{yintercept}\hlstd{=mpg))} \hlopt{+} \hlkwd{coord_polar}\hlstd{()}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_hline6} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_hline-6} 
 \begin{kframe}\begin{alltt}
 \hlcom{# To display different lines in different facets, you need to}
 \hlcom{# create a data frame.}
@@ -1367,7 +1369,7 @@
 \hlstd{p} \hlopt{+} \hlkwd{geom_hline}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{yintercept} \hlstd{= z), hline.data)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_hline7} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_hline-7} 
 
 \end{knitrout}
 
@@ -1387,50 +1389,50 @@
 \hlstd{p} \hlopt{+} \hlkwd{geom_point}\hlstd{()}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_jitter1} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_jitter-1} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_point}\hlstd{(}\hlkwc{position} \hlstd{=} \hlstr{"jitter"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_jitter2} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_jitter-2} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Add aesthetic mappings}
 \hlstd{p} \hlopt{+} \hlkwd{geom_jitter}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{colour} \hlstd{= cyl))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_jitter3} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_jitter-3} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Vary parameters}
 \hlstd{p} \hlopt{+} \hlkwd{geom_jitter}\hlstd{(}\hlkwc{position} \hlstd{=} \hlkwd{position_jitter}\hlstd{(}\hlkwc{width} \hlstd{=} \hlnum{.5}\hlstd{))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_jitter4} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_jitter-4} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_jitter}\hlstd{(}\hlkwc{position} \hlstd{=} \hlkwd{position_jitter}\hlstd{(}\hlkwc{height} \hlstd{=} \hlnum{.5}\hlstd{))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_jitter5} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_jitter-5} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Use qplot instead}
 \hlkwd{qplot}\hlstd{(displ, hwy,} \hlkwc{data} \hlstd{= mpg,} \hlkwc{geom} \hlstd{=} \hlstr{"jitter"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_jitter6} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_jitter-6} 
 \begin{kframe}\begin{alltt}
 \hlkwd{qplot}\hlstd{(class, hwy,} \hlkwc{data} \hlstd{= mpg,} \hlkwc{geom} \hlstd{=} \hlstr{"jitter"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_jitter7} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_jitter-7} 
 \begin{kframe}\begin{alltt}
 \hlkwd{qplot}\hlstd{(class, hwy,} \hlkwc{data} \hlstd{= mpg,} \hlkwc{geom} \hlstd{=} \hlkwd{c}\hlstd{(}\hlstr{"boxplot"}\hlstd{,} \hlstr{"jitter"}\hlstd{))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_jitter8} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_jitter-8} 
 \begin{kframe}\begin{alltt}
 \hlkwd{qplot}\hlstd{(class, hwy,} \hlkwc{data} \hlstd{= mpg,} \hlkwc{geom} \hlstd{=} \hlkwd{c}\hlstd{(}\hlstr{"jitter"}\hlstd{,} \hlstr{"boxplot"}\hlstd{))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_jitter9} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_jitter-9} 
 
 \end{knitrout}
 
@@ -1456,62 +1458,62 @@
 \hlstd{p} \hlopt{+} \hlkwd{geom_line}\hlstd{()}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_line1} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_line-1} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Add aesthetic mappings}
 \hlstd{p} \hlopt{+} \hlkwd{geom_line}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{size} \hlstd{= rating))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_line2} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_line-2} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_line}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{colour} \hlstd{= rating))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_line3} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_line-3} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Change scale}
 \hlstd{p} \hlopt{+} \hlkwd{geom_line}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{colour} \hlstd{= rating))} \hlopt{+} \hlkwd{scale_colour_gradient}\hlstd{(}\hlkwc{low}\hlstd{=}\hlstr{"red"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_line4} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_line-4} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_line}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{size} \hlstd{= rating))} \hlopt{+} \hlkwd{scale_size}\hlstd{(}\hlkwc{range} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{0.1}\hlstd{,} \hlnum{3}\hlstd{))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_line5} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_line-5} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Set aesthetics to fixed value}
 \hlstd{p} \hlopt{+} \hlkwd{geom_line}\hlstd{(}\hlkwc{colour} \hlstd{=} \hlstr{"red"}\hlstd{,} \hlkwc{size} \hlstd{=} \hlnum{1}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_line6} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_line-6} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Use qplot instead}
 \hlkwd{qplot}\hlstd{(year, number,} \hlkwc{data}\hlstd{=mry,} \hlkwc{group}\hlstd{=rating,} \hlkwc{geom}\hlstd{=}\hlstr{"line"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_line7} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_line-7} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Using a time series}
 \hlkwd{qplot}\hlstd{(date, pop,} \hlkwc{data}\hlstd{=economics,} \hlkwc{geom}\hlstd{=}\hlstr{"line"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_line8} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_line-8} 
 \begin{kframe}\begin{alltt}
 \hlkwd{qplot}\hlstd{(date, pop,} \hlkwc{data}\hlstd{=economics,} \hlkwc{geom}\hlstd{=}\hlstr{"line"}\hlstd{,} \hlkwc{log}\hlstd{=}\hlstr{"y"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_line9} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_line-9} 
 \begin{kframe}\begin{alltt}
 \hlkwd{qplot}\hlstd{(date, pop,} \hlkwc{data}\hlstd{=}\hlkwd{subset}\hlstd{(economics, date} \hlopt{>} \hlkwd{as.Date}\hlstd{(}\hlstr{"2006-1-1"}\hlstd{)),} \hlkwc{geom}\hlstd{=}\hlstr{"line"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_line10} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_line-10} 
 \begin{kframe}\begin{alltt}
 \hlkwd{qplot}\hlstd{(date, pop,} \hlkwc{data}\hlstd{=economics,} \hlkwc{size}\hlstd{=unemploy}\hlopt{/}\hlstd{pop,} \hlkwc{geom}\hlstd{=}\hlstr{"line"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_line11} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_line-11} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Use the arrow parameter to add an arrow to the line}
 \hlcom{# See ?grid::arrow for more details}
@@ -1521,12 +1523,12 @@
 \hlstd{c} \hlopt{+} \hlkwd{geom_line}\hlstd{(}\hlkwc{arrow} \hlstd{=} \hlkwd{arrow}\hlstd{())}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_line12} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_line-12} 
 \begin{kframe}\begin{alltt}
 \hlstd{c} \hlopt{+} \hlkwd{geom_line}\hlstd{(}\hlkwc{arrow} \hlstd{=} \hlkwd{arrow}\hlstd{(}\hlkwc{angle} \hlstd{=} \hlnum{15}\hlstd{,} \hlkwc{ends} \hlstd{=} \hlstr{"both"}\hlstd{,} \hlkwc{type} \hlstd{=} \hlstr{"closed"}\hlstd{))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_line13} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_line-13} 
 \begin{kframe}\begin{alltt}
 \hlcom{# See scale_date for examples of plotting multiple times series on}
 \hlcom{# a single graph}
@@ -1544,7 +1546,7 @@
   \hlkwd{geom_path}\hlstd{(}\hlkwc{alpha} \hlstd{=} \hlnum{0.5}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_line14} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_line-14} 
 
 \end{knitrout}
 
@@ -1569,14 +1571,14 @@
 \hlkwd{qplot}\hlstd{(cut, fit,} \hlkwc{data}\hlstd{=cuts)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_linerange1} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_linerange-1} 
 \begin{kframe}\begin{alltt}
 \hlcom{# With a bar chart, we are comparing lengths, so the y-axis is}
 \hlcom{# automatically extended to include 0}
 \hlkwd{qplot}\hlstd{(cut, fit,} \hlkwc{data}\hlstd{=cuts,} \hlkwc{geom}\hlstd{=}\hlstr{"bar"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_linerange2} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_linerange-2} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Display estimates and standard errors in various ways}
 \hlstd{se} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(cuts,} \hlkwd{aes}\hlstd{(cut, fit,}
@@ -1584,28 +1586,28 @@
 \hlstd{se} \hlopt{+} \hlkwd{geom_linerange}\hlstd{()}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_linerange3} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_linerange-3} 
 \begin{kframe}\begin{alltt}
 \hlstd{se} \hlopt{+} \hlkwd{geom_pointrange}\hlstd{()}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_linerange4} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_linerange-4} 
 \begin{kframe}\begin{alltt}
 \hlstd{se} \hlopt{+} \hlkwd{geom_errorbar}\hlstd{(}\hlkwc{width} \hlstd{=} \hlnum{0.5}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_linerange5} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_linerange-5} 
 \begin{kframe}\begin{alltt}
 \hlstd{se} \hlopt{+} \hlkwd{geom_crossbar}\hlstd{(}\hlkwc{width} \hlstd{=} \hlnum{0.5}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_linerange6} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_linerange-6} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Use coord_flip to flip the x and y axes}
 \hlstd{se} \hlopt{+} \hlkwd{geom_linerange}\hlstd{()} \hlopt{+} \hlkwd{coord_flip}\hlstd{()}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_linerange7} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_linerange-7} 
 
 \end{knitrout}
 
@@ -1645,21 +1647,21 @@
   \hlkwd{expand_limits}\hlstd{(positions)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_map1} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_map-1} 
 \begin{kframe}\begin{alltt}
 \hlkwd{ggplot}\hlstd{(values,} \hlkwd{aes}\hlstd{(}\hlkwc{fill} \hlstd{= value))} \hlopt{+}
   \hlkwd{geom_map}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{map_id} \hlstd{= id),} \hlkwc{map} \hlstd{= positions)} \hlopt{+}
   \hlkwd{expand_limits}\hlstd{(positions)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_map2} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_map-2} 
 \begin{kframe}\begin{alltt}
 \hlkwd{ggplot}\hlstd{(values,} \hlkwd{aes}\hlstd{(}\hlkwc{fill} \hlstd{= value))} \hlopt{+}
   \hlkwd{geom_map}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{map_id} \hlstd{= id),} \hlkwc{map} \hlstd{= positions)} \hlopt{+}
   \hlkwd{expand_limits}\hlstd{(positions)} \hlopt{+} \hlkwd{ylim}\hlstd{(}\hlnum{0}\hlstd{,} \hlnum{3}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_map3} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_map-3} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Better example}
 \hlstd{crimes} \hlkwb{<-} \hlkwd{data.frame}\hlstd{(}\hlkwc{state} \hlstd{=} \hlkwd{tolower}\hlstd{(}\hlkwd{rownames}\hlstd{(USArrests)), USArrests)}
@@ -1681,7 +1683,7 @@
 
 
 {\ttfamily\noindent\itshape\color{messagecolor}{\#\# Loading required package: maps}}\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_map4} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_map-4} 
 
 \end{knitrout}
 
@@ -1705,30 +1707,30 @@
 \hlstd{p} \hlopt{+} \hlkwd{geom_path}\hlstd{()}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_path1} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_path-1} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Add aesthetic mappings}
 \hlstd{p} \hlopt{+} \hlkwd{geom_path}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{size} \hlstd{= year))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_path2} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_path-2} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_path}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{colour} \hlstd{= year))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_path3} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_path-3} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Change scale}
 \hlstd{p} \hlopt{+} \hlkwd{geom_path}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{size} \hlstd{= year))} \hlopt{+} \hlkwd{scale_size}\hlstd{(}\hlkwc{range} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{3}\hlstd{))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_path4} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_path-4} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Set aesthetics to fixed value}
 \hlstd{p} \hlopt{+} \hlkwd{geom_path}\hlstd{(}\hlkwc{colour} \hlstd{=} \hlstr{"green"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_path5} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_path-5} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Control line join parameters}
 \hlstd{df} \hlkwb{<-} \hlkwd{data.frame}\hlstd{(}\hlkwc{x} \hlstd{=} \hlnum{1}\hlopt{:}\hlnum{3}\hlstd{,} \hlkwc{y} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{4}\hlstd{,} \hlnum{1}\hlstd{,} \hlnum{9}\hlstd{))}
@@ -1736,65 +1738,65 @@
 \hlstd{base} \hlopt{+} \hlkwd{geom_path}\hlstd{(}\hlkwc{size} \hlstd{=} \hlnum{10}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_path6} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_path-6} 
 \begin{kframe}\begin{alltt}
 \hlstd{base} \hlopt{+} \hlkwd{geom_path}\hlstd{(}\hlkwc{size} \hlstd{=} \hlnum{10}\hlstd{,} \hlkwc{lineend} \hlstd{=} \hlstr{"round"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_path7} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_path-7} 
 \begin{kframe}\begin{alltt}
 \hlstd{base} \hlopt{+} \hlkwd{geom_path}\hlstd{(}\hlkwc{size} \hlstd{=} \hlnum{10}\hlstd{,} \hlkwc{linejoin} \hlstd{=} \hlstr{"mitre"}\hlstd{,} \hlkwc{lineend} \hlstd{=} \hlstr{"butt"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_path8} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_path-8} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Use qplot instead}
 \hlkwd{qplot}\hlstd{(length, rating,} \hlkwc{data}\hlstd{=myear,} \hlkwc{geom}\hlstd{=}\hlstr{"path"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_path9} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_path-9} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Using economic data:}
 \hlcom{# How is unemployment and personal savings rate related?}
 \hlkwd{qplot}\hlstd{(unemploy}\hlopt{/}\hlstd{pop, psavert,} \hlkwc{data}\hlstd{=economics)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_path10} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_path-10} 
 \begin{kframe}\begin{alltt}
 \hlkwd{qplot}\hlstd{(unemploy}\hlopt{/}\hlstd{pop, psavert,} \hlkwc{data}\hlstd{=economics,} \hlkwc{geom}\hlstd{=}\hlstr{"path"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_path11} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_path-11} 
 \begin{kframe}\begin{alltt}
 \hlkwd{qplot}\hlstd{(unemploy}\hlopt{/}\hlstd{pop, psavert,} \hlkwc{data}\hlstd{=economics,} \hlkwc{geom}\hlstd{=}\hlstr{"path"}\hlstd{,} \hlkwc{size}\hlstd{=}\hlkwd{as.numeric}\hlstd{(date))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_path12} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_path-12} 
 \begin{kframe}\begin{alltt}
 \hlcom{# How is rate of unemployment and length of unemployment?}
 \hlkwd{qplot}\hlstd{(unemploy}\hlopt{/}\hlstd{pop, uempmed,} \hlkwc{data}\hlstd{=economics)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_path13} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_path-13} 
 \begin{kframe}\begin{alltt}
 \hlkwd{qplot}\hlstd{(unemploy}\hlopt{/}\hlstd{pop, uempmed,} \hlkwc{data}\hlstd{=economics,} \hlkwc{geom}\hlstd{=}\hlstr{"path"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_path14} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_path-14} 
 \begin{kframe}\begin{alltt}
 \hlkwd{qplot}\hlstd{(unemploy}\hlopt{/}\hlstd{pop, uempmed,} \hlkwc{data}\hlstd{=economics,} \hlkwc{geom}\hlstd{=}\hlstr{"path"}\hlstd{)} \hlopt{+}
   \hlkwd{geom_point}\hlstd{(}\hlkwc{data}\hlstd{=}\hlkwd{head}\hlstd{(economics,} \hlnum{1}\hlstd{),} \hlkwc{colour}\hlstd{=}\hlstr{"red"}\hlstd{)} \hlopt{+}
   \hlkwd{geom_point}\hlstd{(}\hlkwc{data}\hlstd{=}\hlkwd{tail}\hlstd{(economics,} \hlnum{1}\hlstd{),} \hlkwc{colour}\hlstd{=}\hlstr{"blue"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_path15} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_path-15} 
 \begin{kframe}\begin{alltt}
 \hlkwd{qplot}\hlstd{(unemploy}\hlopt{/}\hlstd{pop, uempmed,} \hlkwc{data}\hlstd{=economics,} \hlkwc{geom}\hlstd{=}\hlstr{"path"}\hlstd{)} \hlopt{+}
   \hlkwd{geom_text}\hlstd{(}\hlkwc{data}\hlstd{=}\hlkwd{head}\hlstd{(economics,} \hlnum{1}\hlstd{),} \hlkwc{label}\hlstd{=}\hlstr{"1967"}\hlstd{,} \hlkwc{colour}\hlstd{=}\hlstr{"blue"}\hlstd{)} \hlopt{+}
   \hlkwd{geom_text}\hlstd{(}\hlkwc{data}\hlstd{=}\hlkwd{tail}\hlstd{(economics,} \hlnum{1}\hlstd{),} \hlkwc{label}\hlstd{=}\hlstr{"2007"}\hlstd{,} \hlkwc{colour}\hlstd{=}\hlstr{"blue"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_path16} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_path-16} 
 \begin{kframe}\begin{alltt}
 \hlcom{# geom_path removes missing values on the ends of a line.}
 \hlcom{# use na.rm = T to suppress the warning message}
@@ -1808,27 +1810,31 @@
 \end{alltt}
 
 
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 1 rows containing missing values (geom\_point).\\\#\# Warning: Removed 1 rows containing missing values (geom\_path).}}\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_path17} 
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 1 rows containing missing values (geom\_point).}}
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 1 rows containing missing values (geom\_path).}}\end{kframe}
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_path-17} 
 \begin{kframe}\begin{alltt}
 \hlkwd{qplot}\hlstd{(x, y2,} \hlkwc{data} \hlstd{= df,} \hlkwc{geom} \hlstd{=} \hlkwd{c}\hlstd{(}\hlstr{"point"}\hlstd{,}\hlstr{"line"}\hlstd{))}
 \end{alltt}
 
 
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 1 rows containing missing values (geom\_point).\\\#\# Warning: Removed 1 rows containing missing values (geom\_path).}}\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_path18} 
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 1 rows containing missing values (geom\_point).}}
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 1 rows containing missing values (geom\_path).}}\end{kframe}
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_path-18} 
 \begin{kframe}\begin{alltt}
 \hlkwd{qplot}\hlstd{(x, y3,} \hlkwc{data} \hlstd{= df,} \hlkwc{geom} \hlstd{=} \hlkwd{c}\hlstd{(}\hlstr{"point"}\hlstd{,}\hlstr{"line"}\hlstd{))}
 \end{alltt}
 
 
 {\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 1 rows containing missing values (geom\_point).}}\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_path19} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_path-19} 
 \begin{kframe}\begin{alltt}
 \hlkwd{qplot}\hlstd{(x, y4,} \hlkwc{data} \hlstd{= df,} \hlkwc{geom} \hlstd{=} \hlkwd{c}\hlstd{(}\hlstr{"point"}\hlstd{,}\hlstr{"line"}\hlstd{))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_path20} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_path-20} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Setting line type vs colour/size}
 \hlcom{# Line type needs to be applied to a line as a whole, so it can}
@@ -1842,17 +1848,17 @@
 \hlstd{p} \hlopt{+} \hlkwd{geom_line}\hlstd{(}\hlkwc{linetype} \hlstd{=} \hlnum{2}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_path21} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_path-21} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_line}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{colour} \hlstd{= group),} \hlkwc{linetype} \hlstd{=} \hlnum{2}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_path22} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_path-22} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_line}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{colour} \hlstd{= x))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_path23} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_path-23} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Should fail}
 \hlkwd{should_stop}\hlstd{(p} \hlopt{+} \hlkwd{geom_line}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{colour} \hlstd{= x),} \hlkwc{linetype}\hlstd{=}\hlnum{2}\hlstd{))}
@@ -1865,12 +1871,12 @@
 \hlstd{c} \hlopt{+} \hlkwd{geom_path}\hlstd{(}\hlkwc{arrow} \hlstd{=} \hlkwd{arrow}\hlstd{())}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_path24} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_path-24} 
 \begin{kframe}\begin{alltt}
 \hlstd{c} \hlopt{+} \hlkwd{geom_path}\hlstd{(}\hlkwc{arrow} \hlstd{=} \hlkwd{arrow}\hlstd{(}\hlkwc{angle} \hlstd{=} \hlnum{15}\hlstd{,} \hlkwc{ends} \hlstd{=} \hlstr{"both"}\hlstd{,} \hlkwc{length} \hlstd{=} \hlkwd{unit}\hlstd{(}\hlnum{0.6}\hlstd{,} \hlstr{"inches"}\hlstd{)))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_path25} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_path-25} 
 \begin{kframe}\begin{alltt}
 \hlcom{## End(No test)}
 \end{alltt}
@@ -1894,77 +1900,77 @@
 \hlstd{p} \hlopt{+} \hlkwd{geom_point}\hlstd{()}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_point1} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_point-1} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Add aesthetic mappings}
 \hlstd{p} \hlopt{+} \hlkwd{geom_point}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{colour} \hlstd{= qsec))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_point2} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_point-2} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_point}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{alpha} \hlstd{= qsec))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_point3} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_point-3} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_point}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{colour} \hlstd{=} \hlkwd{factor}\hlstd{(cyl)))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_point4} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_point-4} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_point}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{shape} \hlstd{=} \hlkwd{factor}\hlstd{(cyl)))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_point5} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_point-5} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_point}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{size} \hlstd{= qsec))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_point6} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_point-6} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Change scales}
 \hlstd{p} \hlopt{+} \hlkwd{geom_point}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{colour} \hlstd{= cyl))} \hlopt{+} \hlkwd{scale_colour_gradient}\hlstd{(}\hlkwc{low} \hlstd{=} \hlstr{"blue"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_point7} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_point-7} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_point}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{size} \hlstd{= qsec))} \hlopt{+} \hlkwd{scale_size_area}\hlstd{()}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_point8} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_point-8} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_point}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{shape} \hlstd{=} \hlkwd{factor}\hlstd{(cyl)))} \hlopt{+} \hlkwd{scale_shape}\hlstd{(}\hlkwc{solid} \hlstd{=} \hlnum{FALSE}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_point9} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_point-9} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Set aesthetics to fixed value}
 \hlstd{p} \hlopt{+} \hlkwd{geom_point}\hlstd{(}\hlkwc{colour} \hlstd{=} \hlstr{"red"}\hlstd{,} \hlkwc{size} \hlstd{=} \hlnum{3}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_point10} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_point-10} 
 \begin{kframe}\begin{alltt}
 \hlkwd{qplot}\hlstd{(wt, mpg,} \hlkwc{data} \hlstd{= mtcars,} \hlkwc{colour} \hlstd{=} \hlkwd{I}\hlstd{(}\hlstr{"red"}\hlstd{),} \hlkwc{size} \hlstd{=} \hlkwd{I}\hlstd{(}\hlnum{3}\hlstd{))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_point11} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_point-11} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Varying alpha is useful for large datasets}
 \hlstd{d} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(diamonds,} \hlkwd{aes}\hlstd{(carat, price))}
 \hlstd{d} \hlopt{+} \hlkwd{geom_point}\hlstd{(}\hlkwc{alpha} \hlstd{=} \hlnum{1}\hlopt{/}\hlnum{10}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_point12} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_point-12} 
 \begin{kframe}\begin{alltt}
 \hlstd{d} \hlopt{+} \hlkwd{geom_point}\hlstd{(}\hlkwc{alpha} \hlstd{=} \hlnum{1}\hlopt{/}\hlnum{20}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_point13} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_point-13} 
 \begin{kframe}\begin{alltt}
 \hlstd{d} \hlopt{+} \hlkwd{geom_point}\hlstd{(}\hlkwc{alpha} \hlstd{=} \hlnum{1}\hlopt{/}\hlnum{100}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_point14} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_point-14} 
 \begin{kframe}\begin{alltt}
 \hlcom{# You can create interesting shapes by layering multiple points of}
 \hlcom{# different sizes}
@@ -1972,21 +1978,21 @@
 \hlstd{p} \hlopt{+} \hlkwd{geom_point}\hlstd{(}\hlkwc{colour}\hlstd{=}\hlstr{"grey50"}\hlstd{,} \hlkwc{size} \hlstd{=} \hlnum{4}\hlstd{)} \hlopt{+} \hlkwd{geom_point}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{colour} \hlstd{= cyl))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_point15} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_point-15} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{aes}\hlstd{(}\hlkwc{shape} \hlstd{=} \hlkwd{factor}\hlstd{(cyl))} \hlopt{+}
   \hlkwd{geom_point}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{colour} \hlstd{=} \hlkwd{factor}\hlstd{(cyl)),} \hlkwc{size} \hlstd{=} \hlnum{4}\hlstd{)} \hlopt{+}
   \hlkwd{geom_point}\hlstd{(}\hlkwc{colour}\hlstd{=}\hlstr{"grey90"}\hlstd{,} \hlkwc{size} \hlstd{=} \hlnum{1.5}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_point16} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_point-16} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_point}\hlstd{(}\hlkwc{colour}\hlstd{=}\hlstr{"black"}\hlstd{,} \hlkwc{size} \hlstd{=} \hlnum{4.5}\hlstd{)} \hlopt{+}
   \hlkwd{geom_point}\hlstd{(}\hlkwc{colour}\hlstd{=}\hlstr{"pink"}\hlstd{,} \hlkwc{size} \hlstd{=} \hlnum{4}\hlstd{)} \hlopt{+}
   \hlkwd{geom_point}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{shape} \hlstd{=} \hlkwd{factor}\hlstd{(cyl)))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_point17} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_point-17} 
 \begin{kframe}\begin{alltt}
 \hlcom{# These extra layers don't usually appear in the legend, but we can}
 \hlcom{# force their inclusion}
@@ -1995,13 +2001,13 @@
   \hlkwd{geom_point}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{shape} \hlstd{=} \hlkwd{factor}\hlstd{(cyl)))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_point18} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_point-18} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Transparent points:}
 \hlkwd{qplot}\hlstd{(mpg, wt,} \hlkwc{data} \hlstd{= mtcars,} \hlkwc{size} \hlstd{=} \hlkwd{I}\hlstd{(}\hlnum{5}\hlstd{),} \hlkwc{alpha} \hlstd{=} \hlkwd{I}\hlstd{(}\hlnum{0.2}\hlstd{))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_point19} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_point-19} 
 \begin{kframe}\begin{alltt}
 \hlcom{# geom_point warns when missing values have been dropped from the data set}
 \hlcom{# and not plotted, you can turn this off by setting na.rm = TRUE}
@@ -2011,28 +2017,28 @@
 
 
 {\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 11 rows containing missing values (geom\_point).}}\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_point20} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_point-20} 
 \begin{kframe}\begin{alltt}
 \hlkwd{qplot}\hlstd{(wt, mpg,} \hlkwc{data} \hlstd{= mtcars2,} \hlkwc{na.rm} \hlstd{=} \hlnum{TRUE}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_point21} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_point-21} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Use qplot instead}
 \hlkwd{qplot}\hlstd{(wt, mpg,} \hlkwc{data} \hlstd{= mtcars)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_point22} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_point-22} 
 \begin{kframe}\begin{alltt}
 \hlkwd{qplot}\hlstd{(wt, mpg,} \hlkwc{data} \hlstd{= mtcars,} \hlkwc{colour} \hlstd{=} \hlkwd{factor}\hlstd{(cyl))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_point23} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_point-23} 
 \begin{kframe}\begin{alltt}
 \hlkwd{qplot}\hlstd{(wt, mpg,} \hlkwc{data} \hlstd{= mtcars,} \hlkwc{colour} \hlstd{=} \hlkwd{I}\hlstd{(}\hlstr{"red"}\hlstd{))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_point24} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_point-24} 
 \begin{kframe}\begin{alltt}
 \hlcom{## End(No test)}
 \end{alltt}
@@ -2095,7 +2101,7 @@
 \hlstd{(p} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(datapoly,} \hlkwd{aes}\hlstd{(}\hlkwc{x}\hlstd{=x,} \hlkwc{y}\hlstd{=y))} \hlopt{+} \hlkwd{geom_polygon}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{fill}\hlstd{=value,} \hlkwc{group}\hlstd{=id)))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_polygon1} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_polygon-1} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Which seems like a lot of work, but then it's easy to add on}
 \hlcom{# other features in this coordinate system, e.g.:}
@@ -2108,7 +2114,7 @@
 \hlstd{p} \hlopt{+} \hlkwd{geom_line}\hlstd{(}\hlkwc{data} \hlstd{= stream,} \hlkwc{colour}\hlstd{=}\hlstr{"grey30"}\hlstd{,} \hlkwc{size} \hlstd{=} \hlnum{5}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_polygon2} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_polygon-2} 
 \begin{kframe}\begin{alltt}
 \hlcom{# And if the positions are in longitude and latitude, you can use}
 \hlcom{# coord_map to produce different map projections.}
@@ -2157,7 +2163,7 @@
 \hlkwd{qplot}\hlstd{(x, y,} \hlkwc{data} \hlstd{=} \hlkwd{pp}\hlstd{(}\hlnum{20}\hlstd{),} \hlkwc{fill} \hlstd{= z,} \hlkwc{geom} \hlstd{=} \hlstr{"raster"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_raster1} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_raster-1} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Interpolation worsens the apperance of this plot, but can help when}
 \hlcom{# rendering images.}
@@ -2171,24 +2177,24 @@
 \end{alltt}
 \begin{verbatim}
 ##        step user.self sys.self elapsed
-## 1 construct     0.003        0   0.002
-## 2     build     0.299        0   0.300
-## 3    render     0.100        0   0.101
-## 4      draw     0.032        0   0.031
-## 5     TOTAL     0.434        0   0.434
+## 1 construct     0.004    0.000   0.003
+## 2     build     0.336    0.004   0.342
+## 3    render     0.104    0.000   0.103
+## 4      draw     0.036    0.000   0.035
+## 5     TOTAL     0.480    0.004   0.483
 \end{verbatim}
 \begin{alltt}
 \hlkwd{benchplot}\hlstd{(base} \hlopt{+} \hlkwd{geom_tile}\hlstd{())}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_raster2} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_raster-2} 
 \begin{kframe}\begin{verbatim}
 ##        step user.self sys.self elapsed
-## 1 construct     0.003        0   0.003
-## 2     build     0.304        0   0.304
-## 3    render     0.099        0   0.099
-## 4      draw     0.064        0   0.064
-## 5     TOTAL     0.470        0   0.470
+## 1 construct     0.004        0   0.003
+## 2     build     0.324        0   0.325
+## 3    render     0.112        0   0.113
+## 4      draw     0.072        0   0.070
+## 5     TOTAL     0.512        0   0.511
 \end{verbatim}
 \begin{alltt}
 \hlcom{# justification}
@@ -2198,13 +2204,13 @@
 \hlkwd{ggplot}\hlstd{(df,} \hlkwd{aes}\hlstd{(x, y,} \hlkwc{fill} \hlstd{= z))} \hlopt{+} \hlkwd{geom_raster}\hlstd{()}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_raster3} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_raster-3} 
 \begin{kframe}\begin{alltt}
 \hlcom{# zero padding}
 \hlkwd{ggplot}\hlstd{(df,} \hlkwd{aes}\hlstd{(x, y,} \hlkwc{fill} \hlstd{= z))} \hlopt{+} \hlkwd{geom_raster}\hlstd{(}\hlkwc{hjust} \hlstd{=} \hlnum{0}\hlstd{,} \hlkwc{vjust} \hlstd{=} \hlnum{0}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_raster4} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_raster-4} 
 \begin{kframe}\begin{alltt}
 \hlcom{## End(No test)}
 \end{alltt}
@@ -2231,7 +2237,7 @@
 \hlkwd{geom_rect}\hlstd{()}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_rect} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_rect-1} 
 
 \end{knitrout}
 
@@ -2258,23 +2264,23 @@
 \hlstd{h} \hlopt{+} \hlkwd{geom_ribbon}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{ymin}\hlstd{=}\hlnum{0}\hlstd{,} \hlkwc{ymax}\hlstd{=level))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_ribbon1} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_ribbon-1} 
 \begin{kframe}\begin{alltt}
 \hlstd{h} \hlopt{+} \hlkwd{geom_area}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{y} \hlstd{= level))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_ribbon2} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_ribbon-2} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Add aesthetic mappings}
 \hlstd{h} \hlopt{+} \hlkwd{geom_ribbon}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{ymin}\hlstd{=level}\hlopt{-}\hlnum{1}\hlstd{,} \hlkwc{ymax}\hlstd{=level}\hlopt{+}\hlnum{1}\hlstd{))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_ribbon3} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_ribbon-3} 
 \begin{kframe}\begin{alltt}
 \hlstd{h} \hlopt{+} \hlkwd{geom_ribbon}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{ymin}\hlstd{=level}\hlopt{-}\hlnum{1}\hlstd{,} \hlkwc{ymax}\hlstd{=level}\hlopt{+}\hlnum{1}\hlstd{))} \hlopt{+} \hlkwd{geom_line}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{y}\hlstd{=level))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_ribbon4} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_ribbon-4} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Take out some values in the middle for an example of NA handling}
 \hlstd{huron[huron}\hlopt{$}\hlstd{year} \hlopt{>} \hlnum{1900} \hlopt{&} \hlstd{huron}\hlopt{$}\hlstd{year} \hlopt{<} \hlnum{1910}\hlstd{,} \hlstr{"level"}\hlstd{]} \hlkwb{<-} \hlnum{NA}
@@ -2282,25 +2288,25 @@
 \hlstd{h} \hlopt{+} \hlkwd{geom_ribbon}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{ymin}\hlstd{=level}\hlopt{-}\hlnum{1}\hlstd{,} \hlkwc{ymax}\hlstd{=level}\hlopt{+}\hlnum{1}\hlstd{))} \hlopt{+} \hlkwd{geom_line}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{y}\hlstd{=level))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_ribbon5} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_ribbon-5} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Another data set, with multiple y's for each x}
 \hlstd{m} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(movies,} \hlkwd{aes}\hlstd{(}\hlkwc{y}\hlstd{=votes,} \hlkwc{x}\hlstd{=year))}
 \hlstd{(m} \hlkwb{<-} \hlstd{m} \hlopt{+} \hlkwd{geom_point}\hlstd{())}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_ribbon6} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_ribbon-6} 
 \begin{kframe}\begin{alltt}
 \hlcom{# The default summary isn't that useful}
 \hlstd{m} \hlopt{+} \hlkwd{stat_summary}\hlstd{(}\hlkwc{geom}\hlstd{=}\hlstr{"ribbon"}\hlstd{,} \hlkwc{fun.ymin}\hlstd{=}\hlstr{"min"}\hlstd{,} \hlkwc{fun.ymax}\hlstd{=}\hlstr{"max"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_ribbon7} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_ribbon-7} 
 \begin{kframe}\begin{alltt}
 \hlstd{m} \hlopt{+} \hlkwd{stat_summary}\hlstd{(}\hlkwc{geom}\hlstd{=}\hlstr{"ribbon"}\hlstd{,} \hlkwc{fun.data}\hlstd{=}\hlstr{"median_hilow"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_ribbon8} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_ribbon-8} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Use qplot instead}
 \hlkwd{qplot}\hlstd{(year, level,} \hlkwc{data}\hlstd{=huron,} \hlkwc{geom}\hlstd{=}\hlkwd{c}\hlstd{(}\hlstr{"area"}\hlstd{,} \hlstr{"line"}\hlstd{))}
@@ -2308,7 +2314,7 @@
 
 
 {\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 9 rows containing missing values (position\_stack).}}\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_ribbon9} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_ribbon-9} 
 \begin{kframe}\begin{alltt}
 \hlcom{## End(No test)}
 \end{alltt}
@@ -2331,27 +2337,27 @@
 \hlstd{p} \hlopt{+} \hlkwd{geom_point}\hlstd{()}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_rug1} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_rug-1} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_point}\hlstd{()} \hlopt{+} \hlkwd{geom_rug}\hlstd{()}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_rug2} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_rug-2} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_point}\hlstd{()} \hlopt{+} \hlkwd{geom_rug}\hlstd{(}\hlkwc{sides}\hlstd{=}\hlstr{"b"}\hlstd{)}    \hlcom{# Rug on bottom only}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_rug3} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_rug-3} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_point}\hlstd{()} \hlopt{+} \hlkwd{geom_rug}\hlstd{(}\hlkwc{sides}\hlstd{=}\hlstr{"trbl"}\hlstd{)} \hlcom{# All four sides}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_rug4} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_rug-4} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_point}\hlstd{()} \hlopt{+} \hlkwd{geom_rug}\hlstd{(}\hlkwc{position}\hlstd{=}\hlstr{'jitter'}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_rug5} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_rug-5} 
 
 \end{knitrout}
 
@@ -2373,7 +2379,7 @@
   \hlkwc{arrow} \hlstd{=} \hlkwd{arrow}\hlstd{(}\hlkwc{length} \hlstd{=} \hlkwd{unit}\hlstd{(}\hlnum{0.1}\hlstd{,}\hlstr{"cm"}\hlstd{))))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_segment1} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_segment-1} 
 \begin{kframe}\begin{alltt}
 \hlkwa{if} \hlstd{(}\hlkwd{require}\hlstd{(}\hlstr{"maps"}\hlstd{)) \{}
 
@@ -2391,7 +2397,7 @@
 
 
 {\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 21 rows containing missing values (geom\_segment).}}\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_segment2} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_segment-2} 
 \begin{kframe}\begin{alltt}
 \hlcom{# You can also use geom_segment to recreate plot(type = "h") :}
 \hlstd{counts} \hlkwb{<-} \hlkwd{as.data.frame}\hlstd{(}\hlkwd{table}\hlstd{(}\hlkwc{x} \hlstd{=} \hlkwd{rpois}\hlstd{(}\hlnum{100}\hlstd{,}\hlnum{5}\hlstd{)))}
@@ -2399,13 +2405,13 @@
 \hlkwd{with}\hlstd{(counts,} \hlkwd{plot}\hlstd{(x, Freq,} \hlkwc{type} \hlstd{=} \hlstr{"h"}\hlstd{,} \hlkwc{lwd} \hlstd{=} \hlnum{10}\hlstd{))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_segment3} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_segment-3} 
 \begin{kframe}\begin{alltt}
 \hlkwd{qplot}\hlstd{(x, Freq,} \hlkwc{data} \hlstd{= counts,} \hlkwc{geom} \hlstd{=} \hlstr{"segment"}\hlstd{,}
   \hlkwc{yend} \hlstd{=} \hlnum{0}\hlstd{,} \hlkwc{xend} \hlstd{= x,} \hlkwc{size} \hlstd{=} \hlkwd{I}\hlstd{(}\hlnum{10}\hlstd{))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_segment4} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_segment-4} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Adding line segments}
 \hlkwd{library}\hlstd{(grid)} \hlcom{# needed for arrow function}
@@ -2413,18 +2419,18 @@
 \hlstd{b} \hlopt{+} \hlkwd{geom_segment}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{=} \hlnum{2}\hlstd{,} \hlkwc{y} \hlstd{=} \hlnum{15}\hlstd{,} \hlkwc{xend} \hlstd{=} \hlnum{2}\hlstd{,} \hlkwc{yend} \hlstd{=} \hlnum{25}\hlstd{))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_segment5} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_segment-5} 
 \begin{kframe}\begin{alltt}
 \hlstd{b} \hlopt{+} \hlkwd{geom_segment}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{=} \hlnum{2}\hlstd{,} \hlkwc{y} \hlstd{=} \hlnum{15}\hlstd{,} \hlkwc{xend} \hlstd{=} \hlnum{3}\hlstd{,} \hlkwc{yend} \hlstd{=} \hlnum{15}\hlstd{))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_segment6} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_segment-6} 
 \begin{kframe}\begin{alltt}
 \hlstd{b} \hlopt{+} \hlkwd{geom_segment}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{=} \hlnum{5}\hlstd{,} \hlkwc{y} \hlstd{=} \hlnum{30}\hlstd{,} \hlkwc{xend} \hlstd{=} \hlnum{3.5}\hlstd{,} \hlkwc{yend} \hlstd{=} \hlnum{25}\hlstd{),}
    \hlkwc{arrow} \hlstd{=} \hlkwd{arrow}\hlstd{(}\hlkwc{length} \hlstd{=} \hlkwd{unit}\hlstd{(}\hlnum{0.5}\hlstd{,} \hlstr{"cm"}\hlstd{)))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_segment7} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_segment-7} 
 
 \end{knitrout}
 
@@ -2446,7 +2452,7 @@
 \hlkwd{qplot}\hlstd{(wt, mpg,} \hlkwc{data}\hlstd{=mtcars,} \hlkwc{colour}\hlstd{=}\hlkwd{factor}\hlstd{(cyl))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_smooth1} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_smooth-1} 
 \begin{kframe}\begin{alltt}
 \hlstd{model} \hlkwb{<-} \hlkwd{lm}\hlstd{(mpg} \hlopt{~} \hlstd{wt} \hlopt{+} \hlkwd{factor}\hlstd{(cyl),} \hlkwc{data}\hlstd{=mtcars)}
 \hlstd{grid} \hlkwb{<-} \hlkwd{with}\hlstd{(mtcars,} \hlkwd{expand.grid}\hlstd{(}
@@ -2459,7 +2465,7 @@
 \hlkwd{qplot}\hlstd{(wt, mpg,} \hlkwc{data}\hlstd{=mtcars,} \hlkwc{colour}\hlstd{=}\hlkwd{factor}\hlstd{(cyl))} \hlopt{+} \hlkwd{geom_line}\hlstd{(}\hlkwc{data}\hlstd{=grid)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_smooth2} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_smooth-2} 
 \begin{kframe}\begin{alltt}
 \hlcom{# or with standard errors}
 
@@ -2471,7 +2477,7 @@
   \hlkwd{geom_smooth}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{ymin} \hlstd{= lcl,} \hlkwc{ymax} \hlstd{= ucl),} \hlkwc{data}\hlstd{=grid,} \hlkwc{stat}\hlstd{=}\hlstr{"identity"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_smooth3} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_smooth-3} 
 
 \end{knitrout}
 
@@ -2492,29 +2498,29 @@
 \hlkwd{qplot}\hlstd{(}\hlkwd{seq_along}\hlstd{(x), x,} \hlkwc{geom}\hlstd{=}\hlstr{"step"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_step1} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_step-1} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Steps go horizontally, then vertically (default)}
 \hlkwd{qplot}\hlstd{(}\hlkwd{seq_along}\hlstd{(x), x,} \hlkwc{geom}\hlstd{=}\hlstr{"step"}\hlstd{,} \hlkwc{direction} \hlstd{=} \hlstr{"hv"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_step2} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_step-2} 
 \begin{kframe}\begin{alltt}
 \hlkwd{plot}\hlstd{(x,} \hlkwc{type} \hlstd{=} \hlstr{"s"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_step3} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_step-3} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Steps go vertically, then horizontally}
 \hlkwd{qplot}\hlstd{(}\hlkwd{seq_along}\hlstd{(x), x,} \hlkwc{geom}\hlstd{=}\hlstr{"step"}\hlstd{,} \hlkwc{direction} \hlstd{=} \hlstr{"vh"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_step4} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_step-4} 
 \begin{kframe}\begin{alltt}
 \hlkwd{plot}\hlstd{(x,} \hlkwc{type} \hlstd{=} \hlstr{"S"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_step5} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_step-5} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Also works with other aesthetics}
 \hlstd{df} \hlkwb{<-} \hlkwd{data.frame}\hlstd{(}
@@ -2524,7 +2530,7 @@
 \hlkwd{qplot}\hlstd{(}\hlkwd{seq_along}\hlstd{(x), x,} \hlkwc{data} \hlstd{= df,} \hlkwc{geom}\hlstd{=}\hlstr{"step"}\hlstd{,} \hlkwc{colour} \hlstd{= trt)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_step6} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_step-6} 
 
 \end{knitrout}
 
@@ -2546,13 +2552,13 @@
 \hlstd{p} \hlopt{+} \hlkwd{geom_text}\hlstd{()}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_text1} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_text-1} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Change size of the label}
 \hlstd{p} \hlopt{+} \hlkwd{geom_text}\hlstd{(}\hlkwc{size}\hlstd{=}\hlnum{10}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_text2} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_text-2} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlkwb{<-} \hlstd{p} \hlopt{+} \hlkwd{geom_point}\hlstd{()}
 
@@ -2560,38 +2566,38 @@
 \hlstd{p} \hlopt{+} \hlkwd{geom_text}\hlstd{()}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_text3} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_text-3} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_point}\hlstd{()} \hlopt{+} \hlkwd{geom_text}\hlstd{(}\hlkwc{hjust}\hlstd{=}\hlnum{0}\hlstd{,} \hlkwc{vjust}\hlstd{=}\hlnum{0}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_text4} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_text-4} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_point}\hlstd{()} \hlopt{+} \hlkwd{geom_text}\hlstd{(}\hlkwc{angle} \hlstd{=} \hlnum{45}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_text5} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_text-5} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Add aesthetic mappings}
 \hlstd{p} \hlopt{+} \hlkwd{geom_text}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{colour}\hlstd{=}\hlkwd{factor}\hlstd{(cyl)))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_text6} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_text-6} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_text}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{colour}\hlstd{=}\hlkwd{factor}\hlstd{(cyl)))} \hlopt{+} \hlkwd{scale_colour_discrete}\hlstd{(}\hlkwc{l}\hlstd{=}\hlnum{40}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_text7} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_text-7} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_text}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{size}\hlstd{=wt))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_text8} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_text-8} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_text}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{size}\hlstd{=wt))} \hlopt{+} \hlkwd{scale_size}\hlstd{(}\hlkwc{range}\hlstd{=}\hlkwd{c}\hlstd{(}\hlnum{3}\hlstd{,}\hlnum{6}\hlstd{))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_text9} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_text-9} 
 \begin{kframe}\begin{alltt}
 \hlcom{# You can display expressions by setting parse = TRUE.  The}
 \hlcom{# details of the display are described in ?plotmath, but note that}
@@ -2600,50 +2606,50 @@
   \hlkwc{parse} \hlstd{=} \hlnum{TRUE}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_text10} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_text-10} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Add an annotation not from a variable source}
 \hlstd{c} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(mtcars,} \hlkwd{aes}\hlstd{(wt, mpg))} \hlopt{+} \hlkwd{geom_point}\hlstd{()}
 \hlstd{c} \hlopt{+} \hlkwd{geom_text}\hlstd{(}\hlkwc{data} \hlstd{=} \hlkwa{NULL}\hlstd{,} \hlkwc{x} \hlstd{=} \hlnum{5}\hlstd{,} \hlkwc{y} \hlstd{=} \hlnum{30}\hlstd{,} \hlkwc{label} \hlstd{=} \hlstr{"plot mpg vs. wt"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_text11} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_text-11} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Or, you can use annotate}
 \hlstd{c} \hlopt{+} \hlkwd{annotate}\hlstd{(}\hlstr{"text"}\hlstd{,} \hlkwc{label} \hlstd{=} \hlstr{"plot mpg vs. wt"}\hlstd{,} \hlkwc{x} \hlstd{=} \hlnum{2}\hlstd{,} \hlkwc{y} \hlstd{=} \hlnum{15}\hlstd{,} \hlkwc{size} \hlstd{=} \hlnum{8}\hlstd{,} \hlkwc{colour} \hlstd{=} \hlstr{"red"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_text12} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_text-12} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Use qplot instead}
 \hlkwd{qplot}\hlstd{(wt, mpg,} \hlkwc{data} \hlstd{= mtcars,} \hlkwc{label} \hlstd{=} \hlkwd{rownames}\hlstd{(mtcars),}
    \hlkwc{geom}\hlstd{=}\hlkwd{c}\hlstd{(}\hlstr{"point"}\hlstd{,} \hlstr{"text"}\hlstd{))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_text13} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_text-13} 
 \begin{kframe}\begin{alltt}
 \hlkwd{qplot}\hlstd{(wt, mpg,} \hlkwc{data} \hlstd{= mtcars,} \hlkwc{label} \hlstd{=} \hlkwd{rownames}\hlstd{(mtcars),} \hlkwc{size} \hlstd{= wt)} \hlopt{+}
   \hlkwd{geom_text}\hlstd{(}\hlkwc{colour} \hlstd{=} \hlstr{"red"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_text14} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_text-14} 
 \begin{kframe}\begin{alltt}
 \hlcom{# You can specify family, fontface and lineheight}
 \hlstd{p} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(mtcars,} \hlkwd{aes}\hlstd{(}\hlkwc{x}\hlstd{=wt,} \hlkwc{y}\hlstd{=mpg,} \hlkwc{label}\hlstd{=}\hlkwd{rownames}\hlstd{(mtcars)))}
 \hlstd{p} \hlopt{+} \hlkwd{geom_text}\hlstd{(}\hlkwc{fontface}\hlstd{=}\hlnum{3}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_text15} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_text-15} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_text}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{fontface}\hlstd{=am}\hlopt{+}\hlnum{1}\hlstd{))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_text16} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_text-16} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_text}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{family}\hlstd{=}\hlkwd{c}\hlstd{(}\hlstr{"serif"}\hlstd{,} \hlstr{"mono"}\hlstd{)[am}\hlopt{+}\hlnum{1}\hlstd{]))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_text17} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_text-17} 
 \begin{kframe}\begin{alltt}
 \hlcom{## End(No test)}
 \end{alltt}
@@ -2676,76 +2682,76 @@
 \hlstd{p} \hlopt{+} \hlkwd{geom_tile}\hlstd{()} \hlcom{#pretty useless!}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_tile1} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_tile-1} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Add aesthetic mappings}
 \hlstd{p} \hlopt{+} \hlkwd{geom_tile}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{fill}\hlstd{=z))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_tile2} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_tile-2} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Change scale}
 \hlstd{p} \hlopt{+} \hlkwd{geom_tile}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{fill}\hlstd{=z))} \hlopt{+} \hlkwd{scale_fill_gradient}\hlstd{(}\hlkwc{low}\hlstd{=}\hlstr{"green"}\hlstd{,} \hlkwc{high}\hlstd{=}\hlstr{"red"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_tile3} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_tile-3} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Use qplot instead}
 \hlkwd{qplot}\hlstd{(x, y,} \hlkwc{data}\hlstd{=}\hlkwd{pp}\hlstd{(}\hlnum{20}\hlstd{),} \hlkwc{geom}\hlstd{=}\hlstr{"tile"}\hlstd{,} \hlkwc{fill}\hlstd{=z)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_tile4} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_tile-4} 
 \begin{kframe}\begin{alltt}
 \hlkwd{qplot}\hlstd{(x, y,} \hlkwc{data}\hlstd{=}\hlkwd{pp}\hlstd{(}\hlnum{100}\hlstd{),} \hlkwc{geom}\hlstd{=}\hlstr{"tile"}\hlstd{,} \hlkwc{fill}\hlstd{=z)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_tile5} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_tile-5} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Missing values}
 \hlstd{p} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(}\hlkwd{pp}\hlstd{(}\hlnum{20}\hlstd{)[}\hlkwd{sample}\hlstd{(}\hlnum{20}\hlopt{*}\hlnum{20}\hlstd{,} \hlkwc{size}\hlstd{=}\hlnum{200}\hlstd{),],} \hlkwd{aes}\hlstd{(}\hlkwc{x}\hlstd{=x,}\hlkwc{y}\hlstd{=y,}\hlkwc{fill}\hlstd{=z))}
 \hlstd{p} \hlopt{+} \hlkwd{geom_tile}\hlstd{()}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_tile6} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_tile-6} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Input that works with image}
 \hlkwd{image}\hlstd{(}\hlkwd{t}\hlstd{(volcano)[}\hlkwd{ncol}\hlstd{(volcano)}\hlopt{:}\hlnum{1}\hlstd{,])}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_tile7} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_tile-7} 
 \begin{kframe}\begin{alltt}
 \hlkwd{library}\hlstd{(reshape2)} \hlcom{# for melt}
 \hlkwd{ggplot}\hlstd{(}\hlkwd{melt}\hlstd{(volcano),} \hlkwd{aes}\hlstd{(}\hlkwc{x}\hlstd{=Var1,} \hlkwc{y}\hlstd{=Var2,} \hlkwc{fill}\hlstd{=value))} \hlopt{+} \hlkwd{geom_tile}\hlstd{()}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_tile8} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_tile-8} 
 \begin{kframe}\begin{alltt}
 \hlcom{# inspired by the image-density plots of Ken Knoblauch}
 \hlstd{cars} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(mtcars,} \hlkwd{aes}\hlstd{(}\hlkwc{y}\hlstd{=}\hlkwd{factor}\hlstd{(cyl),} \hlkwc{x}\hlstd{=mpg))}
 \hlstd{cars} \hlopt{+} \hlkwd{geom_point}\hlstd{()}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_tile9} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_tile-9} 
 \begin{kframe}\begin{alltt}
 \hlstd{cars} \hlopt{+} \hlkwd{stat_bin}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{fill}\hlstd{=..count..),} \hlkwc{geom}\hlstd{=}\hlstr{"tile"}\hlstd{,} \hlkwc{binwidth}\hlstd{=}\hlnum{3}\hlstd{,} \hlkwc{position}\hlstd{=}\hlstr{"identity"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_tile10} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_tile-10} 
 \begin{kframe}\begin{alltt}
 \hlstd{cars} \hlopt{+} \hlkwd{stat_bin}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{fill}\hlstd{=..density..),} \hlkwc{geom}\hlstd{=}\hlstr{"tile"}\hlstd{,} \hlkwc{binwidth}\hlstd{=}\hlnum{3}\hlstd{,} \hlkwc{position}\hlstd{=}\hlstr{"identity"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_tile11} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_tile-11} 
 \begin{kframe}\begin{alltt}
 \hlstd{cars} \hlopt{+} \hlkwd{stat_density}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{fill}\hlstd{=..density..),} \hlkwc{geom}\hlstd{=}\hlstr{"tile"}\hlstd{,} \hlkwc{position}\hlstd{=}\hlstr{"identity"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_tile12} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_tile-12} 
 \begin{kframe}\begin{alltt}
 \hlstd{cars} \hlopt{+} \hlkwd{stat_density}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{fill}\hlstd{=..count..),} \hlkwc{geom}\hlstd{=}\hlstr{"tile"}\hlstd{,} \hlkwc{position}\hlstd{=}\hlstr{"identity"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_tile13} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_tile-13} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Another example with with unequal tile sizes}
 \hlstd{x.cell.boundary} \hlkwb{<-} \hlkwd{c}\hlstd{(}\hlnum{0}\hlstd{,} \hlnum{4}\hlstd{,} \hlnum{6}\hlstd{,} \hlnum{8}\hlstd{,} \hlnum{10}\hlstd{,} \hlnum{14}\hlstd{)}
@@ -2759,17 +2765,17 @@
 \hlkwd{qplot}\hlstd{(x, y,} \hlkwc{fill}\hlstd{=z,} \hlkwc{data}\hlstd{=example,} \hlkwc{geom}\hlstd{=}\hlstr{"tile"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_tile14} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_tile-14} 
 \begin{kframe}\begin{alltt}
 \hlkwd{qplot}\hlstd{(x, y,} \hlkwc{fill}\hlstd{=z,} \hlkwc{data}\hlstd{=example,} \hlkwc{geom}\hlstd{=}\hlstr{"tile"}\hlstd{,} \hlkwc{width}\hlstd{=w)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_tile15} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_tile-15} 
 \begin{kframe}\begin{alltt}
 \hlkwd{qplot}\hlstd{(x, y,} \hlkwc{fill}\hlstd{=}\hlkwd{factor}\hlstd{(z),} \hlkwc{data}\hlstd{=example,} \hlkwc{geom}\hlstd{=}\hlstr{"tile"}\hlstd{,} \hlkwc{width}\hlstd{=w)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_tile16} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_tile-16} 
 \begin{kframe}\begin{alltt}
 \hlcom{# You can manually set the colour of the tiles using}
 \hlcom{# scale_manual}
@@ -2778,7 +2784,7 @@
   \hlkwd{scale_fill_identity}\hlstd{(}\hlkwc{labels}\hlstd{=letters[}\hlnum{1}\hlopt{:}\hlnum{5}\hlstd{],} \hlkwc{breaks}\hlstd{=col)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_tile17} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_tile-17} 
 \begin{kframe}\begin{alltt}
 \hlcom{## End(No test)}
 \end{alltt}
@@ -2803,52 +2809,52 @@
 \hlstd{p} \hlopt{+} \hlkwd{geom_violin}\hlstd{()}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_violin1} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_violin-1} 
 \begin{kframe}\begin{alltt}
 \hlkwd{qplot}\hlstd{(}\hlkwd{factor}\hlstd{(cyl), mpg,} \hlkwc{data} \hlstd{= mtcars,} \hlkwc{geom} \hlstd{=} \hlstr{"violin"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_violin2} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_violin-2} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_violin}\hlstd{()} \hlopt{+} \hlkwd{geom_jitter}\hlstd{(}\hlkwc{height} \hlstd{=} \hlnum{0}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_violin3} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_violin-3} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_violin}\hlstd{()} \hlopt{+} \hlkwd{coord_flip}\hlstd{()}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_violin4} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_violin-4} 
 \begin{kframe}\begin{alltt}
 \hlkwd{qplot}\hlstd{(}\hlkwd{factor}\hlstd{(cyl), mpg,} \hlkwc{data} \hlstd{= mtcars,} \hlkwc{geom} \hlstd{=} \hlstr{"violin"}\hlstd{)} \hlopt{+}
   \hlkwd{coord_flip}\hlstd{()}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_violin5} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_violin-5} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Scale maximum width proportional to sample size:}
 \hlstd{p} \hlopt{+} \hlkwd{geom_violin}\hlstd{(}\hlkwc{scale} \hlstd{=} \hlstr{"count"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_violin6} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_violin-6} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Scale maximum width to 1 for all violins:}
 \hlstd{p} \hlopt{+} \hlkwd{geom_violin}\hlstd{(}\hlkwc{scale} \hlstd{=} \hlstr{"width"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_violin7} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_violin-7} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Default is to trim violins to the range of the data. To disable:}
 \hlstd{p} \hlopt{+} \hlkwd{geom_violin}\hlstd{(}\hlkwc{trim} \hlstd{=} \hlnum{FALSE}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_violin8} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_violin-8} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Use a smaller bandwidth for closer density fit (default is 1).}
 \hlstd{p} \hlopt{+} \hlkwd{geom_violin}\hlstd{(}\hlkwc{adjust} \hlstd{=} \hlnum{.5}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_violin9} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_violin-9} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Add aesthetic mappings}
 \hlcom{# Note that violins are automatically dodged when any aesthetic is}
@@ -2856,34 +2862,34 @@
 \hlstd{p} \hlopt{+} \hlkwd{geom_violin}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{fill} \hlstd{= cyl))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_violin10} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_violin-10} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_violin}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{fill} \hlstd{=} \hlkwd{factor}\hlstd{(cyl)))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_violin11} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_violin-11} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_violin}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{fill} \hlstd{=} \hlkwd{factor}\hlstd{(vs)))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_violin12} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_violin-12} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_violin}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{fill} \hlstd{=} \hlkwd{factor}\hlstd{(am)))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_violin13} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_violin-13} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Set aesthetics to fixed value}
 \hlstd{p} \hlopt{+} \hlkwd{geom_violin}\hlstd{(}\hlkwc{fill} \hlstd{=} \hlstr{"grey80"}\hlstd{,} \hlkwc{colour} \hlstd{=} \hlstr{"#3366FF"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_violin14} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_violin-14} 
 \begin{kframe}\begin{alltt}
 \hlkwd{qplot}\hlstd{(}\hlkwd{factor}\hlstd{(cyl), mpg,} \hlkwc{data} \hlstd{= mtcars,} \hlkwc{geom} \hlstd{=} \hlstr{"violin"}\hlstd{,}
   \hlkwc{colour} \hlstd{=} \hlkwd{I}\hlstd{(}\hlstr{"#3366FF"}\hlstd{))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_violin15} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_violin-15} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Scales vs. coordinate transforms -------}
 \hlcom{# Scale transformations occur before the density statistics are computed.}
@@ -2897,28 +2903,28 @@
 
 
 {\ttfamily\noindent\color{warningcolor}{\#\# Warning: position\_dodge requires constant width: output may be incorrect}}\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_violin16} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_violin-16} 
 \begin{kframe}\begin{alltt}
 \hlstd{m} \hlopt{+} \hlkwd{geom_violin}\hlstd{()} \hlopt{+} \hlkwd{scale_y_log10}\hlstd{()}
 \end{alltt}
 
 
 {\ttfamily\noindent\color{warningcolor}{\#\# Warning: position\_dodge requires constant width: output may be incorrect}}\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_violin17} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_violin-17} 
 \begin{kframe}\begin{alltt}
 \hlstd{m} \hlopt{+} \hlkwd{geom_violin}\hlstd{()} \hlopt{+} \hlkwd{coord_trans}\hlstd{(}\hlkwc{y} \hlstd{=} \hlstr{"log10"}\hlstd{)}
 \end{alltt}
 
 
 {\ttfamily\noindent\color{warningcolor}{\#\# Warning: position\_dodge requires constant width: output may be incorrect}}\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_violin18} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_violin-18} 
 \begin{kframe}\begin{alltt}
 \hlstd{m} \hlopt{+} \hlkwd{geom_violin}\hlstd{()} \hlopt{+} \hlkwd{scale_y_log10}\hlstd{()} \hlopt{+} \hlkwd{coord_trans}\hlstd{(}\hlkwc{y} \hlstd{=} \hlstr{"log10"}\hlstd{)}
 \end{alltt}
 
 
 {\ttfamily\noindent\color{warningcolor}{\#\# Warning: position\_dodge requires constant width: output may be incorrect}}\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_violin19} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_violin-19} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Violin plots with continuous x:}
 \hlcom{# Use the group aesthetic to group observations in violins}
@@ -2927,15 +2933,17 @@
 
 
 {\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 53573 rows containing non-finite values (stat\_ydensity).}}\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_violin20} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_violin-20} 
 \begin{kframe}\begin{alltt}
 \hlkwd{qplot}\hlstd{(year, budget,} \hlkwc{data} \hlstd{= movies,} \hlkwc{geom} \hlstd{=} \hlstr{"violin"}\hlstd{,}
   \hlkwc{group} \hlstd{=} \hlkwd{round_any}\hlstd{(year,} \hlnum{10}\hlstd{, floor))}
 \end{alltt}
 
 
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 53573 rows containing non-finite values (stat\_ydensity).\\\#\# Warning: position\_dodge requires constant width: output may be incorrect}}\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_violin21} 
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 53573 rows containing non-finite values (stat\_ydensity).}}
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: position\_dodge requires constant width: output may be incorrect}}\end{kframe}
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_violin-21} 
 \begin{kframe}\begin{alltt}
 \hlcom{## End(No test)}
 \end{alltt}
@@ -2959,44 +2967,44 @@
 \hlstd{p} \hlopt{+} \hlkwd{geom_vline}\hlstd{(}\hlkwc{xintercept} \hlstd{=} \hlnum{5}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_vline1} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_vline-1} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_vline}\hlstd{(}\hlkwc{xintercept} \hlstd{=} \hlnum{1}\hlopt{:}\hlnum{5}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_vline2} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_vline-2} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_vline}\hlstd{(}\hlkwc{xintercept} \hlstd{=} \hlnum{1}\hlopt{:}\hlnum{5}\hlstd{,} \hlkwc{colour}\hlstd{=}\hlstr{"green"}\hlstd{,} \hlkwc{linetype} \hlstd{=} \hlstr{"longdash"}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_vline3} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_vline-3} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_vline}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{xintercept} \hlstd{= wt))}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_vline4} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_vline-4} 
 \begin{kframe}\begin{alltt}
 \hlcom{# With coordinate transforms}
 \hlstd{p} \hlopt{+} \hlkwd{geom_vline}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{xintercept} \hlstd{= wt))} \hlopt{+} \hlkwd{coord_equal}\hlstd{()}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_vline5} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_vline-5} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_vline}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{xintercept} \hlstd{= wt))} \hlopt{+} \hlkwd{coord_flip}\hlstd{()}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_vline6} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_vline-6} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_vline}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{xintercept} \hlstd{= wt))} \hlopt{+} \hlkwd{coord_polar}\hlstd{()}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_vline7} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_vline-7} 
 \begin{kframe}\begin{alltt}
 \hlstd{p2} \hlkwb{<-} \hlstd{p} \hlopt{+} \hlkwd{aes}\hlstd{(}\hlkwc{colour} \hlstd{=} \hlkwd{factor}\hlstd{(cyl))}
 \hlstd{p2} \hlopt{+} \hlkwd{geom_vline}\hlstd{(}\hlkwc{xintercept} \hlstd{=} \hlnum{15}\hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_vline8} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_vline-8} 
 \begin{kframe}\begin{alltt}
 \hlcom{# To display different lines in different facets, you need to}
 \hlcom{# create a data frame.}
@@ -3005,7 +3013,7 @@
 \hlstd{p} \hlopt{+} \hlkwd{geom_vline}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{xintercept} \hlstd{= z), vline.data)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_vline9} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_vline-9} 
 
 \end{knitrout}
 

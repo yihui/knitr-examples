@@ -47,7 +47,7 @@ library(ggplot2)
 qplot(speed, dist, data = cars) + geom_smooth()
 ```
 
-![A scatterplot of `cars`](http://animation.r-forge.r-project.org/knitr-ex/figure/009-slides-graphics.png) 
+![A scatterplot of `cars`](http://db.yihui.name/knitr-examples/figure/009-slides-graphics-1.png) 
 
 # How
 
@@ -81,23 +81,21 @@ print(sessionInfo(), locale = FALSE)
 ```
 
 ```
-## R version 3.0.3 (2014-03-06)
+## R version 3.1.1 (2014-07-10)
 ## Platform: x86_64-pc-linux-gnu (64-bit)
 ## 
 ## attached base packages:
 ## [1] methods   stats     graphics  grDevices utils     datasets  base     
 ## 
 ## other attached packages:
-## [1] ggplot2_0.9.3.1.99 knitr_1.5.26      
+## [1] ggplot2_1.0.0 knitr_1.6.20 
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] codetools_0.2-8    colorspace_1.2-4   dichromat_2.0-0   
-##  [4] digest_0.6.4       evaluate_0.5.4     formatR_0.10.4    
-##  [7] grid_3.0.3         gtable_0.1.2       labeling_0.2      
-## [10] MASS_7.3-30        munsell_0.4.2      plyr_1.8.1        
-## [13] proto_0.3-10       RColorBrewer_1.0-5 Rcpp_0.11.1       
-## [16] reshape2_1.2.2     scales_0.2.3       stringr_0.6.2     
-## [19] tools_3.0.3
+##  [1] codetools_0.2-9  colorspace_1.2-4 digest_0.6.4     evaluate_0.5.6  
+##  [5] formatR_1.0      grid_3.1.1       gtable_0.1.2     labeling_0.3    
+##  [9] MASS_7.3-35      munsell_0.4.2    plyr_1.8.1       proto_0.3-10    
+## [13] Rcpp_0.11.3      reshape2_1.4     scales_0.2.4     stringr_0.6.2   
+## [17] tools_3.1.1
 ```
 
 # Misc issues

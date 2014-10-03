@@ -41,7 +41,7 @@ par(mar = c(4, 4, 0.1, 0.1))
 plot(mpg ~ hp, data = mtcars, pch = 19)
 ```
 
-![plot of chunk md-cars](http://i.imgur.com/tYxxzqK.png) 
+![plot of chunk md-cars](http://i.imgur.com/mFIE6uX.png) 
 
 ```r
 par(mar = c(3, 2, 0.1, 0.1))
@@ -49,6 +49,6 @@ matplot(t(scale(mtcars)), lty = 1, type = "l", xaxt = "n", ylab = "")
 axis(1, seq(ncol(mtcars)), colnames(mtcars))
 ```
 
-![plot of chunk md-cars](http://i.imgur.com/7TPHUbI.png) 
+![plot of chunk md-cars](http://i.imgur.com/Zgh97Bv.png) 
 
 So **knitr** is ready with GitHub with a single markdown file.

@@ -27,4 +27,4 @@ pairs(dat, lower.panel = dens2d, upper.panel = function(x, y, ...) {
 })
 ```
 
-![plot of chunk line-contour](http://animation.r-forge.r-project.org/knitr-ex/figure/056-huge-plot-line-contour.png) 
+![plot of chunk line-contour](http://db.yihui.name/knitr-examples/figure/056-huge-plot-line-contour-1.png) 
