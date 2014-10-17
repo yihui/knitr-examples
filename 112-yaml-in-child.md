@@ -6,7 +6,7 @@ output: html_document
 ---
 
 This is the parent, and it includes a child that also has YAML front matter
-from RStudio.
+from `rmarkdown`.
 
 
 
