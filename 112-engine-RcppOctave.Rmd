@@ -1,0 +1,93 @@
+---
+title: "Call RcppOctave from knitr"
+output:
+  html_document:
+    highlight: pygments
+---
+
+## Example
+
+Defining a matrix in `octave`/`MATLAB` is really easy
+
+```{r, engine='RcppOctave'}
+A = [ 4 5 6; 7 8 9]
+B = [ 0 1 2 ; 3 4 5 ; 6 7 8]
+E = [ A; 10 11 12]
+E(:,:, 2) = B
+```
+
+You can later get the values of the variables in `R` using RcppOctave
+
+```{r}
+library(RcppOctave)
+# List of user-defined variables and functions
+o_ls()
+# Two ways to access the variables
+o_get("A", "B", "E")
+.O$A
+.O$B
+.O$E
+```
+
+# Declaring R variables within octave
+
+You can also retrieve the variables directly to your `R` environment, using the chunk option `engine.opts=list(retrieve.vars=TRUE)`
+
+```{r, engine='RcppOctave', engine.opts=list(retrieve.vars=TRUE)}
+A = [ 2 6; 3 9]
+A *= 2
+B = [ 1 2 3; 4 5 6]
+```
+
+```{r}
+A
+B
+t(B)
+```
+
+Use this with caution, however, as you may overwrite or even delete R variables.
+
+```{r}
+C <- "This content will be overwritten"
+E <- "This variable will no longer exist"
+```
+
+```{r, engine='RcppOctave', engine.opts=list(retrieve.vars=T)}
+C = 'This is the new content for C'
+clear E
+```
+
+```{r}
+C
+E
+```
+
+# octave functions
+
+You can also define functions in octave that you can use within R
+
+```{r, engine='RcppOctave', engine.opts=list(retrieve.vars=TRUE)}
+function f = ffact(n)
+  f = prod(1:n)
+```
+
+```{r}
+ffact(10)
+```
+
+Notice however, that overwritten standard octave functions will not be accessible from R
+
+```{r, engine='RcppOctave', engine.opts=list(retrieve.vars=TRUE)}
+function f = fact(n)
+  f = prod(1:n)
+```
+
+```{r}
+fact(10)
+```
+
+`fact` is a standard function in octave. In this case you need to call the function using `.O`
+
+```{r}
+.O$fact(10)
+```
