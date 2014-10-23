@@ -86,6 +86,7 @@ Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
 5.4 & 3.9 & 1.7 & 0.4 & setosa\\
 \hline
 \end{tabular}
+
 \begin{kframe}\begin{alltt}
 \hlkwd{kable}\hlstd{(}\hlkwd{head}\hlstd{(iris,} \hlnum{0}\hlstd{))}
 \end{alltt}
@@ -97,6 +98,7 @@ Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
 
 \hline
 \end{tabular}
+
 \begin{kframe}\begin{alltt}
 \hlkwd{kable}\hlstd{(}\hlkwd{head}\hlstd{(iris,} \hlnum{1}\hlstd{))}
 \end{alltt}
@@ -108,6 +110,7 @@ Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
 5.1 & 3.5 & 1.4 & 0.2 & setosa\\
 \hline
 \end{tabular}
+
 
 
 \section{No row names}
@@ -136,6 +139,7 @@ Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
 \end{tabular}
 
 
+
 \section{At most 3 digits}
 
 \begin{kframe}
@@ -154,6 +158,7 @@ Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
 0.071 & -1.265 & 0.360 & 1.787 & -0.473\\
 \hline
 \end{tabular}
+
 
 
 \section{Alignment}
@@ -185,6 +190,7 @@ Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
 \end{tabular}
 
 
+
 \section{Default tables are ugly}
 
 Let's use the \textbf{booktabs} package. The air is suddenly fresh!
@@ -206,6 +212,7 @@ Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
 5.4 & 3.9 & 1.7 & 0.4 & setosa\\
 \bottomrule
 \end{tabular}
+
 \begin{kframe}\begin{alltt}
 \hlkwd{kable}\hlstd{(}\hlkwd{head}\hlstd{(iris,} \hlnum{0}\hlstd{),} \hlkwc{row.names} \hlstd{=} \hlnum{FALSE}\hlstd{,} \hlkwc{booktabs} \hlstd{=} \hlnum{TRUE}\hlstd{)}
 \end{alltt}
@@ -217,6 +224,7 @@ Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
 
 \bottomrule
 \end{tabular}
+
 \begin{kframe}\begin{alltt}
 \hlkwd{kable}\hlstd{(}\hlkwd{head}\hlstd{(iris,} \hlnum{1}\hlstd{),} \hlkwc{row.names} \hlstd{=} \hlnum{FALSE}\hlstd{,} \hlkwc{booktabs} \hlstd{=} \hlnum{TRUE}\hlstd{)}
 \end{alltt}
@@ -228,6 +236,7 @@ Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
 5.1 & 3.5 & 1.4 & 0.2 & setosa\\
 \bottomrule
 \end{tabular}
+
 \begin{kframe}\begin{alltt}
 \hlkwd{kable}\hlstd{(}\hlkwd{head}\hlstd{(mtcars[,} \hlnum{1}\hlopt{:}\hlnum{7}\hlstd{]),} \hlkwc{booktabs} \hlstd{=} \hlnum{TRUE}\hlstd{)}
 \end{alltt}
@@ -244,6 +253,7 @@ Hornet Sportabout & 18.7 & 8 & 360 & 175 & 3.15 & 3.440 & 17.02\\
 Valiant & 18.1 & 6 & 225 & 105 & 2.76 & 3.460 & 20.22\\
 \bottomrule
 \end{tabular}
+
 
 
 \section{Long tables}
@@ -297,6 +307,7 @@ Maserati Bora & 15.0 & 8 & 301.0 & 335 & 3.54 & 3.570 & 14.60\\
 Volvo 142E & 21.4 & 4 & 121.0 & 109 & 4.11 & 2.780 & 18.60\\
 \bottomrule
 \end{longtable}
+
 
 
 \section{Want more features?}
