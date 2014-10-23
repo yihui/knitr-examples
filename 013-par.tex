@@ -57,7 +57,7 @@
 \hlkwd{library}\hlstd{(knitr)}
 \hlstd{knit_hooks}\hlopt{$}\hlkwd{set}\hlstd{(}\hlkwc{pars} \hlstd{=} \hlkwa{function}\hlstd{(}\hlkwc{before}\hlstd{,} \hlkwc{options}\hlstd{,} \hlkwc{envir}\hlstd{) \{}
     \hlkwa{if} \hlstd{(before)}
-        \hlkwd{do.call}\hlstd{(graphics::par, options}\hlopt{$}\hlstd{pars)}
+        \hlkwd{do.call}\hlstd{(graphics}\hlopt{::}\hlstd{par, options}\hlopt{$}\hlstd{pars)}
 \hlstd{\})}
 \end{alltt}
 \end{kframe}
