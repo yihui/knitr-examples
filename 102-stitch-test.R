@@ -4,6 +4,6 @@ set.seed(1121)
 (x=rnorm(20))
 mean(x);var(x)
 
-## ---- plots ----
+## ---- plots, fig.height=5 ----
 boxplot(x)
 hist(x,main='')
