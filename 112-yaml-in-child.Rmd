@@ -1,0 +1,13 @@
+---
+title: "Parent-child test"
+author: "A. Uthor"
+date: "10/17/2014"
+output: html_document
+---
+
+This is the parent, and it includes a child that also has YAML front matter
+from `rmarkdown`.
+
+
+```{r child="112-yaml-in-child-child.rmd"}
+```
