@@ -59,8 +59,7 @@ Knitr can automatically generate a figure environment if fig.cap is specified.
 \hlkwd{par}\hlstd{(}\hlkwc{mar} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{4}\hlstd{,} \hlnum{4}\hlstd{,} \hlnum{0.1}\hlstd{,} \hlnum{0.1}\hlstd{))}
 \hlkwd{plot}\hlstd{(}\hlkwd{runif}\hlstd{(}\hlnum{4}\hlstd{))}
 \end{alltt}
-\end{kframe}\begin{figure}[]
-
+\end{kframe}\begin{figure}
 \includegraphics[width=\maxwidth]{figure/019-fig-caption-test-1} \caption[]{$2 \times 2$ is 4\label{fig:test}}
 \end{figure}
 
@@ -88,8 +87,7 @@ Dynamically generate a figure caption:
 \hlkwd{par}\hlstd{(}\hlkwc{mar} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{4}\hlstd{,} \hlnum{4}\hlstd{,} \hlnum{0.1}\hlstd{,} \hlnum{0.1}\hlstd{))}
 \hlkwd{hist}\hlstd{(x,} \hlkwc{main} \hlstd{=} \hlstr{""}\hlstd{)}
 \end{alltt}
-\end{kframe}\begin{figure}[]
-
+\end{kframe}\begin{figure}
 \includegraphics[width=\maxwidth]{figure/019-fig-caption-t-test-1} \caption[The P-value is 0]{The P-value is 0.93\label{fig:t-test}}
 \end{figure}
 
@@ -104,8 +102,7 @@ Change the figure environment:
 \hlkwd{par}\hlstd{(}\hlkwc{mar} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{4}\hlstd{,} \hlnum{4}\hlstd{,} \hlnum{0.1}\hlstd{,} \hlnum{0.1}\hlstd{))}
 \hlkwd{boxplot}\hlstd{(x)}
 \end{alltt}
-\end{kframe}\begin{figure*}[]
-
+\end{kframe}\begin{figure*}
 \includegraphics[width=\maxwidth]{figure/019-fig-caption-figure-asterisk-1} \caption[Figure * environment]{Figure * environment.\label{fig:figure-asterisk}}
 \end{figure*}
 
@@ -120,8 +117,7 @@ If you have two figures, you can assign two captions to fig.cap:
 \hlkwd{par}\hlstd{(}\hlkwc{mar} \hlstd{=} \hlkwd{rep}\hlstd{(}\hlnum{0}\hlstd{,} \hlnum{4}\hlstd{),} \hlkwc{ann} \hlstd{=} \hlnum{FALSE}\hlstd{)}
 \hlkwd{plot}\hlstd{(}\hlnum{1}\hlopt{:}\hlnum{10}\hlstd{)}
 \end{alltt}
-\end{kframe}\begin{figure}[]
-
+\end{kframe}\begin{figure}
 
 {\centering \includegraphics[width=\maxwidth]{figure/019-fig-caption-two-caps-1} 
 
@@ -133,8 +129,7 @@ If you have two figures, you can assign two captions to fig.cap:
 \begin{kframe}\begin{alltt}
 \hlkwd{plot}\hlstd{(}\hlkwd{runif}\hlstd{(}\hlnum{10}\hlstd{))}
 \end{alltt}
-\end{kframe}\begin{figure}[]
-
+\end{kframe}\begin{figure}
 
 {\centering \includegraphics[width=\maxwidth]{figure/019-fig-caption-two-caps-2} 
 
