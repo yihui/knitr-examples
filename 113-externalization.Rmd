@@ -1,0 +1,14 @@
+# Code Externalization
+
+Write R code in external R scripts, and use `read_chunk()` to read them into the current document.
+
+```{r cache=FALSE}
+knitr::read_chunk('113-foo.R')
+```
+
+The following two chunks are from the external R script `113-foo.R`:
+
+```{r test-a}
+```
+```{r test-b}
+```
