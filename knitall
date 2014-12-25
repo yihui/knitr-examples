@@ -6,3 +6,5 @@ time Rscript -e "knitr::purl('094-purl.Rmd')"
 ./k "078-chinese-big5.rnw', '078-chinese-big5.ctx', encoding='BIG5"
 # Explicitly run caching test twice
 ./k "101-cache-levels.Rmd"
+# load_cache() requires running twice
+./k "114-load-cache.Rmd"
