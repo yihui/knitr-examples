@@ -81,21 +81,23 @@ print(sessionInfo(), locale = FALSE)
 ```
 
 ```
-## R version 3.1.1 (2014-07-10)
+## R version 3.1.2 (2014-10-31)
 ## Platform: x86_64-pc-linux-gnu (64-bit)
 ## 
 ## attached base packages:
 ## [1] methods   stats     graphics  grDevices utils     datasets  base     
 ## 
 ## other attached packages:
-## [1] ggplot2_1.0.0 knitr_1.6.20 
+## [1] ggplot2_1.0.0 knitr_1.8.15 
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] codetools_0.2-9  colorspace_1.2-4 digest_0.6.4     evaluate_0.5.6  
-##  [5] formatR_1.0      grid_3.1.1       gtable_0.1.2     labeling_0.3    
-##  [9] MASS_7.3-35      munsell_0.4.2    plyr_1.8.1       proto_0.3-10    
-## [13] Rcpp_0.11.3      reshape2_1.4     scales_0.2.4     stringr_0.6.2   
-## [17] tools_3.1.1
+##  [1] codetools_0.2-9    colorspace_1.2-4   digest_0.6.8      
+##  [4] evaluate_0.5.5     formatR_1.0.3      grid_3.1.2        
+##  [7] gtable_0.1.2       labeling_0.3       magrittr_1.5      
+## [10] MASS_7.3-37        munsell_0.4.2      plyr_1.8.1        
+## [13] proto_0.3-10       Rcpp_0.11.3        reshape2_1.4.1    
+## [16] scales_0.2.4       stringi_0.4-1      stringr_0.9.0.9000
+## [19] tools_3.1.2
 ```
 
 # Misc issues

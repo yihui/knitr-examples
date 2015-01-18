@@ -1680,9 +1680,7 @@
     \hlkwd{facet_wrap}\hlstd{(} \hlopt{~} \hlstd{variable)}
 \hlstd{\}}
 \end{alltt}
-
-
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Loading required package: maps}}\end{kframe}
+\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_map-4} 
 
 \end{knitrout}
@@ -2177,11 +2175,11 @@
 \end{alltt}
 \begin{verbatim}
 ##        step user.self sys.self elapsed
-## 1 construct     0.004    0.000   0.003
-## 2     build     0.336    0.004   0.342
-## 3    render     0.104    0.000   0.103
-## 4      draw     0.036    0.000   0.035
-## 5     TOTAL     0.480    0.004   0.483
+## 1 construct     0.003        0   0.003
+## 2     build     0.326        0   0.325
+## 3    render     0.110        0   0.110
+## 4      draw     0.034        0   0.033
+## 5     TOTAL     0.473        0   0.471
 \end{verbatim}
 \begin{alltt}
 \hlkwd{benchplot}\hlstd{(base} \hlopt{+} \hlkwd{geom_tile}\hlstd{())}
@@ -2190,11 +2188,11 @@
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_raster-2} 
 \begin{kframe}\begin{verbatim}
 ##        step user.self sys.self elapsed
-## 1 construct     0.004        0   0.003
-## 2     build     0.324        0   0.325
-## 3    render     0.112        0   0.113
-## 4      draw     0.072        0   0.070
-## 5     TOTAL     0.512        0   0.511
+## 1 construct     0.003        0   0.003
+## 2     build     0.316        0   0.317
+## 3    render     0.107        0   0.107
+## 4      draw     0.090        0   0.090
+## 5     TOTAL     0.516        0   0.517
 \end{verbatim}
 \begin{alltt}
 \hlcom{# justification}
@@ -2460,7 +2458,7 @@
   \hlkwc{cyl} \hlstd{=} \hlkwd{levels}\hlstd{(}\hlkwd{factor}\hlstd{(cyl))}
 \hlstd{))}
 
-\hlstd{grid}\hlopt{$}\hlstd{mpg} \hlkwb{<-} \hlstd{stats::}\hlkwd{predict}\hlstd{(model,} \hlkwc{newdata}\hlstd{=grid)}
+\hlstd{grid}\hlopt{$}\hlstd{mpg} \hlkwb{<-} \hlstd{stats}\hlopt{::}\hlkwd{predict}\hlstd{(model,} \hlkwc{newdata}\hlstd{=grid)}
 
 \hlkwd{qplot}\hlstd{(wt, mpg,} \hlkwc{data}\hlstd{=mtcars,} \hlkwc{colour}\hlstd{=}\hlkwd{factor}\hlstd{(cyl))} \hlopt{+} \hlkwd{geom_line}\hlstd{(}\hlkwc{data}\hlstd{=grid)}
 \end{alltt}
@@ -2469,7 +2467,7 @@
 \begin{kframe}\begin{alltt}
 \hlcom{# or with standard errors}
 
-\hlstd{err} \hlkwb{<-} \hlstd{stats::}\hlkwd{predict}\hlstd{(model,} \hlkwc{newdata}\hlstd{=grid,} \hlkwc{se} \hlstd{=} \hlnum{TRUE}\hlstd{)}
+\hlstd{err} \hlkwb{<-} \hlstd{stats}\hlopt{::}\hlkwd{predict}\hlstd{(model,} \hlkwc{newdata}\hlstd{=grid,} \hlkwc{se} \hlstd{=} \hlnum{TRUE}\hlstd{)}
 \hlstd{grid}\hlopt{$}\hlstd{ucl} \hlkwb{<-} \hlstd{err}\hlopt{$}\hlstd{fit} \hlopt{+} \hlnum{1.96} \hlopt{*} \hlstd{err}\hlopt{$}\hlstd{se.fit}
 \hlstd{grid}\hlopt{$}\hlstd{lcl} \hlkwb{<-} \hlstd{err}\hlopt{$}\hlstd{fit} \hlopt{-} \hlnum{1.96} \hlopt{*} \hlstd{err}\hlopt{$}\hlstd{se.fit}
 
