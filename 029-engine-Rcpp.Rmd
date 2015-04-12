@@ -5,11 +5,11 @@ library(knitr)
 opts_chunk$set(cache = TRUE) # because the compilation takes time, let's cache it
 ```
 
-When the chunk option `engine='Rcpp'` is specified, the code chunk will be compiled through **Rcpp** via `sourceCpp()`:
+When the chunk option `engine='Rcpp'` is specified (or you write the chunk header as ```` ```{Rcpp} ````), the code chunk will be compiled through **Rcpp** via `sourceCpp()`:
 
 Test for `fibonacci`:
 
-```{r fibCpp, engine='Rcpp'}
+```{Rcpp, fibCpp}
 #include <Rcpp.h>
 
 // [[Rcpp::export]]
@@ -28,7 +28,7 @@ fibonacci(20L)
 
 You can define multiple functions (or helper functions that are not exported) within Rcpp code chunks:
 
-```{r multipleCpp, engine='Rcpp'}
+```{Rcpp, multipleCpp}
 #include <Rcpp.h>
 using namespace Rcpp;
 
@@ -60,7 +60,7 @@ List lapplyCpp(List input, Function f) {
 
 If you want to link to code defined in another package (e.g **RcppArmadillo**) then you need to provide an `Rcpp::depends` attribute. For example:
 
-```{r lmCpp, engine='Rcpp'}
+```{Rcpp, lmCpp}
 // [[Rcpp::depends(RcppArmadillo)]]
 
 #include <RcppArmadillo.h>

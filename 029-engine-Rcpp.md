@@ -2,7 +2,7 @@
 
 
 
-When the chunk option `engine='Rcpp'` is specified, the code chunk will be compiled through **Rcpp** via `sourceCpp()`:
+When the chunk option `engine='Rcpp'` is specified (or you write the chunk header as ```` ```{Rcpp} ````), the code chunk will be compiled through **Rcpp** via `sourceCpp()`:
 
 Test for `fibonacci`:
 

@@ -25,6 +25,18 @@ print(x.split(' '))
 ## ['hello,', 'python', 'world!']
 ```
 
+Or use the syntax ```` ```{python} ````:
+
+
+```python
+x = 'hello, python world!'
+print(x.split(' '))
+```
+
+```
+## ['hello,', 'python', 'world!']
+```
+
 If all the chunks below are python chunks, we can set the engine globally:
 
 

@@ -14,6 +14,13 @@ print(x)
 print(x.split(' '))
 ```
 
+Or use the syntax ```` ```{python} ````:
+
+```{python}
+x = 'hello, python world!'
+print(x.split(' '))
+```
+
 If all the chunks below are python chunks, we can set the engine globally:
 
 ```{r setup, include=FALSE}
