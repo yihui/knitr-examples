@@ -40,7 +40,7 @@ for (i in 1:20) {
   (function($) {
     $(document).ready(function() {
       var imgs = Array(20);
-      for (i=0; ; i++) {
+      for (i = 0; ; i++) {
         if (i == imgs.length) break;
         imgs[i] = "http://db.yihui.name/knitr-examples/figure/108-animation-scianimator-test-" + (i + 1) + ".png";
       }
