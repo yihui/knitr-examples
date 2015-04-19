@@ -72,6 +72,20 @@ You can write code within other elements, e.g. a list
     ```
 2. bar is better
 
+Or inside blockquotes:
+
+> Here is a quote, followed by a code chunk:
+>
+> 
+> ```r
+> x = 1:10
+> rev(x^2)
+> ```
+> 
+> ```
+> ##  [1] 100  81  64  49  36  25  16   9   4   1
+> ```
+
 ## conclusion
 
 Nothing fancy. You are ready to go. When you become picky, go to the [knitr website](http://yihui.name/knitr/).
