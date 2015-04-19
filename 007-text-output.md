@@ -366,7 +366,7 @@ We can set **formatR** options globally:
 
 
 ```r
-options(keep.blank.line = FALSE)
+options(formatR.blank = FALSE)
 ```
 
 
