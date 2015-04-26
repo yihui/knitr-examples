@@ -19,7 +19,7 @@ qplot(carat, price, data=diamonds, color=cut)+
 
 Another test:
 
-```{r test-b}
+```{r test-b, message=FALSE}
 qplot(carat, data=diamonds, fill=cut)+
   <<my-layout>>
 ```

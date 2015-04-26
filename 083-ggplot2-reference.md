@@ -35,8 +35,4 @@ qplot(carat, data = diamonds, fill = cut) + theme(legend.text = element_text(siz
     angle = 45)) + theme(legend.position = "bottom")
 ```
 
-```
-## stat_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.
-```
-
 ![plot of chunk test-b](http://db.yihui.name/knitr-examples/figure/083-ggplot2-reference-test-b-1.png) 
