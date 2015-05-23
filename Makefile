@@ -14,7 +14,7 @@ deps:
 	-e "update.packages(.libPaths(), instlib = .libPaths()[1], ask = FALSE, repos = 'http://cran.rstudio.org')"
 
 sysdeps:
-	sudo apt-get install -qq r-cran-plyr r-cran-mapproj r-cran-hmisc r-cran-rcpparmadillo r-cran-tikzdevice > /dev/null
+	sudo apt-get install -qq r-cran-plyr r-cran-mapproj r-cran-hmisc r-cran-rcpparmadillo r-cran-tikzdevice
 	sudo apt-get install -qq --no-install-recommends gawk ruby ghc perl highlight optipng coffeescript asymptote graphviz scala qpdf texinfo
 
 # a subset of dependencies that I need to temporarily install under Ubuntu
