@@ -15,8 +15,7 @@ deps:
 
 sysdeps:
 	sudo apt-get install -qq r-cran-plyr r-cran-mapproj r-cran-hmisc r-cran-rcpparmadillo r-cran-tikzdevice > /dev/null
-	sudo apt-get install -qq --no-install-recommends pgf latex-beamer gawk ruby ghc perl highlight optipng coffeescript pandoc asymptote graphviz scala qpdf texinfo texlive-latex-recommended texlive-latex-extra lmodern texlive-fonts-recommended texlive-fonts-extra texlive-extra-utils && \
-	if [ -z "$$(which dvisvgm)" ]; then sudo apt-add-repository -y ppa:martin-gieseking/ppa && sudo apt-get update -o Dir::Etc::sourcelist="sources.list.d/martin-gieseking-ppa-precise.list" -o Dir::Etc::sourceparts="-" -o APT::Get::List-Cleanup="0" && sudo apt-get install dvisvgm; fi
+	sudo apt-get install -qq --no-install-recommends gawk ruby ghc perl highlight optipng coffeescript asymptote graphviz scala qpdf texinfo
 
 # a subset of dependencies that I need to temporarily install under Ubuntu
 mydeps1:
