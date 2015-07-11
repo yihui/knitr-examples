@@ -10,7 +10,7 @@ pandoc:
 
 deps:
 	Rscript -e "for (i in readLines('R-packages'))" \
-	-e "if (!require(i, character.only=TRUE)) install.packages(i, quiet=TRUE)" \
+	-e "if (!require(i, character.only=TRUE)) install.packages(i)" \
 	-e "update.packages(.libPaths(), instlib = .libPaths()[1], ask = FALSE)"
 
 sysdeps:
