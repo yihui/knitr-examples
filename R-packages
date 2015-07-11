@@ -6,3 +6,4 @@ gridExtra
 Rcpp
 RcppArmadillo
 diagram
+tikzDevice
