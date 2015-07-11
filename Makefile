@@ -12,6 +12,7 @@ deps:
 	Rscript -e "for (i in readLines('R-packages'))" \
 	-e "if (!require(i, character.only=TRUE)) install.packages(i)" \
 	-e "update.packages(.libPaths(), instlib = .libPaths()[1], ask = FALSE)"
+	(kpsewhich Sweave.sty || tlmgr conf texmf TEXMFHOME "~/texmf:/usr/share/R/share/texmf")
 
 sysdeps:
 	sudo apt-get install -qq r-cran-plyr r-cran-mapproj r-cran-hmisc r-cran-rcpparmadillo r-cran-tikzdevice
