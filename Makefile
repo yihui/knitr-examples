@@ -9,9 +9,9 @@ pandoc:
 	Rscript 084-pandoc.R && Rscript 088-pandoc-embedded.R
 
 deps:
-	Rscript -e "for (i in c('ggplot2', 'mapproj', 'Hmisc', 'xtable', 'gridExtra', 'Rcpp', 'RcppArmadillo', 'diagram'))" \
-	-e "if (!require(i, character.only=TRUE)) install.packages(i, repos='http://cran.rstudio.org', quiet=TRUE)" \
-	-e "update.packages(.libPaths(), instlib = .libPaths()[1], ask = FALSE, repos = 'http://cran.rstudio.org')"
+	Rscript -e "for (i in readLines('R-packages'))" \
+	-e "if (!require(i, character.only=TRUE)) install.packages(i, quiet=TRUE)" \
+	-e "update.packages(.libPaths(), instlib = .libPaths()[1], ask = FALSE)"
 
 sysdeps:
 	sudo apt-get install -qq r-cran-plyr r-cran-mapproj r-cran-hmisc r-cran-rcpparmadillo r-cran-tikzdevice
