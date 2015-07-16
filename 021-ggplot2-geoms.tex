@@ -471,12 +471,16 @@
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_boxplot}\hlstd{(}\hlkwc{notch} \hlstd{=} \hlnum{TRUE}\hlstd{)}
 \end{alltt}
-\end{kframe}
+
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# notch went outside hinges. Try setting notch=FALSE.\\\#\# notch went outside hinges. Try setting notch=FALSE.}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot-6} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_boxplot}\hlstd{(}\hlkwc{notch} \hlstd{=} \hlnum{TRUE}\hlstd{,} \hlkwc{notchwidth} \hlstd{=} \hlnum{.3}\hlstd{)}
 \end{alltt}
-\end{kframe}
+
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# notch went outside hinges. Try setting notch=FALSE.\\\#\# notch went outside hinges. Try setting notch=FALSE.}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot-7} 
 \begin{kframe}\begin{alltt}
 \hlstd{p} \hlopt{+} \hlkwd{geom_boxplot}\hlstd{(}\hlkwc{outlier.colour} \hlstd{=} \hlstr{"green"}\hlstd{,} \hlkwc{outlier.size} \hlstd{=} \hlnum{3}\hlstd{)}
@@ -530,28 +534,28 @@
 \end{alltt}
 
 
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning in loop\_apply(n, do.ply): position\_dodge requires constant width: output may be incorrect}}\end{kframe}
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: position\_dodge requires constant width: output may be incorrect}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot-15} 
 \begin{kframe}\begin{alltt}
 \hlstd{m} \hlopt{+} \hlkwd{geom_boxplot}\hlstd{()} \hlopt{+} \hlkwd{scale_y_log10}\hlstd{()}
 \end{alltt}
 
 
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning in loop\_apply(n, do.ply): position\_dodge requires constant width: output may be incorrect}}\end{kframe}
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: position\_dodge requires constant width: output may be incorrect}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot-16} 
 \begin{kframe}\begin{alltt}
 \hlstd{m} \hlopt{+} \hlkwd{geom_boxplot}\hlstd{()} \hlopt{+} \hlkwd{coord_trans}\hlstd{(}\hlkwc{y} \hlstd{=} \hlstr{"log10"}\hlstd{)}
 \end{alltt}
 
 
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning in loop\_apply(n, do.ply): position\_dodge requires constant width: output may be incorrect}}\end{kframe}
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: position\_dodge requires constant width: output may be incorrect}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot-17} 
 \begin{kframe}\begin{alltt}
 \hlstd{m} \hlopt{+} \hlkwd{geom_boxplot}\hlstd{()} \hlopt{+} \hlkwd{scale_y_log10}\hlstd{()} \hlopt{+} \hlkwd{coord_trans}\hlstd{(}\hlkwc{y} \hlstd{=} \hlstr{"log10"}\hlstd{)}
 \end{alltt}
 
 
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning in loop\_apply(n, do.ply): position\_dodge requires constant width: output may be incorrect}}\end{kframe}
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: position\_dodge requires constant width: output may be incorrect}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot-18} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Boxplots with continuous x:}
@@ -560,7 +564,7 @@
 \end{alltt}
 
 
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning in loop\_apply(n, do.ply): Removed 53573 rows containing non-finite values (stat\_boxplot).}}\end{kframe}
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 53573 rows containing non-finite values (stat\_boxplot).}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot-19} 
 \begin{kframe}\begin{alltt}
 \hlkwd{qplot}\hlstd{(year, budget,} \hlkwc{data} \hlstd{= movies,} \hlkwc{geom} \hlstd{=} \hlstr{"boxplot"}\hlstd{,}
@@ -568,9 +572,9 @@
 \end{alltt}
 
 
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning in loop\_apply(n, do.ply): Removed 53573 rows containing non-finite values (stat\_boxplot).}}
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 53573 rows containing non-finite values (stat\_boxplot).}}
 
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning in loop\_apply(n, do.ply): position\_dodge requires constant width: output may be incorrect}}\end{kframe}
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: position\_dodge requires constant width: output may be incorrect}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot-20} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Using precomputed statistics}
@@ -598,14 +602,14 @@
 \end{alltt}
 
 
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning in loop\_apply(n, do.ply): position\_dodge requires constant width: output may be incorrect}}\end{kframe}
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: position\_dodge requires constant width: output may be incorrect}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot-24} 
 \begin{kframe}\begin{alltt}
 \hlkwd{qplot}\hlstd{(}\hlkwd{factor}\hlstd{(cyl), mpg,} \hlkwc{data} \hlstd{= mtcars,} \hlkwc{geom} \hlstd{=} \hlstr{"boxplot"}\hlstd{,} \hlkwc{varwidth} \hlstd{=} \hlnum{TRUE}\hlstd{)}
 \end{alltt}
 
 
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning in loop\_apply(n, do.ply): position\_dodge requires constant width: output may be incorrect}}\end{kframe}
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: position\_dodge requires constant width: output may be incorrect}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot-25} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Update the defaults for the outliers by changing the defaults for geom_point}
@@ -709,7 +713,9 @@
 
 \hlkwd{ggplot}\hlstd{(mtcars,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= mpg))} \hlopt{+} \hlkwd{geom_dotplot}\hlstd{()}
 \end{alltt}
-\end{kframe}
+
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# stat\_bindot: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_dotplot-1} 
 \begin{kframe}\begin{alltt}
 \hlkwd{ggplot}\hlstd{(mtcars,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= mpg))} \hlopt{+} \hlkwd{geom_dotplot}\hlstd{(}\hlkwc{binwidth} \hlstd{=} \hlnum{1.5}\hlstd{)}
@@ -760,32 +766,42 @@
 \hlkwd{ggplot}\hlstd{(mtcars,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{=} \hlnum{1}\hlstd{,} \hlkwc{y} \hlstd{= mpg))} \hlopt{+}
   \hlkwd{geom_dotplot}\hlstd{(}\hlkwc{binaxis} \hlstd{=} \hlstr{"y"}\hlstd{,} \hlkwc{stackdir} \hlstd{=} \hlstr{"center"}\hlstd{)}
 \end{alltt}
-\end{kframe}
+
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# stat\_bindot: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_dotplot-9} 
 \begin{kframe}\begin{alltt}
 \hlkwd{ggplot}\hlstd{(mtcars,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{=} \hlkwd{factor}\hlstd{(cyl),} \hlkwc{y} \hlstd{= mpg))} \hlopt{+}
   \hlkwd{geom_dotplot}\hlstd{(}\hlkwc{binaxis} \hlstd{=} \hlstr{"y"}\hlstd{,} \hlkwc{stackdir} \hlstd{=} \hlstr{"center"}\hlstd{)}
 \end{alltt}
-\end{kframe}
+
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# stat\_bindot: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_dotplot-10} 
 \begin{kframe}\begin{alltt}
 \hlkwd{ggplot}\hlstd{(mtcars,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{=} \hlkwd{factor}\hlstd{(cyl),} \hlkwc{y} \hlstd{= mpg))} \hlopt{+}
   \hlkwd{geom_dotplot}\hlstd{(}\hlkwc{binaxis} \hlstd{=} \hlstr{"y"}\hlstd{,} \hlkwc{stackdir} \hlstd{=} \hlstr{"centerwhole"}\hlstd{)}
 \end{alltt}
-\end{kframe}
+
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# stat\_bindot: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_dotplot-11} 
 \begin{kframe}\begin{alltt}
 \hlkwd{ggplot}\hlstd{(mtcars,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{=} \hlkwd{factor}\hlstd{(vs),} \hlkwc{fill} \hlstd{=} \hlkwd{factor}\hlstd{(cyl),} \hlkwc{y} \hlstd{= mpg))} \hlopt{+}
   \hlkwd{geom_dotplot}\hlstd{(}\hlkwc{binaxis} \hlstd{=} \hlstr{"y"}\hlstd{,} \hlkwc{stackdir} \hlstd{=} \hlstr{"center"}\hlstd{,} \hlkwc{position} \hlstd{=} \hlstr{"dodge"}\hlstd{)}
 \end{alltt}
-\end{kframe}
+
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# stat\_bindot: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_dotplot-12} 
 \begin{kframe}\begin{alltt}
 \hlcom{# binpositions="all" ensures that the bins are aligned between groups}
 \hlkwd{ggplot}\hlstd{(mtcars,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{=} \hlkwd{factor}\hlstd{(am),} \hlkwc{y} \hlstd{= mpg))} \hlopt{+}
   \hlkwd{geom_dotplot}\hlstd{(}\hlkwc{binaxis} \hlstd{=} \hlstr{"y"}\hlstd{,} \hlkwc{stackdir} \hlstd{=} \hlstr{"center"}\hlstd{,} \hlkwc{binpositions}\hlstd{=}\hlstr{"all"}\hlstd{)}
 \end{alltt}
-\end{kframe}
+
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# stat\_bindot: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_dotplot-13} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Stacking multiple groups, with different fill}
@@ -810,7 +826,9 @@
 \hlcom{# Use qplot instead}
 \hlkwd{qplot}\hlstd{(mpg,} \hlkwc{data} \hlstd{= mtcars,} \hlkwc{geom} \hlstd{=} \hlstr{"dotplot"}\hlstd{)}
 \end{alltt}
-\end{kframe}
+
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# stat\_bindot: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_dotplot-17} 
 
 \end{knitrout}
@@ -940,7 +958,9 @@
 
 \hlkwd{qplot}\hlstd{(carat,} \hlkwc{data} \hlstd{= diamonds,} \hlkwc{geom} \hlstd{=} \hlstr{"freqpoly"}\hlstd{)}
 \end{alltt}
-\end{kframe}
+
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# stat\_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_freqpoly-1} 
 \begin{kframe}\begin{alltt}
 \hlkwd{qplot}\hlstd{(carat,} \hlkwc{data} \hlstd{= diamonds,} \hlkwc{geom} \hlstd{=} \hlstr{"freqpoly"}\hlstd{,} \hlkwc{binwidth} \hlstd{=} \hlnum{0.1}\hlstd{)}
@@ -1009,14 +1029,14 @@
 \end{alltt}
 
 
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning in loop\_apply(n, do.ply): position\_stack requires constant width: output may be incorrect}}\end{kframe}
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# stat\_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-1} 
 \begin{kframe}\begin{alltt}
 \hlkwd{qplot}\hlstd{(rating,} \hlkwc{data}\hlstd{=movies,} \hlkwc{weight}\hlstd{=votes,} \hlkwc{geom}\hlstd{=}\hlstr{"histogram"}\hlstd{)}
 \end{alltt}
 
 
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning in loop\_apply(n, do.ply): position\_stack requires constant width: output may be incorrect}}\end{kframe}
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# stat\_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-2} 
 \begin{kframe}\begin{alltt}
 \hlkwd{qplot}\hlstd{(rating,} \hlkwc{data}\hlstd{=movies,} \hlkwc{weight}\hlstd{=votes,} \hlkwc{geom}\hlstd{=}\hlstr{"histogram"}\hlstd{,} \hlkwc{binwidth}\hlstd{=}\hlnum{1}\hlstd{)}
@@ -1026,9 +1046,7 @@
 \begin{kframe}\begin{alltt}
 \hlkwd{qplot}\hlstd{(rating,} \hlkwc{data}\hlstd{=movies,} \hlkwc{weight}\hlstd{=votes,} \hlkwc{geom}\hlstd{=}\hlstr{"histogram"}\hlstd{,} \hlkwc{binwidth}\hlstd{=}\hlnum{0.1}\hlstd{)}
 \end{alltt}
-
-
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning in loop\_apply(n, do.ply): position\_stack requires constant width: output may be incorrect}}\end{kframe}
+\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-4} 
 \begin{kframe}\begin{alltt}
 \hlcom{# More complex}
@@ -1037,14 +1055,14 @@
 \end{alltt}
 
 
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning in loop\_apply(n, do.ply): position\_stack requires constant width: output may be incorrect}}\end{kframe}
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# stat\_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-5} 
 \begin{kframe}\begin{alltt}
 \hlstd{m} \hlopt{+} \hlkwd{geom_histogram}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{y} \hlstd{= ..density..))} \hlopt{+} \hlkwd{geom_density}\hlstd{()}
 \end{alltt}
 
 
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning in loop\_apply(n, do.ply): position\_stack requires constant width: output may be incorrect}}\end{kframe}
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# stat\_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-6} 
 \begin{kframe}\begin{alltt}
 \hlstd{m} \hlopt{+} \hlkwd{geom_histogram}\hlstd{(}\hlkwc{binwidth} \hlstd{=} \hlnum{1}\hlstd{)}
@@ -1059,9 +1077,7 @@
 \begin{kframe}\begin{alltt}
 \hlstd{m} \hlopt{+} \hlkwd{geom_histogram}\hlstd{(}\hlkwc{binwidth} \hlstd{=} \hlnum{0.1}\hlstd{)}
 \end{alltt}
-
-
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning in loop\_apply(n, do.ply): position\_stack requires constant width: output may be incorrect}}\end{kframe}
+\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-9} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Add aesthetic mappings}
@@ -1069,21 +1085,21 @@
 \end{alltt}
 
 
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning in loop\_apply(n, do.ply): position\_stack requires constant width: output may be incorrect}}\end{kframe}
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# stat\_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-10} 
 \begin{kframe}\begin{alltt}
 \hlstd{m} \hlopt{+} \hlkwd{geom_histogram}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{y} \hlstd{= ..count..))}
 \end{alltt}
 
 
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning in loop\_apply(n, do.ply): position\_stack requires constant width: output may be incorrect}}\end{kframe}
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# stat\_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-11} 
 \begin{kframe}\begin{alltt}
 \hlstd{m} \hlopt{+} \hlkwd{geom_histogram}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{fill} \hlstd{= ..count..))}
 \end{alltt}
 
 
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning in loop\_apply(n, do.ply): position\_stack requires constant width: output may be incorrect}}\end{kframe}
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# stat\_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-12} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Change scales}
@@ -1092,7 +1108,7 @@
 \end{alltt}
 
 
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning in loop\_apply(n, do.ply): position\_stack requires constant width: output may be incorrect}}\end{kframe}
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# stat\_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-13} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Often we don't want the height of the bar to represent the}
@@ -1101,9 +1117,7 @@
 \hlcom{# in each rating.}
 \hlkwd{qplot}\hlstd{(rating,} \hlkwc{data}\hlstd{=movies,} \hlkwc{geom}\hlstd{=}\hlstr{"bar"}\hlstd{,} \hlkwc{binwidth} \hlstd{=} \hlnum{0.1}\hlstd{)}
 \end{alltt}
-
-
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning in loop\_apply(n, do.ply): position\_stack requires constant width: output may be incorrect}}\end{kframe}
+\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-14} 
 \begin{kframe}\begin{alltt}
 \hlcom{# If, however, we want to see the number of votes cast in each}
@@ -1111,9 +1125,7 @@
 \hlkwd{qplot}\hlstd{(rating,} \hlkwc{data}\hlstd{=movies,} \hlkwc{geom}\hlstd{=}\hlstr{"bar"}\hlstd{,} \hlkwc{binwidth} \hlstd{=} \hlnum{0.1}\hlstd{,}
   \hlkwc{weight}\hlstd{=votes,} \hlkwc{ylab} \hlstd{=} \hlstr{"votes"}\hlstd{)}
 \end{alltt}
-
-
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning in loop\_apply(n, do.ply): position\_stack requires constant width: output may be incorrect}}\end{kframe}
+\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-15} 
 \begin{kframe}\begin{alltt}
 \hlstd{m} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(movies,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= votes))}
@@ -1121,7 +1133,9 @@
 \hlcom{# The bins have constant width on the transformed scale.}
 \hlstd{m} \hlopt{+} \hlkwd{geom_histogram}\hlstd{()} \hlopt{+} \hlkwd{scale_x_log10}\hlstd{()}
 \end{alltt}
-\end{kframe}
+
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# stat\_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-16} 
 \begin{kframe}\begin{alltt}
 \hlstd{m} \hlopt{+} \hlkwd{geom_histogram}\hlstd{(}\hlkwc{binwidth} \hlstd{=} \hlnum{1}\hlstd{)} \hlopt{+} \hlkwd{scale_x_log10}\hlstd{()}
@@ -1131,7 +1145,9 @@
 \begin{kframe}\begin{alltt}
 \hlstd{m} \hlopt{+} \hlkwd{geom_histogram}\hlstd{()} \hlopt{+} \hlkwd{scale_x_sqrt}\hlstd{()}
 \end{alltt}
-\end{kframe}
+
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# stat\_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-18} 
 \begin{kframe}\begin{alltt}
 \hlstd{m} \hlopt{+} \hlkwd{geom_histogram}\hlstd{(}\hlkwc{binwidth} \hlstd{=} \hlnum{10}\hlstd{)} \hlopt{+} \hlkwd{scale_x_sqrt}\hlstd{()}
@@ -1148,13 +1164,17 @@
 \hlcom{# no observations have 0 ratings.}
 \hlstd{m} \hlopt{+} \hlkwd{geom_histogram}\hlstd{(}\hlkwc{origin} \hlstd{=} \hlnum{0}\hlstd{)} \hlopt{+} \hlkwd{coord_trans}\hlstd{(}\hlkwc{x} \hlstd{=} \hlstr{"log10"}\hlstd{)}
 \end{alltt}
-\end{kframe}
+
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# stat\_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-20} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Use origin = 0, to make sure we don't take sqrt of negative values}
 \hlstd{m} \hlopt{+} \hlkwd{geom_histogram}\hlstd{(}\hlkwc{origin} \hlstd{=} \hlnum{0}\hlstd{)} \hlopt{+} \hlkwd{coord_trans}\hlstd{(}\hlkwc{x} \hlstd{=} \hlstr{"sqrt"}\hlstd{)}
 \end{alltt}
-\end{kframe}
+
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# stat\_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-21} 
 \begin{kframe}\begin{alltt}
 \hlstd{m} \hlopt{+} \hlkwd{geom_histogram}\hlstd{(}\hlkwc{origin} \hlstd{=} \hlnum{0}\hlstd{,} \hlkwc{binwidth} \hlstd{=} \hlnum{1000}\hlstd{)} \hlopt{+} \hlkwd{coord_trans}\hlstd{(}\hlkwc{x} \hlstd{=} \hlstr{"sqrt"}\hlstd{)}
@@ -1174,7 +1194,7 @@
 \end{alltt}
 
 
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning in loop\_apply(n, do.ply): Stacking not well defined when ymin != 0}}\end{kframe}
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Stacking not well defined when ymin != 0}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-24} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Set aesthetics to fixed value}
@@ -1208,23 +1228,31 @@
 \hlstd{diamonds_small} \hlkwb{<-} \hlstd{diamonds[}\hlkwd{sample}\hlstd{(}\hlkwd{nrow}\hlstd{(diamonds),} \hlnum{1000}\hlstd{), ]}
 \hlkwd{ggplot}\hlstd{(diamonds_small,} \hlkwd{aes}\hlstd{(}\hlkwc{x}\hlstd{=price))} \hlopt{+} \hlkwd{geom_bar}\hlstd{()}
 \end{alltt}
-\end{kframe}
+
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# stat\_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-29} 
 \begin{kframe}\begin{alltt}
 \hlstd{hist_cut} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(diamonds_small,} \hlkwd{aes}\hlstd{(}\hlkwc{x}\hlstd{=price,} \hlkwc{fill}\hlstd{=cut))}
 \hlstd{hist_cut} \hlopt{+} \hlkwd{geom_bar}\hlstd{()} \hlcom{# defaults to stacking}
 \end{alltt}
-\end{kframe}
+
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# stat\_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-30} 
 \begin{kframe}\begin{alltt}
 \hlstd{hist_cut} \hlopt{+} \hlkwd{geom_bar}\hlstd{(}\hlkwc{position}\hlstd{=}\hlstr{"fill"}\hlstd{)}
 \end{alltt}
-\end{kframe}
+
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# stat\_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-31} 
 \begin{kframe}\begin{alltt}
 \hlstd{hist_cut} \hlopt{+} \hlkwd{geom_bar}\hlstd{(}\hlkwc{position}\hlstd{=}\hlstr{"dodge"}\hlstd{)}
 \end{alltt}
-\end{kframe}
+
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# stat\_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-32} 
 \begin{kframe}\begin{alltt}
 \hlcom{# This is easy in ggplot2, but not visually effective.  It's better}
@@ -1255,7 +1283,7 @@
 \end{alltt}
 
 
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning in loop\_apply(n, do.ply): Removed 2 rows containing non-finite values (stat\_density).}}\end{kframe}
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 2 rows containing non-finite values (stat\_density).}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_histogram-36} 
 \begin{kframe}\begin{alltt}
 \hlcom{## End(No test)}
@@ -1758,25 +1786,25 @@
 \end{alltt}
 
 
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning in loop\_apply(n, do.ply): Removed 1 rows containing missing values (geom\_point).}}
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 1 rows containing missing values (geom\_point).}}
 
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning in loop\_apply(n, do.ply): Removed 1 rows containing missing values (geom\_path).}}\end{kframe}
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 1 rows containing missing values (geom\_path).}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_path-17} 
 \begin{kframe}\begin{alltt}
 \hlkwd{qplot}\hlstd{(x, y2,} \hlkwc{data} \hlstd{= df,} \hlkwc{geom} \hlstd{=} \hlkwd{c}\hlstd{(}\hlstr{"point"}\hlstd{,}\hlstr{"line"}\hlstd{))}
 \end{alltt}
 
 
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning in loop\_apply(n, do.ply): Removed 1 rows containing missing values (geom\_point).}}
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 1 rows containing missing values (geom\_point).}}
 
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning in loop\_apply(n, do.ply): Removed 1 rows containing missing values (geom\_path).}}\end{kframe}
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 1 rows containing missing values (geom\_path).}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_path-18} 
 \begin{kframe}\begin{alltt}
 \hlkwd{qplot}\hlstd{(x, y3,} \hlkwc{data} \hlstd{= df,} \hlkwc{geom} \hlstd{=} \hlkwd{c}\hlstd{(}\hlstr{"point"}\hlstd{,}\hlstr{"line"}\hlstd{))}
 \end{alltt}
 
 
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning in loop\_apply(n, do.ply): Removed 1 rows containing missing values (geom\_point).}}\end{kframe}
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 1 rows containing missing values (geom\_point).}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_path-19} 
 \begin{kframe}\begin{alltt}
 \hlkwd{qplot}\hlstd{(x, y4,} \hlkwc{data} \hlstd{= df,} \hlkwc{geom} \hlstd{=} \hlkwd{c}\hlstd{(}\hlstr{"point"}\hlstd{,}\hlstr{"line"}\hlstd{))}
@@ -1964,7 +1992,7 @@
 \end{alltt}
 
 
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning in loop\_apply(n, do.ply): Removed 11 rows containing missing values (geom\_point).}}\end{kframe}
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 11 rows containing missing values (geom\_point).}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_point-20} 
 \begin{kframe}\begin{alltt}
 \hlkwd{qplot}\hlstd{(wt, mpg,} \hlkwc{data} \hlstd{= mtcars2,} \hlkwc{na.rm} \hlstd{=} \hlnum{TRUE}\hlstd{)}
@@ -2125,11 +2153,11 @@
 \end{alltt}
 \begin{verbatim}
 ##        step user.self sys.self elapsed
-## 1 construct     0.003    0.000   0.003
-## 2     build     0.256    0.008   0.265
-## 3    render     0.078    0.000   0.078
-## 4      draw     0.030    0.000   0.030
-## 5     TOTAL     0.367    0.008   0.376
+## 1 construct     0.003        0   0.002
+## 2     build     0.236        0   0.236
+## 3    render     0.078        0   0.078
+## 4      draw     0.029        0   0.029
+## 5     TOTAL     0.346        0   0.345
 \end{verbatim}
 \begin{alltt}
 \hlkwd{benchplot}\hlstd{(base} \hlopt{+} \hlkwd{geom_tile}\hlstd{())}
@@ -2139,10 +2167,10 @@
 \begin{kframe}\begin{verbatim}
 ##        step user.self sys.self elapsed
 ## 1 construct     0.002        0   0.003
-## 2     build     0.258        0   0.259
-## 3    render     0.092        0   0.091
-## 4      draw     0.059        0   0.060
-## 5     TOTAL     0.411        0   0.413
+## 2     build     0.267        0   0.268
+## 3    render     0.102        0   0.102
+## 4      draw     0.062        0   0.062
+## 5     TOTAL     0.433        0   0.435
 \end{verbatim}
 \begin{alltt}
 \hlcom{# justification}
@@ -2261,7 +2289,7 @@
 \end{alltt}
 
 
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning in loop\_apply(n, do.ply): Removed 9 rows containing missing values (position\_stack).}}\end{kframe}
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 9 rows containing missing values (position\_stack).}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_ribbon-9} 
 \begin{kframe}\begin{alltt}
 \hlcom{## End(No test)}
@@ -2344,7 +2372,7 @@
 \end{alltt}
 
 
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning in loop\_apply(n, do.ply): Removed 21 rows containing missing values (geom\_segment).}}\end{kframe}
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 21 rows containing missing values (geom\_segment).}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_segment-2} 
 \begin{kframe}\begin{alltt}
 \hlcom{# You can also use geom_segment to recreate plot(type = "h") :}
@@ -2850,28 +2878,28 @@
 \end{alltt}
 
 
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning in loop\_apply(n, do.ply): position\_dodge requires constant width: output may be incorrect}}\end{kframe}
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: position\_dodge requires constant width: output may be incorrect}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_violin-16} 
 \begin{kframe}\begin{alltt}
 \hlstd{m} \hlopt{+} \hlkwd{geom_violin}\hlstd{()} \hlopt{+} \hlkwd{scale_y_log10}\hlstd{()}
 \end{alltt}
 
 
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning in loop\_apply(n, do.ply): position\_dodge requires constant width: output may be incorrect}}\end{kframe}
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: position\_dodge requires constant width: output may be incorrect}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_violin-17} 
 \begin{kframe}\begin{alltt}
 \hlstd{m} \hlopt{+} \hlkwd{geom_violin}\hlstd{()} \hlopt{+} \hlkwd{coord_trans}\hlstd{(}\hlkwc{y} \hlstd{=} \hlstr{"log10"}\hlstd{)}
 \end{alltt}
 
 
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning in loop\_apply(n, do.ply): position\_dodge requires constant width: output may be incorrect}}\end{kframe}
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: position\_dodge requires constant width: output may be incorrect}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_violin-18} 
 \begin{kframe}\begin{alltt}
 \hlstd{m} \hlopt{+} \hlkwd{geom_violin}\hlstd{()} \hlopt{+} \hlkwd{scale_y_log10}\hlstd{()} \hlopt{+} \hlkwd{coord_trans}\hlstd{(}\hlkwc{y} \hlstd{=} \hlstr{"log10"}\hlstd{)}
 \end{alltt}
 
 
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning in loop\_apply(n, do.ply): position\_dodge requires constant width: output may be incorrect}}\end{kframe}
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: position\_dodge requires constant width: output may be incorrect}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_violin-19} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Violin plots with continuous x:}
@@ -2880,7 +2908,7 @@
 \end{alltt}
 
 
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning in loop\_apply(n, do.ply): Removed 53573 rows containing non-finite values (stat\_ydensity).}}\end{kframe}
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 53573 rows containing non-finite values (stat\_ydensity).}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_violin-20} 
 \begin{kframe}\begin{alltt}
 \hlkwd{qplot}\hlstd{(year, budget,} \hlkwc{data} \hlstd{= movies,} \hlkwc{geom} \hlstd{=} \hlstr{"violin"}\hlstd{,}
@@ -2888,9 +2916,9 @@
 \end{alltt}
 
 
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning in loop\_apply(n, do.ply): Removed 53573 rows containing non-finite values (stat\_ydensity).}}
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 53573 rows containing non-finite values (stat\_ydensity).}}
 
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning in loop\_apply(n, do.ply): position\_dodge requires constant width: output may be incorrect}}\end{kframe}
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: position\_dodge requires constant width: output may be incorrect}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_violin-21} 
 \begin{kframe}\begin{alltt}
 \hlcom{## End(No test)}
