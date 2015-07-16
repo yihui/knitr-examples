@@ -10,7 +10,6 @@ baptiste Augui\'e).
 <<setup>>=
 library(grid)
 library(gridExtra)
-library(grid)
 g = tableGrob(head(iris, 4))
 <<draw-table, dev='png', dpi=150, fig.width=convertWidth(sum(g$widths), "in", value=TRUE), fig.height=convertHeight(sum(g$heights), "in", value=TRUE)>>=
 grid.draw(g)
