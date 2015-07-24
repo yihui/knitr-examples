@@ -34,7 +34,6 @@ diff:
 	git diff
 	git status
 	git checkout -- 009-*.md 010-*.md 021-*.tex 101-*.md 051-*.tex  # ignore these differences
-	git checkout -- 042-*.tex 098-*.tex # temporarily ignore them
 	[ -z "$$(git diff)" ] || exit 1
 
 clean:
