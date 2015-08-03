@@ -111,13 +111,13 @@ fastLm(rnorm(10), matrix(1:20, ncol = 2))
 ```
 ## $coefficients
 ##          [,1]
-## [1,] -0.01973
-## [2,]  0.01966
+## [1,] -0.13452
+## [2,]  0.05255
 ## 
 ## $stderr
 ##         [,1]
-## [1,] 0.16059
-## [2,] 0.06321
+## [1,] 0.16953
+## [2,] 0.06673
 ```
 
 Finally, you can pass additional arguments to `sourceCpp()` via the chunk option `engine.opts`. For example, we can specify `engine.opts=list(showOutput=TRUE, rebuild=FALSE)` to show the output of `R CMD SHLIB`.
