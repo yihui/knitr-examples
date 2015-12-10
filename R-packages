@@ -7,3 +7,4 @@ Rcpp
 RcppArmadillo
 diagram
 tikzDevice
+rglwidget
