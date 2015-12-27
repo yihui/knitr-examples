@@ -8,3 +8,4 @@ RcppArmadillo
 diagram
 tikzDevice
 rglwidget
+hexbin
