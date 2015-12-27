@@ -14,13 +14,6 @@ Now we can use `<<>>` to reference it.
 
 ```r
 library(ggplot2)
-```
-
-```
-## Loading required package: methods
-```
-
-```r
 qplot(carat, price, data = diamonds, color = cut) + theme(legend.text = element_text(size = 12, 
     angle = 45)) + theme(legend.position = "bottom")
 ```
