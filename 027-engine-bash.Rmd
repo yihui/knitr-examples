@@ -19,5 +19,5 @@ How about `sh`?
 
 ```{r test-sh, engine='sh'}
 # run wc on all engine examples
-ls | grep engine | xargs wc
+ls | grep engine | head -n8 | xargs wc
 ```

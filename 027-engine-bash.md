@@ -41,35 +41,17 @@ How about `sh`?
 
 ```sh
 # run wc on all engine examples
-ls | grep engine | xargs wc
+ls | grep engine | head -n8 | xargs wc
 ```
 
 ```
-##   111   222  1585 023-engine-python.md
-##    73   179  1416 023-engine-python.Rmd
-##    16    38   161 024-engine-awk.md
-##    11    41   252 024-engine-awk.Rmd
-##    12    21   127 025-engine-ruby.md
-##     7    17   109 025-engine-ruby.Rmd
-##    13    37   234 026-engine-haskell.md
-##     8    37   267 026-engine-haskell.Rmd
-##    75   214  1730 027-engine-bash.md
-##    23    58   352 027-engine-bash.Rmd
-##    25    35   220 028-engine-perl.md
-##    14    26   172 028-engine-perl.Rmd
-##   123   364  2694 029-engine-Rcpp.md
-##    98   353  2722 029-engine-Rcpp.Rmd
-##    22    56   516 057-engine-dot.md
-##    18    63   486 057-engine-dot.Rmd
-##    39   183  1359 058-engine-tikz.md
-##    35   193  1346 058-engine-tikz.Rmd
-##    14    67   425 060-engine-sas.md
-##    13    72   538 060-engine-sas.Rmd
-##    71   216  1481 080-engine-coffeescript.md
-##    42   191  1447 080-engine-coffeescript.Rmd
-##    42    60   333 090-engine-c.md
-##    21    41   256 090-engine-c.Rmd
-##    36    78   499 111-engine-fortran.md
-##    31    65   507 111-engine-fortran.Rmd
-##   993  2927 21234 total
+##  111  222 1585 023-engine-python.md
+##   73  179 1416 023-engine-python.Rmd
+##   16   38  161 024-engine-awk.md
+##   11   41  252 024-engine-awk.Rmd
+##   12   21  127 025-engine-ruby.md
+##    7   17  109 025-engine-ruby.Rmd
+##   13   37  234 026-engine-haskell.md
+##    8   37  267 026-engine-haskell.Rmd
+##  251  592 4151 total
 ```
