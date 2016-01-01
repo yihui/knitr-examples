@@ -27,7 +27,7 @@ draw( (0,0) .. (u,u) .. (u,0) -- (0,0) );
 ```
 
 
-![Asymptote Example](http://db.yihui.name/knitr-examples/figure/093-knitr-asy-asy-simple-ex-1.svg) 
+![Asymptote Example](http://db.yihui.name/knitr-examples/figure/093-knitr-asy-asy-simple-ex-1.svg)
 
 
 ## 3D example
@@ -51,7 +51,7 @@ draw(s,render(merge=true));
 ```
 
 
-![Asymptote 3D Example](http://db.yihui.name/knitr-examples/figure/093-knitr-asy-asy-3d-ex-1.png) 
+![Asymptote 3D Example](http://db.yihui.name/knitr-examples/figure/093-knitr-asy-asy-3d-ex-1.png)
 
 
 ## An example with data from R
@@ -94,6 +94,6 @@ yaxis("$y$",LeftRight,RightTicks);
 ```
 
 
-![Asymptote Example](http://db.yihui.name/knitr-examples/figure/093-knitr-asy-asy-ex-1.svg) 
+![Asymptote Example](http://db.yihui.name/knitr-examples/figure/093-knitr-asy-asy-ex-1.svg)
 
 

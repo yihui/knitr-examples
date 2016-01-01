@@ -41,13 +41,13 @@ It is easy.
 plot(1:10)
 ```
 
-![plot of chunk unnamed-chunk-2](http://db.yihui.name/knitr-examples/figure/001-minimal-unnamed-chunk-2-1.png) 
+![plot of chunk unnamed-chunk-2](http://db.yihui.name/knitr-examples/figure/001-minimal-unnamed-chunk-2-1.png)
 
 ```r
 hist(rnorm(1000))
 ```
 
-![plot of chunk unnamed-chunk-2](http://db.yihui.name/knitr-examples/figure/001-minimal-unnamed-chunk-2-2.png) 
+![plot of chunk unnamed-chunk-2](http://db.yihui.name/knitr-examples/figure/001-minimal-unnamed-chunk-2-2.png)
 
 ## inline code
 

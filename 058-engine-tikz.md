@@ -32,7 +32,7 @@ An example of the tikz-engine from <https://raw.github.com/sdiehl/cats/master/mi
 ```
 
 
-![Funky tikz](http://db.yihui.name/knitr-examples/figure/058-engine-tikz-tikz-ex-1.png) 
+![Funky tikz](http://db.yihui.name/knitr-examples/figure/058-engine-tikz-tikz-ex-1.png)
 
 ## Tips
 

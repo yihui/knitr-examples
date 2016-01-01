@@ -47,7 +47,7 @@ library(ggplot2)
 qplot(speed, dist, data = cars) + geom_smooth()
 ```
 
-![A scatterplot of `cars`](http://db.yihui.name/knitr-examples/figure/009-slides-graphics-1.png) 
+![A scatterplot of `cars`](http://db.yihui.name/knitr-examples/figure/009-slides-graphics-1.png)
 
 # How
 
@@ -89,7 +89,7 @@ print(sessionInfo(), locale = FALSE)
 ## [1] stats     graphics  grDevices utils     datasets  base     
 ## 
 ## other attached packages:
-## [1] ggplot2_2.0.0 knitr_1.11.22
+## [1] ggplot2_2.0.0 knitr_1.11.24
 ## 
 ## loaded via a namespace (and not attached):
 ##  [1] Rcpp_0.12.2      codetools_0.2-14 digest_0.6.8     grid_3.2.3      
