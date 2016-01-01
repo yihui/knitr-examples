@@ -10,10 +10,10 @@ library(knitr)
 opts_chunk$set(tidy = FALSE, cache = TRUE)
 @
 
-% all geoms in ggplot2
+% the first 10 geoms in ggplot2
 <<write-examples, include=FALSE>>=
 library(ggplot2)
-ex = lapply(apropos("^geom_"), function(g) {
+ex = lapply(head(apropos("^geom_"), 10), function(g) {
   p = utils:::index.search(g, find.package(), TRUE)
   tools::Rd2ex(utils:::.getHelpFile(p), f <- tempfile())
   c(sprintf("\\section{%s}\n\n<<%s>>=",
