@@ -53,15 +53,15 @@ ls | grep engine | xargs wc
 ##     7    17   109 025-engine-ruby.Rmd
 ##    13    37   234 026-engine-haskell.md
 ##     8    37   267 026-engine-haskell.Rmd
-##    75   214  1541 027-engine-bash.md
+##    75   214  1730 027-engine-bash.md
 ##    23    58   352 027-engine-bash.Rmd
 ##    25    35   220 028-engine-perl.md
 ##    14    26   172 028-engine-perl.Rmd
 ##   123   364  2694 029-engine-Rcpp.md
 ##    98   353  2722 029-engine-Rcpp.Rmd
-##    22    56   517 057-engine-dot.md
+##    22    56   516 057-engine-dot.md
 ##    18    63   486 057-engine-dot.Rmd
-##    39   183  1360 058-engine-tikz.md
+##    39   183  1359 058-engine-tikz.md
 ##    35   193  1346 058-engine-tikz.Rmd
 ##    14    67   425 060-engine-sas.md
 ##    13    72   538 060-engine-sas.Rmd
@@ -71,5 +71,5 @@ ls | grep engine | xargs wc
 ##    21    41   256 090-engine-c.Rmd
 ##    36    78   499 111-engine-fortran.md
 ##    31    65   507 111-engine-fortran.Rmd
-##   993  2927 21047 total
+##   993  2927 21234 total
 ```

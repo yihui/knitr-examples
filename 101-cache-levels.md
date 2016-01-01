@@ -77,7 +77,7 @@ Sys.sleep(1)
 plot(cars)
 ```
 
-![plot of chunk test-cache-d](http://db.yihui.name/knitr-examples/figure/101-cache-levels-test-cache-d-1.png) 
+![plot of chunk test-cache-d](http://db.yihui.name/knitr-examples/figure/101-cache-levels-test-cache-d-1.png)
 
 Below is a test case for [#588](https://github.com/yihui/knitr/issues/588):
 
