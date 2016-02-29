@@ -4,8 +4,6 @@ ls | grep -E '^[0-9].*\.(brew|R(nw|md|tex|html|rst|asciidoc|textile))$' | grep -
 time Rscript -e "knitr::purl('094-purl.Rmd')"
 ./k "076-chinese-gb2312.rnw', '076-chinese-gb2312.TEX', encoding='GB2312"
 ./k "078-chinese-big5.rnw', '078-chinese-big5.ctx', encoding='BIG5"
-# it appears tikzDevice often fails for some reason in this Rnw doc
-./k "059-tikz.Rnw"
 # Explicitly run caching test twice
 ./k "101-cache-levels.Rmd"
 # load_cache() requires running twice
