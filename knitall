@@ -5,6 +5,7 @@ time Rscript -e "knitr::purl('094-purl.Rmd')"
 ./k "076-chinese-gb2312.rnw', '076-chinese-gb2312.TEX', encoding='GB2312"
 ./k "078-chinese-big5.rnw', '078-chinese-big5.ctx', encoding='BIG5"
 # it appears tikzDevice often fails for some reason in this Rnw doc
+sleep 2
 ./k "059-tikz.Rnw"
 # Explicitly run caching test twice
 ./k "101-cache-levels.Rmd"
