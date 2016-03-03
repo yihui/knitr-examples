@@ -33,7 +33,7 @@ xvfb-%:
 diff:
 	git diff
 	git status
-	git checkout -- 009-*.md 010-*.md 021-*.tex 101-*.md 051-*.tex  # ignore these differences
+	git checkout -- 009-*.md 010-*.md 021-*.tex 101-*.md 051-*.tex 059-*.tex  # ignore these differences
 	[ -z "$$(git diff)" ] || exit 1
 
 clean:
