@@ -5,7 +5,7 @@ You can call the function `knitr::include_graphics()` in a code chunk to embed e
 
 ```r
 library(knitr)
-include_graphics("figure/003-minimal-fancy-rgl-1.png")
+include_graphics("figure/003-minimal-fancy-rgl-1.png", dpi = NA)
 ```
 
 ![plot of chunk unnamed-chunk-1](http://db.yihui.name/knitr-examples/figure/003-minimal-fancy-rgl-1.png)
