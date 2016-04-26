@@ -2,7 +2,7 @@
 
 You can call the function `knitr::include_graphics()` in a code chunk to embed external images. This function works for all types of **knitr** source documents, such as Rnw and Rmd. Below is a simple example:
 
-```{r}
+```{r dpi=NA}
 library(knitr)
 include_graphics('figure/003-minimal-fancy-rgl-1.png')
 ```
