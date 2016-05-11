@@ -10,8 +10,8 @@ pandoc:
 
 deps:
 	Rscript -e "for (i in readLines('R-packages'))" \
-	-e "if (!require(i, character.only=TRUE)) install.packages(i)" \
-	-e "update.packages(.libPaths(), instlib = .libPaths()[1], ask = FALSE)"
+	-e "if (!require(i, character.only=TRUE)) install.packages(i, repos='http://cran.rstudio.com')" \
+	-e "update.packages(.libPaths(), instlib = .libPaths()[1], ask = FALSE, repos = 'http://cran.rstudio.com')"
 	(kpsewhich Sweave.sty || tlmgr conf texmf TEXMFHOME "~/texmf:/usr/share/R/share/texmf")
 
 sysdeps:
