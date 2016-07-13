@@ -9,3 +9,5 @@ diagram
 tikzDevice
 rglwidget
 hexbin
+DBI
+RSQLite
