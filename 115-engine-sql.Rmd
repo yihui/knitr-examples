@@ -19,7 +19,7 @@ CREATE TABLE packages (id INTEGER, name TEXT)
 INSERT INTO packages VALUES (1, 'readr'), (2, 'readxl'), (3, 'haven')
 ```
 
-```{sql connection=db, output.var="allPackages"}
+```{sql connection=db}
 SELECT * FROM packages
 ```
 
@@ -28,5 +28,11 @@ packageReadR <- "readr"
 ```
 
 ```{sql, connection=db, output.var="readrPackage"}
-SELECT * FROM packages WHERE name = ?packageReadR
+SELECT * FROM packages
+WHERE name = ?packageReadR
 ```
+
+```{r}
+readrPackage
+```
+

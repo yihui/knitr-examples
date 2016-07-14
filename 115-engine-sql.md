@@ -28,14 +28,14 @@ INSERT INTO packages VALUES (1, 'readr'), (2, 'readxl'), (3, 'haven')
 SELECT * FROM packages
 ```
 
-```
-## # A tibble: 3 x 2
-##      id   name
-##   <int>  <chr>
-## 1     1  readr
-## 2     2 readxl
-## 3     3  haven
-```
+
+
+
+| id|name   |
+|--:|:------|
+|  1|readr  |
+|  2|readxl |
+|  3|haven  |
 
 
 ```r
@@ -44,12 +44,17 @@ packageReadR <- "readr"
 
 
 ```sql
-SELECT * FROM packages WHERE name = ?packageReadR
+SELECT * FROM packages
+WHERE name = ?packageReadR
+```
+
+
+```r
+readrPackage
 ```
 
 ```
-## # A tibble: 1 x 2
-##      id  name
-##   <int> <chr>
-## 1     1 readr
+##   id  name
+## 1  1 readr
 ```
+
