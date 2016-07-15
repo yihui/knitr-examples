@@ -31,11 +31,11 @@ SELECT * FROM packages
 
 
 
-| id|name   |
-|--:|:------|
-|  1|readr  |
-|  2|readxl |
-|  3|haven  |
+|id |name   |
+|:--|:------|
+|1  |readr  |
+|2  |readxl |
+|3  |haven  |
 
 
 ```r
