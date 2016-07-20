@@ -328,33 +328,14 @@
 
 \hlcom{### ** Examples}
 
-\hlkwd{ggplot}\hlstd{(mtcars,} \hlkwd{aes}\hlstd{(wt, mpg))} \hlopt{+} \hlkwd{geom_blank}\hlstd{()}
+\hlkwd{ggplot}\hlstd{(mtcars,} \hlkwd{aes}\hlstd{(wt, mpg))}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_blank-1} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Nothing to see here!}
-
-\hlcom{# Take the following scatter plot}
-\hlstd{a} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(mtcars,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= wt,} \hlkwc{y} \hlstd{= mpg), .} \hlopt{~} \hlstd{cyl)} \hlopt{+} \hlkwd{geom_point}\hlstd{()}
-\hlcom{# Add to that some lines with geom_abline()}
-\hlstd{df} \hlkwb{<-} \hlkwd{data.frame}\hlstd{(}\hlkwc{a} \hlstd{=} \hlkwd{rnorm}\hlstd{(}\hlnum{10}\hlstd{,} \hlnum{25}\hlstd{),} \hlkwc{b} \hlstd{=} \hlkwd{rnorm}\hlstd{(}\hlnum{10}\hlstd{,} \hlnum{0}\hlstd{))}
-\hlstd{a} \hlopt{+} \hlkwd{geom_abline}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{intercept} \hlstd{= a,} \hlkwc{slope} \hlstd{= b),} \hlkwc{data} \hlstd{= df)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_blank-2} 
-\begin{kframe}\begin{alltt}
-\hlcom{# Suppose you then wanted to remove the geom_point layer}
-\hlcom{# If you just remove geom_point, you will get an error}
-\hlstd{b} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(mtcars,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= wt,} \hlkwc{y} \hlstd{= mpg))}
-\hlcom{## Not run: b + geom_abline(aes(intercept = a, slope = b), data = df)}
-\hlcom{# Switching to geom_blank() gets the desired plot}
-\hlstd{c} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(mtcars,} \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= wt,} \hlkwc{y} \hlstd{= mpg))} \hlopt{+} \hlkwd{geom_blank}\hlstd{()}
-\hlstd{c} \hlopt{+} \hlkwd{geom_abline}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{intercept} \hlstd{= a,} \hlkwc{slope} \hlstd{= b),} \hlkwc{data} \hlstd{= df)}
-\end{alltt}
-\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_blank-3} 
-
 \end{knitrout}
 
 
@@ -724,7 +705,7 @@
 \end{alltt}
 
 
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# \\\#\#\ \ \# ATTENTION: maps v3.0 has an updated 'world' map.\ \ \ \ \ \ \ \ \#\\\#\#\ \ \# Many country borders and names have changed since 1990. \#\\\#\#\ \ \# Type '?world' or 'news(package="{}maps"{})'. See README\_v3. \#}}\end{kframe}
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# \\\#\#\ \ \# maps v3.1: updated 'world': all lakes moved to separate new \#\\\#\#\ \ \# 'lakes' database. Type '?world' or 'news(package="{}maps"{})'.\ \ \#}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_curve-5} 
 \begin{kframe}\begin{alltt}
 \hlcom{# You can also use geom_segment to recreate plot(type = "h") :}
