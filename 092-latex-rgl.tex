@@ -64,12 +64,13 @@ A bug reported at \url{http://cos.name/cn/topic/110742}.
 \hlkwd{head}\hlstd{(hook_rgl)}  \hlcom{# the hook function is defined as this}
 \end{alltt}
 \begin{verbatim}
-##                                                   
-## 1 function (before, options, envir)               
-## 2 {                                               
-## 3     rglwidgetCheck()                            
-## 4     rglwidget::.hook_rgl(before, options, envir)
-## 5 }
+##                                                 
+## 1 function (before, options, envir)             
+## 2 {                                             
+## 3     if (before) {                             
+## 4         newwindow <- options$rgl.newwindow    
+## 5         if (!is.null(newwindow) && newwindow) 
+## 6             open3d()
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
