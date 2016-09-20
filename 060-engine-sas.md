@@ -5,7 +5,7 @@ As long as SAS is not in your `PATH` variable, you need to specify its full path
 
 ```sas
 data _null_;
-%put 'Hello, world!';
+put 'Hello, world!';
 run;
 ```
 
