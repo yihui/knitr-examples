@@ -3,7 +3,7 @@ title: "HTML-Class Demo"
 author: "Ian Lyttle"
 ---
 
-Here are some (newer) options you can use with **knitr**, `class.source` and `class.output`. Both are useful only for rendering R Markdown files into HTML. Multiple classes can be set by providing a vector, or a space-delimited string, i.e. `class.source = c("foo", "bar")` or `class.source = "foo bar"`.
+Here are some (newer) options you can use with **knitr** (>= v1.15.6), `class.source` and `class.output`. Both are useful only for rendering R Markdown files into HTML. Multiple classes can be set by providing a vector, or a space-delimited string, i.e. `class.source = c("foo", "bar")` or `class.source = "foo bar"`.
 
 One way this can be useful is motivated by the original [Stack Overflow question](http://stackoverflow.com/q/41030477/559676), how can we use **knitr** to help us to emphasize "bad" coding practices?
 
@@ -67,7 +67,7 @@ mtcars[, "mpg", drop = FALSE]
 ## Volvo 142E          21.4
 ```
 
-## Using custom css
+## Using Custom CSS
 
 You may wish to set your own CSS -- **knitr** and **rmarkdown** make this easy for you. If you are using the **rmarkdown** package, you can include your CSS file by setting a parameter in the YAML header ([reference](http://rmarkdown.rstudio.com/html_document_format.html#custom_css)). You can also include a chunk of CSS code, as is done here.
 
