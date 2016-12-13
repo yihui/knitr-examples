@@ -1,0 +1,42 @@
+---
+title: "HTML-Class Demo"
+---
+
+Here are some (newer) options you can use with knitr, `class.source` and `class.output`. Both are useful only for rendering R Markdown files into HTML. Multiple classes can be set by providing a vector, or a space-delimited string, i.e. `class.source=c("foo", "bar")` or `class.source=c("foo bar")`.
+
+One way this can be useful is motivated by the original [Stack Overflow question](http://stackoverflow.com/questions/41030477/changing-chunk-background-color-in-rmarkdown/41030920), how can we use knitr to help us to emphasize "bad" coding practices?
+
+## Using Bootstrap
+
+Using R Markdown, the default behavior is to include the Bootstrap framework. This can make things very easy for you to signify your code and your output. Bootstrap defines some [css classes for backgrounds](http://getbootstrap.com/css/#helper-classes-backgrounds): `"bg-primary"`, `"bg-success"`, `"bg-info"`, `"bg-warning"`, and `"bg-danger"`.
+
+For example, we are warned that the normal subsetting of a dataframe can be type-unstable. To show this here,  the chunk options are set: `class.source='bg-warning', class.output='bg-warning'`.
+
+
+```{r df-drop, class.source='bg-warning', class.output='bg-warning'}
+mtcars[, "mpg"]
+```
+
+To make sure that we return a dataframe, we set the argument `drop=FALSE`. Here the chunk options are set: `class.source='bg-success', class.output='bg-success'`.
+
+```{r df-drop-ok, class.source='bg-success', class.output='bg-success'}
+mtcars[, "mpg", drop=FALSE]
+```
+
+## Using custom css
+
+You may wish to set your own css - knitr and rmarkdown make this easy for you. If you are using the rmarkdown package, you can include your css file by setting a parameter in the yml header ([reference](http://rmarkdown.rstudio.com/html_document_format.html#custom_css)). You can also include a chunk of css code, as is done here.
+
+Note that for this example, only `class.source` is set.
+
+```{css}
+.bad-code { background-color: salmon; }
+```
+
+```{r df-drop-2, class.source='bad-code'}
+mtcars[, "mpg"] 
+```
+
+
+
+
