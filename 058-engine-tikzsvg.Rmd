@@ -1,0 +1,83 @@
+---
+title: "Tikz with svg output"
+output: html_document
+---
+
+```{r}
+library(knitr)
+## convert tikz string to PDF
+`%n%` = function(x, y) if (is.null(x)) y else x
+eng_svgtikz = function(options) {
+  if (!options$eval) return(engine_output(options, options$code, ''))
+
+  lines = readLines(tmpl <- options$engine.opts$template %n%
+                      system.file('misc', 'tikz2pdf.tex', package = 'knitr'))
+  i = grep('%% TIKZ_CODE %%', lines)
+  if (length(i) != 1L)
+    stop("Couldn't find replacement string; or the are multiple of them.")
+
+  s = append(lines, options$code, i)  # insert tikz into tex-template
+  writeLines(s, texf <- paste0(f <- tempfile('tikz', '.'), '.tex'))
+  on.exit(unlink(texf), add = TRUE)
+  unlink(outf <- paste0(f, '.dvi'))
+  tools::texi2dvi(texf, pdf=F, clean = T)
+  if (!file.exists(outf)) stop('failed to compile tikz; check the template: ', tmpl)
+  
+  fig = fig_path('', options)
+  dir.create(dirname(fig), recursive = TRUE, showWarnings = FALSE)
+  file.rename(outf, paste0(fig, '.dvi'))
+   
+  # dvisvgm needs to be on the path
+  # dvisvgm for windows needs ghostscript bin dir on the path also
+  conv = system2("dvisvgm", sprintf("%s.dvi", fig))
+  if (conv != 0 && !options$error)
+    stop('problems with `dvisvgm`; probably not installed?')
+  
+  # copy the svf to figure-html subdir
+  file.rename(paste0(basename(fig),".svg"), paste0(fig,".svg"))
+  
+  options$fig.num = 1L; options$fig.cur = 1L
+  extra = knit_hooks$get('plot')(paste(fig, "svg", sep = '.'), options)
+  options$engine = 'tex'  # for output hooks to use the correct language class
+  engine_output(options, options$code, '', extra)
+}
+
+knit_engines$set(svgtikz = eng_svgtikz)
+```
+
+
+# TikZ graphics
+
+## Description
+
+The engine inserts the code into a latex-string-template, which is then processed by LaTeX (and ImageMagick `convert` if `fig.ext` is not `pdf`).
+
+## Options
+
+You can pass some options to the engine by defining `engine.opts`, e.g. use your own template instead of the default one to include the tikz code: `engine.opts = list(template = "mytemplate.tex")`. The default template can be found under `system.file('misc', 'tikz2pdf.tex', package = 'knitr')`.
+
+## Example
+
+An example of the tikz-engine from <https://raw.github.com/sdiehl/cats/master/misc/example.md>
+
+```{r tikz-ex, engine = "svgtikz", fig.cap = "Funky tikz", fig.ext = 'png', cache=TRUE}
+\usetikzlibrary{arrows}
+\begin{tikzpicture}[node distance=2cm, auto,>=latex', thick, scale = 0.1]
+\node (P) {$P$};
+\node (B) [right of=P] {$B$};
+\node (A) [below of=P] {$A$};
+\node (C) [below of=B] {$C$};
+\node (P1) [node distance=1.4cm, left of=P, above of=P] {$\hat{P}$};
+\draw[->] (P) to node {$f$} (B);
+\draw[->] (P) to node [swap] {$g$} (A);
+\draw[->] (A) to node [swap] {$f$} (C);
+\draw[->] (B) to node {$g$} (C);
+\draw[->, bend right] (P1) to node [swap] {$\hat{g}$} (A);
+\draw[->, bend left] (P1) to node {$\hat{f}$} (B);
+\draw[->, dashed] (P1) to node {$k$} (P);
+\end{tikzpicture}
+```
+
+## Tips
+
+To develop the tikz-code, you could use `qtikz` or `ktikz`.
