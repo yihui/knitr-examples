@@ -1,0 +1,26 @@
+Hello package!
+```{go eval=FALSE}
+package hello 
+
+func HelloWorld(){
+   println("hello world!")
+}
+```
+
+Hello main!
+```{go}
+package main 
+
+func main(){
+   println("hello world!")
+}
+```
+
+Or specify an engine:
+```{r engine='go'}
+package main
+
+func main(){
+   println("hello world!")
+}
+```
