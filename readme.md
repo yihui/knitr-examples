@@ -8,7 +8,7 @@ For each input file, there is an output file, e.g. `001-minimal.Rmd` corresponds
 
 The examples can be checked automatically with [Travis CI](https://travis-ci.org). To enable:
 
-- Fork this repository and [`knitr`](/yihui/knitr)
+- Fork this repository and [`knitr`](https://github.com/yihui/knitr)
 - [Enable Travis CI](https://travis-ci.org/profile) for your `knitr`fork
 - In your `knitr` fork, create a branch *with the same name* as in your `knitr-examples` fork
     - You can also choose to work in `master` in both repositories
