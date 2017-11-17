@@ -45,7 +45,7 @@ ls | grep engine | head -n8 | xargs wc
 ```
 
 ```
-##  111  222 1585 023-engine-python.md
+##  144  256 1811 023-engine-python.md
 ##   73  179 1416 023-engine-python.Rmd
 ##   16   38  161 024-engine-awk.md
 ##   11   41  252 024-engine-awk.Rmd
@@ -53,5 +53,5 @@ ls | grep engine | head -n8 | xargs wc
 ##    7   17  109 025-engine-ruby.Rmd
 ##   13   37  234 026-engine-haskell.md
 ##    8   37  267 026-engine-haskell.Rmd
-##  251  592 4151 total
+##  284  626 4377 total
 ```
