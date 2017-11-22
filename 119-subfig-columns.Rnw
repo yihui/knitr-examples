@@ -1,0 +1,35 @@
+\documentclass{article}
+\usepackage{subfig}
+
+\title{Arrange Plots in Columns}
+\author{Yihui Xie}
+\begin{document}
+\maketitle
+
+<<setup, include=FALSE>>=
+library(knitr)
+opts_chunk$set(fig.width=4, fig.height=3, par=TRUE)
+knit_hooks$set(par = function(before, options, envir) {
+  if (before) par(mar = c(4, 4, .1, .1))
+})
+set.seed(123)
+@
+
+Three plots in 2 columns via the chunk option \texttt{fig.ncol = 2}. Note that you also need subcaptions (\texttt{fig.subcap}). See Figure \ref{fig:two-and-one}.
+
+<<two-and-one, echo = FALSE, fig.show = "hold", fig.cap = "Three plots in two columns.", fig.subcap = c("One", "Two", "Three"), out.width = "0.48\\textwidth", fig.ncol = 2>>=
+plot(pressure)
+plot(cars)
+plot(pressure)
+@
+
+Manually specify the separators between two plots, e.g., add a new line after the first plot. See Figure \ref{fig:one-and-two}.
+
+<<one-and-two, echo = FALSE, fig.show = "hold", fig.cap = "Three plots, with the first plot on its own line.", fig.subcap = c("One", "Two", "Three"), out.width = "0.48\\textwidth", fig.sep = c("1st\\newline", "2nd", "3rd")>>=
+plot(pressure)
+plot(cars)
+plot(pressure)
+@
+
+
+\end{document}
