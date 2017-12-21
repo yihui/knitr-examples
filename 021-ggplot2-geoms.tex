@@ -67,8 +67,7 @@
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlcom{### Name: geom_abline}
-\hlcom{### Title: Lines: horizontal, vertical, and specified by slope and}
-\hlcom{###   intercept.}
+\hlcom{### Title: Reference lines: horizontal, vertical, and diagonal}
 \hlcom{### Aliases: geom_abline geom_hline geom_vline}
 
 \hlcom{### ** Examples}
@@ -149,8 +148,8 @@
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlcom{### Name: geom_ribbon}
-\hlcom{### Title: Ribbons and area plots.}
-\hlcom{### Aliases: geom_area geom_ribbon}
+\hlcom{### Title: Ribbons and area plots}
+\hlcom{### Aliases: geom_ribbon geom_area}
 
 \hlcom{### ** Examples}
 
@@ -185,8 +184,8 @@
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlcom{### Name: geom_bar}
-\hlcom{### Title: Bars, rectangles with bases on x-axis}
-\hlcom{### Aliases: geom_bar stat_count}
+\hlcom{### Title: Bars charts}
+\hlcom{### Aliases: geom_bar geom_col stat_count}
 
 \hlcom{### ** Examples}
 
@@ -205,15 +204,16 @@
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar-2} 
 \begin{kframe}\begin{alltt}
-\hlcom{# To show (e.g.) means, you need stat = "identity"}
+\hlcom{# To show (e.g.) means, you need geom_col()}
+\hlcom{# And, even more succinctly with geom_col()}
 \hlstd{df} \hlkwb{<-} \hlkwd{data.frame}\hlstd{(}\hlkwc{trt} \hlstd{=} \hlkwd{c}\hlstd{(}\hlstr{"a"}\hlstd{,} \hlstr{"b"}\hlstd{,} \hlstr{"c"}\hlstd{),} \hlkwc{outcome} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{2.3}\hlstd{,} \hlnum{1.9}\hlstd{,} \hlnum{3.2}\hlstd{))}
 \hlkwd{ggplot}\hlstd{(df,} \hlkwd{aes}\hlstd{(trt, outcome))} \hlopt{+}
-  \hlkwd{geom_bar}\hlstd{(}\hlkwc{stat} \hlstd{=} \hlstr{"identity"}\hlstd{)}
+  \hlkwd{geom_col}\hlstd{()}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar-3} 
 \begin{kframe}\begin{alltt}
-\hlcom{# But geom_point() display exactly the same information and doesn't}
+\hlcom{# But geom_point() displays exactly the same information and doesn't}
 \hlcom{# require the y-axis to touch zero.}
 \hlkwd{ggplot}\hlstd{(df,} \hlkwd{aes}\hlstd{(trt, outcome))} \hlopt{+}
   \hlkwd{geom_point}\hlstd{()}
@@ -275,8 +275,8 @@
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlcom{### Name: geom_bin2d}
-\hlcom{### Title: Add heatmap of 2d bin counts.}
-\hlcom{### Aliases: geom_bin2d stat_bin2d stat_bin_2d}
+\hlcom{### Title: Heatmap of 2d bin counts}
+\hlcom{### Aliases: geom_bin2d stat_bin_2d stat_bin2d}
 
 \hlcom{### ** Examples}
 
@@ -323,7 +323,7 @@
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlcom{### Name: geom_blank}
-\hlcom{### Title: Blank, draws nothing.}
+\hlcom{### Title: Draw nothing}
 \hlcom{### Aliases: geom_blank}
 
 \hlcom{### ** Examples}
@@ -345,7 +345,7 @@
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlcom{### Name: geom_boxplot}
-\hlcom{### Title: Box and whiskers plot.}
+\hlcom{### Title: A box and whiskers plot (in the style of Tukey)}
 \hlcom{### Aliases: geom_boxplot stat_boxplot}
 
 \hlcom{### ** Examples}
@@ -412,6 +412,12 @@
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot-10} 
 \begin{kframe}\begin{alltt}
+\hlkwd{ggplot}\hlstd{(diamonds,} \hlkwd{aes}\hlstd{(carat, price))} \hlopt{+}
+  \hlkwd{geom_boxplot}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{group} \hlstd{=} \hlkwd{cut_width}\hlstd{(carat,} \hlnum{0.25}\hlstd{)),} \hlkwc{outlier.alpha} \hlstd{=} \hlnum{0.1}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot-11} 
+\begin{kframe}\begin{alltt}
 \hlcom{## No test: }
 \hlcom{# It's possible to draw a boxplot with your own computations if you}
 \hlcom{# use stat = "identity":}
@@ -431,7 +437,98 @@
  \hlstd{)}
 \end{alltt}
 \end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot-11} 
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot-12} 
+\begin{kframe}\begin{alltt}
+\hlcom{## End(No test)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+
+\section{geom\_col}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlcom{### Name: geom_bar}
+\hlcom{### Title: Bars charts}
+\hlcom{### Aliases: geom_bar geom_col stat_count}
+
+\hlcom{### ** Examples}
+
+\hlcom{# geom_bar is designed to make it easy to create bar charts that show}
+\hlcom{# counts (or sums of weights)}
+\hlstd{g} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(mpg,} \hlkwd{aes}\hlstd{(class))}
+\hlcom{# Number of cars in each class:}
+\hlstd{g} \hlopt{+} \hlkwd{geom_bar}\hlstd{()}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_col-1} 
+\begin{kframe}\begin{alltt}
+\hlcom{# Total engine displacement of each class}
+\hlstd{g} \hlopt{+} \hlkwd{geom_bar}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{weight} \hlstd{= displ))}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_col-2} 
+\begin{kframe}\begin{alltt}
+\hlcom{# To show (e.g.) means, you need geom_col()}
+\hlcom{# And, even more succinctly with geom_col()}
+\hlstd{df} \hlkwb{<-} \hlkwd{data.frame}\hlstd{(}\hlkwc{trt} \hlstd{=} \hlkwd{c}\hlstd{(}\hlstr{"a"}\hlstd{,} \hlstr{"b"}\hlstd{,} \hlstr{"c"}\hlstd{),} \hlkwc{outcome} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{2.3}\hlstd{,} \hlnum{1.9}\hlstd{,} \hlnum{3.2}\hlstd{))}
+\hlkwd{ggplot}\hlstd{(df,} \hlkwd{aes}\hlstd{(trt, outcome))} \hlopt{+}
+  \hlkwd{geom_col}\hlstd{()}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_col-3} 
+\begin{kframe}\begin{alltt}
+\hlcom{# But geom_point() displays exactly the same information and doesn't}
+\hlcom{# require the y-axis to touch zero.}
+\hlkwd{ggplot}\hlstd{(df,} \hlkwd{aes}\hlstd{(trt, outcome))} \hlopt{+}
+  \hlkwd{geom_point}\hlstd{()}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_col-4} 
+\begin{kframe}\begin{alltt}
+\hlcom{# You can also use geom_bar() with continuous data, in which case}
+\hlcom{# it will show counts at unique locations}
+\hlstd{df} \hlkwb{<-} \hlkwd{data.frame}\hlstd{(}\hlkwc{x} \hlstd{=} \hlkwd{rep}\hlstd{(}\hlkwd{c}\hlstd{(}\hlnum{2.9}\hlstd{,} \hlnum{3.1}\hlstd{,} \hlnum{4.5}\hlstd{),} \hlkwd{c}\hlstd{(}\hlnum{5}\hlstd{,} \hlnum{10}\hlstd{,} \hlnum{4}\hlstd{)))}
+\hlkwd{ggplot}\hlstd{(df,} \hlkwd{aes}\hlstd{(x))} \hlopt{+} \hlkwd{geom_bar}\hlstd{()}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_col-5} 
+\begin{kframe}\begin{alltt}
+\hlcom{# cf. a histogram of the same data}
+\hlkwd{ggplot}\hlstd{(df,} \hlkwd{aes}\hlstd{(x))} \hlopt{+} \hlkwd{geom_histogram}\hlstd{(}\hlkwc{binwidth} \hlstd{=} \hlnum{0.5}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_col-6} 
+\begin{kframe}\begin{alltt}
+\hlcom{## No test: }
+\hlcom{# Bar charts are automatically stacked when multiple bars are placed}
+\hlcom{# at the same location}
+\hlstd{g} \hlopt{+} \hlkwd{geom_bar}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{fill} \hlstd{= drv))}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_col-7} 
+\begin{kframe}\begin{alltt}
+\hlcom{# You can instead dodge, or fill them}
+\hlstd{g} \hlopt{+} \hlkwd{geom_bar}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{fill} \hlstd{= drv),} \hlkwc{position} \hlstd{=} \hlstr{"dodge"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_col-8} 
+\begin{kframe}\begin{alltt}
+\hlstd{g} \hlopt{+} \hlkwd{geom_bar}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{fill} \hlstd{= drv),} \hlkwc{position} \hlstd{=} \hlstr{"fill"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_col-9} 
+\begin{kframe}\begin{alltt}
+\hlcom{# To change plot order of bars, change levels in underlying factor}
+\hlstd{reorder_size} \hlkwb{<-} \hlkwa{function}\hlstd{(}\hlkwc{x}\hlstd{) \{}
+  \hlkwd{factor}\hlstd{(x,} \hlkwc{levels} \hlstd{=} \hlkwd{names}\hlstd{(}\hlkwd{sort}\hlstd{(}\hlkwd{table}\hlstd{(x))))}
+\hlstd{\}}
+\hlkwd{ggplot}\hlstd{(mpg,} \hlkwd{aes}\hlstd{(}\hlkwd{reorder_size}\hlstd{(class)))} \hlopt{+} \hlkwd{geom_bar}\hlstd{()}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_col-10} 
 \begin{kframe}\begin{alltt}
 \hlcom{## End(No test)}
 \end{alltt}
@@ -445,7 +542,7 @@
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlcom{### Name: geom_contour}
-\hlcom{### Title: Display contours of a 3d surface in 2d.}
+\hlcom{### Title: 2d contours of a 3d surface}
 \hlcom{### Aliases: geom_contour stat_contour}
 
 \hlcom{### ** Examples}
@@ -517,7 +614,7 @@
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlcom{### Name: geom_count}
-\hlcom{### Title: Count the number of observations at each location.}
+\hlcom{### Title: Count overlapping points}
 \hlcom{### Aliases: geom_count stat_sum}
 
 \hlcom{### ** Examples}
@@ -538,19 +635,12 @@
 \hlcom{# counts of zero would be given size 0. Doesn't make much different}
 \hlcom{# here because the smallest count is already close to 0.}
 \hlkwd{ggplot}\hlstd{(mpg,} \hlkwd{aes}\hlstd{(cty, hwy))} \hlopt{+}
- \hlkwd{geom_count}\hlstd{()}
+ \hlkwd{geom_count}\hlstd{()} \hlopt{+}
+ \hlkwd{scale_size_area}\hlstd{()}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_count-3} 
 \begin{kframe}\begin{alltt}
- \hlkwd{scale_size_area}\hlstd{()}
-\end{alltt}
-\begin{verbatim}
-## <ScaleContinuous>
-##  Range:  
-##  Limits:    0 --    1
-\end{verbatim}
-\begin{alltt}
 \hlcom{# Display proportions instead of counts -------------------------------------}
 \hlcom{# By default, all categorical variables in the plot form the groups.}
 \hlcom{# Specifying geom_count without a group identifier leads to a plot which is}
@@ -591,7 +681,7 @@
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlcom{### Name: geom_crossbar}
-\hlcom{### Title: Vertical intervals: lines, crossbars & errorbars.}
+\hlcom{### Title: Vertical intervals: lines, crossbars & errorbars}
 \hlcom{### Aliases: geom_crossbar geom_errorbar geom_linerange geom_pointrange}
 
 \hlcom{### ** Examples}
@@ -638,7 +728,7 @@
 \hlcom{# specify the dodge width}
 \hlstd{p} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(df,} \hlkwd{aes}\hlstd{(trt, resp,} \hlkwc{fill} \hlstd{= group))}
 \hlstd{p} \hlopt{+}
- \hlkwd{geom_bar}\hlstd{(}\hlkwc{position} \hlstd{=} \hlstr{"dodge"}\hlstd{,} \hlkwc{stat} \hlstd{=} \hlstr{"identity"}\hlstd{)} \hlopt{+}
+ \hlkwd{geom_col}\hlstd{(}\hlkwc{position} \hlstd{=} \hlstr{"dodge"}\hlstd{)} \hlopt{+}
  \hlkwd{geom_errorbar}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{ymin} \hlstd{= lower,} \hlkwc{ymax} \hlstd{= upper),} \hlkwc{position} \hlstd{=} \hlstr{"dodge"}\hlstd{,} \hlkwc{width} \hlstd{=} \hlnum{0.25}\hlstd{)}
 \end{alltt}
 \end{kframe}
@@ -648,79 +738,11 @@
 \hlcom{# we need to specify how wide the objects we are dodging are}
 \hlstd{dodge} \hlkwb{<-} \hlkwd{position_dodge}\hlstd{(}\hlkwc{width}\hlstd{=}\hlnum{0.9}\hlstd{)}
 \hlstd{p} \hlopt{+}
-  \hlkwd{geom_bar}\hlstd{(}\hlkwc{position} \hlstd{= dodge,} \hlkwc{stat} \hlstd{=} \hlstr{"identity"}\hlstd{)} \hlopt{+}
+  \hlkwd{geom_col}\hlstd{(}\hlkwc{position} \hlstd{= dodge)} \hlopt{+}
   \hlkwd{geom_errorbar}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{ymin} \hlstd{= lower,} \hlkwc{ymax} \hlstd{= upper),} \hlkwc{position} \hlstd{= dodge,} \hlkwc{width} \hlstd{=} \hlnum{0.25}\hlstd{)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_crossbar-7} 
-
-\end{knitrout}
-
-
-\section{geom\_curve}
-
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlcom{### Name: geom_segment}
-\hlcom{### Title: Line segments and curves.}
-\hlcom{### Aliases: geom_curve geom_segment}
-
-\hlcom{### ** Examples}
-
-\hlstd{b} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(mtcars,} \hlkwd{aes}\hlstd{(wt, mpg))} \hlopt{+}
-  \hlkwd{geom_point}\hlstd{()}
-
-\hlstd{df} \hlkwb{<-} \hlkwd{data.frame}\hlstd{(}\hlkwc{x1} \hlstd{=} \hlnum{2.62}\hlstd{,} \hlkwc{x2} \hlstd{=} \hlnum{3.57}\hlstd{,} \hlkwc{y1} \hlstd{=} \hlnum{21.0}\hlstd{,} \hlkwc{y2} \hlstd{=} \hlnum{15.0}\hlstd{)}
-\hlstd{b} \hlopt{+}
- \hlkwd{geom_curve}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= x1,} \hlkwc{y} \hlstd{= y1,} \hlkwc{xend} \hlstd{= x2,} \hlkwc{yend} \hlstd{= y2,} \hlkwc{colour} \hlstd{=} \hlstr{"curve"}\hlstd{),} \hlkwc{data} \hlstd{= df)} \hlopt{+}
- \hlkwd{geom_segment}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= x1,} \hlkwc{y} \hlstd{= y1,} \hlkwc{xend} \hlstd{= x2,} \hlkwc{yend} \hlstd{= y2,} \hlkwc{colour} \hlstd{=} \hlstr{"segment"}\hlstd{),} \hlkwc{data} \hlstd{= df)}
-\end{alltt}
-\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_curve-1} 
-\begin{kframe}\begin{alltt}
-\hlstd{b} \hlopt{+} \hlkwd{geom_curve}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= x1,} \hlkwc{y} \hlstd{= y1,} \hlkwc{xend} \hlstd{= x2,} \hlkwc{yend} \hlstd{= y2),} \hlkwc{data} \hlstd{= df,} \hlkwc{curvature} \hlstd{=} \hlopt{-}\hlnum{0.2}\hlstd{)}
-\end{alltt}
-\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_curve-2} 
-\begin{kframe}\begin{alltt}
-\hlstd{b} \hlopt{+} \hlkwd{geom_curve}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= x1,} \hlkwc{y} \hlstd{= y1,} \hlkwc{xend} \hlstd{= x2,} \hlkwc{yend} \hlstd{= y2),} \hlkwc{data} \hlstd{= df,} \hlkwc{curvature} \hlstd{=} \hlnum{1}\hlstd{)}
-\end{alltt}
-\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_curve-3} 
-\begin{kframe}\begin{alltt}
-\hlstd{b} \hlopt{+} \hlkwd{geom_curve}\hlstd{(}
-  \hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= x1,} \hlkwc{y} \hlstd{= y1,} \hlkwc{xend} \hlstd{= x2,} \hlkwc{yend} \hlstd{= y2),}
-  \hlkwc{data} \hlstd{= df,}
-  \hlkwc{arrow} \hlstd{=} \hlkwd{arrow}\hlstd{(}\hlkwc{length} \hlstd{=} \hlkwd{unit}\hlstd{(}\hlnum{0.03}\hlstd{,} \hlstr{"npc"}\hlstd{))}
-\hlstd{)}
-\end{alltt}
-\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_curve-4} 
-\begin{kframe}\begin{alltt}
-\hlkwd{ggplot}\hlstd{(seals,} \hlkwd{aes}\hlstd{(long, lat))} \hlopt{+}
-  \hlkwd{geom_segment}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{xend} \hlstd{= long} \hlopt{+} \hlstd{delta_long,} \hlkwc{yend} \hlstd{= lat} \hlopt{+} \hlstd{delta_lat),}
-    \hlkwc{arrow} \hlstd{=} \hlkwd{arrow}\hlstd{(}\hlkwc{length} \hlstd{=} \hlkwd{unit}\hlstd{(}\hlnum{0.1}\hlstd{,}\hlstr{"cm"}\hlstd{)))} \hlopt{+}
-  \hlkwd{borders}\hlstd{(}\hlstr{"state"}\hlstd{)}
-\end{alltt}
-
-
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# \\\#\#\ \ \# maps v3.1: updated 'world': all lakes moved to separate new \#\\\#\#\ \ \# 'lakes' database. Type '?world' or 'news(package="{}maps"{})'.\ \ \#}}\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_curve-5} 
-\begin{kframe}\begin{alltt}
-\hlcom{# You can also use geom_segment to recreate plot(type = "h") :}
-\hlstd{counts} \hlkwb{<-} \hlkwd{as.data.frame}\hlstd{(}\hlkwd{table}\hlstd{(}\hlkwc{x} \hlstd{=} \hlkwd{rpois}\hlstd{(}\hlnum{100}\hlstd{,}\hlnum{5}\hlstd{)))}
-\hlstd{counts}\hlopt{$}\hlstd{x} \hlkwb{<-} \hlkwd{as.numeric}\hlstd{(}\hlkwd{as.character}\hlstd{(counts}\hlopt{$}\hlstd{x))}
-\hlkwd{with}\hlstd{(counts,} \hlkwd{plot}\hlstd{(x, Freq,} \hlkwc{type} \hlstd{=} \hlstr{"h"}\hlstd{,} \hlkwc{lwd} \hlstd{=} \hlnum{10}\hlstd{))}
-\end{alltt}
-\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_curve-6} 
-\begin{kframe}\begin{alltt}
-\hlkwd{ggplot}\hlstd{(counts,} \hlkwd{aes}\hlstd{(x, Freq))} \hlopt{+}
-  \hlkwd{geom_segment}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{xend} \hlstd{= x,} \hlkwc{yend} \hlstd{=} \hlnum{0}\hlstd{),} \hlkwc{size} \hlstd{=} \hlnum{10}\hlstd{,} \hlkwc{lineend} \hlstd{=} \hlstr{"butt"}\hlstd{)}
-\end{alltt}
-\end{kframe}
-\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_curve-7} 
 
 \end{knitrout}
 
