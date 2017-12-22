@@ -9,7 +9,7 @@ pandoc:
 	Rscript 084-pandoc.R && Rscript 088-pandoc-embedded.R
 
 deps:
-	tlmgr install pgf preview xcolor beamer;\
+	tlmgr install pgf preview xcolor beamer translator;\
 	Rscript -e "for (i in readLines('R-packages'))" \
 	-e "if (!require(i, character.only=TRUE)) install.packages(i, repos='http://cran.rstudio.com')" \
 	-e "update.packages(.libPaths(), instlib = .libPaths()[1], ask = FALSE, repos = 'http://cran.rstudio.com')"
