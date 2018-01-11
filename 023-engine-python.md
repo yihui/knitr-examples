@@ -55,34 +55,14 @@ You can use some chunk options like `eval`, `echo` and `results`. For example, `
 ```python
 x = 'hello, python world!'
 print(x)
-```
-
-```
-## hello, python world!
-```
-
-```python
 print(x.split(' '))
-```
-
-```
-## ['hello,', 'python', 'world!']
 ```
 
 or `echo=FALSE` (hide source code):
 
 
-```python
-x = 'hello, python world!'
-print(x)
-```
-
 ```
 ## hello, python world!
-```
-
-```python
-print(x.split(' '))
 ```
 
 ```
