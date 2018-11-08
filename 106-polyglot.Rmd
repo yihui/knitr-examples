@@ -3,9 +3,9 @@
 This is a minimal example of using "polyglot"" **knitr** to produce an _HTML_ page from _Markdown_.
 
 ```{r setup, cache=TRUE}
-toTest <- c("R", "python", "scala", "bash")
+toTest <- c("R", "python", "scala", "bash", "perl")
 where <- Sys.which(toTest)
-exists <- nchar(where) > 0 # TODO: Only run chunk if runtime exists
+exists <- nchar(where) > 0 # Only run chunk if runtime exists
 ```
 
 ## Engine runtime paths
@@ -18,6 +18,10 @@ for(n in names(where)) {
   }
   message("* __", n, "__: `", path, "`\n")
 }
+knitr::opts_chunk$set(
+  engine.opts = list(perl = "-Mstrict -Mwarnings -Mfeature=say",
+                     bash = "-o errexit -o nounset")
+)
 ```
 
 ## Input Data
@@ -30,7 +34,7 @@ Sys.setenv(SOMETHING = "something")
 
 ## Compute Something in R
 
-```{r something-in-R, engine='R', comment='R>'}
+```{r something-in-R, engine='R', comment='R>', eval=exists[1]}
 something <- Sys.getenv("SOMETHING")
 somethingelse <- paste(something, "+ R")
 cat(paste("'", something, "' is now '", somethingelse, "'", sep=""))
@@ -40,7 +44,7 @@ cat(paste("'", something, "' is now '", somethingelse, "'", sep=""))
 
 Running small fragments without caching can take some time, as the Scala compiler has to launch and compile the script to JVM bytecode. The `-savecompiled` option (passed via `engine.opts`) will result in Scala caching the compiled script outside of _knitr_.
 
-```{r something-in-Scala, engine='scala', comment='Scala>', engine.opts='-savecompiled', cache=TRUE}
+```{r something-in-Scala, engine='scala', comment='Scala>', engine.opts='-savecompiled', cache=TRUE, eval=exists[3]}
 val something = System.getenv("SOMETHING")
 val somethingelse = something + " + Scala"
 println("'" + something + "' is now '" + somethingelse + "'")
@@ -48,7 +52,7 @@ println("'" + something + "' is now '" + somethingelse + "'")
 
 ## Compute Something in Python
 
-```{r something-in-Python, engine='python', comment='Python>'}
+```{r something-in-Python, engine='python', comment='Python>', eval=exists[2]}
 import os
 something = os.getenv("SOMETHING")
 somethingelse = something + " + Python"
@@ -57,8 +61,16 @@ print("'" + something + "' is now '" + somethingelse + "'")
 
 ## Compute Something in Bash
 
-```{r something-in-Bash, engine='bash', comment='Bash>'}
+```{r something-in-Bash, engine='bash', comment='Bash>', eval=exists[4]}
 something=$SOMETHING
 somethingelse="$something + Bash"
 echo "'$something' is now '$somethingelse'"
+```
+
+## Compute Something in Perl
+
+```{r something-in-Perl, engine='perl', comment='Perl>', eval=exists[5]}
+my $something = $ENV{SOMETHING};
+$something .= ' + Perl';
+say join ' ', qw{something is now}, "'$something'";
 ```
