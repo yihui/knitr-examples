@@ -2,10 +2,13 @@
 
 This is a minimal example of using "polyglot"" **knitr** to produce an _HTML_ page from _Markdown_.
 
-```{r setup, cache=TRUE}
-toTest <- c("R", "python", "scala", "bash")
+```{r setup}
+knitr::opts_chunk$set(engine.opts = list(
+  perl = "-Mstrict -Mwarnings -Mfeature=say",
+  bash = "-o errexit -o nounset"
+))
+toTest <- c("R", "python", "scala", "bash", "perl")
 where <- Sys.which(toTest)
-exists <- nchar(where) > 0 # TODO: Only run chunk if runtime exists
 ```
 
 ## Engine runtime paths
@@ -61,4 +64,12 @@ print("'" + something + "' is now '" + somethingelse + "'")
 something=$SOMETHING
 somethingelse="$something + Bash"
 echo "'$something' is now '$somethingelse'"
+```
+
+## Compute Something in Perl
+
+```{r something-in-Perl, engine='perl', comment='Perl>'}
+my $something = $ENV{SOMETHING};
+$something .= ' + Perl';
+say join ' ', qw{something is now}, "'$something'";
 ```
