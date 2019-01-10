@@ -8,7 +8,7 @@ library(knitr)
 hook_output = knit_hooks$get('output')
 knit_hooks$set(output = function(x, options) {
   if (!is.null(n <- options$out.lines)) {
-    x = unlist(stringr::str_split(x, '\n'))
+    x = knitr:::split_lines(x)
     if (length(x) > n) {
       # truncate the output
       x = c(head(x, n), '....\n')
