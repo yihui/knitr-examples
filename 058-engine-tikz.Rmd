@@ -2,7 +2,7 @@
 
 ## Description
 
-The engine inserts the code into a latex-string-template, which is then processed by LaTeX (and ImageMagick `convert` if `fig.ext` is not `pdf`).
+The engine inserts the code into a latex-string-template, which is then processed by LaTeX (and the **magick** package if `fig.ext` is not `pdf`).
 
 ## Options
 
@@ -12,7 +12,7 @@ You can pass some options to the engine by defining `engine.opts`, e.g. use your
 
 An example of the tikz-engine from <https://raw.github.com/sdiehl/cats/master/misc/example.md>
 
-```{r tikz-ex, engine = "tikz", fig.cap = "Funky tikz", fig.ext = 'png', cache=TRUE}
+```{tikz, tikz-ex, fig.cap = "Funky tikz", fig.ext = 'png', cache=TRUE}
 \usetikzlibrary{arrows}
 \begin{tikzpicture}[node distance=2cm, auto,>=latex', thick, scale = 0.5]
 \node (P) {$P$};

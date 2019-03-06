@@ -2,7 +2,7 @@
 
 ## Description
 
-The engine inserts the code into a latex-string-template, which is then processed by LaTeX (and ImageMagick `convert` if `fig.ext` is not `pdf`).
+The engine inserts the code into a latex-string-template, which is then processed by LaTeX (and the **magick** package if `fig.ext` is not `pdf`).
 
 ## Options
 
