@@ -25,7 +25,7 @@ if (1 == 1) {
 If one chunk should not be included in the results from `purl()`, just use the chunk option `purl = FALSE`:
 
 ```{r test-d, purl=FALSE}
-# we do not like significance starts!
+# we do not like significance stars!
 options(stringsAsFactors = FALSE, show.signif.stars = FALSE)
 ```
 

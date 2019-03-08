@@ -41,7 +41,7 @@ If one chunk should not be included in the results from `purl()`, just use the c
 
 
 ```r
-# we do not like significance starts!
+# we do not like significance stars!
 options(stringsAsFactors = FALSE, show.signif.stars = FALSE)
 ```
 
