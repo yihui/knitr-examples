@@ -1,4 +1,4 @@
-% ¾Ú»¡Cwtex¥i¥H½sÄ¶¡A¦ı§Ú¨S¦³¸Õ¹L
+% æ“šèªªCwtexå¯ä»¥ç·¨è­¯ï¼Œä½†æˆ‘æ²’æœ‰è©¦é
 \documentclass{article}\usepackage[]{graphicx}\usepackage[]{color}
 %% maxwidth is the original width if it is less than linewidth
 %% otherwise use linewidth (to make sure the graphics do not exceed the margin)
@@ -52,24 +52,24 @@
 \usepackage{alltt}
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
-\title{knitr»PÁcÅé¤¤¤å¤åÀÉ}
-\author{ÁÂ¯q½÷}
+\title{knitrèˆ‡ç¹é«”ä¸­æ–‡æ–‡æª”}
+\author{è¬ç›Šè¼}
 
-´ú¸Õ¡A«y«y¡C¥H¤U¥N½X¾aÃĞ¶Ü¡H
+æ¸¬è©¦ï¼Œå’³å’³ã€‚ä»¥ä¸‹ä»£ç¢¼é è­œå—ï¼Ÿ
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlnum{1} \hlopt{+} \hlnum{1}  \hlcom{# ¤ÓÂ²³æ¤F}
+\hlnum{1} \hlopt{+} \hlnum{1}  \hlcom{# å¤ªç°¡å–®äº†}
 \end{alltt}
 \begin{verbatim}
 ## [1] 2
 \end{verbatim}
 \begin{alltt}
-\hlstr{"¤Ş¸¹¯à¥Î¶Ü¡H"}
+\hlstr{"å¼•è™Ÿèƒ½ç”¨å—ï¼Ÿ"}
 \end{alltt}
 \begin{verbatim}
-## [1] "¤Ş¸¹¯à¥Î¶Ü¡H"
+## [1] "å¼•è™Ÿèƒ½ç”¨å—ï¼Ÿ"
 \end{verbatim}
 \begin{alltt}
 \hlkwd{rnorm}\hlstd{(}\hlnum{5}\hlstd{)}
@@ -79,11 +79,11 @@
 \end{verbatim}
 \begin{alltt}
 \hlstd{(}\hlkwa{function}\hlstd{() \{}
-    \hlkwd{paste}\hlstd{(}\hlstr{"³o¸Ì¬O¦r²Å¦ê"}\hlstd{)}
+    \hlkwd{paste}\hlstd{(}\hlstr{"é€™è£¡æ˜¯å­—ç¬¦ä¸²"}\hlstd{)}
 \hlstd{\})()}
 \end{alltt}
 \begin{verbatim}
-## [1] "³o¸Ì¬O¦r²Å¦ê"
+## [1] "é€™è£¡æ˜¯å­—ç¬¦ä¸²"
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -91,16 +91,16 @@
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlnum{1}\hlopt{+}\hlnum{1} \hlcom{# ¤ÓÂ²³æ¤F}
+\hlnum{1}\hlopt{+}\hlnum{1} \hlcom{# å¤ªç°¡å–®äº†}
 \end{alltt}
 \begin{verbatim}
 ## [1] 2
 \end{verbatim}
 \begin{alltt}
-\hlstr{'¤Ş¸¹¯à¥Î¶Ü¡H'}
+\hlstr{'å¼•è™Ÿèƒ½ç”¨å—ï¼Ÿ'}
 \end{alltt}
 \begin{verbatim}
-## [1] "¤Ş¸¹¯à¥Î¶Ü¡H"
+## [1] "å¼•è™Ÿèƒ½ç”¨å—ï¼Ÿ"
 \end{verbatim}
 \begin{alltt}
 \hlkwd{rnorm}\hlstd{(}\hlnum{5}\hlstd{)}
@@ -110,16 +110,16 @@
 \end{verbatim}
 \begin{alltt}
 \hlstd{(}\hlkwa{function}\hlstd{()\{}
-\hlkwd{paste}\hlstd{(}\hlstr{'³o¸Ì¬O¦r²Å¦ê'}\hlstd{)}
+\hlkwd{paste}\hlstd{(}\hlstr{'é€™è£¡æ˜¯å­—ç¬¦ä¸²'}\hlstd{)}
 \hlstd{\})()}
 \end{alltt}
 \begin{verbatim}
-## [1] "³o¸Ì¬O¦r²Å¦ê"
+## [1] "é€™è£¡æ˜¯å­—ç¬¦ä¸²"
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
 
-¥¿¤å¤¤¥i¥H¥X²{¤¤¤å¥N½X¶Ü¡H
+æ­£æ–‡ä¸­å¯ä»¥å‡ºç¾ä¸­æ–‡ä»£ç¢¼å—ï¼Ÿ
 
-¦Ü¤Ö½s½X¬OBIG5¨S¦³°İÃD¡C
+æœ¬æª”æ¡ˆæ›¾ç¶“ç·¨ç¢¼ç‚º BIG5 ä½†è‡ªå¾ knitr 1.23 ç‰ˆæœ¬é–‹å§‹åªæ”¯æŒ UTF-8ï¼Œè«‹å„ä½åˆ‡æ›åˆ° UTF-8ï¼šhttps://yihui.name/en/2018/11/biggest-regret-knitr/ è¬è¬ï¼
 \end{document}

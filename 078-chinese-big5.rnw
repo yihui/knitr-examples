@@ -1,24 +1,24 @@
-% �ڻ�Cwtex�i�H�sĶ�A���ڨS���չL
+% 據說Cwtex可以編譯，但我沒有試過
 \documentclass{article}
 \begin{document}
-\title{knitr�P�c�餤�����}
-\author{�¯q��}
+\title{knitr與繁體中文文檔}
+\author{謝益輝}
 
-���աA�y�y�C�H�U�N�X�a�жܡH
+測試，咳咳。以下代碼靠譜嗎？
 
 <<test>>=
-1+1 # ��²��F
-'�޸���ζܡH'
+1+1 # 太簡單了
+'引號能用嗎？'
 rnorm(5)
 (function(){
-paste('�o�̬O�r�Ŧ�')
+paste('這裡是字符串')
 })()
 @
 
 <<test, tidy=FALSE>>=
 @
 
-���夤�i�H�X�{\Sexpr{if (TRUE) '����N�X'}�ܡH
+正文中可以出現\Sexpr{if (TRUE) '中文代碼'}嗎？
 
-�ܤֽs�X�OBIG5�S�����D�C
+本檔案曾經編碼為 BIG5 但自從 knitr 1.23 版本開始只支持 UTF-8，請各位切換到 UTF-8：https://yihui.name/en/2018/11/biggest-regret-knitr/ 謝謝！
 \end{document}
