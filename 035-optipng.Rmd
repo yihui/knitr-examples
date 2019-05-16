@@ -8,7 +8,7 @@ knit_hooks$set(optipng = hook_optipng)
 
 Now we set the chunk option `optipng` to a non-`NULL` value, e.g. `''`, to activate the hook.
 
-```{r use-optipng, optipng=''}
+```{r use-optipng, optipng='', message=FALSE}
 library(methods)
 library(ggplot2)
 set.seed(123)

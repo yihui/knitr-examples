@@ -19,7 +19,7 @@ kable(head(iris))
 
 hello again
 
-<<results='asis'>>=
+<<results='asis', message=FALSE>>=
 library(Hmisc)
 latex(head(iris), file='', landscape=TRUE)
 @
