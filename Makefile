@@ -28,9 +28,6 @@ mydeps2:
 	sudo apt-get purge ghc graphviz coffeescript asymptote scala
 	sudo apt-get autoremove
 
-xvfb-%:
-	sh -e /etc/init.d/xvfb $*
-
 diff:
 	git diff
 	git status
