@@ -15,7 +15,6 @@ CoffeeScript compiles javascript:
 
 ```
 // (function() {
-// 
 //   this.square = function(x) {
 //     return x * x;
 //   };
@@ -39,7 +38,6 @@ document.body.appendChild(p)
 
 <script type="text/javascript">
 (function() {
-
   this.square = function(x) {
     return x * x;
   };
