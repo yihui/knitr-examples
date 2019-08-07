@@ -31,7 +31,8 @@ mydeps2:
 diff:
 	git diff
 	git status
-	git checkout -- 009-*.md 010-*.md 021-*.tex 046-*.md 101-*.md 051-*.tex 059-*.tex 106-*.md  # ignore these differences
+	git checkout -- 009-*.md 010-*.md 021-*.tex 046-*.md 101-*.md 051-*.tex 059-*.tex 093-*.md 106-*.md  # ignore these differences
+	git status
 	[ -z "$$(git diff)" ] || exit 1
 
 clean:
