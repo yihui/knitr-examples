@@ -3,7 +3,7 @@
 echo "$0" "$*" >> /dev/stderr
 
 prefix=${1%.*}-
-Rscript -e "options(digits=4,warnPartialMatchAttr=FALSE,warnPartialMatchDollar=FALSE)"\
+Rscript \
  -e "if (Sys.getenv('USER')=='yihui' || Sys.getenv('TRAVIS')=='true') knitr::opts_knit\$set(base.url='http://db.yihui.name/knitr-examples/')"\
  -e "knitr::opts_chunk\$set(cache.path='cache/$prefix', fig.path='figure/$prefix', tidy=TRUE)"\
  -e "set.seed(123); knitr::knit('$1', quiet = TRUE)"
