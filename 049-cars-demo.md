@@ -12,6 +12,6 @@ fit <- lm(dist ~ speed, data = cars)
 abline(fit, lwd = 2)
 ```
 
-![plot of chunk model](http://db.yihui.name/knitr-examples/figure/049-cars-demo-model-1.png)
+![plot of chunk model](http://db.yihui.org/knitr-examples/figure/049-cars-demo-model-1.png)
 
 The slope of a simple linear regression is 3.9324.

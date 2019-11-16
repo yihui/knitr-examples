@@ -121,5 +121,5 @@
 
 正文中可以出現中文代碼嗎？
 
-本檔案曾經編碼為 BIG5 但自從 knitr 1.23 版本開始只支持 UTF-8，請各位切換到 UTF-8：https://yihui.name/en/2018/11/biggest-regret-knitr/ 謝謝！
+本檔案曾經編碼為 BIG5 但自從 knitr 1.23 版本開始只支持 UTF-8，請各位切換到 UTF-8：https://yihui.org/en/2018/11/biggest-regret-knitr/ 謝謝！
 \end{document}
