@@ -1,6 +1,6 @@
 h1. Knitting Textile Files
 
-In this example, we show how to use "*knitr*":http://yihui.name/knitr/ with
+In this example, we show how to use "*knitr*":http://yihui.org/knitr/ with
  "Textile":https://www.textile-lang.com/.
 
 The syntax for defining code blocks is similar to that of HTML or AsciiDoc.
@@ -34,7 +34,7 @@ bc(knitr r source#test-b).. plot(x, pch = 20, type = "o", col = "red")
 
 p(knitr_end). 
 
-!http://db.yihui.name/knitr-examples/figure/105-minimal-test-b-1.png(A random walk.)!
+!https://db.yihui.org/knitr-examples/figure/105-minimal-test-b-1.png(A random walk.)!
 
 p(knitr plot caption#test-b). A random walk.
 

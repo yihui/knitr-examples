@@ -41,13 +41,13 @@ It is easy.
 plot(1:10)
 ```
 
-![plot of chunk unnamed-chunk-2](http://db.yihui.name/knitr-examples/figure/001-minimal-unnamed-chunk-2-1.png)
+![plot of chunk unnamed-chunk-2](https://db.yihui.org/knitr-examples/figure/001-minimal-unnamed-chunk-2-1.png)
 
 ```r
 hist(rnorm(1000))
 ```
 
-![plot of chunk unnamed-chunk-2](http://db.yihui.name/knitr-examples/figure/001-minimal-unnamed-chunk-2-2.png)
+![plot of chunk unnamed-chunk-2](https://db.yihui.org/knitr-examples/figure/001-minimal-unnamed-chunk-2-2.png)
 
 ## inline code
 
@@ -88,6 +88,6 @@ Or inside blockquotes:
 
 ## conclusion
 
-Nothing fancy. You are ready to go. When you become picky, go to the [knitr website](http://yihui.name/knitr/).
+Nothing fancy. You are ready to go. When you become picky, go to the [knitr website](http://yihui.org/knitr/).
 
-![knitr logo](http://yihui.name/knitr/images/knit-logo.png)
+![knitr logo](http://yihui.org/knitr/images/knit-logo.png)

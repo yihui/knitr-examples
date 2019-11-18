@@ -8,6 +8,6 @@ library(knitr)
 include_graphics("figure/003-minimal-fancy-rgl-1.png", dpi = NA)
 ```
 
-![plot of chunk unnamed-chunk-1](http://db.yihui.name/knitr-examples/figure/003-minimal-fancy-rgl-1.png)
+![plot of chunk unnamed-chunk-1](https://db.yihui.org/knitr-examples/figure/003-minimal-fancy-rgl-1.png)
 
 You can pass a character vector of mutiple image paths to `include_graphics()`, and you can also use chunk options related to figures, such as `out.width` and `fig.cap`, etc.

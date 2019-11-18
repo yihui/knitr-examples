@@ -1,5 +1,5 @@
 % Converting Markdown to Other Formats with knitr::pandoc()
-% [Yihui Xie](http://yihui.name)
+% [Yihui Xie](http://yihui.org)
 % March 1st, 2013
 
 <!--pandoc
@@ -16,7 +16,7 @@ A bit _introduction_ here.
 
 # Start with a cool section
 
-You can use traditional **Markdown** syntax, such as [links](http://yihui.name/knitr) and `code`.
+You can use traditional **Markdown** syntax, such as [links](http://yihui.org/knitr) and `code`.
 
 # Followed by another section
 

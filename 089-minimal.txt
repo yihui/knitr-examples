@@ -93,7 +93,7 @@ par(mar = c(4, 4, 0.1, 0.1))
 plot(cars, pch = 19)
 ----
 .A wonderful plot.
-image::http://db.yihui.name/knitr-examples/figure/089-minimal-cool-plot-1.png[A wonderful plot.,align=default]
+image::https://db.yihui.org/knitr-examples/figure/089-minimal-cool-plot-1.png[A wonderful plot.,align=default]
 
 
 Ready to get started?

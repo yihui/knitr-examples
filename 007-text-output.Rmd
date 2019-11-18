@@ -116,7 +116,7 @@ Indent by 2 spaces:
 ```{r demo, eval=FALSE, tidy.opts=list(indent=2)}
 ```
 
-See <http://yihui.name/formatR> for details.
+See <http://yihui.org/formatR> for details.
 
 ## Empty chunks
 

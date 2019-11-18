@@ -27,4 +27,4 @@ pairs(dat, lower.panel = dens2d, upper.panel = function(x, y, ...) {
 })
 ```
 
-![plot of chunk line-contour](http://db.yihui.name/knitr-examples/figure/056-huge-plot-line-contour-1.png)
+![plot of chunk line-contour](https://db.yihui.org/knitr-examples/figure/056-huge-plot-line-contour-1.png)

@@ -1,6 +1,6 @@
 h1. Knitting Textile Files
 
-In this example, we show how to use "*knitr*":http://yihui.name/knitr/ with
+In this example, we show how to use "*knitr*":http://yihui.org/knitr/ with
  "Textile":https://www.textile-lang.com/.
 
 The syntax for defining code blocks is similar to that of HTML or AsciiDoc.

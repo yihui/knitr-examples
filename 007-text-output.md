@@ -423,7 +423,7 @@ for (i in 1:10) {
 dnorm(0)
 ```
 
-See <http://yihui.name/formatR> for details.
+See <http://yihui.org/formatR> for details.
 
 ## Empty chunks
 

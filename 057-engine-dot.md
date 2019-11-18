@@ -19,4 +19,4 @@ digraph test123 {
 ```
 
 
-![Funky dot](http://db.yihui.name/knitr-examples/figure/057-engine-dot-dot-ex-1.png)
+![Funky dot](https://db.yihui.org/knitr-examples/figure/057-engine-dot-dot-ex-1.png)

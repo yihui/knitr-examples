@@ -1,5 +1,5 @@
 % Converting Markdown to Other Formats with knitr::pandoc()
-% [Yihui Xie](http://yihui.name)
+% [Yihui Xie](http://yihui.org)
 % March 1st, 2013
 
 <!--pandoc
@@ -16,7 +16,7 @@ A bit _introduction_ here.
 
 # Start with a cool section
 
-You can use traditional **Markdown** syntax, such as [links](http://yihui.name/knitr) and `code`.
+You can use traditional **Markdown** syntax, such as [links](http://yihui.org/knitr) and `code`.
 
 # Followed by another section
 
@@ -89,7 +89,7 @@ par(mfrow = c(2, 2), pch = 20, mar = c(4, 4, 2, 0.1), bg = "white")
 plot(fit)
 ```
 
-![Regression diagnostics](http://db.yihui.name/knitr-examples/figure/088-pandoc-embedded-lm-vis-1.png)
+![Regression diagnostics](https://db.yihui.org/knitr-examples/figure/088-pandoc-embedded-lm-vis-1.png)
 
 # A little bit math
 

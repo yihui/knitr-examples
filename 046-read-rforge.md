@@ -79,4 +79,4 @@ open3d()
 rgl.demo.subdivision()
 ```
 
-![plot of chunk rgl-sub](http://db.yihui.name/knitr-examples/figure/046-read-rforge-rgl-sub-1.png)
+![plot of chunk rgl-sub](https://db.yihui.org/knitr-examples/figure/046-read-rforge-rgl-sub-1.png)
