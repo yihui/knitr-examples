@@ -12,20 +12,20 @@ for (i in 1:5) {
 
 this is plot  1 
 
-![](http://db.yihui.org/knitr-examples/figure/054-loop-plots-loop-1.png)
+![](https://db.yihui.org/knitr-examples/figure/054-loop-plots-loop-1.png)
 
 this is plot  2 
 
-![](http://db.yihui.org/knitr-examples/figure/054-loop-plots-loop-2.png)
+![](https://db.yihui.org/knitr-examples/figure/054-loop-plots-loop-2.png)
 
 this is plot  3 
 
-![](http://db.yihui.org/knitr-examples/figure/054-loop-plots-loop-3.png)
+![](https://db.yihui.org/knitr-examples/figure/054-loop-plots-loop-3.png)
 
 this is plot  4 
 
-![](http://db.yihui.org/knitr-examples/figure/054-loop-plots-loop-4.png)
+![](https://db.yihui.org/knitr-examples/figure/054-loop-plots-loop-4.png)
 
 this is plot  5 
 
-![](http://db.yihui.org/knitr-examples/figure/054-loop-plots-loop-5.png)
+![](https://db.yihui.org/knitr-examples/figure/054-loop-plots-loop-5.png)

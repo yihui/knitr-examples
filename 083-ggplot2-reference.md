@@ -18,7 +18,7 @@ qplot(carat, price, data = diamonds, color = cut) + theme(legend.text = element_
     angle = 45)) + theme(legend.position = "bottom")
 ```
 
-![plot of chunk test-a](http://db.yihui.org/knitr-examples/figure/083-ggplot2-reference-test-a-1.png)
+![plot of chunk test-a](https://db.yihui.org/knitr-examples/figure/083-ggplot2-reference-test-a-1.png)
 
 Another test:
 
@@ -28,4 +28,4 @@ qplot(carat, data = diamonds, fill = cut) + theme(legend.text = element_text(siz
     angle = 45)) + theme(legend.position = "bottom")
 ```
 
-![plot of chunk test-b](http://db.yihui.org/knitr-examples/figure/083-ggplot2-reference-test-b-1.png)
+![plot of chunk test-b](https://db.yihui.org/knitr-examples/figure/083-ggplot2-reference-test-b-1.png)

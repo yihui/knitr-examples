@@ -47,7 +47,7 @@ library(ggplot2)
 qplot(speed, dist, data = cars) + geom_smooth()
 ```
 
-![A scatterplot of `cars`](http://db.yihui.org/knitr-examples/figure/009-slides-graphics-1.png)
+![A scatterplot of `cars`](https://db.yihui.org/knitr-examples/figure/009-slides-graphics-1.png)
 
 # How
 

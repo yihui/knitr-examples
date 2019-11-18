@@ -17,7 +17,7 @@ set.seed(123)
 qplot(rnorm(1000), rnorm(1000))
 ```
 
-![plot of chunk use-optipng](http://db.yihui.org/knitr-examples/figure/035-optipng-use-optipng-1.png)
+![plot of chunk use-optipng](https://db.yihui.org/knitr-examples/figure/035-optipng-use-optipng-1.png)
 
 Same plot, not optimized:
 
@@ -29,7 +29,7 @@ set.seed(123)
 qplot(rnorm(1000), rnorm(1000))
 ```
 
-![plot of chunk no-optipng](http://db.yihui.org/knitr-examples/figure/035-optipng-no-optipng-1.png)
+![plot of chunk no-optipng](https://db.yihui.org/knitr-examples/figure/035-optipng-no-optipng-1.png)
 
 Same plot, most heavily optimized (pass `-o7` to `optipng`):
 
@@ -41,4 +41,4 @@ set.seed(123)
 qplot(rnorm(1000), rnorm(1000))
 ```
 
-![plot of chunk optipng-o7](http://db.yihui.org/knitr-examples/figure/035-optipng-optipng-o7-1.png)
+![plot of chunk optipng-o7](https://db.yihui.org/knitr-examples/figure/035-optipng-optipng-o7-1.png)

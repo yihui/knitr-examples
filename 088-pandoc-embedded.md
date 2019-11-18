@@ -89,7 +89,7 @@ par(mfrow = c(2, 2), pch = 20, mar = c(4, 4, 2, 0.1), bg = "white")
 plot(fit)
 ```
 
-![Regression diagnostics](http://db.yihui.org/knitr-examples/figure/088-pandoc-embedded-lm-vis-1.png)
+![Regression diagnostics](https://db.yihui.org/knitr-examples/figure/088-pandoc-embedded-lm-vis-1.png)
 
 # A little bit math
 
