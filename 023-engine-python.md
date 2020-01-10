@@ -85,7 +85,7 @@ or `results='asis'`:
 
 
 ```python
-print '**Write** _something_ in `Markdown` from `Python`!'
+print('**Write** _something_ in `Markdown` from `Python`!')
 ```
 
 **Write** _something_ in `Markdown` from `Python`!

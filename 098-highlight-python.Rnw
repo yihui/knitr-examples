@@ -6,8 +6,8 @@ Syntax highlighting also works for other languages in the \LaTeX{} or HTML outpu
 
 <<hi-python, engine='python'>>=
 x = 'hello, python world!'
-print x
-print x.split(' ')
+print(x)
+print(x.split(' '))
 @
 
 \end{document}

@@ -47,7 +47,7 @@ or `results='hide'`:
 or `results='asis'`:
 
 ```{r test-asis, results='asis'}
-print '**Write** _something_ in `Markdown` from `Python`!'
+print('**Write** _something_ in `Markdown` from `Python`!')
 ```
 
 You can also cache the computation:
