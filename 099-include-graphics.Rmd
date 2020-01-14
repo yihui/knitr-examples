@@ -8,3 +8,63 @@ include_graphics('figure/003-minimal-fancy-rgl-1.png', dpi = NA)
 ```
 
 You can pass a character vector of mutiple image paths to `include_graphics()`, and you can also use chunk options related to figures, such as `out.width` and `fig.cap`, etc.
+
+# Some tests
+
+Below are some tests for the PR https://github.com/yihui/knitr/pull/1776.
+
+## Three graphics in the same chunk
+
+```{r, include=FALSE}
+# A hack that you should not look at!
+knitr::opts_knit$set(rmarkdown.pandoc.to = 'html')
+```
+
+```{r}
+images = c(
+  "figure/001-minimal-unnamed-chunk-2-1.png",
+  "figure/001-minimal-unnamed-chunk-2-2.png",
+  "figure/003-minimal-html-cars-scatter-2.png"
+)
+```
+
+Using three times `include_graphics()`:
+
+```{r, fig.cap = "This is a caption", out.width = "33%", fig.show = "hold"}
+knitr::include_graphics(images[1])
+knitr::include_graphics(images[2])
+knitr::include_graphics(images[3])
+```
+
+```{r, fig.cap = "This is another caption", out.width = "33%", fig.show = "hold"}
+knitr::include_graphics(images)
+```
+
+## Mixing with R plots
+
+```{r, mix-a, fig.cap = "This is a caption", out.width = "33%", fig.show = "hold"}
+knitr::include_graphics(images[1])
+plot(cars)
+knitr::include_graphics(images[2])
+1 + 1
+knitr::include_graphics(images[3])
+```
+
+```{r, mix-b, fig.cap = c("This is a caption", "This is another", "this is a plot", "And a last"), out.width = "33%"}
+knitr::include_graphics(images[1:2])
+plot(cars)
+1 + 1
+knitr::include_graphics(images[3])
+```
+
+## Placing caption at the top
+
+```{r, fig.cap = "This is a caption", out.width = "33%", fig.show = "hold", fig.topcaption = TRUE}
+knitr::include_graphics(images[1])
+knitr::include_graphics(images[2])
+knitr::include_graphics(images[3])
+```
+
+```{r, fig.cap = "This is another caption", out.width = "33%", fig.show = "hold", fig.topcaption = TRUE}
+knitr::include_graphics(images)
+```
