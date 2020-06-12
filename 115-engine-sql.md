@@ -31,6 +31,8 @@ SELECT * FROM packages
 
 
 
+Table: 3 records
+
 |id |name   |
 |:--|:------|
 |1  |readr  |
