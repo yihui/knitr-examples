@@ -67,7 +67,7 @@ These options are vectorized for multiple plots per chunk: fig.cap, fig.scap, fi
 When the plot hook is called, the i-th elements of these options will be
 applied to the i-th plot.
 
-Figure captions. Look at Figure \ref{fig:fig-cap1} and \ref{fig:fig-cap2}.
+Figure captions. Look at Figure \ref{fig:fig-cap-1} and \ref{fig:fig-cap-2}.
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
@@ -76,14 +76,14 @@ Figure captions. Look at Figure \ref{fig:fig-cap1} and \ref{fig:fig-cap2}.
 \hlkwd{plot}\hlstd{(}\hlnum{1}\hlopt{:}\hlnum{10}\hlstd{)}
 \end{alltt}
 \end{kframe}\begin{figure}[H]
-\includegraphics[width=2in]{figure/067-graphics-options-fig-cap-1} \caption[One plot]{One plot.}\label{fig:fig-cap1}
+\includegraphics[width=2in]{figure/067-graphics-options-fig-cap-1} \caption[One plot]{One plot.}\label{fig:fig-cap-1}
 \end{figure}
 
 \begin{kframe}\begin{alltt}
 \hlkwd{plot}\hlstd{(}\hlkwd{rnorm}\hlstd{(}\hlnum{10}\hlstd{),} \hlkwc{pch} \hlstd{=} \hlnum{19}\hlstd{)}
 \end{alltt}
 \end{kframe}\begin{figure}[H]
-\includegraphics[width=2in]{figure/067-graphics-options-fig-cap-2} \caption[Another plot]{Another plot.}\label{fig:fig-cap2}
+\includegraphics[width=2in]{figure/067-graphics-options-fig-cap-2} \caption[Another plot]{Another plot.}\label{fig:fig-cap-2}
 \end{figure}
 
 
@@ -144,8 +144,8 @@ two plots.
 
 \end{knitrout}
 
-Use subfigures for each plot. Look at Figure \ref{fig:fig-sub1} and \ref
-{fig:fig-sub2}. By default, knitr uses the \textbf{subfig} package, but it
+Use subfigures for each plot. Look at Figure \ref{fig:fig-sub-1} and \ref
+{fig:fig-sub-2}. By default, knitr uses the \textbf{subfig} package, but it
 has a few shortcomings, so some people prefer the \textbf{subcaption}
 package. In that case, we can simply redefine the \verb|\subfloat| command;
 see the preamble of this document for an example. We are actually using the
@@ -159,14 +159,14 @@ see the preamble of this document for an example. We are actually using the
 \hlkwd{plot}\hlstd{(}\hlkwd{rnorm}\hlstd{(}\hlnum{10}\hlstd{),} \hlkwc{pch} \hlstd{=} \hlnum{19}\hlstd{)}
 \end{alltt}
 \end{kframe}\begin{figure}[H]
-\subfloat[one plot\label{fig:fig-sub1}]{\includegraphics[width=.49\linewidth]{figure/067-graphics-options-fig-sub-1} }
-\subfloat[the other one\label{fig:fig-sub2}]{\includegraphics[width=.49\linewidth]{figure/067-graphics-options-fig-sub-2} }\caption[two plots]{two plots}\label{fig:fig-sub}
+\subfloat[one plot\label{fig:fig-sub-1}]{\includegraphics[width=.49\linewidth]{figure/067-graphics-options-fig-sub-1} }
+\subfloat[the other one\label{fig:fig-sub-2}]{\includegraphics[width=.49\linewidth]{figure/067-graphics-options-fig-sub-2} }\caption[two plots]{two plots}\label{fig:fig-sub}
 \end{figure}
 
 
 \end{knitrout}
 
-The second figure uses sidewaysfigure (i.e. Figure \ref{fig:fig-margin2}).
+The second figure uses sidewaysfigure (i.e. Figure \ref{fig:fig-margin-2}).
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
@@ -175,14 +175,14 @@ The second figure uses sidewaysfigure (i.e. Figure \ref{fig:fig-margin2}).
 \hlkwd{plot}\hlstd{(}\hlnum{1}\hlopt{:}\hlnum{10}\hlstd{)}
 \end{alltt}
 \end{kframe}\begin{figure}[H]
-\includegraphics[width=2in]{figure/067-graphics-options-fig-margin-1} \caption[ordinary figure]{ordinary figure}\label{fig:fig-margin1}
+\includegraphics[width=2in]{figure/067-graphics-options-fig-margin-1} \caption[ordinary figure]{ordinary figure}\label{fig:fig-margin-1}
 \end{figure}
 
 \begin{kframe}\begin{alltt}
 \hlkwd{plot}\hlstd{(}\hlkwd{rnorm}\hlstd{(}\hlnum{10}\hlstd{),} \hlkwc{pch} \hlstd{=} \hlnum{19}\hlstd{)}
 \end{alltt}
 \end{kframe}\begin{sidewaysfigure}[H]
-\includegraphics[width=2in]{figure/067-graphics-options-fig-margin-2} \caption[sideways figure]{sideways figure}\label{fig:fig-margin2}
+\includegraphics[width=2in]{figure/067-graphics-options-fig-margin-2} \caption[sideways figure]{sideways figure}\label{fig:fig-margin-2}
 \end{sidewaysfigure}
 
 

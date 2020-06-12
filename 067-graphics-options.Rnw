@@ -23,7 +23,7 @@ These options are vectorized for multiple plots per chunk: \Sexpr{knitr:::.recyl
 When the plot hook is called, the i-th elements of these options will be
 applied to the i-th plot.
 
-Figure captions. Look at Figure \ref{fig:fig-cap1} and \ref{fig:fig-cap2}.
+Figure captions. Look at Figure \ref{fig:fig-cap-1} and \ref{fig:fig-cap-2}.
 
 <<fig-cap, fig.cap=c('One plot.', 'Another plot.')>>=
 par(bg=rgb(runif(1), runif(1), runif(1)))
@@ -47,8 +47,8 @@ two plots.
 <<fig-width, ref.label='fig-cap', out.width='1in'>>=
 @
 
-Use subfigures for each plot. Look at Figure \ref{fig:fig-sub1} and \ref
-{fig:fig-sub2}. By default, knitr uses the \textbf{subfig} package, but it
+Use subfigures for each plot. Look at Figure \ref{fig:fig-sub-1} and \ref
+{fig:fig-sub-2}. By default, knitr uses the \textbf{subfig} package, but it
 has a few shortcomings, so some people prefer the \textbf{subcaption}
 package. In that case, we can simply redefine the \verb|\subfloat| command;
 see the preamble of this document for an example. We are actually using the
@@ -57,7 +57,7 @@ see the preamble of this document for an example. We are actually using the
 <<fig-sub, ref.label='fig-cap', fig.cap='two plots', fig.subcap=c('one plot', 'the other one'), out.width='.49\\linewidth'>>=
 @
 
-The second figure uses sidewaysfigure (i.e. Figure \ref{fig:fig-margin2}).
+The second figure uses sidewaysfigure (i.e. Figure \ref{fig:fig-margin-2}).
 
 <<fig-margin, ref.label='fig-cap', fig.cap=c('ordinary figure', 'sideways figure'), fig.env=c('figure', 'sidewaysfigure')>>=
 @
