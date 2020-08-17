@@ -8,7 +8,7 @@ I used the code below to make sure **knitr** will upload images and set some glo
 library(knitr)
 opts_knit$set(upload.fun = imgur_upload, base.url = NULL) # upload all images to imgur.com
 opts_chunk$set(fig.width=5, fig.height=5, cache=TRUE)
-````
+```
 
 Now we write some code chunks in this markdown file:
 
