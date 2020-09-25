@@ -1,0 +1,42 @@
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+# simulate pandoc html output
+knitr::opts_knit$set(rmarkdown.pandoc.to = "html")
+```
+
+An alternative text will always be provided with an image tag in html. 
+
+By default, the caption will be used
+
+```{r, fig.cap = "A caption"}
+plot(1:10)
+```
+
+You can use an alt text different than a caption using `fig.alt`
+
+```{r, fig.cap = "A caption", fig.alt = "An alternative text"}
+plot(1:10)
+```
+
+
+It will be evaluated after the chunk like `fig.cap`
+
+```{r, fig.cap = sprintf("%s points", n), fig.alt = sprintf("A graph with %s points", n)}
+n <- 15
+plot(1:n)
+```
+
+And recycled if several graphs
+
+```{r, fig.cap = "A caption", fig.alt = "An alternative text"}
+plot(1:15)
+plot(1:10)
+```
+
+or you can pass a vector
+
+```{r, fig.cap = "Fig1", fig.alt = c("Alt1", "Alt2"), fig.show='hold'}
+plot(1:15)
+plot(1:10)
+```
+
