@@ -60,3 +60,17 @@ readrPackage
 ## 1  1 readr
 ```
 
+
+```sql
+DROP TABLE IF EXISTS packages
+```
+
+
+```sql
+SELECT * FROM packages
+```
+
+```
+## Error: no such table: packages
+```
+
