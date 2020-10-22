@@ -36,3 +36,11 @@ WHERE name = ?packageReadR
 readrPackage
 ```
 
+```{sql, connection=db}
+DROP TABLE IF EXISTS packages
+```
+
+```{sql, connection=db, error = TRUE}
+SELECT * FROM packages
+```
+
