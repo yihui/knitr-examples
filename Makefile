@@ -31,7 +31,7 @@ mydeps2:
 diff:
 	git diff --color
 	git status
-	git checkout -- 009-*.md 010-*.md 021-*.tex 046-*.md 101-*.md 051-*.tex 059-*.tex 093-*.md 106-*.md  # ignore these differences
+	git checkout -- 009-*.md 010-*.md 021-*.tex 046-*.md 101-*.md 051-*.tex 059-*.tex 093-*.md 106-*.md 042-*.tex 098-*.tex # ignore these differences
 	git status
 	[ -z "$$(git diff)" ] || exit 1
 
