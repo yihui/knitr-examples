@@ -11,8 +11,8 @@ pandoc:
 deps:
 	tlmgr install pgf preview xcolor beamer translator;\
 	Rscript -e "for (i in readLines('R-packages'))" \
-	-e "if (!require(i, character.only=TRUE)) install.packages(i, repos='http://cran.rstudio.com')" \
-	-e "update.packages(.libPaths(), instlib = .libPaths()[1], ask = FALSE, repos = 'http://cran.rstudio.com')"
+	-e "if (!require(i, character.only=TRUE)) install.packages(i, repos=getOption('repos', 'http://cran.rstudio.com'))" \
+	-e "update.packages(.libPaths(), instlib = .libPaths()[1], ask = FALSE, repos = getOption('repos', 'http://cran.rstudio.com'))"
 	(kpsewhich Sweave.sty || tlmgr conf texmf TEXMFHOME "~/texmf:/usr/share/R/share/texmf")
 
 sysdeps:
