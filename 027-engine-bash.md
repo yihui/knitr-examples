@@ -8,7 +8,7 @@ Sys.which("bash")
 
 ```
 ##            bash 
-## "/usr/bin/bash"
+## "/bin/bash"
 ```
 
 ```r
@@ -17,7 +17,7 @@ Sys.which("sh")
 
 ```
 ##            sh 
-## "/usr/bin/sh"
+## "/bin/sh"
 ```
 
 Does `bash` work?
