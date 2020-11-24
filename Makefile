@@ -11,8 +11,8 @@ pandoc:
 deps:
 	tlmgr install pgf preview xcolor beamer translator;\
 	Rscript -e "for (i in readLines('R-packages'))" \
-	-e "if (!require(i, character.only=TRUE)) install.packages(i, repos='http://cran.rstudio.com')" \
-	-e "update.packages(.libPaths(), instlib = .libPaths()[1], ask = FALSE, repos = 'http://cran.rstudio.com')"
+	-e "if (!require(i, character.only=TRUE)) install.packages(i, repos=getOption('repos', 'http://cran.rstudio.com'))" \
+	-e "update.packages(.libPaths(), instlib = .libPaths()[1], ask = FALSE, repos = getOption('repos', 'http://cran.rstudio.com'))"
 	(kpsewhich Sweave.sty || tlmgr conf texmf TEXMFHOME "~/texmf:/usr/share/R/share/texmf")
 
 sysdeps:
@@ -29,9 +29,9 @@ mydeps2:
 	sudo apt-get autoremove
 
 diff:
-	git diff
+	git diff --color
 	git status
-	git checkout -- 009-*.md 010-*.md 021-*.tex 046-*.md 101-*.md 051-*.tex 059-*.tex 093-*.md 106-*.md  # ignore these differences
+	git checkout -- 009-*.md 010-*.md 021-*.tex 046-*.md 101-*.md 051-*.tex 059-*.tex 093-*.md 106-*.md # ignore these differences
 	git status
 	[ -z "$$(git diff)" ] || exit 1
 
