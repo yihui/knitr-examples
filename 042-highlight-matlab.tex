@@ -100,15 +100,15 @@ Highlight matlab chunks. Note you need to install highlight from \url{http://www
 \hlstd{}\hlstd{\ \ }\hlstd{Y\ }\hlopt{=\ }\hlstd{zeros}\hlopt{(}\hlstd{numPts}\hlopt{,\ }\hlstd{}\hlnum{2}\hlstd{}\hlopt{);}\hspace*{\fill}\\
 \hlstd{}\hspace*{\fill}\\
 \hlstd{}\hlstd{\ \ }\hlstd{}\hlkwa{for\ }\hlstd{idx\ }\hlopt{=\ }\hlstd{}\hlnum{1}\hlstd{}\hlopt{:}\hlstd{numPts}\hspace*{\fill}\\
-\hlstd{}\hlstd{\ \ \ \ }\hlstd{z\ }\hlopt{=\ }\hlstd{pos}\hlopt{(}\hlstd{idx}\hlopt{,\ :)}\hlstd{'}\hlopt{;}\hspace*{\fill}\\
-\hlstd{}\hspace*{\fill}\\
-\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlslc{\%\%\ Predicted\ state\ and\ covariance}\hspace*{\fill}\\
-\hlstd{}\hlstd{\ \ \ \ }\hlstd{x\textunderscore prd\ }\hlopt{=\ }\hlstd{A\ }\hlopt{{*}\ }\hlstd{x\textunderscore est}\hlopt{;}\hspace*{\fill}\\
-\hlstd{}\hlstd{\ \ \ \ }\hlstd{p\textunderscore prd\ }\hlopt{=\ }\hlstd{A\ }\hlopt{{*}\ }\hlstd{p\textunderscore est\ }\hlopt{{*}\ }\hlstd{A'\ }\hlopt{+\ }\hlstd{Q}\hlopt{;}\hspace*{\fill}\\
+\hlstd{}\hlstd{\ \ \ \ }\hlstd{z\ }\hlopt{=\ }\hlstd{pos}\hlopt{(}\hlstd{idx}\hlopt{,\ :)}\hlstd{}\hlstr{';}\hspace*{\fill}\\
+\hlstr{}\hspace*{\fill}\\
+\hlstr{}\hlstd{\ \ \ \ }\hlstr{\%\%\ Predicted\ state\ and\ covariance}\hspace*{\fill}\\
+\hlstr{}\hlstd{\ \ \ \ }\hlstr{x\textunderscore prd\ =\ A\ {*}\ x\textunderscore est;}\hspace*{\fill}\\
+\hlstr{}\hlstd{\ \ \ \ }\hlstr{p\textunderscore prd\ =\ A\ {*}\ p\textunderscore est\ {*}\ A'}\hlstd{\ }\hlopt{+\ }\hlstd{Q}\hlopt{;}\hspace*{\fill}\\
 \hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlslc{\%\%\ Estimation}\hspace*{\fill}\\
 \hlstd{}\hlstd{\ \ \ \ }\hlstd{S\ }\hlopt{=\ }\hlstd{H\ }\hlopt{{*}\ }\hlstd{p\textunderscore prd}\hlstr{'\ {*}\ H'}\hlstd{\ }\hlopt{+\ }\hlstd{R}\hlopt{;}\hspace*{\fill}\\
-\hlstd{}\hlstd{\ \ \ \ }\hlstd{B\ }\hlopt{=\ }\hlstd{H\ }\hlopt{{*}\ }\hlstd{p\textunderscore prd'}\hlopt{;}\hspace*{\fill}\\
-\hlstd{}\hlstd{\ \ \ \ }\hlstd{klm\textunderscore gain\ }\hlopt{=\ (}\hlstd{S\ $\backslash$\ B}\hlopt{)}\hlstd{'}\hlopt{;}\hspace*{\fill}\\
+\hlstd{}\hlstd{\ \ \ \ }\hlstd{B\ }\hlopt{=\ }\hlstd{H\ }\hlopt{{*}\ }\hlstd{p\textunderscore prd}\hlstr{';}\hspace*{\fill}\\
+\hlstr{}\hlstd{\ \ \ \ }\hlstr{klm\textunderscore gain\ =\ (S\ $\backslash$\ B)'}\hlstd{}\hlopt{;}\hspace*{\fill}\\
 \hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlslc{\%\%\ Estimated\ state\ and\ covariance}\hspace*{\fill}\\
 \hlstd{}\hlstd{\ \ \ \ }\hlstd{x\textunderscore est\ }\hlopt{=\ }\hlstd{x\textunderscore prd\ }\hlopt{+\ }\hlstd{klm\textunderscore gain\ }\hlopt{{*}\ (}\hlstd{z\ }\hlopt{{-}\ }\hlstd{H\ }\hlopt{{*}\ }\hlstd{x\textunderscore prd}\hlopt{);}\hspace*{\fill}\\
 \hlstd{}\hlstd{\ \ \ \ }\hlstd{p\textunderscore est\ }\hlopt{=\ }\hlstd{p\textunderscore prd\ }\hlopt{{-}\ }\hlstd{klm\textunderscore gain\ }\hlopt{{*}\ }\hlstd{H\ }\hlopt{{*}\ }\hlstd{p\textunderscore prd}\hlopt{;}\hspace*{\fill}\\
