@@ -1,5 +1,5 @@
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(dev = 'svg')
 # simulate pandoc html output
 knitr::opts_knit$set(rmarkdown.pandoc.to = "html")
 ```
