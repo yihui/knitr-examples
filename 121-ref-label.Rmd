@@ -1,0 +1,95 @@
+---
+title: "Test ref.label and opts.label"
+---
+
+## Chunk a
+
+```{r, a, echo=FALSE, comment='#> '}
+1 + 1
+2 + 2
+```
+
+## Chunk b
+
+```{r, b, results='hide'}
+1:10
+```
+
+## Setting `opts_template`
+
+```{r}
+knitr::opts_template$set(
+  skip = list(eval = FALSE),
+  b = list(results = 'markup', prompt = TRUE)
+)
+```
+
+## `ref.label = 'a'`
+
+Ignore chunk options on chunk `a`:
+
+```{r, ref.label='a'}
+```
+
+## `ref.label = I('a')`
+
+Inherit chunk options from chunk `a`:
+
+```{r, ref.label=I('a')}
+```
+
+## `ref.label = 'a'` and `opts.label = TRUE`
+
+Inherit chunk options from chunk `a`:
+
+```{r, ref.label='a', opts.label='a'}
+```
+
+## `ref.label = 'a'` and `opts.label = 'b'`
+
+Inherit chunk options from template `b` and then chunk `b`:
+
+```{r, ref.label='a', opts.label='b'}
+```
+
+## `ref.label = c('b', 'a')` and `opts.label = TRUE`
+
+Inherit chunk options from chunk `b` (no output) and `a` (no source), so you see nothing below:
+
+```{r, ref.label=c('b', 'a'), opts.label=TRUE}
+```
+
+## `ref.label = I(c('b', 'a'))`
+
+Same as the previous section---you see nothing below:
+
+```{r, ref.label=I(c('b', 'a'))}
+```
+
+## `ref.label = I(c('b', 'a'))` and `echo = TRUE`
+
+Inherit chunk options from chunk `b` (no output) and `a` (no source), and then override with `echo = TRUE`:
+
+```{r, ref.label=c('b', 'a'), opts.label=TRUE, echo=TRUE}
+```
+
+## `ref.label = c('b', 'a')` and `opts.label = 'a'`
+
+Inherit code from chunk `b` and `a`, and chunk options from chunk `a` (no source):
+
+```{r, ref.label=c('b', 'a'), opts.label='a'}
+```
+
+## `ref.label = c('b', 'a')` and `opts.label = 'skip'`
+
+Inherit code from chunk `b` and `a`, and chunk options from template `skip` (no evaluation):
+
+```{r, ref.label=c('b', 'a'), opts.label='skip'}
+```
+
+## `ref.label = I(c('b', 'a'))` and `opts.label = 'skip'`
+
+Inherit code from chunk `b` and `a`, and chunk options from template `skip` (ignore `I()` in `ref.label` since `opts.label` is not empty):
+
+```{r, ref.label=I(c('b', 'a')), opts.label='skip'}
+```
