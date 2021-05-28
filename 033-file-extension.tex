@@ -60,8 +60,8 @@ We want the file extension when including a figure into LaTeX.
 \hlkwd{library}\hlstd{(knitr)}
 \hlstd{hook_plot} \hlkwb{=} \hlstd{knit_hooks}\hlopt{$}\hlkwd{get}\hlstd{(}\hlstr{"plot"}\hlstd{)}
 \hlstd{knit_hooks}\hlopt{$}\hlkwd{set}\hlstd{(}\hlkwc{plot} \hlstd{=} \hlkwa{function}\hlstd{(}\hlkwc{x}\hlstd{,} \hlkwc{options}\hlstd{) \{}
-    \hlcom{# if x is foo.pdf, make it foo.pdf.whatever so the plot hook removes the}
-    \hlcom{# extension internally}
+    \hlcom{# if x is foo.pdf, make it foo.pdf.whatever so the plot hook removes}
+    \hlcom{# the extension internally}
     \hlstd{x} \hlkwb{=} \hlkwd{paste}\hlstd{(}\hlkwd{c}\hlstd{(x,} \hlstr{"whatever"}\hlstd{),} \hlkwc{collapse} \hlstd{=} \hlstr{"."}\hlstd{)}
     \hlkwd{hook_plot}\hlstd{(x, options)}
 \hlstd{\})}
