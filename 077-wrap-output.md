@@ -25,7 +25,7 @@ knit_hooks$set(output = function(x, options) {
     if (!is.null(n <- options$linewidth)) {
         x = knitr:::split_lines(x)
         # any lines wider than n should be wrapped
-        if (any(nchar(x) > n)) 
+        if (any(nchar(x) > n))
             x = strwrap(x, width = n)
         x = paste(x, collapse = "\n")
     }

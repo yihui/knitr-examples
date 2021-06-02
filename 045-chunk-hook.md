@@ -42,7 +42,7 @@ It contains all the chunk options (include global options) for the current chunk
 ```r
 knit_hooks$set(foo2 = function(before, options, envir) {
     if (!before) {
-        z = capture.output(str(options[c("eval", "dev", "results", "bar1", "bar2", 
+        z = capture.output(str(options[c("eval", "dev", "results", "bar1", "bar2",
             "bar3")]))
         z = paste("    ", z, sep = "", collapse = "\n")
         paste("Some chunk options in the above chunk are:\n\n", z, sep = "")
@@ -79,7 +79,7 @@ It is the environment of the current chunk.
 ```r
 knit_hooks$set(foo3 = function(before, options, envir) {
     if (!before) {
-        paste("Objects available in the above chunk:", paste("`", ls(envir), 
+        paste("Objects available in the above chunk:", paste("`", ls(envir),
             "`", sep = "", collapse = ", "))
     }
 })

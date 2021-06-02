@@ -24,7 +24,7 @@ title: "Test ref.label and opts.label"
 
 
 ```r
-knitr::opts_template$set(skip = list(eval = FALSE), b = list(results = "markup", 
+knitr::opts_template$set(skip = list(eval = FALSE), b = list(results = "markup",
     prompt = TRUE))
 ```
 

@@ -8,7 +8,7 @@ library(knitr)
 hook_source = knit_hooks$get("source")
 knit_hooks$set(source = function(x, options) {
     res = hook_source(x, options)
-    if (!any(grepl("#'#' ", x))) 
+    if (!any(grepl("#'#' ", x)))
         return(res)
     gsub("(^|\n)#'#' ", "\\1", res)
 })

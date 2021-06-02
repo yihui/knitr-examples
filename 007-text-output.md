@@ -16,7 +16,7 @@ See if chunk options like `tidy`, `prompt` and `echo`, etc work as expected.
 ```r
 for (i in 1:10) {
     # nothing before 10
-    if (i >= 10) 
+    if (i >= 10)
         print(i)
 }
 ```
@@ -43,7 +43,7 @@ dnorm(0)
 1 + 1
 for (i in 1:10) {
     # nothing before 10
-    if (i >= 10) 
+    if (i >= 10)
         print(i)
 }
 # two blank lines below
@@ -66,7 +66,7 @@ dnorm(0)
 ```r
 > for (i in 1:10) {
 +     # nothing before 10
-+     if (i >= 10) 
++     if (i >= 10)
 +         print(i)
 + }
 ```
@@ -163,7 +163,7 @@ dnorm(0)
 ```r
 for (i in 1:10) {
     # nothing before 10
-    if (i >= 10) 
+    if (i >= 10)
         print(i)
 }
 ```
@@ -215,7 +215,7 @@ dnorm(0)
 ```r
 for (i in 1:10) {
     # nothing before 10
-    if (i >= 10) 
+    if (i >= 10)
         print(i)
 }
 ```
@@ -234,7 +234,7 @@ for (i in 1:10) {
 ```r
 for (i in 1:10) {
     # nothing before 10
-    if (i >= 10) 
+    if (i >= 10)
         print(i)
 }
 ```
@@ -317,7 +317,7 @@ R> 1 + 1
 ```r
 R> for (i in 1:10) {
 +      # nothing before 10
-+      if (i >= 10) 
++      if (i >= 10)
 +          print(i)
 +  }
 ```
@@ -374,7 +374,7 @@ options(formatR.blank = FALSE)
 1 + 1
 for (i in 1:10) {
     # nothing before 10
-    if (i >= 10) 
+    if (i >= 10)
         print(i)
 }
 # two blank lines below
@@ -387,7 +387,7 @@ Or locally in one chunk via `tidy.opts`. Do not keep comments:
 ```r
 1 + 1
 for (i in 1:10) {
-    if (i >= 10) 
+    if (i >= 10)
         print(i)
 }
 dnorm(0)
@@ -400,7 +400,7 @@ Move left braces to the next line:
 for (i in 1:10)
 {
     # nothing before 10
-    if (i >= 10) 
+    if (i >= 10)
         print(i)
 }
 ```
@@ -416,7 +416,7 @@ Indent by 2 spaces:
 1 + 1
 for (i in 1:10) {
   # nothing before 10
-  if (i >= 10) 
+  if (i >= 10)
     print(i)
 }
 # two blank lines below
@@ -504,7 +504,7 @@ Do not show text results:
 1 + 1
 for (i in 1:10) {
     # nothing before 10
-    if (i >= 10) 
+    if (i >= 10)
         print(i)
 }
 # two blank lines below
@@ -518,7 +518,7 @@ Flush all results to the end of a chunk:
 1 + 1
 for (i in 1:10) {
     # nothing before 10
-    if (i >= 10) 
+    if (i >= 10)
         print(i)
 }
 # two blank lines below

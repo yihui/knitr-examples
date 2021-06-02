@@ -14,7 +14,7 @@ Now we can use `<<>>` to reference it.
 
 ```r
 library(ggplot2)
-qplot(carat, price, data = diamonds, color = cut) + theme(legend.text = element_text(size = 12, 
+qplot(carat, price, data = diamonds, color = cut) + theme(legend.text = element_text(size = 12,
     angle = 45)) + theme(legend.position = "bottom")
 ```
 
@@ -24,7 +24,7 @@ Another test:
 
 
 ```r
-qplot(carat, data = diamonds, fill = cut) + theme(legend.text = element_text(size = 12, 
+qplot(carat, data = diamonds, fill = cut) + theme(legend.text = element_text(size = 12,
     angle = 45)) + theme(legend.position = "bottom")
 ```
 

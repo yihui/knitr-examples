@@ -22,7 +22,7 @@ Below are some tests for the PR https://github.com/yihui/knitr/pull/1776.
 
 
 ```r
-images = c("figure/001-minimal-unnamed-chunk-2-1.png", "figure/001-minimal-unnamed-chunk-2-2.png", 
+images = c("figure/001-minimal-unnamed-chunk-2-1.png", "figure/001-minimal-unnamed-chunk-2-2.png",
     "figure/003-minimal-html-cars-scatter-2.png")
 ```
 
