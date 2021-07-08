@@ -1,0 +1,13 @@
+\documentclass{article}
+
+\begin{document}
+
+<<volcano,dev='tikz'>>=
+plot(volcano)
+
+legend('topleft',
+c('\\newcommand{\\qqqqqqqq}{1 $\\times \\Sigma \\vartheta$ 2}\\qqqqqqqq'),
+pch=c(1) )
+@
+
+\end{document}
