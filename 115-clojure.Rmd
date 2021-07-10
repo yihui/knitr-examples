@@ -1,0 +1,16 @@
+# Use clojure
+
+Use `Sys.setenv()`:
+
+```{r}
+Sys.setenv(EXAMPLES = 'example/path')
+```
+
+Now we write a `bash` code chunk:
+
+```{r engine='lein'}
+(def x "Hello world!")
+(println x)
+```
+
+It works.
