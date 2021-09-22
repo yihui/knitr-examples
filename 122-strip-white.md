@@ -6,7 +6,7 @@ title: "Test strip.white"
 
 
 ```r
-1 + 1 
+1 + 1
 ```
 
 ```
