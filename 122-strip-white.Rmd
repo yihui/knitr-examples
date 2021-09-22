@@ -1,0 +1,40 @@
+---
+title: "Test strip.white"
+---
+
+## strip.white is TRUE by default
+
+```{r}
+
+1 + 1 
+
+```
+
+## It can be opt out
+
+```{r, strip.white=FALSE}
+
+1 + 1
+
+```
+
+## When collapse is TRUE, default is FALSE
+
+```{r, collapse = TRUE}
+
+1 + 1
+
+2 + 2
+
+```
+
+## It can also be changed
+
+```{r, collapse = TRUE, strip.white = TRUE}
+
+1 + 1
+
+2 + 2
+
+```
+
