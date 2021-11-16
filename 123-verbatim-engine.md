@@ -42,17 +42,17 @@ The content can contain inline code like
 
 
 ```javascript
-document.getElementById("demo").innerHTML = "Hello JavaScript!"
+document.getElementById("demo").innerHTML = "Hello JavaScript!";
 ```
 
 
 ```javascript
-document.getElementById("demo").innerHTML = "Hello JavaScript!"
+document.getElementById("demo").innerHTML = "Hello JavaScript!";
 ```
 
 
 ```javascript
-document.getElementById("demo").innerHTML = "Hello JavaScript!"
+document.getElementById("demo").innerHTML = "Hello JavaScript!";
 ```
 
 # Setting a language and another class
