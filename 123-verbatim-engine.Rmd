@@ -1,0 +1,67 @@
+---
+title: "Test"
+output: html_document
+---
+
+# Default to text highlight
+
+```{verbatim}
+No specific highlight
+```
+
+# Markdown output
+
+```{verbatim, lang = 'markdown'}
+No specific highlight
+```
+
+# No highlight specifically
+
+````{verbatim, lang = ''}
+No specific highlight
+````
+
+# Use for verbatim Rmd content
+
+````{verbatim, lang = 'markdown'}
+We can output arbitrary content verbatim.
+  
+```{r}
+1 + 1
+```
+
+The content can contain inline code like
+`r pi * 5^2`, too.
+````
+
+# Other option to set the language 
+
+````{verbatim, language = "javascript"}
+document.getElementById("demo").innerHTML = "Hello JavaScript!";
+````
+
+````{verbatim, class.source = "javascript"}
+document.getElementById("demo").innerHTML = "Hello JavaScript!";
+````
+
+````{verbatim, engine.opts = list(lang = "javascript")}
+document.getElementById("demo").innerHTML = "Hello JavaScript!";
+````
+
+# Setting a language and another class
+
+```{verbatim, lang = "python", class.source = "numberLines"}
+print(1 + 1)
+```
+
+```{verbatim, language = "python", class.source = "numberLines"}
+print(1 + 1)
+```
+
+```{verbatim, engine.opts = list(lang = "python"), class.source = "numberLines"}
+print(1 + 1)
+```
+
+```{verbatim, class.source = c("python", "numberLines")}
+print(1 + 1)
+```
