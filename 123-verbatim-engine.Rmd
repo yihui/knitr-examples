@@ -37,15 +37,15 @@ The content can contain inline code like
 # Other option to set the language 
 
 ````{verbatim, language = "javascript"}
-document.getElementById("demo").innerHTML = "Hello JavaScript!"
+document.getElementById("demo").innerHTML = "Hello JavaScript!";
 ````
 
 ````{verbatim, class.source = "javascript"}
-document.getElementById("demo").innerHTML = "Hello JavaScript!"
+document.getElementById("demo").innerHTML = "Hello JavaScript!";
 ````
 
 ````{verbatim, engine.opts = list(lang = "javascript")}
-document.getElementById("demo").innerHTML = "Hello JavaScript!"
+document.getElementById("demo").innerHTML = "Hello JavaScript!";
 ````
 
 # Setting a language and another class
