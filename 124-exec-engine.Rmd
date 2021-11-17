@@ -8,17 +8,13 @@ output:
 
 ```{exec, command='Rscript'}
 1 + 1
-.libPaths()
-```
-
-```{exec, command='Rscript', args1='--vanilla'}
-1 + 1
-.libPaths()
 ```
 
 ```{exec, command='python'}
 print(1 + 1)
 ```
+
+`engine.opts` can also be used to pass options
 
 ```{exec, engine.opts = list(command ='python')}
 print(1 + 1)

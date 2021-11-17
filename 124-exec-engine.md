@@ -9,25 +9,10 @@ output:
 
 ```exec
 1 + 1
-.libPaths()
 ```
 
 ```
 ## [1] 2
-## [1] "C:/Users/chris/Documents/R/win-library/4.1"
-## [2] "C:/Program Files/R/R-4.1.1/library"
-```
-
-
-```exec
-1 + 1
-.libPaths()
-```
-
-```
-## [1] 2
-## [1] "C:/Users/chris/Documents/R/win-library/4.1"
-## [2] "C:/Program Files/R/R-4.1.1/library"
 ```
 
 
@@ -38,6 +23,8 @@ print(1 + 1)
 ```
 ## 2
 ```
+
+`engine.opts` can also be used to pass options
 
 
 ```exec
