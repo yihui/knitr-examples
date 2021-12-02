@@ -76,3 +76,25 @@ print(1 + 1)
 ```{.python .numberLines}
 print(1 + 1)
 ```
+
+# Content can be read from a file 
+
+
+
+but no language is set by default from the file name
+
+
+```default
+h1 {
+  color: red;
+}
+```
+
+
+```css
+h1 {
+  color: red;
+}
+```
+
+
