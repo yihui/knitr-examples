@@ -82,6 +82,25 @@ but no language is set by default from the file name
 ```{verbatim, file = "style.css", lang = "css"}
 ```
 
+One need to use the embed engine for this
+
+* Either using `file` option
+
+```{embed, file = "style.css"}
+```
+
+* Or setting file name inside code chunk with quotes
+
+```{embed}
+"style.css"
+```
+
+or without quotes
+
+```{embed}
+style.css
+```
+
 ```{r, include = FALSE}
 unlink("style.css")
 ```

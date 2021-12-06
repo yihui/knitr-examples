@@ -97,4 +97,33 @@ h1 {
 }
 ```
 
+One need to use the embed engine for this
+
+* Either using `file` option
+
+
+```css
+h1 {
+  color: red;
+}
+```
+
+* Or setting file name inside code chunk with quotes
+
+
+```css
+h1 {
+  color: red;
+}
+```
+
+or without quotes
+
+
+```css
+h1 {
+  color: red;
+}
+```
+
 
