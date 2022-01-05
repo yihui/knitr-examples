@@ -1,6 +1,6 @@
 ---
 title: Test the `exec` engine
---- 
+---
 
 # Simple example
 
@@ -35,7 +35,8 @@ print(1 + 1)
 
 # Options
 
-All other options should be provided in the chunk option `engine.opts` (`command` can be optionally in `engine.opts`, too).
+All other options should be provided in the chunk option `engine.opts`
+(`command` can be optionally in `engine.opts`, too).
 
 They can take character values or functions that returns character values.
 
@@ -101,13 +102,11 @@ print(1 + 1)
 ## 2
 ```
 
-args2 will be passed after. 
+args2 will be passed after.
 
-So command passed will be 
+So command passed will be
 
-```
-<command> <args1> <args(code, f)> <args2>
-```
+    <command> <args1> <args(code, f)> <args2>
 
 ## Full path command
 
