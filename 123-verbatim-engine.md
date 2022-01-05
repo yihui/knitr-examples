@@ -76,3 +76,54 @@ print(1 + 1)
 ```{.python .numberLines}
 print(1 + 1)
 ```
+
+# Content can be read from a file 
+
+
+
+but no language is set by default from the file name
+
+
+```default
+h1 {
+  color: red;
+}
+```
+
+
+```css
+h1 {
+  color: red;
+}
+```
+
+One need to use the embed engine for this
+
+* Either using `file` option
+
+
+```css
+h1 {
+  color: red;
+}
+```
+
+* Or setting file name inside code chunk with quotes
+
+
+```css
+h1 {
+  color: red;
+}
+```
+
+or without quotes
+
+
+```css
+h1 {
+  color: red;
+}
+```
+
+
