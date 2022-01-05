@@ -1,7 +1,5 @@
 ---
-title: test
-output: 
-  html_document: default
+title: Test the `exec` engine
 --- 
 
 # Simple example
@@ -14,7 +12,7 @@ output:
 print(1 + 1)
 ```
 
-`engine.opts` can also be used to pass options
+`engine.opts` can also be used to pass options:
 
 ```{exec, engine.opts = list(command ='python')}
 print(1 + 1)
@@ -22,17 +20,17 @@ print(1 + 1)
 
 # Options
 
-## Ext
+All other options should be provided in the chunk option `engine.opts` (`command` can be optionally in `engine.opts`, too).
 
-It should be a function
+They can take character values or functions that returns character values.
 
-```{exec, command='Rscript', ext = function(...) 'R'}
+## ext
+
+```{exec, engine.opts = list(command='Rscript', ext = 'R')}
 1 + 1
 ```
 
 ## file
-
-It should be a function or it is ignored
 
 ```{r}
 file2 <- function(code, file) {
@@ -41,14 +39,11 @@ file2 <- function(code, file) {
 }
 ```
 
-
-```{exec, command = 'python', file = file2}
+```{exec, engine.opts=list(command = 'python', file = file2)}
 print(1 + 1)
 ```
 
 ## args
-
-should be a function to modify the second argument (e.g filename) used 
 
 ```{r}
 f_arg <- function(code, file) {
@@ -58,13 +53,13 @@ f_arg <- function(code, file) {
 }
 ```
 
-```{exec, command = 'python', args = f_arg}
+```{exec, engine.opts=list(command = 'python', args = f_arg)}
 print(1 + 1)
 ```
 
 It can be combined with args1, e.g prepended line will be ignored
 
-```{exec, command = 'python', args1 = '-x', args = f_arg}
+```{exec, engine.opts=list(command = 'python', args1 = '-x', args = f_arg)}
 print(1 + 1)
 ```
 
@@ -73,7 +68,7 @@ args2 will be passed after.
 So command passed will be 
 
 ```
-<command> <args1> <args1(code, f)> <args2>
+<command> <args1> <args(code, f)> <args2>
 ```
 
 ## Full path command
@@ -90,10 +85,8 @@ Will output nothing
 print(1 + 1)
 ```
 
-# Error is catched
+# Error is caught
 
-FIXME: Does not currently works
-
-```{exec, command = 'python', error = TRUE}
+```{exec, command = 'Rscript', error = TRUE}
 print(1 + "")
 ```

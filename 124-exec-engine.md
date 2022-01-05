@@ -1,7 +1,5 @@
 ---
-title: test
-output: 
-  html_document: default
+title: Test the `exec` engine
 --- 
 
 # Simple example
@@ -24,7 +22,7 @@ print(1 + 1)
 ## 2
 ```
 
-`engine.opts` can also be used to pass options
+`engine.opts` can also be used to pass options:
 
 
 ```exec
@@ -37,9 +35,11 @@ print(1 + 1)
 
 # Options
 
-## Ext
+All other options should be provided in the chunk option `engine.opts` (`command` can be optionally in `engine.opts`, too).
 
-It should be a function
+They can take character values or functions that returns character values.
+
+## ext
 
 
 ```exec
@@ -52,8 +52,6 @@ It should be a function
 
 ## file
 
-It should be a function or it is ignored
-
 
 ```r
 file2 <- function(code, file) {
@@ -61,7 +59,6 @@ file2 <- function(code, file) {
     file
 }
 ```
-
 
 
 ```exec
@@ -73,8 +70,6 @@ print(1 + 1)
 ```
 
 ## args
-
-should be a function to modify the second argument (e.g filename) used 
 
 
 ```r
@@ -111,7 +106,7 @@ args2 will be passed after.
 So command passed will be 
 
 ```
-<command> <args1> <args1(code, f)> <args2>
+<command> <args1> <args(code, f)> <args2>
 ```
 
 ## Full path command
@@ -134,11 +129,15 @@ Will output nothing
 print(1 + 1)
 ```
 
-# Error is catched
-
-FIXME: Does not currently works
+# Error is caught
 
 
 ```exec
 print(1 + "")
+```
+
+```
+## Error in 1 + "" : non-numeric argument to binary operator
+## Calls: print
+## Execution halted
 ```
