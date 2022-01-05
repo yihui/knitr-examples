@@ -5,7 +5,7 @@ title: Test the `exec` engine
 # Simple example
 
 
-```exec
+```r
 1 + 1
 ```
 
@@ -14,7 +14,7 @@ title: Test the `exec` engine
 ```
 
 
-```exec
+```python
 print(1 + 1)
 ```
 
@@ -25,7 +25,7 @@ print(1 + 1)
 `engine.opts` can also be used to pass options:
 
 
-```exec
+```python
 print(1 + 1)
 ```
 
@@ -42,7 +42,7 @@ They can take character values or functions that returns character values.
 ## ext
 
 
-```exec
+```r
 1 + 1
 ```
 
@@ -61,7 +61,7 @@ file2 <- function(code, file) {
 ```
 
 
-```exec
+```python
 print(1 + 1)
 ```
 
@@ -81,7 +81,7 @@ f_arg <- function(code, file) {
 ```
 
 
-```exec
+```python
 print(1 + 1)
 ```
 
@@ -93,7 +93,7 @@ print(1 + 1)
 It can be combined with args1, e.g prepended line will be ignored
 
 
-```exec
+```python
 print(1 + 1)
 ```
 
@@ -112,7 +112,7 @@ So command passed will be
 ## Full path command
 
 
-```exec
+```python
 print("Full path command works")
 ```
 
@@ -125,14 +125,14 @@ print("Full path command works")
 Will output nothing
 
 
-```exec
+```python
 print(1 + 1)
 ```
 
 # Error is caught
 
 
-```exec
+```r
 print(1 + "")
 ```
 
