@@ -214,7 +214,7 @@ print('This content can be read if you open the file left')
 ## This content can be read if you open the file left
 ```
 
-A file with extension \`.python\` should be still here
+A file with extension `.python` should be still here
 
 
 ```r
@@ -223,7 +223,7 @@ f1
 ```
 
 ```
-## [1] "python2c1028167df3.python"
+## [1] "python43d8362f787f.python"
 ```
 
 
