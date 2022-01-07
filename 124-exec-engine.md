@@ -219,11 +219,11 @@ A file with extension `.python` should be still here
 
 ```r
 f1 <- list.files(".", pattern = "python.*\\.python")
-f1
+file.exists(f1)
 ```
 
 ```
-## [1] "python43d8362f787f.python"
+## [1] TRUE
 ```
 
 
