@@ -247,7 +247,7 @@ print(1 + "")
 ```
 
 ```
-## Erreur dans 1 + "" : argument non numérique pour un opérateur binaire
-## Appels : print
-## Exécution arrêtée
+## Error in 1 + "" : non-numeric argument to binary operator
+## Calls: print
+## Execution halted
 ```
