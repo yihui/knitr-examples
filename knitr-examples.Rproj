@@ -16,3 +16,6 @@ AutoAppendNewline: Yes
 StripTrailingWhitespace: Yes
 
 BuildType: Makefile
+
+MarkdownWrap: Column
+MarkdownWrapAtColumn: 80
