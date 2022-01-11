@@ -114,6 +114,21 @@ print(1 + 1)
 ## file2 executed
 ```
 
+You can also pass a string directly to input to change the name of the input
+file that will be passed to the command
+
+
+```python
+print(1 + 1)
+```
+
+```
+## 2
+```
+
+This can be useful for debugging. See more about this usage in the `clean`
+option part below.
+
 ## ext
 
 This will determine the extension to use with the temporary file. By default,
@@ -249,6 +264,23 @@ file.exists(f1)
 ```
 ## [1] TRUE
 ```
+
+
+
+It can be useful in addition to setting `input` option so that you can easily
+retrieve the file to re-run at command line yourself.
+
+
+```python
+print('This content can be rerun using `temp-debug.py` file')
+```
+
+```
+## This content can be rerun using `temp-debug.py` file
+```
+
+You can find the `tmp-debug.py` file in your working directory and which can
+help debug using command line by running `python tmp-debug.py` for example.
 
 
 
