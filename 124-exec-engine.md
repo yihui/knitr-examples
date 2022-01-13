@@ -9,7 +9,7 @@ content, optionally with arguments. If any, they are passed to `engine.opts` and
 they could be one of the following:
 
 ``` r
-engine.opts = list(command, input, ext, clean, args, args1, args2)
+engine.opts = list(command, input, ext, clean, args, args1, args2, output)
 ```
 
 The execution of the chunk will be equivalent to this command line
