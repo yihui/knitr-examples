@@ -221,7 +221,15 @@ help debug using command line by running `python tmp-debug.py` for example.
 unlink('tmp-debug.py')
 ```
 
-# Usual knitr option works
+## output
+
+The `output` option can take a function of arguments `options`, `code`,
+`output`, and `file`. The function should return a character string as the final
+output of the engine. By default, this function calls `knitr::engine_output()`.
+See the last section for an example of creating a `gcc` engine based on the
+`exec` engine.
+
+# Usual knitr options work
 
 ## Don't execute
 
@@ -235,4 +243,49 @@ print(1 + 1)
 
 ```{exec, command = 'Rscript', error = TRUE}
 print(1 + "")
+```
+
+# Develop new engines based on `exec`
+
+Below is an example of calling `gcc` to generate an executable, and run the
+executable.
+
+Register the new `gcc` engine:
+
+```{r}
+knitr::knit_engines$set(gcc = function(options) {
+  # set the command to gcc
+  options$command = 'gcc'
+  opts = list(
+    # set file extension to .c
+    ext = 'c',
+    # gcc input -o output
+    args = function(code, file) {
+      c(file, '-o', xfun::sans_ext(file))
+    },
+    # run the executable and capture stdout
+    output = function(options, code, output, file) {
+      out = system2(paste0('./', xfun::sans_ext(file)), stdout = TRUE)
+      knitr::engine_output(options, code, out)
+    },
+    # delete the temp .c file and the executable
+    clean = function(file) {
+      file.remove(c(file, xfun::sans_ext(file)))
+    }
+  )
+  options$engine.opts = knitr:::merge_list(opts, options$engine.opts)
+  # pass options to the exec engine to compile and run the C code
+  eng_exec = knitr::knit_engines$get('exec')
+  eng_exec(options)
+})
+```
+
+A hello world example:
+
+```{gcc}
+#include <stdio.h>
+int main() {
+  printf("Hello world!");
+  return 0;
+}
 ```
