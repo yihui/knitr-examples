@@ -45,27 +45,7 @@ The content can contain inline code like
 document.getElementById("demo").innerHTML = "Hello JavaScript!";
 ```
 
-
-```javascript
-document.getElementById("demo").innerHTML = "Hello JavaScript!";
-```
-
-
-```javascript
-document.getElementById("demo").innerHTML = "Hello JavaScript!";
-```
-
 # Setting a language and another class
-
-
-```{.python .numberLines}
-print(1 + 1)
-```
-
-
-```{.python .numberLines}
-print(1 + 1)
-```
 
 
 ```{.python .numberLines}
