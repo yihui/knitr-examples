@@ -30,7 +30,7 @@ dots, e.g.
 
 Here is a plot:
 
-.. {r rst-plot, out.width='360px', fig.cap='A ggplot2 example', message=FALSE}
+.. {r rst-plot, out.width='360px', fig.cap='A ggplot2 example', message=FALSE, warning=FALSE}
 library(ggplot2)
 qplot(hp, mpg, data=mtcars) + geom_smooth()
 .. ..

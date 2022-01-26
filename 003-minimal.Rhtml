@@ -29,7 +29,7 @@
   <p>We can also produce plots (centered by the
   option <code>fig.align='center'</code>):</p>
 
-<!--begin.rcode html-cars-scatter, message=FALSE, fig.align='center'
+<!--begin.rcode html-cars-scatter, message=FALSE, fig.align='center', warning=FALSE
     library(ggplot2)
     plot(mpg~hp, mtcars)
     qplot(hp, mpg, data=mtcars)+geom_smooth()

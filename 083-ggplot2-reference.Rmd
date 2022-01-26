@@ -11,7 +11,7 @@ theme (legend.text = element_text(size = 12, angle=45))+
 
 Now we can use `<<>>` to reference it.
 
-```{r test-a, message=FALSE}
+```{r test-a, message=FALSE, warning=FALSE}
 library(ggplot2)
 qplot(carat, price, data=diamonds, color=cut)+
   <<my-layout>>
