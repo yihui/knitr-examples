@@ -4,9 +4,10 @@ This is a minimal example of using "polyglot"" **knitr** to produce an _HTML_ pa
 
 
 ```r
-toTest <- c("R", "python", "scala", "bash")
+knitr::opts_chunk$set(engine.opts = list(perl = "-Mstrict -Mwarnings -Mfeature=say",
+    bash = "-o errexit -o nounset"))
+toTest <- c("R", "python", "scala", "bash", "perl")
 where <- Sys.which(toTest)
-exists <- nchar(where) > 0  # TODO: Only run chunk if runtime exists
 ```
 
 ## Engine runtime paths
@@ -84,4 +85,17 @@ echo "'$something' is now '$somethingelse'"
 
 ```
 Bash> 'something' is now 'something + Bash'
+```
+
+## Compute Something in Perl
+
+
+```perl
+my $something = $ENV{SOMETHING};
+$something .= ' + Perl';
+say join ' ', qw{something is now}, "'$something'";
+```
+
+```
+Perl> something is now 'something + Perl'
 ```
