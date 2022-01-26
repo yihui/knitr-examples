@@ -12,12 +12,12 @@ head(demo.sub)
 ```
 
 ```
-## [1] ""                                  
-## [2] "# RGL-demo: subdivision surfaces"  
-## [3] "# author: Daniel Adler"            
-## [4] "# $Id$"                            
-## [5] ""                                  
-## [6] "rgl.demo.subdivision <- function()"
+## [1] "# RGL-demo: subdivision surfaces"    
+## [2] "# author: Daniel Adler"              
+## [3] ""                                    
+## [4] "rgl.demo.subdivision <- function() {"
+## [5] "  # setup environment"               
+## [6] "  clear3d(\"all\")"
 ```
 
 Once we have the source code, we can insert it into **knitr** with `read_chunk()`:
@@ -31,7 +31,7 @@ That means we assigned the code to a chunk named `rgl-sub`, which appears below:
 
 
 ```r
-# RGL-demo: subdivision surfaces author: Daniel Adler $Id$
+# RGL-demo: subdivision surfaces author: Daniel Adler
 
 rgl.demo.subdivision <- function() {
     # setup environment
@@ -39,24 +39,22 @@ rgl.demo.subdivision <- function() {
     view3d()
     bg3d(color = "gray")
     light3d()
-    
+
     # generate basic mesh
     obj <- oh3d()
-    
+
     part <- function(level, tx, ...) {
-        shade3d(translate3d(obj, tx, 0, 0), color = "gray30", front = "lines", 
+        shade3d(translate3d(obj, tx, 0, 0), color = "gray30", front = "lines",
             alpha = 0.5, back = "lines", override = TRUE)
-        shade3d(translate3d(subdivision3d(obj, depth = level), tx, 0, 0), override = TRUE, 
+        shade3d(translate3d(subdivision3d(obj, depth = level), tx, 0, 0), override = TRUE,
             ...)
     }
-    
-    common <- c(alpha = 0.5)
-    
+
     part(0, -5.5, color = "blue")
     part(1, -1.75, color = "yellow")
     part(2, 1.75, color = "red")
     part(3, 5.5, color = "green")
-    
+
 }
 
 open3d()

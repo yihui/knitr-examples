@@ -25,7 +25,7 @@ cor(cars)
 
 # Graphics too
 
-```{r graphics, message=FALSE, fig.cap='A scatterplot of `cars`', fig.width=11, fig.height=5}
+```{r graphics, message=FALSE, fig.cap='A scatterplot of `cars`', fig.width=11, fig.height=5, warning=FALSE}
 library(ggplot2)
 qplot(speed, dist, data = cars) + geom_smooth()
 ```

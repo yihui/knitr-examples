@@ -64,7 +64,7 @@ x = seq(0, 5, l = 100)
 y = sin(x)
 
 # save data to csv file
-write.table(data.frame(x, y), file = "asy.csv", col.names = FALSE, row.names = FALSE, 
+write.table(data.frame(x, y), file = "asy.csv", col.names = FALSE, row.names = FALSE,
     sep = ",")
 ```
 
