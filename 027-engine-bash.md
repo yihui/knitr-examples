@@ -7,7 +7,7 @@ Sys.which("bash")
 ```
 
 ```
-##            bash
+##            bash 
 ## "/usr/bin/bash"
 ```
 
@@ -16,7 +16,7 @@ Sys.which("sh")
 ```
 
 ```
-##            sh
+##            sh 
 ## "/usr/bin/sh"
 ```
 
