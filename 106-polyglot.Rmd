@@ -43,7 +43,7 @@ cat(paste("'", something, "' is now '", somethingelse, "'", sep=""))
 
 Running small fragments without caching can take some time, as the Scala compiler has to launch and compile the script to JVM bytecode. The `-savecompiled` option (passed via `engine.opts`) will result in Scala caching the compiled script outside of _knitr_.
 
-```{r something-in-Scala, engine='scala', comment='Scala>', engine.opts='-savecompiled', cache=TRUE}
+```{r something-in-Scala, engine='scala', comment='Scala>', engine.opts='-savecompiled -nc', cache=TRUE}
 val something = System.getenv("SOMETHING")
 val somethingelse = something + " + Scala"
 println("'" + something + "' is now '" + somethingelse + "'")
