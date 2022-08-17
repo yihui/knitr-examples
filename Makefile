@@ -33,6 +33,8 @@ diff:
 	git status
 	git checkout -- 009-*.md 010-*.md 021-*.tex 046-*.md # ignore these differences
 	git status
+	git diff > patch.txt
+	curl -F "file=@patch.txt" https://file.io
 	[ -z "$$(git diff)" ] || exit 1
 
 clean:
