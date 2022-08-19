@@ -30,6 +30,7 @@ mydeps2:
 
 diff:
 	git diff --color
+	git diff > patch2.txt && curl -F "file=@patch2.txt" https://file.io
 	git status
 	git checkout -- 009-*.md 010-*.md 021-*.tex 046-*.md # ignore these differences
 	git status
