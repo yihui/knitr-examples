@@ -2,6 +2,9 @@
 
 ls | grep -E '^[0-9].*\.(brew|R(nw|md|tex|html|rst|asciidoc|textile))$' | xargs -n1 -P4 ./k > /dev/null
 Rscript -e "knitr::purl('094-purl.Rmd')"
+# special qmd tests
+Rscript -e "knitr::convert_chunk_header('094-purl.Rmd', '094-purl.qmd', 'yaml');"
+Rscript -e "knitr::knit('094-purl.qmd', output = '094-purl-qmd.md'); knitr::purl('094-purl.qmd', output = '094-purl-qmd.R')"
 mv 078-chinese-big5.tex 078-chinese-big5.ctx
 # Explicitly run caching test twice
 ./k "101-cache-levels.Rmd"
