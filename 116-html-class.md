@@ -73,7 +73,9 @@ You may wish to set your own CSS -- **knitr** and **rmarkdown** make this easy f
 
 Note that for this example, only `class.source` is set.
 
-
+<style type="text/css">
+.bad-code { background-color: salmon; }
+</style>
 
 
 ```{.r .bad-code}

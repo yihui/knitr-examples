@@ -34,6 +34,7 @@ SELECT * FROM packages
 ```
 
 
+<div class="knitsql-table">
 
 
 Table: 3 records
@@ -43,6 +44,8 @@ Table: 3 records
 |1  |readr  |
 |2  |readxl |
 |3  |haven  |
+
+</div>
 
 
 ```r
