@@ -53,7 +53,7 @@
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
 
-A bug reported at \url{http://cos.name/cn/topic/110742}.
+A bug reported at \url{https://d.cosx.org/d/110742}.
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
@@ -81,8 +81,8 @@ Then we only have to set the chunk option \texttt{rgl=TRUE}:
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlkwd{library}\hlstd{(rgl)}
-\hlkwd{demo}\hlstd{(}\hlstr{"bivar"}\hlstd{,} \hlkwc{package} \hlstd{=} \hlstr{"rgl"}\hlstd{,} \hlkwc{echo} \hlstd{=} \hlnum{FALSE}\hlstd{)}
-\hlkwd{par3d}\hlstd{(}\hlkwc{zoom} \hlstd{=} \hlnum{0.7}\hlstd{)}
+\hlkwd{plot3d}\hlstd{(}\hlkwd{data.frame}\hlstd{(}\hlkwc{x} \hlstd{=} \hlkwd{rnorm}\hlstd{(}\hlnum{100}\hlstd{),} \hlkwc{y} \hlstd{=} \hlkwd{rnorm}\hlstd{(}\hlnum{100}\hlstd{),} \hlkwc{z} \hlstd{=} \hlkwd{rnorm}\hlstd{(}\hlnum{100}\hlstd{)),} \hlkwc{col} \hlstd{=} \hlkwd{rainbow}\hlstd{(}\hlnum{100}\hlstd{))}
+\hlkwd{par3d}\hlstd{(}\hlkwc{zoom} \hlstd{=} \hlnum{0.8}\hlstd{)}
 \end{alltt}
 \end{kframe}
 

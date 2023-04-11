@@ -100,7 +100,7 @@
 <span class="hl kwd">plot</span><span class="hl std">(mpg</span> <span class="hl opt">~</span> <span class="hl std">hp, mtcars)</span>
 </pre></div>
 </div><div class="rimage center"><img src="https://db.yihui.org/knitr-examples/figure/003-minimal-html-cars-scatter-1.png" alt="plot of chunk html-cars-scatter" class="plot" /></div><div class="rcode">
-<div class="source"><pre class="knitr r"><span class="hl kwd">qplot</span><span class="hl std">(hp, mpg,</span> <span class="hl kwc">data</span> <span class="hl std">= mtcars)</span> <span class="hl opt">+</span> <span class="hl kwd">geom_smooth</span><span class="hl std">()</span>
+<div class="source"><pre class="knitr r"><span class="hl kwd">ggplot</span><span class="hl std">(mtcars,</span> <span class="hl kwd">aes</span><span class="hl std">(hp, mpg))</span> <span class="hl opt">+</span> <span class="hl kwd">geom_smooth</span><span class="hl std">()</span>
 </pre></div>
 </div><div class="rimage center"><img src="https://db.yihui.org/knitr-examples/figure/003-minimal-html-cars-scatter-2.png" alt="plot of chunk html-cars-scatter" class="plot" /></div></div>
 
@@ -131,8 +131,8 @@
 </pre></div>
 </div></div>
 
-<div class="chunk" id="fancy-rgl"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl kwd">demo</span><span class="hl std">(</span><span class="hl str">&quot;bivar&quot;</span><span class="hl std">,</span> <span class="hl kwc">package</span> <span class="hl std">=</span> <span class="hl str">&quot;rgl&quot;</span><span class="hl std">,</span> <span class="hl kwc">echo</span> <span class="hl std">=</span> <span class="hl num">FALSE</span><span class="hl std">)</span>
-<span class="hl kwd">par3d</span><span class="hl std">(</span><span class="hl kwc">zoom</span> <span class="hl std">=</span> <span class="hl num">0.7</span><span class="hl std">)</span>
+<div class="chunk" id="fancy-rgl"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl kwd">plot3d</span><span class="hl std">(</span><span class="hl kwd">data.frame</span><span class="hl std">(</span><span class="hl kwc">x</span> <span class="hl std">=</span> <span class="hl kwd">rnorm</span><span class="hl std">(</span><span class="hl num">100</span><span class="hl std">),</span> <span class="hl kwc">y</span> <span class="hl std">=</span> <span class="hl kwd">rnorm</span><span class="hl std">(</span><span class="hl num">100</span><span class="hl std">),</span> <span class="hl kwc">z</span> <span class="hl std">=</span> <span class="hl kwd">rnorm</span><span class="hl std">(</span><span class="hl num">100</span><span class="hl std">)),</span> <span class="hl kwc">col</span> <span class="hl std">=</span> <span class="hl kwd">rainbow</span><span class="hl std">(</span><span class="hl num">100</span><span class="hl std">))</span>
+<span class="hl kwd">par3d</span><span class="hl std">(</span><span class="hl kwc">zoom</span> <span class="hl std">=</span> <span class="hl num">0.8</span><span class="hl std">)</span>
 </pre></div>
 </div><div class="rimage center"><img src="https://db.yihui.org/knitr-examples/figure/003-minimal-fancy-rgl-1.png" alt="plot of chunk fancy-rgl" class="plot" /></div></div>
 

@@ -32,7 +32,7 @@
 <!--begin.rcode html-cars-scatter, message=FALSE, fig.align='center', warning=FALSE
     library(ggplot2)
     plot(mpg~hp, mtcars)
-    qplot(hp, mpg, data=mtcars)+geom_smooth()
+    ggplot(mtcars, aes(hp, mpg))+geom_smooth()
     end.rcode-->
 
   <p>Errors, messages and warnings can be put into <code>div</code>'s
@@ -53,8 +53,8 @@
     end.rcode-->
 
 <!--begin.rcode fancy-rgl, rgl=TRUE, fig.align='center', fig.width=4, fig.height=4, warning=FALSE
-    demo('bivar', package='rgl', echo=FALSE)
-    par3d(zoom=.7)
+    plot3d(data.frame(x = rnorm(100), y = rnorm(100), z = rnorm(100)), col = rainbow(100))
+    par3d(zoom=.8)
     end.rcode-->
 
   <p>Well, everything seems to be working. Let's ask R what is the
