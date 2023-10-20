@@ -7,8 +7,10 @@ strsplit('hello world', ' ')
 
 ## ------------------------------------------------------------------------
 #| label: test-b
-#| fig.width: 10.0
-#| fig.height: 7.0
+#| fig-width: 10
+#| fig-height: 7
+#| fig-format: svg
+#| fig-dpi: 120
 if (FALSE) plot(1:10)
 
 

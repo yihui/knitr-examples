@@ -9,7 +9,7 @@ strsplit('hello world', ' ')
 
 A second chunk.
 
-```{r test-b, fig.width=10, fig.height=7}
+```{r test-b, fig.width=10, fig.height=7, dev='svg', dpi = 120}
 if (FALSE) plot(1:10)
 ```
 
