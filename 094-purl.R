@@ -3,7 +3,7 @@
 strsplit('hello world', ' ')
 
 
-## ----test-b, fig.width=10, fig.height=7----------------------------------
+## ----test-b, fig.width=10, fig.height=7, dev='svg', dpi = 120------------
 if (FALSE) plot(1:10)
 
 
