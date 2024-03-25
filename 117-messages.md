@@ -48,13 +48,9 @@ f2()
 
 ```
 ## Warning in f2(): Hello
-
 ## Warning in f2(): Hello
-
 ## Warning in f2(): Hello
-
 ## Warning in f2(): Hello
-
 ## Warning in f2(): Hello
 ```
 

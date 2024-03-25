@@ -18,7 +18,7 @@ For example, we are warned that the normal subsetting of a data frame can be typ
 mtcars[, "mpg"]
 ```
 
-```{.bg-warning}
+```bg-warning
 ##  [1] 21.0 21.0 22.8 21.4 18.7 18.1 14.3 24.4 22.8 19.2 17.8 16.4 17.3 15.2
 ## [15] 10.4 10.4 14.7 32.4 30.4 33.9 21.5 15.5 15.2 13.3 19.2 27.3 26.0 30.4
 ## [29] 15.8 19.7 15.0 21.4
@@ -31,7 +31,7 @@ To make sure that we return a data frame, we set the argument `drop = FALSE`. He
 mtcars[, "mpg", drop = FALSE]
 ```
 
-```{.bg-success}
+```bg-success
 ##                      mpg
 ## Mazda RX4           21.0
 ## Mazda RX4 Wag       21.0
