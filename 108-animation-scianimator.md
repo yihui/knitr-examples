@@ -4,7 +4,7 @@ We can set the package option `animation.fun` to `hook_scianimator` so that
 multiple plots in a chunk can be animated via the SciAnimator library.
 
 
-```r
+``` r
 library(knitr)
 opts_knit$set(animation.fun = hook_scianimator)
 ```
@@ -20,7 +20,7 @@ if you insert a style sheet after `<body>`.
 Here comes a test of the Brownian motion:
 
 
-```r
+``` r
 n = length(palette())
 x = rnorm(n)
 y = rnorm(n)

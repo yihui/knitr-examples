@@ -1,7 +1,7 @@
 R works, of course.
 
 
-```r
+``` r
 library(knitr)
 set.seed(123)
 rnorm(5)
@@ -14,7 +14,7 @@ rnorm(5)
 Does **knitr** work with Python? Use the chunk option `engine='python'`:
 
 
-```python
+``` python
 x = 'hello, python world!'
 print(x)
 ```
@@ -23,7 +23,7 @@ print(x)
 ## hello, python world!
 ```
 
-```python
+``` python
 print(x.split(' '))
 ```
 
@@ -34,7 +34,7 @@ print(x.split(' '))
 Or use the syntax ```` ```{python} ````:
 
 
-```python
+``` python
 x = 'hello, python world!'
 print(x.split(' '))
 ```
@@ -52,7 +52,7 @@ If all the chunks below are python chunks, we can set the engine globally:
 You can use some chunk options like `eval`, `echo` and `results`. For example, `eval=FALSE` (do not evaluate code):
 
 
-```python
+``` python
 x = 'hello, python world!'
 print(x)
 print(x.split(' '))
@@ -72,19 +72,19 @@ or `echo=FALSE` (hide source code):
 or `results='hide'`:
 
 
-```python
+``` python
 x = 'hello, python world!'
 print(x)
 ```
 
-```python
+``` python
 print(x.split(' '))
 ```
 
 or `results='asis'`:
 
 
-```python
+``` python
 print('**Write** _something_ in `Markdown` from `Python`!')
 ```
 
@@ -93,7 +93,7 @@ print('**Write** _something_ in `Markdown` from `Python`!')
 You can also cache the computation:
 
 
-```python
+``` python
 import time
 # pretend this is a time-consuming task...
 time.sleep(10)

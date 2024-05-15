@@ -5,14 +5,14 @@ You may have your own layout code like [this one](http://stackoverflow.com/q/148
 We simplify the layout code in the original post and put it in a code chunk named `my-layout`:
 
 
-```r
+``` r
 theme(legend.text = element_text(size = 12, angle = 45)) + theme(legend.position = "bottom")
 ```
 
 Now we can use `<<>>` to reference it.
 
 
-```r
+``` r
 library(ggplot2)
 qplot(carat, price, data = diamonds, color = cut) + theme(legend.text = element_text(size = 12,
     angle = 45)) + theme(legend.position = "bottom")
@@ -23,7 +23,7 @@ qplot(carat, price, data = diamonds, color = cut) + theme(legend.text = element_
 Another test:
 
 
-```r
+``` r
 qplot(carat, data = diamonds, fill = cut) + theme(legend.text = element_text(size = 12,
     angle = 45)) + theme(legend.position = "bottom")
 ```

@@ -5,7 +5,7 @@ distance using a linear regression model:
 $Y = \beta_0 + \beta_1 x + \epsilon$.
 
 
-```r
+``` r
 par(mar = c(4, 4, 1, 1), mgp = c(2, 1, 0), cex = 0.8)
 plot(cars, pch = 20, col = "darkgray")
 fit <- lm(dist ~ speed, data = cars)

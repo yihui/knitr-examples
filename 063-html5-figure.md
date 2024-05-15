@@ -3,7 +3,7 @@
 By defautl `![...](...)` is translated to `<img src='...' alt='...'>` in Markdown. This demo shows how to use the HTML5 `<figure>` tag:
 
 
-```r
+``` r
 library(knitr)
 knit_hooks$set(plot = function(x, options) {
     paste("<figure><img src=\"", opts_knit$get("base.url"), paste(x, collapse = "."),
@@ -14,7 +14,7 @@ knit_hooks$set(plot = function(x, options) {
 Test:
 
 
-```r
+``` r
 plot(rnorm(100))
 ```
 

@@ -20,7 +20,7 @@ from `rmarkdown`.
 This is the child.
 
 
-```r
+``` r
 2 * 3 == 4
 ```
 

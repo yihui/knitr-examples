@@ -6,14 +6,14 @@ output: html_document
 # Default to text highlight
 
 
-```default
+``` default
 No specific highlight
 ```
 
 # Markdown output
 
 
-```markdown
+``` markdown
 No specific highlight
 ```
 
@@ -27,7 +27,7 @@ No specific highlight
 # Use for verbatim Rmd content
 
 
-````markdown
+```` markdown
 We can output arbitrary content verbatim.
   
 ```{r}
@@ -41,7 +41,7 @@ The content can contain inline code like
 # Other option to set the language 
 
 
-```javascript
+``` javascript
 document.getElementById("demo").innerHTML = "Hello JavaScript!";
 ```
 
@@ -64,14 +64,14 @@ print(1 + 1)
 but no language is set by default from the file name
 
 
-```default
+``` default
 h1 {
   color: red;
 }
 ```
 
 
-```css
+``` css
 h1 {
   color: red;
 }
@@ -82,7 +82,7 @@ One need to use the embed engine for this
 * Either using `file` option
 
 
-```css
+``` css
 h1 {
   color: red;
 }
@@ -91,7 +91,7 @@ h1 {
 * Or setting file name inside code chunk with quotes
 
 
-```css
+``` css
 h1 {
   color: red;
 }
@@ -100,7 +100,7 @@ h1 {
 or without quotes
 
 
-```css
+``` css
 h1 {
   color: red;
 }

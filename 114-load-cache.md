@@ -5,7 +5,7 @@ Sometimes we may want to insert an object value early in the document, when the 
 One solution is to `save()` the workspace in a `.RData` file in the end of the document, and `load()` it in the beginning, e.g.
 
 
-```r
+``` r
 x = "NOT YET AVAILABLE"  # an object to be used
 if (file.exists("everything.RData")) load("everything.RData")
 ```
@@ -13,7 +13,7 @@ if (file.exists("everything.RData")) load("everything.RData")
 In the end of the document, you save the workspace:
 
 
-```r
+``` r
 save.image("everything.RData")
 ```
 
@@ -24,7 +24,7 @@ The function `load_cache()` is an alternative solution, which allows you to load
 For example, there is no object called `y` that has been created in this document yet, but we can still insert it here: `6.2832`, as long as it will be created in the code chunk with the label `test-a` later.
 
 
-```r
+``` r
 y = 2 * pi
 ```
 

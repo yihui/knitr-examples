@@ -13,7 +13,7 @@ You can pass some options to the engine by defining `engine.opts`, e.g. use your
 An example of the tikz-engine from <https://raw.github.com/sdiehl/cats/master/misc/example.md>
 
 
-```tex
+``` tex
 \usetikzlibrary{arrows}
 \begin{tikzpicture}[node distance=2cm, auto,>=latex', thick, scale = 0.5]
 \node (P) {$P$};

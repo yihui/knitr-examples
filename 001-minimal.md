@@ -16,7 +16,7 @@ See [output here](https://github.com/yihui/knitr-examples/blob/master/001-minima
 A _paragraph_ here. A code chunk below (remember the three backticks):
 
 
-```r
+``` r
 1 + 1
 ```
 
@@ -24,7 +24,7 @@ A _paragraph_ here. A code chunk below (remember the three backticks):
 ## [1] 2
 ```
 
-```r
+``` r
 0.4 - 0.7 + 0.3  # what? it is not zero!
 ```
 
@@ -37,13 +37,13 @@ A _paragraph_ here. A code chunk below (remember the three backticks):
 It is easy.
 
 
-```r
+``` r
 plot(1:10)
 ```
 
 ![plot of chunk unnamed-chunk-2](https://db.yihui.org/knitr-examples/figure/001-minimal-unnamed-chunk-2-1.png)
 
-```r
+``` r
 hist(rnorm(1000))
 ```
 
@@ -63,7 +63,7 @@ You can write code within other elements, e.g. a list
 
 1. foo is good
     
-    ```r
+    ``` r
     strsplit("hello indented world", " ")[[1]]
     ```
     
@@ -77,7 +77,7 @@ Or inside blockquotes:
 > Here is a quote, followed by a code chunk:
 >
 > 
-> ```r
+> ``` r
 > x = 1:10
 > rev(x^2)
 > ```

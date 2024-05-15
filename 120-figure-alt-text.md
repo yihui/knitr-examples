@@ -5,7 +5,7 @@ An alternative text will always be provided with an image tag in html.
 By default, the caption will be used
 
 
-```r
+``` r
 plot(1:10)
 ```
 
@@ -14,7 +14,7 @@ plot(1:10)
 You can use an alt text different than a caption using `fig.alt`
 
 
-```r
+``` r
 plot(1:10)
 ```
 
@@ -27,7 +27,7 @@ plot(1:10)
 It will be evaluated after the chunk like `fig.cap`
 
 
-```r
+``` r
 n <- 15
 plot(1:n)
 ```
@@ -40,7 +40,7 @@ plot(1:n)
 And recycled if several graphs
 
 
-```r
+``` r
 plot(1:15)
 ```
 
@@ -49,7 +49,7 @@ plot(1:15)
 <p class="caption">A caption</p>
 </div>
 
-```r
+``` r
 plot(1:10)
 ```
 
@@ -61,7 +61,7 @@ plot(1:10)
 or you can pass a vector
 
 
-```r
+``` r
 plot(1:15)
 plot(1:10)
 ```

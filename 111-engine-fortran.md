@@ -10,7 +10,7 @@ output: html_document
 Does it work?
 
 
-```fortran
+``` fortran
 C Fortran test
       subroutine fexp(n, x)
       double precision x
@@ -27,7 +27,7 @@ C  input value
 Now try running it.
 
 
-```r
+``` r
 res = .Fortran("fexp", n = 100000L, x = 0)
 str(res)
 ## List of 2

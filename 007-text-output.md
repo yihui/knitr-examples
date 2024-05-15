@@ -5,7 +5,7 @@ See if chunk options like `tidy`, `prompt` and `echo`, etc work as expected.
 ## A normal chunk
 
 
-```r
+``` r
 1 + 1
 ```
 
@@ -13,7 +13,7 @@ See if chunk options like `tidy`, `prompt` and `echo`, etc work as expected.
 ## [1] 2
 ```
 
-```r
+``` r
 for (i in 1:10) {
     # nothing before 10
     if (i >= 10)
@@ -25,7 +25,7 @@ for (i in 1:10) {
 ## [1] 10
 ```
 
-```r
+``` r
 # two blank lines below
 
 
@@ -39,7 +39,7 @@ dnorm(0)
 ## Do not evaluate
 
 
-```r
+``` r
 1 + 1
 for (i in 1:10) {
     # nothing before 10
@@ -55,7 +55,7 @@ dnorm(0)
 ## Add prompts
 
 
-```r
+``` r
 > 1 + 1
 ```
 
@@ -63,7 +63,7 @@ dnorm(0)
 ## [1] 2
 ```
 
-```r
+``` r
 > for (i in 1:10) {
 +     # nothing before 10
 +     if (i >= 10)
@@ -75,7 +75,7 @@ dnorm(0)
 ## [1] 10
 ```
 
-```r
+``` r
 > # two blank lines below
 > 
 > 
@@ -89,7 +89,7 @@ dnorm(0)
 ## No evaluate or tidy
 
 
-```r
+``` r
 1+1
 for (i in 1:10) {
 # nothing before 10
@@ -104,7 +104,7 @@ dnorm(0)
 ## Do not tidy
 
 
-```r
+``` r
 1+1
 ```
 
@@ -112,7 +112,7 @@ dnorm(0)
 ## [1] 2
 ```
 
-```r
+``` r
 for (i in 1:10) {
 # nothing before 10
 if(i>=10)print(i)
@@ -123,7 +123,7 @@ if(i>=10)print(i)
 ## [1] 10
 ```
 
-```r
+``` r
 # two blank lines below
 
 
@@ -152,7 +152,7 @@ dnorm(0)
 ## Do not comment out results
 
 
-```r
+``` r
 1 + 1
 ```
 
@@ -160,7 +160,7 @@ dnorm(0)
 [1] 2
 ```
 
-```r
+``` r
 for (i in 1:10) {
     # nothing before 10
     if (i >= 10)
@@ -172,7 +172,7 @@ for (i in 1:10) {
 [1] 10
 ```
 
-```r
+``` r
 # two blank lines below
 
 
@@ -186,7 +186,7 @@ dnorm(0)
 ## Do not echo the 2nd expression
 
 
-```r
+``` r
 1 + 1
 ```
 
@@ -198,7 +198,7 @@ dnorm(0)
 ## [1] 10
 ```
 
-```r
+``` r
 # two blank lines below
 
 
@@ -212,7 +212,7 @@ dnorm(0)
 ## Do not evaluate, echo the 2nd expression
 
 
-```r
+``` r
 for (i in 1:10) {
     # nothing before 10
     if (i >= 10)
@@ -223,7 +223,7 @@ for (i in 1:10) {
 ## Only evaluate the first two expressions
 
 
-```r
+``` r
 1 + 1
 ```
 
@@ -231,7 +231,7 @@ for (i in 1:10) {
 ## [1] 2
 ```
 
-```r
+``` r
 for (i in 1:10) {
     # nothing before 10
     if (i >= 10)
@@ -243,7 +243,7 @@ for (i in 1:10) {
 ## [1] 10
 ```
 
-```r
+``` r
 ## # two blank lines below
 ## 
 ## 
@@ -253,7 +253,7 @@ for (i in 1:10) {
 ## Add prompts but no tidy
 
 
-```r
+``` r
 > 1+1
 ```
 
@@ -261,7 +261,7 @@ for (i in 1:10) {
 ## [1] 2
 ```
 
-```r
+``` r
 > for (i in 1:10) {
 + # nothing before 10
 + if(i>=10)print(i)
@@ -272,7 +272,7 @@ for (i in 1:10) {
 ## [1] 10
 ```
 
-```r
+``` r
 > # two blank lines below
 > 
 > 
@@ -286,7 +286,7 @@ for (i in 1:10) {
 ## Prompts, no evaluate or tidy
 
 
-```r
+``` r
 > 1+1
 > for (i in 1:10) {
 + # nothing before 10
@@ -301,12 +301,12 @@ for (i in 1:10) {
 ## Change prompts
 
 
-```r
+``` r
 options(prompt = "R> ", continue = "+  ")
 ```
 
 
-```r
+``` r
 R> 1 + 1
 ```
 
@@ -314,7 +314,7 @@ R> 1 + 1
 ## [1] 2
 ```
 
-```r
+``` r
 R> for (i in 1:10) {
 +      # nothing before 10
 +      if (i >= 10)
@@ -326,7 +326,7 @@ R> for (i in 1:10) {
 ## [1] 10
 ```
 
-```r
+``` r
 R> # two blank lines below
 R> 
 R> 
@@ -340,7 +340,7 @@ R> dnorm(0)
 ## Backslashes
 
 
-```r
+``` r
 {
     # can you deal with \code{foo} or \n, \a?
     gsub("\\.", "\\\\", "a.b.c")  # \link{bar}
@@ -351,7 +351,7 @@ R> dnorm(0)
 ## [1] "a\\b\\c"
 ```
 
-```r
+``` r
 cat("a\tb\nc")
 ```
 
@@ -365,12 +365,12 @@ cat("a\tb\nc")
 We can set **formatR** options globally:
 
 
-```r
+``` r
 options(formatR.blank = FALSE)
 ```
 
 
-```r
+``` r
 1 + 1
 for (i in 1:10) {
     # nothing before 10
@@ -384,7 +384,7 @@ dnorm(0)
 Or locally in one chunk via `tidy.opts`. Do not keep comments:
 
 
-```r
+``` r
 1 + 1
 for (i in 1:10) {
     if (i >= 10)
@@ -396,7 +396,7 @@ dnorm(0)
 Move left braces to the next line:
 
 
-```r
+``` r
 for (i in 1:10)
 {
     # nothing before 10
@@ -412,7 +412,7 @@ for (i in 1:10)
 Indent by 2 spaces:
 
 
-```r
+``` r
 1 + 1
 for (i in 1:10) {
   # nothing before 10
@@ -434,7 +434,7 @@ See <http://yihui.org/formatR> for details.
 Do not include messages:
 
 
-```r
+``` r
 1 + 1
 ```
 
@@ -442,14 +442,14 @@ Do not include messages:
 ## [1] 2
 ```
 
-```r
+``` r
 message("helloooo!")
 ```
 
 No warnings:
 
 
-```r
+``` r
 1:2 + 1:3
 ```
 
@@ -457,14 +457,14 @@ No warnings:
 ## [1] 2 4 4
 ```
 
-```r
+``` r
 warning("no no no")
 ```
 
 Select warnings using numeric indices:
 
 
-```r
+``` r
 1:2 + 1:3
 ```
 
@@ -472,7 +472,7 @@ Select warnings using numeric indices:
 ## [1] 2 4 4
 ```
 
-```r
+``` r
 warning("no no no")
 ```
 
@@ -483,7 +483,7 @@ warning("no no no")
 Invalid indices will select nothing:
 
 
-```r
+``` r
 1:2 + 1:3
 ```
 
@@ -491,7 +491,7 @@ Invalid indices will select nothing:
 ## [1] 2 4 4
 ```
 
-```r
+``` r
 warning("no no no")
 ```
 
@@ -500,7 +500,7 @@ warning("no no no")
 Do not show text results:
 
 
-```r
+``` r
 1 + 1
 for (i in 1:10) {
     # nothing before 10
@@ -514,7 +514,7 @@ dnorm(0)
 Flush all results to the end of a chunk:
 
 
-```r
+``` r
 1 + 1
 for (i in 1:10) {
     # nothing before 10
@@ -534,7 +534,7 @@ dnorm(0)
 Output as is:
 
 
-```r
+``` r
 cat("_Markdown_,", "oh yeah, **Markdown**")
 ```
 

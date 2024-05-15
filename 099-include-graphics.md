@@ -3,7 +3,7 @@
 You can call the function `knitr::include_graphics()` in a code chunk to embed external images. This function works for all types of **knitr** source documents, such as Rnw and Rmd. Below is a simple example:
 
 
-```r
+``` r
 library(knitr)
 include_graphics("figure/003-minimal-html-cars-scatter-2.png", dpi = NA)
 ```
@@ -21,7 +21,7 @@ Below are some tests for the PR https://github.com/yihui/knitr/pull/1776.
 
 
 
-```r
+``` r
 images = c("figure/001-minimal-unnamed-chunk-2-1.png", "figure/001-minimal-unnamed-chunk-2-2.png",
     "figure/003-minimal-html-cars-scatter-2.png")
 ```
@@ -29,7 +29,7 @@ images = c("figure/001-minimal-unnamed-chunk-2-1.png", "figure/001-minimal-unnam
 Using three times `include_graphics()`:
 
 
-```r
+``` r
 knitr::include_graphics(images[1])
 knitr::include_graphics(images[2])
 knitr::include_graphics(images[3])
@@ -41,7 +41,7 @@ knitr::include_graphics(images[3])
 </div>
 
 
-```r
+``` r
 knitr::include_graphics(images)
 ```
 
@@ -53,7 +53,7 @@ knitr::include_graphics(images)
 ## Mixing with R plots
 
 
-```r
+``` r
 knitr::include_graphics(images[1])
 plot(cars)
 knitr::include_graphics(images[2])
@@ -64,7 +64,7 @@ knitr::include_graphics(images[2])
 ## [1] 2
 ```
 
-```r
+``` r
 knitr::include_graphics(images[3])
 ```
 
@@ -74,7 +74,7 @@ knitr::include_graphics(images[3])
 </div>
 
 
-```r
+``` r
 knitr::include_graphics(images[1:2])
 ```
 
@@ -86,7 +86,7 @@ knitr::include_graphics(images[1:2])
 <p class="caption">This is another</p>
 </div>
 
-```r
+``` r
 plot(cars)
 ```
 
@@ -95,7 +95,7 @@ plot(cars)
 <p class="caption">this is a plot</p>
 </div>
 
-```r
+``` r
 1 + 1
 ```
 
@@ -103,7 +103,7 @@ plot(cars)
 ## [1] 2
 ```
 
-```r
+``` r
 knitr::include_graphics(images[3])
 ```
 
@@ -115,7 +115,7 @@ knitr::include_graphics(images[3])
 ## Placing caption at the top
 
 
-```r
+``` r
 knitr::include_graphics(images[1])
 knitr::include_graphics(images[2])
 knitr::include_graphics(images[3])
@@ -125,7 +125,7 @@ knitr::include_graphics(images[3])
 <p class="caption">This is a caption</p><img src="https://db.yihui.org/knitr-examples/figure/001-minimal-unnamed-chunk-2-1.png" alt="This is a caption" width="33%" /><img src="https://db.yihui.org/knitr-examples/figure/001-minimal-unnamed-chunk-2-2.png" alt="This is a caption" width="33%" /><img src="https://db.yihui.org/knitr-examples/figure/003-minimal-html-cars-scatter-2.png" alt="This is a caption" width="33%" /></div>
 
 
-```r
+``` r
 knitr::include_graphics(images)
 ```
 

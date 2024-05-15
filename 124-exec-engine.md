@@ -37,7 +37,7 @@ with any executables.
 `command` can be the name of a command in PATH.
 
 
-```r
+``` r
 1 + 1
 ```
 
@@ -46,7 +46,7 @@ with any executables.
 ```
 
 
-```python
+``` python
 print(1 + 1)
 ```
 
@@ -57,7 +57,7 @@ print(1 + 1)
 or a full path
 
 
-```python
+``` python
 print("Full path command works")
 ```
 
@@ -68,7 +68,7 @@ print("Full path command works")
 It can also be passed as an option in `engine.opts`.
 
 
-```python
+``` python
 print(1 + 1)
 ```
 
@@ -98,7 +98,7 @@ write the `code` into a file (using `xfun::write_utf8()` or another function)
 otherwise the command will be executed with an empty file.
 
 
-```r
+``` r
 input2 <- function(code, file) {
     xfun::write_utf8("print('file2 executed')", file)
     file
@@ -106,7 +106,7 @@ input2 <- function(code, file) {
 ```
 
 
-```python
+``` python
 print(1 + 1)
 ```
 
@@ -118,7 +118,7 @@ You can also pass a string directly to input to change the name of the input
 file that will be passed to the command
 
 
-```python
+``` python
 print(1 + 1)
 ```
 
@@ -138,7 +138,7 @@ it.
 For example, this will ensure the tempfile has a `.R` extension.
 
 
-```r
+``` r
 1 + 1
 ```
 
@@ -151,7 +151,7 @@ It can be a function of the executable name (i.e `basename(command)`).
 
 
 
-```python
+``` python
 print(1 + 1)
 ```
 
@@ -176,7 +176,7 @@ function of 2 arguments `function(code, file)`. In this example, a line is
 preprended in the file before being run.
 
 
-```r
+``` r
 f_arg <- function(code, file) {
     # prepend a command
     xfun::append_utf8("print('# file modified in args')", file, sort = rev)
@@ -185,7 +185,7 @@ f_arg <- function(code, file) {
 ```
 
 
-```python
+``` python
 print(1 + 1)
 ```
 
@@ -199,7 +199,7 @@ For example, here passing `-x` to `python`, which will ignore the prepended
 line:
 
 
-```python
+``` python
 print(1 + 1)
 ```
 
@@ -213,7 +213,7 @@ execute a string.
 We are writing this content to `custom.py`
 
 
-```python
+``` python
 print("Hello from a python file!")
 ```
 
@@ -230,7 +230,7 @@ That we can execute using an empty `exec` engine chunk
 arguments, for example:
 
 
-```python
+``` python
 import sys
 print('And the argument is: '+sys.argv[1])
 ```
@@ -245,7 +245,7 @@ By default, the temporary file will be removed. This option can be set to `NULL`
 to keep this file for example to debug.
 
 
-```python
+``` python
 print('This content can be read if you open the file left')
 ```
 
@@ -256,7 +256,7 @@ print('This content can be read if you open the file left')
 A file with extension `.python` should be still here
 
 
-```r
+``` r
 f1 <- list.files(".", pattern = "python.*\\.python")
 file.exists(f1)
 ```
@@ -271,7 +271,7 @@ It can be useful in addition to setting `input` option so that you can easily
 retrieve the file to re-run at command line yourself.
 
 
-```python
+``` python
 print('This content can be rerun using `temp-debug.py` file')
 ```
 
@@ -299,14 +299,14 @@ See the last section for an example of creating a `gcc` engine based on the
 Will output nothing
 
 
-```python
+``` python
 print(1 + 1)
 ```
 
 ## Error is caught
 
 
-```r
+``` r
 print(1 + "")
 ```
 
@@ -324,7 +324,7 @@ executable.
 Register the new `gcc` engine:
 
 
-```r
+``` r
 knitr::knit_engines$set(gcc = function(options) {
   # set the command to gcc
   options$command = 'gcc'
@@ -355,7 +355,7 @@ knitr::knit_engines$set(gcc = function(options) {
 A hello world example:
 
 
-```gcc
+``` gcc
 #include <stdio.h>
 int main() {
   printf("Hello world!");

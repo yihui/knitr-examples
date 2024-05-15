@@ -7,7 +7,7 @@ When the chunk option `engine='Rcpp'` is specified (or you write the chunk heade
 Test for `fibonacci`:
 
 
-```cpp
+``` cpp
 #include <Rcpp.h>
 
 // [[Rcpp::export]]
@@ -20,7 +20,7 @@ int fibonacci(const int x) {
 Because `fibonacci` was defined with the `Rcpp::export` attribute it can now be called as a normal R function:
 
 
-```r
+``` r
 fibonacci(10L)
 ```
 
@@ -28,7 +28,7 @@ fibonacci(10L)
 ## [1] 55
 ```
 
-```r
+``` r
 fibonacci(20L)
 ```
 
@@ -39,7 +39,7 @@ fibonacci(20L)
 You can define multiple functions (or helper functions that are not exported) within Rcpp code chunks:
 
 
-```cpp
+``` cpp
 #include <Rcpp.h>
 using namespace Rcpp;
 
@@ -72,7 +72,7 @@ List lapplyCpp(List input, Function f) {
 If you want to link to code defined in another package (e.g **RcppArmadillo**) then you need to provide an `Rcpp::depends` attribute. For example:
 
 
-```cpp
+``` cpp
 // [[Rcpp::depends(RcppArmadillo)]]
 
 #include <RcppArmadillo.h>
@@ -104,7 +104,7 @@ List fastLm(NumericVector yr, NumericMatrix Xr) {
 A test:
 
 
-```r
+``` r
 fastLm(rnorm(10), matrix(1:20, ncol = 2))
 ```
 

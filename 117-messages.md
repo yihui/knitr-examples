@@ -5,7 +5,7 @@ title: "Merging messages"
 Different messages are placed in separate blocks:
 
 
-```r
+``` r
 f = function() {
     message("Hello")
     message("World!")
@@ -24,7 +24,7 @@ f()
 Consecutive identical messages are automatically merged into a single block:
 
 
-```r
+``` r
 f1 = function() {
     for (i in 1:5) message("Hello")
 }
@@ -39,7 +39,7 @@ f1()
 ## Hello
 ```
 
-```r
+``` r
 f2 = function() {
     for (i in 1:5) warning("Hello")
 }
@@ -57,7 +57,7 @@ f2()
 A message in `message(..., appendLF = FALSE)` will be merged with the next adjacent message:
 
 
-```r
+``` r
 f3 = function() {
     message("Hello ", appendLF = FALSE)
     message("World!")

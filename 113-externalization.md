@@ -3,14 +3,14 @@
 Write R code in external R scripts, and use `read_chunk()` to read them into the current document.
 
 
-```r
+``` r
 knitr::read_chunk("113-foo.R")
 ```
 
 The following two chunks are from the external R script `113-foo.R`:
 
 
-```r
+``` r
 1 + 1
 ```
 
@@ -18,11 +18,11 @@ The following two chunks are from the external R script `113-foo.R`:
 ## [1] 2
 ```
 
-```r
+``` r
 x = rnorm(10)
 ```
 
-```r
+``` r
 mean(x)
 ```
 
@@ -30,7 +30,7 @@ mean(x)
 ## [1] 0.07463
 ```
 
-```r
+``` r
 sd(x)
 ```
 

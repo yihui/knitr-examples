@@ -1,7 +1,7 @@
 # Compile C code
 
 
-```r
+``` r
 # is gcc there?
 Sys.which("gcc")
 ```
@@ -14,7 +14,7 @@ Sys.which("gcc")
 Does `engine = 'c'` work?
 
 
-```c
+``` c
 void square(double *x) {
   *x = *x * *x;
 }
@@ -23,7 +23,7 @@ void square(double *x) {
 Test the `square()` function:
 
 
-```r
+``` r
 .C("square", 9)
 ```
 
@@ -32,7 +32,7 @@ Test the `square()` function:
 ## [1] 81
 ```
 
-```r
+``` r
 .C("square", 123)
 ```
 

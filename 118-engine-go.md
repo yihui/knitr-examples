@@ -1,6 +1,6 @@
 Hello package!
 
-```go
+``` go
 package hello 
 
 func HelloWorld(){
@@ -10,7 +10,7 @@ func HelloWorld(){
 
 Hello main!
 
-```go
+``` go
 package main 
 
 func main(){
@@ -24,7 +24,7 @@ func main(){
 
 Or specify an engine:
 
-```go
+``` go
 package main
 
 func main(){

@@ -3,7 +3,7 @@
 All chunk options are stored in `options$params.src`.
 
 
-````r
+```` r
 library(knitr)
 knit_hooks$set(wrapper = function(before, options, envir) {
     if (before) {
@@ -16,7 +16,7 @@ Can I write the three backticks in the output?
 
     ```{r test_label, wrapper=TRUE, eval=FALSE}
 
-```r
+``` r
 1 + 1
 plot(1)
 ```
@@ -26,7 +26,7 @@ plot(1)
 By default the chunk wrapper will not show up, e.g.
 
 
-```r
+``` r
 rnorm(100)
 y ~ x
 ```

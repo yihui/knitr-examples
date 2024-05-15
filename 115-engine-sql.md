@@ -3,23 +3,23 @@ title: "Knit SQL Demo"
 ---
 
 
-```r
+``` r
 library(DBI)
 db <- dbConnect(RSQLite::SQLite(), dbname = ":memory:")
 ```
 
 
-```sql
+``` sql
 DROP TABLE IF EXISTS packages
 ```
 
 
-```sql
+``` sql
 CREATE TABLE packages (id INTEGER, name TEXT)
 ```
 
 
-```sql
+``` sql
 INSERT INTO 
   packages 
 VALUES 
@@ -29,7 +29,7 @@ VALUES
 ```
 
 
-```sql
+``` sql
 SELECT * FROM packages
 ```
 
@@ -48,7 +48,7 @@ Table: 3 records
 </div>
 
 
-```r
+``` r
 packageReadR <- "readr"
 ```
 
@@ -57,7 +57,7 @@ Engine can substitute named placeholders in sql that start with `?`.
 Note that if you don't provide `params` as option values will be evaluated from environment
 
 
-```sql
+``` sql
 SELECT 
   * 
 FROM 
@@ -67,7 +67,7 @@ WHERE
 ```
 
 
-```r
+``` r
 readrPackage
 ```
 
@@ -79,12 +79,12 @@ readrPackage
 To use parameterised queries with native database support provide `params` in the options of the chunk.
 
 
-```r
+``` r
 parameters <- list(package = packageReadR)
 ```
 
 
-```sql
+``` sql
 SELECT 
   * 
 FROM
@@ -94,7 +94,7 @@ WHERE
 ```
 
 
-```r
+``` r
 readrPackage
 ```
 
@@ -104,12 +104,12 @@ readrPackage
 ```
 
 
-```sql
+``` sql
 DROP TABLE IF EXISTS packages
 ```
 
 
-```sql
+``` sql
 SELECT * FROM packages
 ```
 

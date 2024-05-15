@@ -1,7 +1,7 @@
 # Run bash scripts
 
 
-```r
+``` r
 # should exist
 Sys.which("bash")
 ```
@@ -11,7 +11,7 @@ Sys.which("bash")
 ## "/usr/bin/bash"
 ```
 
-```r
+``` r
 Sys.which("sh")
 ```
 
@@ -23,7 +23,7 @@ Sys.which("sh")
 Does `bash` work?
 
 
-```bash
+``` bash
 echo hello world
 echo 'a b c' | sed 's/ /\|/g'
 # number of lines
@@ -39,7 +39,7 @@ awk 'END{print NR;}' 027-engine-bash.Rmd
 How about `sh`?
 
 
-```sh
+``` sh
 # run wc on all engine examples
 wc 027-engine-bash.Rmd
 ```

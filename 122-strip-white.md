@@ -5,7 +5,7 @@ title: "Test strip.white"
 ## strip.white is TRUE by default
 
 
-```r
+``` r
 1 + 1
 ```
 
@@ -16,7 +16,7 @@ title: "Test strip.white"
 ## It can be opt out
 
 
-```r
+``` r
 
 1 + 1
 ```
@@ -28,10 +28,13 @@ title: "Test strip.white"
 ## When collapse is TRUE, default is FALSE
 
 
-```r
+``` r
 
 1 + 1
 ## [1] 2
+```
+
+``` r
 
 2 + 2
 ## [1] 4
@@ -40,9 +43,12 @@ title: "Test strip.white"
 ## It can also be changed
 
 
-```r
+``` r
 1 + 1
 ## [1] 2
+```
+
+``` r
 2 + 2
 ## [1] 4
 ```

@@ -3,7 +3,7 @@
 The function `purl()` can be used to extract code chunks from a document.
 
 
-```r
+``` r
 1+1
 ```
 
@@ -11,7 +11,7 @@ The function `purl()` can be used to extract code chunks from a document.
 ## [1] 2
 ```
 
-```r
+``` r
 strsplit('hello world', ' ')
 ```
 
@@ -23,14 +23,14 @@ strsplit('hello world', ' ')
 A second chunk.
 
 
-```r
+``` r
 if (FALSE) plot(1:10)
 ```
 
 When we do not evaluate a chunk, the code from `purl()` will be commented out.
 
 
-```r
+``` r
 paste(letters, collapse = '|')
 if (1 == 1) {
   'Awesome!'
@@ -40,7 +40,7 @@ if (1 == 1) {
 If one chunk should not be included in the results from `purl()`, just use the chunk option `purl = FALSE`:
 
 
-```r
+``` r
 # we do not like significance stars!
 options(stringsAsFactors = FALSE, show.signif.stars = FALSE)
 ```

@@ -3,14 +3,14 @@
 Use `Sys.setenv()`:
 
 
-```r
+``` r
 Sys.setenv(EXAMPLES = "example/path")
 ```
 
 Now we write a `bash` code chunk:
 
 
-```bash
+``` bash
 echo $EXAMPLES
 ```
 

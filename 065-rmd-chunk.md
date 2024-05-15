@@ -17,7 +17,7 @@ For Markdown, we can add an empty string after ```` ```{r} ````; **knitr** will 
 By comparison, this chunk will be identified by **knitr** as usual:
 
 
-```r
+``` r
 n = 10
 rnorm(n)
 ```

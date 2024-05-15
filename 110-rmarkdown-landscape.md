@@ -9,7 +9,7 @@ classoption: landscape
 When converting R Markdown to PDF, we can use [a lot of variables](http://johnmacfarlane.net/pandoc/README.html) for the LaTeX template. This short example shows the `classoption` variable that takes the value `landscape` to produce PDF in the landscape orientation.
 
 
-```r
+``` r
 str(cars)
 ```
 
@@ -19,7 +19,7 @@ str(cars)
 ##  $ dist : num  2 10 4 22 16 10 18 26 34 17 ...
 ```
 
-```r
+``` r
 summary(lm(dist ~ speed, cars))
 ```
 

@@ -16,14 +16,14 @@ title: "Test ref.label and opts.label"
 ## Chunk b
 
 
-```r
+``` r
 1:10
 ```
 
 ## Setting `opts_template`
 
 
-```r
+``` r
 knitr::opts_template$set(skip = list(eval = FALSE), b = list(results = "markup",
     prompt = TRUE))
 ```
@@ -33,7 +33,7 @@ knitr::opts_template$set(skip = list(eval = FALSE), b = list(results = "markup",
 Ignore chunk options on chunk `a`:
 
 
-```r
+``` r
 1 + 1
 ```
 
@@ -41,7 +41,7 @@ Ignore chunk options on chunk `a`:
 ## [1] 2
 ```
 
-```r
+``` r
 2 + 2
 ```
 
@@ -80,7 +80,7 @@ Inherit chunk options from chunk `a`:
 Inherit chunk options from template `b` and then chunk `b`:
 
 
-```r
+``` r
 > 1 + 1
 > 2 + 2
 ```
@@ -102,7 +102,7 @@ Same as the previous section---you see nothing below:
 Inherit chunk options from chunk `b` (no output) and `a` (no source), and then override with `echo = TRUE`:
 
 
-```r
+``` r
 > 1:10
 > 1 + 1
 > 2 + 2
@@ -130,7 +130,7 @@ Inherit code from chunk `b` and `a`, and chunk options from chunk `a` (no source
 Inherit code from chunk `b` and `a`, and chunk options from template `skip` (no evaluation):
 
 
-```r
+``` r
 1:10
 1 + 1
 2 + 2
@@ -141,7 +141,7 @@ Inherit code from chunk `b` and `a`, and chunk options from template `skip` (no 
 Inherit code from chunk `b` and `a`, and chunk options from template `skip` (ignore `I()` in `ref.label` since `opts.label` is not empty):
 
 
-```r
+``` r
 1:10
 1 + 1
 2 + 2

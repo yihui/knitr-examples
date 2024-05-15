@@ -20,7 +20,7 @@ An example of the asy-engine:
 
 
 
-```cpp
+``` cpp
 real u = 40;
 // just a comment
 draw( (0,0) .. (u,u) .. (u,0) -- (0,0) );
@@ -34,7 +34,7 @@ draw( (0,0) .. (u,u) .. (u,0) -- (0,0) );
 
 
 
-```cpp
+``` cpp
 import graph3;
 import palette;
 
@@ -59,7 +59,7 @@ draw(s,render(merge=true));
 In this example, I  generate data in R and then use it for plotting in asymptote. In addition I use asymptote to find the intersection between the R path and a line. At that intersection I add a latex label.
 
 
-```r
+``` r
 x = seq(0, 5, l = 100)
 y = sin(x)
 
@@ -69,7 +69,7 @@ write.table(data.frame(x, y), file = "asy.csv", col.names = FALSE, row.names = F
 ```
 
 
-```cpp
+``` cpp
 import graph;
 size(200,150,IgnoreAspect);
 

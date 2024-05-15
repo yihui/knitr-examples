@@ -1,7 +1,7 @@
 Does Ruby work with **knitr**?
 
 
-```ruby
+``` ruby
 x = 'hello, ruby world!'
 p x.split(' ')
 ```

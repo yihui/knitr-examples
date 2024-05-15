@@ -3,7 +3,7 @@
 A `dot`-example taken from the man-pages. You need to install the `graphviz` package.
 
 
-```dot
+``` dot
 digraph test123 {
   a -> b -> c;
   a -> {x y};

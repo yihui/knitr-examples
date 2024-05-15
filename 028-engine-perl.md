@@ -1,7 +1,7 @@
 # Run perl scripts
 
 
-```r
+``` r
 # should exist
 Sys.which("perl")
 ```
@@ -14,7 +14,7 @@ Sys.which("perl")
 Does `perl` work?
 
 
-```perl
+``` perl
 $test = "jello world";
 $test =~ s/j/h/;
 print $test
