@@ -13,10 +13,10 @@
 
 \definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
 \newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
-\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlsng}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
 \newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
 \newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
-\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hldef}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
 \newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
 \newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
 \newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
@@ -65,8 +65,8 @@
 \begin{knitrout}\footnotesize
 \definecolor{shadecolor}{rgb}{1, 1, 1}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{set.seed}\hlstd{(}\hlnum{1121}\hlstd{)}
-\hlstd{(x} \hlkwb{=} \hlkwd{rnorm}\hlstd{(}\hlnum{20}\hlstd{))}
+\hlkwd{set.seed}\hldef{(}\hlnum{1121}\hldef{)}
+\hldef{(x} \hlkwb{=} \hlkwd{rnorm}\hldef{(}\hlnum{20}\hldef{))}
 \end{alltt}
 \begin{verbatim}
 ##  [1]  0.14496  0.43832  0.15319  1.08494  1.99954 -0.81188
@@ -75,13 +75,13 @@
 ## [19]  0.13272 -0.15594
 \end{verbatim}
 \begin{alltt}
-\hlkwd{mean}\hlstd{(x)}
+\hlkwd{mean}\hldef{(x)}
 \end{alltt}
 \begin{verbatim}
 ## [1] 0.3217
 \end{verbatim}
 \begin{alltt}
-\hlkwd{var}\hlstd{(x)}
+\hlkwd{var}\hldef{(x)}
 \end{alltt}
 \begin{verbatim}
 ## [1] 0.5715

@@ -35,7 +35,7 @@
 .hl.num {
   color: #AF0F91;
 }
-.hl.str {
+.hl.sng {
   color: #317ECC;
 }
 .hl.com {
@@ -45,7 +45,7 @@
 .hl.opt {
   color: #000000;
 }
-.hl.std {
+.hl.def {
   color: #585858;
 }
 .hl.kwa {
@@ -66,8 +66,8 @@
   <title>A minimal knitr example in HTML</title>
 </head>
 <body>
-<div class="chunk" id="unnamed-chunk-1"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl kwd">library</span><span class="hl std">(knitr)</span>
-<span class="hl std">opts_chunk</span><span class="hl opt">$</span><span class="hl kwd">set</span><span class="hl std">(</span><span class="hl kwc">fig.width</span> <span class="hl std">=</span> <span class="hl num">5</span><span class="hl std">,</span> <span class="hl kwc">fig.height</span> <span class="hl std">=</span> <span class="hl num">5</span><span class="hl std">)</span>
+<div class="chunk" id="unnamed-chunk-1"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl kwd">library</span><span class="hl def">(knitr)</span>
+<span class="hl def">opts_chunk</span><span class="hl opt">$</span><span class="hl kwd">set</span><span class="hl def">(</span><span class="hl kwc">fig.width</span> <span class="hl def">=</span> <span class="hl num">5</span><span class="hl def">,</span> <span class="hl kwc">fig.height</span> <span class="hl def">=</span> <span class="hl num">5</span><span class="hl def">)</span>
 </pre></div>
 </div></div>
 
@@ -86,8 +86,8 @@
 <div class="output"><pre class="knitr r">## [1] 2
 </pre></div>
 <div class="source"><pre class="knitr r"><span class="hl com">## boring random numbers</span>
-<span class="hl kwd">set.seed</span><span class="hl std">(</span><span class="hl num">123</span><span class="hl std">)</span>
-<span class="hl kwd">rnorm</span><span class="hl std">(</span><span class="hl num">5</span><span class="hl std">)</span>
+<span class="hl kwd">set.seed</span><span class="hl def">(</span><span class="hl num">123</span><span class="hl def">)</span>
+<span class="hl kwd">rnorm</span><span class="hl def">(</span><span class="hl num">5</span><span class="hl def">)</span>
 </pre></div>
 <div class="output"><pre class="knitr r">## [1] -0.56048 -0.23018  1.55871  0.07051  0.12929
 </pre></div>
@@ -96,28 +96,28 @@
   <p>We can also produce plots (centered by the
   option <code>fig.align='center'</code>):</p>
 
-<div class="chunk" id="html-cars-scatter"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl kwd">library</span><span class="hl std">(ggplot2)</span>
-<span class="hl kwd">plot</span><span class="hl std">(mpg</span> <span class="hl opt">~</span> <span class="hl std">hp, mtcars)</span>
+<div class="chunk" id="html-cars-scatter"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl kwd">library</span><span class="hl def">(ggplot2)</span>
+<span class="hl kwd">plot</span><span class="hl def">(mpg</span> <span class="hl opt">~</span> <span class="hl def">hp, mtcars)</span>
 </pre></div>
 </div><div class="rimage center"><img src="https://db.yihui.org/knitr-examples/figure/003-minimal-html-cars-scatter-1.png" alt="plot of chunk html-cars-scatter" class="plot" /></div><div class="rcode">
-<div class="source"><pre class="knitr r"><span class="hl kwd">ggplot</span><span class="hl std">(mtcars,</span> <span class="hl kwd">aes</span><span class="hl std">(hp, mpg))</span> <span class="hl opt">+</span> <span class="hl kwd">geom_smooth</span><span class="hl std">()</span>
+<div class="source"><pre class="knitr r"><span class="hl kwd">ggplot</span><span class="hl def">(mtcars,</span> <span class="hl kwd">aes</span><span class="hl def">(hp, mpg))</span> <span class="hl opt">+</span> <span class="hl kwd">geom_smooth</span><span class="hl def">()</span>
 </pre></div>
 </div><div class="rimage center"><img src="https://db.yihui.org/knitr-examples/figure/003-minimal-html-cars-scatter-2.png" alt="plot of chunk html-cars-scatter" class="plot" /></div></div>
 
   <p>Errors, messages and warnings can be put into <code>div</code>'s
   with different <code>class</code>es:</p>
 
-<div class="chunk" id="unnamed-chunk-3"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl kwd">sqrt</span><span class="hl std">(</span><span class="hl opt">-</span><span class="hl num">1</span><span class="hl std">)</span>  <span class="hl com"># warning</span>
+<div class="chunk" id="unnamed-chunk-3"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl kwd">sqrt</span><span class="hl def">(</span><span class="hl opt">-</span><span class="hl num">1</span><span class="hl def">)</span>  <span class="hl com"># warning</span>
 </pre></div>
 <div class="warning"><pre class="knitr r">## Warning in sqrt(-1): NaNs produced
 </pre></div>
 <div class="output"><pre class="knitr r">## [1] NaN
 </pre></div>
-<div class="source"><pre class="knitr r"><span class="hl kwd">message</span><span class="hl std">(</span><span class="hl str">&quot;knitr says hello to HTML!&quot;</span><span class="hl std">)</span>
+<div class="source"><pre class="knitr r"><span class="hl kwd">message</span><span class="hl def">(</span><span class="hl sng">&quot;knitr says hello to HTML!&quot;</span><span class="hl def">)</span>
 </pre></div>
 <div class="message"><pre class="knitr r">## knitr says hello to HTML!
 </pre></div>
-<div class="source"><pre class="knitr r"><span class="hl num">1</span> <span class="hl opt">+</span> <span class="hl str">&quot;a&quot;</span>  <span class="hl com"># mission impossible</span>
+<div class="source"><pre class="knitr r"><span class="hl num">1</span> <span class="hl opt">+</span> <span class="hl sng">&quot;a&quot;</span>  <span class="hl com"># mission impossible</span>
 </pre></div>
 <div class="error"><pre class="knitr r">## Error in 1 + &quot;a&quot;: non-numeric argument to binary operator
 </pre></div>
@@ -126,13 +126,13 @@
   <p>In the end, let's show off a 3D plot from
   the <strong>rgl</strong> package.</p>
 
-<div class="chunk" id="unnamed-chunk-4"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl kwd">library</span><span class="hl std">(rgl)</span>
-<span class="hl std">knit_hooks</span><span class="hl opt">$</span><span class="hl kwd">set</span><span class="hl std">(</span><span class="hl kwc">rgl</span> <span class="hl std">= hook_rgl)</span>  <span class="hl com"># set up the hook first</span>
+<div class="chunk" id="unnamed-chunk-4"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl kwd">library</span><span class="hl def">(rgl)</span>
+<span class="hl def">knit_hooks</span><span class="hl opt">$</span><span class="hl kwd">set</span><span class="hl def">(</span><span class="hl kwc">rgl</span> <span class="hl def">= hook_rgl)</span>  <span class="hl com"># set up the hook first</span>
 </pre></div>
 </div></div>
 
-<div class="chunk" id="fancy-rgl"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl kwd">plot3d</span><span class="hl std">(</span><span class="hl kwd">data.frame</span><span class="hl std">(</span><span class="hl kwc">x</span> <span class="hl std">=</span> <span class="hl kwd">rnorm</span><span class="hl std">(</span><span class="hl num">100</span><span class="hl std">),</span> <span class="hl kwc">y</span> <span class="hl std">=</span> <span class="hl kwd">rnorm</span><span class="hl std">(</span><span class="hl num">100</span><span class="hl std">),</span> <span class="hl kwc">z</span> <span class="hl std">=</span> <span class="hl kwd">rnorm</span><span class="hl std">(</span><span class="hl num">100</span><span class="hl std">)),</span> <span class="hl kwc">col</span> <span class="hl std">=</span> <span class="hl kwd">rainbow</span><span class="hl std">(</span><span class="hl num">100</span><span class="hl std">))</span>
-<span class="hl kwd">par3d</span><span class="hl std">(</span><span class="hl kwc">zoom</span> <span class="hl std">=</span> <span class="hl num">0.8</span><span class="hl std">)</span>
+<div class="chunk" id="fancy-rgl"><div class="rcode"><div class="source"><pre class="knitr r"><span class="hl kwd">plot3d</span><span class="hl def">(</span><span class="hl kwd">data.frame</span><span class="hl def">(</span><span class="hl kwc">x</span> <span class="hl def">=</span> <span class="hl kwd">rnorm</span><span class="hl def">(</span><span class="hl num">100</span><span class="hl def">),</span> <span class="hl kwc">y</span> <span class="hl def">=</span> <span class="hl kwd">rnorm</span><span class="hl def">(</span><span class="hl num">100</span><span class="hl def">),</span> <span class="hl kwc">z</span> <span class="hl def">=</span> <span class="hl kwd">rnorm</span><span class="hl def">(</span><span class="hl num">100</span><span class="hl def">)),</span> <span class="hl kwc">col</span> <span class="hl def">=</span> <span class="hl kwd">rainbow</span><span class="hl def">(</span><span class="hl num">100</span><span class="hl def">))</span>
+<span class="hl kwd">par3d</span><span class="hl def">(</span><span class="hl kwc">zoom</span> <span class="hl def">=</span> <span class="hl num">0.8</span><span class="hl def">)</span>
 </pre></div>
 </div><div class="rimage center"><img src="https://db.yihui.org/knitr-examples/figure/003-minimal-fancy-rgl-1.png" alt="plot of chunk fancy-rgl" class="plot" /></div></div>
 

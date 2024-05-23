@@ -13,10 +13,10 @@
 
 \definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
 \newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
-\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlsng}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
 \newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
 \newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
-\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hldef}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
 \newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
 \newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
 \newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
@@ -55,8 +55,8 @@
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{options}\hlstd{(}\hlkwc{width} \hlstd{=} \hlnum{60}\hlstd{)}
-\hlkwd{summary}\hlstd{(iris)}
+\hlkwd{options}\hldef{(}\hlkwc{width} \hldef{=} \hlnum{60}\hldef{)}
+\hlkwd{summary}\hldef{(iris)}
 \end{alltt}
 \begin{verbatim}
 ##   Sepal.Length   Sepal.Width    Petal.Length   Petal.Width 
@@ -92,23 +92,23 @@ This chunk below is from the child document.
 ## [1] 2
 \end{verbatim}
 \begin{alltt}
-\hlkwd{rnorm}\hlstd{(}\hlnum{5}\hlstd{)}
+\hlkwd{rnorm}\hldef{(}\hlnum{5}\hldef{)}
 \end{alltt}
 \begin{verbatim}
 ## [1] -0.56048 -0.23018  1.55871  0.07051  0.12929
 \end{verbatim}
 \begin{alltt}
-\hlkwd{plot}\hlstd{(}\hlnum{1}\hlstd{)}
+\hlkwd{plot}\hldef{(}\hlnum{1}\hldef{)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=2in]{figure/087-child-example-test-child-1} 
 \begin{kframe}\begin{alltt}
-\hlkwd{boxplot}\hlstd{(}\hlnum{1}\hlopt{:}\hlnum{10}\hlstd{)}
+\hlkwd{boxplot}\hldef{(}\hlnum{1}\hlopt{:}\hlnum{10}\hldef{)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=2in]{figure/087-child-example-test-child-2} 
 \begin{kframe}\begin{alltt}
-\hlkwd{str}\hlstd{(mtcars)}
+\hlkwd{str}\hldef{(mtcars)}
 \end{alltt}
 \begin{verbatim}
 ## 'data.frame':	32 obs. of  11 variables:

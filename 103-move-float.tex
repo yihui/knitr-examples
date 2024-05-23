@@ -13,10 +13,10 @@
 
 \definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
 \newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
-\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlsng}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
 \newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
 \newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
-\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hldef}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
 \newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
 \newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
 \newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
@@ -65,8 +65,8 @@ First we set up the document hook:
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{library}\hlstd{(knitr)}
-\hlstd{knit_hooks}\hlopt{$}\hlkwd{set}\hlstd{(}\hlkwc{document} \hlstd{= hook_movecode)}
+\hlkwd{library}\hldef{(knitr)}
+\hldef{knit_hooks}\hlopt{$}\hlkwd{set}\hldef{(}\hlkwc{document} \hldef{= hook_movecode)}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -78,7 +78,7 @@ below right after this paragraph.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{summary}\hlstd{(cars)}
+\hlkwd{summary}\hldef{(cars)}
 \end{alltt}
 \begin{verbatim}
 ##      speed           dist    
@@ -90,8 +90,8 @@ below right after this paragraph.
 ##  Max.   :25.0   Max.   :120
 \end{verbatim}
 \begin{alltt}
-\hlkwd{par}\hlstd{(}\hlkwc{mar} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{4}\hlstd{,} \hlnum{4}\hlstd{,} \hlnum{0.1}\hlstd{,} \hlnum{0.1}\hlstd{))}
-\hlkwd{plot}\hlstd{(cars)}
+\hlkwd{par}\hldef{(}\hlkwc{mar} \hldef{=} \hlkwd{c}\hldef{(}\hlnum{4}\hldef{,} \hlnum{4}\hldef{,} \hlnum{0.1}\hldef{,} \hlnum{0.1}\hldef{))}
+\hlkwd{plot}\hldef{(cars)}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -106,8 +106,8 @@ Similarly, you can work with tables; see Table \ref{tab:example-b}.
 
 \begin{kframe}
 \begin{alltt}
-\hlkwd{library}\hlstd{(knitr)}
-\hlkwd{kable}\hlstd{(}\hlkwd{head}\hlstd{(iris))}
+\hlkwd{library}\hldef{(knitr)}
+\hlkwd{kable}\hldef{(}\hlkwd{head}\hldef{(iris))}
 \end{alltt}
 \end{kframe}
 
@@ -144,8 +144,8 @@ will leave them as is; see Table \ref{tab:example-c}.
 
 \begin{kframe}
 \begin{alltt}
-\hlkwd{library}\hlstd{(knitr)}
-\hlkwd{kable}\hlstd{(}\hlkwd{head}\hlstd{(iris))}
+\hlkwd{library}\hldef{(knitr)}
+\hlkwd{kable}\hldef{(}\hlkwd{head}\hldef{(iris))}
 \end{alltt}
 \end{kframe}
 \begin{tabular}{r|r|r|r|l}

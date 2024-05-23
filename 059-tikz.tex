@@ -13,10 +13,10 @@
 
 \definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
 \newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
-\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlsng}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
 \newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
 \newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
-\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hldef}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
 \newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
 \newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
 \newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
@@ -62,7 +62,7 @@ First you need to install the tikzDevice package, e.g.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{install.packages}\hlstd{(}\hlstr{"tikzDevice"}\hlstd{)}
+\hlkwd{install.packages}\hldef{(}\hlsng{"tikzDevice"}\hldef{)}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -72,8 +72,8 @@ Then just specify \texttt{dev='tikz'} in the chunk header, and you are done.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{plot}\hlstd{(}\hlnum{1}\hlstd{,} \hlkwc{xlab} \hlstd{=} \hlstr{"$x_i$"}\hlstd{,} \hlkwc{ylab} \hlstd{=} \hlstr{"$y_i$"}\hlstd{,} \hlkwc{main} \hlstd{=} \hlstr{"Isn't \textbackslash{}\textbackslash{}LaTeX\{\} Awesome?"}\hlstd{)}
-\hlkwd{text}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{1}\hlstd{,} \hlstr{"The font style is consistent\textbackslash{}n\textbackslash{}n with your document"}\hlstd{)}
+\hlkwd{plot}\hldef{(}\hlnum{1}\hldef{,} \hlkwc{xlab} \hldef{=} \hlsng{"$x_i$"}\hldef{,} \hlkwc{ylab} \hldef{=} \hlsng{"$y_i$"}\hldef{,} \hlkwc{main} \hldef{=} \hlsng{"Isn't \textbackslash{}\textbackslash{}LaTeX\{\} Awesome?"}\hldef{)}
+\hlkwd{text}\hldef{(}\hlnum{1}\hldef{,} \hlnum{1}\hldef{,} \hlsng{"The font style is consistent\textbackslash{}n\textbackslash{}n with your document"}\hldef{)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/059-tikz-tikz-ex-1} 

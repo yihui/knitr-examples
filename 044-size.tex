@@ -13,10 +13,10 @@
 
 \definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
 \newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
-\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlsng}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
 \newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
 \newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
-\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hldef}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
 \newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
 \newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
 \newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
@@ -57,7 +57,7 @@ The size option controls the font size of chunks. This is the default size:
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{head}\hlstd{(iris)}
+\hlkwd{head}\hldef{(iris)}
 \end{alltt}
 \begin{verbatim}
 ##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
@@ -76,7 +76,7 @@ This is scriptsize:
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{head}\hlstd{(iris)}
+\hlkwd{head}\hldef{(iris)}
 \end{alltt}
 \begin{verbatim}
 ##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
@@ -94,7 +94,7 @@ The size does not work when results = 'asis':
 
 \begin{kframe}
 \begin{alltt}
-\hlkwd{cat}\hlstd{(letters,} \hlkwc{sep} \hlstd{=} \hlstr{" "}\hlstd{)}
+\hlkwd{cat}\hldef{(letters,} \hlkwc{sep} \hldef{=} \hlsng{" "}\hldef{)}
 \end{alltt}
 \end{kframe}a b c d e f g h i j k l m n o p q r s t u v w x y z
 
@@ -103,7 +103,7 @@ But you can use a hook to add the size environment in this case:
 
 
 \begin{scriptsize}\begin{kframe}\begin{alltt}
-\hlkwd{cat}\hlstd{(letters,} \hlkwc{sep} \hlstd{=} \hlstr{" "}\hlstd{)}
+\hlkwd{cat}\hldef{(letters,} \hlkwc{sep} \hldef{=} \hlsng{" "}\hldef{)}
 \end{alltt}
 \end{kframe}a b c d e f g h i j k l m n o p q r s t u v w x y z\end{scriptsize}
 

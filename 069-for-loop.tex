@@ -13,10 +13,10 @@
 
 \definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
 \newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
-\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlsng}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
 \newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
 \newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
-\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hldef}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
 \newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
 \newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
 \newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
@@ -61,20 +61,20 @@ Collect results from the template for each i and write them back later.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{print}\hlstd{(}\hlnum{1}\hlstd{)}
+\hlkwd{print}\hldef{(}\hlnum{1}\hldef{)}
 \end{alltt}
 \begin{verbatim}
 ## [1] 1
 \end{verbatim}
 \begin{alltt}
-\hlstd{iris[}\hlnum{1}\hlstd{, ]}
+\hldef{iris[}\hlnum{1}\hldef{, ]}
 \end{alltt}
 \begin{verbatim}
 ##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
 ## 1          5.1         3.5          1.4         0.2  setosa
 \end{verbatim}
 \begin{alltt}
-\hlkwd{boxplot}\hlstd{(iris[,} \hlnum{1}\hlstd{]} \hlopt{~} \hlstd{iris}\hlopt{$}\hlstd{Species)}
+\hlkwd{boxplot}\hldef{(iris[,} \hlnum{1}\hldef{]} \hlopt{~} \hldef{iris}\hlopt{$}\hldef{Species)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/069-for-loop-arbitrary-chunk-label-1-here-1} 
@@ -84,20 +84,20 @@ Collect results from the template for each i and write them back later.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{print}\hlstd{(}\hlnum{2}\hlstd{)}
+\hlkwd{print}\hldef{(}\hlnum{2}\hldef{)}
 \end{alltt}
 \begin{verbatim}
 ## [1] 2
 \end{verbatim}
 \begin{alltt}
-\hlstd{iris[}\hlnum{2}\hlstd{, ]}
+\hldef{iris[}\hlnum{2}\hldef{, ]}
 \end{alltt}
 \begin{verbatim}
 ##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
 ## 2          4.9           3          1.4         0.2  setosa
 \end{verbatim}
 \begin{alltt}
-\hlkwd{boxplot}\hlstd{(iris[,} \hlnum{2}\hlstd{]} \hlopt{~} \hlstd{iris}\hlopt{$}\hlstd{Species)}
+\hlkwd{boxplot}\hldef{(iris[,} \hlnum{2}\hldef{]} \hlopt{~} \hldef{iris}\hlopt{$}\hldef{Species)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/069-for-loop-arbitrary-chunk-label-2-here-1} 
@@ -107,20 +107,20 @@ Collect results from the template for each i and write them back later.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{print}\hlstd{(}\hlnum{3}\hlstd{)}
+\hlkwd{print}\hldef{(}\hlnum{3}\hldef{)}
 \end{alltt}
 \begin{verbatim}
 ## [1] 3
 \end{verbatim}
 \begin{alltt}
-\hlstd{iris[}\hlnum{3}\hlstd{, ]}
+\hldef{iris[}\hlnum{3}\hldef{, ]}
 \end{alltt}
 \begin{verbatim}
 ##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
 ## 3          4.7         3.2          1.3         0.2  setosa
 \end{verbatim}
 \begin{alltt}
-\hlkwd{boxplot}\hlstd{(iris[,} \hlnum{3}\hlstd{]} \hlopt{~} \hlstd{iris}\hlopt{$}\hlstd{Species)}
+\hlkwd{boxplot}\hldef{(iris[,} \hlnum{3}\hldef{]} \hlopt{~} \hldef{iris}\hlopt{$}\hldef{Species)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/069-for-loop-arbitrary-chunk-label-3-here-1} 

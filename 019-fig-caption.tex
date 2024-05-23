@@ -13,10 +13,10 @@
 
 \definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
 \newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
-\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlsng}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
 \newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
 \newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
-\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hldef}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
 \newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
 \newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
 \newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
@@ -57,8 +57,8 @@ Knitr can automatically generate a figure environment if fig.cap is specified.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{par}\hlstd{(}\hlkwc{mar} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{4}\hlstd{,} \hlnum{4}\hlstd{,} \hlnum{0.1}\hlstd{,} \hlnum{0.1}\hlstd{))}
-\hlkwd{plot}\hlstd{(}\hlkwd{runif}\hlstd{(}\hlnum{4}\hlstd{))}
+\hlkwd{par}\hldef{(}\hlkwc{mar} \hldef{=} \hlkwd{c}\hldef{(}\hlnum{4}\hldef{,} \hlnum{4}\hldef{,} \hlnum{0.1}\hldef{,} \hlnum{0.1}\hldef{))}
+\hlkwd{plot}\hldef{(}\hlkwd{runif}\hldef{(}\hlnum{4}\hldef{))}
 \end{alltt}
 \end{kframe}\begin{figure}
 \includegraphics[width=\maxwidth]{figure/019-fig-caption-test-1} \caption[$2 \times 2$ is 4]{$2 \times 2$ is 4}\label{fig:test}
@@ -71,9 +71,9 @@ When fig.cap needs to use objects in the current chunk, we need to set the eval.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{library}\hlstd{(knitr)}
+\hlkwd{library}\hldef{(knitr)}
 \hlcom{# evaluate fig.cap after a chunk is evaluated}
-\hlstd{opts_knit}\hlopt{$}\hlkwd{set}\hlstd{(}\hlkwc{eval.after} \hlstd{=} \hlstr{"fig.cap"}\hlstd{)}
+\hldef{opts_knit}\hlopt{$}\hlkwd{set}\hldef{(}\hlkwc{eval.after} \hldef{=} \hlsng{"fig.cap"}\hldef{)}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -83,9 +83,9 @@ Dynamically generate a figure caption:
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{x} \hlkwb{=} \hlkwd{rnorm}\hlstd{(}\hlnum{30}\hlstd{)}
-\hlkwd{par}\hlstd{(}\hlkwc{mar} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{4}\hlstd{,} \hlnum{4}\hlstd{,} \hlnum{0.1}\hlstd{,} \hlnum{0.1}\hlstd{))}
-\hlkwd{hist}\hlstd{(x,} \hlkwc{main} \hlstd{=} \hlstr{""}\hlstd{)}
+\hldef{x} \hlkwb{=} \hlkwd{rnorm}\hldef{(}\hlnum{30}\hldef{)}
+\hlkwd{par}\hldef{(}\hlkwc{mar} \hldef{=} \hlkwd{c}\hldef{(}\hlnum{4}\hldef{,} \hlnum{4}\hldef{,} \hlnum{0.1}\hldef{,} \hlnum{0.1}\hldef{))}
+\hlkwd{hist}\hldef{(x,} \hlkwc{main} \hldef{=} \hlsng{""}\hldef{)}
 \end{alltt}
 \end{kframe}\begin{figure}
 \includegraphics[width=\maxwidth]{figure/019-fig-caption-t-test-1} \caption[The P-value is 0.93]{The P-value is 0.93}\label{fig:t-test}
@@ -98,8 +98,8 @@ Change the figure environment:
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{par}\hlstd{(}\hlkwc{mar} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{4}\hlstd{,} \hlnum{4}\hlstd{,} \hlnum{0.1}\hlstd{,} \hlnum{0.1}\hlstd{))}
-\hlkwd{boxplot}\hlstd{(x)}
+\hlkwd{par}\hldef{(}\hlkwc{mar} \hldef{=} \hlkwd{c}\hldef{(}\hlnum{4}\hldef{,} \hlnum{4}\hldef{,} \hlnum{0.1}\hldef{,} \hlnum{0.1}\hldef{))}
+\hlkwd{boxplot}\hldef{(x)}
 \end{alltt}
 \end{kframe}\begin{figure*}
 \includegraphics[width=\maxwidth]{figure/019-fig-caption-figure-asterisk-1} \caption[Figure * environment]{Figure * environment.}\label{fig:figure-asterisk}
@@ -112,8 +112,8 @@ If you have two figures, you can assign two captions to fig.cap:
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{par}\hlstd{(}\hlkwc{mar} \hlstd{=} \hlkwd{rep}\hlstd{(}\hlnum{0}\hlstd{,} \hlnum{4}\hlstd{),} \hlkwc{ann} \hlstd{=} \hlnum{FALSE}\hlstd{)}
-\hlkwd{plot}\hlstd{(}\hlnum{1}\hlopt{:}\hlnum{10}\hlstd{)}
+\hlkwd{par}\hldef{(}\hlkwc{mar} \hldef{=} \hlkwd{rep}\hldef{(}\hlnum{0}\hldef{,} \hlnum{4}\hldef{),} \hlkwc{ann} \hldef{=} \hlnum{FALSE}\hldef{)}
+\hlkwd{plot}\hldef{(}\hlnum{1}\hlopt{:}\hlnum{10}\hldef{)}
 \end{alltt}
 \end{kframe}\begin{figure}
 
@@ -125,7 +125,7 @@ If you have two figures, you can assign two captions to fig.cap:
 \end{figure}
 
 \begin{kframe}\begin{alltt}
-\hlkwd{plot}\hlstd{(}\hlkwd{runif}\hlstd{(}\hlnum{10}\hlstd{))}
+\hlkwd{plot}\hldef{(}\hlkwd{runif}\hldef{(}\hlnum{10}\hldef{))}
 \end{alltt}
 \end{kframe}\begin{figure}
 

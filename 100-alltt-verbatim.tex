@@ -13,10 +13,10 @@
 
 \definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
 \newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
-\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlsng}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
 \newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
 \newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
-\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hldef}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
 \newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
 \newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
 \newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
@@ -59,14 +59,14 @@ the \texttt{kframe} environments between them.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{library}\hlstd{(knitr)}
+\hlkwd{library}\hldef{(knitr)}
 \hlcom{# modify the default chunk hook}
-\hlstd{hook_chunk} \hlkwb{=} \hlstd{knit_hooks}\hlopt{$}\hlkwd{get}\hlstd{(}\hlstr{'chunk'}\hlstd{)}
-\hlstd{knit_hooks}\hlopt{$}\hlkwd{set}\hlstd{(}\hlkwc{chunk} \hlstd{=} \hlkwa{function}\hlstd{(}\hlkwc{x}\hlstd{,} \hlkwc{options}\hlstd{) \{}
-  \hlstd{out} \hlkwb{=} \hlkwd{hook_chunk}\hlstd{(x, options)}
-  \hlkwd{gsub}\hlstd{(}\hlstr{'(\textbackslash{}\textbackslash{}\textbackslash{}\textbackslash{}end\textbackslash{}\textbackslash{}\{alltt\textbackslash{}\textbackslash{}\})\textbackslash{}\textbackslash{}s*(\textbackslash{}\textbackslash{}\textbackslash{}\textbackslash{}begin\textbackslash{}\textbackslash{}\{verbatim\textbackslash{}\textbackslash{}\})'}\hlstd{,}
-       \hlstr{'\textbackslash{}\textbackslash{}1\textbackslash{}\textbackslash{}\textbackslash{}\textbackslash{}end\{kframe\}\textbackslash{}\textbackslash{}\textbackslash{}\textbackslash{}begin\{kframe\}\textbackslash{}\textbackslash{}2'}\hlstd{, out)}
-\hlstd{\})}
+\hldef{hook_chunk} \hlkwb{=} \hldef{knit_hooks}\hlopt{$}\hlkwd{get}\hldef{(}\hlsng{'chunk'}\hldef{)}
+\hldef{knit_hooks}\hlopt{$}\hlkwd{set}\hldef{(}\hlkwc{chunk} \hldef{=} \hlkwa{function}\hldef{(}\hlkwc{x}\hldef{,} \hlkwc{options}\hldef{) \{}
+  \hldef{out} \hlkwb{=} \hlkwd{hook_chunk}\hldef{(x, options)}
+  \hlkwd{gsub}\hldef{(}\hlsng{'(\textbackslash{}\textbackslash{}\textbackslash{}\textbackslash{}end\textbackslash{}\textbackslash{}\{alltt\textbackslash{}\textbackslash{}\})\textbackslash{}\textbackslash{}s*(\textbackslash{}\textbackslash{}\textbackslash{}\textbackslash{}begin\textbackslash{}\textbackslash{}\{verbatim\textbackslash{}\textbackslash{}\})'}\hldef{,}
+       \hlsng{'\textbackslash{}\textbackslash{}1\textbackslash{}\textbackslash{}\textbackslash{}\textbackslash{}end\{kframe\}\textbackslash{}\textbackslash{}\textbackslash{}\textbackslash{}begin\{kframe\}\textbackslash{}\textbackslash{}2'}\hldef{, out)}
+\hldef{\})}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -79,7 +79,7 @@ It is a hackish solution...
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{summary}\hlstd{(cars)}
+\hlkwd{summary}\hldef{(cars)}
 \end{alltt}\end{kframe}\begin{kframe}\begin{verbatim}
 ##      speed           dist    
 ##  Min.   : 4.0   Min.   :  2  

@@ -13,10 +13,10 @@
 
 \definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
 \newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
-\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlsng}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
 \newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
 \newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
-\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hldef}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
 \newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
 \newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
 \newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
@@ -60,7 +60,7 @@ the value of $\pi$ is 3.1416, and the function to read a table is read.table().
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{rnorm}\hlstd{(}\hlnum{10}\hlstd{)}
+\hlkwd{rnorm}\hldef{(}\hlnum{10}\hldef{)}
 \end{alltt}
 \begin{verbatim}
 ##  [1] -0.56048 -0.23018  1.55871  0.07051  0.12929  1.71506
@@ -71,13 +71,13 @@ the value of $\pi$ is 3.1416, and the function to read a table is read.table().
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{getOption}\hlstd{(}\hlstr{"width"}\hlstd{)}
+\hlkwd{getOption}\hldef{(}\hlsng{"width"}\hldef{)}
 \end{alltt}
 \begin{verbatim}
 ## [1] 60
 \end{verbatim}
 \begin{alltt}
-\hlstd{x} \hlkwb{=} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+}
+\hldef{x} \hlkwb{=} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+}
     \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+}
     \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+}
     \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+}
@@ -92,13 +92,13 @@ the value of $\pi$ is 3.1416, and the function to read a table is read.table().
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{getOption}\hlstd{(}\hlstr{"width"}\hlstd{)}
+\hlkwd{getOption}\hldef{(}\hlsng{"width"}\hldef{)}
 \end{alltt}
 \begin{verbatim}
 ## [1] 60
 \end{verbatim}
 \begin{alltt}
-\hlstd{x} \hlkwb{=} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+}
+\hldef{x} \hlkwb{=} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+}
     \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+}
     \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+}
     \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1} \hlopt{+} \hlnum{1}
@@ -119,10 +119,10 @@ You can also tell knitr not to touch your source code using the chunk option tid
 ## [1] 5
 \end{verbatim}
 \begin{alltt}
-\hlstd{f} \hlkwb{=} \hlkwa{function}\hlstd{() \{}
-  \hlkwd{paste}\hlstd{(}\hlstr{'I want to break the line'}\hlstd{,}
-        \hlstr{'here!'}\hlstd{)}
-\hlstd{\}}
+\hldef{f} \hlkwb{=} \hlkwa{function}\hldef{() \{}
+  \hlkwd{paste}\hldef{(}\hlsng{'I want to break the line'}\hldef{,}
+        \hlsng{'here!'}\hldef{)}
+\hldef{\}}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -138,9 +138,9 @@ Compare the above chunk to the default behavior (tidy=TRUE):
 ## [1] 5
 \end{verbatim}
 \begin{alltt}
-\hlstd{f} \hlkwb{=} \hlkwa{function}\hlstd{() \{}
-    \hlkwd{paste}\hlstd{(}\hlstr{"I want to break the line"}\hlstd{,} \hlstr{"here!"}\hlstd{)}
-\hlstd{\}}
+\hldef{f} \hlkwb{=} \hlkwa{function}\hldef{() \{}
+    \hlkwd{paste}\hldef{(}\hlsng{"I want to break the line"}\hldef{,} \hlsng{"here!"}\hldef{)}
+\hldef{\}}
 \end{alltt}
 \end{kframe}
 \end{knitrout}

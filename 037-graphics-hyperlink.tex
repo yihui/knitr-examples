@@ -15,10 +15,10 @@
 
 \definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
 \newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
-\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlsng}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
 \newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
 \newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
-\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hldef}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
 \newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
 \newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
 \newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
@@ -61,12 +61,12 @@ Create link texts in the data:
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{library}\hlstd{(lattice)}
-\hlkwd{data}\hlstd{(iris)}
-\hlstd{iris}\hlopt{$}\hlstd{hyperlink} \hlkwb{<-} \hlkwd{paste}\hlstd{(}\hlstr{"\textbackslash{}\textbackslash{}hyperlink\{"}\hlstd{, iris}\hlopt{$}\hlstd{Species,}
-    \hlstr{"\}\{"}\hlstd{, iris}\hlopt{$}\hlstd{Species,} \hlstr{"\}"}\hlstd{,} \hlkwc{sep} \hlstd{=} \hlstr{""}\hlstd{)}
-\hlstd{iris}\hlopt{$}\hlstd{hypertarget} \hlkwb{<-} \hlkwd{paste}\hlstd{(}\hlstr{"\textbackslash{}\textbackslash{}hypertarget\{"}\hlstd{, iris}\hlopt{$}\hlstd{Species,}
-    \hlstr{"\}\{"}\hlstd{, iris}\hlopt{$}\hlstd{Species,} \hlstr{"\}"}\hlstd{,} \hlkwc{sep} \hlstd{=} \hlstr{""}\hlstd{)}
+\hlkwd{library}\hldef{(lattice)}
+\hlkwd{data}\hldef{(iris)}
+\hldef{iris}\hlopt{$}\hldef{hyperlink} \hlkwb{<-} \hlkwd{paste}\hldef{(}\hlsng{"\textbackslash{}\textbackslash{}hyperlink\{"}\hldef{, iris}\hlopt{$}\hldef{Species,}
+    \hlsng{"\}\{"}\hldef{, iris}\hlopt{$}\hldef{Species,} \hlsng{"\}"}\hldef{,} \hlkwc{sep} \hldef{=} \hlsng{""}\hldef{)}
+\hldef{iris}\hlopt{$}\hldef{hypertarget} \hlkwb{<-} \hlkwd{paste}\hldef{(}\hlsng{"\textbackslash{}\textbackslash{}hypertarget\{"}\hldef{, iris}\hlopt{$}\hldef{Species,}
+    \hlsng{"\}\{"}\hldef{, iris}\hlopt{$}\hldef{Species,} \hlsng{"\}"}\hldef{,} \hlkwc{sep} \hldef{=} \hlsng{""}\hldef{)}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -76,7 +76,7 @@ Draw these texts in plots (you can click on the labels):
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\begin{kframe}
 \begin{alltt}
-\hlkwd{xyplot}\hlstd{(Sepal.Length} \hlopt{~} \hlstd{Sepal.Width} \hlopt{|} \hlstd{hyperlink,} \hlkwc{data} \hlstd{= iris)}
+\hlkwd{xyplot}\hldef{(Sepal.Length} \hlopt{~} \hldef{Sepal.Width} \hlopt{|} \hldef{hyperlink,} \hlkwc{data} \hldef{= iris)}
 \end{alltt}
 \end{kframe}
 \input{figure/037-graphics-hyperlink-pltFacet-1.tex}
@@ -85,8 +85,8 @@ Draw these texts in plots (you can click on the labels):
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\begin{kframe}
 \begin{alltt}
-\hlkwd{xyplot}\hlstd{(Sepal.Length} \hlopt{~} \hlstd{Sepal.Width} \hlopt{|} \hlstd{hypertarget,} \hlkwc{data} \hlstd{= iris,} \hlkwc{layout} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,}
-    \hlnum{1}\hlstd{))}
+\hlkwd{xyplot}\hldef{(Sepal.Length} \hlopt{~} \hldef{Sepal.Width} \hlopt{|} \hldef{hypertarget,} \hlkwc{data} \hldef{= iris,} \hlkwc{layout} \hldef{=} \hlkwd{c}\hldef{(}\hlnum{1}\hldef{,}
+    \hlnum{1}\hldef{))}
 \end{alltt}
 \end{kframe}
 \input{figure/037-graphics-hyperlink-pltInd-1.tex}

@@ -13,10 +13,10 @@
 
 \definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
 \newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
-\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlsng}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
 \newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
 \newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
-\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hldef}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
 \newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
 \newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
 \newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
@@ -64,21 +64,21 @@ Here is a code chunk.
 ## [1] 2
 \end{verbatim}
 \begin{alltt}
-\hlstd{letters}
+\hldef{letters}
 \end{alltt}
 \begin{verbatim}
 ##  [1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "o" "p" "q"
 ## [18] "r" "s" "t" "u" "v" "w" "x" "y" "z"
 \end{verbatim}
 \begin{alltt}
-\hlkwd{chartr}\hlstd{(}\hlstr{"xie"}\hlstd{,} \hlstr{"XIE"}\hlstd{,} \hlkwd{c}\hlstd{(}\hlstr{"xie yihui"}\hlstd{,} \hlstr{"Yihui Xie"}\hlstd{))}
+\hlkwd{chartr}\hldef{(}\hlsng{"xie"}\hldef{,} \hlsng{"XIE"}\hldef{,} \hlkwd{c}\hldef{(}\hlsng{"xie yihui"}\hldef{,} \hlsng{"Yihui Xie"}\hldef{))}
 \end{alltt}
 \begin{verbatim}
 ## [1] "XIE yIhuI" "YIhuI XIE"
 \end{verbatim}
 \begin{alltt}
-\hlkwd{par}\hlstd{(}\hlkwc{mar} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{4}\hlstd{,} \hlnum{4}\hlstd{,} \hlnum{0.2}\hlstd{,} \hlnum{0.2}\hlstd{))}
-\hlkwd{plot}\hlstd{(}\hlkwd{rnorm}\hlstd{(}\hlnum{100}\hlstd{))}
+\hlkwd{par}\hldef{(}\hlkwc{mar} \hldef{=} \hlkwd{c}\hldef{(}\hlnum{4}\hldef{,} \hlnum{4}\hldef{,} \hlnum{0.2}\hldef{,} \hlnum{0.2}\hldef{))}
+\hlkwd{plot}\hldef{(}\hlkwd{rnorm}\hldef{(}\hlnum{100}\hldef{))}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/002-minimal-foo-1} 

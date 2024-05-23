@@ -13,10 +13,10 @@
 
 \definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
 \newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
-\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlsng}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
 \newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
 \newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
-\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hldef}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
 \newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
 \newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
 \newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
@@ -69,7 +69,7 @@ Boring stuff as usual:
 ## [1] 2
 \end{verbatim}
 \begin{alltt}
-\hlstd{x} \hlkwb{=} \hlkwd{rnorm}\hlstd{(}\hlnum{5}\hlstd{)}
+\hldef{x} \hlkwb{=} \hlkwd{rnorm}\hldef{(}\hlnum{5}\hldef{)}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -82,15 +82,15 @@ next time you run it again.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{set.seed}\hlstd{(}\hlnum{123}\hlstd{)}
-\hlstd{x} \hlkwb{=} \hlkwd{runif}\hlstd{(}\hlnum{10}\hlstd{)}
-\hlkwd{sd}\hlstd{(x)}  \hlcom{# standard deviation}
+\hlkwd{set.seed}\hldef{(}\hlnum{123}\hldef{)}
+\hldef{x} \hlkwb{=} \hlkwd{runif}\hldef{(}\hlnum{10}\hldef{)}
+\hlkwd{sd}\hldef{(x)}  \hlcom{# standard deviation}
 \end{alltt}
 \begin{verbatim}
 ## [1] 0.2947
 \end{verbatim}
 \begin{alltt}
-\hlkwd{Sys.sleep}\hlstd{(}\hlnum{10}\hlstd{)}  \hlcom{# test cache}
+\hlkwd{Sys.sleep}\hldef{(}\hlnum{10}\hldef{)}  \hlcom{# test cache}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -106,7 +106,7 @@ How about figures? Let's use the Cairo PDF device (assumes R $\geq$
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{plot}\hlstd{(cars)}  \hlcom{# a scatter plot}
+\hlkwd{plot}\hldef{(cars)}  \hlcom{# a scatter plot}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=.8\textwidth]{figure/latex-cairo-scatter-1} 
@@ -117,7 +117,7 @@ Warnings, messages and errors are preserved by default.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{sqrt}\hlstd{(}\hlopt{-}\hlnum{1}\hlstd{)}  \hlcom{# here is a warning!}
+\hlkwd{sqrt}\hldef{(}\hlopt{-}\hlnum{1}\hldef{)}  \hlcom{# here is a warning!}
 \end{alltt}
 
 
@@ -125,12 +125,12 @@ Warnings, messages and errors are preserved by default.
 ## [1] NaN
 \end{verbatim}
 \begin{alltt}
-\hlkwd{message}\hlstd{(}\hlstr{"this is a message you should know"}\hlstd{)}
+\hlkwd{message}\hldef{(}\hlsng{"this is a message you should know"}\hldef{)}
 \end{alltt}
 
 
 {\ttfamily\noindent\itshape\color{messagecolor}{\#\# this is a message you should know}}\begin{alltt}
-\hlnum{1} \hlopt{+} \hlstr{"a"}  \hlcom{# impossible}
+\hlnum{1} \hlopt{+} \hlsng{"a"}  \hlcom{# impossible}
 \end{alltt}
 
 

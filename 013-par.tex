@@ -13,10 +13,10 @@
 
 \definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
 \newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
-\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlsng}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
 \newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
 \newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
-\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hldef}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
 \newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
 \newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
 \newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
@@ -55,11 +55,11 @@
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{library}\hlstd{(knitr)}
-\hlstd{knit_hooks}\hlopt{$}\hlkwd{set}\hlstd{(}\hlkwc{pars} \hlstd{=} \hlkwa{function}\hlstd{(}\hlkwc{before}\hlstd{,} \hlkwc{options}\hlstd{,} \hlkwc{envir}\hlstd{) \{}
-    \hlkwa{if} \hlstd{(before)}
-        \hlkwd{do.call}\hlstd{(graphics}\hlopt{::}\hlstd{par, options}\hlopt{$}\hlstd{pars)}
-\hlstd{\})}
+\hlkwd{library}\hldef{(knitr)}
+\hldef{knit_hooks}\hlopt{$}\hlkwd{set}\hldef{(}\hlkwc{pars} \hldef{=} \hlkwa{function}\hldef{(}\hlkwc{before}\hldef{,} \hlkwc{options}\hldef{,} \hlkwc{envir}\hldef{) \{}
+    \hlkwa{if} \hldef{(before)}
+        \hlkwd{do.call}\hldef{(graphics}\hlopt{::}\hldef{par, options}\hlopt{$}\hldef{pars)}
+\hldef{\})}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -70,7 +70,7 @@ Then this function will be called for a chunk like this:
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{hist}\hlstd{(}\hlkwd{rnorm}\hlstd{(}\hlnum{100}\hlstd{),} \hlkwc{main} \hlstd{=} \hlstr{""}\hlstd{)}  \hlcom{# no main title}
+\hlkwd{hist}\hldef{(}\hlkwd{rnorm}\hldef{(}\hlnum{100}\hldef{),} \hlkwc{main} \hldef{=} \hlsng{""}\hldef{)}  \hlcom{# no main title}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/013-par-myplot-1} 

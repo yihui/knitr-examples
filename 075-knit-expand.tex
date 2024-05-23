@@ -13,10 +13,10 @@
 
 \definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
 \newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
-\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlsng}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
 \newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
 \newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
-\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hldef}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
 \newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
 \newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
 \newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
@@ -68,7 +68,7 @@ This chunk is evaluated.
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlcom{# row number 1}
-\hlstd{iris[}\hlnum{1}\hlstd{, ]}
+\hldef{iris[}\hlnum{1}\hldef{, ]}
 \end{alltt}
 \begin{verbatim}
 ##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
@@ -83,7 +83,7 @@ This chunk is evaluated.
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlcom{# row number 2}
-\hlstd{iris[}\hlnum{2}\hlstd{, ]}
+\hldef{iris[}\hlnum{2}\hldef{, ]}
 \end{alltt}
 \begin{verbatim}
 ##   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
@@ -98,7 +98,7 @@ This chunk is not evaluated.
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlcom{# row number 3}
-\hlstd{iris[}\hlnum{3}\hlstd{, ]}
+\hldef{iris[}\hlnum{3}\hldef{, ]}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -109,7 +109,7 @@ This chunk is not evaluated.
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlcom{# row number 4}
-\hlstd{iris[}\hlnum{4}\hlstd{, ]}
+\hldef{iris[}\hlnum{4}\hldef{, ]}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -120,7 +120,7 @@ This chunk is not evaluated.
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlcom{# row number 5}
-\hlstd{iris[}\hlnum{5}\hlstd{, ]}
+\hldef{iris[}\hlnum{5}\hldef{, ]}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -133,12 +133,12 @@ You can expand a template file, or just provide the template as a character stri
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
 \hlcom{# the template}
-\hlstd{tpl} \hlkwb{=} \hlkwd{c}\hlstd{(}\hlstr{"\textbackslash{}\textbackslash{}subsection\{Regression on \{\{xvar\}\}\}"}\hlstd{,} \hlstr{"<<lm-\{\{xvar\}\}>>="}\hlstd{,}
-    \hlstr{"lm(mpg~\{\{xvar\}\}, data=mtcars)"}\hlstd{,} \hlstr{"@"}\hlstd{)}
+\hldef{tpl} \hlkwb{=} \hlkwd{c}\hldef{(}\hlsng{"\textbackslash{}\textbackslash{}subsection\{Regression on \{\{xvar\}\}\}"}\hldef{,} \hlsng{"<<lm-\{\{xvar\}\}>>="}\hldef{,}
+    \hlsng{"lm(mpg~\{\{xvar\}\}, data=mtcars)"}\hldef{,} \hlsng{"@"}\hldef{)}
 \hlcom{# expand to knitr source and pass to knit()}
-\hlstd{src} \hlkwb{=} \hlkwd{lapply}\hlstd{(}\hlkwd{names}\hlstd{(mtcars)[}\hlopt{-}\hlnum{1}\hlstd{],} \hlkwa{function}\hlstd{(}\hlkwc{xvar}\hlstd{) \{}
-    \hlkwd{knit_expand}\hlstd{(}\hlkwc{text} \hlstd{= tpl)}
-\hlstd{\})}
+\hldef{src} \hlkwb{=} \hlkwd{lapply}\hldef{(}\hlkwd{names}\hldef{(mtcars)[}\hlopt{-}\hlnum{1}\hldef{],} \hlkwa{function}\hldef{(}\hlkwc{xvar}\hldef{) \{}
+    \hlkwd{knit_expand}\hldef{(}\hlkwc{text} \hldef{= tpl)}
+\hldef{\})}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -147,7 +147,7 @@ You can expand a template file, or just provide the template as a character stri
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{lm}\hlstd{(mpg} \hlopt{~} \hlstd{cyl,} \hlkwc{data} \hlstd{= mtcars)}
+\hlkwd{lm}\hldef{(mpg} \hlopt{~} \hldef{cyl,} \hlkwc{data} \hldef{= mtcars)}
 \end{alltt}
 \begin{verbatim}
 ## 
@@ -164,7 +164,7 @@ You can expand a template file, or just provide the template as a character stri
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{lm}\hlstd{(mpg} \hlopt{~} \hlstd{disp,} \hlkwc{data} \hlstd{= mtcars)}
+\hlkwd{lm}\hldef{(mpg} \hlopt{~} \hldef{disp,} \hlkwc{data} \hldef{= mtcars)}
 \end{alltt}
 \begin{verbatim}
 ## 
@@ -181,7 +181,7 @@ You can expand a template file, or just provide the template as a character stri
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{lm}\hlstd{(mpg} \hlopt{~} \hlstd{hp,} \hlkwc{data} \hlstd{= mtcars)}
+\hlkwd{lm}\hldef{(mpg} \hlopt{~} \hldef{hp,} \hlkwc{data} \hldef{= mtcars)}
 \end{alltt}
 \begin{verbatim}
 ## 
@@ -198,7 +198,7 @@ You can expand a template file, or just provide the template as a character stri
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{lm}\hlstd{(mpg} \hlopt{~} \hlstd{drat,} \hlkwc{data} \hlstd{= mtcars)}
+\hlkwd{lm}\hldef{(mpg} \hlopt{~} \hldef{drat,} \hlkwc{data} \hldef{= mtcars)}
 \end{alltt}
 \begin{verbatim}
 ## 
@@ -215,7 +215,7 @@ You can expand a template file, or just provide the template as a character stri
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{lm}\hlstd{(mpg} \hlopt{~} \hlstd{wt,} \hlkwc{data} \hlstd{= mtcars)}
+\hlkwd{lm}\hldef{(mpg} \hlopt{~} \hldef{wt,} \hlkwc{data} \hldef{= mtcars)}
 \end{alltt}
 \begin{verbatim}
 ## 
@@ -232,7 +232,7 @@ You can expand a template file, or just provide the template as a character stri
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{lm}\hlstd{(mpg} \hlopt{~} \hlstd{qsec,} \hlkwc{data} \hlstd{= mtcars)}
+\hlkwd{lm}\hldef{(mpg} \hlopt{~} \hldef{qsec,} \hlkwc{data} \hldef{= mtcars)}
 \end{alltt}
 \begin{verbatim}
 ## 
@@ -249,7 +249,7 @@ You can expand a template file, or just provide the template as a character stri
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{lm}\hlstd{(mpg} \hlopt{~} \hlstd{vs,} \hlkwc{data} \hlstd{= mtcars)}
+\hlkwd{lm}\hldef{(mpg} \hlopt{~} \hldef{vs,} \hlkwc{data} \hldef{= mtcars)}
 \end{alltt}
 \begin{verbatim}
 ## 
@@ -266,7 +266,7 @@ You can expand a template file, or just provide the template as a character stri
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{lm}\hlstd{(mpg} \hlopt{~} \hlstd{am,} \hlkwc{data} \hlstd{= mtcars)}
+\hlkwd{lm}\hldef{(mpg} \hlopt{~} \hldef{am,} \hlkwc{data} \hldef{= mtcars)}
 \end{alltt}
 \begin{verbatim}
 ## 
@@ -283,7 +283,7 @@ You can expand a template file, or just provide the template as a character stri
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{lm}\hlstd{(mpg} \hlopt{~} \hlstd{gear,} \hlkwc{data} \hlstd{= mtcars)}
+\hlkwd{lm}\hldef{(mpg} \hlopt{~} \hldef{gear,} \hlkwc{data} \hldef{= mtcars)}
 \end{alltt}
 \begin{verbatim}
 ## 
@@ -300,7 +300,7 @@ You can expand a template file, or just provide the template as a character stri
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{lm}\hlstd{(mpg} \hlopt{~} \hlstd{carb,} \hlkwc{data} \hlstd{= mtcars)}
+\hlkwd{lm}\hldef{(mpg} \hlopt{~} \hldef{carb,} \hlkwc{data} \hldef{= mtcars)}
 \end{alltt}
 \begin{verbatim}
 ## 
@@ -318,7 +318,7 @@ You can expand a template file, or just provide the template as a character stri
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{tpl} \hlkwb{=} \hlstr{"The value of a is \{\{a\}\} and b is \{\{b\}\}."}
+\hldef{tpl} \hlkwb{=} \hlsng{"The value of a is \{\{a\}\} and b is \{\{b\}\}."}
 \end{alltt}
 \end{kframe}
 \end{knitrout}

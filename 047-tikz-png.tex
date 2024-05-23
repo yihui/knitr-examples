@@ -13,10 +13,10 @@
 
 \definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
 \newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
-\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlsng}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
 \newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
 \newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
-\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hldef}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
 \newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
 \newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
 \newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
@@ -63,7 +63,7 @@ The plot in this chunk is converted to PNG:
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{(x} \hlkwb{=} \hlkwd{rnorm}\hlstd{(}\hlnum{20}\hlstd{))}
+\hldef{(x} \hlkwb{=} \hlkwd{rnorm}\hldef{(}\hlnum{20}\hldef{))}
 \end{alltt}
 \begin{verbatim}
 ##  [1] -0.56048 -0.23018  1.55871  0.07051  0.12929  1.71506
@@ -72,9 +72,9 @@ The plot in this chunk is converted to PNG:
 ## [19]  0.70136 -0.47279
 \end{verbatim}
 \begin{alltt}
-\hlkwd{par}\hlstd{(}\hlkwc{mar} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{4.5}\hlstd{,} \hlnum{4}\hlstd{,} \hlnum{0.1}\hlstd{,} \hlnum{0.1}\hlstd{))}
-\hlkwd{hist}\hlstd{(x,} \hlkwc{main} \hlstd{=} \hlstr{""}\hlstd{,} \hlkwc{xlab} \hlstd{=} \hlstr{"$x$ (how the fonts look like here?)"}\hlstd{,}
-    \hlkwc{ylab} \hlstd{=} \hlstr{"$\textbackslash{}\textbackslash{}hat\{f\}(x) = \textbackslash{}\textbackslash{}frac\{1\}\{nh\}\textbackslash{}\textbackslash{}sum_\{i=1\}^n \textbackslash{}\textbackslash{}cdots$"}\hlstd{)}
+\hlkwd{par}\hldef{(}\hlkwc{mar} \hldef{=} \hlkwd{c}\hldef{(}\hlnum{4.5}\hldef{,} \hlnum{4}\hldef{,} \hlnum{0.1}\hldef{,} \hlnum{0.1}\hldef{))}
+\hlkwd{hist}\hldef{(x,} \hlkwc{main} \hldef{=} \hlsng{""}\hldef{,} \hlkwc{xlab} \hldef{=} \hlsng{"$x$ (how the fonts look like here?)"}\hldef{,}
+    \hlkwc{ylab} \hldef{=} \hlsng{"$\textbackslash{}\textbackslash{}hat\{f\}(x) = \textbackslash{}\textbackslash{}frac\{1\}\{nh\}\textbackslash{}\textbackslash{}sum_\{i=1\}^n \textbackslash{}\textbackslash{}cdots$"}\hldef{)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/047-tikz-png-test-a-1} 
@@ -85,8 +85,8 @@ This chunk uses the PDF device, and it is not converted:
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{par}\hlstd{(}\hlkwc{mar} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{4.5}\hlstd{,} \hlnum{4}\hlstd{,} \hlnum{0.1}\hlstd{,} \hlnum{0.1}\hlstd{))}
-\hlkwd{plot}\hlstd{(x,} \hlkwc{pch} \hlstd{=} \hlnum{19}\hlstd{)}
+\hlkwd{par}\hldef{(}\hlkwc{mar} \hldef{=} \hlkwd{c}\hldef{(}\hlnum{4.5}\hldef{,} \hlnum{4}\hldef{,} \hlnum{0.1}\hldef{,} \hlnum{0.1}\hldef{))}
+\hlkwd{plot}\hldef{(x,} \hlkwc{pch} \hldef{=} \hlnum{19}\hldef{)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/047-tikz-png-test-b-1} 

@@ -13,10 +13,10 @@
 
 \definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
 \newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
-\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlsng}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
 \newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
 \newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
-\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hldef}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
 \newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
 \newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
 \newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
@@ -57,15 +57,15 @@ persp() plots should appear here:
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{x} \hlkwb{<-} \hlkwd{seq}\hlstd{(}\hlopt{-}\hlnum{10}\hlstd{,} \hlnum{10}\hlstd{,} \hlkwc{length} \hlstd{=} \hlnum{30}\hlstd{)}
-\hlstd{y} \hlkwb{<-} \hlstd{x}
-\hlstd{f} \hlkwb{<-} \hlkwa{function}\hlstd{(}\hlkwc{x}\hlstd{,} \hlkwc{y}\hlstd{) \{}
-    \hlstd{r} \hlkwb{<-} \hlkwd{sqrt}\hlstd{(x}\hlopt{^}\hlnum{2} \hlopt{+} \hlstd{y}\hlopt{^}\hlnum{2}\hlstd{)}
-    \hlnum{10} \hlopt{*} \hlkwd{sin}\hlstd{(r)}\hlopt{/}\hlstd{r}
-\hlstd{\}}
-\hlstd{z} \hlkwb{<-} \hlkwd{outer}\hlstd{(x, y, f)}
-\hlstd{z[}\hlkwd{is.na}\hlstd{(z)]} \hlkwb{<-} \hlnum{1}
-\hlkwd{persp}\hlstd{(x, y, z,} \hlkwc{theta} \hlstd{=} \hlnum{30}\hlstd{,} \hlkwc{phi} \hlstd{=} \hlnum{30}\hlstd{)}
+\hldef{x} \hlkwb{<-} \hlkwd{seq}\hldef{(}\hlopt{-}\hlnum{10}\hldef{,} \hlnum{10}\hldef{,} \hlkwc{length} \hldef{=} \hlnum{30}\hldef{)}
+\hldef{y} \hlkwb{<-} \hldef{x}
+\hldef{f} \hlkwb{<-} \hlkwa{function}\hldef{(}\hlkwc{x}\hldef{,} \hlkwc{y}\hldef{) \{}
+    \hldef{r} \hlkwb{<-} \hlkwd{sqrt}\hldef{(x}\hlopt{^}\hlnum{2} \hlopt{+} \hldef{y}\hlopt{^}\hlnum{2}\hldef{)}
+    \hlnum{10} \hlopt{*} \hlkwd{sin}\hldef{(r)}\hlopt{/}\hldef{r}
+\hldef{\}}
+\hldef{z} \hlkwb{<-} \hlkwd{outer}\hldef{(x, y, f)}
+\hldef{z[}\hlkwd{is.na}\hldef{(z)]} \hlkwb{<-} \hlnum{1}
+\hlkwd{persp}\hldef{(x, y, z,} \hlkwc{theta} \hldef{=} \hlnum{30}\hldef{,} \hlkwc{phi} \hldef{=} \hlnum{30}\hldef{)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/032-persp-persp-plot-1} 

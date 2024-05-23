@@ -13,10 +13,10 @@
 
 \definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
 \newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
-\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlsng}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
 \newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
 \newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
-\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hldef}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
 \newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
 \newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
 \newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
@@ -66,8 +66,8 @@ simple tables.
 
 \begin{kframe}
 \begin{alltt}
-\hlkwd{library}\hlstd{(knitr)}
-\hlkwd{kable}\hlstd{(}\hlkwd{head}\hlstd{(iris))}
+\hlkwd{library}\hldef{(knitr)}
+\hlkwd{kable}\hldef{(}\hlkwd{head}\hldef{(iris))}
 \end{alltt}
 \end{kframe}
 \begin{tabular}{r|r|r|r|l}
@@ -89,7 +89,7 @@ Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
 \end{tabular}
 
 \begin{kframe}\begin{alltt}
-\hlkwd{kable}\hlstd{(}\hlkwd{head}\hlstd{(iris,} \hlnum{0}\hlstd{))}
+\hlkwd{kable}\hldef{(}\hlkwd{head}\hldef{(iris,} \hlnum{0}\hldef{))}
 \end{alltt}
 \end{kframe}
 \begin{tabular}{r|r|r|r|l}
@@ -101,7 +101,7 @@ Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
 \end{tabular}
 
 \begin{kframe}\begin{alltt}
-\hlkwd{kable}\hlstd{(}\hlkwd{head}\hlstd{(iris,} \hlnum{1}\hlstd{))}
+\hlkwd{kable}\hldef{(}\hlkwd{head}\hldef{(iris,} \hlnum{1}\hldef{))}
 \end{alltt}
 \end{kframe}
 \begin{tabular}{r|r|r|r|l}
@@ -118,7 +118,7 @@ Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
 
 \begin{kframe}
 \begin{alltt}
-\hlkwd{kable}\hlstd{(}\hlkwd{head}\hlstd{(iris),} \hlkwc{row.names} \hlstd{=} \hlnum{FALSE}\hlstd{)}
+\hlkwd{kable}\hldef{(}\hlkwd{head}\hldef{(iris),} \hlkwc{row.names} \hldef{=} \hlnum{FALSE}\hldef{)}
 \end{alltt}
 \end{kframe}
 \begin{tabular}{r|r|r|r|l}
@@ -145,7 +145,7 @@ Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
 
 \begin{kframe}
 \begin{alltt}
-\hlkwd{kable}\hlstd{(}\hlkwd{matrix}\hlstd{(}\hlkwd{rnorm}\hlstd{(}\hlnum{20}\hlstd{),} \hlnum{4}\hlstd{),} \hlkwc{digits} \hlstd{=} \hlnum{3}\hlstd{)}
+\hlkwd{kable}\hldef{(}\hlkwd{matrix}\hldef{(}\hlkwd{rnorm}\hldef{(}\hlnum{20}\hldef{),} \hlnum{4}\hldef{),} \hlkwc{digits} \hldef{=} \hlnum{3}\hldef{)}
 \end{alltt}
 \end{kframe}
 \begin{tabular}{r|r|r|r|r}
@@ -169,7 +169,7 @@ left-aligned.
 
 \begin{kframe}
 \begin{alltt}
-\hlkwd{kable}\hlstd{(}\hlkwd{head}\hlstd{(iris),} \hlkwc{align} \hlstd{=} \hlkwd{c}\hlstd{(}\hlstr{"l"}\hlstd{,} \hlstr{"c"}\hlstd{,} \hlstr{"r"}\hlstd{,} \hlstr{"l"}\hlstd{,} \hlstr{"r"}\hlstd{))}
+\hlkwd{kable}\hldef{(}\hlkwd{head}\hldef{(iris),} \hlkwc{align} \hldef{=} \hlkwd{c}\hldef{(}\hlsng{"l"}\hldef{,} \hlsng{"c"}\hldef{,} \hlsng{"r"}\hldef{,} \hlsng{"l"}\hldef{,} \hlsng{"r"}\hldef{))}
 \end{alltt}
 \end{kframe}
 \begin{tabular}{l|c|r|l|r}
@@ -198,7 +198,7 @@ Let's use the \textbf{booktabs} package. The air is suddenly fresh!
 
 \begin{kframe}
 \begin{alltt}
-\hlkwd{kable}\hlstd{(}\hlkwd{head}\hlstd{(iris),} \hlkwc{row.names} \hlstd{=} \hlnum{FALSE}\hlstd{,} \hlkwc{booktabs} \hlstd{=} \hlnum{TRUE}\hlstd{)}
+\hlkwd{kable}\hldef{(}\hlkwd{head}\hldef{(iris),} \hlkwc{row.names} \hldef{=} \hlnum{FALSE}\hldef{,} \hlkwc{booktabs} \hldef{=} \hlnum{TRUE}\hldef{)}
 \end{alltt}
 \end{kframe}
 \begin{tabular}{rrrrl}
@@ -216,7 +216,7 @@ Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
 \end{tabular}
 
 \begin{kframe}\begin{alltt}
-\hlkwd{kable}\hlstd{(}\hlkwd{head}\hlstd{(iris,} \hlnum{0}\hlstd{),} \hlkwc{row.names} \hlstd{=} \hlnum{FALSE}\hlstd{,} \hlkwc{booktabs} \hlstd{=} \hlnum{TRUE}\hlstd{)}
+\hlkwd{kable}\hldef{(}\hlkwd{head}\hldef{(iris,} \hlnum{0}\hldef{),} \hlkwc{row.names} \hldef{=} \hlnum{FALSE}\hldef{,} \hlkwc{booktabs} \hldef{=} \hlnum{TRUE}\hldef{)}
 \end{alltt}
 \end{kframe}
 \begin{tabular}{rrrrl}
@@ -228,7 +228,7 @@ Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
 \end{tabular}
 
 \begin{kframe}\begin{alltt}
-\hlkwd{kable}\hlstd{(}\hlkwd{head}\hlstd{(iris,} \hlnum{1}\hlstd{),} \hlkwc{row.names} \hlstd{=} \hlnum{FALSE}\hlstd{,} \hlkwc{booktabs} \hlstd{=} \hlnum{TRUE}\hlstd{)}
+\hlkwd{kable}\hldef{(}\hlkwd{head}\hldef{(iris,} \hlnum{1}\hldef{),} \hlkwc{row.names} \hldef{=} \hlnum{FALSE}\hldef{,} \hlkwc{booktabs} \hldef{=} \hlnum{TRUE}\hldef{)}
 \end{alltt}
 \end{kframe}
 \begin{tabular}{rrrrl}
@@ -240,7 +240,7 @@ Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
 \end{tabular}
 
 \begin{kframe}\begin{alltt}
-\hlkwd{kable}\hlstd{(}\hlkwd{head}\hlstd{(mtcars[,} \hlnum{1}\hlopt{:}\hlnum{7}\hlstd{]),} \hlkwc{booktabs} \hlstd{=} \hlnum{TRUE}\hlstd{)}
+\hlkwd{kable}\hldef{(}\hlkwd{head}\hldef{(mtcars[,} \hlnum{1}\hlopt{:}\hlnum{7}\hldef{]),} \hlkwc{booktabs} \hldef{=} \hlnum{TRUE}\hldef{)}
 \end{alltt}
 \end{kframe}
 \begin{tabular}{lrrrrrrr}
@@ -263,7 +263,7 @@ Valiant & 18.1 & 6 & 225 & 105 & 2.76 & 3.460 & 20.22\\
 
 \begin{kframe}
 \begin{alltt}
-\hlkwd{kable}\hlstd{(mtcars[,} \hlnum{1}\hlopt{:}\hlnum{7}\hlstd{],} \hlkwc{longtable} \hlstd{=} \hlnum{TRUE}\hlstd{,} \hlkwc{booktabs} \hlstd{=} \hlnum{TRUE}\hlstd{)}
+\hlkwd{kable}\hldef{(mtcars[,} \hlnum{1}\hlopt{:}\hlnum{7}\hldef{],} \hlkwc{longtable} \hldef{=} \hlnum{TRUE}\hldef{,} \hlkwc{booktabs} \hldef{=} \hlnum{TRUE}\hldef{)}
 \end{alltt}
 \end{kframe}
 \begin{longtable}{lrrrrrrr}

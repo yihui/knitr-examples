@@ -13,10 +13,10 @@
 
 \definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
 \newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
-\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlsng}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
 \newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
 \newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
-\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hldef}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
 \newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
 \newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
 \newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
@@ -55,9 +55,9 @@
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{library}\hlstd{(knitr)}
+\hlkwd{library}\hldef{(knitr)}
 \hlcom{# global chunk options}
-\hlstd{opts_chunk}\hlopt{$}\hlkwd{set}\hlstd{(}\hlkwc{cache} \hlstd{=} \hlnum{TRUE}\hlstd{,} \hlkwc{autodep} \hlstd{=} \hlnum{TRUE}\hlstd{)}
+\hldef{opts_chunk}\hlopt{$}\hlkwd{set}\hldef{(}\hlkwc{cache} \hldef{=} \hlnum{TRUE}\hldef{,} \hlkwc{autodep} \hldef{=} \hlnum{TRUE}\hldef{)}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -67,7 +67,7 @@ We create a new global object \texttt{x} in the first chunk (a):
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{x} \hlkwb{=} \hlnum{5}
+\hldef{x} \hlkwb{=} \hlnum{5}
 \end{alltt}
 \end{kframe}
 \end{knitrout}
@@ -79,7 +79,7 @@ figure out that chunk b depends on chunk a.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlstd{(y} \hlkwb{=} \hlstd{x} \hlopt{+} \hlnum{2}\hlstd{)}
+\hldef{(y} \hlkwb{=} \hldef{x} \hlopt{+} \hlnum{2}\hldef{)}
 \end{alltt}
 \begin{verbatim}
 ## [1] 7
