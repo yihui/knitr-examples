@@ -15,7 +15,7 @@
 # A bit R code
 
 
-```r
+``` r
 head(cars)
 ```
 
@@ -29,7 +29,7 @@ head(cars)
 ## 6     9   10
 ```
 
-```r
+``` r
 cor(cars)
 ```
 
@@ -42,7 +42,7 @@ cor(cars)
 # Graphics too
 
 
-```r
+``` r
 library(ggplot2)
 qplot(speed, dist, data = cars) + geom_smooth()
 ```
@@ -76,27 +76,35 @@ qplot(speed, dist, data = cars) + geom_smooth()
 It is good to include the session info, e.g. this document is produced with **knitr**. Here is my session info:
 
 
-```r
+``` r
 print(sessionInfo(), locale = FALSE)
 ```
 
 ```
-## R version 3.2.3 (2015-12-10)
-## Platform: x86_64-pc-linux-gnu (64-bit)
-## Running under: Ubuntu 15.04
+## R version 4.4.0 (2024-04-24)
+## Platform: x86_64-pc-linux-gnu
+## Running under: Ubuntu 22.04.4 LTS
+## 
+## Matrix products: default
+## BLAS:   /usr/lib/x86_64-linux-gnu/openblas-pthread/libblas.so.3 
+## LAPACK: /usr/lib/x86_64-linux-gnu/openblas-pthread/libopenblasp-r0.3.20.so;  LAPACK version 3.10.0
 ## 
 ## attached base packages:
-## [1] stats     graphics  grDevices utils     datasets  base     
+## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-## [1] ggplot2_2.0.0 knitr_1.11.24
+## [1] ggplot2_3.5.1 knitr_1.46.4 
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] Rcpp_0.12.2      codetools_0.2-14 digest_0.6.8     grid_3.2.3      
-##  [5] plyr_1.8.3       gtable_0.1.2     formatR_1.2.2    magrittr_1.5    
-##  [9] evaluate_0.8     scales_0.3.0     stringi_1.0-1    labeling_0.3    
-## [13] tools_3.2.3      stringr_1.0.0    munsell_0.4.2    colorspace_1.2-6
-## [17] methods_3.2.3
+##  [1] vctrs_0.6.5      nlme_3.1-164     cli_3.6.2        rlang_1.1.3     
+##  [5] xfun_0.44        highr_0.10.2     labeling_0.4.3   glue_1.7.0      
+##  [9] colorspace_2.1-0 formatR_1.14     scales_1.3.0     fansi_1.0.6     
+## [13] grid_4.4.0       munsell_0.5.1    evaluate_0.23    tibble_3.2.1    
+## [17] lifecycle_1.0.4  compiler_4.4.0   codetools_0.2-20 pkgconfig_2.0.3 
+## [21] mgcv_1.9-1       farver_2.1.2     lattice_0.22-6   digest_0.6.35   
+## [25] R6_2.5.1         utf8_1.2.4       pillar_1.9.0     splines_4.4.0   
+## [29] magrittr_2.0.3   Matrix_1.7-0     tools_4.4.0      withr_3.0.0     
+## [33] gtable_0.3.5
 ```
 
 # Misc issues

@@ -2,11 +2,11 @@ This demo shows you how to reference code in a URL. We use R-Forge as an example
 
 We cache this chunk so that the next time we compile this document, the code does not need to be read from the web again.
 
-```r
+``` r
 library(knitr)
 ```
 
-```r
+``` r
 demo.sub = read_rforge("rgl/demo/subdivision.r", project = "rgl")
 head(demo.sub)
 ```
@@ -23,7 +23,7 @@ head(demo.sub)
 Once we have the source code, we can insert it into **knitr** with `read_chunk()`:
 
 
-```r
+``` r
 read_chunk(lines = demo.sub, labels = "rgl-sub")
 ```
 
@@ -64,7 +64,7 @@ rgl.demo.subdivision()
 You can actually run the code and capture the rgl plot, but before that we need to load the package and set a rgl hook:
 
 
-```r
+``` r
 library(rgl)
 knit_hooks$set(rgl = hook_rgl)
 ```

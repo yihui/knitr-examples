@@ -13,10 +13,10 @@
 
 \definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
 \newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
-\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlsng}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
 \newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
 \newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
-\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hldef}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
 \newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
 \newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
 \newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
@@ -72,71 +72,71 @@
 
 \hlcom{### ** Examples}
 
-\hlstd{p} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(mtcars,} \hlkwd{aes}\hlstd{(wt, mpg))} \hlopt{+} \hlkwd{geom_point}\hlstd{()}
+\hldef{p} \hlkwb{<-} \hlkwd{ggplot}\hldef{(mtcars,} \hlkwd{aes}\hldef{(wt, mpg))} \hlopt{+} \hlkwd{geom_point}\hldef{()}
 
 \hlcom{# Fixed values}
-\hlstd{p} \hlopt{+} \hlkwd{geom_vline}\hlstd{(}\hlkwc{xintercept} \hlstd{=} \hlnum{5}\hlstd{)}
+\hldef{p} \hlopt{+} \hlkwd{geom_vline}\hldef{(}\hlkwc{xintercept} \hldef{=} \hlnum{5}\hldef{)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_abline-1} 
 \begin{kframe}\begin{alltt}
-\hlstd{p} \hlopt{+} \hlkwd{geom_vline}\hlstd{(}\hlkwc{xintercept} \hlstd{=} \hlnum{1}\hlopt{:}\hlnum{5}\hlstd{)}
+\hldef{p} \hlopt{+} \hlkwd{geom_vline}\hldef{(}\hlkwc{xintercept} \hldef{=} \hlnum{1}\hlopt{:}\hlnum{5}\hldef{)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_abline-2} 
 \begin{kframe}\begin{alltt}
-\hlstd{p} \hlopt{+} \hlkwd{geom_hline}\hlstd{(}\hlkwc{yintercept} \hlstd{=} \hlnum{20}\hlstd{)}
+\hldef{p} \hlopt{+} \hlkwd{geom_hline}\hldef{(}\hlkwc{yintercept} \hldef{=} \hlnum{20}\hldef{)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_abline-3} 
 \begin{kframe}\begin{alltt}
-\hlstd{p} \hlopt{+} \hlkwd{geom_abline}\hlstd{()} \hlcom{# Can't see it - outside the range of the data}
+\hldef{p} \hlopt{+} \hlkwd{geom_abline}\hldef{()} \hlcom{# Can't see it - outside the range of the data}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_abline-4} 
 \begin{kframe}\begin{alltt}
-\hlstd{p} \hlopt{+} \hlkwd{geom_abline}\hlstd{(}\hlkwc{intercept} \hlstd{=} \hlnum{20}\hlstd{)}
+\hldef{p} \hlopt{+} \hlkwd{geom_abline}\hldef{(}\hlkwc{intercept} \hldef{=} \hlnum{20}\hldef{)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_abline-5} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Calculate slope and intercept of line of best fit}
-\hlkwd{coef}\hlstd{(}\hlkwd{lm}\hlstd{(mpg} \hlopt{~} \hlstd{wt,} \hlkwc{data} \hlstd{= mtcars))}
+\hlkwd{coef}\hldef{(}\hlkwd{lm}\hldef{(mpg} \hlopt{~} \hldef{wt,} \hlkwc{data} \hldef{= mtcars))}
 \end{alltt}
 \begin{verbatim}
 ## (Intercept)          wt 
 ##      37.285      -5.344
 \end{verbatim}
 \begin{alltt}
-\hlstd{p} \hlopt{+} \hlkwd{geom_abline}\hlstd{(}\hlkwc{intercept} \hlstd{=} \hlnum{37}\hlstd{,} \hlkwc{slope} \hlstd{=} \hlopt{-}\hlnum{5}\hlstd{)}
+\hldef{p} \hlopt{+} \hlkwd{geom_abline}\hldef{(}\hlkwc{intercept} \hldef{=} \hlnum{37}\hldef{,} \hlkwc{slope} \hldef{=} \hlopt{-}\hlnum{5}\hldef{)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_abline-6} 
 \begin{kframe}\begin{alltt}
 \hlcom{# But this is easier to do with geom_smooth:}
-\hlstd{p} \hlopt{+} \hlkwd{geom_smooth}\hlstd{(}\hlkwc{method} \hlstd{=} \hlstr{"lm"}\hlstd{,} \hlkwc{se} \hlstd{=} \hlnum{FALSE}\hlstd{)}
+\hldef{p} \hlopt{+} \hlkwd{geom_smooth}\hldef{(}\hlkwc{method} \hldef{=} \hlsng{"lm"}\hldef{,} \hlkwc{se} \hldef{=} \hlnum{FALSE}\hldef{)}
 \end{alltt}
 
 
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# `geom\_smooth()` using formula 'y \textasciitilde{} x'}}\end{kframe}
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# `geom\_smooth()` using formula = 'y \textasciitilde{} x'}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_abline-7} 
 \begin{kframe}\begin{alltt}
 \hlcom{# To show different lines in different facets, use aesthetics}
-\hlstd{p} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(mtcars,} \hlkwd{aes}\hlstd{(mpg, wt))} \hlopt{+}
-  \hlkwd{geom_point}\hlstd{()} \hlopt{+}
-  \hlkwd{facet_wrap}\hlstd{(}\hlopt{~} \hlstd{cyl)}
+\hldef{p} \hlkwb{<-} \hlkwd{ggplot}\hldef{(mtcars,} \hlkwd{aes}\hldef{(mpg, wt))} \hlopt{+}
+  \hlkwd{geom_point}\hldef{()} \hlopt{+}
+  \hlkwd{facet_wrap}\hldef{(}\hlopt{~} \hldef{cyl)}
 
-\hlstd{mean_wt} \hlkwb{<-} \hlkwd{data.frame}\hlstd{(}\hlkwc{cyl} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{4}\hlstd{,} \hlnum{6}\hlstd{,} \hlnum{8}\hlstd{),} \hlkwc{wt} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{2.28}\hlstd{,} \hlnum{3.11}\hlstd{,} \hlnum{4.00}\hlstd{))}
-\hlstd{p} \hlopt{+} \hlkwd{geom_hline}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{yintercept} \hlstd{= wt), mean_wt)}
+\hldef{mean_wt} \hlkwb{<-} \hlkwd{data.frame}\hldef{(}\hlkwc{cyl} \hldef{=} \hlkwd{c}\hldef{(}\hlnum{4}\hldef{,} \hlnum{6}\hldef{,} \hlnum{8}\hldef{),} \hlkwc{wt} \hldef{=} \hlkwd{c}\hldef{(}\hlnum{2.28}\hldef{,} \hlnum{3.11}\hldef{,} \hlnum{4.00}\hldef{))}
+\hldef{p} \hlopt{+} \hlkwd{geom_hline}\hldef{(}\hlkwd{aes}\hldef{(}\hlkwc{yintercept} \hldef{= wt), mean_wt)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_abline-8} 
 \begin{kframe}\begin{alltt}
 \hlcom{# You can also control other aesthetics}
-\hlkwd{ggplot}\hlstd{(mtcars,} \hlkwd{aes}\hlstd{(mpg, wt,} \hlkwc{colour} \hlstd{= wt))} \hlopt{+}
-  \hlkwd{geom_point}\hlstd{()} \hlopt{+}
-  \hlkwd{geom_hline}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{yintercept} \hlstd{= wt,} \hlkwc{colour} \hlstd{= wt), mean_wt)} \hlopt{+}
-  \hlkwd{facet_wrap}\hlstd{(}\hlopt{~} \hlstd{cyl)}
+\hlkwd{ggplot}\hldef{(mtcars,} \hlkwd{aes}\hldef{(mpg, wt,} \hlkwc{colour} \hldef{= wt))} \hlopt{+}
+  \hlkwd{geom_point}\hldef{()} \hlopt{+}
+  \hlkwd{geom_hline}\hldef{(}\hlkwd{aes}\hldef{(}\hlkwc{yintercept} \hldef{= wt,} \hlkwc{colour} \hldef{= wt), mean_wt)} \hlopt{+}
+  \hlkwd{facet_wrap}\hldef{(}\hlopt{~} \hldef{cyl)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_abline-9} 
@@ -150,38 +150,67 @@
 \begin{alltt}
 \hlcom{### Name: geom_ribbon}
 \hlcom{### Title: Ribbons and area plots}
-\hlcom{### Aliases: geom_ribbon geom_area}
+\hlcom{### Aliases: geom_ribbon geom_area stat_align}
 
 \hlcom{### ** Examples}
 
 \hlcom{# Generate data}
-\hlstd{huron} \hlkwb{<-} \hlkwd{data.frame}\hlstd{(}\hlkwc{year} \hlstd{=} \hlnum{1875}\hlopt{:}\hlnum{1972}\hlstd{,} \hlkwc{level} \hlstd{=} \hlkwd{as.vector}\hlstd{(LakeHuron))}
-\hlstd{h} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(huron,} \hlkwd{aes}\hlstd{(year))}
+\hldef{huron} \hlkwb{<-} \hlkwd{data.frame}\hldef{(}\hlkwc{year} \hldef{=} \hlnum{1875}\hlopt{:}\hlnum{1972}\hldef{,} \hlkwc{level} \hldef{=} \hlkwd{as.vector}\hldef{(LakeHuron))}
+\hldef{h} \hlkwb{<-} \hlkwd{ggplot}\hldef{(huron,} \hlkwd{aes}\hldef{(year))}
 
-\hlstd{h} \hlopt{+} \hlkwd{geom_ribbon}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{ymin}\hlstd{=}\hlnum{0}\hlstd{,} \hlkwc{ymax}\hlstd{=level))}
+\hldef{h} \hlopt{+} \hlkwd{geom_ribbon}\hldef{(}\hlkwd{aes}\hldef{(}\hlkwc{ymin}\hldef{=}\hlnum{0}\hldef{,} \hlkwc{ymax}\hldef{=level))}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_area-1} 
 \begin{kframe}\begin{alltt}
-\hlstd{h} \hlopt{+} \hlkwd{geom_area}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{y} \hlstd{= level))}
+\hldef{h} \hlopt{+} \hlkwd{geom_area}\hldef{(}\hlkwd{aes}\hldef{(}\hlkwc{y} \hldef{= level))}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_area-2} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Orientation cannot be deduced by mapping, so must be given explicitly for}
 \hlcom{# flipped orientation}
-\hlstd{h} \hlopt{+} \hlkwd{geom_area}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{x} \hlstd{= level,} \hlkwc{y} \hlstd{= year),} \hlkwc{orientation} \hlstd{=} \hlstr{"y"}\hlstd{)}
+\hldef{h} \hlopt{+} \hlkwd{geom_area}\hldef{(}\hlkwd{aes}\hldef{(}\hlkwc{x} \hldef{= level,} \hlkwc{y} \hldef{= year),} \hlkwc{orientation} \hldef{=} \hlsng{"y"}\hldef{)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_area-3} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Add aesthetic mappings}
-\hlstd{h} \hlopt{+}
-  \hlkwd{geom_ribbon}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{ymin} \hlstd{= level} \hlopt{-} \hlnum{1}\hlstd{,} \hlkwc{ymax} \hlstd{= level} \hlopt{+} \hlnum{1}\hlstd{),} \hlkwc{fill} \hlstd{=} \hlstr{"grey70"}\hlstd{)} \hlopt{+}
-  \hlkwd{geom_line}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{y} \hlstd{= level))}
+\hldef{h} \hlopt{+}
+  \hlkwd{geom_ribbon}\hldef{(}\hlkwd{aes}\hldef{(}\hlkwc{ymin} \hldef{= level} \hlopt{-} \hlnum{1}\hldef{,} \hlkwc{ymax} \hldef{= level} \hlopt{+} \hlnum{1}\hldef{),} \hlkwc{fill} \hldef{=} \hlsng{"grey70"}\hldef{)} \hlopt{+}
+  \hlkwd{geom_line}\hldef{(}\hlkwd{aes}\hldef{(}\hlkwc{y} \hldef{= level))}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_area-4} 
+\begin{kframe}\begin{alltt}
+\hlcom{# The underlying stat_align() takes care of unaligned data points}
+\hldef{df} \hlkwb{<-} \hlkwd{data.frame}\hldef{(}
+  \hlkwc{g} \hldef{=} \hlkwd{c}\hldef{(}\hlsng{"a"}\hldef{,} \hlsng{"a"}\hldef{,} \hlsng{"a"}\hldef{,} \hlsng{"b"}\hldef{,} \hlsng{"b"}\hldef{,} \hlsng{"b"}\hldef{),}
+  \hlkwc{x} \hldef{=} \hlkwd{c}\hldef{(}\hlnum{1}\hldef{,} \hlnum{3}\hldef{,} \hlnum{5}\hldef{,} \hlnum{2}\hldef{,} \hlnum{4}\hldef{,} \hlnum{6}\hldef{),}
+  \hlkwc{y} \hldef{=} \hlkwd{c}\hldef{(}\hlnum{2}\hldef{,} \hlnum{5}\hldef{,} \hlnum{1}\hldef{,} \hlnum{3}\hldef{,} \hlnum{6}\hldef{,} \hlnum{7}\hldef{)}
+\hldef{)}
+\hldef{a} \hlkwb{<-} \hlkwd{ggplot}\hldef{(df,} \hlkwd{aes}\hldef{(x, y,} \hlkwc{fill} \hldef{= g))} \hlopt{+}
+  \hlkwd{geom_area}\hldef{()}
+
+\hlcom{# Two groups have points on different X values.}
+\hldef{a} \hlopt{+} \hlkwd{geom_point}\hldef{(}\hlkwc{size} \hldef{=} \hlnum{8}\hldef{)} \hlopt{+} \hlkwd{facet_grid}\hldef{(g} \hlopt{~} \hldef{.)}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_area-5} 
+\begin{kframe}\begin{alltt}
+\hlcom{# stat_align() interpolates and aligns the value so that the areas can stack}
+\hlcom{# properly.}
+\hldef{a} \hlopt{+} \hlkwd{geom_point}\hldef{(}\hlkwc{stat} \hldef{=} \hlsng{"align"}\hldef{,} \hlkwc{position} \hldef{=} \hlsng{"stack"}\hldef{,} \hlkwc{size} \hldef{=} \hlnum{8}\hldef{)}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_area-6} 
+\begin{kframe}\begin{alltt}
+\hlcom{# To turn off the alignment, the stat can be set to "identity"}
+\hlkwd{ggplot}\hldef{(df,} \hlkwd{aes}\hldef{(x, y,} \hlkwc{fill} \hldef{= g))} \hlopt{+}
+  \hlkwd{geom_area}\hldef{(}\hlkwc{stat} \hldef{=} \hlsng{"identity"}\hldef{)}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_area-7} 
 \end{knitrout}
 
 
@@ -198,21 +227,21 @@
 
 \hlcom{# geom_bar is designed to make it easy to create bar charts that show}
 \hlcom{# counts (or sums of weights)}
-\hlstd{g} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(mpg,} \hlkwd{aes}\hlstd{(class))}
+\hldef{g} \hlkwb{<-} \hlkwd{ggplot}\hldef{(mpg,} \hlkwd{aes}\hldef{(class))}
 \hlcom{# Number of cars in each class:}
-\hlstd{g} \hlopt{+} \hlkwd{geom_bar}\hlstd{()}
+\hldef{g} \hlopt{+} \hlkwd{geom_bar}\hldef{()}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar-1} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Total engine displacement of each class}
-\hlstd{g} \hlopt{+} \hlkwd{geom_bar}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{weight} \hlstd{= displ))}
+\hldef{g} \hlopt{+} \hlkwd{geom_bar}\hldef{(}\hlkwd{aes}\hldef{(}\hlkwc{weight} \hldef{= displ))}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar-2} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Map class to y instead to flip the orientation}
-\hlkwd{ggplot}\hlstd{(mpg)} \hlopt{+} \hlkwd{geom_bar}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{y} \hlstd{= class))}
+\hlkwd{ggplot}\hldef{(mpg)} \hlopt{+} \hlkwd{geom_bar}\hldef{(}\hlkwd{aes}\hldef{(}\hlkwc{y} \hldef{= class))}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar-3} 
@@ -220,49 +249,63 @@
 \hlcom{# Bar charts are automatically stacked when multiple bars are placed}
 \hlcom{# at the same location. The order of the fill is designed to match}
 \hlcom{# the legend}
-\hlstd{g} \hlopt{+} \hlkwd{geom_bar}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{fill} \hlstd{= drv))}
+\hldef{g} \hlopt{+} \hlkwd{geom_bar}\hldef{(}\hlkwd{aes}\hldef{(}\hlkwc{fill} \hldef{= drv))}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar-4} 
 \begin{kframe}\begin{alltt}
 \hlcom{# If you need to flip the order (because you've flipped the orientation)}
 \hlcom{# call position_stack() explicitly:}
-\hlkwd{ggplot}\hlstd{(mpg,} \hlkwd{aes}\hlstd{(}\hlkwc{y} \hlstd{= class))} \hlopt{+}
- \hlkwd{geom_bar}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{fill} \hlstd{= drv),} \hlkwc{position} \hlstd{=} \hlkwd{position_stack}\hlstd{(}\hlkwc{reverse} \hlstd{=} \hlnum{TRUE}\hlstd{))} \hlopt{+}
- \hlkwd{theme}\hlstd{(}\hlkwc{legend.position} \hlstd{=} \hlstr{"top"}\hlstd{)}
+\hlkwd{ggplot}\hldef{(mpg,} \hlkwd{aes}\hldef{(}\hlkwc{y} \hldef{= class))} \hlopt{+}
+ \hlkwd{geom_bar}\hldef{(}\hlkwd{aes}\hldef{(}\hlkwc{fill} \hldef{= drv),} \hlkwc{position} \hldef{=} \hlkwd{position_stack}\hldef{(}\hlkwc{reverse} \hldef{=} \hlnum{TRUE}\hldef{))} \hlopt{+}
+ \hlkwd{theme}\hldef{(}\hlkwc{legend.position} \hldef{=} \hlsng{"top"}\hldef{)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar-5} 
 \begin{kframe}\begin{alltt}
 \hlcom{# To show (e.g.) means, you need geom_col()}
-\hlstd{df} \hlkwb{<-} \hlkwd{data.frame}\hlstd{(}\hlkwc{trt} \hlstd{=} \hlkwd{c}\hlstd{(}\hlstr{"a"}\hlstd{,} \hlstr{"b"}\hlstd{,} \hlstr{"c"}\hlstd{),} \hlkwc{outcome} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{2.3}\hlstd{,} \hlnum{1.9}\hlstd{,} \hlnum{3.2}\hlstd{))}
-\hlkwd{ggplot}\hlstd{(df,} \hlkwd{aes}\hlstd{(trt, outcome))} \hlopt{+}
-  \hlkwd{geom_col}\hlstd{()}
+\hldef{df} \hlkwb{<-} \hlkwd{data.frame}\hldef{(}\hlkwc{trt} \hldef{=} \hlkwd{c}\hldef{(}\hlsng{"a"}\hldef{,} \hlsng{"b"}\hldef{,} \hlsng{"c"}\hldef{),} \hlkwc{outcome} \hldef{=} \hlkwd{c}\hldef{(}\hlnum{2.3}\hldef{,} \hlnum{1.9}\hldef{,} \hlnum{3.2}\hldef{))}
+\hlkwd{ggplot}\hldef{(df,} \hlkwd{aes}\hldef{(trt, outcome))} \hlopt{+}
+  \hlkwd{geom_col}\hldef{()}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar-6} 
 \begin{kframe}\begin{alltt}
 \hlcom{# But geom_point() displays exactly the same information and doesn't}
 \hlcom{# require the y-axis to touch zero.}
-\hlkwd{ggplot}\hlstd{(df,} \hlkwd{aes}\hlstd{(trt, outcome))} \hlopt{+}
-  \hlkwd{geom_point}\hlstd{()}
+\hlkwd{ggplot}\hldef{(df,} \hlkwd{aes}\hldef{(trt, outcome))} \hlopt{+}
+  \hlkwd{geom_point}\hldef{()}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar-7} 
 \begin{kframe}\begin{alltt}
 \hlcom{# You can also use geom_bar() with continuous data, in which case}
 \hlcom{# it will show counts at unique locations}
-\hlstd{df} \hlkwb{<-} \hlkwd{data.frame}\hlstd{(}\hlkwc{x} \hlstd{=} \hlkwd{rep}\hlstd{(}\hlkwd{c}\hlstd{(}\hlnum{2.9}\hlstd{,} \hlnum{3.1}\hlstd{,} \hlnum{4.5}\hlstd{),} \hlkwd{c}\hlstd{(}\hlnum{5}\hlstd{,} \hlnum{10}\hlstd{,} \hlnum{4}\hlstd{)))}
-\hlkwd{ggplot}\hlstd{(df,} \hlkwd{aes}\hlstd{(x))} \hlopt{+} \hlkwd{geom_bar}\hlstd{()}
+\hldef{df} \hlkwb{<-} \hlkwd{data.frame}\hldef{(}\hlkwc{x} \hldef{=} \hlkwd{rep}\hldef{(}\hlkwd{c}\hldef{(}\hlnum{2.9}\hldef{,} \hlnum{3.1}\hldef{,} \hlnum{4.5}\hldef{),} \hlkwd{c}\hldef{(}\hlnum{5}\hldef{,} \hlnum{10}\hldef{,} \hlnum{4}\hldef{)))}
+\hlkwd{ggplot}\hldef{(df,} \hlkwd{aes}\hldef{(x))} \hlopt{+} \hlkwd{geom_bar}\hldef{()}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar-8} 
 \begin{kframe}\begin{alltt}
 \hlcom{# cf. a histogram of the same data}
-\hlkwd{ggplot}\hlstd{(df,} \hlkwd{aes}\hlstd{(x))} \hlopt{+} \hlkwd{geom_histogram}\hlstd{(}\hlkwc{binwidth} \hlstd{=} \hlnum{0.5}\hlstd{)}
+\hlkwd{ggplot}\hldef{(df,} \hlkwd{aes}\hldef{(x))} \hlopt{+} \hlkwd{geom_histogram}\hldef{(}\hlkwc{binwidth} \hldef{=} \hlnum{0.5}\hldef{)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar-9} 
+\begin{kframe}\begin{alltt}
+\hlcom{# Use `just` to control how columns are aligned with axis breaks:}
+\hldef{df} \hlkwb{<-} \hlkwd{data.frame}\hldef{(}\hlkwc{x} \hldef{=} \hlkwd{as.Date}\hldef{(}\hlkwd{c}\hldef{(}\hlsng{"2020-01-01"}\hldef{,} \hlsng{"2020-02-01"}\hldef{)),} \hlkwc{y} \hldef{=} \hlnum{1}\hlopt{:}\hlnum{2}\hldef{)}
+\hlcom{# Columns centered on the first day of the month}
+\hlkwd{ggplot}\hldef{(df,} \hlkwd{aes}\hldef{(x, y))} \hlopt{+} \hlkwd{geom_col}\hldef{(}\hlkwc{just} \hldef{=} \hlnum{0.5}\hldef{)}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar-10} 
+\begin{kframe}\begin{alltt}
+\hlcom{# Columns begin on the first day of the month}
+\hlkwd{ggplot}\hldef{(df,} \hlkwd{aes}\hldef{(x, y))} \hlopt{+} \hlkwd{geom_col}\hldef{(}\hlkwc{just} \hldef{=} \hlnum{1}\hldef{)}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bar-11} 
 \end{knitrout}
 
 
@@ -277,38 +320,42 @@
 
 \hlcom{### ** Examples}
 
-\hlstd{d} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(diamonds,} \hlkwd{aes}\hlstd{(x, y))} \hlopt{+} \hlkwd{xlim}\hlstd{(}\hlnum{4}\hlstd{,} \hlnum{10}\hlstd{)} \hlopt{+} \hlkwd{ylim}\hlstd{(}\hlnum{4}\hlstd{,} \hlnum{10}\hlstd{)}
-\hlstd{d} \hlopt{+} \hlkwd{geom_bin_2d}\hlstd{()}
+\hldef{d} \hlkwb{<-} \hlkwd{ggplot}\hldef{(diamonds,} \hlkwd{aes}\hldef{(x, y))} \hlopt{+} \hlkwd{xlim}\hldef{(}\hlnum{4}\hldef{,} \hlnum{10}\hldef{)} \hlopt{+} \hlkwd{ylim}\hldef{(}\hlnum{4}\hldef{,} \hlnum{10}\hldef{)}
+\hldef{d} \hlopt{+} \hlkwd{geom_bin_2d}\hldef{()}
 \end{alltt}
 
 
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 478 rows containing non-finite values (stat\_bin2d).}}\end{kframe}
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 478 rows containing non-finite outside the scale range\\\#\# (`stat\_bin2d()`).}}
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 5 rows containing missing values or values outside the scale range\\\#\# (`geom\_tile()`).}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bin_2d-1} 
 \begin{kframe}\begin{alltt}
 \hlcom{# You can control the size of the bins by specifying the number of}
 \hlcom{# bins in each direction:}
-\hlstd{d} \hlopt{+} \hlkwd{geom_bin_2d}\hlstd{(}\hlkwc{bins} \hlstd{=} \hlnum{10}\hlstd{)}
+\hldef{d} \hlopt{+} \hlkwd{geom_bin_2d}\hldef{(}\hlkwc{bins} \hldef{=} \hlnum{10}\hldef{)}
 \end{alltt}
 
 
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 478 rows containing non-finite values (stat\_bin2d).}}
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 478 rows containing non-finite outside the scale range\\\#\# (`stat\_bin2d()`).}}
 
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 4 rows containing missing values (geom\_tile).}}\end{kframe}
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 6 rows containing missing values or values outside the scale range\\\#\# (`geom\_tile()`).}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bin_2d-2} 
 \begin{kframe}\begin{alltt}
-\hlstd{d} \hlopt{+} \hlkwd{geom_bin_2d}\hlstd{(}\hlkwc{bins} \hlstd{=} \hlnum{30}\hlstd{)}
+\hldef{d} \hlopt{+} \hlkwd{geom_bin_2d}\hldef{(}\hlkwc{bins} \hldef{=} \hlnum{30}\hldef{)}
 \end{alltt}
 
 
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 478 rows containing non-finite values (stat\_bin2d).}}\end{kframe}
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 478 rows containing non-finite outside the scale range\\\#\# (`stat\_bin2d()`).}}
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 5 rows containing missing values or values outside the scale range\\\#\# (`geom\_tile()`).}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bin_2d-3} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Or by specifying the width of the bins}
-\hlstd{d} \hlopt{+} \hlkwd{geom_bin_2d}\hlstd{(}\hlkwc{binwidth} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{0.1}\hlstd{,} \hlnum{0.1}\hlstd{))}
+\hldef{d} \hlopt{+} \hlkwd{geom_bin_2d}\hldef{(}\hlkwc{binwidth} \hldef{=} \hlkwd{c}\hldef{(}\hlnum{0.1}\hldef{,} \hlnum{0.1}\hldef{))}
 \end{alltt}
 
 
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 478 rows containing non-finite values (stat\_bin2d).}}\end{kframe}
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 478 rows containing non-finite outside the scale range\\\#\# (`stat\_bin2d()`).\\\#\# Removed 5 rows containing missing values or values outside the scale range\\\#\# (`geom\_tile()`).}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bin_2d-4} 
 \end{knitrout}
 
@@ -324,38 +371,42 @@
 
 \hlcom{### ** Examples}
 
-\hlstd{d} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(diamonds,} \hlkwd{aes}\hlstd{(x, y))} \hlopt{+} \hlkwd{xlim}\hlstd{(}\hlnum{4}\hlstd{,} \hlnum{10}\hlstd{)} \hlopt{+} \hlkwd{ylim}\hlstd{(}\hlnum{4}\hlstd{,} \hlnum{10}\hlstd{)}
-\hlstd{d} \hlopt{+} \hlkwd{geom_bin_2d}\hlstd{()}
+\hldef{d} \hlkwb{<-} \hlkwd{ggplot}\hldef{(diamonds,} \hlkwd{aes}\hldef{(x, y))} \hlopt{+} \hlkwd{xlim}\hldef{(}\hlnum{4}\hldef{,} \hlnum{10}\hldef{)} \hlopt{+} \hlkwd{ylim}\hldef{(}\hlnum{4}\hldef{,} \hlnum{10}\hldef{)}
+\hldef{d} \hlopt{+} \hlkwd{geom_bin_2d}\hldef{()}
 \end{alltt}
 
 
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 478 rows containing non-finite values (stat\_bin2d).}}\end{kframe}
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 478 rows containing non-finite outside the scale range\\\#\# (`stat\_bin2d()`).}}
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 5 rows containing missing values or values outside the scale range\\\#\# (`geom\_tile()`).}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bin2d-1} 
 \begin{kframe}\begin{alltt}
 \hlcom{# You can control the size of the bins by specifying the number of}
 \hlcom{# bins in each direction:}
-\hlstd{d} \hlopt{+} \hlkwd{geom_bin_2d}\hlstd{(}\hlkwc{bins} \hlstd{=} \hlnum{10}\hlstd{)}
+\hldef{d} \hlopt{+} \hlkwd{geom_bin_2d}\hldef{(}\hlkwc{bins} \hldef{=} \hlnum{10}\hldef{)}
 \end{alltt}
 
 
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 478 rows containing non-finite values (stat\_bin2d).}}
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 478 rows containing non-finite outside the scale range\\\#\# (`stat\_bin2d()`).}}
 
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 4 rows containing missing values (geom\_tile).}}\end{kframe}
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 6 rows containing missing values or values outside the scale range\\\#\# (`geom\_tile()`).}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bin2d-2} 
 \begin{kframe}\begin{alltt}
-\hlstd{d} \hlopt{+} \hlkwd{geom_bin_2d}\hlstd{(}\hlkwc{bins} \hlstd{=} \hlnum{30}\hlstd{)}
+\hldef{d} \hlopt{+} \hlkwd{geom_bin_2d}\hldef{(}\hlkwc{bins} \hldef{=} \hlnum{30}\hldef{)}
 \end{alltt}
 
 
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 478 rows containing non-finite values (stat\_bin2d).}}\end{kframe}
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 478 rows containing non-finite outside the scale range\\\#\# (`stat\_bin2d()`).}}
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 5 rows containing missing values or values outside the scale range\\\#\# (`geom\_tile()`).}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bin2d-3} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Or by specifying the width of the bins}
-\hlstd{d} \hlopt{+} \hlkwd{geom_bin_2d}\hlstd{(}\hlkwc{binwidth} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{0.1}\hlstd{,} \hlnum{0.1}\hlstd{))}
+\hldef{d} \hlopt{+} \hlkwd{geom_bin_2d}\hldef{(}\hlkwc{binwidth} \hldef{=} \hlkwd{c}\hldef{(}\hlnum{0.1}\hldef{,} \hlnum{0.1}\hldef{))}
 \end{alltt}
 
 
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 478 rows containing non-finite values (stat\_bin2d).}}\end{kframe}
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 478 rows containing non-finite outside the scale range\\\#\# (`stat\_bin2d()`).\\\#\# Removed 5 rows containing missing values or values outside the scale range\\\#\# (`geom\_tile()`).}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_bin2d-4} 
 \end{knitrout}
 
@@ -371,7 +422,7 @@
 
 \hlcom{### ** Examples}
 
-\hlkwd{ggplot}\hlstd{(mtcars,} \hlkwd{aes}\hlstd{(wt, mpg))}
+\hlkwd{ggplot}\hldef{(mtcars,} \hlkwd{aes}\hldef{(wt, mpg))}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_blank-1} 
@@ -393,73 +444,73 @@
 
 \hlcom{### ** Examples}
 
-\hlstd{p} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(mpg,} \hlkwd{aes}\hlstd{(class, hwy))}
-\hlstd{p} \hlopt{+} \hlkwd{geom_boxplot}\hlstd{()}
+\hldef{p} \hlkwb{<-} \hlkwd{ggplot}\hldef{(mpg,} \hlkwd{aes}\hldef{(class, hwy))}
+\hldef{p} \hlopt{+} \hlkwd{geom_boxplot}\hldef{()}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot-1} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Orientation follows the discrete axis}
-\hlkwd{ggplot}\hlstd{(mpg,} \hlkwd{aes}\hlstd{(hwy, class))} \hlopt{+} \hlkwd{geom_boxplot}\hlstd{()}
+\hlkwd{ggplot}\hldef{(mpg,} \hlkwd{aes}\hldef{(hwy, class))} \hlopt{+} \hlkwd{geom_boxplot}\hldef{()}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot-2} 
 \begin{kframe}\begin{alltt}
-\hlstd{p} \hlopt{+} \hlkwd{geom_boxplot}\hlstd{(}\hlkwc{notch} \hlstd{=} \hlnum{TRUE}\hlstd{)}
+\hldef{p} \hlopt{+} \hlkwd{geom_boxplot}\hldef{(}\hlkwc{notch} \hldef{=} \hlnum{TRUE}\hldef{)}
 \end{alltt}
 
 
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# notch went outside hinges. Try setting notch=FALSE.\\\#\# notch went outside hinges. Try setting notch=FALSE.}}\end{kframe}
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Notch went outside hinges\\\#\# i Do you want `notch = FALSE`?\\\#\# Notch went outside hinges\\\#\# i Do you want `notch = FALSE`?}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot-3} 
 \begin{kframe}\begin{alltt}
-\hlstd{p} \hlopt{+} \hlkwd{geom_boxplot}\hlstd{(}\hlkwc{varwidth} \hlstd{=} \hlnum{TRUE}\hlstd{)}
+\hldef{p} \hlopt{+} \hlkwd{geom_boxplot}\hldef{(}\hlkwc{varwidth} \hldef{=} \hlnum{TRUE}\hldef{)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot-4} 
 \begin{kframe}\begin{alltt}
-\hlstd{p} \hlopt{+} \hlkwd{geom_boxplot}\hlstd{(}\hlkwc{fill} \hlstd{=} \hlstr{"white"}\hlstd{,} \hlkwc{colour} \hlstd{=} \hlstr{"#3366FF"}\hlstd{)}
+\hldef{p} \hlopt{+} \hlkwd{geom_boxplot}\hldef{(}\hlkwc{fill} \hldef{=} \hlsng{"white"}\hldef{,} \hlkwc{colour} \hldef{=} \hlsng{"#3366FF"}\hldef{)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot-5} 
 \begin{kframe}\begin{alltt}
 \hlcom{# By default, outlier points match the colour of the box. Use}
 \hlcom{# outlier.colour to override}
-\hlstd{p} \hlopt{+} \hlkwd{geom_boxplot}\hlstd{(}\hlkwc{outlier.colour} \hlstd{=} \hlstr{"red"}\hlstd{,} \hlkwc{outlier.shape} \hlstd{=} \hlnum{1}\hlstd{)}
+\hldef{p} \hlopt{+} \hlkwd{geom_boxplot}\hldef{(}\hlkwc{outlier.colour} \hldef{=} \hlsng{"red"}\hldef{,} \hlkwc{outlier.shape} \hldef{=} \hlnum{1}\hldef{)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot-6} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Remove outliers when overlaying boxplot with original data points}
-\hlstd{p} \hlopt{+} \hlkwd{geom_boxplot}\hlstd{(}\hlkwc{outlier.shape} \hlstd{=} \hlnum{NA}\hlstd{)} \hlopt{+} \hlkwd{geom_jitter}\hlstd{(}\hlkwc{width} \hlstd{=} \hlnum{0.2}\hlstd{)}
+\hldef{p} \hlopt{+} \hlkwd{geom_boxplot}\hldef{(}\hlkwc{outlier.shape} \hldef{=} \hlnum{NA}\hldef{)} \hlopt{+} \hlkwd{geom_jitter}\hldef{(}\hlkwc{width} \hldef{=} \hlnum{0.2}\hldef{)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot-7} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Boxplots are automatically dodged when any aesthetic is a factor}
-\hlstd{p} \hlopt{+} \hlkwd{geom_boxplot}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{colour} \hlstd{= drv))}
+\hldef{p} \hlopt{+} \hlkwd{geom_boxplot}\hldef{(}\hlkwd{aes}\hldef{(}\hlkwc{colour} \hldef{= drv))}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot-8} 
 \begin{kframe}\begin{alltt}
 \hlcom{# You can also use boxplots with continuous x, as long as you supply}
 \hlcom{# a grouping variable. cut_width is particularly useful}
-\hlkwd{ggplot}\hlstd{(diamonds,} \hlkwd{aes}\hlstd{(carat, price))} \hlopt{+}
-  \hlkwd{geom_boxplot}\hlstd{()}
+\hlkwd{ggplot}\hldef{(diamonds,} \hlkwd{aes}\hldef{(carat, price))} \hlopt{+}
+  \hlkwd{geom_boxplot}\hldef{()}
 \end{alltt}
 
 
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Continuous x aesthetic -- did you forget aes(group=...)?}}\end{kframe}
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Continuous x aesthetic\\\#\# i did you forget `aes(group = ...)`?}}\end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot-9} 
 \begin{kframe}\begin{alltt}
-\hlkwd{ggplot}\hlstd{(diamonds,} \hlkwd{aes}\hlstd{(carat, price))} \hlopt{+}
-  \hlkwd{geom_boxplot}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{group} \hlstd{=} \hlkwd{cut_width}\hlstd{(carat,} \hlnum{0.25}\hlstd{)))}
+\hlkwd{ggplot}\hldef{(diamonds,} \hlkwd{aes}\hldef{(carat, price))} \hlopt{+}
+  \hlkwd{geom_boxplot}\hldef{(}\hlkwd{aes}\hldef{(}\hlkwc{group} \hldef{=} \hlkwd{cut_width}\hldef{(carat,} \hlnum{0.25}\hldef{)))}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot-10} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Adjust the transparency of outliers using outlier.alpha}
-\hlkwd{ggplot}\hlstd{(diamonds,} \hlkwd{aes}\hlstd{(carat, price))} \hlopt{+}
-  \hlkwd{geom_boxplot}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{group} \hlstd{=} \hlkwd{cut_width}\hlstd{(carat,} \hlnum{0.25}\hlstd{)),} \hlkwc{outlier.alpha} \hlstd{=} \hlnum{0.1}\hlstd{)}
+\hlkwd{ggplot}\hldef{(diamonds,} \hlkwd{aes}\hldef{(carat, price))} \hlopt{+}
+  \hlkwd{geom_boxplot}\hldef{(}\hlkwd{aes}\hldef{(}\hlkwc{group} \hldef{=} \hlkwd{cut_width}\hldef{(carat,} \hlnum{0.25}\hldef{)),} \hlkwc{outlier.alpha} \hldef{=} \hlnum{0.1}\hldef{)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot-11} 
@@ -467,20 +518,21 @@
 \hlcom{## No test: }
 \hlcom{# It's possible to draw a boxplot with your own computations if you}
 \hlcom{# use stat = "identity":}
-\hlstd{y} \hlkwb{<-} \hlkwd{rnorm}\hlstd{(}\hlnum{100}\hlstd{)}
-\hlstd{df} \hlkwb{<-} \hlkwd{data.frame}\hlstd{(}
-  \hlkwc{x} \hlstd{=} \hlnum{1}\hlstd{,}
-  \hlkwc{y0} \hlstd{=} \hlkwd{min}\hlstd{(y),}
-  \hlkwc{y25} \hlstd{=} \hlkwd{quantile}\hlstd{(y,} \hlnum{0.25}\hlstd{),}
-  \hlkwc{y50} \hlstd{=} \hlkwd{median}\hlstd{(y),}
-  \hlkwc{y75} \hlstd{=} \hlkwd{quantile}\hlstd{(y,} \hlnum{0.75}\hlstd{),}
-  \hlkwc{y100} \hlstd{=} \hlkwd{max}\hlstd{(y)}
-\hlstd{)}
-\hlkwd{ggplot}\hlstd{(df,} \hlkwd{aes}\hlstd{(x))} \hlopt{+}
-  \hlkwd{geom_boxplot}\hlstd{(}
-   \hlkwd{aes}\hlstd{(}\hlkwc{ymin} \hlstd{= y0,} \hlkwc{lower} \hlstd{= y25,} \hlkwc{middle} \hlstd{= y50,} \hlkwc{upper} \hlstd{= y75,} \hlkwc{ymax} \hlstd{= y100),}
-   \hlkwc{stat} \hlstd{=} \hlstr{"identity"}
- \hlstd{)}
+\hlkwd{set.seed}\hldef{(}\hlnum{1}\hldef{)}
+\hldef{y} \hlkwb{<-} \hlkwd{rnorm}\hldef{(}\hlnum{100}\hldef{)}
+\hldef{df} \hlkwb{<-} \hlkwd{data.frame}\hldef{(}
+  \hlkwc{x} \hldef{=} \hlnum{1}\hldef{,}
+  \hlkwc{y0} \hldef{=} \hlkwd{min}\hldef{(y),}
+  \hlkwc{y25} \hldef{=} \hlkwd{quantile}\hldef{(y,} \hlnum{0.25}\hldef{),}
+  \hlkwc{y50} \hldef{=} \hlkwd{median}\hldef{(y),}
+  \hlkwc{y75} \hldef{=} \hlkwd{quantile}\hldef{(y,} \hlnum{0.75}\hldef{),}
+  \hlkwc{y100} \hldef{=} \hlkwd{max}\hldef{(y)}
+\hldef{)}
+\hlkwd{ggplot}\hldef{(df,} \hlkwd{aes}\hldef{(x))} \hlopt{+}
+  \hlkwd{geom_boxplot}\hldef{(}
+   \hlkwd{aes}\hldef{(}\hlkwc{ymin} \hldef{= y0,} \hlkwc{lower} \hldef{= y25,} \hlkwc{middle} \hldef{= y50,} \hlkwc{upper} \hldef{= y75,} \hlkwc{ymax} \hldef{= y100),}
+   \hlkwc{stat} \hldef{=} \hlsng{"identity"}
+ \hldef{)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_boxplot-12} 
@@ -504,21 +556,21 @@
 
 \hlcom{# geom_bar is designed to make it easy to create bar charts that show}
 \hlcom{# counts (or sums of weights)}
-\hlstd{g} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(mpg,} \hlkwd{aes}\hlstd{(class))}
+\hldef{g} \hlkwb{<-} \hlkwd{ggplot}\hldef{(mpg,} \hlkwd{aes}\hldef{(class))}
 \hlcom{# Number of cars in each class:}
-\hlstd{g} \hlopt{+} \hlkwd{geom_bar}\hlstd{()}
+\hldef{g} \hlopt{+} \hlkwd{geom_bar}\hldef{()}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_col-1} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Total engine displacement of each class}
-\hlstd{g} \hlopt{+} \hlkwd{geom_bar}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{weight} \hlstd{= displ))}
+\hldef{g} \hlopt{+} \hlkwd{geom_bar}\hldef{(}\hlkwd{aes}\hldef{(}\hlkwc{weight} \hldef{= displ))}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_col-2} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Map class to y instead to flip the orientation}
-\hlkwd{ggplot}\hlstd{(mpg)} \hlopt{+} \hlkwd{geom_bar}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{y} \hlstd{= class))}
+\hlkwd{ggplot}\hldef{(mpg)} \hlopt{+} \hlkwd{geom_bar}\hldef{(}\hlkwd{aes}\hldef{(}\hlkwc{y} \hldef{= class))}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_col-3} 
@@ -526,49 +578,63 @@
 \hlcom{# Bar charts are automatically stacked when multiple bars are placed}
 \hlcom{# at the same location. The order of the fill is designed to match}
 \hlcom{# the legend}
-\hlstd{g} \hlopt{+} \hlkwd{geom_bar}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{fill} \hlstd{= drv))}
+\hldef{g} \hlopt{+} \hlkwd{geom_bar}\hldef{(}\hlkwd{aes}\hldef{(}\hlkwc{fill} \hldef{= drv))}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_col-4} 
 \begin{kframe}\begin{alltt}
 \hlcom{# If you need to flip the order (because you've flipped the orientation)}
 \hlcom{# call position_stack() explicitly:}
-\hlkwd{ggplot}\hlstd{(mpg,} \hlkwd{aes}\hlstd{(}\hlkwc{y} \hlstd{= class))} \hlopt{+}
- \hlkwd{geom_bar}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{fill} \hlstd{= drv),} \hlkwc{position} \hlstd{=} \hlkwd{position_stack}\hlstd{(}\hlkwc{reverse} \hlstd{=} \hlnum{TRUE}\hlstd{))} \hlopt{+}
- \hlkwd{theme}\hlstd{(}\hlkwc{legend.position} \hlstd{=} \hlstr{"top"}\hlstd{)}
+\hlkwd{ggplot}\hldef{(mpg,} \hlkwd{aes}\hldef{(}\hlkwc{y} \hldef{= class))} \hlopt{+}
+ \hlkwd{geom_bar}\hldef{(}\hlkwd{aes}\hldef{(}\hlkwc{fill} \hldef{= drv),} \hlkwc{position} \hldef{=} \hlkwd{position_stack}\hldef{(}\hlkwc{reverse} \hldef{=} \hlnum{TRUE}\hldef{))} \hlopt{+}
+ \hlkwd{theme}\hldef{(}\hlkwc{legend.position} \hldef{=} \hlsng{"top"}\hldef{)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_col-5} 
 \begin{kframe}\begin{alltt}
 \hlcom{# To show (e.g.) means, you need geom_col()}
-\hlstd{df} \hlkwb{<-} \hlkwd{data.frame}\hlstd{(}\hlkwc{trt} \hlstd{=} \hlkwd{c}\hlstd{(}\hlstr{"a"}\hlstd{,} \hlstr{"b"}\hlstd{,} \hlstr{"c"}\hlstd{),} \hlkwc{outcome} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{2.3}\hlstd{,} \hlnum{1.9}\hlstd{,} \hlnum{3.2}\hlstd{))}
-\hlkwd{ggplot}\hlstd{(df,} \hlkwd{aes}\hlstd{(trt, outcome))} \hlopt{+}
-  \hlkwd{geom_col}\hlstd{()}
+\hldef{df} \hlkwb{<-} \hlkwd{data.frame}\hldef{(}\hlkwc{trt} \hldef{=} \hlkwd{c}\hldef{(}\hlsng{"a"}\hldef{,} \hlsng{"b"}\hldef{,} \hlsng{"c"}\hldef{),} \hlkwc{outcome} \hldef{=} \hlkwd{c}\hldef{(}\hlnum{2.3}\hldef{,} \hlnum{1.9}\hldef{,} \hlnum{3.2}\hldef{))}
+\hlkwd{ggplot}\hldef{(df,} \hlkwd{aes}\hldef{(trt, outcome))} \hlopt{+}
+  \hlkwd{geom_col}\hldef{()}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_col-6} 
 \begin{kframe}\begin{alltt}
 \hlcom{# But geom_point() displays exactly the same information and doesn't}
 \hlcom{# require the y-axis to touch zero.}
-\hlkwd{ggplot}\hlstd{(df,} \hlkwd{aes}\hlstd{(trt, outcome))} \hlopt{+}
-  \hlkwd{geom_point}\hlstd{()}
+\hlkwd{ggplot}\hldef{(df,} \hlkwd{aes}\hldef{(trt, outcome))} \hlopt{+}
+  \hlkwd{geom_point}\hldef{()}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_col-7} 
 \begin{kframe}\begin{alltt}
 \hlcom{# You can also use geom_bar() with continuous data, in which case}
 \hlcom{# it will show counts at unique locations}
-\hlstd{df} \hlkwb{<-} \hlkwd{data.frame}\hlstd{(}\hlkwc{x} \hlstd{=} \hlkwd{rep}\hlstd{(}\hlkwd{c}\hlstd{(}\hlnum{2.9}\hlstd{,} \hlnum{3.1}\hlstd{,} \hlnum{4.5}\hlstd{),} \hlkwd{c}\hlstd{(}\hlnum{5}\hlstd{,} \hlnum{10}\hlstd{,} \hlnum{4}\hlstd{)))}
-\hlkwd{ggplot}\hlstd{(df,} \hlkwd{aes}\hlstd{(x))} \hlopt{+} \hlkwd{geom_bar}\hlstd{()}
+\hldef{df} \hlkwb{<-} \hlkwd{data.frame}\hldef{(}\hlkwc{x} \hldef{=} \hlkwd{rep}\hldef{(}\hlkwd{c}\hldef{(}\hlnum{2.9}\hldef{,} \hlnum{3.1}\hldef{,} \hlnum{4.5}\hldef{),} \hlkwd{c}\hldef{(}\hlnum{5}\hldef{,} \hlnum{10}\hldef{,} \hlnum{4}\hldef{)))}
+\hlkwd{ggplot}\hldef{(df,} \hlkwd{aes}\hldef{(x))} \hlopt{+} \hlkwd{geom_bar}\hldef{()}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_col-8} 
 \begin{kframe}\begin{alltt}
 \hlcom{# cf. a histogram of the same data}
-\hlkwd{ggplot}\hlstd{(df,} \hlkwd{aes}\hlstd{(x))} \hlopt{+} \hlkwd{geom_histogram}\hlstd{(}\hlkwc{binwidth} \hlstd{=} \hlnum{0.5}\hlstd{)}
+\hlkwd{ggplot}\hldef{(df,} \hlkwd{aes}\hldef{(x))} \hlopt{+} \hlkwd{geom_histogram}\hldef{(}\hlkwc{binwidth} \hldef{=} \hlnum{0.5}\hldef{)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_col-9} 
+\begin{kframe}\begin{alltt}
+\hlcom{# Use `just` to control how columns are aligned with axis breaks:}
+\hldef{df} \hlkwb{<-} \hlkwd{data.frame}\hldef{(}\hlkwc{x} \hldef{=} \hlkwd{as.Date}\hldef{(}\hlkwd{c}\hldef{(}\hlsng{"2020-01-01"}\hldef{,} \hlsng{"2020-02-01"}\hldef{)),} \hlkwc{y} \hldef{=} \hlnum{1}\hlopt{:}\hlnum{2}\hldef{)}
+\hlcom{# Columns centered on the first day of the month}
+\hlkwd{ggplot}\hldef{(df,} \hlkwd{aes}\hldef{(x, y))} \hlopt{+} \hlkwd{geom_col}\hldef{(}\hlkwc{just} \hldef{=} \hlnum{0.5}\hldef{)}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_col-10} 
+\begin{kframe}\begin{alltt}
+\hlcom{# Columns begin on the first day of the month}
+\hlkwd{ggplot}\hldef{(df,} \hlkwd{aes}\hldef{(x, y))} \hlopt{+} \hlkwd{geom_col}\hldef{(}\hlkwc{just} \hldef{=} \hlnum{1}\hldef{)}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_col-11} 
 \end{knitrout}
 
 
@@ -585,87 +651,66 @@
 \hlcom{### ** Examples}
 
 \hlcom{# Basic plot}
-\hlstd{v} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(faithfuld,} \hlkwd{aes}\hlstd{(waiting, eruptions,} \hlkwc{z} \hlstd{= density))}
-\hlstd{v} \hlopt{+} \hlkwd{geom_contour}\hlstd{()}
+\hldef{v} \hlkwb{<-} \hlkwd{ggplot}\hldef{(faithfuld,} \hlkwd{aes}\hldef{(waiting, eruptions,} \hlkwc{z} \hldef{= density))}
+\hldef{v} \hlopt{+} \hlkwd{geom_contour}\hldef{()}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_contour-1} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Or compute from raw data}
-\hlkwd{ggplot}\hlstd{(faithful,} \hlkwd{aes}\hlstd{(waiting, eruptions))} \hlopt{+}
-  \hlkwd{geom_density_2d}\hlstd{()}
+\hlkwd{ggplot}\hldef{(faithful,} \hlkwd{aes}\hldef{(waiting, eruptions))} \hlopt{+}
+  \hlkwd{geom_density_2d}\hldef{()}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_contour-2} 
 \begin{kframe}\begin{alltt}
 \hlcom{## No test: }
 \hlcom{# use geom_contour_filled() for filled contours}
-\hlstd{v} \hlopt{+} \hlkwd{geom_contour_filled}\hlstd{()}
+\hldef{v} \hlopt{+} \hlkwd{geom_contour_filled}\hldef{()}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_contour-3} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Setting bins creates evenly spaced contours in the range of the data}
-\hlstd{v} \hlopt{+} \hlkwd{geom_contour}\hlstd{(}\hlkwc{bins} \hlstd{=} \hlnum{3}\hlstd{)}
+\hldef{v} \hlopt{+} \hlkwd{geom_contour}\hldef{(}\hlkwc{bins} \hldef{=} \hlnum{3}\hldef{)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_contour-4} 
 \begin{kframe}\begin{alltt}
-\hlstd{v} \hlopt{+} \hlkwd{geom_contour}\hlstd{(}\hlkwc{bins} \hlstd{=} \hlnum{5}\hlstd{)}
+\hldef{v} \hlopt{+} \hlkwd{geom_contour}\hldef{(}\hlkwc{bins} \hldef{=} \hlnum{5}\hldef{)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_contour-5} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Setting binwidth does the same thing, parameterised by the distance}
 \hlcom{# between contours}
-\hlstd{v} \hlopt{+} \hlkwd{geom_contour}\hlstd{(}\hlkwc{binwidth} \hlstd{=} \hlnum{0.01}\hlstd{)}
+\hldef{v} \hlopt{+} \hlkwd{geom_contour}\hldef{(}\hlkwc{binwidth} \hldef{=} \hlnum{0.01}\hldef{)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_contour-6} 
 \begin{kframe}\begin{alltt}
-\hlstd{v} \hlopt{+} \hlkwd{geom_contour}\hlstd{(}\hlkwc{binwidth} \hlstd{=} \hlnum{0.001}\hlstd{)}
+\hldef{v} \hlopt{+} \hlkwd{geom_contour}\hldef{(}\hlkwc{binwidth} \hldef{=} \hlnum{0.001}\hldef{)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_contour-7} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Other parameters}
-\hlstd{v} \hlopt{+} \hlkwd{geom_contour}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{colour} \hlstd{=} \hlkwd{after_stat}\hlstd{(level)))}
+\hldef{v} \hlopt{+} \hlkwd{geom_contour}\hldef{(}\hlkwd{aes}\hldef{(}\hlkwc{colour} \hldef{=} \hlkwd{after_stat}\hldef{(level)))}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_contour-8} 
 \begin{kframe}\begin{alltt}
-\hlstd{v} \hlopt{+} \hlkwd{geom_contour}\hlstd{(}\hlkwc{colour} \hlstd{=} \hlstr{"red"}\hlstd{)}
+\hldef{v} \hlopt{+} \hlkwd{geom_contour}\hldef{(}\hlkwc{colour} \hldef{=} \hlsng{"red"}\hldef{)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_contour-9} 
 \begin{kframe}\begin{alltt}
-\hlstd{v} \hlopt{+} \hlkwd{geom_raster}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{fill} \hlstd{= density))} \hlopt{+}
-  \hlkwd{geom_contour}\hlstd{(}\hlkwc{colour} \hlstd{=} \hlstr{"white"}\hlstd{)}
+\hldef{v} \hlopt{+} \hlkwd{geom_raster}\hldef{(}\hlkwd{aes}\hldef{(}\hlkwc{fill} \hldef{= density))} \hlopt{+}
+  \hlkwd{geom_contour}\hldef{(}\hlkwc{colour} \hldef{=} \hlsng{"white"}\hldef{)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_contour-10} 
 \begin{kframe}\begin{alltt}
-\hlcom{# Irregular data}
-\hlkwa{if} \hlstd{(}\hlkwd{requireNamespace}\hlstd{(}\hlstr{"interp"}\hlstd{)) \{}
-  \hlcom{# Use a dataset from the interp package}
-  \hlkwd{data}\hlstd{(franke,} \hlkwc{package} \hlstd{=} \hlstr{"interp"}\hlstd{)}
-  \hlstd{origdata} \hlkwb{<-} \hlkwd{as.data.frame}\hlstd{(interp}\hlopt{::}\hlkwd{franke.data}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{1}\hlstd{, franke))}
-  \hlstd{grid} \hlkwb{<-} \hlkwd{with}\hlstd{(origdata, interp}\hlopt{::}\hlkwd{interp}\hlstd{(x, y, z))}
-  \hlstd{griddf} \hlkwb{<-} \hlkwd{subset}\hlstd{(}\hlkwd{data.frame}\hlstd{(}\hlkwc{x} \hlstd{=} \hlkwd{rep}\hlstd{(grid}\hlopt{$}\hlstd{x,} \hlkwd{nrow}\hlstd{(grid}\hlopt{$}\hlstd{z)),}
-                              \hlkwc{y} \hlstd{=} \hlkwd{rep}\hlstd{(grid}\hlopt{$}\hlstd{y,} \hlkwc{each} \hlstd{=} \hlkwd{ncol}\hlstd{(grid}\hlopt{$}\hlstd{z)),}
-                              \hlkwc{z} \hlstd{=} \hlkwd{as.numeric}\hlstd{(grid}\hlopt{$}\hlstd{z)),}
-                   \hlopt{!}\hlkwd{is.na}\hlstd{(z))}
-  \hlkwd{ggplot}\hlstd{(griddf,} \hlkwd{aes}\hlstd{(x, y,} \hlkwc{z} \hlstd{= z))} \hlopt{+}
-    \hlkwd{geom_contour_filled}\hlstd{()} \hlopt{+}
-    \hlkwd{geom_point}\hlstd{(}\hlkwc{data} \hlstd{= origdata)}
-\hlstd{\}} \hlkwa{else}
-  \hlkwd{message}\hlstd{(}\hlstr{"Irregular data requires the 'interp' package"}\hlstd{)}
-\end{alltt}
-
-
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Loading required namespace: interp}}
-
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Irregular data requires the 'interp' package}}\begin{alltt}
 \hlcom{## End(No test)}
 \end{alltt}
 \end{kframe}
@@ -685,87 +730,66 @@
 \hlcom{### ** Examples}
 
 \hlcom{# Basic plot}
-\hlstd{v} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(faithfuld,} \hlkwd{aes}\hlstd{(waiting, eruptions,} \hlkwc{z} \hlstd{= density))}
-\hlstd{v} \hlopt{+} \hlkwd{geom_contour}\hlstd{()}
+\hldef{v} \hlkwb{<-} \hlkwd{ggplot}\hldef{(faithfuld,} \hlkwd{aes}\hldef{(waiting, eruptions,} \hlkwc{z} \hldef{= density))}
+\hldef{v} \hlopt{+} \hlkwd{geom_contour}\hldef{()}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_contour_filled-1} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Or compute from raw data}
-\hlkwd{ggplot}\hlstd{(faithful,} \hlkwd{aes}\hlstd{(waiting, eruptions))} \hlopt{+}
-  \hlkwd{geom_density_2d}\hlstd{()}
+\hlkwd{ggplot}\hldef{(faithful,} \hlkwd{aes}\hldef{(waiting, eruptions))} \hlopt{+}
+  \hlkwd{geom_density_2d}\hldef{()}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_contour_filled-2} 
 \begin{kframe}\begin{alltt}
 \hlcom{## No test: }
 \hlcom{# use geom_contour_filled() for filled contours}
-\hlstd{v} \hlopt{+} \hlkwd{geom_contour_filled}\hlstd{()}
+\hldef{v} \hlopt{+} \hlkwd{geom_contour_filled}\hldef{()}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_contour_filled-3} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Setting bins creates evenly spaced contours in the range of the data}
-\hlstd{v} \hlopt{+} \hlkwd{geom_contour}\hlstd{(}\hlkwc{bins} \hlstd{=} \hlnum{3}\hlstd{)}
+\hldef{v} \hlopt{+} \hlkwd{geom_contour}\hldef{(}\hlkwc{bins} \hldef{=} \hlnum{3}\hldef{)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_contour_filled-4} 
 \begin{kframe}\begin{alltt}
-\hlstd{v} \hlopt{+} \hlkwd{geom_contour}\hlstd{(}\hlkwc{bins} \hlstd{=} \hlnum{5}\hlstd{)}
+\hldef{v} \hlopt{+} \hlkwd{geom_contour}\hldef{(}\hlkwc{bins} \hldef{=} \hlnum{5}\hldef{)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_contour_filled-5} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Setting binwidth does the same thing, parameterised by the distance}
 \hlcom{# between contours}
-\hlstd{v} \hlopt{+} \hlkwd{geom_contour}\hlstd{(}\hlkwc{binwidth} \hlstd{=} \hlnum{0.01}\hlstd{)}
+\hldef{v} \hlopt{+} \hlkwd{geom_contour}\hldef{(}\hlkwc{binwidth} \hldef{=} \hlnum{0.01}\hldef{)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_contour_filled-6} 
 \begin{kframe}\begin{alltt}
-\hlstd{v} \hlopt{+} \hlkwd{geom_contour}\hlstd{(}\hlkwc{binwidth} \hlstd{=} \hlnum{0.001}\hlstd{)}
+\hldef{v} \hlopt{+} \hlkwd{geom_contour}\hldef{(}\hlkwc{binwidth} \hldef{=} \hlnum{0.001}\hldef{)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_contour_filled-7} 
 \begin{kframe}\begin{alltt}
 \hlcom{# Other parameters}
-\hlstd{v} \hlopt{+} \hlkwd{geom_contour}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{colour} \hlstd{=} \hlkwd{after_stat}\hlstd{(level)))}
+\hldef{v} \hlopt{+} \hlkwd{geom_contour}\hldef{(}\hlkwd{aes}\hldef{(}\hlkwc{colour} \hldef{=} \hlkwd{after_stat}\hldef{(level)))}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_contour_filled-8} 
 \begin{kframe}\begin{alltt}
-\hlstd{v} \hlopt{+} \hlkwd{geom_contour}\hlstd{(}\hlkwc{colour} \hlstd{=} \hlstr{"red"}\hlstd{)}
+\hldef{v} \hlopt{+} \hlkwd{geom_contour}\hldef{(}\hlkwc{colour} \hldef{=} \hlsng{"red"}\hldef{)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_contour_filled-9} 
 \begin{kframe}\begin{alltt}
-\hlstd{v} \hlopt{+} \hlkwd{geom_raster}\hlstd{(}\hlkwd{aes}\hlstd{(}\hlkwc{fill} \hlstd{= density))} \hlopt{+}
-  \hlkwd{geom_contour}\hlstd{(}\hlkwc{colour} \hlstd{=} \hlstr{"white"}\hlstd{)}
+\hldef{v} \hlopt{+} \hlkwd{geom_raster}\hldef{(}\hlkwd{aes}\hldef{(}\hlkwc{fill} \hldef{= density))} \hlopt{+}
+  \hlkwd{geom_contour}\hldef{(}\hlkwc{colour} \hldef{=} \hlsng{"white"}\hldef{)}
 \end{alltt}
 \end{kframe}
 \includegraphics[width=\maxwidth]{figure/021-ggplot2-geoms-geom_contour_filled-10} 
 \begin{kframe}\begin{alltt}
-\hlcom{# Irregular data}
-\hlkwa{if} \hlstd{(}\hlkwd{requireNamespace}\hlstd{(}\hlstr{"interp"}\hlstd{)) \{}
-  \hlcom{# Use a dataset from the interp package}
-  \hlkwd{data}\hlstd{(franke,} \hlkwc{package} \hlstd{=} \hlstr{"interp"}\hlstd{)}
-  \hlstd{origdata} \hlkwb{<-} \hlkwd{as.data.frame}\hlstd{(interp}\hlopt{::}\hlkwd{franke.data}\hlstd{(}\hlnum{1}\hlstd{,} \hlnum{1}\hlstd{, franke))}
-  \hlstd{grid} \hlkwb{<-} \hlkwd{with}\hlstd{(origdata, interp}\hlopt{::}\hlkwd{interp}\hlstd{(x, y, z))}
-  \hlstd{griddf} \hlkwb{<-} \hlkwd{subset}\hlstd{(}\hlkwd{data.frame}\hlstd{(}\hlkwc{x} \hlstd{=} \hlkwd{rep}\hlstd{(grid}\hlopt{$}\hlstd{x,} \hlkwd{nrow}\hlstd{(grid}\hlopt{$}\hlstd{z)),}
-                              \hlkwc{y} \hlstd{=} \hlkwd{rep}\hlstd{(grid}\hlopt{$}\hlstd{y,} \hlkwc{each} \hlstd{=} \hlkwd{ncol}\hlstd{(grid}\hlopt{$}\hlstd{z)),}
-                              \hlkwc{z} \hlstd{=} \hlkwd{as.numeric}\hlstd{(grid}\hlopt{$}\hlstd{z)),}
-                   \hlopt{!}\hlkwd{is.na}\hlstd{(z))}
-  \hlkwd{ggplot}\hlstd{(griddf,} \hlkwd{aes}\hlstd{(x, y,} \hlkwc{z} \hlstd{= z))} \hlopt{+}
-    \hlkwd{geom_contour_filled}\hlstd{()} \hlopt{+}
-    \hlkwd{geom_point}\hlstd{(}\hlkwc{data} \hlstd{= origdata)}
-\hlstd{\}} \hlkwa{else}
-  \hlkwd{message}\hlstd{(}\hlstr{"Irregular data requires the 'interp' package"}\hlstd{)}
-\end{alltt}
-
-
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Loading required namespace: interp}}
-
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Irregular data requires the 'interp' package}}\begin{alltt}
 \hlcom{## End(No test)}
 \end{alltt}
 \end{kframe}
