@@ -49,6 +49,8 @@
 \newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
 
 \let\hlesc\hldef \let\hlpps\hldef \let\hllin\hldef \let\hlslc\hlcom \let\hlppc\hlcom
+\let\hlstd\hldef
+\let\hlstr\hlsng
 \usepackage{alltt}
 
 \usepackage{url}
@@ -80,42 +82,42 @@ Highlight matlab chunks. Note you need to install highlight from \url{http://www
 \definecolor{shadecolor}{rgb}{0, 0.169, 0.212}\color{fgcolor}\begin{kframe}
 \noindent
 \ttfamily
-\hldef{}\hlkwa{function\ }\hldef{Y\ }\hlopt{=\ }\hldef{kalmanM}\hlopt{(}\hldef{pos}\hlopt{)}\hspace*{\fill}\\
-\hldef{}\hldef{\ \ }\hldef{dt}\hlopt{=}\hldef{}\hlnum{1}\hldef{}\hlopt{;}\hspace*{\fill}\\
-\hldef{}\hldef{\ \ }\hldef{}\hlslc{\%\%\ Initialize\ state\ transition\ matrix}\hspace*{\fill}\\
-\hldef{}\hldef{\ \ }\hldef{A}\hlopt{={[}\ }\hldef{}\hlnum{1\ 0\ }\hldef{dt\ }\hlnum{0\ 0\ 0}\hldef{}\hlopt{;}\hldef{...}\hldef{\ \ \ \ \ }\hldef{}\hlslc{\%\ {[}x}\hldef{\ \ }\hlslc{{]}}\hspace*{\fill}\\
-\hldef{}\hldef{\ \ \ \ \ }\hldef{}\hlnum{0\ 1\ 0\ }\hldef{dt\ }\hlnum{0\ 0}\hldef{}\hlopt{;}\hldef{...}\hldef{\ \ \ \ \ }\hldef{}\hlslc{\%\ {[}y}\hldef{\ \ }\hlslc{{]}}\hspace*{\fill}\\
-\hldef{}\hldef{\ \ \ \ \ }\hldef{}\hlnum{0\ 0\ 1\ 0\ }\hldef{dt\ }\hlnum{0}\hldef{}\hlopt{;}\hldef{...}\hldef{\ \ \ \ \ }\hldef{}\hlslc{\%\ {[}Vx{]}}\hspace*{\fill}\\
-\hldef{}\hldef{\ \ \ \ \ }\hldef{}\hlnum{0\ 0\ 0\ 1\ 0\ }\hldef{dt}\hlopt{;}\hldef{...}\hldef{\ \ \ \ \ }\hldef{}\hlslc{\%\ {[}Vy{]}}\hspace*{\fill}\\
-\hldef{}\hldef{\ \ \ \ \ }\hldef{}\hlnum{0\ 0\ 0\ 0\ 1\ 0\ }\hldef{}\hlopt{;}\hldef{...}\hldef{\ \ \ \ \ }\hldef{}\hlslc{\%\ {[}Ax{]}}\hspace*{\fill}\\
-\hldef{}\hldef{\ \ \ \ \ }\hldef{}\hlnum{0\ 0\ 0\ 0\ 0\ 1\ }\hldef{}\hlopt{{]};}\hldef{\ \ \ \ \ \ \ }\hlopt{}\hldef{}\hlslc{\%\ {[}Ay{]}}\hspace*{\fill}\\
-\hldef{}\hldef{\ \ }\hldef{}\hlslc{\%\ Initialize\ measurement\ matrix}\hspace*{\fill}\\
-\hldef{}\hldef{\ \ }\hldef{H\ }\hlopt{=\ {[}\ }\hldef{}\hlnum{1\ 0\ 0\ 0\ 0\ 0}\hldef{}\hlopt{;\ }\hldef{}\hlnum{0\ 1\ 0\ 0\ 0\ 0\ }\hldef{}\hlopt{{]};}\hspace*{\fill}\\
-\hldef{}\hldef{\ \ }\hldef{Q\ }\hlopt{=\ }\hldef{eye}\hlopt{(}\hldef{}\hlnum{6}\hldef{}\hlopt{);}\hspace*{\fill}\\
-\hldef{}\hldef{\ \ }\hldef{R\ }\hlopt{=\ }\hldef{}\hlnum{1000\ }\hldef{}\hlopt{{*}\ }\hldef{eye}\hlopt{(}\hldef{}\hlnum{2}\hldef{}\hlopt{);}\hspace*{\fill}\\
-\hldef{}\hldef{\ \ }\hldef{x\textunderscore est\ }\hlopt{=\ }\hldef{zeros}\hlopt{(}\hldef{}\hlnum{6}\hldef{}\hlopt{,\ }\hldef{}\hlnum{1}\hldef{}\hlopt{);}\hspace*{\fill}\\
-\hldef{}\hldef{\ \ }\hldef{p\textunderscore est\ }\hlopt{=\ }\hldef{zeros}\hlopt{(}\hldef{}\hlnum{6}\hldef{}\hlopt{,\ }\hldef{}\hlnum{6}\hldef{}\hlopt{);}\hspace*{\fill}\\
-\hldef{}\hspace*{\fill}\\
-\hldef{}\hldef{\ \ }\hldef{numPts\ }\hlopt{=\ }\hldef{}\hlkwa{size}\hldef{}\hlopt{(}\hldef{pos}\hlopt{,}\hldef{}\hlnum{1}\hldef{}\hlopt{);}\hspace*{\fill}\\
-\hldef{}\hldef{\ \ }\hldef{Y\ }\hlopt{=\ }\hldef{zeros}\hlopt{(}\hldef{numPts}\hlopt{,\ }\hldef{}\hlnum{2}\hldef{}\hlopt{);}\hspace*{\fill}\\
-\hldef{}\hspace*{\fill}\\
-\hldef{}\hldef{\ \ }\hldef{}\hlkwa{for\ }\hldef{idx\ }\hlopt{=\ }\hldef{}\hlnum{1}\hldef{}\hlopt{:}\hldef{numPts}\hspace*{\fill}\\
-\hldef{}\hldef{\ \ \ \ }\hldef{z\ }\hlopt{=\ }\hldef{pos}\hlopt{(}\hldef{idx}\hlopt{,\ :)}\hldef{'}\hlopt{;}\hspace*{\fill}\\
-\hldef{}\hspace*{\fill}\\
-\hldef{}\hldef{\ \ \ \ }\hldef{}\hlslc{\%\%\ Predicted\ state\ and\ covariance}\hspace*{\fill}\\
-\hldef{}\hldef{\ \ \ \ }\hldef{x\textunderscore prd\ }\hlopt{=\ }\hldef{A\ }\hlopt{{*}\ }\hldef{x\textunderscore est}\hlopt{;}\hspace*{\fill}\\
-\hldef{}\hldef{\ \ \ \ }\hldef{p\textunderscore prd\ }\hlopt{=\ }\hldef{A\ }\hlopt{{*}\ }\hldef{p\textunderscore est\ }\hlopt{{*}\ }\hldef{A'\ }\hlopt{+\ }\hldef{Q}\hlopt{;}\hspace*{\fill}\\
-\hldef{}\hldef{\ \ \ \ }\hldef{}\hlslc{\%\%\ Estimation}\hspace*{\fill}\\
-\hldef{}\hldef{\ \ \ \ }\hldef{S\ }\hlopt{=\ }\hldef{H\ }\hlopt{{*}\ }\hldef{p\textunderscore prd}\hlsng{'\ {*}\ H'}\hldef{\ }\hlopt{+\ }\hldef{R}\hlopt{;}\hspace*{\fill}\\
-\hldef{}\hldef{\ \ \ \ }\hldef{B\ }\hlopt{=\ }\hldef{H\ }\hlopt{{*}\ }\hldef{p\textunderscore prd'}\hlopt{;}\hspace*{\fill}\\
-\hldef{}\hldef{\ \ \ \ }\hldef{klm\textunderscore gain\ }\hlopt{=\ (}\hldef{S\ $\backslash$\ B}\hlopt{)}\hldef{'}\hlopt{;}\hspace*{\fill}\\
-\hldef{}\hldef{\ \ \ \ }\hldef{}\hlslc{\%\%\ Estimated\ state\ and\ covariance}\hspace*{\fill}\\
-\hldef{}\hldef{\ \ \ \ }\hldef{x\textunderscore est\ }\hlopt{=\ }\hldef{x\textunderscore prd\ }\hlopt{+\ }\hldef{klm\textunderscore gain\ }\hlopt{{*}\ (}\hldef{z\ }\hlopt{{-}\ }\hldef{H\ }\hlopt{{*}\ }\hldef{x\textunderscore prd}\hlopt{);}\hspace*{\fill}\\
-\hldef{}\hldef{\ \ \ \ }\hldef{p\textunderscore est\ }\hlopt{=\ }\hldef{p\textunderscore prd\ }\hlopt{{-}\ }\hldef{klm\textunderscore gain\ }\hlopt{{*}\ }\hldef{H\ }\hlopt{{*}\ }\hldef{p\textunderscore prd}\hlopt{;}\hspace*{\fill}\\
-\hldef{}\hldef{\ \ \ \ }\hldef{}\hlslc{\%\%\ Compute\ the\ estimated\ measurements}\hspace*{\fill}\\
-\hldef{}\hldef{\ \ \ \ }\hldef{Y}\hlopt{(}\hldef{idx}\hlopt{,\ :)\ =\ }\hldef{H\ }\hlopt{{*}\ }\hldef{x\textunderscore est}\hlopt{;}\hspace*{\fill}\\
-\hldef{}\hldef{\ \ }\hldef{}\hlkwa{end}\hldef{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlkwa{}\hldef{}\hlslc{\%\ of\ the\ function}\hspace*{\fill}\\
-\hldef{}\hlkwa{end}\hldef{\ \ \ }\hlkwa{}\hldef{}\hlslc{\%\ of\ the\ function}\hldef{}\hspace*{\fill}
+\hlstd{}\hlkwa{function\ }\hlstd{Y\ }\hlopt{=\ }\hlstd{kalmanM}\hlopt{(}\hlstd{pos}\hlopt{)}\hspace*{\fill}\\
+\hlstd{}\hlstd{\ \ }\hlstd{dt}\hlopt{=}\hlstd{}\hlnum{1}\hlstd{}\hlopt{;}\hspace*{\fill}\\
+\hlstd{}\hlstd{\ \ }\hlstd{}\hlslc{\%\%\ Initialize\ state\ transition\ matrix}\hspace*{\fill}\\
+\hlstd{}\hlstd{\ \ }\hlstd{A}\hlopt{={[}\ }\hlstd{}\hlnum{1\ 0\ }\hlstd{dt\ }\hlnum{0\ 0\ 0}\hlstd{}\hlopt{;}\hlstd{...}\hlstd{\ \ \ \ \ }\hlstd{}\hlslc{\%\ {[}x}\hlstd{\ \ }\hlslc{{]}}\hspace*{\fill}\\
+\hlstd{}\hlstd{\ \ \ \ \ }\hlstd{}\hlnum{0\ 1\ 0\ }\hlstd{dt\ }\hlnum{0\ 0}\hlstd{}\hlopt{;}\hlstd{...}\hlstd{\ \ \ \ \ }\hlstd{}\hlslc{\%\ {[}y}\hlstd{\ \ }\hlslc{{]}}\hspace*{\fill}\\
+\hlstd{}\hlstd{\ \ \ \ \ }\hlstd{}\hlnum{0\ 0\ 1\ 0\ }\hlstd{dt\ }\hlnum{0}\hlstd{}\hlopt{;}\hlstd{...}\hlstd{\ \ \ \ \ }\hlstd{}\hlslc{\%\ {[}Vx{]}}\hspace*{\fill}\\
+\hlstd{}\hlstd{\ \ \ \ \ }\hlstd{}\hlnum{0\ 0\ 0\ 1\ 0\ }\hlstd{dt}\hlopt{;}\hlstd{...}\hlstd{\ \ \ \ \ }\hlstd{}\hlslc{\%\ {[}Vy{]}}\hspace*{\fill}\\
+\hlstd{}\hlstd{\ \ \ \ \ }\hlstd{}\hlnum{0\ 0\ 0\ 0\ 1\ 0\ }\hlstd{}\hlopt{;}\hlstd{...}\hlstd{\ \ \ \ \ }\hlstd{}\hlslc{\%\ {[}Ax{]}}\hspace*{\fill}\\
+\hlstd{}\hlstd{\ \ \ \ \ }\hlstd{}\hlnum{0\ 0\ 0\ 0\ 0\ 1\ }\hlstd{}\hlopt{{]};}\hlstd{\ \ \ \ \ \ \ }\hlopt{}\hlstd{}\hlslc{\%\ {[}Ay{]}}\hspace*{\fill}\\
+\hlstd{}\hlstd{\ \ }\hlstd{}\hlslc{\%\ Initialize\ measurement\ matrix}\hspace*{\fill}\\
+\hlstd{}\hlstd{\ \ }\hlstd{H\ }\hlopt{=\ {[}\ }\hlstd{}\hlnum{1\ 0\ 0\ 0\ 0\ 0}\hlstd{}\hlopt{;\ }\hlstd{}\hlnum{0\ 1\ 0\ 0\ 0\ 0\ }\hlstd{}\hlopt{{]};}\hspace*{\fill}\\
+\hlstd{}\hlstd{\ \ }\hlstd{Q\ }\hlopt{=\ }\hlstd{eye}\hlopt{(}\hlstd{}\hlnum{6}\hlstd{}\hlopt{);}\hspace*{\fill}\\
+\hlstd{}\hlstd{\ \ }\hlstd{R\ }\hlopt{=\ }\hlstd{}\hlnum{1000\ }\hlstd{}\hlopt{{*}\ }\hlstd{eye}\hlopt{(}\hlstd{}\hlnum{2}\hlstd{}\hlopt{);}\hspace*{\fill}\\
+\hlstd{}\hlstd{\ \ }\hlstd{x\textunderscore est\ }\hlopt{=\ }\hlstd{zeros}\hlopt{(}\hlstd{}\hlnum{6}\hlstd{}\hlopt{,\ }\hlstd{}\hlnum{1}\hlstd{}\hlopt{);}\hspace*{\fill}\\
+\hlstd{}\hlstd{\ \ }\hlstd{p\textunderscore est\ }\hlopt{=\ }\hlstd{zeros}\hlopt{(}\hlstd{}\hlnum{6}\hlstd{}\hlopt{,\ }\hlstd{}\hlnum{6}\hlstd{}\hlopt{);}\hspace*{\fill}\\
+\hlstd{}\hspace*{\fill}\\
+\hlstd{}\hlstd{\ \ }\hlstd{numPts\ }\hlopt{=\ }\hlstd{}\hlkwa{size}\hlstd{}\hlopt{(}\hlstd{pos}\hlopt{,}\hlstd{}\hlnum{1}\hlstd{}\hlopt{);}\hspace*{\fill}\\
+\hlstd{}\hlstd{\ \ }\hlstd{Y\ }\hlopt{=\ }\hlstd{zeros}\hlopt{(}\hlstd{numPts}\hlopt{,\ }\hlstd{}\hlnum{2}\hlstd{}\hlopt{);}\hspace*{\fill}\\
+\hlstd{}\hspace*{\fill}\\
+\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwa{for\ }\hlstd{idx\ }\hlopt{=\ }\hlstd{}\hlnum{1}\hlstd{}\hlopt{:}\hlstd{numPts}\hspace*{\fill}\\
+\hlstd{}\hlstd{\ \ \ \ }\hlstd{z\ }\hlopt{=\ }\hlstd{pos}\hlopt{(}\hlstd{idx}\hlopt{,\ :)}\hlstd{}\hlstr{';}\hspace*{\fill}\\
+\hlstr{}\hspace*{\fill}\\
+\hlstr{}\hlstd{\ \ \ \ }\hlstr{\%\%\ Predicted\ state\ and\ covariance}\hspace*{\fill}\\
+\hlstr{}\hlstd{\ \ \ \ }\hlstr{x\textunderscore prd\ =\ A\ {*}\ x\textunderscore est;}\hspace*{\fill}\\
+\hlstr{}\hlstd{\ \ \ \ }\hlstr{p\textunderscore prd\ =\ A\ {*}\ p\textunderscore est\ {*}\ A'}\hlstd{\ }\hlopt{+\ }\hlstd{Q}\hlopt{;}\hspace*{\fill}\\
+\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlslc{\%\%\ Estimation}\hspace*{\fill}\\
+\hlstd{}\hlstd{\ \ \ \ }\hlstd{S\ }\hlopt{=\ }\hlstd{H\ }\hlopt{{*}\ }\hlstd{p\textunderscore prd}\hlstr{'\ {*}\ H'}\hlstd{\ }\hlopt{+\ }\hlstd{R}\hlopt{;}\hspace*{\fill}\\
+\hlstd{}\hlstd{\ \ \ \ }\hlstd{B\ }\hlopt{=\ }\hlstd{H\ }\hlopt{{*}\ }\hlstd{p\textunderscore prd}\hlstr{';}\hspace*{\fill}\\
+\hlstr{}\hlstd{\ \ \ \ }\hlstr{klm\textunderscore gain\ =\ (S\ $\backslash$\ B)'}\hlstd{}\hlopt{;}\hspace*{\fill}\\
+\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlslc{\%\%\ Estimated\ state\ and\ covariance}\hspace*{\fill}\\
+\hlstd{}\hlstd{\ \ \ \ }\hlstd{x\textunderscore est\ }\hlopt{=\ }\hlstd{x\textunderscore prd\ }\hlopt{+\ }\hlstd{klm\textunderscore gain\ }\hlopt{{*}\ (}\hlstd{z\ }\hlopt{{-}\ }\hlstd{H\ }\hlopt{{*}\ }\hlstd{x\textunderscore prd}\hlopt{);}\hspace*{\fill}\\
+\hlstd{}\hlstd{\ \ \ \ }\hlstd{p\textunderscore est\ }\hlopt{=\ }\hlstd{p\textunderscore prd\ }\hlopt{{-}\ }\hlstd{klm\textunderscore gain\ }\hlopt{{*}\ }\hlstd{H\ }\hlopt{{*}\ }\hlstd{p\textunderscore prd}\hlopt{;}\hspace*{\fill}\\
+\hlstd{}\hlstd{\ \ \ \ }\hlstd{}\hlslc{\%\%\ Compute\ the\ estimated\ measurements}\hspace*{\fill}\\
+\hlstd{}\hlstd{\ \ \ \ }\hlstd{Y}\hlopt{(}\hlstd{idx}\hlopt{,\ :)\ =\ }\hlstd{H\ }\hlopt{{*}\ }\hlstd{x\textunderscore est}\hlopt{;}\hspace*{\fill}\\
+\hlstd{}\hlstd{\ \ }\hlstd{}\hlkwa{end}\hlstd{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlkwa{}\hlstd{}\hlslc{\%\ of\ the\ function}\hspace*{\fill}\\
+\hlstd{}\hlkwa{end}\hlstd{\ \ \ }\hlkwa{}\hlstd{}\hlslc{\%\ of\ the\ function}\hlstd{}\hspace*{\fill}
 \mbox{}
 \normalfont
 \normalsize

@@ -49,6 +49,8 @@
 \newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
 
 \let\hlesc\hldef \let\hlpps\hldef \let\hllin\hldef \let\hlslc\hlcom \let\hlppc\hlcom
+\let\hlstd\hldef
+\let\hlstr\hlsng
 \usepackage{alltt}
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
@@ -59,8 +61,8 @@ Syntax highlighting also works for other languages in the \LaTeX{} or HTML outpu
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \noindent
 \ttfamily
-\hldef{x\ }\hlopt{=\ }\hldef{}\hlsng{'hello,\ python\ world!'}\hldef{}\hspace*{\fill}\\
-\hldef{}\hlkwa{print}\hldef{}\hlopt{(}\hldef{x}\hlopt{)}\hldef{}\hspace*{\fill}
+\hlstd{x\ }\hlopt{=\ }\hlstd{}\hlstr{'hello,\ python\ world!'}\hlstd{}\hspace*{\fill}\\
+\hlstd{}\hlkwa{print}\hlstd{}\hlopt{(}\hlstd{x}\hlopt{)}\hlstd{}\hspace*{\fill}
 \mbox{}
 \normalfont
 \begin{verbatim}
@@ -68,7 +70,7 @@ Syntax highlighting also works for other languages in the \LaTeX{} or HTML outpu
 \end{verbatim}
 \noindent
 \ttfamily
-\hldef{}\hlkwa{print}\hldef{}\hlopt{(}\hldef{x}\hlopt{.}\hldef{}\hlkwd{split}\hldef{}\hlopt{(}\hldef{}\hlsng{'\ '}\hldef{}\hlopt{))}\hldef{}\hspace*{\fill}
+\hlstd{}\hlkwa{print}\hlstd{}\hlopt{(}\hlstd{x}\hlopt{.}\hlstd{}\hlkwd{split}\hlstd{}\hlopt{(}\hlstd{}\hlstr{'\ '}\hlstd{}\hlopt{))}\hlstd{}\hspace*{\fill}
 \mbox{}
 \normalfont
 \begin{verbatim}
