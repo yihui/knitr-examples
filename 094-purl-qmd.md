@@ -45,4 +45,15 @@ If one chunk should not be included in the results from `purl()`, just use the c
 options(stringsAsFactors = FALSE, show.signif.stars = FALSE)
 ```
 
+When a code chunk is supposed to error, use `error = TRUE`, and `purl()` will wrap the code in `try()`:
+
+
+``` r
+1 + 'a'
+```
+
+```
+## Error in 1 + "a": non-numeric argument to binary operator
+```
+
 That is it.

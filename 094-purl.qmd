@@ -40,4 +40,12 @@ If one chunk should not be included in the results from `purl()`, just use the c
 options(stringsAsFactors = FALSE, show.signif.stars = FALSE)
 ```
 
+When a code chunk is supposed to error, use `error = TRUE`, and `purl()` will wrap the code in `try()`:
+
+```{r}
+#| label: test-e
+#| error: true
+1 + 'a'
+```
+
 That is it.
