@@ -8,8 +8,8 @@ if (FALSE) plot(1:10)
 
 
 ## ----test-c, eval=FALSE--------------------------------------------------
-## paste(letters, collapse = '|')
-## if (1 == 1) {
-##   'Awesome!'
-## }
+# paste(letters, collapse = '|')
+# if (1 == 1) {
+#   'Awesome!'
+# }
 

@@ -17,8 +17,8 @@ if (FALSE) plot(1:10)
 ## ------------------------------------------------------------------------
 #| label: test-c
 #| eval: false
-## paste(letters, collapse = '|')
-## if (1 == 1) {
-##   'Awesome!'
-## }
+# paste(letters, collapse = '|')
+# if (1 == 1) {
+#   'Awesome!'
+# }
 
