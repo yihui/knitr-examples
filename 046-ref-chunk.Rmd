@@ -1,0 +1,34 @@
+Code chunks can be referenced via `<<label>>`. First, we define `chunk-a`:
+
+```{r, chunk-a, eval=FALSE}
+1 + 1
+```
+
+Then use it in `chunk-b` (the reference needs to be on its own line):
+
+```{r, chunk-b}
+f = function() {
+  (
+    <<chunk-a>>
+  )^3
+}
+f()
+```
+
+If the reference is not found, `<<>>` will not be resolved:
+
+```{r, eval=FALSE}
+g = function() {
+  # there is no chunk-z
+  <<chunk-z>>
+}
+```
+
+Or you can disable the reference via `ref.chunk = FALSE`:
+
+```{r, ref.chunk=FALSE}
+# a literal string
+h = "
+<<chunk-a>>
+"
+```
