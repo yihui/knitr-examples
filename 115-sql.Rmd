@@ -1,0 +1,48 @@
+#### Using Engine 'mysql'
+
+First, let's connect to a MySQL database using `dplyr`.
+
+```{r setup, message=FALSE}
+require(dplyr)
+require(RMySQL)
+db <- src_mysql(dbname = "airlines", user = "you", password = "mypass", host = "localhost")
+src_tbls(db)
+```
+
+This next bit doesn't work, but it would be cool if we could extract the server info from the `db` object.
+
+```{r dream, eval=FALSE}
+# would be cool if something like this works, but it won't and I'm not sure it ever will...
+# mysql.opts <- paste("-h", db$info$host, "-u", db$info$user, -p, db$info$password)
+```
+
+Ultimately, we just need to generate a string with the command line options that we pass to the shell command. Here I have hard-coded these, but it would be ideal to have them set by the `db` object. 
+
+```{r options, message=FALSE}
+require(knitr)
+opts_chunk$set(engine.opts = '-h localhost -u you -pmypass -t airlines')
+```
+
+Using `knitr`, we can now pull data directly from the MySQL server into the Markdown document, **without using R at all**!
+
+```{mysql, comment=NA, highlight=TRUE, tidy=TRUE}
+SELECT * FROM airports LIMIT 0,10;
+SELECT NOW();
+```
+
+If you don't want the lines, take of the `-t` table option, but then the columns won't line up. 
+
+#### Using Engine 'psql'
+
+PostgreSQL should also work, but I haven't figured out how to avoid the password prompt yet. In any case you would have to reset the `engine.opts` chunk option.
+
+
+```{r options-psql, message=FALSE}
+opts_chunk$set(engine.opts = '-h localhost -U postgres -w -d airlines')
+```
+
+
+```{psql, eval=FALSE, engine.opts='-h localhost -U postgres -w -d airlines'}
+SELECT * FROM airports LIMIT 0,10;
+SELECT NOW();
+```
