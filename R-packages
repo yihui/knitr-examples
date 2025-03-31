@@ -12,3 +12,4 @@ hexbin
 DBI
 RSQLite
 pdftools
+rlang
