@@ -55,7 +55,8 @@ bc(knitr r source#test-b).. 1 + "a"
 
 p(knitr_end). 
 
-bc(knitr r error#test-b).. ## Error in 1 + "a": non-numeric argument to binary operator
+bc(knitr r error#test-b).. ## Error in `1 + "a"`:
+## ! non-numeric argument to binary operator
 
 p(knitr_end). 
 

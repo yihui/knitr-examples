@@ -79,7 +79,8 @@ f()
 [CAUTION]
 ====
 .Error
-## Error in 1 + "a": non-numeric argument to binary operator
+## Error in `1 + "a"`:
+## ! non-numeric argument to binary operator
 
 ====
 

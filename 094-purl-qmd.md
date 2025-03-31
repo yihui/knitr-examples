@@ -53,7 +53,8 @@ When a code chunk is supposed to error, use `error = TRUE`, and `purl()` will wr
 ```
 
 ```
-## Error in 1 + "a": non-numeric argument to binary operator
+## Error in `1 + "a"`:
+## ! non-numeric argument to binary operator
 ```
 
 That is it.
