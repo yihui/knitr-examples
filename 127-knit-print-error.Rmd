@@ -1,0 +1,23 @@
+---
+title: Error traceback with rlang
+---
+
+If error happens during `knit_print()`, the traceback shown is a smaller one, starting at knit_print() function internal.
+
+```{r}
+options(rlang_backtrace_on_error_report = "full")
+```
+
+```{r}
+f <- function() g()
+g <- function() h()
+h <- function() stop("This is an error from knit_print !")
+
+knit_print.custom <- function(x, ...) {
+    f()
+}
+```
+
+```{r, error = TRUE}
+structure("example", class = "custom")
+```

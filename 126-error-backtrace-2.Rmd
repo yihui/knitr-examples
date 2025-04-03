@@ -1,0 +1,12 @@
+---
+title: Error traceback with rlang
+---
+
+For code using **rlang** errors directly, clean traceback should be shown too.
+
+```{r, error = FALSE}
+f <- function() g()
+g <- function() h()
+h <- function() rlang::abort("This is an error !")
+f()
+```

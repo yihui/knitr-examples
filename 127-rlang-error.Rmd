@@ -1,0 +1,16 @@
+---
+title: Error traceback with rlang
+---
+
+When `error = TRUE` is used, the traceback is shown in cell output if **rlang** is configured.
+
+```{r}
+options(rlang_backtrace_on_error_report = "full")
+```
+
+```{r, error = TRUE}
+f <- function() g()
+g <- function() h()
+h <- function() stop("This is an error !")
+f()
+```

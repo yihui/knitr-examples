@@ -1,0 +1,6 @@
+Error in file(con, "r") : cannot open the connection
+Calls: <Anonymous> -> <Anonymous> -> readLines -> file
+In addition: Warning message:
+In file(con, "r") :
+  cannot open file '126-rlang-error.Rmd': No such file or directory
+Execution halted
