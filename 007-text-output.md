@@ -244,10 +244,10 @@ for (i in 1:10) {
 ```
 
 ``` r
-## # two blank lines below
-## 
-## 
-## dnorm(0)
+# two blank lines below
+
+
+dnorm(0)
 ```
 
 ## Add prompts but no tidy
