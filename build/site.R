@@ -46,13 +46,14 @@ js = function(x) {
 }
 
 # HTML text escape. Some example files use legacy encodings (GB2312, Big5,
-# ...); convert to valid UTF-8 first (replacing invalid bytes) so gsub() does
-# not error on invalid multibyte strings under a minimal CI locale.
+# ...) and contain bytes that are not valid UTF-8; scrub those bytes with
+# iconv and use useBytes = TRUE so gsub() never errors with "input string is
+# invalid UTF-8" (which depends on the CI locale).
 esc = function(x) {
-  x = iconv(x, to = "UTF-8", sub = "byte")
-  x = gsub("&", "&amp;", x, fixed = TRUE)
-  x = gsub("<", "&lt;", x, fixed = TRUE)
-  gsub(">", "&gt;", x, fixed = TRUE)
+  x = iconv(x, from = "UTF-8", to = "UTF-8", sub = "byte")
+  x = gsub("&", "&amp;", x, fixed = TRUE, useBytes = TRUE)
+  x = gsub("<", "&lt;", x, fixed = TRUE, useBytes = TRUE)
+  gsub(">", "&gt;", x, fixed = TRUE, useBytes = TRUE)
 }
 
 # build a full HTML page showing a file verbatim, syntax-highlighted client-side
@@ -76,7 +77,7 @@ embed_view = function(f, html) {
 <script src="%s/plugins/autoloader/prism-autoloader.min.js"></script>
 </body></html>',
     esc(f), prism, lang,
-    esc(paste(readLines(f, warn = FALSE), collapse = "\n")),
+    esc(paste(readLines(f, warn = FALSE, encoding = "UTF-8"), collapse = "\n")),
     prism, prism)
   writeLines(page, file.path(out_dir, html))
 }
