@@ -46,8 +46,8 @@ jobs:
           extra-packages: knitr litedown XML
           r-universe: cran bioc-release yihui
           apt-packages: >
-            libpoppler-cpp-dev graphviz asymptote highlight coffeescript scala
-            optipng ghostscript gawk ruby ghc perl
+            libpoppler-cpp-dev libmagick++-dev graphviz asymptote highlight
+            coffeescript scala optipng ghostscript gawk ruby ghc perl
 
       - name: Install CTAN dependencies
         run: tinytex::tlmgr_install(c("dvisvgm", "pgf", "preview", "xcolor", "beamer", "translator"))

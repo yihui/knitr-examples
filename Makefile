@@ -8,11 +8,13 @@ pdf:
 pandoc:
 	Rscript 084-pandoc.R && Rscript 088-pandoc-embedded.R
 
-# build the static website (re-knit everything, then render to _site/)
+# build the static website (re-knit everything, then render to _site/).
+# knit/pandoc/pdf are best-effort: a single failing example should not blank the
+# whole site; only build/site.R is required to succeed.
 site:
 	$(RM) -r cache
-	$(MAKE) knit
-	$(MAKE) pandoc
+	-$(MAKE) knit
+	-$(MAKE) pandoc
 	-$(MAKE) pdf
 	Rscript build/site.R
 

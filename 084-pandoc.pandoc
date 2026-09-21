@@ -4,12 +4,12 @@ standalone:
 toc:
 
 t: latex
-latex-engine: xelatex
+pdf-engine: xelatex
 number-sections:
 output: 084-pandoc-xelatex.pdf
 
 t: beamer
-latex-engine: pdflatex
+pdf-engine: pdflatex
 incremental:
 output: 084-pandoc-beamer.pdf
 
