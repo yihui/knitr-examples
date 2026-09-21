@@ -45,8 +45,11 @@ js = function(x) {
   x
 }
 
-# HTML text escape
+# HTML text escape. Some example files use legacy encodings (GB2312, Big5,
+# ...); convert to valid UTF-8 first (replacing invalid bytes) so gsub() does
+# not error on invalid multibyte strings under a minimal CI locale.
 esc = function(x) {
+  x = iconv(x, to = "UTF-8", sub = "byte")
   x = gsub("&", "&amp;", x, fixed = TRUE)
   x = gsub("<", "&lt;", x, fixed = TRUE)
   gsub(">", "&gt;", x, fixed = TRUE)
