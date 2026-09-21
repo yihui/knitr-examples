@@ -1,0 +1,45 @@
+name: "Set up knitr-examples dependencies"
+description: >
+  Install everything needed to knit and compile the examples in this
+  repository: the R packages declared in DESCRIPTION (Suggests), the system
+  (apt) packages, and the LaTeX dependencies. This action is the single source
+  of truth for these dependencies, reused by this repo's site workflow and by
+  the knitr repo's integration-test workflow, so neither has to hardcode them.
+
+inputs:
+  working-directory:
+    description: >
+      Directory containing the knitr-examples checkout (i.e. the directory with
+      DESCRIPTION). Defaults to the repository root; the knitr repo checks this
+      repo out into a subdirectory and passes that path.
+    default: "."
+  extra-packages:
+    description: >
+      Extra R packages to install beyond DESCRIPTION (space- or comma-
+      separated). This repo's own site build passes 'knitr litedown' here; the
+      knitr integration workflow leaves it empty so it does not clobber the
+      development version of knitr it has already installed.
+    default: ""
+
+runs:
+  using: "composite"
+  steps:
+    # R package dependencies (from DESCRIPTION Suggests) plus system packages.
+    # setup-r-dependencies caches the installed library across runs.
+    - uses: yihui/actions/setup-r-dependencies@v1.3.2
+      with:
+        working-directory: ${{ inputs.working-directory }}
+        extra-packages: ${{ inputs.extra-packages }}
+        r-universe: cran bioc-release yihui
+        apt-packages: >
+          libpoppler-cpp-dev libmagick++-dev graphviz asymptote highlight
+          coffeescript scala optipng ghostscript gawk ruby ghc perl
+
+    # register R's texmf tree (Sweave.sty etc.); dvisvgm is needed at knit time
+    # by the tikz engine. Other CTAN packages are auto-installed by
+    # tinytex::latexmk() during PDF compilation.
+    - name: Set up LaTeX dependencies
+      shell: Rscript {0}
+      run: |
+        tinytex::r_texmf("add")
+        tinytex::tlmgr_install("dvisvgm")

@@ -39,24 +39,11 @@ jobs:
         env:
           TINYTEX_INSTALLER: TinyTeX
 
-      # installs the example packages from DESCRIPTION (Suggests) plus knitr and
-      # litedown from the yihui r-universe, and the system dependencies
-      - uses: yihui/actions/setup-r-dependencies@v1.3.2
+      # install R, system, and LaTeX dependencies (see the composite action);
+      # knitr and litedown are pulled from the yihui r-universe for this build
+      - uses: ./.github/actions/setup
         with:
-          extra-packages: knitr litedown XML
-          r-universe: cran bioc-release yihui
-          apt-packages: >
-            libpoppler-cpp-dev libmagick++-dev graphviz asymptote highlight
-            coffeescript scala optipng ghostscript gawk ruby ghc perl
-
-      # register R's texmf tree (Sweave.sty etc.); dvisvgm is needed at knit
-      # time for the tikz engine. Other CTAN packages are auto-installed by
-      # tinytex::latexmk() during PDF compilation.
-      - name: Set up LaTeX dependencies
-        run: |
-          tinytex::r_texmf("add")
-          tinytex::tlmgr_install("dvisvgm")
-        shell: Rscript {0}
+          extra-packages: knitr litedown
 
       # re-knit everything and render to _site/ (see the `site` target)
       - name: Build site
