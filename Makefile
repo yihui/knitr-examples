@@ -3,19 +3,17 @@ knit:
 
 
 pdf:
-	for i in *.tex; do echo $$i; texi2pdf -c -q $$i; done
+	Rscript -e "for (f in list.files('.', '[.]tex$$')) { message(f); tinytex::latexmk(f) }"
 
 pandoc:
 	Rscript 084-pandoc.R && Rscript 088-pandoc-embedded.R
 
-# build the static website (re-knit everything, then render to _site/).
-# knit/pandoc/pdf are best-effort: a single failing example should not blank the
-# whole site; only build/site.R is required to succeed.
+# build the static website (re-knit everything, then render to _site/)
 site:
 	$(RM) -r cache
-	-$(MAKE) knit
-	-$(MAKE) pandoc
-	-$(MAKE) pdf
+	$(MAKE) knit
+	$(MAKE) pandoc
+	$(MAKE) pdf
 	Rscript build/site.R
 
 deps:
@@ -25,7 +23,7 @@ deps:
 	-e "for (i in setdiff(pkgs, ''))" \
 	-e "if (!require(i, character.only=TRUE)) install.packages(i, repos=repo)" \
 	-e "update.packages(.libPaths(), instlib = .libPaths()[1], ask = FALSE, repos = repo)"
-	(kpsewhich Sweave.sty || tlmgr conf texmf TEXMFHOME "~/texmf:/usr/share/R/share/texmf")
+	Rscript -e "tinytex::r_texmf('add')"
 
 sysdeps:
 	sudo apt-get install -qq r-cran-plyr r-cran-mapproj r-cran-hmisc r-cran-rcpparmadillo r-cran-tikzdevice

@@ -10,5 +10,5 @@ Rscript \
 
 # if there is an extra argument, compile tex to pdf
 if [ "$2" != '' ]; then
-  texi2pdf -c ${1%.*}.tex
+  Rscript -e "tinytex::latexmk('${1%.*}.tex')"
 fi

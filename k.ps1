@@ -16,5 +16,5 @@ $AllArgs = @(
 # if there is an extra argument, compile tex to pdf
 If($args[1])
 {
-  & "texi2pdf" @("-c", "$base.tex")
+  & "Rscript" @("-e", "tinytex::latexmk('$base.tex')")
 }
