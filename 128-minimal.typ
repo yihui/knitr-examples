@@ -45,7 +45,7 @@ plot(cumsum(x), type = "o", pch = 19)
 ```
 
 #figure(
-  image("https://db.yihui.org/knitr-examples/figure/128-minimal-plot-1.pdf", width: 80%),
+  image("https://pkg.yihui.org/knitr-examples/figure/128-minimal-plot-1.pdf", width: 80%),
   caption: [Random walk],
 )
 

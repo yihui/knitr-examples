@@ -1,0 +1,22 @@
+Package: knitr.examples
+Title: Knitr Examples (Not a Real Package)
+Version: 0.0.0
+Description: Placeholder to declare packages needed to knit the examples. knitr
+    and litedown are omitted on purpose so the knitr integration tests keep
+    their dev version of knitr.
+Suggests:
+    DBI,
+    diagram,
+    ggplot2,
+    gridExtra,
+    hexbin,
+    Hmisc,
+    mapproj,
+    pdftools,
+    Rcpp,
+    RcppArmadillo,
+    rglwidget,
+    rlang,
+    RSQLite,
+    tikzDevice,
+    xtable

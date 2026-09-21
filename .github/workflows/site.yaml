@@ -1,0 +1,72 @@
+on:
+  push:
+    branches:
+      - master
+      - main
+  workflow_dispatch:
+
+name: Build site
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  build-site:
+    runs-on: ubuntu-latest
+
+    env:
+      DISPLAY: ':99.0'
+      RGL_USE_NULL: TRUE
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      # knit figures with URLs relative to the deployed site
+      KNITR_BASE_URL: ''
+      CI: 'true'
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          use-public-rspm: true
+
+      - uses: r-lib/actions/setup-pandoc@v2
+
+      - uses: r-lib/actions/setup-tinytex@v2
+        env:
+          TINYTEX_INSTALLER: TinyTeX
+
+      # installs the example packages from DESCRIPTION (Suggests) plus knitr and
+      # litedown from the yihui r-universe, and the system dependencies
+      - uses: yihui/actions/setup-r-dependencies@v1.3.2
+        with:
+          extra-packages: knitr litedown XML
+          r-universe: cran bioc-release yihui
+          apt-packages: >
+            libpoppler-cpp-dev graphviz asymptote highlight coffeescript scala
+            optipng ghostscript gawk ruby ghc perl
+
+      - name: Install CTAN dependencies
+        run: tinytex::tlmgr_install(c("dvisvgm", "pgf", "preview", "xcolor", "beamer", "translator"))
+        shell: Rscript {0}
+
+      # re-knit everything and render to _site/ (see the `site` target)
+      - name: Build site
+        run: make site
+
+      - name: Deploy to gh-pages
+        run: |
+          cd _site
+          touch .nojekyll
+          git init -q
+          git checkout -q -b gh-pages
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Build site from ${GITHUB_SHA::7}"
+          git push -f "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -8,7 +8,7 @@ library(knitr)
 include_graphics("figure/003-minimal-html-cars-scatter-2.png", dpi = NA)
 ```
 
-![plot of chunk unnamed-chunk-1](https://db.yihui.org/knitr-examples/figure/003-minimal-html-cars-scatter-2.png)
+![plot of chunk unnamed-chunk-1](https://pkg.yihui.org/knitr-examples/figure/003-minimal-html-cars-scatter-2.png)
 
 You can pass a character vector of mutiple image paths to `include_graphics()`, and you can also use chunk options related to figures, such as `out.width` and `fig.cap`, etc.
 
@@ -36,7 +36,7 @@ knitr::include_graphics(images[3])
 ```
 
 <div class="figure">
-<img src="https://db.yihui.org/knitr-examples/figure/001-minimal-unnamed-chunk-2-1.png" alt="This is a caption" width="33%" /><img src="https://db.yihui.org/knitr-examples/figure/001-minimal-unnamed-chunk-2-2.png" alt="This is a caption" width="33%" /><img src="https://db.yihui.org/knitr-examples/figure/003-minimal-html-cars-scatter-2.png" alt="This is a caption" width="33%" />
+<img src="https://pkg.yihui.org/knitr-examples/figure/001-minimal-unnamed-chunk-2-1.png" alt="This is a caption" width="33%" /><img src="https://pkg.yihui.org/knitr-examples/figure/001-minimal-unnamed-chunk-2-2.png" alt="This is a caption" width="33%" /><img src="https://pkg.yihui.org/knitr-examples/figure/003-minimal-html-cars-scatter-2.png" alt="This is a caption" width="33%" />
 <p class="caption">This is a caption</p>
 </div>
 
@@ -46,7 +46,7 @@ knitr::include_graphics(images)
 ```
 
 <div class="figure">
-<img src="https://db.yihui.org/knitr-examples/figure/001-minimal-unnamed-chunk-2-1.png" alt="This is another caption" width="33%" /><img src="https://db.yihui.org/knitr-examples/figure/001-minimal-unnamed-chunk-2-2.png" alt="This is another caption" width="33%" /><img src="https://db.yihui.org/knitr-examples/figure/003-minimal-html-cars-scatter-2.png" alt="This is another caption" width="33%" />
+<img src="https://pkg.yihui.org/knitr-examples/figure/001-minimal-unnamed-chunk-2-1.png" alt="This is another caption" width="33%" /><img src="https://pkg.yihui.org/knitr-examples/figure/001-minimal-unnamed-chunk-2-2.png" alt="This is another caption" width="33%" /><img src="https://pkg.yihui.org/knitr-examples/figure/003-minimal-html-cars-scatter-2.png" alt="This is another caption" width="33%" />
 <p class="caption">This is another caption</p>
 </div>
 
@@ -69,7 +69,7 @@ knitr::include_graphics(images[3])
 ```
 
 <div class="figure">
-<img src="https://db.yihui.org/knitr-examples/figure/001-minimal-unnamed-chunk-2-1.png" alt="This is a caption" width="33%" /><img src="https://db.yihui.org/knitr-examples/figure/099-include-graphics-mix-a-2.png" alt="This is a caption" width="33%" /><img src="https://db.yihui.org/knitr-examples/figure/001-minimal-unnamed-chunk-2-2.png" alt="This is a caption" width="33%" /><img src="https://db.yihui.org/knitr-examples/figure/003-minimal-html-cars-scatter-2.png" alt="This is a caption" width="33%" />
+<img src="https://pkg.yihui.org/knitr-examples/figure/001-minimal-unnamed-chunk-2-1.png" alt="This is a caption" width="33%" /><img src="https://pkg.yihui.org/knitr-examples/figure/099-include-graphics-mix-a-2.png" alt="This is a caption" width="33%" /><img src="https://pkg.yihui.org/knitr-examples/figure/001-minimal-unnamed-chunk-2-2.png" alt="This is a caption" width="33%" /><img src="https://pkg.yihui.org/knitr-examples/figure/003-minimal-html-cars-scatter-2.png" alt="This is a caption" width="33%" />
 <p class="caption">This is a caption</p>
 </div>
 
@@ -79,10 +79,10 @@ knitr::include_graphics(images[1:2])
 ```
 
 <div class="figure">
-<img src="https://db.yihui.org/knitr-examples/figure/001-minimal-unnamed-chunk-2-1.png" alt="This is a caption" width="33%" />
+<img src="https://pkg.yihui.org/knitr-examples/figure/001-minimal-unnamed-chunk-2-1.png" alt="This is a caption" width="33%" />
 <p class="caption">This is a caption</p>
 </div><div class="figure">
-<img src="https://db.yihui.org/knitr-examples/figure/001-minimal-unnamed-chunk-2-2.png" alt="This is another" width="33%" />
+<img src="https://pkg.yihui.org/knitr-examples/figure/001-minimal-unnamed-chunk-2-2.png" alt="This is another" width="33%" />
 <p class="caption">This is another</p>
 </div>
 
@@ -91,7 +91,7 @@ plot(cars)
 ```
 
 <div class="figure">
-<img src="https://db.yihui.org/knitr-examples/figure/099-include-graphics-mix-b-3.png" alt="this is a plot" width="33%" />
+<img src="https://pkg.yihui.org/knitr-examples/figure/099-include-graphics-mix-b-3.png" alt="this is a plot" width="33%" />
 <p class="caption">this is a plot</p>
 </div>
 
@@ -108,7 +108,7 @@ knitr::include_graphics(images[3])
 ```
 
 <div class="figure">
-<img src="https://db.yihui.org/knitr-examples/figure/003-minimal-html-cars-scatter-2.png" alt="And a last" width="33%" />
+<img src="https://pkg.yihui.org/knitr-examples/figure/003-minimal-html-cars-scatter-2.png" alt="And a last" width="33%" />
 <p class="caption">And a last</p>
 </div>
 
@@ -122,7 +122,7 @@ knitr::include_graphics(images[3])
 ```
 
 <div class="figure">
-<p class="caption">This is a caption</p><img src="https://db.yihui.org/knitr-examples/figure/001-minimal-unnamed-chunk-2-1.png" alt="This is a caption" width="33%" /><img src="https://db.yihui.org/knitr-examples/figure/001-minimal-unnamed-chunk-2-2.png" alt="This is a caption" width="33%" /><img src="https://db.yihui.org/knitr-examples/figure/003-minimal-html-cars-scatter-2.png" alt="This is a caption" width="33%" /></div>
+<p class="caption">This is a caption</p><img src="https://pkg.yihui.org/knitr-examples/figure/001-minimal-unnamed-chunk-2-1.png" alt="This is a caption" width="33%" /><img src="https://pkg.yihui.org/knitr-examples/figure/001-minimal-unnamed-chunk-2-2.png" alt="This is a caption" width="33%" /><img src="https://pkg.yihui.org/knitr-examples/figure/003-minimal-html-cars-scatter-2.png" alt="This is a caption" width="33%" /></div>
 
 
 ``` r
@@ -130,4 +130,4 @@ knitr::include_graphics(images)
 ```
 
 <div class="figure">
-<p class="caption">This is another caption</p><img src="https://db.yihui.org/knitr-examples/figure/001-minimal-unnamed-chunk-2-1.png" alt="This is another caption" width="33%" /><img src="https://db.yihui.org/knitr-examples/figure/001-minimal-unnamed-chunk-2-2.png" alt="This is another caption" width="33%" /><img src="https://db.yihui.org/knitr-examples/figure/003-minimal-html-cars-scatter-2.png" alt="This is another caption" width="33%" /></div>
+<p class="caption">This is another caption</p><img src="https://pkg.yihui.org/knitr-examples/figure/001-minimal-unnamed-chunk-2-1.png" alt="This is another caption" width="33%" /><img src="https://pkg.yihui.org/knitr-examples/figure/001-minimal-unnamed-chunk-2-2.png" alt="This is another caption" width="33%" /><img src="https://pkg.yihui.org/knitr-examples/figure/003-minimal-html-cars-scatter-2.png" alt="This is another caption" width="33%" /></div>

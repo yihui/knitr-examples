@@ -8,11 +8,21 @@ pdf:
 pandoc:
 	Rscript 084-pandoc.R && Rscript 088-pandoc-embedded.R
 
+# build the static website (re-knit everything, then render to _site/)
+site:
+	$(RM) -r cache
+	$(MAKE) knit
+	$(MAKE) pandoc
+	-$(MAKE) pdf
+	Rscript build/site.R
+
 deps:
 	tlmgr install pgf preview xcolor beamer translator;\
-	Rscript -e "for (i in readLines('R-packages'))" \
-	-e "if (!require(i, character.only=TRUE)) install.packages(i, repos=getOption('repos', 'http://cran.rstudio.com'))" \
-	-e "update.packages(.libPaths(), instlib = .libPaths()[1], ask = FALSE, repos = getOption('repos', 'http://cran.rstudio.com'))"
+	Rscript -e "repo = getOption('repos', 'http://cran.rstudio.com')" \
+	-e "pkgs = strsplit(read.dcf('DESCRIPTION', 'Suggests')[1, 1], '[[:space:],]+')[[1]]" \
+	-e "for (i in setdiff(pkgs, ''))" \
+	-e "if (!require(i, character.only=TRUE)) install.packages(i, repos=repo)" \
+	-e "update.packages(.libPaths(), instlib = .libPaths()[1], ask = FALSE, repos = repo)"
 	(kpsewhich Sweave.sty || tlmgr conf texmf TEXMFHOME "~/texmf:/usr/share/R/share/texmf")
 
 sysdeps:

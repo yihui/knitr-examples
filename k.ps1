@@ -6,7 +6,7 @@ $file=$file -replace '[\\/]','/'
 $prefix=${base}+"-"
 
 $AllArgs = @(
-  "-e", "if (Sys.getenv('USER')=='yihui' || Sys.getenv('CI')=='true') knitr::opts_knit`$set(base.url='https://db.yihui.org/knitr-examples/')",
+  "-e", "if (Sys.getenv('USER')=='yihui' || Sys.getenv('CI')=='true') knitr::opts_knit`$set(base.url=Sys.getenv('KNITR_BASE_URL', 'https://pkg.yihui.org/knitr-examples/'))",
   "-e", "knitr::opts_chunk`$set(cache.path='cache/$prefix', fig.path='figure/$prefix', tidy=TRUE)",
   "-e", "set.seed(123); knitr::knit('$file', quiet = TRUE)"
   )
