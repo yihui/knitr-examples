@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<title>094-purl.qmd</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css">
+<style>body{margin:0} pre{margin:0;padding:.6em;white-space:pre-wrap;word-break:break-word}</style>
+</head><body>
+<pre><code class="language-markdown"># An example for `purl()`
+
+The function `purl()` can be used to extract code chunks from a document.
+
+```{r}
+#| label: test-a
+#| eval: true
+1+1
+strsplit('hello world', ' ')
+```
+
+A second chunk.
+
+```{r}
+#| label: test-b
+#| fig-width: 10
+#| fig-height: 7
+#| fig-format: svg
+#| fig-dpi: 120
+if (FALSE) plot(1:10)
+```
+
+When we do not evaluate a chunk, the code from `purl()` will be commented out.
+
+```{r}
+#| label: test-c
+#| eval: false
+paste(letters, collapse = '|')
+if (1 == 1) {
+  'Awesome!'
+}
+```
+
+If one chunk should not be included in the results from `purl()`, just use the chunk option `purl = FALSE`:
+
+```{r}
+#| label: test-d
+#| purl: false
+# we do not like significance stars!
+options(stringsAsFactors = FALSE, show.signif.stars = FALSE)
+```
+
+When a code chunk is supposed to error, use `error = TRUE`, and `purl()` will wrap the code in `try()`:
+
+```{r}
+#| label: test-e
+#| error: true
+1 + 'a'
+```
+
+That is it.</code></pre>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body></html>

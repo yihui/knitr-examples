@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<title>053-beamer-only.Rnw</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css">
+<style>body{margin:0} pre{margin:0;padding:.6em;white-space:pre-wrap;word-break:break-word}</style>
+</head><body>
+<pre><code class="language-markdown">\documentclass{beamer}
+\begin{document}
+&lt;&lt;setup, include=FALSE&gt;&gt;=
+library(knitr)
+# smaller font size for chunks
+opts_chunk$set(size = 'footnotesize')
+
+hook_plot = knit_hooks$get('plot') # the default hook
+# tweak and reset the default hook
+knit_hooks$set(plot = function(x, options) {
+  txt = hook_plot(x, options)
+  if (options$fig.cur &lt;= 0) return(txt)
+  # add \only&lt;n&gt; before \includegraphics
+  gsub('(\\\\includegraphics[^}]+})', sprintf('\\\\only&lt;%d&gt;{\\1}', options$fig.cur), txt)
+})
+@
+\title{Show Plots Step by Step with knitr in Beamer}
+\author{Yihui Xie}
+
+\maketitle
+
+\begin{frame}
+The question came from \url{http://r.789695.n4.nabble.com/plots-for-presentation-td4645869.html}
+\end{frame}
+
+% very important to use option [fragile] for frames containing code output!
+\begin{frame}[fragile]
+We will add ``\textbackslash{}only'' to the plots so they show up one by one.
+
+&lt;&lt;boring-plots, out.width='.5\\linewidth', fig.show='hold', fig.keep='all', fig.align='center'&gt;&gt;=
+par(mar = c(4, 4, .1, .1))
+x = rnorm(100)
+hist(x, main='')
+rug(x)
+abline(v = mean(x), lty = 2, lwd = 3)
+@
+\end{frame}
+
+\end{document}</code></pre>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body></html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<title>106-polyglot.Rmd</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css">
+<style>body{margin:0} pre{margin:0;padding:.6em;white-space:pre-wrap;word-break:break-word}</style>
+</head><body>
+<pre><code class="language-markdown"># A Knitr "Polyglot" Example for Markdown
+
+This is a minimal example of using "polyglot"" **knitr** to produce an _HTML_ page from _Markdown_.
+
+```{r setup}
+knitr::opts_chunk$set(engine.opts = list(
+  perl = "-Mstrict -Mwarnings -Mfeature=say",
+  bash = "-o errexit -o nounset"
+))
+toTest &lt;- c("R", "python", "scala", "bash", "perl")
+where &lt;- Sys.which(toTest)
+```
+
+## Engine runtime paths
+
+```{r list-engines, message=FALSE}
+for(n in names(where)) {
+  path &lt;- where[n]
+  if(nchar(path) &lt;= 0) {
+    path &lt;- "&lt;not found&gt;"
+  }
+  message("* __", n, "__: `", path, "`\n")
+}
+```
+
+## Input Data
+
+Pass the string to transform to engine subprocess via environment variable.
+
+```{r, echo=TRUE}
+Sys.setenv(SOMETHING = "something")
+```
+
+## Compute Something in R
+
+```{r something-in-R, engine='R', comment='R&gt;'}
+something &lt;- Sys.getenv("SOMETHING")
+somethingelse &lt;- paste(something, "+ R")
+cat(paste("'", something, "' is now '", somethingelse, "'", sep=""))
+```
+
+## Compute Something in Scala
+
+Running small fragments without caching can take some time, as the Scala compiler has to launch and compile the script to JVM bytecode. The `-savecompiled` option (passed via `engine.opts`) will result in Scala caching the compiled script outside of _knitr_.
+
+```{r something-in-Scala, engine='scala', comment='Scala&gt;', engine.opts='-savecompiled -nc', cache=TRUE}
+val something = System.getenv("SOMETHING")
+val somethingelse = something + " + Scala"
+println("'" + something + "' is now '" + somethingelse + "'")
+```
+
+## Compute Something in Python
+
+```{r something-in-Python, engine='python', comment='Python&gt;'}
+import os
+something = os.getenv("SOMETHING")
+somethingelse = something + " + Python"
+print("'" + something + "' is now '" + somethingelse + "'")
+```
+
+## Compute Something in Bash
+
+```{r something-in-Bash, engine='bash', comment='Bash&gt;'}
+something=$SOMETHING
+somethingelse="$something + Bash"
+echo "'$something' is now '$somethingelse'"
+```
+
+## Compute Something in Perl
+
+```{r something-in-Perl, engine='perl', comment='Perl&gt;'}
+my $something = $ENV{SOMETHING};
+$something .= ' + Perl';
+say join ' ', qw{something is now}, "'$something'";
+```</code></pre>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body></html>

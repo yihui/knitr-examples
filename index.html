@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>knitr examples</title>
+<style>
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, sans-serif; display: flex; flex-direction: column; height: 100vh; }
+header { padding: .5em 1em; border-bottom: 1px solid #ccc; display: flex; align-items: center; gap: .75em; flex-wrap: wrap; }
+header h1 { font-size: 1.1em; margin: 0; white-space: nowrap; }
+header a { color: inherit; }
+select { font-size: 1em; padding: .2em; max-width: 22em; }
+main { flex: 1; display: flex; min-height: 0; }
+.pane { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+.pane:first-child { border-right: 1px solid #ccc; }
+.pane-head { padding: .35em .6em; background: #f5f5f5; border-bottom: 1px solid #ddd; display: flex; align-items: center; gap: .5em; font-size: .85em; }
+.pane-head b { white-space: nowrap; }
+.pane-body { flex: 1; min-height: 0; }
+.pane-body iframe, .pane-body embed { width: 100%; height: 100%; border: 0; }
+</style>
+</head>
+<body>
+<header>
+<h1>knitr examples</h1>
+<select id="example" aria-label="example"></select>
+<span style="margin-left:auto;font-size:.85em">
+<a href="https://github.com/yihui/knitr-examples/">source</a>
+</span>
+</header>
+<main>
+<div class="pane">
+<div class="pane-head"><b>Source</b><select id="src" aria-label="source file"></select></div>
+<div class="pane-body" id="src-body"></div>
+</div>
+<div class="pane">
+<div class="pane-head"><b>Output</b><select id="out" aria-label="output file"></select></div>
+<div class="pane-body" id="out-body"></div>
+</div>
+</main>
+<script>
+const DATA = {
+"001":{"label":"001-minimal.Rmd","sources":[{"file":"001-minimal.Rmd","view":"001-minimal.Rmd.html","type":"iframe"}],"outputs":[{"file":"001-minimal.md","view":"001-minimal.html","type":"iframe"}]},
+"002":{"label":"002-minimal.Rnw","sources":[{"file":"002-minimal.Rnw","view":"002-minimal.Rnw.html","type":"iframe"}],"outputs":[{"file":"002-minimal.pdf","view":"002-minimal.pdf","type":"embed"},{"file":"002-minimal.tex","view":"002-minimal.tex.html","type":"iframe"}]},
+"003":{"label":"003-minimal.Rhtml","sources":[{"file":"003-minimal.Rhtml","view":"003-minimal.Rhtml.html","type":"iframe"}],"outputs":[{"file":"003-minimal.html","view":"003-minimal.html","type":"iframe"}]},
+"004":{"label":"004-minimal.brew","sources":[{"file":"004-minimal.brew","view":"004-minimal.brew.html","type":"iframe"}],"outputs":[{"file":"004-minimal.txt","view":"004-minimal.txt.html","type":"iframe"}]},
+"005":{"label":"005-latex.Rtex","sources":[{"file":"005-latex.Rtex","view":"005-latex.Rtex.html","type":"iframe"}],"outputs":[{"file":"005-latex.pdf","view":"005-latex.pdf","type":"embed"},{"file":"005-latex.tex","view":"005-latex.tex.html","type":"iframe"}]},
+"006":{"label":"006-minimal.Rrst","sources":[{"file":"006-minimal.Rrst","view":"006-minimal.Rrst.html","type":"iframe"}],"outputs":[{"file":"006-minimal.rst","view":"006-minimal.rst.html","type":"iframe"}]},
+"007":{"label":"007-text-output.Rmd","sources":[{"file":"007-text-output.Rmd","view":"007-text-output.Rmd.html","type":"iframe"}],"outputs":[{"file":"007-text-output.md","view":"007-text-output.html","type":"iframe"}]},
+"008":{"label":"008-outdec.Rnw","sources":[{"file":"008-outdec.Rnw","view":"008-outdec.Rnw.html","type":"iframe"}],"outputs":[{"file":"008-outdec.pdf","view":"008-outdec.pdf","type":"embed"},{"file":"008-outdec.tex","view":"008-outdec.tex.html","type":"iframe"}]},
+"009":{"label":"009-slides.Rmd","sources":[{"file":"009-slides.Rmd","view":"009-slides.Rmd.html","type":"iframe"}],"outputs":[{"file":"009-slides.md","view":"009-slides.html","type":"iframe"}]},
+"010":{"label":"010-upload.Rmd","sources":[{"file":"010-upload.Rmd","view":"010-upload.Rmd.html","type":"iframe"}],"outputs":[{"file":"010-upload.md","view":"010-upload.html","type":"iframe"}]},
+"011":{"label":"011-conditional-eval.Rnw","sources":[{"file":"011-conditional-eval.Rnw","view":"011-conditional-eval.Rnw.html","type":"iframe"}],"outputs":[{"file":"011-conditional-eval.pdf","view":"011-conditional-eval.pdf","type":"embed"},{"file":"011-conditional-eval.tex","view":"011-conditional-eval.tex.html","type":"iframe"}]},
+"012":{"label":"012-line-breaks.Rmd","sources":[{"file":"012-line-breaks.Rmd","view":"012-line-breaks.Rmd.html","type":"iframe"}],"outputs":[{"file":"012-line-breaks.md","view":"012-line-breaks.html","type":"iframe"}]},
+"013":{"label":"013-par.Rnw","sources":[{"file":"013-par.Rnw","view":"013-par.Rnw.html","type":"iframe"}],"outputs":[{"file":"013-par.pdf","view":"013-par.pdf","type":"embed"},{"file":"013-par.tex","view":"013-par.tex.html","type":"iframe"}]},
+"014":{"label":"014-sweave.Rnw","sources":[{"file":"014-sweave.Rnw","view":"014-sweave.Rnw.html","type":"iframe"}],"outputs":[{"file":"014-sweave.pdf","view":"014-sweave.pdf","type":"embed"},{"file":"014-sweave.tex","view":"014-sweave.tex.html","type":"iframe"}]},
+"015":{"label":"015-listings.Rnw","sources":[{"file":"015-listings.Rnw","view":"015-listings.Rnw.html","type":"iframe"}],"outputs":[{"file":"015-listings.pdf","view":"015-listings.pdf","type":"embed"},{"file":"015-listings.tex","view":"015-listings.tex.html","type":"iframe"}]},
+"016":{"label":"016-device.Rnw","sources":[{"file":"016-device.Rnw","view":"016-device.Rnw.html","type":"iframe"}],"outputs":[{"file":"016-device.pdf","view":"016-device.pdf","type":"embed"},{"file":"016-device.tex","view":"016-device.tex.html","type":"iframe"}]},
+"017":{"label":"017-auto-dependson.Rnw","sources":[{"file":"017-auto-dependson.Rnw","view":"017-auto-dependson.Rnw.html","type":"iframe"}],"outputs":[{"file":"017-auto-dependson.pdf","view":"017-auto-dependson.pdf","type":"embed"},{"file":"017-auto-dependson.tex","view":"017-auto-dependson.tex.html","type":"iframe"}]},
+"018":{"label":"018-fullfig-tikz.Rnw","sources":[{"file":"018-fullfig-tikz.Rnw","view":"018-fullfig-tikz.Rnw.html","type":"iframe"}],"outputs":[{"file":"018-fullfig-tikz-tikzDictionary","view":"018-fullfig-tikz-tikzDictionary.html","type":"iframe"},{"file":"018-fullfig-tikz.pdf","view":"018-fullfig-tikz.pdf","type":"embed"},{"file":"018-fullfig-tikz.tex","view":"018-fullfig-tikz.tex.html","type":"iframe"}]},
+"019":{"label":"019-fig-caption.Rnw","sources":[{"file":"019-fig-caption.Rnw","view":"019-fig-caption.Rnw.html","type":"iframe"}],"outputs":[{"file":"019-fig-caption.pdf","view":"019-fig-caption.pdf","type":"embed"},{"file":"019-fig-caption.tex","view":"019-fig-caption.tex.html","type":"iframe"}]},
+"020":{"label":"020-for-loop.Rnw","sources":[{"file":"020-for-loop.Rnw","view":"020-for-loop.Rnw.html","type":"iframe"},{"file":"020-for-template.rnw","view":"020-for-template.rnw.html","type":"iframe"}],"outputs":[{"file":"020-for-loop.pdf","view":"020-for-loop.pdf","type":"embed"},{"file":"020-for-loop.tex","view":"020-for-loop.tex.html","type":"iframe"}]},
+"021":{"label":"021-ggplot2-geoms.Rnw","sources":[{"file":"021-ggplot2-geoms.Rnw","view":"021-ggplot2-geoms.Rnw.html","type":"iframe"}],"outputs":[{"file":"021-ggplot2-geoms.log","view":"021-ggplot2-geoms.log.html","type":"iframe"},{"file":"021-ggplot2-geoms.pdf","view":"021-ggplot2-geoms.pdf","type":"embed"},{"file":"021-ggplot2-geoms.tex","view":"021-ggplot2-geoms.tex.html","type":"iframe"}]},
+"022":{"label":"022-nothing.Rmd","sources":[{"file":"022-nothing.Rmd","view":"022-nothing.Rmd.html","type":"iframe"}],"outputs":[{"file":"022-nothing.md","view":"022-nothing.html","type":"iframe"}]},
+"023":{"label":"023-engine-python.Rmd","sources":[{"file":"023-engine-python.Rmd","view":"023-engine-python.Rmd.html","type":"iframe"}],"outputs":[{"file":"023-engine-python.md","view":"023-engine-python.html","type":"iframe"}]},
+"024":{"label":"024-engine-awk.Rmd","sources":[{"file":"024-engine-awk.Rmd","view":"024-engine-awk.Rmd.html","type":"iframe"}],"outputs":[{"file":"024-engine-awk.md","view":"024-engine-awk.html","type":"iframe"}]},
+"025":{"label":"025-engine-ruby.Rmd","sources":[{"file":"025-engine-ruby.Rmd","view":"025-engine-ruby.Rmd.html","type":"iframe"}],"outputs":[{"file":"025-engine-ruby.md","view":"025-engine-ruby.html","type":"iframe"}]},
+"026":{"label":"026-engine-haskell.Rmd","sources":[{"file":"026-engine-haskell.Rmd","view":"026-engine-haskell.Rmd.html","type":"iframe"}],"outputs":[{"file":"026-engine-haskell.md","view":"026-engine-haskell.html","type":"iframe"}]},
+"027":{"label":"027-engine-bash.Rmd","sources":[{"file":"027-engine-bash.Rmd","view":"027-engine-bash.Rmd.html","type":"iframe"}],"outputs":[{"file":"027-engine-bash.md","view":"027-engine-bash.html","type":"iframe"}]},
+"028":{"label":"028-engine-perl.Rmd","sources":[{"file":"028-engine-perl.Rmd","view":"028-engine-perl.Rmd.html","type":"iframe"}],"outputs":[{"file":"028-engine-perl.md","view":"028-engine-perl.html","type":"iframe"}]},
+"029":{"label":"029-engine-Rcpp.Rmd","sources":[{"file":"029-engine-Rcpp.Rmd","view":"029-engine-Rcpp.Rmd.html","type":"iframe"}],"outputs":[{"file":"029-engine-Rcpp.md","view":"029-engine-Rcpp.html","type":"iframe"}]},
+"030":{"label":"030-landscape.Rnw","sources":[{"file":"030-landscape.Rnw","view":"030-landscape.Rnw.html","type":"iframe"}],"outputs":[{"file":"030-landscape.pdf","view":"030-landscape.pdf","type":"embed"},{"file":"030-landscape.tex","view":"030-landscape.tex.html","type":"iframe"}]},
+"031":{"label":"031-noindent.Rnw","sources":[{"file":"031-noindent.Rnw","view":"031-noindent.Rnw.html","type":"iframe"}],"outputs":[{"file":"031-noindent.pdf","view":"031-noindent.pdf","type":"embed"},{"file":"031-noindent.tex","view":"031-noindent.tex.html","type":"iframe"}]},
+"032":{"label":"032-persp.Rnw","sources":[{"file":"032-persp.Rnw","view":"032-persp.Rnw.html","type":"iframe"}],"outputs":[{"file":"032-persp.pdf","view":"032-persp.pdf","type":"embed"},{"file":"032-persp.tex","view":"032-persp.tex.html","type":"iframe"}]},
+"033":{"label":"033-file-extension.Rnw","sources":[{"file":"033-file-extension.Rnw","view":"033-file-extension.Rnw.html","type":"iframe"}],"outputs":[{"file":"033-file-extension.pdf","view":"033-file-extension.pdf","type":"embed"},{"file":"033-file-extension.tex","view":"033-file-extension.tex.html","type":"iframe"}]},
+"034":{"label":"034-chinese.Rhtml","sources":[{"file":"034-chinese.Rhtml","view":"034-chinese.Rhtml.html","type":"iframe"}],"outputs":[{"file":"034-chinese.html","view":"034-chinese.html","type":"iframe"}]},
+"035":{"label":"035-optipng.Rmd","sources":[{"file":"035-optipng.Rmd","view":"035-optipng.Rmd.html","type":"iframe"}],"outputs":[{"file":"035-optipng.md","view":"035-optipng.html","type":"iframe"}]},
+"036":{"label":"036-latex-if.Rnw","sources":[{"file":"036-latex-if.Rnw","view":"036-latex-if.Rnw.html","type":"iframe"}],"outputs":[{"file":"036-latex-if.pdf","view":"036-latex-if.pdf","type":"embed"},{"file":"036-latex-if.tex","view":"036-latex-if.tex.html","type":"iframe"}]},
+"037":{"label":"037-graphics-hyperlink.Rnw","sources":[{"file":"037-graphics-hyperlink.Rnw","view":"037-graphics-hyperlink.Rnw.html","type":"iframe"}],"outputs":[{"file":"037-graphics-hyperlink-tikzDictionary","view":"037-graphics-hyperlink-tikzDictionary.html","type":"iframe"},{"file":"037-graphics-hyperlink.pdf","view":"037-graphics-hyperlink.pdf","type":"embed"},{"file":"037-graphics-hyperlink.tex","view":"037-graphics-hyperlink.tex.html","type":"iframe"}]},
+"038":{"label":"038-output-width.Rnw","sources":[{"file":"038-output-width.Rnw","view":"038-output-width.Rnw.html","type":"iframe"}],"outputs":[{"file":"038-output-width.pdf","view":"038-output-width.pdf","type":"embed"},{"file":"038-output-width.tex","view":"038-output-width.tex.html","type":"iframe"}]},
+"039":{"label":"039-merge.Rmd","sources":[{"file":"039-merge.Rmd","view":"039-merge.Rmd.html","type":"iframe"}],"outputs":[{"file":"039-merge.md","view":"039-merge.html","type":"iframe"}]},
+"040":{"label":"040-grid-table.Rnw","sources":[{"file":"040-grid-table.Rnw","view":"040-grid-table.Rnw.html","type":"iframe"}],"outputs":[{"file":"040-grid-table.pdf","view":"040-grid-table.pdf","type":"embed"},{"file":"040-grid-table.tex","view":"040-grid-table.tex.html","type":"iframe"}]},
+"041":{"label":"041-label-i.Rmd","sources":[{"file":"041-label-i.Rmd","view":"041-label-i.Rmd.html","type":"iframe"},{"file":"041-label-i-child.tpl","view":"041-label-i-child.tpl.html","type":"iframe"}],"outputs":[{"file":"041-label-i.md","view":"041-label-i.html","type":"iframe"}]},
+"042":{"label":"042-highlight-matlab.Rnw","sources":[{"file":"042-highlight-matlab.Rnw","view":"042-highlight-matlab.Rnw.html","type":"iframe"}],"outputs":[{"file":"042-highlight-matlab.pdf","view":"042-highlight-matlab.pdf","type":"embed"},{"file":"042-highlight-matlab.tex","view":"042-highlight-matlab.tex.html","type":"iframe"}]},
+"043":{"label":"043-percent.Rnw","sources":[{"file":"043-percent.Rnw","view":"043-percent.Rnw.html","type":"iframe"}],"outputs":[{"file":"043-percent.pdf","view":"043-percent.pdf","type":"embed"},{"file":"043-percent.tex","view":"043-percent.tex.html","type":"iframe"}]},
+"044":{"label":"044-size.Rnw","sources":[{"file":"044-size.Rnw","view":"044-size.Rnw.html","type":"iframe"}],"outputs":[{"file":"044-size.pdf","view":"044-size.pdf","type":"embed"},{"file":"044-size.tex","view":"044-size.tex.html","type":"iframe"}]},
+"045":{"label":"045-chunk-hook.Rmd","sources":[{"file":"045-chunk-hook.Rmd","view":"045-chunk-hook.Rmd.html","type":"iframe"}],"outputs":[{"file":"045-chunk-hook.md","view":"045-chunk-hook.html","type":"iframe"}]},
+"046":{"label":"046-ref-chunk.Rmd","sources":[{"file":"046-ref-chunk.Rmd","view":"046-ref-chunk.Rmd.html","type":"iframe"}],"outputs":[{"file":"046-ref-chunk.md","view":"046-ref-chunk.html","type":"iframe"}]},
+"047":{"label":"047-tikz-png.Rnw","sources":[{"file":"047-tikz-png.Rnw","view":"047-tikz-png.Rnw.html","type":"iframe"}],"outputs":[{"file":"047-tikz-png-tikzDictionary","view":"047-tikz-png-tikzDictionary.html","type":"iframe"},{"file":"047-tikz-png.pdf","view":"047-tikz-png.pdf","type":"embed"},{"file":"047-tikz-png.tex","view":"047-tikz-png.tex.html","type":"iframe"}]},
+"048":{"label":"048-cars-demo.Rnw","sources":[{"file":"048-cars-demo.Rnw","view":"048-cars-demo.Rnw.html","type":"iframe"}],"outputs":[{"file":"048-cars-demo.pdf","view":"048-cars-demo.pdf","type":"embed"},{"file":"048-cars-demo.tex","view":"048-cars-demo.tex.html","type":"iframe"}]},
+"049":{"label":"049-cars-demo.Rmd","sources":[{"file":"049-cars-demo.Rmd","view":"049-cars-demo.Rmd.html","type":"iframe"}],"outputs":[{"file":"049-cars-demo.md","view":"049-cars-demo.html","type":"iframe"}]},
+"050":{"label":"050-allowframebreaks.Rnw","sources":[{"file":"050-allowframebreaks.Rnw","view":"050-allowframebreaks.Rnw.html","type":"iframe"}],"outputs":[{"file":"050-allowframebreaks.pdf","view":"050-allowframebreaks.pdf","type":"embed"},{"file":"050-allowframebreaks.tex","view":"050-allowframebreaks.tex.html","type":"iframe"}]},
+"051":{"label":"051-flowchart.Rnw","sources":[{"file":"051-flowchart.Rnw","view":"051-flowchart.Rnw.html","type":"iframe"}],"outputs":[{"file":"051-flowchart-tikzDictionary","view":"051-flowchart-tikzDictionary.html","type":"iframe"},{"file":"051-flowchart.pdf","view":"051-flowchart.pdf","type":"embed"},{"file":"051-flowchart.tex","view":"051-flowchart.tex.html","type":"iframe"}]},
+"052":{"label":"052-suppress-output.Rmd","sources":[{"file":"052-suppress-output.Rmd","view":"052-suppress-output.Rmd.html","type":"iframe"}],"outputs":[{"file":"052-suppress-output.md","view":"052-suppress-output.html","type":"iframe"}]},
+"053":{"label":"053-beamer-only.Rnw","sources":[{"file":"053-beamer-only.Rnw","view":"053-beamer-only.Rnw.html","type":"iframe"}],"outputs":[{"file":"053-beamer-only.pdf","view":"053-beamer-only.pdf","type":"embed"},{"file":"053-beamer-only.tex","view":"053-beamer-only.tex.html","type":"iframe"}]},
+"054":{"label":"054-loop-plots.Rmd","sources":[{"file":"054-loop-plots.Rmd","view":"054-loop-plots.Rmd.html","type":"iframe"}],"outputs":[{"file":"054-loop-plots.md","view":"054-loop-plots.html","type":"iframe"}]},
+"055":{"label":"055-multicols.Rnw","sources":[{"file":"055-multicols.Rnw","view":"055-multicols.Rnw.html","type":"iframe"}],"outputs":[{"file":"055-multicols.pdf","view":"055-multicols.pdf","type":"embed"},{"file":"055-multicols.tex","view":"055-multicols.tex.html","type":"iframe"}]},
+"056":{"label":"056-huge-plot.Rmd","sources":[{"file":"056-huge-plot.Rmd","view":"056-huge-plot.Rmd.html","type":"iframe"}],"outputs":[{"file":"056-huge-plot.md","view":"056-huge-plot.html","type":"iframe"}]},
+"057":{"label":"057-engine-dot.Rmd","sources":[{"file":"057-engine-dot.Rmd","view":"057-engine-dot.Rmd.html","type":"iframe"}],"outputs":[{"file":"057-engine-dot.md","view":"057-engine-dot.html","type":"iframe"}]},
+"058":{"label":"058-engine-tikz.Rmd","sources":[{"file":"058-engine-tikz.Rmd","view":"058-engine-tikz.Rmd.html","type":"iframe"}],"outputs":[{"file":"058-engine-tikz.md","view":"058-engine-tikz.html","type":"iframe"}]},
+"059":{"label":"059-tikz.Rnw","sources":[{"file":"059-tikz.Rnw","view":"059-tikz.Rnw.html","type":"iframe"}],"outputs":[{"file":"059-tikz-tikzDictionary","view":"059-tikz-tikzDictionary.html","type":"iframe"},{"file":"059-tikz.pdf","view":"059-tikz.pdf","type":"embed"},{"file":"059-tikz.tex","view":"059-tikz.tex.html","type":"iframe"}]},
+"060":{"label":"060-engine-sas.Rmd","sources":[{"file":"060-engine-sas.Rmd","view":"060-engine-sas.Rmd.html","type":"iframe"}],"outputs":[{"file":"060-engine-sas.md","view":"060-engine-sas.html","type":"iframe"}]},
+"061":{"label":"061-bash-variable.Rmd","sources":[{"file":"061-bash-variable.Rmd","view":"061-bash-variable.Rmd.html","type":"iframe"}],"outputs":[{"file":"061-bash-variable.md","view":"061-bash-variable.html","type":"iframe"}]},
+"062":{"label":"062-chunk-wrapper.Rmd","sources":[{"file":"062-chunk-wrapper.Rmd","view":"062-chunk-wrapper.Rmd.html","type":"iframe"},{"file":"062-chunk-wrapper.Rnw","view":"062-chunk-wrapper.Rnw.html","type":"iframe"}],"outputs":[{"file":"062-chunk-wrapper.md","view":"062-chunk-wrapper.html","type":"iframe"},{"file":"062-chunk-wrapper.pdf","view":"062-chunk-wrapper.pdf","type":"embed"},{"file":"062-chunk-wrapper.tex","view":"062-chunk-wrapper.tex.html","type":"iframe"}]},
+"063":{"label":"063-html5-figure.Rmd","sources":[{"file":"063-html5-figure.Rmd","view":"063-html5-figure.Rmd.html","type":"iframe"}],"outputs":[{"file":"063-html5-figure.md","view":"063-html5-figure.html","type":"iframe"}]},
+"064":{"label":"064-bib-plot.Rnw","sources":[{"file":"064-bib-plot.Rnw","view":"064-bib-plot.Rnw.html","type":"iframe"}],"outputs":[{"file":"064-bib-plot-tikzDictionary","view":"064-bib-plot-tikzDictionary.html","type":"iframe"},{"file":"064-bib-plot.pdf","view":"064-bib-plot.pdf","type":"embed"},{"file":"064-bib-plot.tex","view":"064-bib-plot.tex.html","type":"iframe"}]},
+"065":{"label":"065-rmd-chunk.Rmd","sources":[{"file":"065-rmd-chunk.Rmd","view":"065-rmd-chunk.Rmd.html","type":"iframe"}],"outputs":[{"file":"065-rmd-chunk.md","view":"065-rmd-chunk.html","type":"iframe"}]},
+"066":{"label":"066-listings-breaklines.Rnw","sources":[{"file":"066-listings-breaklines.Rnw","view":"066-listings-breaklines.Rnw.html","type":"iframe"}],"outputs":[{"file":"066-listings-breaklines.pdf","view":"066-listings-breaklines.pdf","type":"embed"},{"file":"066-listings-breaklines.tex","view":"066-listings-breaklines.tex.html","type":"iframe"}]},
+"067":{"label":"067-graphics-options.Rnw","sources":[{"file":"067-graphics-options.Rnw","view":"067-graphics-options.Rnw.html","type":"iframe"}],"outputs":[{"file":"067-graphics-options.pdf","view":"067-graphics-options.pdf","type":"embed"},{"file":"067-graphics-options.tex","view":"067-graphics-options.tex.html","type":"iframe"}]},
+"068":{"label":"068-beamer-simple.Rnw","sources":[{"file":"068-beamer-simple.Rnw","view":"068-beamer-simple.Rnw.html","type":"iframe"}],"outputs":[{"file":"068-beamer-simple.pdf","view":"068-beamer-simple.pdf","type":"embed"},{"file":"068-beamer-simple.tex","view":"068-beamer-simple.tex.html","type":"iframe"}]},
+"069":{"label":"069-for-loop.Rnw","sources":[{"file":"069-for-loop.Rnw","view":"069-for-loop.Rnw.html","type":"iframe"},{"file":"069-for-template.rnw","view":"069-for-template.rnw.html","type":"iframe"}],"outputs":[{"file":"069-for-loop.pdf","view":"069-for-loop.pdf","type":"embed"},{"file":"069-for-loop.tex","view":"069-for-loop.tex.html","type":"iframe"}]},
+"070":{"label":"070-caption-num.Rmd","sources":[{"file":"070-caption-num.Rmd","view":"070-caption-num.Rmd.html","type":"iframe"}],"outputs":[{"file":"070-caption-num.md","view":"070-caption-num.html","type":"iframe"}]},
+"071":{"label":"071-cleveref-examples.Rnw","sources":[{"file":"071-cleveref-examples.Rnw","view":"071-cleveref-examples.Rnw.html","type":"iframe"}],"outputs":[{"file":"071-cleveref-examples.pdf","view":"071-cleveref-examples.pdf","type":"embed"},{"file":"071-cleveref-examples.tex","view":"071-cleveref-examples.tex.html","type":"iframe"}]},
+"072":{"label":"072-latex-reference.Rnw","sources":[{"file":"072-latex-reference.Rnw","view":"072-latex-reference.Rnw.html","type":"iframe"}],"outputs":[{"file":"072-latex-reference.pdf","view":"072-latex-reference.pdf","type":"embed"},{"file":"072-latex-reference.tex","view":"072-latex-reference.tex.html","type":"iframe"}]},
+"073":{"label":"073-code-appendix.Rnw","sources":[{"file":"073-code-appendix.Rnw","view":"073-code-appendix.Rnw.html","type":"iframe"}],"outputs":[{"file":"073-code-appendix.pdf","view":"073-code-appendix.pdf","type":"embed"},{"file":"073-code-appendix.tex","view":"073-code-appendix.tex.html","type":"iframe"}]},
+"074":{"label":"074-example-environment.Rnw","sources":[{"file":"074-example-environment.Rnw","view":"074-example-environment.Rnw.html","type":"iframe"}],"outputs":[{"file":"074-example-environment.pdf","view":"074-example-environment.pdf","type":"embed"},{"file":"074-example-environment.tex","view":"074-example-environment.tex.html","type":"iframe"}]},
+"075":{"label":"075-knit-expand.Rnw","sources":[{"file":"075-knit-expand.Rnw","view":"075-knit-expand.Rnw.html","type":"iframe"},{"file":"075-template.rnw","view":"075-template.rnw.html","type":"iframe"}],"outputs":[{"file":"075-knit-expand.pdf","view":"075-knit-expand.pdf","type":"embed"},{"file":"075-knit-expand.tex","view":"075-knit-expand.tex.html","type":"iframe"}]},
+"076":{"label":"076-chinese-gb2312.rnw","sources":[{"file":"076-chinese-gb2312.rnw","view":"076-chinese-gb2312.rnw.html","type":"iframe"}],"outputs":[{"file":"076-chinese-gb2312.TEX","view":"076-chinese-gb2312.TEX.html","type":"iframe"}]},
+"077":{"label":"077-wrap-output.Rmd","sources":[{"file":"077-wrap-output.Rmd","view":"077-wrap-output.Rmd.html","type":"iframe"}],"outputs":[{"file":"077-wrap-output.md","view":"077-wrap-output.html","type":"iframe"}]},
+"078":{"label":"078-chinese-big5.rnw","sources":[{"file":"078-chinese-big5.rnw","view":"078-chinese-big5.rnw.html","type":"iframe"}],"outputs":[{"file":"078-chinese-big5.ctx","view":"078-chinese-big5.ctx.html","type":"iframe"}]},
+"079":{"label":"079-eval-echo.Rmd","sources":[{"file":"079-eval-echo.Rmd","view":"079-eval-echo.Rmd.html","type":"iframe"}],"outputs":[{"file":"079-eval-echo.md","view":"079-eval-echo.html","type":"iframe"}]},
+"080":{"label":"080-engine-coffeescript.Rmd","sources":[{"file":"080-engine-coffeescript.Rmd","view":"080-engine-coffeescript.Rmd.html","type":"iframe"}],"outputs":[{"file":"080-engine-coffeescript.md","view":"080-engine-coffeescript.html","type":"iframe"}]},
+"081":{"label":"081-hello-chinese.lyx","sources":[{"file":"081-hello-chinese.lyx","view":"081-hello-chinese.lyx.html","type":"iframe"}],"outputs":[]},
+"082":{"label":"082-sweave-color.Rnw","sources":[{"file":"082-sweave-color.Rnw","view":"082-sweave-color.Rnw.html","type":"iframe"}],"outputs":[{"file":"082-sweave-color.pdf","view":"082-sweave-color.pdf","type":"embed"},{"file":"082-sweave-color.tex","view":"082-sweave-color.tex.html","type":"iframe"}]},
+"083":{"label":"083-ggplot2-reference.Rmd","sources":[{"file":"083-ggplot2-reference.Rmd","view":"083-ggplot2-reference.Rmd.html","type":"iframe"}],"outputs":[{"file":"083-ggplot2-reference.md","view":"083-ggplot2-reference.html","type":"iframe"}]},
+"084":{"label":"084-pandoc.Rmd","sources":[{"file":"084-pandoc.Rmd","view":"084-pandoc.Rmd.html","type":"iframe"},{"file":"084-pandoc-more.bib","view":"084-pandoc-more.bib.html","type":"iframe"},{"file":"084-pandoc.bib","view":"084-pandoc.bib.html","type":"iframe"},{"file":"084-pandoc.pandoc","view":"084-pandoc.pandoc.html","type":"iframe"},{"file":"084-pandoc.R","view":"084-pandoc.R.html","type":"iframe"}],"outputs":[{"file":"084-pandoc-beamer.pdf","view":"084-pandoc-beamer.pdf","type":"embed"},{"file":"084-pandoc-slides.html","view":"084-pandoc-slides.html","type":"iframe"},{"file":"084-pandoc-xelatex.pdf","view":"084-pandoc-xelatex.pdf","type":"embed"},{"file":"084-pandoc.docx","view":"084-pandoc.docx.html","type":"iframe"},{"file":"084-pandoc.epub","view":"084-pandoc.epub.html","type":"iframe"},{"file":"084-pandoc.html","view":"084-pandoc.html","type":"iframe"},{"file":"084-pandoc.md","view":"084-pandoc.html","type":"iframe"},{"file":"084-pandoc.odt","view":"084-pandoc.odt.html","type":"iframe"}]},
+"085":{"label":"085-pdfcrop.Rnw","sources":[{"file":"085-pdfcrop.Rnw","view":"085-pdfcrop.Rnw.html","type":"iframe"}],"outputs":[{"file":"085-pdfcrop.pdf","view":"085-pdfcrop.pdf","type":"embed"},{"file":"085-pdfcrop.tex","view":"085-pdfcrop.tex.html","type":"iframe"}]},
+"086":{"label":"086-xtable-examples.Rnw","sources":[{"file":"086-xtable-examples.Rnw","view":"086-xtable-examples.Rnw.html","type":"iframe"}],"outputs":[{"file":"086-xtable-examples.pdf","view":"086-xtable-examples.pdf","type":"embed"},{"file":"086-xtable-examples.tex","view":"086-xtable-examples.tex.html","type":"iframe"}]},
+"087":{"label":"087-child-example-child.rnw","sources":[{"file":"087-child-example-child.rnw","view":"087-child-example-child.rnw.html","type":"iframe"},{"file":"087-child-example.Rnw","view":"087-child-example.Rnw.html","type":"iframe"}],"outputs":[{"file":"087-child-example.pdf","view":"087-child-example.pdf","type":"embed"},{"file":"087-child-example.tex","view":"087-child-example.tex.html","type":"iframe"}]},
+"088":{"label":"088-pandoc-embedded.Rmd","sources":[{"file":"088-pandoc-embedded.Rmd","view":"088-pandoc-embedded.Rmd.html","type":"iframe"},{"file":"088-pandoc-embedded.R","view":"088-pandoc-embedded.R.html","type":"iframe"}],"outputs":[{"file":"088-pandoc-embedded.html","view":"088-pandoc-embedded.html","type":"iframe"},{"file":"088-pandoc-embedded.md","view":"088-pandoc-embedded.html","type":"iframe"},{"file":"088-pandoc-embedded.odt","view":"088-pandoc-embedded.odt.html","type":"iframe"},{"file":"088-pandoc-embedded.pdf","view":"088-pandoc-embedded.pdf","type":"embed"}]},
+"089":{"label":"089-minimal.Rasciidoc","sources":[{"file":"089-minimal.Rasciidoc","view":"089-minimal.Rasciidoc.html","type":"iframe"}],"outputs":[{"file":"089-minimal.txt","view":"089-minimal.txt.html","type":"iframe"}]},
+"090":{"label":"090-engine-c.Rmd","sources":[{"file":"090-engine-c.Rmd","view":"090-engine-c.Rmd.html","type":"iframe"}],"outputs":[{"file":"090-engine-c.md","view":"090-engine-c.html","type":"iframe"}]},
+"091":{"label":"091-knitr-table.Rnw","sources":[{"file":"091-knitr-table.Rnw","view":"091-knitr-table.Rnw.html","type":"iframe"}],"outputs":[{"file":"091-knitr-table.pdf","view":"091-knitr-table.pdf","type":"embed"},{"file":"091-knitr-table.tex","view":"091-knitr-table.tex.html","type":"iframe"}]},
+"092":{"label":"092-latex-rgl.Rnw","sources":[{"file":"092-latex-rgl.Rnw","view":"092-latex-rgl.Rnw.html","type":"iframe"}],"outputs":[{"file":"092-latex-rgl.pdf","view":"092-latex-rgl.pdf","type":"embed"},{"file":"092-latex-rgl.tex","view":"092-latex-rgl.tex.html","type":"iframe"}]},
+"093":{"label":"093-knitr-asy.Rmd","sources":[{"file":"093-knitr-asy.Rmd","view":"093-knitr-asy.Rmd.html","type":"iframe"}],"outputs":[{"file":"093-knitr-asy.md","view":"093-knitr-asy.html","type":"iframe"}]},
+"094":{"label":"094-purl.qmd","sources":[{"file":"094-purl.qmd","view":"094-purl.qmd.html","type":"iframe"},{"file":"094-purl.Rmd","view":"094-purl.Rmd.html","type":"iframe"},{"file":"094-purl-qmd.R","view":"094-purl-qmd.R.html","type":"iframe"},{"file":"094-purl.R","view":"094-purl.R.html","type":"iframe"}],"outputs":[{"file":"094-purl-qmd.md","view":"094-purl-qmd.html","type":"iframe"},{"file":"094-purl.md","view":"094-purl.html","type":"iframe"}]},
+"095":{"label":"095-pandoc-header.Rmd","sources":[{"file":"095-pandoc-header.Rmd","view":"095-pandoc-header.Rmd.html","type":"iframe"}],"outputs":[{"file":"095-pandoc-header.md","view":"095-pandoc-header.html","type":"iframe"},{"file":"095-pandoc.sty","view":"095-pandoc.sty.html","type":"iframe"}]},
+"096":{"label":"096-knit-exit.Rmd","sources":[{"file":"096-knit-exit.Rmd","view":"096-knit-exit.Rmd.html","type":"iframe"}],"outputs":[{"file":"096-knit-exit.md","view":"096-knit-exit.html","type":"iframe"}]},
+"097":{"label":"097-Hmisc-scale.Rnw","sources":[{"file":"097-Hmisc-scale.Rnw","view":"097-Hmisc-scale.Rnw.html","type":"iframe"}],"outputs":[{"file":"097-Hmisc-scale.pdf","view":"097-Hmisc-scale.pdf","type":"embed"},{"file":"097-Hmisc-scale.tex","view":"097-Hmisc-scale.tex.html","type":"iframe"}]},
+"098":{"label":"098-highlight-python.Rnw","sources":[{"file":"098-highlight-python.Rnw","view":"098-highlight-python.Rnw.html","type":"iframe"}],"outputs":[{"file":"098-highlight-python.pdf","view":"098-highlight-python.pdf","type":"embed"},{"file":"098-highlight-python.tex","view":"098-highlight-python.tex.html","type":"iframe"}]},
+"099":{"label":"099-include-graphics.Rmd","sources":[{"file":"099-include-graphics.Rmd","view":"099-include-graphics.Rmd.html","type":"iframe"}],"outputs":[{"file":"099-include-graphics.md","view":"099-include-graphics.html","type":"iframe"}]},
+"100":{"label":"100-alltt-verbatim.Rnw","sources":[{"file":"100-alltt-verbatim.Rnw","view":"100-alltt-verbatim.Rnw.html","type":"iframe"}],"outputs":[{"file":"100-alltt-verbatim.pdf","view":"100-alltt-verbatim.pdf","type":"embed"},{"file":"100-alltt-verbatim.tex","view":"100-alltt-verbatim.tex.html","type":"iframe"}]},
+"101":{"label":"101-cache-levels.Rmd","sources":[{"file":"101-cache-levels.Rmd","view":"101-cache-levels.Rmd.html","type":"iframe"}],"outputs":[{"file":"101-cache-levels.md","view":"101-cache-levels.html","type":"iframe"}]},
+"102":{"label":"102-stitch-test.R","sources":[{"file":"102-stitch-test.R","view":"102-stitch-test.R.html","type":"iframe"},{"file":"102-stitch.R","view":"102-stitch.R.html","type":"iframe"}],"outputs":[]},
+"103":{"label":"103-move-float.Rnw","sources":[{"file":"103-move-float.Rnw","view":"103-move-float.Rnw.html","type":"iframe"}],"outputs":[{"file":"103-move-float.pdf","view":"103-move-float.pdf","type":"embed"},{"file":"103-move-float.tex","view":"103-move-float.tex.html","type":"iframe"}]},
+"104":{"label":"104-subfigure.Rnw","sources":[{"file":"104-subfigure.Rnw","view":"104-subfigure.Rnw.html","type":"iframe"}],"outputs":[{"file":"104-subfigure.pdf","view":"104-subfigure.pdf","type":"embed"},{"file":"104-subfigure.tex","view":"104-subfigure.tex.html","type":"iframe"}]},
+"105":{"label":"105-minimal.Rtextile","sources":[{"file":"105-minimal.Rtextile","view":"105-minimal.Rtextile.html","type":"iframe"}],"outputs":[{"file":"105-minimal.textile","view":"105-minimal.textile.html","type":"iframe"}]},
+"106":{"label":"106-polyglot.Rmd","sources":[{"file":"106-polyglot.Rmd","view":"106-polyglot.Rmd.html","type":"iframe"}],"outputs":[{"file":"106-polyglot.md","view":"106-polyglot.html","type":"iframe"}]},
+"107":{"label":"107-inline-linebreak.Rmd","sources":[{"file":"107-inline-linebreak.Rmd","view":"107-inline-linebreak.Rmd.html","type":"iframe"}],"outputs":[{"file":"107-inline-linebreak.md","view":"107-inline-linebreak.html","type":"iframe"}]},
+"108":{"label":"108-animation-scianimator.Rmd","sources":[{"file":"108-animation-scianimator.Rmd","view":"108-animation-scianimator.Rmd.html","type":"iframe"}],"outputs":[{"file":"108-animation-scianimator.md","view":"108-animation-scianimator.html","type":"iframe"}]},
+"109":{"label":"109-longstrings.Rnw","sources":[{"file":"109-longstrings.Rnw","view":"109-longstrings.Rnw.html","type":"iframe"}],"outputs":[{"file":"109-longstrings.pdf","view":"109-longstrings.pdf","type":"embed"},{"file":"109-longstrings.tex","view":"109-longstrings.tex.html","type":"iframe"}]},
+"110":{"label":"110-rmarkdown-landscape.Rmd","sources":[{"file":"110-rmarkdown-landscape.Rmd","view":"110-rmarkdown-landscape.Rmd.html","type":"iframe"}],"outputs":[{"file":"110-rmarkdown-landscape.md","view":"110-rmarkdown-landscape.html","type":"iframe"}]},
+"111":{"label":"111-engine-fortran.Rmd","sources":[{"file":"111-engine-fortran.Rmd","view":"111-engine-fortran.Rmd.html","type":"iframe"}],"outputs":[{"file":"111-engine-fortran.md","view":"111-engine-fortran.html","type":"iframe"}]},
+"112":{"label":"112-yaml-in-child-child.rmd","sources":[{"file":"112-yaml-in-child-child.rmd","view":"112-yaml-in-child-child.rmd.html","type":"iframe"},{"file":"112-yaml-in-child.Rmd","view":"112-yaml-in-child.Rmd.html","type":"iframe"}],"outputs":[{"file":"112-yaml-in-child.md","view":"112-yaml-in-child.html","type":"iframe"}]},
+"113":{"label":"113-externalization.Rmd","sources":[{"file":"113-externalization.Rmd","view":"113-externalization.Rmd.html","type":"iframe"},{"file":"113-foo.R","view":"113-foo.R.html","type":"iframe"}],"outputs":[{"file":"113-externalization.md","view":"113-externalization.html","type":"iframe"}]},
+"114":{"label":"114-load-cache.Rmd","sources":[{"file":"114-load-cache.Rmd","view":"114-load-cache.Rmd.html","type":"iframe"}],"outputs":[{"file":"114-load-cache.md","view":"114-load-cache.html","type":"iframe"}]},
+"115":{"label":"115-engine-sql.Rmd","sources":[{"file":"115-engine-sql.Rmd","view":"115-engine-sql.Rmd.html","type":"iframe"}],"outputs":[{"file":"115-engine-sql.md","view":"115-engine-sql.html","type":"iframe"}]},
+"116":{"label":"116-html-class.Rmd","sources":[{"file":"116-html-class.Rmd","view":"116-html-class.Rmd.html","type":"iframe"}],"outputs":[{"file":"116-html-class.md","view":"116-html-class.html","type":"iframe"}]},
+"117":{"label":"117-messages.Rmd","sources":[{"file":"117-messages.Rmd","view":"117-messages.Rmd.html","type":"iframe"}],"outputs":[{"file":"117-messages.md","view":"117-messages.html","type":"iframe"}]},
+"118":{"label":"118-engine-go.Rmd","sources":[{"file":"118-engine-go.Rmd","view":"118-engine-go.Rmd.html","type":"iframe"}],"outputs":[{"file":"118-engine-go.md","view":"118-engine-go.html","type":"iframe"}]},
+"119":{"label":"119-subfig-columns.Rnw","sources":[{"file":"119-subfig-columns.Rnw","view":"119-subfig-columns.Rnw.html","type":"iframe"}],"outputs":[{"file":"119-subfig-columns.pdf","view":"119-subfig-columns.pdf","type":"embed"},{"file":"119-subfig-columns.tex","view":"119-subfig-columns.tex.html","type":"iframe"}]},
+"120":{"label":"120-figure-alt-text.Rmd","sources":[{"file":"120-figure-alt-text.Rmd","view":"120-figure-alt-text.Rmd.html","type":"iframe"}],"outputs":[{"file":"120-figure-alt-text.md","view":"120-figure-alt-text.html","type":"iframe"}]},
+"121":{"label":"121-ref-label.Rmd","sources":[{"file":"121-ref-label.Rmd","view":"121-ref-label.Rmd.html","type":"iframe"}],"outputs":[{"file":"121-ref-label.md","view":"121-ref-label.html","type":"iframe"}]},
+"122":{"label":"122-strip-white.Rmd","sources":[{"file":"122-strip-white.Rmd","view":"122-strip-white.Rmd.html","type":"iframe"}],"outputs":[{"file":"122-strip-white.md","view":"122-strip-white.html","type":"iframe"}]},
+"123":{"label":"123-verbatim-engine.Rmd","sources":[{"file":"123-verbatim-engine.Rmd","view":"123-verbatim-engine.Rmd.html","type":"iframe"}],"outputs":[{"file":"123-verbatim-engine.md","view":"123-verbatim-engine.html","type":"iframe"}]},
+"124":{"label":"124-exec-engine.Rmd","sources":[{"file":"124-exec-engine.Rmd","view":"124-exec-engine.Rmd.html","type":"iframe"}],"outputs":[{"file":"124-exec-engine.md","view":"124-exec-engine.html","type":"iframe"}]},
+"125":{"label":"125-dash-options.Rmd","sources":[{"file":"125-dash-options.Rmd","view":"125-dash-options.Rmd.html","type":"iframe"}],"outputs":[{"file":"125-dash-options.md","view":"125-dash-options.html","type":"iframe"}]},
+"126":{"label":"126-error-backtrace-2.Rmd","sources":[{"file":"126-error-backtrace-2.Rmd","view":"126-error-backtrace-2.Rmd.html","type":"iframe"},{"file":"126-error-backtrace.Rmd","view":"126-error-backtrace.Rmd.html","type":"iframe"}],"outputs":[{"file":"126-error-backtrace-2-rcmd.txt","view":"126-error-backtrace-2-rcmd.txt.html","type":"iframe"},{"file":"126-error-backtrace-2.txt","view":"126-error-backtrace-2.txt.html","type":"iframe"},{"file":"126-error-backtrace-rcmd.txt","view":"126-error-backtrace-rcmd.txt.html","type":"iframe"},{"file":"126-error-backtrace.txt","view":"126-error-backtrace.txt.html","type":"iframe"},{"file":"126-rlang-error-2-rcmd.txt","view":"126-rlang-error-2-rcmd.txt.html","type":"iframe"},{"file":"126-rlang-error-rcmd.txt","view":"126-rlang-error-rcmd.txt.html","type":"iframe"}]},
+"127":{"label":"127-knit-print-error.Rmd","sources":[{"file":"127-knit-print-error.Rmd","view":"127-knit-print-error.Rmd.html","type":"iframe"},{"file":"127-rlang-error-2.Rmd","view":"127-rlang-error-2.Rmd.html","type":"iframe"},{"file":"127-rlang-error.Rmd","view":"127-rlang-error.Rmd.html","type":"iframe"}],"outputs":[{"file":"127-knit-print-error.md","view":"127-knit-print-error.html","type":"iframe"},{"file":"127-rlang-error-2.md","view":"127-rlang-error-2.html","type":"iframe"},{"file":"127-rlang-error.md","view":"127-rlang-error.html","type":"iframe"}]},
+"128":{"label":"128-minimal.Rtyp","sources":[{"file":"128-minimal.Rtyp","view":"128-minimal.Rtyp.html","type":"iframe"}],"outputs":[{"file":"128-minimal.typ","view":"128-minimal.typ.html","type":"iframe"}]}
+};
+const ORDER = ["001","002","003","004","005","006","007","008","009","010","011","012","013","014","015","016","017","018","019","020","021","022","023","024","025","026","027","028","029","030","031","032","033","034","035","036","037","038","039","040","041","042","043","044","045","046","047","048","049","050","051","052","053","054","055","056","057","058","059","060","061","062","063","064","065","066","067","068","069","070","071","072","073","074","075","076","077","078","079","080","081","082","083","084","085","086","087","088","089","090","091","092","093","094","095","096","097","098","099","100","101","102","103","104","105","106","107","108","109","110","111","112","113","114","115","116","117","118","119","120","121","122","123","124","125","126","127","128"];
+
+const exampleSel = document.getElementById("example");
+const srcSel = document.getElementById("src");
+const outSel = document.getElementById("out");
+const srcBody = document.getElementById("src-body");
+const outBody = document.getElementById("out-body");
+
+ORDER.forEach(k => {
+  const o = document.createElement("option");
+  o.value = k; o.textContent = DATA[k].label;
+  exampleSel.appendChild(o);
+});
+
+function frame(item) {
+  if (!item) return "<p style=\"padding:1em;color:#888\">(none)</p>";
+  if (item.type === "embed")
+    return `<embed src="${item.view}" type="application/pdf">`;
+  return `<iframe src="${item.view}"></iframe>`;
+}
+
+function fillSelect(sel, items) {
+  sel.innerHTML = "";
+  items.forEach((it, i) => {
+    const o = document.createElement("option");
+    o.value = i; o.textContent = it.file;
+    sel.appendChild(o);
+  });
+  sel.style.display = items.length > 1 ? "" : "none";
+}
+
+function loadExample(k) {
+  const e = DATA[k];
+  fillSelect(srcSel, e.sources);
+  fillSelect(outSel, e.outputs);
+  srcBody.innerHTML = frame(e.sources[0]);
+  outBody.innerHTML = frame(e.outputs[0]);
+}
+
+exampleSel.addEventListener("change", () => loadExample(exampleSel.value));
+srcSel.addEventListener("change", () =>
+  srcBody.innerHTML = frame(DATA[exampleSel.value].sources[srcSel.value]));
+outSel.addEventListener("change", () =>
+  outBody.innerHTML = frame(DATA[exampleSel.value].outputs[outSel.value]));
+
+loadExample(ORDER[0]);
+</script>
+</body>
+</html>
+

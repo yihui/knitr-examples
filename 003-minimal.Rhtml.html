@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<title>003-minimal.Rhtml</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css">
+<style>body{margin:0} pre{margin:0;padding:.6em;white-space:pre-wrap;word-break:break-word}</style>
+</head><body>
+<pre><code class="language-markdown">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;A minimal knitr example in HTML&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;!--begin.rcode
+  library(knitr)
+  opts_chunk$set(fig.width=5, fig.height=5)
+  end.rcode--&gt;
+
+  &lt;p&gt;This is a minimal example which shows &lt;strong&gt;knitr&lt;/strong&gt;
+  working with HTML
+  pages. See &lt;a href="https://rawgit.com/yihui/knitr-examples/master/003-minimal.html"&gt;here&lt;/a&gt;
+  for the output and
+  &lt;a href="https://github.com/yihui/knitr-examples/blob/master/003-minimal.Rhtml"&gt;here&lt;/a&gt;
+  for the source.&lt;/p&gt;
+
+  &lt;p&gt;Boring stuff as usual:&lt;/p&gt;
+
+&lt;!--begin.rcode
+    ## a simple calculator
+    1+1
+    ## boring random numbers
+    set.seed(123)
+    rnorm(5)
+    end.rcode--&gt;
+
+  &lt;p&gt;We can also produce plots (centered by the
+  option &lt;code&gt;fig.align='center'&lt;/code&gt;):&lt;/p&gt;
+
+&lt;!--begin.rcode html-cars-scatter, message=FALSE, fig.align='center', warning=FALSE
+    library(ggplot2)
+    plot(mpg~hp, mtcars)
+    ggplot(mtcars, aes(hp, mpg))+geom_smooth()
+    end.rcode--&gt;
+
+  &lt;p&gt;Errors, messages and warnings can be put into &lt;code&gt;div&lt;/code&gt;'s
+  with different &lt;code&gt;class&lt;/code&gt;es:&lt;/p&gt;
+
+&lt;!--begin.rcode
+    sqrt(-1)  # warning
+    message('knitr says hello to HTML!')
+    1+'a'  # mission impossible
+    end.rcode--&gt;
+
+  &lt;p&gt;In the end, let's show off a 3D plot from
+  the &lt;strong&gt;rgl&lt;/strong&gt; package.&lt;/p&gt;
+
+&lt;!--begin.rcode warning=FALSE
+    library(rgl)
+    knit_hooks$set(rgl = hook_rgl)  # set up the hook first
+    end.rcode--&gt;
+
+&lt;!--begin.rcode fancy-rgl, rgl=TRUE, fig.align='center', fig.width=4, fig.height=4, warning=FALSE
+    plot3d(data.frame(x = rnorm(100), y = rnorm(100), z = rnorm(100)), col = rainbow(100))
+    par3d(zoom=.8)
+    end.rcode--&gt;
+
+  &lt;p&gt;Well, everything seems to be working. Let's ask R what is the
+  value of &amp;pi;? Of course it is &lt;!--rinline pi --&gt;.&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body></html>

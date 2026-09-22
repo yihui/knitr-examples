@@ -1,0 +1,1680 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<title>021-ggplot2-geoms.log</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css">
+<style>body{margin:0} pre{margin:0;padding:.6em;white-space:pre-wrap;word-break:break-word}</style>
+</head><body>
+<pre><code class="language-log">This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.9.21)  22 SEP 2026 03:18
+entering extended mode
+ restricted \write18 enabled.
+ %&amp;-line parsing enabled.
+**021-ggplot2-geoms.tex
+(./021-ggplot2-geoms.tex
+LaTeX2e &lt;2026-06-01&gt;
+L3 programming layer &lt;2026-08-10&gt;
+(/home/runner/.TinyTeX/texmf-dist/tex/latex/tufte-latex/tufte-handout.cls
+Document Class: tufte-handout 2015/06/21 v3.5.2 Tufte-handout class
+(/home/runner/.TinyTeX/texmf-dist/tex/latex/tufte-latex/tufte-common.def
+File: tufte-common.def 2015/06/21 v3.5.2 Common code for the Tufte-LaTeX styles
+(/home/runner/.TinyTeX/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2025/11/04 v2.10 package option processing (HA)
+(/home/runner/.TinyTeX/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/home/runner/.TinyTeX/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks17
+\XKV@tempa@toks=\toks18
+\XKV@tempb@toks=\toks19
+(/home/runner/.TinyTeX/texmf-dist/tex/generic/xkeyval/keyval.tex))
+\XKV@depth=\count276
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+)) (/home/runner/.TinyTeX/texmf-dist/tex/latex/xifthen/xifthen.sty
+Package: xifthen 2015/11/05 v1.4.0 Extended ifthen features
+(/home/runner/.TinyTeX/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2025/03/01 v4.3b Infix arithmetic (KKT,FJ)
+\calc@Acount=\count277
+\calc@Bcount=\count278
+\calc@Adimen=\dimen150
+\calc@Bdimen=\dimen151
+\calc@Askip=\skip49
+\calc@Bskip=\skip50
+LaTeX Info: Redefining \setlength on input line 86.
+LaTeX Info: Redefining \addtolength on input line 87.
+\calc@Ccount=\count279
+\calc@Cskip=\skip51
+) (/home/runner/.TinyTeX/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
+) (/home/runner/.TinyTeX/texmf-dist/tex/latex/ifmtarg/ifmtarg.sty
+Package: ifmtarg 2018/04/16 v1.2b check for an empty argument
+)) (/home/runner/.TinyTeX/texmf-dist/tex/latex/hardwrap/hardwrap.sty
+Package: hardwrap 2011/02/12 v0.2 Hard wrap messages
+(/home/runner/.TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
+(/home/runner/.TinyTeX/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+) (/home/runner/.TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
+) (/home/runner/.TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+) (/home/runner/.TinyTeX/texmf-dist/tex/generic/iftex/ifxetex.sty
+Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
+)
+\hw@charcount=\count280
+\hw@wordcount=\count281
+\hw@maxprintline=\count282
+(|kpsewhich -var-value=max_print_line))
+Class tufte-handout Info: Loading the base class `article'
+(/home/runner/.TinyTeX/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(/home/runner/.TinyTeX/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count283
+\c@section=\count284
+\c@subsection=\count285
+\c@subsubsection=\count286
+\c@paragraph=\count287
+\c@subparagraph=\count288
+\c@figure=\count289
+\c@table=\count290
+\abovecaptionskip=\skip52
+\belowcaptionskip=\skip53
+\bibindent=\dimen152
+) (/home/runner/.TinyTeX/texmf-dist/tex/generic/iftex/ifpdf.sty
+Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
+) (/home/runner/.TinyTeX/texmf-dist/tex/generic/iftex/ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+) (/home/runner/.TinyTeX/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2025/01/04 v2.17 Sectioning titles
+\ttl@box=\box53
+\beforetitleunit=\skip54
+\aftertitleunit=\skip55
+\ttl@plus=\dimen153
+\ttl@minus=\dimen154
+\ttl@toksa=\toks20
+\titlewidth=\dimen155
+\titlewidthlast=\dimen156
+\titlewidthfirst=\dimen157
+) (/home/runner/.TinyTeX/texmf-dist/tex/latex/titlesec/titletoc.sty
+Package: titletoc 2025/01/04 v2.17 TOC entries
+\ttl@leftsep=\dimen158
+) (/home/runner/.TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2026-06-17 v7.01r Hypertext links for LaTeX
+(/home/runner/.TinyTeX/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
+) (/home/runner/.TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+) (/home/runner/.TinyTeX/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+) (/home/runner/.TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+) (/home/runner/.TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2026-01-29 v2.58 Cross-referencing by name of section
+(/home/runner/.TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+) (/home/runner/.TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+(/home/runner/.TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count291
+) (/home/runner/.TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count292
+) (/home/runner/.TinyTeX/texmf-dist/tex/generic/stringenc/stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
+)
+\@linkdim=\dimen159
+\Hy@linkcounter=\count293
+\Hy@pagecounter=\count294
+(/home/runner/.TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2026-06-17 v7.01r Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+) (/home/runner/.TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+\Hy@SavedSpaceFactor=\count295
+(/home/runner/.TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2026-06-17 v7.01r Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Option `unicode' set `true' on input line 4070.
+Package hyperref Info: Option `hyperfootnotes' set `false' on input line 4070.
+Package hyperref Info: Hyper figures OFF on input line 4199.
+Package hyperref Info: Link nesting OFF on input line 4204.
+Package hyperref Info: Hyper index ON on input line 4207.
+Package hyperref Info: Plain pages OFF on input line 4214.
+Package hyperref Info: Backreferencing OFF on input line 4219.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4466.
+\c@Hy@tempcnt=\count296
+(/home/runner/.TinyTeX/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4805.
+\XeTeXLinkMargin=\dimen160
+(/home/runner/.TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+(/home/runner/.TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
+))
+\Fld@menulength=\count297
+\Field@Width=\dimen161
+\Fld@charsize=\dimen162
+Package hyperref Info: Hyper figures OFF on input line 6091.
+Package hyperref Info: Link nesting OFF on input line 6096.
+Package hyperref Info: Hyper index ON on input line 6099.
+Package hyperref Info: backreferencing OFF on input line 6106.
+Package hyperref Info: Link coloring OFF on input line 6111.
+Package hyperref Info: Link coloring with OCG OFF on input line 6116.
+Package hyperref Info: PDF/A mode OFF on input line 6121.
+\Hy@abspage=\count298
+\c@Item=\count299
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+(/home/runner/.TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2026-06-17 v7.01r Hyperref driver for pdfTeX
+\Fld@listcount=\count300
+\c@bookmark@seq@number=\count301
+(/home/runner/.TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
+(/home/runner/.TinyTeX/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 284.
+)
+\Hy@SectionHShift=\skip56
+) (/home/runner/.TinyTeX/texmf-dist/tex/latex/ragged2e/ragged2e.sty
+Package: ragged2e 2023/06/22 v3.6 ragged2e Package
+\CenteringLeftskip=\skip57
+\RaggedLeftLeftskip=\skip58
+\RaggedRightLeftskip=\skip59
+\CenteringRightskip=\skip60
+\RaggedLeftRightskip=\skip61
+\RaggedRightRightskip=\skip62
+\CenteringParfillskip=\skip63
+\RaggedLeftParfillskip=\skip64
+\RaggedRightParfillskip=\skip65
+\JustifyingParfillskip=\skip66
+\CenteringParindent=\skip67
+\RaggedLeftParindent=\skip68
+\RaggedRightParindent=\skip69
+\JustifyingParindent=\skip70
+) (/home/runner/.TinyTeX/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2026/03/07 v6.0 Page Geometry
+(/home/runner/.TinyTeX/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+)
+\Gm@cnth=\count302
+\Gm@cntv=\count303
+\c@Gm@tempcnt=\count304
+\Gm@bindingoffset=\dimen163
+\Gm@wd@mp=\dimen164
+\Gm@odd@mp=\dimen165
+\Gm@even@mp=\dimen166
+\Gm@layoutwidth=\dimen167
+\Gm@layoutheight=\dimen168
+\Gm@layouthoffset=\dimen169
+\Gm@layoutvoffset=\dimen170
+\Gm@dimlist=\toks21
+) (/home/runner/.TinyTeX/texmf-dist/tex/latex/changepage/changepage.sty
+Package: changepage 2026-09-15 v2.0b check page and change page layout
+\c@cp@cntr=\count305
+\cp@tempcnt=\count306
+)
+\@tufte@overhang=\skip71
+\@tufte@fullwidth=\skip72
+\@tufte@caption@fill=\skip73
+(/home/runner/.TinyTeX/texmf-dist/tex/latex/paralist/paralist.sty
+Package: paralist 2017/01/22 v2.7 Extended list environments
+\pltopsep=\skip74
+\plpartopsep=\skip75
+\plitemsep=\skip76
+\plparsep=\skip77
+\pl@lab=\toks22
+) (/home/runner/.TinyTeX/texmf-dist/tex/latex/textcase/textcase.sty
+Package: textcase 2025/02/16 v1.05 Text only upper/lower case changing (DPC)
+Package textcase Info: Defining Legacy names on input line 20.
+) (/home/runner/.TinyTeX/texmf-dist/tex/latex/microtype/letterspace.sty
+Package: letterspace 2026/03/01 v3.2d Robust letterspacing (RS)
+LaTeX Info: Redefining \lsstyle on input line 343.
+LaTeX Info: Redefining \lslig on input line 344.
+LaTeX Info: Redefining \textls on input line 372.
+\MT@outer@kern=\dimen171
+) (/home/runner/.TinyTeX/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2022/12/04 v6.7b set line spacing
+) (/home/runner/.TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
+(/home/runner/.TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+
+Package xcolor Warning: Package option `usenames' is obsolete and ignored on input line 265.
+
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+(/home/runner/.TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
+) (/home/runner/.TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
+Package xcolor Info: Model `RGB' extended on input line 1365.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
+) (/home/runner/.TinyTeX/texmf-dist/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 2026-05-17 v3.0m Driver-dependent file (DPC,SPQR)
+) (/home/runner/.TinyTeX/texmf-dist/tex/latex/xcolor/svgnam.def
+File: svgnam.def 2024/09/29 v3.02 Predefined colors according to SVG 1.1 (UK)
+) (/home/runner/.TinyTeX/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip78
+\bibsep=\skip79
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count307
+) (/home/runner/.TinyTeX/texmf-dist/tex/latex/natbib/bibentry.sty
+Package: bibentry 2007/10/30 1.5 (PWD)
+)
+No file 021-ggplot2-geoms.bbl.
+\c@@tufte@num@bibkeys=\count308
+(/home/runner/.TinyTeX/texmf-dist/tex/latex/sauerj/optparams.sty
+Package: optparams 2004/08/14 v0.9 multiple optional parameters in macros
+)
+\@tufte@sidenote@vertical@offset=\skip80
+(/home/runner/.TinyTeX/texmf-dist/tex/latex/placeins/placeins.sty
+Package: placeins 2005/04/18  v 2.2
+)
+\@tufte@margin@floatbox=\box54
+\@tufte@figure@box=\box55
+\@tufte@caption@box=\box56
+\@tufte@caption@vertical@offset=\skip81
+\@tufte@float@contents@width=\skip82
+(/home/runner/.TinyTeX/texmf-dist/tex/latex/psnfss/mathpazo.sty
+Package: mathpazo 2020/03/25 PSNFSS-v9.3 Palatino w/ Pazo Math (D.Puga, WaS) 
+\symupright=\mathgroup4
+) (/home/runner/.TinyTeX/texmf-dist/tex/latex/psnfss/helvet.sty
+Package: helvet 2020/03/25 PSNFSS-v9.3 (WaS) 
+) (/home/runner/.TinyTeX/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
+LaTeX Font Info:    Trying to load font information for T1+pplj on input line 116.
+(/home/runner/.TinyTeX/texmf-dist/tex/latex/psnfss/t1pplj.fd
+File: t1pplj.fd 2004/09/06 font definitions for T1/pplj.
+)) (/home/runner/.TinyTeX/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2024/04/24 v2.1b Standard LaTeX package
+) (/home/runner/.TinyTeX/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
+\f@nch@headwidth=\skip83
+\f@nch@offset@elh=\skip84
+\f@nch@offset@erh=\skip85
+\f@nch@offset@olh=\skip86
+\f@nch@offset@orh=\skip87
+\f@nch@offset@elf=\skip88
+\f@nch@offset@erf=\skip89
+\f@nch@offset@olf=\skip90
+\f@nch@offset@orf=\skip91
+\f@nch@height=\skip92
+\f@nch@footalignment=\skip93
+\f@nch@widthL=\skip94
+\f@nch@widthC=\skip95
+\f@nch@widthR=\skip96
+\@temptokenb=\toks23
+)
+\tufteskipamount=\skip97
+(/home/runner/.TinyTeX/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2025/10/21 v2.0b multicolumn formatting (FMi)
+\c@tracingmulticols=\count309
+\mult@box=\box57
+\multicol@leftmargin=\dimen172
+\c@unbalance=\count310
+\c@collectmore=\count311
+\doublecol@number=\count312
+\multicoltolerance=\count313
+\multicolpretolerance=\count314
+\full@width=\dimen173
+\page@free=\dimen174
+\premulticols=\dimen175
+\postmulticols=\dimen176
+\multicolsep=\skip98
+\multicolbaselineskip=\skip99
+\partial@page=\box58
+\last@line=\box59
+\mc@boxedresult=\box60
+\maxbalancingoverflow=\dimen177
+\mult@rightbox=\box61
+\mult@grightbox=\box62
+\mult@firstbox=\box63
+\mult@gfirstbox=\box64
+\@tempa=\box65
+\@tempa=\box66
+\@tempa=\box67
+\@tempa=\box68
+\@tempa=\box69
+\@tempa=\box70
+\@tempa=\box71
+\@tempa=\box72
+\@tempa=\box73
+\@tempa=\box74
+\@tempa=\box75
+\@tempa=\box76
+\@tempa=\box77
+\@tempa=\box78
+\@tempa=\box79
+\@tempa=\box80
+\@tempa=\box81
+\@tempa=\box82
+\@tempa=\box83
+\@tempa=\box84
+\@tempa=\box85
+\@tempa=\box86
+\@tempa=\box87
+\@tempa=\box88
+\@tempa=\box89
+\@tempa=\box90
+\@tempa=\box91
+\@tempa=\box92
+\@tempa=\box93
+\@tempa=\box94
+\@tempa=\box95
+\@tempa=\box96
+\@tempa=\box97
+\@tempa=\box98
+\@tempa=\box99
+\@tempa=\box100
+\c@minrows=\count315
+\c@columnbadness=\count316
+\c@finalcolumnbadness=\count317
+\last@try=\dimen178
+\multicolovershoot=\dimen179
+\multicolundershoot=\dimen180
+\mult@nat@firstbox=\box101
+\colbreak@box=\box102
+\mc@col@check@num=\count318
+\g__mc_curr_col_int=\count319
+))) (/home/runner/.TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2026-05-17 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
+(/home/runner/.TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2026-05-17 v1.4h Standard LaTeX Graphics (DPC,SPQR)
+(/home/runner/.TinyTeX/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+) (/home/runner/.TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 106.
+)
+\Gin@req@height=\dimen181
+\Gin@req@width=\dimen182
+) (/home/runner/.TinyTeX/texmf-dist/tex/latex/framed/framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip100
+\fb@frw=\dimen183
+\fb@frh=\dimen184
+\FrameRule=\dimen185
+\FrameSep=\dimen186
+) (/home/runner/.TinyTeX/texmf-dist/tex/latex/base/alltt.sty
+Package: alltt 2024/07/07 v2.0g defines alltt environment
+) (/home/runner/.TinyTeX/texmf-dist/tex/latex/upquote/upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verbatim
+) (/home/runner/.TinyTeX/texmf-dist/tex/latex/l3kernel/l3backend-pdftex.def
+File: l3backend-pdftex.def 2026-08-10 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count320
+) (./021-ggplot2-geoms.aux)
+\openout1 = `021-ggplot2-geoms.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 54.
+LaTeX Font Info:    ... okay on input line 54.
+Package hyperref Info: Link coloring OFF on input line 54.
+(./021-ggplot2-geoms.out) (./021-ggplot2-geoms.out)
+\@outlinefile=\write3
+\openout3 = `021-ggplot2-geoms.out'.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: &lt;same size as paper&gt;
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: twoside asymmetric 
+* h-part:(L,W,R)=(70.56284pt, 304.44447pt, 222.50056pt)
+* v-part:(T,H,B)=(77.96053pt, 686.0pt, 81.08632pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=304.44447pt
+* \textheight=686.0pt
+* \oddsidemargin=-1.70715pt
+* \evensidemargin=-1.70715pt
+* \topmargin=-36.30946pt
+* \headheight=14.0pt
+* \headsep=28.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=140.5566pt
+* \marginparsep=23.33124pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+\langwohyphens=\language6
+(/home/runner/.TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+(/home/runner/.TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+))
+\big@size=\dimen187
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 55.
+(/home/runner/.TinyTeX/texmf-dist/tex/latex/psnfss/t1phv.fd
+File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
+)
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 8.99994pt on input line 55.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 16.19989pt on input line 55.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 32.39978pt on input line 55.
+LaTeX Font Info:    Font shape `T1/phv/m/n' will be
+(Font)              scaled to size 12.59991pt on input line 55.
+[1
+
+
+{/home/runner/.TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/home/runner/.TinyTeX/texmf-dist/fonts/enc/dvips/base/8r.enc}] (./021-ggplot2-geoms.toc)
+\tf@toc=\write4
+\openout4 = `021-ggplot2-geoms.toc'.
+
+
+Overfull \hbox (22.71175pt too wide) in paragraph at lines 70--70
+[][]\T1/cmtt/m/it/10 ### Title: Reference lines: horizontal, vertical, and diagonal[][] 
+ []
+
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size &lt;10&gt; not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 75.
+&lt;figure/021-ggplot2-geoms-geom_abline-1.pdf, id=70, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_abline-1.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_abline-1.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_abline-1.pdf  used on input line 81.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 81--82
+[][]  
+ []
+
+[2
+
+]
+&lt;figure/021-ggplot2-geoms-geom_abline-2.pdf, id=80, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_abline-2.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_abline-2.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_abline-2.pdf  used on input line 86.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 86--87
+[][]  
+ []
+
+[3 &lt;./figure/021-ggplot2-geoms-geom_abline-1.pdf&gt; &lt;./figure/021-ggplot2-geoms-geom_abline-2.pdf&gt;]
+&lt;figure/021-ggplot2-geoms-geom_abline-3.pdf, id=95, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_abline-3.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_abline-3.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_abline-3.pdf  used on input line 91.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 91--92
+[][]  
+ []
+
+
+Overfull \hbox (33.20918pt too wide) in paragraph at lines 93--93
+[][]\T1/cmtt/m/n/10 p[] []+[] []geom_abline[][]()[] []\T1/cmtt/m/it/10 # Can\TS1/cmtt/m/it/10 '\T1/cmtt/m/it/10 t see it - outside the range of the data[][] 
+ []
+
+&lt;figure/021-ggplot2-geoms-geom_abline-4.pdf, id=96, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_abline-4.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_abline-4.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_abline-4.pdf  used on input line 96.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 96--97
+[][]  
+ []
+
+[4 &lt;./figure/021-ggplot2-geoms-geom_abline-3.pdf&gt; &lt;./figure/021-ggplot2-geoms-geom_abline-4.pdf&gt;]
+&lt;figure/021-ggplot2-geoms-geom_abline-5.pdf, id=112, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_abline-5.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_abline-5.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_abline-5.pdf  used on input line 101.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 101--102
+[][]  
+ []
+
+&lt;figure/021-ggplot2-geoms-geom_abline-6.pdf, id=113, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_abline-6.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_abline-6.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_abline-6.pdf  used on input line 114.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 114--115
+[][]  
+ []
+
+[5 &lt;./figure/021-ggplot2-geoms-geom_abline-5.pdf&gt;]
+&lt;figure/021-ggplot2-geoms-geom_abline-7.pdf, id=123, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_abline-7.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_abline-7.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_abline-7.pdf  used on input line 122.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 122--123
+[][]  
+ []
+
+[6 &lt;./figure/021-ggplot2-geoms-geom_abline-6.pdf&gt; &lt;./figure/021-ggplot2-geoms-geom_abline-7.pdf&gt;]
+Overfull \hbox (17.46303pt too wide) in paragraph at lines 124--124
+[][]\T1/cmtt/m/it/10 # To show different lines in different facets, use aesthetics[][] 
+ []
+
+
+Overfull \hbox (36.72221pt too wide) in paragraph at lines 129--129
+[][]\T1/cmtt/m/n/10 mean_wt[] []&lt;-[] []data.frame[][]([][]cyl[] []=[] []c[][]([][]4[][],[] []6[][],[] []8[][]),[] []wt[] []=[] []c[][]([][]2.28[][],[] []3.11[][],[] []4.00[][]))[][] 
+ []
+
+&lt;figure/021-ggplot2-geoms-geom_abline-8.pdf, id=138, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_abline-8.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_abline-8.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_abline-8.pdf  used on input line 133.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 133--134
+[][]  
+ []
+
+&lt;figure/021-ggplot2-geoms-geom_abline-9.pdf, id=139, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_abline-9.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_abline-9.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_abline-9.pdf  used on input line 142.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 142--144
+[][] 
+ []
+
+[7 &lt;./figure/021-ggplot2-geoms-geom_abline-8.pdf&gt;]
+Overfull \hbox (47.21965pt too wide) in paragraph at lines 158--158
+[][]\T1/cmtt/m/n/10 huron[] []&lt;-[] []data.frame[][]([][]year[] []=[] []1875[][]:[][]1972[][],[] []level[] []=[] []as.vector[][](LakeHuron))[][] 
+ []
+
+&lt;figure/021-ggplot2-geoms-geom_area-1.pdf, id=150, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_area-1.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_area-1.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_area-1.pdf  used on input line 164.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 164--165
+[][]  
+ []
+
+[8 &lt;./figure/021-ggplot2-geoms-geom_abline-9.pdf&gt;]
+&lt;figure/021-ggplot2-geoms-geom_area-2.pdf, id=161, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_area-2.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_area-2.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_area-2.pdf  used on input line 169.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 169--170
+[][]  
+ []
+
+
+Overfull \hbox (90.94508pt too wide) in paragraph at lines 171--171
+[][]\T1/cmtt/m/it/10 # Orientation cannot be deduced by mapping, so must be given explicitly for[][] 
+ []
+
+[9 &lt;./figure/021-ggplot2-geoms-geom_area-1.pdf&gt; &lt;./figure/021-ggplot2-geoms-geom_area-2.pdf&gt;]
+&lt;figure/021-ggplot2-geoms-geom_area-3.pdf, id=177, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_area-3.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_area-3.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_area-3.pdf  used on input line 176.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 176--177
+[][]  
+ []
+
+
+Overfull \hbox (78.71196pt too wide) in paragraph at lines 180--180
+[]  []\T1/cmtt/m/n/10 geom_ribbon[][]([][]aes[][]([][]ymin[] []= level[] []-[] []1[][],[] []ymax[] []= level[] []+[] []1[][]),[] []fill[] []=[] []"grey70"[][])[] []+[][] 
+ []
+
+&lt;figure/021-ggplot2-geoms-geom_area-4.pdf, id=178, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_area-4.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_area-4.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_area-4.pdf  used on input line 184.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 184--185
+[][]  
+ []
+
+[10 &lt;./figure/021-ggplot2-geoms-geom_area-3.pdf&gt;]
+Overfull \hbox (38.4579pt too wide) in paragraph at lines 186--186
+[][]\T1/cmtt/m/it/10 # The underlying stat_align() takes care of unaligned data points[][] 
+ []
+
+&lt;figure/021-ggplot2-geoms-geom_area-5.pdf, id=188, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_area-5.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_area-5.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_area-5.pdf  used on input line 199.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 199--200
+[][]  
+ []
+
+[11 &lt;./figure/021-ggplot2-geoms-geom_area-4.pdf&gt;]
+Overfull \hbox (96.1938pt too wide) in paragraph at lines 201--201
+[][]\T1/cmtt/m/it/10 # stat_align() interpolates and aligns the value so that the areas can stack[][] 
+ []
+
+
+Overfull \hbox (10.47862pt too wide) in paragraph at lines 203--203
+[][]\T1/cmtt/m/n/10 a[] []+[] []geom_point[][]([][]stat[] []=[] []"align"[][],[] []position[] []=[] []"stack"[][],[] []size[] []=[] []8[][])[][] 
+ []
+
+&lt;figure/021-ggplot2-geoms-geom_area-6.pdf, id=198, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_area-6.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_area-6.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_area-6.pdf  used on input line 206.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 206--207
+[][]  
+ []
+
+[12 &lt;./figure/021-ggplot2-geoms-geom_area-5.pdf&gt; &lt;./figure/021-ggplot2-geoms-geom_area-6.pdf&gt;]
+Overfull \hbox (22.71175pt too wide) in paragraph at lines 208--208
+[][]\T1/cmtt/m/it/10 # To turn off the alignment, the stat can be set to "identity"[][] 
+ []
+
+&lt;figure/021-ggplot2-geoms-geom_area-7.pdf, id=213, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_area-7.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_area-7.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_area-7.pdf  used on input line 213.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 213--215
+[][] 
+ []
+
+
+Overfull \hbox (59.45277pt too wide) in paragraph at lines 228--228
+[][]\T1/cmtt/m/it/10 # geom_bar is designed to make it easy to create bar charts that show[][] 
+ []
+
+&lt;figure/021-ggplot2-geoms-geom_bar-1.pdf, id=214, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_bar-1.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_bar-1.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_bar-1.pdf  used on input line 235.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 235--236
+[][]  
+ []
+
+[13 &lt;./figure/021-ggplot2-geoms-geom_area-7.pdf&gt;]
+&lt;figure/021-ggplot2-geoms-geom_bar-2.pdf, id=225, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_bar-2.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_bar-2.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_bar-2.pdf  used on input line 241.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 241--242
+[][]  
+ []
+
+[14 &lt;./figure/021-ggplot2-geoms-geom_bar-1.pdf&gt; &lt;./figure/021-ggplot2-geoms-geom_bar-2.pdf&gt;]
+&lt;figure/021-ggplot2-geoms-geom_bar-3.pdf, id=240, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_bar-3.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_bar-3.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_bar-3.pdf  used on input line 247.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 247--248
+[][]  
+ []
+
+
+Overfull \hbox (54.20406pt too wide) in paragraph at lines 249--249
+[][]\T1/cmtt/m/it/10 # Bar charts are automatically stacked when multiple bars are placed[][] 
+ []
+
+
+Overfull \hbox (43.70662pt too wide) in paragraph at lines 250--250
+[][]\T1/cmtt/m/it/10 # at the same location. The order of the fill is designed to match[][] 
+ []
+
+&lt;figure/021-ggplot2-geoms-geom_bar-4.pdf, id=241, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_bar-4.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_bar-4.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_bar-4.pdf  used on input line 255.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 255--256
+[][]  
+ []
+
+[15 &lt;./figure/021-ggplot2-geoms-geom_bar-3.pdf&gt;]
+Overfull \hbox (75.19893pt too wide) in paragraph at lines 257--257
+[][]\T1/cmtt/m/it/10 # If you need to flip the order (because you\TS1/cmtt/m/it/10 '\T1/cmtt/m/it/10 ve flipped the orientation)[][] 
+ []
+
+
+Overfull \hbox (68.21452pt too wide) in paragraph at lines 260--260
+[] []\T1/cmtt/m/n/10 geom_bar[][]([][]aes[][]([][]fill[] []= drv),[] []position[] []=[] []position_stack[][]([][]reverse[] []=[] []TRUE[][]))[] []+[][] 
+ []
+
+&lt;figure/021-ggplot2-geoms-geom_bar-5.pdf, id=251, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_bar-5.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_bar-5.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_bar-5.pdf  used on input line 264.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 264--265
+[][]  
+ []
+
+[16 &lt;./figure/021-ggplot2-geoms-geom_bar-4.pdf&gt;]
+Overfull \hbox (52.46837pt too wide) in paragraph at lines 267--267
+[][]\T1/cmtt/m/n/10 df[] []&lt;-[] []data.frame[][]([][]trt[] []=[] []c[][]([][]"a"[][],[] []"b"[][],[] []"c"[][]),[] []outcome[] []=[] []c[][]([][]2.3[][],[] []1.9[][],[] []3.2[][]))[][] 
+ []
+
+&lt;figure/021-ggplot2-geoms-geom_bar-6.pdf, id=261, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_bar-6.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_bar-6.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_bar-6.pdf  used on input line 272.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 272--273
+[][]  
+ []
+
+[17 &lt;./figure/021-ggplot2-geoms-geom_bar-5.pdf&gt; &lt;./figure/021-ggplot2-geoms-geom_bar-6.pdf&gt;]
+Overfull \hbox (54.20406pt too wide) in paragraph at lines 274--274
+[][]\T1/cmtt/m/it/10 # But geom_point() displays exactly the same information and doesn\TS1/cmtt/m/it/10 '\T1/cmtt/m/it/10 t[][] 
+ []
+
+&lt;figure/021-ggplot2-geoms-geom_bar-7.pdf, id=276, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_bar-7.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_bar-7.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_bar-7.pdf  used on input line 280.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 280--281
+[][]  
+ []
+
+
+Overfull \hbox (38.4579pt too wide) in paragraph at lines 282--282
+[][]\T1/cmtt/m/it/10 # You can also use geom_bar() with continuous data, in which case[][] 
+ []
+
+&lt;figure/021-ggplot2-geoms-geom_bar-8.pdf, id=277, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_bar-8.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_bar-8.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_bar-8.pdf  used on input line 288.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 288--289
+[][]  
+ []
+
+[18 &lt;./figure/021-ggplot2-geoms-geom_bar-7.pdf&gt;]
+&lt;figure/021-ggplot2-geoms-geom_bar-9.pdf, id=287, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_bar-9.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_bar-9.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_bar-9.pdf  used on input line 294.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 294--295
+[][]  
+ []
+
+[19 &lt;./figure/021-ggplot2-geoms-geom_bar-8.pdf&gt; &lt;./figure/021-ggplot2-geoms-geom_bar-9.pdf&gt;]
+Overfull \hbox (38.4579pt too wide) in paragraph at lines 296--296
+[][]\T1/cmtt/m/it/10 # Use \TS1/cmtt/m/it/10 `\T1/cmtt/m/it/10 just\TS1/cmtt/m/it/10 ` \T1/cmtt/m/it/10 to control how columns are aligned with axis breaks:[][] 
+ []
+
+
+Overfull \hbox (57.71709pt too wide) in paragraph at lines 297--297
+[][]\T1/cmtt/m/n/10 df[] []&lt;-[] []data.frame[][]([][]x[] []=[] []as.Date[][]([][]c[][]([][]"2020-01-01"[][],[] []"2020-02-01"[][])),[] []y[] []=[] []1[][]:[][]2[][])[][] 
+ []
+
+&lt;figure/021-ggplot2-geoms-geom_bar-10.pdf, id=303, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_bar-10.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_bar-10.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_bar-10.pdf  used on input line 302.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 302--303
+[][]  
+ []
+
+&lt;figure/021-ggplot2-geoms-geom_bar-11.pdf, id=304, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_bar-11.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_bar-11.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_bar-11.pdf  used on input line 308.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 308--310
+[][] 
+ []
+
+[20 &lt;./figure/021-ggplot2-geoms-geom_bar-10.pdf&gt;]
+Overfull \hbox (1.71687pt too wide) in paragraph at lines 319--319
+[][]\T1/cmtt/m/it/10 ### Aliases: geom_bin_2d geom_bin2d stat_bin_2d stat_bin2d[][] 
+ []
+
+
+Overfull \hbox (10.47862pt too wide) in paragraph at lines 323--323
+[][]\T1/cmtt/m/n/10 d[] []&lt;-[] []ggplot[][](diamonds,[] []aes[][](x, y))[] []+[] []xlim[][]([][]4[][],[] []10[][])[] []+[] []ylim[][]([][]4[][],[] []10[][])[][] 
+ []
+
+
+Overfull \hbox (5.2299pt too wide) in paragraph at lines 330--330
+[]\T1/cmtt/m/n/10 ## Warning: Removed 478 rows containing non-finite outside 
+ []
+
+&lt;figure/021-ggplot2-geoms-geom_bin_2d-1.pdf, id=314, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_bin_2d-1.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_bin_2d-1.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_bin_2d-1.pdf  used on input line 333.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 333--334
+[][]  
+ []
+
+[21 &lt;./figure/021-ggplot2-geoms-geom_bar-11.pdf&gt;]
+Overfull \hbox (43.70662pt too wide) in paragraph at lines 335--335
+[][]\T1/cmtt/m/it/10 # You can control the size of the bins by specifying the number of[][] 
+ []
+
+
+Overfull \hbox (5.2299pt too wide) in paragraph at lines 341--341
+[]\T1/cmtt/m/n/10 ## Warning: Removed 478 rows containing non-finite outside 
+ []
+
+&lt;figure/021-ggplot2-geoms-geom_bin_2d-2.pdf, id=325, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_bin_2d-2.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_bin_2d-2.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_bin_2d-2.pdf  used on input line 342.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 342--343
+[][]  
+ []
+
+[22 &lt;./figure/021-ggplot2-geoms-geom_bin_2d-1.pdf&gt;]
+Overfull \hbox (5.2299pt too wide) in paragraph at lines 348--348
+[]\T1/cmtt/m/n/10 ## Warning: Removed 478 rows containing non-finite outside 
+ []
+
+&lt;figure/021-ggplot2-geoms-geom_bin_2d-3.pdf, id=336, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_bin_2d-3.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_bin_2d-3.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_bin_2d-3.pdf  used on input line 351.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 351--352
+[][]  
+ []
+
+[23 &lt;./figure/021-ggplot2-geoms-geom_bin_2d-2.pdf&gt;]
+Overfull \hbox (5.2299pt too wide) in paragraph at lines 358--358
+[]\T1/cmtt/m/n/10 ## Warning: Removed 478 rows containing non-finite outside 
+ []
+
+&lt;figure/021-ggplot2-geoms-geom_bin_2d-4.pdf, id=347, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_bin_2d-4.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_bin_2d-4.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_bin_2d-4.pdf  used on input line 359.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 359--361
+[][] 
+ []
+
+[24 &lt;./figure/021-ggplot2-geoms-geom_bin_2d-3.pdf&gt;]
+Overfull \hbox (1.71687pt too wide) in paragraph at lines 370--370
+[][]\T1/cmtt/m/it/10 ### Aliases: geom_bin_2d geom_bin2d stat_bin_2d stat_bin2d[][] 
+ []
+
+
+Overfull \hbox (10.47862pt too wide) in paragraph at lines 374--374
+[][]\T1/cmtt/m/n/10 d[] []&lt;-[] []ggplot[][](diamonds,[] []aes[][](x, y))[] []+[] []xlim[][]([][]4[][],[] []10[][])[] []+[] []ylim[][]([][]4[][],[] []10[][])[][] 
+ []
+
+
+Overfull \hbox (5.2299pt too wide) in paragraph at lines 381--381
+[]\T1/cmtt/m/n/10 ## Warning: Removed 478 rows containing non-finite outside 
+ []
+
+&lt;figure/021-ggplot2-geoms-geom_bin2d-1.pdf, id=358, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_bin2d-1.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_bin2d-1.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_bin2d-1.pdf  used on input line 384.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 384--385
+[][]  
+ []
+
+[25 &lt;./figure/021-ggplot2-geoms-geom_bin_2d-4.pdf&gt;]
+Overfull \hbox (43.70662pt too wide) in paragraph at lines 386--386
+[][]\T1/cmtt/m/it/10 # You can control the size of the bins by specifying the number of[][] 
+ []
+
+
+Overfull \hbox (5.2299pt too wide) in paragraph at lines 392--392
+[]\T1/cmtt/m/n/10 ## Warning: Removed 478 rows containing non-finite outside 
+ []
+
+&lt;figure/021-ggplot2-geoms-geom_bin2d-2.pdf, id=370, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_bin2d-2.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_bin2d-2.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_bin2d-2.pdf  used on input line 393.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 393--394
+[][]  
+ []
+
+[26 &lt;./figure/021-ggplot2-geoms-geom_bin2d-1.pdf&gt;]
+Overfull \hbox (5.2299pt too wide) in paragraph at lines 399--399
+[]\T1/cmtt/m/n/10 ## Warning: Removed 478 rows containing non-finite outside 
+ []
+
+&lt;figure/021-ggplot2-geoms-geom_bin2d-3.pdf, id=381, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_bin2d-3.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_bin2d-3.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_bin2d-3.pdf  used on input line 402.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 402--403
+[][]  
+ []
+
+[27 &lt;./figure/021-ggplot2-geoms-geom_bin2d-2.pdf&gt;]
+Overfull \hbox (5.2299pt too wide) in paragraph at lines 409--409
+[]\T1/cmtt/m/n/10 ## Warning: Removed 478 rows containing non-finite outside 
+ []
+
+&lt;figure/021-ggplot2-geoms-geom_bin2d-4.pdf, id=392, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_bin2d-4.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_bin2d-4.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_bin2d-4.pdf  used on input line 410.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 410--412
+[][] 
+ []
+
+[28 &lt;./figure/021-ggplot2-geoms-geom_bin2d-3.pdf&gt;]
+&lt;figure/021-ggplot2-geoms-geom_blank-1.pdf, id=403, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_blank-1.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_blank-1.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_blank-1.pdf  used on input line 428.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 428--429
+[][]  
+ []
+
+[29 &lt;./figure/021-ggplot2-geoms-geom_bin2d-4.pdf&gt;]
+Overfull \hbox (1.71687pt too wide) in paragraph at lines 442--442
+[][]\T1/cmtt/m/it/10 ### Title: A box and whiskers plot (in the style of Tukey)[][] 
+ []
+
+&lt;figure/021-ggplot2-geoms-geom_boxplot-1.pdf, id=414, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_boxplot-1.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_boxplot-1.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_boxplot-1.pdf  used on input line 451.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 451--452
+[][]  
+ []
+
+[30 &lt;./figure/021-ggplot2-geoms-geom_blank-1.pdf&gt;]
+&lt;figure/021-ggplot2-geoms-geom_boxplot-2.pdf, id=424, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_boxplot-2.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_boxplot-2.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_boxplot-2.pdf  used on input line 457.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 457--458
+[][]  
+ []
+
+[31 &lt;./figure/021-ggplot2-geoms-geom_boxplot-1.pdf&gt; &lt;./figure/021-ggplot2-geoms-geom_boxplot-2.pdf&gt;]
+&lt;figure/021-ggplot2-geoms-geom_boxplot-3.pdf, id=440, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_boxplot-3.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_boxplot-3.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_boxplot-3.pdf  used on input line 464.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 464--465
+[][]  
+ []
+
+&lt;figure/021-ggplot2-geoms-geom_boxplot-4.pdf, id=441, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_boxplot-4.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_boxplot-4.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_boxplot-4.pdf  used on input line 469.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 469--470
+[][]  
+ []
+
+[32 &lt;./figure/021-ggplot2-geoms-geom_boxplot-3.pdf&gt;]
+&lt;figure/021-ggplot2-geoms-geom_boxplot-5.pdf, id=451, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_boxplot-5.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_boxplot-5.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_boxplot-5.pdf  used on input line 474.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 474--475
+[][]  
+ []
+
+
+Overfull \hbox (17.46303pt too wide) in paragraph at lines 476--476
+[][]\T1/cmtt/m/it/10 # By default, outlier points match the colour of the box. Use[][] 
+ []
+
+
+Overfull \hbox (5.2299pt too wide) in paragraph at lines 478--478
+[][]\T1/cmtt/m/n/10 p[] []+[] []geom_boxplot[][]([][]outlier.colour[] []=[] []"red"[][],[] []outlier.shape[] []=[] []1[][])[][] 
+ []
+
+[33 &lt;./figure/021-ggplot2-geoms-geom_boxplot-4.pdf&gt; &lt;./figure/021-ggplot2-geoms-geom_boxplot-5.pdf&gt;]
+&lt;figure/021-ggplot2-geoms-geom_boxplot-6.pdf, id=467, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_boxplot-6.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_boxplot-6.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_boxplot-6.pdf  used on input line 481.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 481--482
+[][]  
+ []
+
+
+Overfull \hbox (48.95534pt too wide) in paragraph at lines 483--483
+[][]\T1/cmtt/m/it/10 # Remove outliers when overlaying boxplot with original data points[][] 
+ []
+
+
+Overfull \hbox (26.22478pt too wide) in paragraph at lines 484--484
+[][]\T1/cmtt/m/n/10 p[] []+[] []geom_boxplot[][]([][]outlier.shape[] []=[] []NA[][])[] []+[] []geom_jitter[][]([][]width[] []=[] []0.2[][])[][] 
+ []
+
+&lt;figure/021-ggplot2-geoms-geom_boxplot-7.pdf, id=468, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_boxplot-7.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_boxplot-7.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_boxplot-7.pdf  used on input line 487.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 487--488
+[][]  
+ []
+
+[34 &lt;./figure/021-ggplot2-geoms-geom_boxplot-6.pdf&gt;]
+Overfull \hbox (43.70662pt too wide) in paragraph at lines 489--489
+[][]\T1/cmtt/m/it/10 # Boxplots are automatically dodged when any aesthetic is a factor[][] 
+ []
+
+&lt;figure/021-ggplot2-geoms-geom_boxplot-8.pdf, id=478, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_boxplot-8.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_boxplot-8.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_boxplot-8.pdf  used on input line 493.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 493--494
+[][]  
+ []
+
+[35 &lt;./figure/021-ggplot2-geoms-geom_boxplot-7.pdf&gt; &lt;./figure/021-ggplot2-geoms-geom_boxplot-8.pdf&gt;]
+Overfull \hbox (54.20406pt too wide) in paragraph at lines 495--495
+[][]\T1/cmtt/m/it/10 # You can also use boxplots with continuous x, as long as you supply[][] 
+ []
+
+&lt;figure/021-ggplot2-geoms-geom_boxplot-9.pdf, id=493, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_boxplot-9.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_boxplot-9.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_boxplot-9.pdf  used on input line 505.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 505--506
+[][]  
+ []
+
+&lt;figure/021-ggplot2-geoms-geom_boxplot-10.pdf, id=494, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_boxplot-10.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_boxplot-10.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_boxplot-10.pdf  used on input line 513.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 513--514
+[][]  
+ []
+
+[36 &lt;./figure/021-ggplot2-geoms-geom_boxplot-9.pdf&gt;]
+Overfull \hbox (73.46324pt too wide) in paragraph at lines 517--517
+[]  []\T1/cmtt/m/n/10 geom_boxplot[][]([][]aes[][]([][]group[] []=[] []cut_width[][](carat,[] []0.25[][])),[] []outlier.alpha[] []=[] []0.1[][])[][] 
+ []
+
+&lt;figure/021-ggplot2-geoms-geom_boxplot-11.pdf, id=504, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_boxplot-11.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_boxplot-11.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_boxplot-11.pdf  used on input line 522.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 522--523
+[][]  
+ []
+
+[37 &lt;./figure/021-ggplot2-geoms-geom_boxplot-10.pdf&gt;]
+Overfull \hbox (48.95534pt too wide) in paragraph at lines 525--525
+[][]\T1/cmtt/m/it/10 # It\TS1/cmtt/m/it/10 '\T1/cmtt/m/it/10 s possible to draw a boxplot with your own computations if you[][] 
+ []
+
+
+Overfull \hbox (68.21452pt too wide) in paragraph at lines 539--539
+[]   []\T1/cmtt/m/n/10 aes[][]([][]ymin[] []= y0,[] []lower[] []= y25,[] []middle[] []= y50,[] []upper[] []= y75,[] []ymax[] []= y100),[][] 
+ []
+
+&lt;figure/021-ggplot2-geoms-geom_boxplot-12.pdf, id=515, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_boxplot-12.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_boxplot-12.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_boxplot-12.pdf  used on input line 544.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 544--545
+[][]  
+ []
+
+[38 &lt;./figure/021-ggplot2-geoms-geom_boxplot-11.pdf&gt;]
+Overfull \hbox (59.45277pt too wide) in paragraph at lines 563--563
+[][]\T1/cmtt/m/it/10 # geom_bar is designed to make it easy to create bar charts that show[][] 
+ []
+
+&lt;figure/021-ggplot2-geoms-geom_col-1.pdf, id=529, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_col-1.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_col-1.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_col-1.pdf  used on input line 570.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 570--571
+[][]  
+ []
+
+[39 &lt;./figure/021-ggplot2-geoms-geom_boxplot-12.pdf&gt;]
+&lt;figure/021-ggplot2-geoms-geom_col-2.pdf, id=539, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_col-2.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_col-2.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_col-2.pdf  used on input line 576.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 576--577
+[][]  
+ []
+
+[40 &lt;./figure/021-ggplot2-geoms-geom_col-1.pdf&gt; &lt;./figure/021-ggplot2-geoms-geom_col-2.pdf&gt;]
+&lt;figure/021-ggplot2-geoms-geom_col-3.pdf, id=554, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_col-3.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_col-3.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_col-3.pdf  used on input line 582.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 582--583
+[][]  
+ []
+
+
+Overfull \hbox (54.20406pt too wide) in paragraph at lines 584--584
+[][]\T1/cmtt/m/it/10 # Bar charts are automatically stacked when multiple bars are placed[][] 
+ []
+
+
+Overfull \hbox (43.70662pt too wide) in paragraph at lines 585--585
+[][]\T1/cmtt/m/it/10 # at the same location. The order of the fill is designed to match[][] 
+ []
+
+&lt;figure/021-ggplot2-geoms-geom_col-4.pdf, id=555, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_col-4.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_col-4.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_col-4.pdf  used on input line 590.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 590--591
+[][]  
+ []
+
+[41 &lt;./figure/021-ggplot2-geoms-geom_col-3.pdf&gt;]
+Overfull \hbox (75.19893pt too wide) in paragraph at lines 592--592
+[][]\T1/cmtt/m/it/10 # If you need to flip the order (because you\TS1/cmtt/m/it/10 '\T1/cmtt/m/it/10 ve flipped the orientation)[][] 
+ []
+
+
+Overfull \hbox (68.21452pt too wide) in paragraph at lines 595--595
+[] []\T1/cmtt/m/n/10 geom_bar[][]([][]aes[][]([][]fill[] []= drv),[] []position[] []=[] []position_stack[][]([][]reverse[] []=[] []TRUE[][]))[] []+[][] 
+ []
+
+&lt;figure/021-ggplot2-geoms-geom_col-5.pdf, id=565, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_col-5.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_col-5.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_col-5.pdf  used on input line 599.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 599--600
+[][]  
+ []
+
+[42 &lt;./figure/021-ggplot2-geoms-geom_col-4.pdf&gt;]
+Overfull \hbox (52.46837pt too wide) in paragraph at lines 602--602
+[][]\T1/cmtt/m/n/10 df[] []&lt;-[] []data.frame[][]([][]trt[] []=[] []c[][]([][]"a"[][],[] []"b"[][],[] []"c"[][]),[] []outcome[] []=[] []c[][]([][]2.3[][],[] []1.9[][],[] []3.2[][]))[][] 
+ []
+
+&lt;figure/021-ggplot2-geoms-geom_col-6.pdf, id=575, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_col-6.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_col-6.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_col-6.pdf  used on input line 607.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 607--608
+[][]  
+ []
+
+[43 &lt;./figure/021-ggplot2-geoms-geom_col-5.pdf&gt; &lt;./figure/021-ggplot2-geoms-geom_col-6.pdf&gt;]
+Overfull \hbox (54.20406pt too wide) in paragraph at lines 609--609
+[][]\T1/cmtt/m/it/10 # But geom_point() displays exactly the same information and doesn\TS1/cmtt/m/it/10 '\T1/cmtt/m/it/10 t[][] 
+ []
+
+&lt;figure/021-ggplot2-geoms-geom_col-7.pdf, id=591, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_col-7.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_col-7.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_col-7.pdf  used on input line 615.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 615--616
+[][]  
+ []
+
+
+Overfull \hbox (38.4579pt too wide) in paragraph at lines 617--617
+[][]\T1/cmtt/m/it/10 # You can also use geom_bar() with continuous data, in which case[][] 
+ []
+
+&lt;figure/021-ggplot2-geoms-geom_col-8.pdf, id=592, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_col-8.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_col-8.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_col-8.pdf  used on input line 623.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 623--624
+[][]  
+ []
+
+[44 &lt;./figure/021-ggplot2-geoms-geom_col-7.pdf&gt;]
+&lt;figure/021-ggplot2-geoms-geom_col-9.pdf, id=602, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_col-9.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_col-9.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_col-9.pdf  used on input line 629.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 629--630
+[][]  
+ []
+
+[45 &lt;./figure/021-ggplot2-geoms-geom_col-8.pdf&gt; &lt;./figure/021-ggplot2-geoms-geom_col-9.pdf&gt;]
+Overfull \hbox (38.4579pt too wide) in paragraph at lines 631--631
+[][]\T1/cmtt/m/it/10 # Use \TS1/cmtt/m/it/10 `\T1/cmtt/m/it/10 just\TS1/cmtt/m/it/10 ` \T1/cmtt/m/it/10 to control how columns are aligned with axis breaks:[][] 
+ []
+
+
+Overfull \hbox (57.71709pt too wide) in paragraph at lines 632--632
+[][]\T1/cmtt/m/n/10 df[] []&lt;-[] []data.frame[][]([][]x[] []=[] []as.Date[][]([][]c[][]([][]"2020-01-01"[][],[] []"2020-02-01"[][])),[] []y[] []=[] []1[][]:[][]2[][])[][] 
+ []
+
+&lt;figure/021-ggplot2-geoms-geom_col-10.pdf, id=618, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_col-10.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_col-10.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_col-10.pdf  used on input line 637.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 637--638
+[][]  
+ []
+
+&lt;figure/021-ggplot2-geoms-geom_col-11.pdf, id=619, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_col-11.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_col-11.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_col-11.pdf  used on input line 643.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 643--645
+[][] 
+ []
+
+[46 &lt;./figure/021-ggplot2-geoms-geom_col-10.pdf&gt;]
+Overfull \hbox (1.71687pt too wide) in paragraph at lines 654--654
+[][]\T1/cmtt/m/it/10 ### Aliases: geom_contour geom_contour_filled stat_contour[][] 
+ []
+
+
+Overfull \hbox (10.47862pt too wide) in paragraph at lines 660--660
+[][]\T1/cmtt/m/n/10 v[] []&lt;-[] []ggplot[][](faithfuld,[] []aes[][](waiting, eruptions,[] []z[] []= density))[][] 
+ []
+
+&lt;figure/021-ggplot2-geoms-geom_contour-1.pdf, id=629, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_contour-1.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_contour-1.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_contour-1.pdf  used on input line 664.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 664--665
+[][]  
+ []
+
+[47 &lt;./figure/021-ggplot2-geoms-geom_col-11.pdf&gt;]
+&lt;figure/021-ggplot2-geoms-geom_contour-2.pdf, id=639, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_contour-2.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_contour-2.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_contour-2.pdf  used on input line 671.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 671--672
+[][]  
+ []
+
+[48 &lt;./figure/021-ggplot2-geoms-geom_contour-1.pdf&gt; &lt;./figure/021-ggplot2-geoms-geom_contour-2.pdf&gt;]
+&lt;figure/021-ggplot2-geoms-geom_contour-3.pdf, id=654, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_contour-3.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_contour-3.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_contour-3.pdf  used on input line 678.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 678--679
+[][]  
+ []
+
+
+Overfull \hbox (64.70149pt too wide) in paragraph at lines 680--680
+[][]\T1/cmtt/m/it/10 # Setting bins creates evenly spaced contours in the range of the data[][] 
+ []
+
+&lt;figure/021-ggplot2-geoms-geom_contour-4.pdf, id=655, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_contour-4.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_contour-4.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_contour-4.pdf  used on input line 684.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 684--685
+[][]  
+ []
+
+[49 &lt;./figure/021-ggplot2-geoms-geom_contour-3.pdf&gt;]
+&lt;figure/021-ggplot2-geoms-geom_contour-5.pdf, id=666, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_contour-5.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_contour-5.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_contour-5.pdf  used on input line 689.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 689--690
+[][]  
+ []
+
+
+Overfull \hbox (59.45277pt too wide) in paragraph at lines 691--691
+[][]\T1/cmtt/m/it/10 # Setting binwidth does the same thing, parameterised by the distance[][] 
+ []
+
+[50 &lt;./figure/021-ggplot2-geoms-geom_contour-4.pdf&gt; &lt;./figure/021-ggplot2-geoms-geom_contour-5.pdf&gt;]
+&lt;figure/021-ggplot2-geoms-geom_contour-6.pdf, id=681, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_contour-6.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_contour-6.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_contour-6.pdf  used on input line 696.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 696--697
+[][]  
+ []
+
+&lt;figure/021-ggplot2-geoms-geom_contour-7.pdf, id=682, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_contour-7.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_contour-7.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_contour-7.pdf  used on input line 701.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 701--702
+[][]  
+ []
+
+[51 &lt;./figure/021-ggplot2-geoms-geom_contour-6.pdf&gt;]
+&lt;figure/021-ggplot2-geoms-geom_contour-8.pdf, id=692, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_contour-8.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_contour-8.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_contour-8.pdf  used on input line 707.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 707--708
+[][]  
+ []
+
+[52 &lt;./figure/021-ggplot2-geoms-geom_contour-7.pdf&gt; &lt;./figure/021-ggplot2-geoms-geom_contour-8.pdf&gt;]
+&lt;figure/021-ggplot2-geoms-geom_contour-9.pdf, id=708, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_contour-9.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_contour-9.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_contour-9.pdf  used on input line 712.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 712--713
+[][]  
+ []
+
+&lt;figure/021-ggplot2-geoms-geom_contour-10.pdf, id=709, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_contour-10.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_contour-10.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_contour-10.pdf  used on input line 718.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 718--719
+[][]  
+ []
+
+[53 &lt;./figure/021-ggplot2-geoms-geom_contour-9.pdf&gt; &lt;./figure/021-ggplot2-geoms-geom_contour-10.pdf&gt;]
+Overfull \hbox (1.71687pt too wide) in paragraph at lines 733--733
+[][]\T1/cmtt/m/it/10 ### Aliases: geom_contour geom_contour_filled stat_contour[][] 
+ []
+
+
+Overfull \hbox (10.47862pt too wide) in paragraph at lines 739--739
+[][]\T1/cmtt/m/n/10 v[] []&lt;-[] []ggplot[][](faithfuld,[] []aes[][](waiting, eruptions,[] []z[] []= density))[][] 
+ []
+
+&lt;figure/021-ggplot2-geoms-geom_contour_filled-1.pdf, id=726, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_contour_filled-1.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_contour_filled-1.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_contour_filled-1.pdf  used on input line 743.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 743--744
+[][]  
+ []
+
+&lt;figure/021-ggplot2-geoms-geom_contour_filled-2.pdf, id=727, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_contour_filled-2.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_contour_filled-2.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_contour_filled-2.pdf  used on input line 750.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 750--751
+[][]  
+ []
+
+[54 &lt;./figure/021-ggplot2-geoms-geom_contour_filled-1.pdf&gt;]
+&lt;figure/021-ggplot2-geoms-geom_contour_filled-3.pdf, id=737, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_contour_filled-3.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_contour_filled-3.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_contour_filled-3.pdf  used on input line 757.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 757--758
+[][]  
+ []
+
+[55 &lt;./figure/021-ggplot2-geoms-geom_contour_filled-2.pdf&gt; &lt;./figure/021-ggplot2-geoms-geom_contour_filled-3.pdf&gt;]
+Overfull \hbox (64.70149pt too wide) in paragraph at lines 759--759
+[][]\T1/cmtt/m/it/10 # Setting bins creates evenly spaced contours in the range of the data[][] 
+ []
+
+&lt;figure/021-ggplot2-geoms-geom_contour_filled-4.pdf, id=753, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_contour_filled-4.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_contour_filled-4.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_contour_filled-4.pdf  used on input line 763.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 763--764
+[][]  
+ []
+
+&lt;figure/021-ggplot2-geoms-geom_contour_filled-5.pdf, id=754, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_contour_filled-5.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_contour_filled-5.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_contour_filled-5.pdf  used on input line 768.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 768--769
+[][]  
+ []
+
+[56 &lt;./figure/021-ggplot2-geoms-geom_contour_filled-4.pdf&gt; &lt;./figure/021-ggplot2-geoms-geom_contour_filled-5.pdf&gt;]
+Overfull \hbox (59.45277pt too wide) in paragraph at lines 770--770
+[][]\T1/cmtt/m/it/10 # Setting binwidth does the same thing, parameterised by the distance[][] 
+ []
+
+&lt;figure/021-ggplot2-geoms-geom_contour_filled-6.pdf, id=770, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_contour_filled-6.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_contour_filled-6.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_contour_filled-6.pdf  used on input line 775.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 775--776
+[][]  
+ []
+
+&lt;figure/021-ggplot2-geoms-geom_contour_filled-7.pdf, id=771, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_contour_filled-7.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_contour_filled-7.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_contour_filled-7.pdf  used on input line 780.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 780--781
+[][]  
+ []
+
+[57 &lt;./figure/021-ggplot2-geoms-geom_contour_filled-6.pdf&gt;]
+&lt;figure/021-ggplot2-geoms-geom_contour_filled-8.pdf, id=781, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_contour_filled-8.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_contour_filled-8.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_contour_filled-8.pdf  used on input line 786.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 786--787
+[][]  
+ []
+
+[58 &lt;./figure/021-ggplot2-geoms-geom_contour_filled-7.pdf&gt; &lt;./figure/021-ggplot2-geoms-geom_contour_filled-8.pdf&gt;]
+&lt;figure/021-ggplot2-geoms-geom_contour_filled-9.pdf, id=797, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_contour_filled-9.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_contour_filled-9.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_contour_filled-9.pdf  used on input line 791.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 791--792
+[][]  
+ []
+
+&lt;figure/021-ggplot2-geoms-geom_contour_filled-10.pdf, id=798, 505.89pt x 505.89pt&gt;
+File: figure/021-ggplot2-geoms-geom_contour_filled-10.pdf Graphic file (type pdf)
+&lt;use figure/021-ggplot2-geoms-geom_contour_filled-10.pdf&gt;
+Package pdftex.def Info: figure/021-ggplot2-geoms-geom_contour_filled-10.pdf  used on input line 797.
+(pdftex.def)             Requested size: 304.44447pt x 304.4472pt.
+
+Overfull \hbox (12.0pt too wide) in paragraph at lines 797--798
+[][]  
+ []
+
+[59 &lt;./figure/021-ggplot2-geoms-geom_contour_filled-9.pdf&gt; &lt;./figure/021-ggplot2-geoms-geom_contour_filled-10.pdf&gt;]
+
+Package bibentry Warning: You have used \nobibliography* 
+(bibentry)                without a following \bibliography.
+(bibentry)                You may not be able to run BibTeX.
+
+[60] (./021-ggplot2-geoms.aux)
+ ***********
+LaTeX2e &lt;2026-06-01&gt;
+L3 programming layer &lt;2026-08-10&gt;
+ ***********
+Package rerunfilecheck Info: File `021-ggplot2-geoms.out' has not changed.
+(rerunfilecheck)             Checksum: EE25415FCBC769C7C3AB76C27683D40C;1028.
+ ) 
+Here is how much of TeX's memory you used:
+ 13397 strings out of 469028
+ 237149 string characters out of 5457209
+ 647530 words of memory out of 5000000
+ 42197 multiletter control sequences out of 15000+600000
+ 659745 words of font info for 67 fonts, out of 8000000 for 9000
+ 36 hyphenation exceptions out of 8191
+ 95i,11n,101p,362b,506s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ &lt;/home/runner/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcit1000.600pk&gt; &lt;/home/runner/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.600pk&gt; &lt;/home/runner/.TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecit1000.600pk&gt;&lt;/home/runner/.TinyTeX/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb&gt;&lt;/home/runner/.TinyTeX/texmf-dist/fonts/type1/public/fpl/fplrij8a.pfb&gt;&lt;/home/runner/.TinyTeX/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb&gt;&lt;/home/runner/.TinyTeX/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb&gt;
+Output written on 021-ggplot2-geoms.pdf (60 pages, 822835 bytes).
+PDF statistics:
+ 1003 PDF objects out of 1200 (max. 8388607)
+ 608 compressed objects within 7 object streams
+ 71 named destinations out of 1000 (max. 500000)
+ 3036 words of extra memory for PDF output out of 10000 (max. 10000000)
+</code></pre>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body></html>

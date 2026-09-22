@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<title>042-highlight-matlab.tex</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css">
+<style>body{margin:0} pre{margin:0;padding:.6em;white-space:pre-wrap;word-break:break-word}</style>
+</head><body>
+<pre><code class="language-latex">\documentclass{article}\usepackage[]{graphicx}\usepackage[]{xcolor}
+% maxwidth is the original width if it is less than linewidth
+% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width&gt;\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0.514, 0.58, 0.588}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.863,0.196,0.184}{#1}}%
+\newcommand{\hlsng}[1]{\textcolor[rgb]{0.863,0.196,0.184}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.345,0.431,0.459}{#1}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0.576,0.631,0.631}{#1}}%
+\newcommand{\hldef}[1]{\textcolor[rgb]{0.514,0.58,0.588}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.796,0.294,0.086}{#1}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.522,0.6,0}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.796,0.294,0.086}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.576,0.631,0.631}{#1}}%
+\let\hlipl\hlkwb
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\let\hlesc\hldef \let\hlpps\hldef \let\hllin\hldef \let\hlslc\hlcom \let\hlppc\hlcom
+\usepackage{alltt}
+
+\usepackage{url}
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\begin{document}
+
+Normal R chunks.
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0, 0.169, 0.212}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlnum{1} \hlopt{+} \hlnum{1}
+\end{alltt}
+\begin{verbatim}
+## [1] 2
+\end{verbatim}
+\begin{alltt}
+\hldef{x} \hlkwb{=} \hlkwd{rnorm}\hldef{(}\hlnum{5}\hldef{)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+Highlight matlab chunks. Note you need to install highlight from \url{http://www.andre-simon.de}, and you probably need to put its binary path into PATH; otherwise just use the engine.path option, e.g.
+
+\noindent\verb|&lt;&lt;engine='highlight', engine.path = 'full/path/to/highlight'&gt;&gt;=|
+
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0, 0.169, 0.212}\color{fgcolor}\begin{kframe}
+\noindent
+\ttfamily
+\hldef{}\hlkwa{function\ }\hldef{Y\ }\hlopt{=\ }\hldef{kalmanM}\hlopt{(}\hldef{pos}\hlopt{)}\hspace*{\fill}\\
+\hldef{}\hldef{\ \ }\hldef{dt}\hlopt{=}\hldef{}\hlnum{1}\hldef{}\hlopt{;}\hspace*{\fill}\\
+\hldef{}\hldef{\ \ }\hldef{}\hlslc{\%\%\ Initialize\ state\ transition\ matrix}\hspace*{\fill}\\
+\hldef{}\hldef{\ \ }\hldef{A}\hlopt{={[}\ }\hldef{}\hlnum{1\ 0\ }\hldef{dt\ }\hlnum{0\ 0\ 0}\hldef{}\hlopt{;}\hldef{...}\hldef{\ \ \ \ \ }\hldef{}\hlslc{\%\ {[}x}\hldef{\ \ }\hlslc{{]}}\hspace*{\fill}\\
+\hldef{}\hldef{\ \ \ \ \ }\hldef{}\hlnum{0\ 1\ 0\ }\hldef{dt\ }\hlnum{0\ 0}\hldef{}\hlopt{;}\hldef{...}\hldef{\ \ \ \ \ }\hldef{}\hlslc{\%\ {[}y}\hldef{\ \ }\hlslc{{]}}\hspace*{\fill}\\
+\hldef{}\hldef{\ \ \ \ \ }\hldef{}\hlnum{0\ 0\ 1\ 0\ }\hldef{dt\ }\hlnum{0}\hldef{}\hlopt{;}\hldef{...}\hldef{\ \ \ \ \ }\hldef{}\hlslc{\%\ {[}Vx{]}}\hspace*{\fill}\\
+\hldef{}\hldef{\ \ \ \ \ }\hldef{}\hlnum{0\ 0\ 0\ 1\ 0\ }\hldef{dt}\hlopt{;}\hldef{...}\hldef{\ \ \ \ \ }\hldef{}\hlslc{\%\ {[}Vy{]}}\hspace*{\fill}\\
+\hldef{}\hldef{\ \ \ \ \ }\hldef{}\hlnum{0\ 0\ 0\ 0\ 1\ 0\ }\hldef{}\hlopt{;}\hldef{...}\hldef{\ \ \ \ \ }\hldef{}\hlslc{\%\ {[}Ax{]}}\hspace*{\fill}\\
+\hldef{}\hldef{\ \ \ \ \ }\hldef{}\hlnum{0\ 0\ 0\ 0\ 0\ 1\ }\hldef{}\hlopt{{]};}\hldef{\ \ \ \ \ \ \ }\hlopt{}\hldef{}\hlslc{\%\ {[}Ay{]}}\hspace*{\fill}\\
+\hldef{}\hldef{\ \ }\hldef{}\hlslc{\%\ Initialize\ measurement\ matrix}\hspace*{\fill}\\
+\hldef{}\hldef{\ \ }\hldef{H\ }\hlopt{=\ {[}\ }\hldef{}\hlnum{1\ 0\ 0\ 0\ 0\ 0}\hldef{}\hlopt{;\ }\hldef{}\hlnum{0\ 1\ 0\ 0\ 0\ 0\ }\hldef{}\hlopt{{]};}\hspace*{\fill}\\
+\hldef{}\hldef{\ \ }\hldef{Q\ }\hlopt{=\ }\hldef{eye}\hlopt{(}\hldef{}\hlnum{6}\hldef{}\hlopt{);}\hspace*{\fill}\\
+\hldef{}\hldef{\ \ }\hldef{R\ }\hlopt{=\ }\hldef{}\hlnum{1000\ }\hldef{}\hlopt{{*}\ }\hldef{eye}\hlopt{(}\hldef{}\hlnum{2}\hldef{}\hlopt{);}\hspace*{\fill}\\
+\hldef{}\hldef{\ \ }\hldef{x\textunderscore est\ }\hlopt{=\ }\hldef{zeros}\hlopt{(}\hldef{}\hlnum{6}\hldef{}\hlopt{,\ }\hldef{}\hlnum{1}\hldef{}\hlopt{);}\hspace*{\fill}\\
+\hldef{}\hldef{\ \ }\hldef{p\textunderscore est\ }\hlopt{=\ }\hldef{zeros}\hlopt{(}\hldef{}\hlnum{6}\hldef{}\hlopt{,\ }\hldef{}\hlnum{6}\hldef{}\hlopt{);}\hspace*{\fill}\\
+\hldef{}\hspace*{\fill}\\
+\hldef{}\hldef{\ \ }\hldef{numPts\ }\hlopt{=\ }\hldef{}\hlkwa{size}\hldef{}\hlopt{(}\hldef{pos}\hlopt{,}\hldef{}\hlnum{1}\hldef{}\hlopt{);}\hspace*{\fill}\\
+\hldef{}\hldef{\ \ }\hldef{Y\ }\hlopt{=\ }\hldef{zeros}\hlopt{(}\hldef{numPts}\hlopt{,\ }\hldef{}\hlnum{2}\hldef{}\hlopt{);}\hspace*{\fill}\\
+\hldef{}\hspace*{\fill}\\
+\hldef{}\hldef{\ \ }\hldef{}\hlkwa{for\ }\hldef{idx\ }\hlopt{=\ }\hldef{}\hlnum{1}\hldef{}\hlopt{:}\hldef{numPts}\hspace*{\fill}\\
+\hldef{}\hldef{\ \ \ \ }\hldef{z\ }\hlopt{=\ }\hldef{pos}\hlopt{(}\hldef{idx}\hlopt{,\ :)}\hldef{'}\hlopt{;}\hspace*{\fill}\\
+\hldef{}\hspace*{\fill}\\
+\hldef{}\hldef{\ \ \ \ }\hldef{}\hlslc{\%\%\ Predicted\ state\ and\ covariance}\hspace*{\fill}\\
+\hldef{}\hldef{\ \ \ \ }\hldef{x\textunderscore prd\ }\hlopt{=\ }\hldef{A\ }\hlopt{{*}\ }\hldef{x\textunderscore est}\hlopt{;}\hspace*{\fill}\\
+\hldef{}\hldef{\ \ \ \ }\hldef{p\textunderscore prd\ }\hlopt{=\ }\hldef{A\ }\hlopt{{*}\ }\hldef{p\textunderscore est\ }\hlopt{{*}\ }\hldef{A'\ }\hlopt{+\ }\hldef{Q}\hlopt{;}\hspace*{\fill}\\
+\hldef{}\hldef{\ \ \ \ }\hldef{}\hlslc{\%\%\ Estimation}\hspace*{\fill}\\
+\hldef{}\hldef{\ \ \ \ }\hldef{S\ }\hlopt{=\ }\hldef{H\ }\hlopt{{*}\ }\hldef{p\textunderscore prd}\hlsng{'\ {*}\ H'}\hldef{\ }\hlopt{+\ }\hldef{R}\hlopt{;}\hspace*{\fill}\\
+\hldef{}\hldef{\ \ \ \ }\hldef{B\ }\hlopt{=\ }\hldef{H\ }\hlopt{{*}\ }\hldef{p\textunderscore prd'}\hlopt{;}\hspace*{\fill}\\
+\hldef{}\hldef{\ \ \ \ }\hldef{klm\textunderscore gain\ }\hlopt{=\ (}\hldef{S\ $\backslash$\ B}\hlopt{)}\hldef{'}\hlopt{;}\hspace*{\fill}\\
+\hldef{}\hldef{\ \ \ \ }\hldef{}\hlslc{\%\%\ Estimated\ state\ and\ covariance}\hspace*{\fill}\\
+\hldef{}\hldef{\ \ \ \ }\hldef{x\textunderscore est\ }\hlopt{=\ }\hldef{x\textunderscore prd\ }\hlopt{+\ }\hldef{klm\textunderscore gain\ }\hlopt{{*}\ (}\hldef{z\ }\hlopt{{-}\ }\hldef{H\ }\hlopt{{*}\ }\hldef{x\textunderscore prd}\hlopt{);}\hspace*{\fill}\\
+\hldef{}\hldef{\ \ \ \ }\hldef{p\textunderscore est\ }\hlopt{=\ }\hldef{p\textunderscore prd\ }\hlopt{{-}\ }\hldef{klm\textunderscore gain\ }\hlopt{{*}\ }\hldef{H\ }\hlopt{{*}\ }\hldef{p\textunderscore prd}\hlopt{;}\hspace*{\fill}\\
+\hldef{}\hldef{\ \ \ \ }\hldef{}\hlslc{\%\%\ Compute\ the\ estimated\ measurements}\hspace*{\fill}\\
+\hldef{}\hldef{\ \ \ \ }\hldef{Y}\hlopt{(}\hldef{idx}\hlopt{,\ :)\ =\ }\hldef{H\ }\hlopt{{*}\ }\hldef{x\textunderscore est}\hlopt{;}\hspace*{\fill}\\
+\hldef{}\hldef{\ \ }\hldef{}\hlkwa{end}\hldef{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\hlkwa{}\hldef{}\hlslc{\%\ of\ the\ function}\hspace*{\fill}\\
+\hldef{}\hlkwa{end}\hldef{\ \ \ }\hlkwa{}\hldef{}\hlslc{\%\ of\ the\ function}\hldef{}\hspace*{\fill}
+\mbox{}
+\normalfont
+\normalsize
+\end{kframe}
+\end{knitrout}
+
+\end{document}</code></pre>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body></html>

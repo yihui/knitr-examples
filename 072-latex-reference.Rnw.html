@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<title>072-latex-reference.Rnw</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css">
+<style>body{margin:0} pre{margin:0;padding:.6em;white-space:pre-wrap;word-break:break-word}</style>
+</head><body>
+<pre><code class="language-markdown">\documentclass{article}
+\usepackage{url}
+\begin{document}
+
+Restore \verb|\textbackslash{}ref\{\}| to \verb|\ref{}| in the output so we can use references in source code (see \url{http://stackoverflow.com/q/14058832/559676}).
+
+&lt;&lt;setup, include=FALSE&gt;&gt;=
+library(knitr)
+hook_source = knit_hooks$get('source')
+knit_hooks$set(source = function(x, options) {
+  txt = hook_source(x, options)
+  # extend the default source hook
+  gsub('\\\\textbackslash\\{\\}ref\\\\\\{(.+)\\\\\\}', '\\\\ref{\\1}', txt)
+})
+@
+
+&lt;&lt;"example", fig.cap = "some figure"&gt;&gt;=
+# the following code generated Figure \ref{fig:example}
+plot(1:10, 1:10)
+@
+\end{document}</code></pre>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body></html>

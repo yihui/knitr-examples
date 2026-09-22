@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<meta name="generator" content="litedown 0.11.4">
+<title>The exec engine</title>
+<style type="text/css">
+body {
+  font-family: sans-serif;
+  max-width: 800px;
+  margin: auto;
+  padding: 1em;
+  line-height: 1.5;
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+}
+body, .abstract, code, .footnotes, footer, #refs, .caption { font-size: .9em; }
+li li { font-size: .95em; }
+ul:has(li > input[type="checkbox"]) { list-style: none; padding-left: 1em; }
+*, :before, :after { box-sizing: border-box; }
+a { color: steelblue; }
+pre, img { max-width: 100%; }
+pre { white-space: pre-wrap; word-break: break-word; }
+pre code { display: block; padding: 1em; overflow-x: auto; }
+code { font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace; }
+:not(pre, th) > code, code[class], div > .caption { background: #f8f8f8; }
+pre > code:is(:not([class]), .language-plain, .language-none, .plain), .box, .figure, .table { background: inherit; border: 1px solid #eee; }
+pre > code {
+  &.message { border-color: #9eeaf9; }
+  &.warning { background: #fff3cd; border-color: #fff3cd; }
+  &.error { background: #f8d7da; border-color: #f8d7da; }
+}
+.fenced-chunk { border-left: 1px solid #666; }
+.code-fence {
+  opacity: .4;
+  border: 1px dashed #666;
+  border-left: 2px solid;
+  &:hover { opacity: inherit; }
+}
+.box, .figure, .table, table { margin: 1em auto; }
+div > .caption { padding: 1px 1em; }
+.figure { p:has(img, svg), pre:has(svg) { text-align: center; } }
+.flex-col { display: flex; justify-content: space-between; }
+table {
+  &:only-child:not(.table > *) { margin: auto; }
+  th, td { padding: 5px; font-variant-numeric: tabular-nums; }
+  &:not([class]) {
+    thead, tfoot, tr:nth-child(even) { background: whitesmoke; }
+    thead th { border-bottom: 1px solid #ddd; }
+    border-top: 1px solid #666;
+    border-bottom: 1px solid #666;
+  }
+}
+blockquote {
+  color: #666;
+  margin: 0;
+  padding: 1px 1em;
+  border-left: .5em solid #eee;
+}
+hr, .footnotes::before { border: 1px dashed #ddd; }
+.frontmatter { text-align: center; }
+#TOC {
+  a { text-decoration: none; }
+  ul { list-style: none; padding-left: 1em; columns: 24em; }
+  & > ul { padding: 0; }
+  ul ul { border-left: 1px solid lightsteelblue; }
+}
+.body h2 { border-bottom: 1px solid #666; }
+.body .appendix, .appendix ~ h2 { border-bottom-style: dashed; }
+.main-number::after { content: "."; }
+span[class^="ref-number-"] { font-weight: bold; }
+.ref-number-fig::after, .ref-number-tab::after { content: ":"; }
+.cross-ref-chp::before { content: "Chapter "; }
+.cross-ref-sec::before { content: "Section "; }
+.cross-ref-apd::before { content: "Appendix "; }
+.cross-ref-fig::before, .ref-number-fig::before { content: "Figure "; }
+.cross-ref-tab::before, .ref-number-tab::before { content: "Table "; }
+.cross-ref-eqn::before, .MathJax_ref:has(mjx-mtext > mjx-c + mjx-c)::before { content: "Equation "; }
+.abstract, #refs {
+  &::before { display: block; margin: 1em auto; font-weight: bold; }
+}
+.abstract::before { content: "Abstract"; text-align: center; }
+#refs::before { content: "Bibliography"; font-size: 1.5em; }
+.ref-paren-open::before { content: "("; }
+.ref-paren-close::after { content: ")"; }
+.ref-semicolon::after { content: "; "; }
+.ref-and::after { content: " and "; }
+.ref-et-al::after { content: " et al."; font-style: italic; }
+.footnote-ref a {
+  &::before { content: "["; }
+  &::after { content: "]"; }
+}
+section.footnotes {
+  margin-top: 2em;
+  &::before { content: ""; display: block; max-width: 20em; }
+}
+.fade {
+  background: repeating-linear-gradient(135deg, white, white 30px, #ddd 32px, #ddd 32px);
+  opacity: 0.6;
+}
+@media (prefers-color-scheme: dark) {
+  html, img, video, iframe { filter: invert(1); }
+  body { background: #ededed; }
+}
+@media print {
+  body { max-width: 100%; }
+  tr, img { break-inside: avoid; }
+}
+@media only screen and (min-width: 992px) {
+  body:not(.pagesjs) pre:has(.line-numbers):not(:hover) { white-space: pre; }
+}
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xiee/utils@1.14.73/css/prism-xcode.min.css">
+</head>
+<body>
+<div class="frontmatter">
+<div class="title"><h1>The <code>exec</code> engine</h1></div>
+</div>
+<div class="body">
+<h1 id="chp:how-does-this-engine-work">How does this engine work ?</h1>
+<p>The <code>exec</code> engine allows to execute an arbitrary command on the code chunk
+content, optionally with arguments. If any, they are passed to <code>engine.opts</code> and
+they could be one of the following:</p>
+<pre><code class="language-r">engine.opts = list(command, input, ext, clean, args, args1, args2, output)
+</code></pre>
+<p>The execution of the chunk will be equivalent to this command line</p>
+<pre><code>&lt;command&gt; &lt;args1&gt; &lt;args&gt; &lt;args2&gt;
+</code></pre>
+<p>Behavior by default, during evaluation will be:</p>
+<ul>
+<li>Retrieve the path of the command in <code>command</code> option.</li>
+<li>Write the chunk content into a temporary file <code>f</code></li>
+<li>Register the <code>clean</code> function to execute on exit, basically to remove the
+temp file <code>f</code>.</li>
+<li>Compute the argument of the command line by appending the results of
+<code>args1()</code>, with <code>args()</code> then <code>args2()</code>.</li>
+</ul>
+<p>There should be very rare usage of changing the default behavior, but it can be
+useful to debug for example or other advanced usage.</p>
+<p>You can find some examples below on how to use each option. We are using
+<code>Rscript</code> an d <code>python</code> only in the examples below by convenience but this works
+with any executables.</p>
+<h1 id="chp:simple-example">Simple example</h1>
+<p><code>command</code> can be the name of a command in PATH.</p>
+<pre><code class="language-r">1 + 1
+</code></pre>
+<pre><code>## [1] 2
+</code></pre>
+<pre><code class="language-python">print(1 + 1)
+</code></pre>
+<pre><code>## 2
+</code></pre>
+<p>or a full path</p>
+<pre><code class="language-python">print(&quot;Full path command works&quot;)
+</code></pre>
+<pre><code>## Full path command works
+</code></pre>
+<p>It can also be passed as an option in <code>engine.opts</code>.</p>
+<pre><code class="language-python">print(1 + 1)
+</code></pre>
+<pre><code>## 2
+</code></pre>
+<p>It is the only option that can be passed as the top-level chunk option.</p>
+<h1 id="chp:options">Options</h1>
+<p>All other options should be provided in the chunk option <code>engine.opts</code> in a
+list. (As you have seen above, <code>command</code> can be optionally in <code>engine.opts</code>,
+too).</p>
+<p>They can take character values or functions that returns character values.</p>
+<h2 id="sec:input">input</h2>
+<p>It returns the temporary file path that will be used as the input of the
+command.</p>
+<p>It is a function of two argument <code>function(code, file){}</code> - By default, function
+is writing <code>code</code> into the temporary file that will be executed by the command.
+This can be changed if needed for other side-effects. You would still want to
+write the <code>code</code> into a file (using <code>xfun::write_utf8()</code> or another function)
+otherwise the command will be executed with an empty file.</p>
+<pre><code class="language-r">input2 &lt;- function(code, file) {
+    xfun::write_utf8(&quot;print('file2 executed')&quot;, file)
+    file
+}
+</code></pre>
+<pre><code class="language-python">print(1 + 1)
+</code></pre>
+<pre><code>## file2 executed
+</code></pre>
+<p>You can also pass a string directly to input to change the name of the input
+file that will be passed to the command</p>
+<pre><code class="language-python">print(1 + 1)
+</code></pre>
+<pre><code>## 2
+</code></pre>
+<p>This can be useful for debugging. See more about this usage in the <code>clean</code>
+option part below.</p>
+<h2 id="sec:ext">ext</h2>
+<p>This will determine the extension to use with the temporary file. By default,
+the extension will be the name of the command file. Use this option to change
+it.</p>
+<p>For example, this will ensure the tempfile has a <code>.R</code> extension.</p>
+<pre><code class="language-r">1 + 1
+</code></pre>
+<pre><code>## [1] 2
+</code></pre>
+<p>It can be a function of the executable name (i.e <code>basename(command)</code>).</p>
+<pre><code class="language-python">print(1 + 1)
+</code></pre>
+<pre><code>## 2
+</code></pre>
+<p>The extension of the temporary does not really matter most of the time but you
+can use this option if the command you use needs it.</p>
+<h2 id="sec:args-args1-args2">args, args1, args2</h2>
+<pre><code>&lt;command&gt; &lt;args1()&gt; &lt;args(code, f)&gt; &lt;args2()&gt;
+</code></pre>
+<ul>
+<li><code>args1</code> will be the first argument(s) to be passed after the command line.</li>
+<li><code>args</code> will the main argument passing the temporary input file path to the
+command.</li>
+<li><code>args2</code> will be the last argument(s) to be passed, after the file argument.</li>
+</ul>
+<p><code>args</code> will be by default the temporary file path. If customized, it can be a
+function of 2 arguments <code>function(code, file)</code>. In this example, a line is
+preprended in the file before being run.</p>
+<pre><code class="language-r">f_arg &lt;- function(code, file) {
+    # prepend a command
+    xfun::append_utf8(&quot;print('# file modified in args')&quot;, file, sort = rev)
+    file
+}
+</code></pre>
+<pre><code class="language-python">print(1 + 1)
+</code></pre>
+<pre><code>## # file modified in args
+## 2
+</code></pre>
+<p>It can be combined with args1 to pass an argument before in the command line.
+For example, here passing <code>-x</code> to <code>python</code>, which will ignore the prepended
+line:</p>
+<pre><code class="language-python">print(1 + 1)
+</code></pre>
+<pre><code>## 2
+</code></pre>
+<p>With setting <code>args</code> to a string, you could easily use the <code>exec</code> engine to
+execute a string.</p>
+<p>We are writing this content to <code>custom.py</code></p>
+<pre><code class="language-python">print(&quot;Hello from a python file!&quot;)
+</code></pre>
+<p>That we can execute using an empty <code>exec</code> engine chunk</p>
+<pre><code>## Hello from a python file!
+</code></pre>
+<p><code>args2</code> will be passed after. It could be useful if your code contains
+arguments, for example:</p>
+<pre><code class="language-python">import sys
+print('And the argument is: '+sys.argv[1])
+</code></pre>
+<pre><code>## And the argument is: hello
+</code></pre>
+<h2 id="sec:clean">clean</h2>
+<p>By default, the temporary file will be removed. This option can be set to <code>NULL</code>
+to keep this file for example to debug.</p>
+<pre><code class="language-python">print('This content can be read if you open the file left')
+</code></pre>
+<pre><code>## This content can be read if you open the file left
+</code></pre>
+<p>A file with extension <code>.python</code> should be still here</p>
+<pre><code class="language-r">f1 &lt;- list.files(&quot;.&quot;, pattern = &quot;python.*\\.python&quot;)
+file.exists(f1)
+</code></pre>
+<pre><code>## [1] TRUE
+</code></pre>
+<p>It can be useful in addition to setting <code>input</code> option so that you can easily
+retrieve the file to re-run at command line yourself.</p>
+<pre><code class="language-python">print('This content can be rerun using `temp-debug.py` file')
+</code></pre>
+<pre><code>## This content can be rerun using `temp-debug.py` file
+</code></pre>
+<p>You can find the <code>tmp-debug.py</code> file in your working directory and which can
+help debug using command line by running <code>python tmp-debug.py</code> for example.</p>
+<h2 id="sec:output">output</h2>
+<p>The <code>output</code> option can take a function of arguments <code>options</code>, <code>code</code>,
+<code>output</code>, and <code>file</code>. The function should return a character string as the final
+output of the engine. By default, this function calls <code>knitr::engine_output()</code>.
+See the last section for an example of creating a <code>gcc</code> engine based on the
+<code>exec</code> engine.</p>
+<h1 id="chp:usual-knitr-options-work">Usual knitr options work</h1>
+<h2 id="sec:don-t-execute">Don’t execute</h2>
+<p>Will output nothing</p>
+<pre><code class="language-python">print(1 + 1)
+</code></pre>
+<h2 id="sec:error-is-caught">Error is caught</h2>
+<pre><code class="language-r">print(1 + &quot;&quot;)
+</code></pre>
+<pre><code>## Error in 1 + &quot;&quot; : non-numeric argument to binary operator
+## Calls: print
+## Execution halted
+</code></pre>
+<h1 id="chp:develop-new-engines-based-on-exec">Develop new engines based on <code>exec</code></h1>
+<p>Below is an example of calling <code>gcc</code> to generate an executable, and run the
+executable.</p>
+<p>Register the new <code>gcc</code> engine:</p>
+<pre><code class="language-r">knitr::knit_engines$set(gcc = function(options) {
+  # set the command to gcc
+  options$command = 'gcc'
+  opts = list(
+    # set file extension to .c
+    ext = 'c',
+    # gcc input -o output
+    args = function(code, file) {
+      c(file, '-o', xfun::sans_ext(file))
+    },
+    # run the executable and capture stdout
+    output = function(options, code, output, file) {
+      out = system2(paste0('./', xfun::sans_ext(file)), stdout = TRUE)
+      knitr::engine_output(options, code, out)
+    },
+    # delete the temp .c file and the executable
+    clean = function(file) {
+      file.remove(c(file, xfun::sans_ext(file)))
+    }
+  )
+  options$engine.opts = knitr:::merge_list(opts, options$engine.opts)
+  # pass options to the exec engine to compile and run the C code
+  eng_exec = knitr::knit_engines$get('exec')
+  eng_exec(options)
+})
+</code></pre>
+<p>A hello world example:</p>
+<pre><code class="language-gcc">#include &lt;stdio.h&gt;
+int main() {
+  printf(&quot;Hello world!&quot;);
+  return 0;
+}
+</code></pre>
+<pre><code>## Hello world!
+</code></pre>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js" defer></script>
+</body>
+</html>

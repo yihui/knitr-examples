@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<title>029-engine-Rcpp.Rmd</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css">
+<style>body{margin:0} pre{margin:0;padding:.6em;white-space:pre-wrap;word-break:break-word}</style>
+</head><body>
+<pre><code class="language-markdown"># Call Rcpp from knitr
+
+```{r setup, include=FALSE}
+library(knitr)
+opts_chunk$set(cache = TRUE) # because the compilation takes time, let's cache it
+```
+
+When the chunk option `engine='Rcpp'` is specified (or you write the chunk header as ```` ```{Rcpp} ````), the code chunk will be compiled through **Rcpp** via `sourceCpp()`:
+
+Test for `fibonacci`:
+
+```{Rcpp, fibCpp}
+#include &lt;Rcpp.h&gt;
+
+// [[Rcpp::export]]
+int fibonacci(const int x) {
+    if (x == 0 || x == 1) return(x);
+    return (fibonacci(x - 1)) + fibonacci(x - 2);
+}
+```
+
+Because `fibonacci` was defined with the `Rcpp::export` attribute it can now be called as a normal R function:
+
+```{r fibTest, dependson='fibCpp'}
+fibonacci(10L)
+fibonacci(20L)
+```
+
+You can define multiple functions (or helper functions that are not exported) within Rcpp code chunks:
+
+```{Rcpp, multipleCpp}
+#include &lt;Rcpp.h&gt;
+using namespace Rcpp;
+
+// [[Rcpp::export]]
+NumericVector convolveCpp(NumericVector a, NumericVector b) {
+
+    int na = a.size(), nb = b.size();
+    int nab = na + nb - 1;
+    NumericVector xab(nab);
+
+    for (int i = 0; i &lt; na; i++)
+        for (int j = 0; j &lt; nb; j++)
+            xab[i + j] += a[i] * b[j];
+
+    return xab;
+}
+
+// [[Rcpp::export]]
+List lapplyCpp(List input, Function f) {
+
+    List output(input.size());
+
+    std::transform(input.begin(), input.end(), output.begin(), f);
+    output.names() = input.names();
+
+    return output;
+}
+```
+
+If you want to link to code defined in another package (e.g **RcppArmadillo**) then you need to provide an `Rcpp::depends` attribute. For example:
+
+```{Rcpp, lmCpp}
+// [[Rcpp::depends(RcppArmadillo)]]
+
+#include &lt;RcppArmadillo.h&gt;
+
+using namespace Rcpp;
+
+// [[Rcpp::export]]
+List fastLm(NumericVector yr, NumericMatrix Xr) {
+
+    int n = Xr.nrow(), k = Xr.ncol();
+
+    arma::mat X(Xr.begin(), n, k, false); // reuses memory and avoids extra copy
+    arma::colvec y(yr.begin(), yr.size(), false);
+
+    arma::colvec coef = arma::solve(X, y);      // fit model y ~ X
+    arma::colvec resid = y - X*coef;            // residuals
+
+    double sig2 = arma::as_scalar( arma::trans(resid)*resid/(n-k) );
+                                                // std.error of estimate
+    arma::colvec stderrest = arma::sqrt(
+                    sig2 * arma::diagvec( arma::inv(arma::trans(X)*X)) );
+
+    return List::create(Named("coefficients") = coef,
+                        Named("stderr")       = stderrest
+    );
+}
+```
+
+A test:
+
+```{r lmTest, dependson='lmCpp'}
+fastLm(rnorm(10), matrix(1:20, ncol = 2))
+```
+
+Finally, you can pass additional arguments to `sourceCpp()` via the chunk option `engine.opts`. For example, we can specify `engine.opts=list(showOutput=TRUE, rebuild=FALSE)` to show the output of `R CMD SHLIB`.</code></pre>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body></html>

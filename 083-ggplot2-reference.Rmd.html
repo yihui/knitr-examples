@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<title>083-ggplot2-reference.Rmd</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css">
+<style>body{margin:0} pre{margin:0;padding:.6em;white-space:pre-wrap;word-break:break-word}</style>
+</head><body>
+<pre><code class="language-markdown"># Externalize ggplot2 code
+ 
+You may have your own layout code like [this one](http://stackoverflow.com/q/14802183/559676), and you do not want to type the code again and again. One way to avoid repeating the code explicitly is to use chunk references. Although **knitr** is based on the idea of literate programming, but we rarely need programming, and this is one case in which literate programming may be helpful.
+
+We simplify the layout code in the original post and put it in a code chunk named `my-layout`:
+
+```{r my-layout, eval=FALSE}
+theme (legend.text = element_text(size = 12, angle=45))+
+  theme (legend.position = "bottom")
+```
+
+Now we can use `&lt;&lt;&gt;&gt;` to reference it.
+
+```{r test-a, message=FALSE, warning=FALSE}
+library(ggplot2)
+qplot(carat, price, data=diamonds, color=cut)+
+  &lt;&lt;my-layout&gt;&gt;
+```
+
+Another test:
+
+```{r test-b, message=FALSE}
+qplot(carat, data=diamonds, fill=cut)+
+  &lt;&lt;my-layout&gt;&gt;
+```</code></pre>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body></html>

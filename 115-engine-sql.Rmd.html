@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<title>115-engine-sql.Rmd</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css">
+<style>body{margin:0} pre{margin:0;padding:.6em;white-space:pre-wrap;word-break:break-word}</style>
+</head><body>
+<pre><code class="language-markdown">---
+title: "Knit SQL Demo"
+---
+
+```{r message=FALSE}
+library(DBI)
+db &lt;- dbConnect(RSQLite::SQLite(), dbname = ":memory:")
+```
+
+```{sql, connection=db}
+DROP TABLE IF EXISTS packages
+```
+
+```{sql, connection=db}
+CREATE TABLE packages (id INTEGER, name TEXT)
+```
+
+```{sql, connection=db}
+INSERT INTO 
+  packages 
+VALUES 
+  (1, 'readr'), 
+  (2, 'readxl'), 
+  (3, 'haven')
+```
+
+```{sql connection=db}
+SELECT * FROM packages
+```
+
+```{r}
+packageReadR &lt;- "readr"
+```
+
+Engine can substitute named placeholders in sql that start with `?`. 
+
+Note that if you don't provide `params` as option values will be evaluated from environment
+
+```{sql, connection=db, output.var="readrPackage"}
+SELECT 
+  * 
+FROM 
+  packages
+WHERE 
+  name = ?packageReadR
+```
+
+```{r}
+readrPackage
+```
+
+To use parameterised queries with native database support provide `params` in the options of the chunk.
+
+```{r setup-parameters}
+parameters &lt;- list(package = packageReadR)
+```
+
+```{sql, connection=db, output.var="readrPackage", params=parameters}
+SELECT 
+  * 
+FROM
+  packages
+WHERE 
+  name = @package
+```
+
+```{r}
+readrPackage
+``` 
+
+```{sql, connection=db}
+DROP TABLE IF EXISTS packages
+```
+
+```{sql, connection=db, error = TRUE}
+SELECT * FROM packages
+```
+</code></pre>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body></html>
