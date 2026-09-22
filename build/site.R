@@ -21,7 +21,7 @@ library(litedown)
 options(litedown.html.template = TRUE)
 
 out_dir = "_site"
-repo_url = "https://github.com/yihui/knitr-examples/blob/master"
+repo_home = "https://github.com/yihui/knitr-examples/"
 
 unlink(out_dir, recursive = TRUE)
 dir.create(out_dir, showWarnings = FALSE)
@@ -70,7 +70,7 @@ embed_view = function(f, html) {
 <html><head><meta charset="utf-8">
 <title>%s</title>
 <link rel="stylesheet" href="%s/themes/prism.min.css">
-<style>body{margin:0} pre{margin:0;padding:.6em}</style>
+<style>body{margin:0} pre{margin:0;padding:.6em;white-space:pre-wrap;word-break:break-word}</style>
 </head><body>
 <pre><code class="language-%s">%s</code></pre>
 <script src="%s/components/prism-core.min.js"></script>
@@ -119,8 +119,9 @@ entry = function(num, gfiles) {
                "rtyp", "qmd", "brew")
   srcs = c(srcs[ext_of(srcs) %in% main_ext], srcs[!ext_of(srcs) %in% main_ext])
 
-  stem = sub("[.][^.]*$", "", if (length(srcs)) srcs[1] else gfiles[1])
-  title = gsub("-", " ", sub("^[0-9]{3}-", "", stem))
+  # dropdown label = primary source filename (keep the extension, so e.g.
+  # 001-minimal.Rmd vs 002-minimal.Rnw are distinguishable)
+  label = if (length(srcs)) srcs[1] else gfiles[1]
 
   file_obj = function(f) {
     v = build_view(f)
@@ -131,8 +132,8 @@ entry = function(num, gfiles) {
   src_objs = Filter(Negate(is.null), lapply(srcs, file_obj))
   out_objs = Filter(Negate(is.null), lapply(outs, file_obj))
 
-  sprintf('"%s":{"title":"%s","sources":[%s],"outputs":[%s]}',
-          num, js(title),
+  sprintf('"%s":{"label":"%s","sources":[%s],"outputs":[%s]}',
+          num, js(label),
           paste(src_objs, collapse = ","),
           paste(out_objs, collapse = ","))
 }
@@ -174,7 +175,6 @@ main { flex: 1; display: flex; min-height: 0; }
 <h1>knitr examples</h1>
 <select id="example" aria-label="example"></select>
 <span style="margin-left:auto;font-size:.85em">
-<a href="%s/readme.md">readme</a> &middot;
 <a href="%s">source</a>
 </span>
 </header>
@@ -199,7 +199,7 @@ const outBody = document.getElementById("out-body");
 
 ORDER.forEach(k => {
   const o = document.createElement("option");
-  o.value = k; o.textContent = k + " \\u2014 " + DATA[k].title;
+  o.value = k; o.textContent = DATA[k].label;
   exampleSel.appendChild(o);
 });
 
@@ -238,7 +238,7 @@ loadExample(ORDER[0]);
 </script>
 </body>
 </html>
-', repo_url, repo_url, data_js)
+', repo_home, data_js)
 
 writeLines(index, file.path(out_dir, "index.html"))
 message("Wrote ", file.path(out_dir, "index.html"), " with ", length(entries), " examples.")
