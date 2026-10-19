@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<title>006-minimal.Rrst</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css">
+<style>body{margin:0} pre{margin:0;padding:.6em;white-space:pre-wrap;word-break:break-word}</style>
+</head><body>
+<pre><code class="language-rrst">A reST document for knitr
+=========================
+
+This is a reStructuredText document. The input filename extension is ``Rrst``
+and the output filename will be ``rst``. Here is how we write R code in
+**knitr**:
+
+.. {r setup}
+options(width = 75)
+library(knitr)
+# do not use the sourcecode directive
+render_rst(strict=TRUE)
+
+# global chunk options
+opts_chunk$set(fig.width=5, fig.height=5)
+.. ..
+
+More examples
+-------------
+
+A code chunk begins with ``.. {r label, options}``, and ends with ``.. ..``
+(note the space in between). Optionally you can precede all R code with two
+dots, e.g.
+
+.. {r rst-example}
+.. 1+1
+.. set.seed(123); rnorm(10)
+.. warning('do not forget the space after ..!')
+.. ..
+
+Here is a plot:
+
+.. {r rst-plot, out.width='360px', fig.cap='A ggplot2 example', message=FALSE, warning=FALSE}
+library(ggplot2)
+qplot(hp, mpg, data=mtcars) + geom_smooth()
+.. ..
+
+Inline R code is like this: the value of pi is :r:`pi`.
+</code></pre>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body></html>

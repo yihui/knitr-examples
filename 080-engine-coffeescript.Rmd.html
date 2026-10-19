@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<title>080-engine-coffeescript.Rmd</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css">
+<style>body{margin:0} pre{margin:0;padding:.6em;white-space:pre-wrap;word-break:break-word}</style>
+</head><body>
+<pre><code class="language-markdown"># Using CoffeeScript with knitr
+
+First we set a flag `-p` for the `coffee` engine to print the JavaScript output instead of evaluating the code (`engine.opts = '-p'`):
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(cache = TRUE, engine.opts = '-p')
+```
+
+You need to install `coffee`, the command-line version of [CoffeeScript](http://coffeescript.org/#installation).
+
+CoffeeScript compiles javascript:
+
+```{r square_function, engine="coffee", comment='//'}
+@square = (x) -&gt; x * x
+```
+
+To use CoffeeScript in an HTML document, use `results="asis"`, `echo=FALSE`, and wrap the chunk in `&lt;script&gt;` tags.
+
+```{r ref.label="math_functions", engine="coffee", eval=FALSE}
+```
+```{r ref.label="call_math", engine="coffee", eval=FALSE}
+```
+
+&lt;script type="text/javascript"&gt;
+```{r math_functions, engine="coffee", results="asis", echo=FALSE}
+@square = (x) -&gt; x * x
+@cube   = (x) -&gt; square(x) * x
+```
+
+```{r call_math, engine="coffee", results="asis", echo=FALSE}
+p = document.createElement("p");
+p.appendChild(document.createTextNode("The cube of 3 is " + cube(3)))
+document.body.appendChild(p)
+```
+&lt;/script&gt;
+
+Of course you can also run the code, if you remove the `-p` flag from the chunk option `engine.opts` (I'm not evaluating this code chunk here because I do not have a proper version of `coffee` on Debian yet; if you do, you can remove `eval=FALSE`):
+
+```{r engine="coffee", engine.opts="", eval=FALSE}
+x = 42
+console.log "The answer is ", x
+```</code></pre>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body></html>

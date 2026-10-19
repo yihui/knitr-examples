@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<title>123-verbatim-engine.Rmd</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css">
+<style>body{margin:0} pre{margin:0;padding:.6em;white-space:pre-wrap;word-break:break-word}</style>
+</head><body>
+<pre><code class="language-markdown">---
+title: "Test"
+output: html_document
+---
+
+# Default to text highlight
+
+```{verbatim}
+No specific highlight
+```
+
+# Markdown output
+
+```{verbatim, lang = 'markdown'}
+No specific highlight
+```
+
+# No highlight specifically
+
+````{verbatim, lang = ''}
+No specific highlight
+````
+
+# Use for verbatim Rmd content
+
+````{verbatim, lang = 'markdown'}
+We can output arbitrary content verbatim.
+  
+```{r}
+1 + 1
+```
+
+The content can contain inline code like
+`r pi * 5^2`, too.
+````
+
+# Other option to set the language 
+
+````{verbatim, engine.opts = list(lang = "javascript")}
+document.getElementById("demo").innerHTML = "Hello JavaScript!";
+````
+
+# Setting a language and another class
+
+```{verbatim, lang = "python", class.source = "numberLines"}
+print(1 + 1)
+```
+
+```{verbatim, engine.opts = list(lang = "python"), class.source = "numberLines"}
+print(1 + 1)
+```
+
+# Content can be read from a file 
+
+```{cat, engine.opts = list(file = "style.css"), echo = FALSE}
+h1 {
+  color: red;
+}
+```
+
+but no language is set by default from the file name
+
+```{verbatim, file = "style.css"}
+```
+
+```{verbatim, file = "style.css", lang = "css"}
+```
+
+One need to use the embed engine for this
+
+* Either using `file` option
+
+```{embed, file = "style.css"}
+```
+
+* Or setting file name inside code chunk with quotes
+
+```{embed}
+"style.css"
+```
+
+or without quotes
+
+```{embed}
+style.css
+```
+
+```{r, include = FALSE}
+unlink("style.css")
+```</code></pre>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body></html>

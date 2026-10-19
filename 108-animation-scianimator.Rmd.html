@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<title>108-animation-scianimator.Rmd</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css">
+<style>body{margin:0} pre{margin:0;padding:.6em;white-space:pre-wrap;word-break:break-word}</style>
+</head><body>
+<pre><code class="language-markdown"># Embed animations using SciAnimator in knitr
+
+We can set the package option `animation.fun` to `hook_scianimator` so that
+multiple plots in a chunk can be animated via the SciAnimator library.
+
+```{r setup}
+library(knitr)
+opts_knit$set(animation.fun = hook_scianimator)
+```
+
+You have to embed the jQuery and SciAnimator libraries in the HTML header
+(between `&lt;head&gt;` and `&lt;/head&gt;`), even though some browsers can tolerate it
+if you insert a style sheet after `&lt;body&gt;`.
+
+&lt;link rel="stylesheet" href="http://vis.supstat.com//assets/themes/dinky/css/scianimator.css"&gt;
+&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script src="http://vis.supstat.com/assets/themes/dinky/js/jquery.scianimator.min.js"&gt;&lt;/script&gt;
+
+Here comes a test of the Brownian motion:
+
+```{r test, fig.show='animate', interval=.1}
+n = length(palette())
+x = rnorm(n); y = rnorm(n)
+for (i in 1:20) {
+  x = x + rnorm(n); y = y + rnorm(n)
+  plot(x, y, xlim=c(-10, 10), ylim=c(-10,10), pch=19, col=1:n, cex=2)
+}
+```
+
+There are many other examples at &lt;http://vis.supstat.com&gt;.</code></pre>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body></html>

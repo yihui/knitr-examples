@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<title>008-outdec.Rnw</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css">
+<style>body{margin:0} pre{margin:0;padding:.6em;white-space:pre-wrap;word-break:break-word}</style>
+</head><body>
+<pre><code class="language-markdown">\documentclass{article}
+\usepackage{amsmath}
+\begin{document}
+
+When the option OutDec is not \texttt{.}, put numbers in \texttt{\textbackslash{}text}. See \#348.
+
+&lt;&lt;&gt;&gt;=
+options(OutDec = ',')
+@
+
+This is the first test. abc \Sexpr{0.6} def
+
+another test $a = \Sexpr{0.6}$.
+
+and the last one $a = \Sexpr{'0.6'}$.
+
+&lt;&lt;&gt;&gt;=
+options(OutDec = '.')
+@
+
+This is the first test. abc \Sexpr{0.6} def
+
+another test $a = \Sexpr{0.6}$.
+
+and the last one $a = \Sexpr{'0.6'}$.
+
+\end{document}</code></pre>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body></html>

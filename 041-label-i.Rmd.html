@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<title>041-label-i.Rmd</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css">
+<style>body{margin:0} pre{margin:0;padding:.6em;white-space:pre-wrap;word-break:break-word}</style>
+</head><body>
+<pre><code class="language-markdown"># My report
+
+```{r}
+data(mtcars)
+```
+
+This example shows how to generate chunk labels dynamically with the brew syntax. It was motivated by the SO question: http://stackoverflow.com/q/12095113/559676
+
+```{r create-iterator, include=FALSE}
+library(knitr)
+src = NULL
+pat_brew()  # use brew syntax first
+
+for (cur.cyl in unique(mtcars$cyl)) {
+  src = c(src, knit(text = readLines('041-label-i-child.tpl')))
+}
+
+# continue with markdown syntax and hooks
+pat_md()
+render_markdown()
+# knit the generated R markdown source
+out = knit(text = src)
+```
+
+## Generate report for each level of cylinder variable
+
+```{r results='asis', echo=FALSE}
+cat(out, sep = '\n')
+```</code></pre>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body></html>

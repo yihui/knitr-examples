@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<title>086-xtable-examples.Rnw</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css">
+<style>body{margin:0} pre{margin:0;padding:.6em;white-space:pre-wrap;word-break:break-word}</style>
+</head><body>
+<pre><code class="language-markdown">\documentclass{article}
+
+\begin{document}
+&lt;&lt;setup, include=FALSE&gt;&gt;=
+options(xtable.comment = FALSE)
+@
+\section*{Multiplication table}
+
+&lt;&lt;multiplication-table, echo = FALSE, results = 'asis'&gt;&gt;=  
+library(xtable)
+mt &lt;- outer(1:9, 1:9, function(x, y) x *y)
+xtable(mt, align="|c|ccccccccc|")
+@
+
+\section*{Embedded \LaTeX}
+
+&lt;&lt;embedded-latex, echo = FALSE, results = 'asis'&gt;&gt;=  
+el &lt;- matrix(rep(1, 9), ncol=3)
+colnames(el) &lt;- rownames(el) &lt;- c("$\\alpha$", "$\\beta$", "$\\gamma$")
+el[1,1] &lt;- "$\\alpha^2$"
+el[2,2] &lt;- "$\\beta^2$"
+el[3,3] &lt;- "$\\gamma^2$"
+el[1,2] &lt;- el[2,1] &lt;- "$\\alpha\\beta$"
+el[1,3] &lt;- el[3,1] &lt;- "$\\alpha\\gamma$"
+el[2,3] &lt;- el[3,2] &lt;- "$\\beta\\gamma$"
+print(xtable(el), sanitize.text.function = function(x){x})
+@
+
+\section*{Names}
+&lt;&lt;names, echo = FALSE, results = 'asis'&gt;&gt;=  
+print(xtable(head(iris)), include.rownames=FALSE)
+@
+
+\end{document}</code></pre>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body></html>

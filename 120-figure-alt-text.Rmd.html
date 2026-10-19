@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<title>120-figure-alt-text.Rmd</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css">
+<style>body{margin:0} pre{margin:0;padding:.6em;white-space:pre-wrap;word-break:break-word}</style>
+</head><body>
+<pre><code class="language-markdown">```{r setup, include=FALSE}
+knitr::opts_chunk$set(dev = 'svg')
+# simulate pandoc html output
+knitr::opts_knit$set(rmarkdown.pandoc.to = "html")
+```
+
+An alternative text will always be provided with an image tag in html. 
+
+By default, the caption will be used
+
+```{r, fig.cap = "A caption"}
+plot(1:10)
+```
+
+You can use an alt text different than a caption using `fig.alt`
+
+```{r, fig.cap = "A caption", fig.alt = "An alternative text"}
+plot(1:10)
+```
+
+
+It will be evaluated after the chunk like `fig.cap`
+
+```{r, fig.cap = sprintf("%s points", n), fig.alt = sprintf("A graph with %s points", n)}
+n = 15
+plot(1:n)
+```
+
+And recycled if several graphs
+
+```{r, fig.cap = "A caption", fig.alt = "An alternative text"}
+plot(1:15)
+plot(1:10)
+```
+
+or you can pass a vector
+
+```{r, fig.cap = "Fig1", fig.alt = c("Alt1", "Alt2"), fig.show='hold'}
+plot(1:15)
+plot(1:10)
+```
+
+A plot object may also carry its own alt text (e.g. via `ggplot2::labs(alt =)`), which is used as the default `fig.alt` when the chunk option is not set (#2001)
+
+```{r, message=FALSE}
+library(ggplot2)
+ggplot(mtcars, aes(wt, mpg)) + geom_point() + labs(alt = "A scatterplot of mpg against weight")
+```
+
+An explicit `fig.alt` still takes precedence over the plot's own alt text
+
+```{r, fig.alt = "An explicit alt text"}
+ggplot(mtcars, aes(wt, mpg)) + geom_point() + labs(alt = "This is ignored")
+```
+
+You can mix the two with `NA` for the plots whose alt text should come from the plot object
+
+```{r, fig.alt = c(NA, "The second alt text"), fig.show='hold'}
+ggplot(mtcars, aes(wt, mpg)) + geom_point() + labs(alt = "The first alt text")
+ggplot(mtcars, aes(hp, mpg)) + geom_point() + labs(alt = "This is overridden")
+```
+</code></pre>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body></html>

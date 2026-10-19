@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<title>001-minimal.Rmd</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css">
+<style>body{margin:0} pre{margin:0;padding:.6em;white-space:pre-wrap;word-break:break-word}</style>
+</head><body>
+<pre><code class="language-markdown"># A minimal R Markdown example
+
+A quote:
+
+&gt; Markdown is not LaTeX.
+
+To compile me, run this in R:
+
+    library(knitr)
+    knit('001-minimal.Rmd')
+
+See [output here](https://github.com/yihui/knitr-examples/blob/master/001-minimal.md).
+
+## code chunks
+
+A _paragraph_ here. A code chunk below (remember the three backticks):
+
+```{r}
+1+1
+.4-.7+.3 # what? it is not zero!
+```
+
+## graphics
+
+It is easy.
+
+```{r}
+plot(1:10)
+hist(rnorm(1000))
+```
+
+## inline code
+
+Yes I know the value of pi is `r pi`, and 2 times pi is `r 2*pi`.
+
+## math
+
+Sigh. You cannot live without math equations. OK, here we go: $\alpha+\beta=\gamma$. Note this is not supported by native markdown. You probably want to try RStudio, or at least the R package **markdown**, or the function `knitr::knit2html()`.
+
+## nested code chunks
+
+You can write code within other elements, e.g. a list
+
+1. foo is good
+    ```{r}
+    strsplit('hello indented world', ' ')[[1]]
+    ```
+2. bar is better
+
+Or inside blockquotes:
+
+&gt; Here is a quote, followed by a code chunk:
+&gt;
+&gt; ```{r}
+&gt; x = 1:10
+&gt; rev(x^2)
+&gt; ```
+
+## conclusion
+
+Nothing fancy. You are ready to go. When you become picky, go to the [knitr website](http://yihui.org/knitr/).
+
+![knitr logo](http://yihui.org/knitr/images/knit-logo.png)</code></pre>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</body></html>
